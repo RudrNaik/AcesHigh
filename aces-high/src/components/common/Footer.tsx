@@ -15,11 +15,6 @@ const Footer = () => {
                     style={{ height: "200px" }}
                 />
 
-                {/* Subtitle */}
-                <p className="text-[0.95rem] mb-6">
-                    ACES HIGH
-                </p>
-
                 {/* Socials */}
                 <div className="flex justify-center gap-6 mb-6">
                     <a
