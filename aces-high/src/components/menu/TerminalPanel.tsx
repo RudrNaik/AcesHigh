@@ -28,24 +28,27 @@ function TerminalPanel({
           group
           relative
           overflow-hidden
-          border border-cyan-500/30
-          bg-black/60
+          border-b border-cyan-400/40
           transition-all duration-200
           hover:border-cyan-400/70
-          hover:bg-cyan-500/9
+          hover:bg-cyan-200/9
+          hover:border-l-4
+          hover:animate-pulse
           cursor-pointer
+          mb-3
+          pt-2
         "
       >
 
         {/* Content */}
         <div className="relative z-10 p-5 font-mono">
           {/* Header */}
-          <div className="flex items-center justify-between">
+          <div className="">
             <div className="flex items-center gap-3">
               <span
                 className="
                   text-cyan-300
-                  text-lg
+                  text-2xl
                   font-bold
                 "
               >
@@ -55,7 +58,7 @@ function TerminalPanel({
               <h1
                 className="
                   text-lg
-                  md:text-xl
+                  md:text-2xl
                   font-semibold
                   uppercase
                   text-cyan-100

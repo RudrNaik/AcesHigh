@@ -119,7 +119,7 @@ function TerminalPage() {
             </motion.div>
           </div>
 
-          <div className="h-full">
+          <div className="h-full hidden md:block">
             <TerminalFeed logs={logs} />
           </div>
         </div>
