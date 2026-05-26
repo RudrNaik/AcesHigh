@@ -5,7 +5,10 @@ interface TerminalPanelProps {
   subtitle: string;
   icon: string;
   link: string;
-  onHover?: (path: string, subtitle: string) => void;
+  onHover?: (
+    path: string,
+    subtitle: string
+  ) => void;
 }
 
 function TerminalPanel({
@@ -16,37 +19,67 @@ function TerminalPanel({
   link,
 }: TerminalPanelProps) {
   return (
-    <div>
-      <Link to={link}>
-        <div
-          onMouseEnter={() =>
-            {if(onHover){onHover(`/access/${title.toLowerCase()}`, subtitle)}}
-          }
-          className="
-            relative
-            p-4 pl-6 pr-10
-            border border-blue-500/80
-            rounded-md
-            bg-neutral-900
-            bg-[radial-gradient(circle,rgba(255,100,0,0.06)_1px,transparent_1px)]
-            bg-size-[8px_8px]
-            hover:bg-blue-500/80
-            hover:shadow-inner
-            transition duration-200
-            group cursor-pointer
-          "
-        >
-          <h1 className="text-2xl font-bold tracking-wider flex items-center gap-3 p-2">
-            <span className="text-blue-400">{icon}</span>
-            {title}
-          </h1>
+    <Link to={link}>
+      <div
+        onMouseEnter={() => {
+          if (onHover) {onHover(`/access/${title.toLowerCase()}`,subtitle);}
+        }}
+        className="
+          group
+          relative
+          overflow-hidden
+          border border-cyan-500/30
+          bg-black/60
+          transition-all duration-200
+          hover:border-cyan-400/70
+          hover:bg-cyan-500/9
+          cursor-pointer
+        "
+      >
 
-          <p className="text-xs text-gray-300 tracking-wider flex items-center">
-            &gt; {subtitle}
+        {/* Content */}
+        <div className="relative z-10 p-5 font-mono">
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span
+                className="
+                  text-cyan-300
+                  text-lg
+                  font-bold
+                "
+              >
+                {icon}
+              </span>
+
+              <h1
+                className="
+                  text-lg
+                  md:text-xl
+                  font-semibold
+                  uppercase
+                  text-cyan-100
+                "
+              >
+                {title}
+              </h1>
+            </div>
+          </div>
+
+          {/* Subtitle */}
+          <p
+            className="
+              text-xs
+              tracking-[0.2em]
+              uppercase
+              text-cyan-200/70
+            "
+          >
+            {subtitle}
           </p>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 }
 

@@ -16,7 +16,17 @@ function TerminalFeed({ logs }: TerminalFeedProps) {
   return (
     <div
       ref={feedRef}
-      className="h-full w-full bg-neutral-900/80 text-gray-300 text-sm font-mono border border-gray-400 p-3 overflow-hidden"
+      className="
+        h-full
+        w-full
+       bg-black/40
+       text-cyan-100
+       text-sm
+       font-mono
+       border border-cyan-500/30
+       p-3
+       overflow-y-auto
+      "
     >
       {logs.map((log, i) => (
         <div key={i} className="whitespace-pre-wrap">

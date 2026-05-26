@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import TerminalPanel from "./components/menu/TerminalPanel";
 import TerminalFeed from "./components/menu/TerminalFeed";
-
-// import { AuthContext } from "./context/AuthContext";
 
 const something: string[] = [
   ">This is a test message to ensure the menu is working as intended."
@@ -22,9 +20,6 @@ const bootLines: string[] = [
   ">[CALLI.OS ::/] System Baked. Ready.",
 ];
 
-interface AuthContextType {
-  isLoggedIn: boolean;
-}
 
 function TerminalPage() {
   const [logs, setLogs] = useState<string[]>([]);
@@ -65,70 +60,69 @@ function TerminalPage() {
 
   return (
     <div
-      className="bg-repeat bg-neutral-800 w-full min-h-screen text-white"
+      className="w-full h-fill min-h-screen text-cyan-100"
     >
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+          <div className="flex flex-col space-y-3">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.1,
+              }}
+              className="flicker"
+            >
+              <TerminalPanel
+                title="Ordnance and Airframes"
+                subtitle="Equipment Database"
+                icon="✱"
+                onHover={handleHover}
+                link="/Equipment"
+              />
+            </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-        <div className="flex flex-col space-y-3">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.1,
-            }}
-            className="flicker"
-          >
-            <TerminalPanel
-              title="Ordnance and Airframes"
-              subtitle="Equipment Database"
-              icon="✱"
-              onHover={handleHover}
-              link="/CALLICOM/Armory"
-            />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.2,
+              }}
+              className="flicker"
+            >
+              <TerminalPanel
+                title="Rulebook"
+                subtitle="Flight Manual"
+                icon="🗊"
+                onHover={handleHover}
+                link="/rulebook"
+              />
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.2,
-            }}
-            className="flicker"
-          >
-            <TerminalPanel
-              title="Rulebook"
-              subtitle="Flight Manual"
-              icon="🗊"
-              onHover={handleHover}
-              link="/CALLICOM/Rulebook"
-            />
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.2,
+              }}
+              className="flicker"
+            >
+              <TerminalPanel
+                title="Character Manager"
+                subtitle="Pilot Records"
+                icon="❖"
+                onHover={handleHover}
+                link="/characters"
+              />
+            </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 0.3,
-              delay: 0.2,
-            }}
-            className="flicker"
-          >
-            <TerminalPanel
-              title="Character Manager"
-              subtitle="Pilot Records"
-              icon="❖"
-              onHover={handleHover}
-              link="/CALLICOM/campaigns"
-            />
-          </motion.div>
+          <div className="h-full">
+            <TerminalFeed logs={logs} />
+          </div>
         </div>
-
-        <div className="h-full">
-          <TerminalFeed logs={logs} />
-        </div>
-      </div>
     </div>
   );
 }

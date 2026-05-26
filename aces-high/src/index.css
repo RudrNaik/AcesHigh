@@ -3,7 +3,7 @@
 /* global scrollbar themes */
 html {
   /* Firefox scrollbar defaults */
-  scrollbar-color: #F97316 #171717;  /* thumb orange-400, track neutral-900 */
+  scrollbar-color: #06b6d4 #171717;  /* thumb cyan-400, track neutral-900 */
   scrollbar-width: thin;
 }
 
@@ -19,20 +19,20 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fb923c; /* orange-400 */
+  background-color: #06b6d4; /* cyan-400 */
   border-radius: 9999px;
   border: 2px solid #171717; /* space between thumb and edge */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f97316; /* orange-500 */
+  background-color: #0891b2; /* cyan-500 */
 }
 
 /* Base look for numeric inputs */
 input[type="number"].num-themed {
   color: #e5e7eb;                 /* neutral-200 */
   background-color: #0a0a0a;      /* near black */
-  border: 1px solid #fb923c66;    /* orange-400 w/ alpha */
+  border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
   border-radius: 0.25rem;
   line-height: 1.5rem;
 }
@@ -56,14 +56,14 @@ button{
 
 /* Base dark theme for all dropdowns */
 select.select-themed {
-  color: #ffffff;                 /* orange-500 text */
+  color: #ffffff;                 
   background-color: #171717;      /* black background */
-  border: 1px solid #fb923c99;    /* orange-400/60 border */
+  border: 1px solid #06b6d499;    /* cyan-400/60 border */
   border-radius: 0.25rem;
   padding: 0.25rem 1.75rem 0.25rem 0.5rem;
   background-image:
-    linear-gradient(45deg, transparent 50%, #fb923c 50%),
-    linear-gradient(135deg, #fb923c 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, #06b6d4 50%),
+    linear-gradient(135deg, #06b6d4 50%, transparent 50%);
   background-position:
     calc(100% - 14px) calc(50% - 3px),
     calc(100% - 10px) calc(50% - 3px);
@@ -76,11 +76,11 @@ select.select-themed {
 
 /* Hover / focus states */
 select.select-themed:hover {
-  border-color: #fb923c;
+  border-color: #06b6d4;
 }
 select.select-themed:focus {
   outline: none;
-  box-shadow: 0.5px #fb923c;
+  box-shadow: 0.5px #06b6d4;
 }
 
 /* Optional for Firefox extra padding issue */
