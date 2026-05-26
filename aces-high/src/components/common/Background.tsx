@@ -1,7 +1,7 @@
-function TacticalBackground() {
+function Background() {
   return (
     <div className="absolute inset-0 -z-10 bg-[#020611]">
-      {/* Base Gradient */}
+      {/* Base */}
       <div
         className="
           absolute inset-0
@@ -12,7 +12,7 @@ function TacticalBackground() {
         "
       />
 
-      {/* Dot Matrix Background */}
+      {/* Dot Matrix */}
       <div
         className="
           absolute inset-0
@@ -22,7 +22,7 @@ function TacticalBackground() {
         "
       />
     
-     {/* Subtle Glow */}
+     {/* Glow */}
       <div
         className="
           absolute
@@ -49,4 +49,4 @@ function TacticalBackground() {
   );
 }
 
-export default TacticalBackground;
+export default Background;

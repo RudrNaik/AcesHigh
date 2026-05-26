@@ -96,7 +96,7 @@ function TerminalPage() {
                 subtitle="Flight Manual"
                 icon="🗊"
                 onHover={handleHover}
-                link="/rulebook"
+                link="https://docs.google.com/document/d/1NH2TJWfAlQ5-e2CO07gO1Ws8VHIUYpnsuSKNOeARu60/edit?tab=t.0#heading=h.dlr8nvp3ogxl"
               />
             </motion.div>
 
