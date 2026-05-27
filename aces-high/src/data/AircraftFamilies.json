@@ -1,0 +1,186 @@
+[
+    {
+        "id": "acExampleFamily",
+        "name": "Example",
+        "familyDesc": "Example Description",
+        "tech1": "Technique 1",
+        "tech2": "Technique 2",
+        "tech3": "Technique 3"
+    },
+    {
+        "id": "acFamFox",
+        "name": "Foxes",
+        "familyDesc": "n/a",
+        "tech1": "techZaslon",
+        "tech2": "techDataflow",
+        "tech3": "techLDAWACS"
+    },
+    {
+        "id": "acFamCrane",
+        "name": "Cranes",
+        "familyDesc": "n/a",
+        "tech1": "techBellToller",
+        "tech2": "techRFM",
+        "tech3": "techEyeChakra"
+    },
+    {
+        "id": "acFamViper",
+        "name": "Vipers",
+        "familyDesc": "n/a",
+        "tech1": "techThreeStrokes",
+        "tech2": "techHHLL",
+        "tech3": "techRedGlint"
+    },
+    {
+        "id": "acFamWindstorm",
+        "name": "Windstorms",
+        "familyDesc": "n/a",
+        "tech1": "techBadWeather",
+        "tech2": "techRiot",
+        "tech3": "techHighTurb"
+    },
+    {
+        "id": "acFamSvea",
+        "name": "Sveabirds",
+        "familyDesc": "n/a",
+        "tech1": "techHiddenAny",
+        "tech2": "techKraken",
+        "tech3": "techSelkie"
+    },
+    {
+        "id": "acFamEagles",
+        "name": "Eagles",
+        "familyDesc": "n/a",
+        "tech1": "techRiflescope",
+        "tech2": "techBirdbrain",
+        "tech3": "techShedding"
+    },
+    {
+        "id": "acFamVespers",
+        "name": "Vespers",
+        "familyDesc": "n/a",
+        "tech1": "techMaverick",
+        "tech2": "techBuddyFlare",
+        "tech3": "techNoseOnHim"
+    },
+    {
+        "id": "acFamPantheras",
+        "name": "Pantheras",
+        "familyDesc": "n/a",
+        "tech1": "techAnonymity",
+        "tech2": "techTightFit",
+        "tech3": "techWeekendWarrior"
+    },
+    {
+        "id": "acFamHarriers",
+        "name": "Harriers",
+        "familyDesc": "n/a",
+        "tech1": "techVIFF",
+        "tech2": "techFullThrustForward",
+        "tech3": "techMatador"
+    },
+    {
+        "id": "acFamRooks",
+        "name": "Rooks",
+        "familyDesc": "n/a",
+        "tech1": "techScattershot",
+        "tech2": "techHeartsMinds",
+        "tech3": "techJustice"
+    },
+    {
+        "id": "acFamMirages",
+        "name": "Mirages",
+        "familyDesc": "n/a",
+        "tech1": "techBurning",
+        "tech2": "techOasisOracle",
+        "tech3": "techMagidMissile"
+    },
+    {
+        "id": "acFamTomcats",
+        "name": "Tomcats",
+        "familyDesc": "n/a",
+        "tech1": "techRollReversal",
+        "tech2": "techCostumier",
+        "tech3": "techDemon"
+    },
+    {
+        "id": "acFamStargaze",
+        "name": "Stargazers",
+        "familyDesc": "n/a",
+        "tech1": "techSkiesUnknown",
+        "tech2": "techLawnDart",
+        "tech3": "techLockheed"
+    },
+    {
+        "id": "acFamVarks",
+        "name": "Varks",
+        "familyDesc": "n/a",
+        "tech1": "techHoldt",
+        "tech2": "techTruffle",
+        "tech3": "techMined"
+    },
+    {
+        "id": "acFamVanguard",
+        "name": "Vanguards",
+        "familyDesc": "n/a",
+        "tech1": "techCCC",
+        "tech2": "techNoOrdnance",
+        "tech3": "techMPA"
+    },
+    {
+        "id": "acFamPearls",
+        "name": "Pearlbirds",
+        "familyDesc": "n/a",
+        "tech1": "techPeaceOfMind",
+        "tech2": "techZenful",
+        "tech3": "techFlood"
+    },
+    {
+        "id": "acFamFrees",
+        "name": "Freebirds",
+        "familyDesc": "n/a",
+        "tech1": "techGuitar",
+        "tech2": "techLeftThere",
+        "tech3": "techUnchange"
+    },
+    {
+        "id": "acFamWolves",
+        "name": "Wolfpacks",
+        "familyDesc": "n/a",
+        "tech1": "techTagHunt",
+        "tech2": "techPackwatch",
+        "tech3": "techHounds"
+    },
+    {
+        "id": "acFamPhantoms",
+        "name": "Phantoms",
+        "familyDesc": "n/a",
+        "tech1": "techLiXingQing",
+        "tech2": "techRoundRobin",
+        "tech3": "techShowtime"
+    },
+    {
+        "id": "acFamSwallows",
+        "name": "Swallows",
+        "familyDesc": "n/a",
+        "tech1": "techPopUp",
+        "tech2": "techPicky",
+        "tech3": "techFlocks"
+    },
+    {
+        "id": "acFamPirates",
+        "name": "Swashbucklers",
+        "familyDesc": "n/a",
+        "tech1": "techPanache",
+        "tech2": "techOPR",
+        "tech3": "techOldDog"
+    },
+    {
+        "id": "acFamRogues",
+        "name": "Rogues",
+        "familyDesc": "n/a",
+        "tech1": "techWhaler",
+        "tech2": "techFamily",
+        "tech3": "techEyeOnThat"
+    }
+]
