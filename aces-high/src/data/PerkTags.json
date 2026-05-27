@@ -1,0 +1,30 @@
+[
+    {
+        "id": "perkLuck",
+        "name": "Luck Perk",
+        "desc": "n/a",
+        "type": "acePerk",
+        "typeDesc": "A perk for Aces -- only accessible at the end of a Tour"
+    },
+    {
+        "id": "backgroundPerk",
+        "name": "Background Perk",
+        "desc": "n/a",
+        "type": "bgPerk",
+        "typeDesc": "A starting perk, unique to each Pilot"
+    },
+    {
+        "id": "basePerk",
+        "name": "Base Perk",
+        "desc": "n/a",
+        "type": "basePerk",
+        "typeDesc": "A normal perk"
+    },
+    {
+        "id": "lootPerk",
+        "name": "Loot perk",
+        "desc": "n/a",
+        "type": "lootPerk",
+        "typeDesc": "A perk obtained as a result of gameplay rewards."
+    }
+]
