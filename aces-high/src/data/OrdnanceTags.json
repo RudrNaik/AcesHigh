@@ -1,0 +1,247 @@
+[
+    {
+        "id": "ordAG",
+        "name": "agnostic",
+        "desc": "These weapons can be used against both A2A and A2G targets."
+    },
+    {
+        "id": "ordBLK",
+        "name": "bulky",
+        "desc": "Requires an extra Cap to use"
+    },
+    {
+        "id": "ordBRSTTiny",
+        "name": "Burst (Tiny)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a tiny radius. May be given an additional modifier."
+    },
+    {
+        "id": "ordBRSTSmall",
+        "name": "Burst (Small)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a small radius. May be given an additional modifier."
+    },
+    {
+        "id": "ordBRST",
+        "name": "Burst (Medium)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a medium radius. May be given an additional modifier."
+    },
+    {
+        "id": "ordBRSTLarge",
+        "name": "Burst (Large)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a large area. May be given an additional modifier."
+    },
+    {
+        "id": "ordBRSTHuge",
+        "name": "Burst (Huge)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a huge area. May be given an additional modifier."
+    },
+    {
+        "id": "ordBRSTCol",
+        "name": "Burst (Colossal)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a colossal area. May be given an additional modifier."
+    },
+    {
+        "id": "ordBRSTCola",
+        "name": "Burst (Calamitous)",
+        "desc": "These weapons do splash damage to nearby enemies - or allies - in a truly disasterous area. May be given an additional modifier."
+    },
+    {
+        "id": "ordCLNKY",
+        "name": "clunky",
+        "desc": "Requires an extra energy to use"
+    },
+    {
+        "id": "ordDNG",
+        "name": "dangerous",
+        "desc": "A dangerous weapon deals extra damage, either at a cost or at a risk to its user."
+    },
+    {
+        "id": "ordDES",
+        "name": "designate",
+        "desc": "An ally with some form of Targeting Equipment may use Eyes Open to assist in employing these weapons."
+    },
+    {
+        "id": "ordDUB",
+        "name": "dubious",
+        "desc": "These weapons are shady and skirt modern laws of war. Use with caution, it may escalate the battle."
+    },
+    {
+        "id": "ordECO",
+        "name": "electroconcusive (both)",
+        "desc": "When employed on an EWO plane, whenever you Jam, you may spend a Capacity to immediately use an extra Jam of either type without using a Maneuver slot. When employed on an non-EWO plane, grants access to both Jams."
+    },
+    {
+        "id": "ordECOAlly",
+        "name": "electroconcusive (ally)",
+        "desc": "When employed on an EWO plane, whenever Ally Jam is used, you may spend a Capacity to immediately use an extra Jam of that type without using a Maneuver slot. When employed on an non-EWO plane, grants access to Ally Jam."
+    },
+    {
+        "id": "ordECOEnemy",
+        "name": "electroconcusive (Enemy)",
+        "desc": "When employed on an EWO plane, whenever Enemy Jam is used, you may spend a Capacity to immediately use an extra Jam of that type without using a Maneuver slot. When employed on an non-EWO plane, grants access Enemy Jam."
+    },
+    {
+        "id": "ordEXPS",
+        "name": "expensive",
+        "desc": "Takes one extra turn to resupply (you may choose not to resupply this ordinance and lose usage.)"
+    },
+    {
+        "id": "ordEXPI",
+        "name": "experimental",
+        "desc": "Cutting edge technology. May come with strings attached."
+    },
+    {
+        "id": "ordFLME",
+        "name": "flaming",
+        "desc": "Starts fires. These spread; at the start of your turn, deal 1 damage to everything aflame."
+    },
+    {
+        "id": "ordGUIDE",
+        "name": "guided",
+        "desc": "You may choose to Fly Dangerously or Maneuver into Position after employing this Ordnance to upgrade a roll by one Step (up to a Full Success)."
+    },
+    {
+        "id": "ordGUN",
+        "name": "gun",
+        "desc": "Remove the Gunless tag. If you don't have the Gunless tag already, gain +1 Forward whenever you don't employ Ordnance."
+    },
+    {
+        "id": "ordHYPER",
+        "name": "hypersonic",
+        "desc": "These weapons move extremely fast. They may require Speed checks to avoid, or they hit before enemies can react."
+    },
+    {
+        "id": "ordIMP",
+        "name": "imprecise",
+        "desc": "Deployment may require Burning a Reaction or G-Resist or risking the munition(s) falling off course."
+    },
+    {
+        "id": "ordKIN",
+        "name": "kinetic",
+        "desc": "Kinetic weapons do not explode, burn, or have any special effects upon impact -- they just hit hard."
+    },
+    {
+        "id": "ordKNIFE",
+        "name": "knife",
+        "desc": "Only effective within extremely close range. If you have used Fly Dangerously or Maneuver into Position this turn, you Gain +2 Forward at close range but increase Consequences by a Step; suffer disadvantage otherwise."
+    },
+    {
+        "id": "ordLGHT",
+        "name": "light",
+        "desc": "Lightweight weaponry. They cost -1 Energy to use but deal less damage."
+    },
+    {
+        "id": "ordLOIT",
+        "name": "loitering 2",
+        "desc": "Makes attacks over 2 turns. Remind your AWACS."
+    },
+    {
+        "id": "ordMANU",
+        "name": "manueverable",
+        "desc": "You may Spend an Energy to gain +1 Forward on attacks with these weapons."
+    },
+    {
+        "id": "ordMISS",
+        "name": "mission",
+        "desc": "Some missions may require a specific Ordnance. The AWACS will explain when explaining the mission. Neglect to take these at your own risk"
+    },
+    {
+        "id": "ordMINI",
+        "name": "mini",
+        "desc": "Ignore the first 2 Capacity expenditures when using these weapons."
+    },
+    {
+        "id": "ordMLTI4",
+        "name": "multilock 4",
+        "desc": "Multilock 4: Costs +1 Energy and Cap per 2 targets targetted to use, but hits 4 targets from the same die roll. They gain no benefits on a Perfect."
+    },
+    {
+        "id": "ordMLTI",
+        "name": "multilock 2",
+        "desc": "Multilock 2: Costs +1 Energy and Cap per 2 targets targetted to use, but hits 2 targets from the same die roll. They gain no benefits on a Perfect."
+    },
+    {
+        "id": "ordPENLight",
+        "name": "penetrating (light)",
+        "desc": "These weapons ignore the armor of lightly armored targets, like tanks, light bunkers, and so on."
+    },
+    {
+        "id": "ordPENStrong",
+        "name": "penetrating (strong)",
+        "desc": "These weapons ignore heavy armor, letting them penetrate targets like reinforced missile silos, underground bunkers, and battleships."
+    },
+    {
+        "id": "ordPREC",
+        "name": "precise",
+        "desc": "There is minimal to no risk of hitting the wrong target with these weapons."
+    },
+    {
+        "id": "ordRNGD",
+        "name": "ranged",
+        "desc": "These weapons work at extremely long ranged. If you have used Maneuver Into Position or Reposition this turn, Hold a Mitigate Consequences; suffer Disadvantage otherwise."
+    },
+    {
+        "id": "ordRCSD",
+        "name": "recessed",
+        "desc": "Gain +1 Speed and Manueverability if starting Capacity is less than 6."
+    },
+    {
+        "id": "ordRIPPLE",
+        "name": "ripple",
+        "desc": "Ripple weapons fire in burst volleys. They don't suffer from any multiattack penalties when used."
+    },
+    {
+        "id": "ordSENS",
+        "name": "sensitive",
+        "desc": "Needs to be treated gently. Upon taking Survivability damage, you Face Mechanical Consequences."
+    },
+    {
+        "id": "ordSIMP",
+        "name": "simple",
+        "desc": "Unaffected by things like enemy Jamming."
+    },
+    {
+        "id": "ordSLOW",
+        "name": "slowed",
+        "desc": "Has some sort of mechanism to slow its deployment by one turn --- allowing an escape from the blast."
+    },
+    {
+        "id": "ordSMOKE",
+        "name": "smokey",
+        "desc": "Covers areas with thick smoke that obscures imaging and targeting equipment."
+    },
+    {
+        "id": "ordSPEC",
+        "name": "specific",
+        "desc": "These weapons have Advantage against the specified targets and Disadvantage against all other targets."
+    },
+    {
+        "id": "ordSPECAARM",
+        "name": "specific (Aerial Radars & Jammers)",
+        "desc": "These weapons have Advantage against AWACS and EWOS and Disadvantage against all other targets."
+    },
+    {
+        "id": "ordSPECARM",
+        "name": "specific (Antiradiation)",
+        "desc": "These weapons have Advantage against ground units with radars and jammers, Disadvantage against all other targets."
+    },
+    {
+        "id": "ordSPECBOAT",
+        "name": "specific (Naval)",
+        "desc": "These weapons have Advantage against naval targets and Disadvantage against all other targets."
+    },
+    {
+        "id": "ordSPECSAT",
+        "name": "specific (Satellite)",
+        "desc": "These weapons have Advantage against targets that breach the Karman Line and Disadvantage against all other targets."
+    },
+    {
+        "id": "ordSTRAT",
+        "name": "strategic",
+        "desc": "These weapons may not have immediate effect when used, and are better used before contact with the enemy."
+    },
+    {
+        "id": "ordWEAK",
+        "name": "Weak",
+        "desc": "Deals 1 less damage"
+    }
+]

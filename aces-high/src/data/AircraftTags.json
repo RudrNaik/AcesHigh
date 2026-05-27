@@ -1,0 +1,67 @@
+[
+    {
+        "id": "acAOA",
+        "name": "AOA",
+        "desc": "You can perform maneuvers that make lesser airframes blush. Allows for Maneuvers tagged with AOA."
+    },
+    {
+        "id": "acPSM",
+        "name": "PSM",
+        "desc": "Reduce the energy cost of Maneuvers tagged with AOA by one."
+    },
+    {
+        "id": "acVTOL",
+        "name": "VTOL",
+        "desc": "You can hover to take off and land or for fun. Your Manuverability becomes -1 while doing so, but gain +1 A2G."
+    },
+    {
+        "id": "acSTOL",
+        "name": "STOL",
+        "desc": "You're capable of taking off and landing on extremely short runways."
+    },
+    {
+        "id": "acCOMM",
+        "name": "Common",
+        "desc": "Generic-ah plane. After Bailing Out, you don't risk losing a license level."
+    },
+    {
+        "id": "acGLESS",
+        "name": "Gunless",
+        "desc": "Have to spend Capacity or Employ Ordnance to attack."
+    },
+    {
+        "id": "acHSTRUNG",
+        "name": "High-Strung",
+        "desc": "Whenever you suffer consequences from a Manuverability check, roll Reaction. If you fail, take 2 hits to your Survivability."
+    },
+    {
+        "id": "acMCREW",
+        "name": "Multicrew",
+        "desc": "Your plane has more than just the pilot aboard. Helps avoid loneliness in the air."
+    },
+    {
+        "id": "acMENG",
+        "name": "Multiengine",
+        "desc": "Your plane has more than one engine! That makes it more reliable and look cooler."
+    },
+    {
+        "id": "acNAVAL",
+        "name": "Naval",
+        "desc": "You can operate off of a carrier. Naval (CATOBAR) designates the capability to operate off of catapult-based carriers."
+    },
+    {
+        "id": "acSUB",
+        "name": "Subsonic",
+        "desc": "Your plane is not capable of breaking the sound barrier. You will always be considered slower than an aircraft that can, suffering Disadvantage or even instantly Failing checks with Supersonic aircraft involved."
+    },
+    {
+        "id": "acSWEEP",
+        "name": "Sweep",
+        "desc": "Your wings can sweep in and out! As part of your Positioning Maneuver, you may gain +1 Manu at the cost of -1 Speed and vice versa."
+    },
+    {
+        "id": "acSTEALTH",
+        "name": "Stealth",
+        "desc": "Double Escalation cost to target you unless you've attacked."
+    }
+]
