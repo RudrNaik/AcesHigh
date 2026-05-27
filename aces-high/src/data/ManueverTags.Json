@@ -1,0 +1,92 @@
+[
+    {
+        "id": "example",
+        "name": "example name",
+        "desc": "example description"
+    },
+    {
+        "id": "manuCap1",
+        "name": "CAP (1)",
+        "desc": "Requires Spending 1 Capacity"
+    },
+    {
+        "id": "manuCap2",
+        "name": "CAP (2)",
+        "desc": "Requires Spending 2 Capacity"
+    },
+    {
+        "id": "manuCap3",
+        "name": "CAP (3)",
+        "desc": "Requires Spending 3 Capacity"
+    },
+    {
+        "id": "manuCap4",
+        "name": "CAP (4)",
+        "desc": "Requires Spending 4 Capacity"
+    },
+    {
+        "id": "manuCap5",
+        "name": "CAP (5)",
+        "desc": "Requires Spending 5 Capacity"
+    },
+    {
+        "id": "manuCap6",
+        "name": "CAP (6)",
+        "desc": "Requires Spending 6 Capacity"
+    },
+    {
+        "id": "manuCap7",
+        "name": "CAP (7)",
+        "desc": "Requires Spending 7 Capacity"
+    },
+    {
+        "id": "manuAttack",
+        "name": "Attack",
+        "desc": "Deals damage"
+    },
+    {
+        "id": "manuDefend",
+        "name": "Defend",
+        "desc": "Any Defensive Maneuver"
+    },
+    {
+        "id": "manuRoleM",
+        "name": "Role - Multirole",
+        "desc": "Usable only by Multirole Aircraft"
+    },
+    {
+        "id": "manuRoleI",
+        "name": "Role - Interceptor",
+        "desc": "Usable only by Interceptor Aircraft"
+    },
+    {
+        "id": "manuRoleS",
+        "name": "Role - Strike",
+        "desc": "Usable only by Strike Aircraft"
+    },
+    {
+        "id": "manuRoleE",
+        "name": "Role - EWO",
+        "desc": "Usable only by EWO Aircraft"
+    },
+    {
+        "id": "manuAdvanced",
+        "name": "Advanced Maneuver",
+        "desc": "Requires you to have gone on a Mastery tour in this Aircraft."
+    },
+    {
+        "id": "manuMAP",
+        "name": "Multi-Attack Penality",
+        "desc": "Incurs a penalty to each successive attack."
+    },
+    {
+        "id": "manuORD",
+        "name": "Ordnance Enabled",
+        "desc": "Allows the usage of Ordnance on these attacks"
+    },
+    {
+        "id": "manuTrick",
+        "name": "Trick",
+        "desc": "Doesn't cost Maneuver Slot"
+    }
+]
