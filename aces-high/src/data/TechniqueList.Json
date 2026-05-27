@@ -1,0 +1,471 @@
+[
+    {
+        "id": "exampleTech",
+        "name": "Example Technique",
+        "family": "acExampleFam",
+        "maneuverId": "manuExampleTech",
+        "description": "n/a"
+    },
+    {
+        "id": "techZaslon",
+        "name": "Zaslon Array",
+        "family": "acFamFox",
+        "maneuverId": "manuZaslon",
+        "description": "[REACT - 3] Whenever you Attack or Overwatch, give an Ally Snapshot. It ignores Jamming."
+    },
+    {
+        "id": "techDataflow",
+        "name": "Dataflow Master",
+        "family": "acFamFox",
+        "maneuverId": "manuDataflow",
+        "description": "[REACT - 2] Whenever you Attack, give an Ally Lock On. If this attack is a Snapshot, gain Lock On."
+    },
+    {
+        "id": "techLDAWACS",
+        "name": "Datalink AWACS",
+        "family": "acFamFox",
+        "maneuverId": "manuDLAWACS",
+        "description": "[REACT - 3] Whenever you Overwatch, either give one ally Meld or three allies Lock On."
+    },
+    {
+        "id": "techBellToller",
+        "name": "Bell Toller",
+        "family": "acFamCrane",
+        "maneuverId": "manuBellToller",
+        "description": "[ATTACK, MAP - 4] Make an Attack. The next AOA Maneuver you use gains Mitigate Consequences."
+    },
+    {
+        "id": "techRFM",
+        "name": "Reverse-Firing Missiles",
+        "family": "acFamCrane",
+        "maneuverId": "manuRFM",
+        "description": "[REACT, CAP, MAP - 2] Requires a Manuverable or Knife Weapon. Whenever you are threatened, you may make an attack against that threat. This does not take a Maneuver slot."
+    },
+    {
+        "id": "techEyeChakra",
+        "name": "Eye of the Chakra",
+        "family": "acFamCrane",
+        "maneuverId": "manuEyeChakra",
+        "description": "[REACT - 0] Whenever, use any AOA Maneuver. This Maneuver doesn't count towards your Maneuver limit. Exhaust."
+    },
+    {
+        "id": "techThreeStrokes",
+        "name": "Three Strokes",
+        "family": "acFamViper",
+        "maneuverId": "manuThreeStroke",
+        "description": "[REACT - 3] Whenever you Face Consequences from an AA site, you may spend a G-Res. If you do, Negate Consequences caused by an AA Source (SAMs, AA, CIWS), then flip a coin. On a tails, burn another G-Res and try again."
+    },
+    {
+        "id": "techHHLL",
+        "name": "Higher Highs, Lower Lows",
+        "family": "acFamViper",
+        "maneuverId": "manuHHLL",
+        "description": "[REACT - 3] Whenever you Jettison the Excess, choose one of [Interdiction] or [Alley Fighter]. You gain its effects until the start of your next turn."
+    },
+    {
+        "id": "techRedGlint",
+        "name": "Red Glint",
+        "family": "acFamViper",
+        "maneuverId": "manuRedGlint",
+        "description": "[POS] Gain [MANU] Energy. Then, spend a G-Resist; for the rest of your turn, your Manuverability is equal to your G-Resist. Exhaust."
+    },
+    {
+        "id": "techBadWeather",
+        "name": "Bad Weather Inbound",
+        "family": "acFamWindstorm",
+        "maneuverId": "manuBadWeather",
+        "description": "[POS] Notice bad weather on the horizon. This will have consequences on the current operation (it may increase the Current Escalation or make targetting harder, for example). All of your Positioning Maneuvers gain \"Gain Lock On\"."
+    },
+    {
+        "id": "techRiot",
+        "name": "Riot Against the Orders",
+        "family": "acFamWindstorm",
+        "maneuverId": "manuRiot",
+        "description": "[POS] Ignore AWACS orders this round. Gain Meld and Closure, but take Major Narrative Consequences."
+    },
+    {
+        "id": "techHighTurb",
+        "name": "High Turbulence",
+        "family": "acFamWindstorm",
+        "maneuverId": "manuHighTurb",
+        "description": "[3] - Make a hard turn. You may spend any amount of G-Resist; for every 2 G-Resist spent, gain one extra Reaction Maneuver this turn. This Maneuver doesn't count towards your Maneuver limit."
+    },
+    {
+        "id": "techHiddenAny",
+        "name": "Hidden Anywhere",
+        "family": "acFamSvea",
+        "maneuverId": "n/a",
+        "description": "Your aircraft gains STOL. Once per mission, you may ask the AWACS if there is a highway nearby; if there is, you can create a resupply point there for any aircraft with STOL or VTOL. If there isn't, gain Meld."
+    },
+    {
+        "id": "techKraken",
+        "name": "Kraken",
+        "family": "acFamSvea",
+        "maneuverId": "manuKraken",
+        "description": "[ATTACK - 4] Make an Attack against up to four targets, but apply MAP. If you choose three or more targets, make the roll with Disadvantage instead."
+    },
+    {
+        "id": "techSelkie",
+        "name": "Selkie Hunter",
+        "family": "acFamSvea",
+        "maneuverId": "manuSelkie",
+        "description": "[CAP(1), MAP - 1] Requires targeting a Naval target or an aircraft tagged with Naval. Make an Attack."
+    },
+    {
+        "id": "techRiflescope",
+        "name": "Riflescope Math",
+        "family": "acFamEagles",
+        "maneuverId": "manuRiflescope",
+        "description": "[2] Spend a Temper and/or Nerve. Gain a Minor Narrative Boon; if you spent both, upgrade it. Exhaust."
+    },
+    {
+        "id": "techBirdbrain",
+        "name": "Birdbrain",
+        "family": "acFamEagles",
+        "maneuverId": "manuBirdbrain",
+        "description": "[CAP(1) - 1] Make an Attack. You don't choose the target. Gain +1 Manu until the end of your next turn. Exhaust."
+    },
+    {
+        "id": "techShedding",
+        "name": "Shedding Pounds from the Air to the Ground",
+        "family": "acFamEagles",
+        "maneuverId": "manuShedding",
+        "description": "[POS, CAP(3)] Gain +1 Manuverability for the rest of the mission; gain a Guaranteed Mixed Success Snapshot."
+    },
+    {
+        "id": "techMaverick",
+        "name": "Not Just a Maverick",
+        "family": "acFamVespers",
+        "maneuverId": "n/a",
+        "description": "You may spend Capacity for any other Vesper."
+    },
+    {
+        "id": "techBuddyFlare",
+        "name": "Buddy Flares",
+        "family": "acFamVespers",
+        "maneuverId": "manuBuddyFlare",
+        "description": "[CAP, REACT - 1] Whenever an ally Faces Consequences, you may Mitigate them. If you do, you face them instead."
+    },
+    {
+        "id": "techNoseOnHim",
+        "name": "Put the Nose On Him",
+        "family": "acFamVespers",
+        "maneuverId": "manuNoseOnHim",
+        "description": "[POS] Lose 3 Energy. Gain Lock on and Snapshot (A2A)."
+    },
+    {
+        "id": "techAnonymity",
+        "name": "Anonymity Abuser",
+        "family": "acFamPantheras",
+        "maneuverId": "n/a",
+        "description": "You fly a generic bird. Once per mission, if your flight would be identified as important somehow, gain a Narrative Boon and a Snapshot against whatever target is trying to ID you."
+    },
+    {
+        "id": "techTightFit",
+        "name": "Tight Fit",
+        "family": "acFamPantheras",
+        "maneuverId": "manuTightFit",
+        "description": "[REACT - 0] Whenever you make a Check to fly in a confined space, recover a Pilot Stat. Comment on the small size of your plane."
+    },
+    {
+        "id": "techWeekendWarrior",
+        "name": "Week-end Warrior",
+        "family": "acFamPantheras",
+        "maneuverId": "manuWeekendWarrior",
+        "description": "[POS] Requires having used both of your Downtime Activities prior to this mission. Gain Snapshot if you lament wanting to return to base to go home; spend a Temper to Gain Lock On, spend a Nerve to gain Closure."
+    },
+    {
+        "id": "techVIFF",
+        "name": "VIFF",
+        "family": "acFamHarriers",
+        "maneuverId": "manuVIFF",
+        "description": "[POS] Gain [MANU] Energy, then add your Speed to your Manuverability for the rest of this turn. At the beginning of your next turn, set one of them to -1 until the start of your next turn."
+    },
+    {
+        "id": "techFullThrustForward",
+        "name": "Full Thrust Forward",
+        "family": "acFamHarriers",
+        "maneuverId": "manuFullThrustForward",
+        "description": "[POS] Spend a Survivability. Gain [SPEED + MANU] Energy."
+    },
+    {
+        "id": "techMatador",
+        "name": "Matador",
+        "family": "acFamHarriers",
+        "maneuverId": "manuMatador",
+        "description": "[REACT - 1] Whenever you Joust, if you do not Face further Consequences, you gain Closure."
+    },
+    {
+        "id": "techScattershot",
+        "name": "Scattershot",
+        "family": "acFamRooks",
+        "maneuverId": "n/a",
+        "description": "Whenever you use an Ordnance with Ripple, you may have it gain Imprecise. If you do, choose one: it gains Ranged, or recover 1 Energy."
+    },
+    {
+        "id": "techHeartsMinds",
+        "name": "Hearts and Minds",
+        "family": "acFamRooks",
+        "maneuverId": "manuHeartsMinds",
+        "description": "[REACT - 0] Whenever you don't use Ordnance to support a ground target by attacking, you may spend a Reaction. When you do, the AWACS holds a Minor Narrative Boon for those ground troops and you deal 1 extra damage to your target."
+    },
+    {
+        "id": "techJustice",
+        "name": "Justice and Honor",
+        "family": "acFamRooks",
+        "maneuverId": "manuJustice",
+        "description": "[REACT - 1] Whenever you notice Dubious Ordnance in use, gain Snapshot against the user."
+    },
+    {
+        "id": "techBurning",
+        "name": "Burning Daylight",
+        "family": "acFamMirages",
+        "maneuverId": "manuBurning",
+        "description": "[1] Gain [MANU] Energy. The AWACS Holds a Move. Exhaust."
+    },
+    {
+        "id": "techOasisOracle",
+        "name": "Oasis Oracle",
+        "family": "acFamMirages",
+        "maneuverId": "n/a",
+        "description": "At the start of each mission, roll a D6. You may use it at any point to replace a roll for 1E, CAP(1). Whenever you Withdraw to Resupply, gain another D6."
+    },
+    {
+        "id": "techMagidMissile",
+        "name": "Magic Missile",
+        "family": "acFamMirages",
+        "maneuverId": "n/a",
+        "description": "You may ignore your first Capacity usage per mission on an [ATTACK] or Ordnance usage if it's a standard missile."
+    },
+    {
+        "id": "techRollReversal",
+        "name": "Roll Reversal",
+        "family": "acFamTomcats",
+        "maneuverId": "manuRollReversal",
+        "description": "[REACT - 0] You may set your Speed to -1 until the start of your next turn. Gain the difference in Manueverability, but roll Reaction. On a failed check, Face Major Consequences."
+    },
+    {
+        "id": "techCostumier",
+        "name": "Costumier",
+        "family": "acFamTomcats",
+        "maneuverId": "n/a",
+        "description": "You fly a recognizable bird. At the start of the mission, the AWACS Holds Narrative Consequences; when they get revealed, you gain Closure or Lock On. If you spend a Capacity, gain Snapshot instead."
+    },
+    {
+        "id": "techDemon",
+        "name": "Demon of the Sea's Straits",
+        "family": "acFamTomcats",
+        "maneuverId": "manuDemon",
+        "description": "[REACT - 4] Whenever you successfully hitting an enemy over water, gain a Guaranteed Success Snapshot. Exhaust."
+    },
+    {
+        "id": "techSkiesUnknown",
+        "name": "Skies Unknown",
+        "family": "acFamStargaze",
+        "maneuverId": "manuSkiesUnknown",
+        "description": "[POS] Admire the colors of the sky; your next Eyes Open is free. Exhaust."
+    },
+    {
+        "id": "techLawnDart",
+        "name": "Not a Lawn Dart",
+        "family": "acFamStargaze",
+        "maneuverId": "manuLawnDart",
+        "description": "[REACT - 2] Whenever you fail a Manuverability or G-Resist check, Mitigate."
+    },
+    {
+        "id": "techLockheed",
+        "name": "Heeding Rusted Locks",
+        "family": "acFamStargaze",
+        "maneuverId": "manuLockheed",
+        "description": "[1] The AWACS makes a Bargain with you. Exhaust."
+    },
+    {
+        "id": "techHoldt",
+        "name": "Forgot to Holdt On",
+        "family": "acFamVarks",
+        "maneuverId": "manuHoldt",
+        "description": "[POS] Face Minor Consequences and lose something. The AWACS holds a Narrative Boon. Exhaust."
+    },
+    {
+        "id": "techTruffle",
+        "name": "Truffle Hunter",
+        "family": "acFamVarks",
+        "maneuverId": "n/a",
+        "description": "Any time that flying at a low altitude would require a Manuverability or Pilot Check, you may spend a Capacity. If you do, you Succeed."
+    },
+    {
+        "id": "techMined",
+        "name": "Wasn't Mine(d)",
+        "family": "acFamVarks",
+        "maneuverId": "n/a",
+        "description": "Whenever you Employ a Dubious Ordnance, an ally gets a chance to call you out on it. If they do, you gain Catch but face Minor Narrative Consequences. If no one does, you gain Lock On."
+    },
+    {
+        "id": "techCCC",
+        "name": "Common Core Curriculum",
+        "family": "acFamVanguard",
+        "maneuverId": "manuCCC",
+        "description": "[REACT - 2] Whenever you spend a Capacity on a non-Ordnance expenditure, flip a coin. On a heads, recover it. You may only recover a total of three Capacity per mission this way."
+    },
+    {
+        "id": "techNoOrdnance",
+        "name": "No Ordnance Left Behind",
+        "family": "acFamVanguard",
+        "maneuverId": "n/a",
+        "description": "Lose -1 Manu and Speed. Bring a Second Ordnance. You can't bring a third Ordnance."
+    },
+    {
+        "id": "techMPA",
+        "name": "Mission Probably Accomplished",
+        "family": "acFamVanguard",
+        "maneuverId": "manuMPA",
+        "description": "[5] Declare the mission accomplished preemptively. Decrease the Current Escalation by two. Next turn, choose two between taking four Survivability Damage, Face Extreme Narrative Consequences, or increase the Current Escalation by three."
+    },
+    {
+        "id": "techPeaceOfMind",
+        "name": "Peace of Mind",
+        "family": "acFamPearls",
+        "maneuverId": "manuPeaceOfMind",
+        "description": "[POS] Recover a Temper, Nerve, and Reaction. Exhaust."
+    },
+    {
+        "id": "techZenful",
+        "name": "Zenful Space",
+        "family": "acFamPearls",
+        "maneuverId": "manuZenful",
+        "description": "[REACT - 1] Whenever you or an ally gain a Narrative Boon, gain Lock On."
+    },
+    {
+        "id": "techFlood",
+        "name": "The Great Flood",
+        "family": "acFamPearls",
+        "maneuverId": "manuFlood",
+        "description": "[POS] Gain 2 Energy. This turn, ignore MAP."
+    },
+    {
+        "id": "techGuitar",
+        "name": "Guitar Solo",
+        "family": "acFamFrees",
+        "maneuverId": "manuGuitar",
+        "description": "[POS] Gain a Minor Narrative Boon. You may Spend a Coin; if you do, upgrade it to a Major Narrative Boon. Exhaust."
+    },
+    {
+        "id": "techLeftThere",
+        "name": "Left There Yesterday",
+        "family": "acFamFrees",
+        "maneuverId": "n/a",
+        "description": "You are always at the start of Initative. At the start of your first turn, Gain Closure."
+    },
+    {
+        "id": "techUnchange",
+        "name": "Unchangable",
+        "family": "acFamFrees",
+        "maneuverId": "manuUnchange",
+        "description": "[REACT - 1] Whenever, Negate a Malus. Exhaust."
+    },
+    {
+        "id": "techTagHunt",
+        "name": "Tag Hunt",
+        "family": "acFamWolves",
+        "maneuverId": "manuTagHunt",
+        "description": "[POS] Whenever you give an ally an Exhaust Maneuver this turn, you gain it too."
+    },
+    {
+        "id": "techPackwatch",
+        "name": "Packwatch",
+        "family": "acFamWolves",
+        "maneuverId": "manuPackwatch",
+        "description": "[REACT - 2] Whenever an ally scores a kill, give them Closure or Lock On. You gain the other."
+    },
+    {
+        "id": "techHounds",
+        "name": "Hound's Tooth",
+        "family": "acFamWolves",
+        "maneuverId": "manuHounds",
+        "description": "[ATTACK, MAP - 4] Make an Attack. Any ally who attacks that Target next round gains Lock-On."
+    },
+    {
+        "id": "techLiXingQing",
+        "name": "Li Xing Qing",
+        "family": "acFamPhantoms",
+        "maneuverId": "manuLiXingQing",
+        "description": "[POS] Accuse an enemy on open comms of being not who they say they are. If you're right, gain a Severe Narrative Boon; if you're not, gain Catch and Closure against them but face Minor Narrative Consequences. Exhaust."
+    },
+    {
+        "id": "techRoundRobin",
+        "name": "Round Robin",
+        "family": "acFamPhantoms",
+        "maneuverId": "manuRoundRobin",
+        "description": "[POS] Whenever you give an ally an Exhaust Maneuver this turn,\n- If you gave them Snapshot, Gain Closure.\n- If you gave them any other Maneuver, Gain Lock On."
+    },
+    {
+        "id": "techShowtime",
+        "name": "Showtime",
+        "family": "acFamPhantoms",
+        "maneuverId": "manuShowtime",
+        "description": "[POS] You can only use this Maneuver after scoring a kill this mission. Gain 4 Energy, then give an ally Closure. Exhaust."
+    },
+    {
+        "id": "techPopUp",
+        "name": "Pop Up Shop",
+        "family": "acFamSwallows",
+        "maneuverId": "manuPopUp",
+        "description": "[REACT - 3] Whenever you take Survivability Damage, gain 20 RP. Exhaust."
+    },
+    {
+        "id": "techPicky",
+        "name": "Picky Eaters",
+        "family": "acFamSwallows",
+        "maneuverId": "manuPicky",
+        "description": "[REACT - 1] Whenever you roll a Mixed Success, you may choose to Negate Consequences. If you do, you gain no benefits of the Success, but you also recover a Pilot Stat. Exhaust."
+    },
+    {
+        "id": "techFlocks",
+        "name": "Flocks of Them",
+        "family": "acFamSwallows",
+        "maneuverId": "manuFlocks",
+        "description": "[POS] An Allied Flight of Fulcrums is nearby. Flip a Coin - on a tails, they call for aid, on a heads, you can call them for aid. Exhaust."
+    },
+    {
+        "id": "techPanache",
+        "name": "Panache",
+        "family": "acFamPirates",
+        "maneuverId": "manuPanache",
+        "description": "[REACT - 1] Whenever you or an ally faces Narrative Consequences, you may sacrifice an Exhaust Maneuver you have. If you do, reduce the severity of the Consequences by one step."
+    },
+    {
+        "id": "techOPR",
+        "name": "Opportune Parry-Riposte",
+        "family": "acFamPirates",
+        "maneuverId": "manuOPR",
+        "description": "[REACT - 3] Whenever you gain a Boon, you may downgrade it and switch its kind (Mechanical to Narrative or vice versa)."
+    },
+    {
+        "id": "techOldDog",
+        "name": "Old Dog, New Tricks",
+        "family": "acFamPirates",
+        "maneuverId": "manuOldDog",
+        "description": "[REACT - 3] Whenever you use an Advanced Maneuver you haven't used yet this mission, gain a Minor Narrative Boon."
+    },
+    {
+        "id": "techWhaler",
+        "name": "Whale Watching",
+        "family": "acFamRogues",
+        "maneuverId": "manuWhaler",
+        "description": "[REACT - 1] Whenever you use a Role Maneuver, give an Ally Lock On."
+    },
+    {
+        "id": "techFamily",
+        "name": "Family Fun",
+        "family": "acFamRogues",
+        "maneuverId": "manuFamily",
+        "description": "[0] Do something fun with your copilot(s). Face Minor Narrative Consequences, but Recover a Pilot Stat. Exhaust."
+    },
+    {
+        "id": "techEyeOnThat",
+        "name": "Keep an Eye On That",
+        "family": "acFamRogues",
+        "maneuverId": "manuEyeOnThat",
+        "description": "[REACT - 2] Whenever you give an Ally Lock On, give them Lock On again. This Maneuver doesn’t count towards your Maneuver limit."
+    }
+]

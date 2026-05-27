@@ -1,0 +1,517 @@
+[
+  {
+    "id": "ordExample",
+    "name": "Example Ordnance",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": [
+      "ordAG",
+      "ordBLK",
+      "ordBRSTTiny",
+      "ordBRST",
+      "ordBRSTLarge",
+      "ordBRSTCola",
+      "ordCLNKY",
+      "ordDES",
+      "ordECOEnemy",
+      "ordBRSTHuge",
+      "ordBRSTCol",
+      "ordDUB",
+      "ordECO",
+      "ordECOAlly",
+      "ordDNG",
+      "ordWEAK",
+      "ordEXPI"
+    ]
+  },
+  {
+    "id": "ordNone",
+    "name": "No Ordnance",
+    "domain": "Agnostic",
+    "desc": "No Ordnance selected -- are you sure?",
+    "tags": ["ordSIMP"]
+  },
+  {
+    "id": "ordUGB",
+    "name": "UGB",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordBRST", "ordIMP", "ordSIMP"]
+  },
+  {
+    "id": "ordUGBL",
+    "name": "UGB-L",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordBRSTLarge", "ordIMP", "ordSIMP"]
+  },
+  {
+    "id": "ordUGB3",
+    "name": "UGB-3",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordBRSTSmall", "ordRIPPLE", "ordIMP", "ordSIMP"]
+  },
+  {
+    "id": "ordMLAG2",
+    "name": "MLAG2",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordMLTI"]
+  },
+  {
+    "id": "ordJDAM",
+    "name": "JDAM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordDES", "ordGUIDE"]
+  },
+  {
+    "id": "ordASM",
+    "name": "Antishipping missile",
+    "domain": "Naval",
+    "desc": "n/a",
+    "tags": ["ordSPECBOAT"]
+  },
+  {
+    "id": "ordMLAG4",
+    "name": "MLAG4",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordMLTI4"]
+  },
+  {
+    "id": "ordFAEB",
+    "name": "FAEB",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordBRSTHuge", "ordIMP"]
+  },
+  {
+    "id": "ordSQAAM",
+    "name": "Knife QAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordKNIFE", "ordMANU"]
+  },
+  {
+    "id": "ordSHISM",
+    "name": "Knife HISM",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordKNIFE", "ordDNG", "ordAG"]
+  },
+  {
+    "id": "ordSPBAA",
+    "name": "SPBAA",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordBRST", "ordKNIFE", "ordDNG"]
+  },
+  {
+    "id": "ordSAAM",
+    "name": "SAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordGUIDE"]
+  },
+  {
+    "id": "ordLAGM",
+    "name": "LAGM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordRNGD"]
+  },
+  {
+    "id": "ordLAAM",
+    "name": "LAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordRNGD"]
+  },
+  {
+    "id": "ordHVAA",
+    "name": "HVAA",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordHYPER"]
+  },
+  {
+    "id": "ordHVAG",
+    "name": "HVAG",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordHYPER"]
+  },
+  {
+    "id": "ordStandoff",
+    "name": "Standoff Bomb",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordRNGD", "ordBRSTLarge"]
+  },
+  {
+    "id": "ordASAT",
+    "name": "ASAT",
+    "domain": "Satellites",
+    "desc": "n/a",
+    "tags": ["ordSPECSAT", "ordRNGD"]
+  },
+  {
+    "id": "ordLACM",
+    "name": "Cruise Missile",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordRNGD", "ordBRST"]
+  },
+  {
+    "id": "ordLASM",
+    "name": "Ranged ASM",
+    "domain": "Naval",
+    "desc": "n/a",
+    "tags": ["ordSPECBOAT", "ordRNGD"]
+  },
+  {
+    "id": "ordSLAAM",
+    "name": "SLAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordGUIDE", "ordRNGD"]
+  },
+  {
+    "id": "ordLGBT",
+    "name": "L-GBT",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordPENStrong", "ordBLK", "ordCLNKY", "ordGUIDE", "ordEXPI"]
+  },
+  {
+    "id": "ordVPSM",
+    "name": "VPSM",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordHYPER", "ordDNG", "ordAG", "ordCLNKY"]
+  },
+  {
+    "id": "ordACBM",
+    "name": "ACBM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": [
+      "ordPENLight",
+      "ordRNGD",
+      "ordBLK",
+      "ordCLNKY",
+      "ordDNG",
+      "ordHYPER"
+    ]
+  },
+  {
+    "id": "ordEGL",
+    "name": "EGL",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": [
+      "ordEXPS",
+      "ordEXPI",
+      "ordKIN",
+      "ordHYPER",
+      "ordPENLight",
+      "ordAG",
+      "ordSENS"
+    ]
+  },
+  {
+    "id": "ordFSAAM",
+    "name": "Flaming SAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordGUIDE", "ordFLME"]
+  },
+  {
+    "id": "ordMLAA2",
+    "name": "MLAA2",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordMLTI"]
+  },
+  {
+    "id": "ordHPAA",
+    "name": "HPAA",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordDNG"]
+  },
+  {
+    "id": "ordMLAA4",
+    "name": "MLAA4",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordMLTI4"]
+  },
+  {
+    "id": "ordMPSAAM",
+    "name": "MP-SAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordGUIDE", "ordMANU", "ordDNG"]
+  },
+  {
+    "id": "ordFMLAA2",
+    "name": "FMLAA2",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordFLME", "ordMLTI"]
+  },
+  {
+    "id": "ordVMLAA2",
+    "name": "HVMLAA",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordHYPER", "ordMLTI"]
+  },
+  {
+    "id": "ordMinSM",
+    "name": "MINSM",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordMINI", "ordAG"]
+  },
+  {
+    "id": "ordMAAM",
+    "name": "MAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordMANU", "ordMINI", "ordLGHT"]
+  },
+  {
+    "id": "ordHCAA",
+    "name": "HCAA",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordLGHT", "ordRIPPLE"]
+  },
+  {
+    "id": "ordHCAG",
+    "name": "HCAG",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordLGHT", "ordRIPPLE"]
+  },
+  {
+    "id": "ordATGM",
+    "name": "ATGM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordMINI", "ordPENLight"]
+  },
+  {
+    "id": "ordGRKT",
+    "name": "Guided Rocket",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordDES", "ordPREC", "ordRIPPLE"]
+  },
+  {
+    "id": "ordAAGRKT",
+    "name": "Guided Antiair Rocket",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordDES", "ordPREC", "ordRIPPLE"]
+  },
+  {
+    "id": "ordQAAM",
+    "name": "QAAM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordMANU"]
+  },
+  {
+    "id": "ordQSM",
+    "name": "QSM",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordAG", "ordMANU", "ordPREC"]
+  },
+  {
+    "id": "ordTLS",
+    "name": "TLS",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": [
+      "ordAG",
+      "ordEXPS",
+      "ordEXPI",
+      "ordSENS",
+      "ordSIMP",
+      "ordHYPER",
+      "ordMANU"
+    ]
+  },
+  {
+    "id": "ordRKTP",
+    "name": "Rocket Pod",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordRIPPLE", "ordSIMP"]
+  },
+  {
+    "id": "ordADNM",
+    "name": "Aerial Naval Mines",
+    "domain": "Naval",
+    "desc": "n/a",
+    "tags": ["ordSTRAT", "ordSPECBOAT", "ordDUB"]
+  },
+  {
+    "id": "ordADCM",
+    "name": "ADCM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordSTRAT", "ordDUB"]
+  },
+  {
+    "id": "ordADMPN",
+    "name": "ADMPN",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordSTRAT", "ordDUB"]
+  },
+  {
+    "id": "ordSASM",
+    "name": "SASM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordBRST", "ordWEAK"]
+  },
+  {
+    "id": "ordECM",
+    "name": "ECM",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordECOEnemy"]
+  },
+  {
+    "id": "ordNapalm",
+    "name": "Napalm Bomb",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordFLME", "ordSTRAT", "ordLOIT"]
+  },
+  {
+    "id": "ordSFFS",
+    "name": "SFFS",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordIMP", "ordDUB", "ordBRSTLarge"]
+  },
+  {
+    "id": "ordSOD",
+    "name": "SOD",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordLOIT", "ordBRSTLarge", "ordDUB"]
+  },
+  {
+    "id": "ordBIEW",
+    "name": "B-IEWS",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordBRSTSmall", "ordECO"]
+  },
+  {
+    "id": "ordGUNPOD",
+    "name": "Gunpod",
+    "domain": "Agnostic",
+    "desc": "Remove the Gunless tag.",
+    "tags": ["ordGUN", "ordSIMP", "ordAG", "ordKIN"]
+  },
+  {
+    "id": "ordARM",
+    "name": "ARM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordSPECARM"]
+  },
+  {
+    "id": "ordAARM",
+    "name": "A2A ARMs",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordSPECAARM"]
+  },
+  {
+    "id": "ordESM",
+    "name": "ESM",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordECOAlly"]
+  },
+  {
+    "id": "ordIRCM",
+    "name": "IRCM",
+    "domain": "Agnostic",
+    "desc": "Whenever IRCM is employed, you may remove a stack of Locked from an ally in your Zone",
+    "tags": ["ordLGHT", "ordLOIT"]
+  },
+  {
+    "id": "ordHARM",
+    "name": "HARM",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordHYPER", "ordSPECARM"]
+  },
+  {
+    "id": "ordPAARM",
+    "name": "PAARM",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": ["ordDNG", "ordSPECAARM"]
+  },
+  {
+    "id": "ordIEW",
+    "name": "IEWS",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordECO"]
+  },
+  {
+    "id": "ordDecoy",
+    "name": "Decoy Pod",
+    "domain": "Agnostic",
+    "desc": "n/a",
+    "tags": ["ordLOIT", "ordECO"]
+  },
+  {
+    "id": "ordSuperPhoenix",
+    "name": "Super Phoenix",
+    "domain": "A2A",
+    "desc": "n/a",
+    "tags": [
+      "ordHYPER",
+      "ordRNGD",
+      "ordBLK",
+      "ordCLNKY",
+      "ordDNG"
+    ]
+  },
+  {
+    "id": "ordJDAMER",
+    "name": "JDAM-ER",
+    "domain": "A2G",
+    "desc": "n/a",
+    "tags": ["ordGUIDE", "ordDES", "ordRNGD"]
+  },
+  {
+    "id": "ordWingsofSteel",
+    "name": "Wings of Steel",
+    "domain": "Agnostic",
+    "desc": "When you make an attack with this Ordnance, use your Maneuverability stat instead of A2A or A2G. If you would suffer Disadvantage from Knife, you instead cannot employ this ordnance. This ordnance is added to the ordnance list of your currently piloted plane.",
+    "tags": [
+      "ordGUIDE",
+      "ordKNIFE",
+      "ordPREC",
+      "ordSIMP",
+      "ordAG"
+    ]
+  }
+]
