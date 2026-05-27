@@ -1,0 +1,758 @@
+[
+  {
+    "id": "modExample",
+    "name": "\"Example Module\"",
+    "desc": "\"Example Module Description Goes Here\"",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNone",
+    "name": "No Module Selected",
+    "desc": "No Module Selected",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modImpAvi",
+    "name": "Improved Avionics",
+    "desc": "Gain +1 A2A",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modUpAvi",
+    "name": "Upgraded Avionics",
+    "desc": "Gain +1 A2A",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1
+    },
+    "AddTags": null,
+    "checkForChars": "End",
+    "charChecked": "A"
+  },
+  {
+    "id": "modTweakAvi",
+    "name": "Tweaked Avionics",
+    "desc": "Handmade upgrades to your avionics. They're a bit bulky though, so you had to make some space. Gain +1 A2A, lose -1 CAP",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "CAP": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modImpGSR",
+    "name": "Improved Ground Search Radar",
+    "desc": "Gain +1 A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modUpGSR",
+    "name": "Upgraded Ground Search Radar",
+    "desc": "Gain +1 A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modTweakGSR",
+    "name": "Tweaked Ground Search Radar",
+    "desc": "Handmade upgrades to your ground search radar. They're a bit bulky though, so you had to make some space. Gain +1 A2G, lose -1 CAP",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1,
+      "CAP": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modAPTraining",
+    "name": "Advanced Psychological Training",
+    "desc": "The first time you would Mental Break, Negate.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modAerobatic",
+    "name": "Aerobatic Smoke",
+    "desc": "Gain a Maneuver: Deploy Aerobatic Smoke [CAP(1) - 2],  Make a G-res Test, on a success, gain stealth until your next [ATTACK].",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": "manuAerobatic",
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modAOADelimit",
+    "name": "AOA Delimiter",
+    "desc": "Delimit your AOA. Gain +1 Manu, lose -1 CAP, gain PSM",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": 1,
+      "CAP": -1
+    },
+    "AddTags": [
+      "acPSM"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modAOAPack",
+    "name": "AOA package",
+    "desc": "Add Canards and TVN nozzles to your plane. Gain +1 Manu, lose -1 CAP, gain AOA",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": 1,
+      "CAP": -1
+    },
+    "AddTags": [
+      "acAOA"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modArmor",
+    "name": "Armor Cladding",
+    "desc": "Add extra layers of armour to your plane. Gain +2 Surv, lose -2 CAP",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": 2,
+      "CAP": -2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modHim",
+    "name": "Become Him",
+    "desc": "Turn off the targeting computer and roll with your pilot stat instead of your plane stat. Exhaust",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modAngles",
+    "name": "Knowing Your Angles",
+    "desc": "Spend 2 temper, ignore disadvantage",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modBigFlares",
+    "name": "Big Flares",
+    "desc": "Gain a Maneuver: \"Big Flares [CAP(2) - 3]: Defeat, Defeat\"",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": "manuBigFlare",
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modBlackNapalm",
+    "name": "Black Napalm",
+    "desc": "Double the lingering damage of any Flaming damage you deal",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modBuddyFlares",
+    "name": "Buddy Flares",
+    "desc": "Do the TGM thing. Gain a Manuever: Buddy Flares [REACT, CAP(1), DEFEND - 3]: Choose an Ally. They Defeat.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": "manuBuddyFlare",
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modCrossUp",
+    "name": "Cross-up button",
+    "desc": "Add Maneuver: Cross Up [ENERGY] [CAP?]: For every stack of Locked gain a stack of Lock On",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": "manuCrossUp",
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modCushy",
+    "name": "Cushy Interior",
+    "desc": "The first time you would gain Physical Stress, don't",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modReminder",
+    "name": "Reminders of home",
+    "desc": "The first time you would gain Mental Stress, don't",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modDatalink",
+    "name": "Datalink",
+    "desc": "Whenever you gain {Overwatch}, your chosen Ally additionally gains Lock On.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modEWO",
+    "name": "Dedicated EWO",
+    "desc": "Requires multicrew, turns your plane into an EWO plane",
+    "IntrinsicMod": null,
+    "TypeMod": "EWO",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modDragChute",
+    "name": "Drag Chute System",
+    "desc": "Your Ordnance gains Slowed",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modECCM",
+    "name": "ECCM Jammer",
+    "desc": "Decrease enemy jamming step by one",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modELINT",
+    "name": "ELINT Pod",
+    "desc": "Free use of ITC",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modExpExp",
+    "name": "Experimental Explosives Composition",
+    "desc": "Increases the Burst tag on any of your Ordnance with one step up. (None to Small, Small to Medium, Medium to Large, Large to Huge, Huge to Collosal, Collosal to World Ending)",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modHaveGlass",
+    "name": "Have Glass",
+    "desc": "You've acquired an advanced cockpit. Your plane gains Stealth",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": [
+      "acSTEALTH"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modHighway",
+    "name": "Highway into the Danger Zone",
+    "desc": "Add the Sweep tag, add the STOL tag",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": [
+      "acSTOL",
+      "acSWEEP"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modImpEject",
+    "name": "Improved Ejection Seat",
+    "desc": "If you were to burn a coin to eject, you don't.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modImpFuel",
+    "name": "Improved Fuel Mixture",
+    "desc": "Gain +1 Speed, -1 CAP",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Speed": 1,
+      "CAP": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modMIRV",
+    "name": "MIRV Package",
+    "desc": "Your Ordnance gains \"Multilock 2\". If it already Has multilock, double it. All of your Ordnance gains \"Imprecise\", you have to pay for each individual missile.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNapalmWar",
+    "name": "Napalm Warheads",
+    "desc": "All of your Attacks gain Flaming",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modPenetrating",
+    "name": "Penetrating Rounds",
+    "desc": "If an Ordnance has Hypersonic, it gains Penetrating (Light). If it already had Penetrating (Light), it gans Dangerous and becomes Penetrating (Strong). If it already had Dangerous, it gains Burst (Small).",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modAFCS",
+    "name": "Additional Fire Control System",
+    "desc": "Whenever you would lose Overwatch to make an Attack, spend a G-res, do not lose Overwatch",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modPolishIRST",
+    "name": "Polished IRST",
+    "desc": "Ignore your first Temper",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modUpdatedAlg",
+    "name": "Updated Algorithms",
+    "desc": "Ignore your first Nerve",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modRWR",
+    "name": "RWR Overlay",
+    "desc": "Ignore your first Reflex",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modReclinedSeat",
+    "name": "Reclined Seat",
+    "desc": "Ignore your first GRES",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modIPC",
+    "name": "Improved Pylon Connection",
+    "desc": "If your Ordnance has Ranged, remove Ranged",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modReconCam",
+    "name": "Recon Camera",
+    "desc": "Requires Multicrew. Gain a free use of Pay the Devil. Exhaust.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modReverseSweep",
+    "name": "Reverse Sweep Wings",
+    "desc": "Add reverse sweep wings to your plane. It gains +1 Manu, Gain High-Strung, -1 CAP",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": 1,
+      "CAP": -1
+    },
+    "AddTags": [
+      "acHSTRUNG"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modShapedCharge",
+    "name": "Shaped Charge",
+    "desc": "Your Ordnance gains Penetrating. If it already had Penetrating, it gains Dangerous.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modSmokeBombs",
+    "name": "Smoke bombs",
+    "desc": "Your Ordnance gains Smokey",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modOverload",
+    "name": "Overloaded Pylons",
+    "desc": "You've mastered the way of loading planes. Your plane gains +4CAP, -1 manu, -1 speed",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": -1,
+      "Speed": -1,
+      "CAP": 4
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modTargetingDirector",
+    "name": "Targeting Control Director",
+    "desc": "Whenever you gain Overwatch you may spend 1 temper to gain a stack of Lock On",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modArtemis",
+    "name": "Artemis IRST",
+    "desc": "Gain +1 Temper",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Temper": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modML",
+    "name": "Machine Learning",
+    "desc": "Gain +1 Nerve",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Nerve": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modMAWS",
+    "name": "Improved MAWS",
+    "desc": "Gain +1 Reflex",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Reflex": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modOtto",
+    "name": "Built in Ottoman",
+    "desc": "Gain +1 G-Res",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "GRes": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modVTOLEngine",
+    "name": "VTOL Engine",
+    "desc": "Add a VTOL engine to your plane. It gains VTOL",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": [
+      "acVTOL"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modVariableInt",
+    "name": "Variable Intakes",
+    "desc": "Using modern aircraft construction methods, you replace your plane's intakes. If your plane has Subsonic, ignore this tag.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modWindTunn",
+    "name": "Wind Tunnel Optimised Weaponry",
+    "desc": "While in OW, spend a Reflex, gain Closure",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modSRA",
+    "name": "Secondary Reception Antenna",
+    "desc": "If your Ordnance has Guided, give it Designate",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  }
+]

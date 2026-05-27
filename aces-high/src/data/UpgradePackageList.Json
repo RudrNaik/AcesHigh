@@ -1,0 +1,377 @@
+[
+  {
+    "id": "upExample",
+    "name": "\"Example Upgrade\"",
+    "desc": "\"Example Upgrade Description Goes Here\"",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNone",
+    "name": "No Upgrade Pack",
+    "desc": "No Upgrade Pack Selected",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upCharlie",
+    "name": "Charlie Don't Surf",
+    "desc": "Gain +2 Capacity. If the planes name currently ends in A, then it also gains +2 A2A. It now ends in C.\n",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 2,
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upCharlieC",
+    "name": "Charlie Don't Surf C Version",
+    "desc": "Gain +2 Capacity. If the planes name currently ends in A, then it also gains +2 A2A. It now ends in C.\n",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": "End",
+    "charChecked": "A"
+  },
+  {
+    "id": "upSlam",
+    "name": "Slam Package",
+    "desc": "Convert any aircraft into a Strike Craft. If it is already a Strike Craft, gain +1 Survivability and +1 A2G.",
+    "IntrinsicMod": null,
+    "TypeMod": "Strike",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upSlamStrike",
+    "name": "Slam Package Strike version",
+    "desc": "Convert any aircraft into a Strike Craft. If it is already a Strike Craft, gain +1 Survivability and +1 A2G.",
+    "IntrinsicMod": null,
+    "TypeMod": "Strike",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1,
+      "Surv": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upXC",
+    "name": "X Package C",
+    "desc": "If a plane ends in E, gain +1 A2A, +2 Capacity, and +1 Survivability. If it ends in C, gain +2 Survivability and +2 A2A. Then add an X to the end of its name.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 2,
+      "Surv": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upXE",
+    "name": "X Package E",
+    "desc": "If a plane ends in E, gain +1 A2A, +2 Capacity, and +1 Survivability. If it ends in C, gain +2 Survivability and +2 A2A. Then add an X to the end of its name.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "Surv": 1,
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upKai",
+    "name": "EJ-Kai Package",
+    "desc": "Gain AOA and Multicrew. If you already had one, gain +1 A2A. If you had both, gain +1 A2A and +1 A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": [
+      "acAOA",
+      "acMCREW"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upKai1Tag",
+    "name": "EJ-Kai Package with one tag",
+    "desc": "Gain AOA and Multicrew. If you already had one, gain +1 A2A. If you had both, gain +1 A2A and +1 A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1
+    },
+    "AddTags": [
+      "acAOA",
+      "acMCREW"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upKai2Tag",
+    "name": "EJ-Kai Package with both tags",
+    "desc": "Gain AOA and Multicrew. If you already had one, gain +1 A2A. If you had both, gain +1 A2A and +1 A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "A2G": 1
+    },
+    "AddTags": [
+      "acAOA",
+      "acMCREW"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upVerusa",
+    "name": "Verusan Upgrade Scheme",
+    "desc": "Change intrinsic to Not Just a Flanker. Change plane designation to J-",
+    "IntrinsicMod": "intrNJAF",
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "up33",
+    "name": "33 Package",
+    "desc": "Gain Navalised and +1 Surv",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": 1
+    },
+    "AddTags": [
+      "acNAVAL"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upSM",
+    "name": "SM Package",
+    "desc": "Gain +2 Capacity. Additionally: If you're in a Flanker gain +1A2A. If you have Not Just a Flanker, gain +1 Speed but lose -1A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upSMFlank",
+    "name": "SM Package Flanker",
+    "desc": "Gain +2 Capacity. Additionally: If you're in a Flanker gain +1A2A. If you have Not Just a Flanker, gain +1 Speed but lose -1A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upSMNJAF",
+    "name": "SM Package Not Just a Flanker",
+    "desc": "Gain +2 Capacity. Additionally: If you're in a Flanker gain +1A2A. If you have Not Just a Flanker, gain +1 Speed but lose -1A2G",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upSM2",
+    "name": "SM2 Package",
+    "desc": "SM2 Package: Gain +1 Survivability, +1 Manu.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": 1,
+      "Surv": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upStalker",
+    "name": "Stalker Package",
+    "desc": "Add two crew members to your plane, turn it into an EWO, lose -1 cap and -1 surv",
+    "IntrinsicMod": null,
+    "TypeMod": "EWO",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": -1,
+      "CAP": -1
+    },
+    "AddTags": [
+      "acMCREW"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upMewler",
+    "name": "Mewler Package",
+    "desc": "Add an EWO to your plane, turn your plane into an EWO and gain Multicrew",
+    "IntrinsicMod": null,
+    "TypeMod": "EWO",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": [
+      "acMCREW"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upFox",
+    "name": "Foxy Lady Package",
+    "desc": "Add a WSO. Gain Multicrew, +1 A2G and Targeting Equipment",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": "upTarget",
+    "mods": {
+      "A2G": 1
+    },
+    "AddTags": [
+      "acMCREW"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upMPack",
+    "name": "M Package",
+    "desc": "Liz if you make this name dependent again I will kill you",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upChasing",
+    "name": "Chasing The Wind Package",
+    "desc": "Gain +1 Survivability. If the plane's name currently ends in A, then it also gains +1 A2G. It now ends in C.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upChasingA",
+    "name": "Chasing The Wind Package A Version",
+    "desc": "Gain +1 Survivability. If the plane's name currently ends in A, then it also gains +1 A2G. It now ends in C.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1,
+      "Surv": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upBGBooze",
+    "name": "Vodka Pack",
+    "desc": "Take a -1 to A2A, A2G, and Survivability. At the end of each mission you go on, gain 20RP as you siphon your avionic's alcoholic coolant to sell to your mates.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": -1,
+      "A2G": -1,
+      "Surv": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  }
+]
