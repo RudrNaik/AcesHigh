@@ -1,0 +1,12 @@
+[
+    {
+        "id": "example",
+        "name": "example",
+        "desc": "example description"
+    },
+    {
+        "id": "modTarget",
+        "name": "Targeting Equipment",
+        "desc": "Can be used to help allies with Designated weaponry"
+    }
+]

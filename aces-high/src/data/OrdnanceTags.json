@@ -1,5 +1,10 @@
 [
     {
+        "id": "example",
+        "name": "name",
+        "desc": "example description"
+    },
+    {
         "id": "ordAG",
         "name": "agnostic",
         "desc": "These weapons can be used against both A2A and A2G targets."
