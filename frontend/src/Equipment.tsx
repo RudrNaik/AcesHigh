@@ -1,13 +1,28 @@
-function MissingPage() {
+import Panel from "./components/menu/TerminalPanel";
+
+function EquipmentMenu() {
   return (
-    <div
-      className="w-full min-h-screen"
-    >
-      <div className="py-30"></div>
-      
-      <div className="py-20"></div>
+    <div className="w-full h-fill min-h-screen text-cyan-100">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+        <div className="flex flex-col space-y-3">
+          <Panel
+            title="Airframes"
+            subtitle="Aircraft Repository"
+            link="/equipment/airframes"
+            icon=""
+          />
+          <Panel
+            title="Munitions"
+            subtitle="Ordnance repository"
+            link="*"
+            icon=""
+          />
+          <Panel title="Tags" subtitle="Descriptors" link="*" icon="" />
+          <div className="py-20"></div>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default MissingPage;
+export default EquipmentMenu;

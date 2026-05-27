@@ -1,6 +1,6 @@
 function Background() {
   return (
-    <div className="absolute inset-0 -z-10 bg-[#020611]">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#020611]">
       {/* Base */}
       <div
         className="
@@ -19,10 +19,11 @@ function Background() {
           opacity-[0.4]
           bg-[radial-gradient(rgba(180,220,255,0.35)_1px,transparent_1px)]
           bg-size-[22px_22px]
+          animate-[gridMove_20s_linear_infinite]
         "
       />
-    
-     {/* Glow */}
+
+      {/* Glow */}
       <div
         className="
           absolute
@@ -36,7 +37,6 @@ function Background() {
         "
       />
 
-
       {/* Vignette */}
       <div
         className="
@@ -44,7 +44,6 @@ function Background() {
           bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.75)_100%)]
         "
       />
-      
     </div>
   );
 }

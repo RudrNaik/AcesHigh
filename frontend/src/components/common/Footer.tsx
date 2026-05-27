@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import icon from "../../assets/AH_Logo.png"
+import icon from "../../assets/aces_high_logo_wordmark.svg"
 
 
 const Footer = () => {

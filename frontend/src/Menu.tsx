@@ -78,7 +78,7 @@ function TerminalPage() {
                 subtitle="Equipment Database"
                 icon="✱"
                 onHover={handleHover}
-                link="/Equipment"
+                link="/equipment"
               />
             </motion.div>
 

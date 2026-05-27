@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import icon from "../../assets/AH_Logo.png"
+import icon from "../../assets/aces_high_logo.svg"
 
 
 const Navbar = ({}) => {
@@ -41,7 +41,7 @@ const Navbar = ({}) => {
       <div
         className="flex items-center relative w-full font-mono"
       >
-        <img src={icon} alt="Logo" className="h-20 pl-5 pb-2" />
+        <img src={icon} alt="Logo" className="h-20 pl-5 py-2" />
 
         {/* Normal Navigation Links for desktop, hides when less than md in size. */}
         <ul className="hidden md:flex space-x-6 pl-5 py-8 font-mono">
