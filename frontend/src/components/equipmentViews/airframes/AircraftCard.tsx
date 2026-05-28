@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useState } from "react";
 import intrinsics from "../../../data/IntrinsicList.json";
 import tagsData from "../../../data/AircraftTags.json";
 import families from "../../../data/AircraftFamilies.json";
@@ -17,9 +18,19 @@ interface AircraftCardProps {
   intrinsic?: string;
 }
 
+function getAircraftTagValue(tagId: string, count: number) {
+  switch (tagId) {
+    case "acMCREW":
+      return count * 2;
+
+    default:
+      return count;
+  }
+}
+
 function AircraftCard(aircraft: AircraftCardProps) {
   const stats = Object.entries(aircraft?.stats ?? {}) as [string, ReactNode][];
-
+  const [activeTag, setActiveTag] = useState<string | null>(null);
   const tags = Array.isArray(aircraft.tags)
     ? aircraft.tags
     : aircraft.tags
@@ -32,7 +43,15 @@ function AircraftCard(aircraft: AircraftCardProps) {
     (intrinsic) => intrinsic.id === aircraft.intrinsic,
   );
 
-  const tagData = tags.map((tagId) => tagsData.find((tag) => tag.id === tagId));
+  const tagCounts = (tags ?? []).reduce(
+    (acc, tagId) => {
+      acc[tagId] = (acc[tagId] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
+
+  const tagEntries = Object.entries(tagCounts);
 
   return (
     <section
@@ -118,21 +137,79 @@ function AircraftCard(aircraft: AircraftCardProps) {
         <div className="mt-2">
           <div className="text-xs tracking-wide text-cyan-100 mb-1">Tags:</div>
           <div className="flex flex-wrap gap-2">
-            {tagData.map((tagData, index) => (
-              <div
-                key={index}
-                className="
-                  text-xs
-                  px-2 py-1
-                  border border-cyan-100/90
-                 text-cyan-100
-                  transition
-                  cursor-pointer
-                "
-              >
-                {tagData?.name ?? "UNKNOWN TAG"}
+            {tagEntries.length > 0 && (
+              <div className="mt-2">
+                <div className="text-xs tracking-wide text-cyan-100 mb-1">
+                  Tags:
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {tagEntries.map(([tagId, count]) => {
+                    const tag = tagsData.find((t) => t.id === tagId);
+                    if (!tag) return null;
+
+                    const isActive = activeTag === tag.id;
+
+                    const scaledValue = getAircraftTagValue(tag.id, count);
+
+                    const label =
+                      scaledValue > 1
+                        ? `${tag.name} x${scaledValue}`
+                        : tag.name;
+
+                    const tooltip = tag.desc.includes("[x]")
+                      ? tag.desc.replace(/\[x\]/g, `${scaledValue}`)
+                      : scaledValue > 1
+                        ? `${tag.desc} x${scaledValue}`
+                        : tag.desc;
+
+                    return (
+                      <div
+                        key={`${aircraft.id}-${tag.id}`}
+                        onMouseEnter={() => setActiveTag(tag.id)}
+                        onMouseLeave={() => setActiveTag(null)}
+                        onClick={() => setActiveTag(isActive ? null : tag.id)}
+                        className="
+                            relative
+                            text-xs
+                            px-2 py-1
+                            border border-cyan-100/90
+                          text-cyan-100
+                            cursor-pointer
+                            transition
+                           hover:bg-cyan-100/10
+                            "
+                      >
+                        {/* Label */}
+                        <span>{label}</span>
+
+                        {/* Tooltip */}
+                        {isActive && (
+                          <div
+                            className="
+                            absolute
+                            z-50
+                            left-0
+                            top-full
+                            mt-2
+                            w-64
+                          bg-black/90
+                            border border-cyan-100
+                            p-3
+                            text-xs text-cyan-100
+                            shadow-lg
+                            whitespace-pre-line
+                            "
+                          >
+                            {tooltip}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            ))}
+            )}
           </div>
         </div>
       )}

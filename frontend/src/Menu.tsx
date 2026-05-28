@@ -5,7 +5,8 @@ import TerminalPanel from "./components/menu/TerminalPanel";
 import TerminalFeed from "./components/menu/TerminalFeed";
 
 const something: string[] = [
-  ">This is a test message to ensure the menu is working as intended."
+  ">This is a test message to ensure the menu is working as intended.",
+  ">Eyes up pilot."
 ];
 
 const randomNum = Math.floor(Math.random() * something.length);
@@ -17,7 +18,7 @@ const bootLines: string[] = [
   "",
   something[randomNum],
   "",
-  ">[CALLI.OS ::/] System Baked. Ready.",
+  ">[GCOS ::/] System Baked. Ready.",
 ];
 
 
@@ -54,7 +55,7 @@ function TerminalPage() {
     setLogs((prev) => [
       ...prev.slice(-28),
       `$ ${path}`,
-      `>[CALLI.OS::/] ${description}`,
+      `>[GCOS::/] ${description}`,
     ]);
   };
 

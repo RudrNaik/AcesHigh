@@ -78,7 +78,7 @@
     "name": "MLAG4",
     "domain": "A2G",
     "desc": "n/a",
-    "tags": ["ordMLTI4"]
+    "tags": ["ordMLTI", "ordMLTI"]
   },
   {
     "id": "ordFAEB",
@@ -247,7 +247,7 @@
     "name": "MLAA4",
     "domain": "A2A",
     "desc": "n/a",
-    "tags": ["ordMLTI4"]
+    "tags": ["ordMLTI", "ordMLTI"]
   },
   {
     "id": "ordMPSAAM",

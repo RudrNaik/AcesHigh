@@ -15,26 +15,6 @@ const Footer = () => {
                     style={{ height: "200px" }}
                 />
 
-                {/* Socials */}
-                <div className="flex justify-center gap-6 mb-6">
-                    <a
-                        href="*"
-                        className="hover:bg-cyan-400 text-sm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Twitter
-                    </a>
-                    <a
-                        href="*"
-                        className="hover:bg-cyan-400 text-sm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Cara
-                    </a>
-                </div>
-
                 {/* Navigation Links */}
                 <div className="flex flex-wrap justify-center gap-4 mb-6 uppercase text-sm">
                     <Link to="/" className="hover:underline">MAIN MENU</Link>

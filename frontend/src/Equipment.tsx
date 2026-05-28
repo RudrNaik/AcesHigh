@@ -14,7 +14,7 @@ function EquipmentMenu() {
           <Panel
             title="Munitions"
             subtitle="Ordnance repository"
-            link="*"
+            link="/equipment/ordnance"
             icon=""
           />
           <Panel title="Tags" subtitle="Descriptors" link="*" icon="" />

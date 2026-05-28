@@ -155,14 +155,9 @@
         "desc": "Ignore the first 2 Capacity expenditures when using these weapons."
     },
     {
-        "id": "ordMLTI4",
-        "name": "multilock 4",
-        "desc": "Multilock 4: Costs +1 Energy and Cap per 2 targets targetted to use, but hits 4 targets from the same die roll. They gain no benefits on a Perfect."
-    },
-    {
         "id": "ordMLTI",
-        "name": "multilock 2",
-        "desc": "Multilock 2: Costs +1 Energy and Cap per 2 targets targetted to use, but hits 2 targets from the same die roll. They gain no benefits on a Perfect."
+        "name": "multilock",
+        "desc": "Multilock [x]: Costs +1 Energy and Cap per [x] targets targetted to use, but hits [x] targets from the same die roll. They gain no benefits on a Perfect."
     },
     {
         "id": "ordPENLight",
