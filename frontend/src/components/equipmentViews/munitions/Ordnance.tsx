@@ -17,13 +17,6 @@ function Ordnance() {
     })
 
     .filter((ordnance) => {
-      if (ordnance.id === "exampleManu") return false;
-      if (ordnance.id === "ordNone") return false;
-
-      return true;
-    })
-
-    .filter((ordnance) => {
       if (selectedDomain === "ALL") return true;
 
       return ordnance.domain === selectedDomain;
