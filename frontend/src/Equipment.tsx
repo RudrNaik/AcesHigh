@@ -17,6 +17,12 @@ function EquipmentMenu() {
             link="/equipment/ordnance"
             icon=""
           />
+          <Panel
+            title="Mods"
+            subtitle="Modification repository"
+            link="/equipment/mods"
+            icon=""
+          />
           <Panel title="Tags" subtitle="Descriptors" link="*" icon="" />
           <div className="py-20"></div>
         </div>

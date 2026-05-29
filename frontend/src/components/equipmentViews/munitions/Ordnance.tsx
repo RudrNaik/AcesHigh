@@ -57,7 +57,7 @@ function Ordnance() {
           FILTERS
         </button>
       )}
-
+        
       <div className="flex gap-6">
         <OrdnanceSidebar
           selectedDomain={selectedDomain}
