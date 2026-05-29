@@ -22,6 +22,7 @@ function MenuRouter() {
           <Route path="/" element={<Menu />} />
           <Route path="*" element={<MissingPage/>}/>
           <Route path="/InDev" element={<InDev/>}/>
+          <Route path="/about" element={<InDev/>}/>
           <Route path="/equipment" element={<Equipment/>}/>
           <Route path="/equipment/airframes" element={<Airframes/>}/>
           <Route path="/equipment/ordnance" element={<Ordnance/>}/>
