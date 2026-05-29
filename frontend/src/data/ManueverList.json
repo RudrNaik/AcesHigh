@@ -1,0 +1,2883 @@
+[
+  {
+    "id": "exampleManu",
+    "name": "Example Manuever",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-6",
+    "tags": "n/a",
+    "desc": "An example manuever"
+  },
+  {
+    "id": "manuExampleTech",
+    "name": "Example Family Manu",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "7",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "rmJTE",
+    "name": "Jettison the Excess",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": [
+      "manuRoleM"
+    ],
+    "desc": "Reset your Energy to its start of combat value (usually Speed + 5). Exhaust."
+  },
+  {
+    "id": "rmAF",
+    "name": "Alley Fighter",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": [
+      "manuRoleI"
+    ],
+    "desc": "Until the start of your next turn, every time you spend 4 total Energy, Gain Snapshot. Exhaust."
+  },
+  {
+    "id": "rmI",
+    "name": "Interdiction",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "5",
+    "tags": [
+      "manuRoleS"
+    ],
+    "desc": "Spend 5 Energy. Gain Snapshot; it\u2019s a perfect success."
+  },
+  {
+    "id": "rmAJ",
+    "name": "Ally Jam",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": [
+      "manuRoleE"
+    ],
+    "desc": "Choose up to two allies. They gain Lock-On."
+  },
+  {
+    "id": "rmEJ",
+    "name": "Enemy Jam",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": [
+      "manuRoleE"
+    ],
+    "desc": "Choose one. Fatigue the option you chose.\nChoose a target. They can\u2019t spend Capacity until the end of their next turn.\n\nChoose a target. Increase the Escalation cost for their next action by your A2A if air or A2G if ground. \n\nChoose an ally. They gain {Mitigate}, {Mitigate}."
+  },
+  {
+    "id": "manuPOSBrake",
+    "name": "Hit the Brakes",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Gain 0 Energy."
+  },
+  {
+    "id": "manuPOSFlyStr",
+    "name": "Fly Straight",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-4",
+    "tags": "n/a",
+    "desc": "Gain 4 Energy."
+  },
+  {
+    "id": "manuPOSFullThrot",
+    "name": "Full Throttle",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-7",
+    "tags": "n/a",
+    "desc": "Gain 7 Energy. Fatigue."
+  },
+  {
+    "id": "manuPOSBnZ",
+    "name": "Boom And Zoom",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-3",
+    "tags": "n/a",
+    "desc": "Gain 3 Energy. Gain 1 Energy at the start of your next turn for a number of turns equal to your Speed."
+  },
+  {
+    "id": "manuPOSEaRF",
+    "name": "Enter a Rate Fight",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-2",
+    "tags": "n/a",
+    "desc": "Gain 2 Energy. Gain Closure a number of times equal to your Maneuverability."
+  },
+  {
+    "id": "manuPOSRepo",
+    "name": "Reposition",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-2",
+    "tags": "n/a",
+    "desc": "Gain 2 Energy. Change your Zone."
+  },
+  {
+    "id": "manuPOSWithdraw",
+    "name": "Withdraw",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "X",
+    "tags": "n/a",
+    "desc": "Spend Energy down to your stall and retreat back to base. If you\u2019re resupplying, you return to the fight in 7 turns, minus the Energy spent (minimum 1 turn.)"
+  },
+  {
+    "id": "manuExSnapshot",
+    "name": "Snapshot",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Exhaust",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Make an Attack."
+  },
+  {
+    "id": "manuExClosure",
+    "name": "Closure",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Exhaust",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Discount your next Maneuver by 1 Energy."
+  },
+  {
+    "id": "manuExDive",
+    "name": "Dive",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Exhaust",
+    "engCost": "-3",
+    "tags": "n/a",
+    "desc": "Gain 3 Energy. Lose -1 Manu this turn."
+  },
+  {
+    "id": "manuExCatch",
+    "name": "Catch",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Exhaust",
+    "engCost": "-3",
+    "tags": "n/a",
+    "desc": "Gain 3 Energy."
+  },
+  {
+    "id": "manuExLockOn",
+    "name": "Lock On",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Exhaust",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Gain +1 Forward."
+  },
+  {
+    "id": "manuExMeld",
+    "name": "Meld",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever, gain {Advantage}."
+  },
+  {
+    "id": "manuPtD",
+    "name": "Pay the Devil",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Spend a Coin and choose one: \nWhenever you make any check and after you know the result, you may reroll and pick either result. \n\nWhenever, gain a hint about the current situation."
+  },
+  {
+    "id": "manuMaxE",
+    "name": "Maximum Exertion",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Reroll a d6. Escalate."
+  },
+  {
+    "id": "manuLockIn",
+    "name": "Lock In",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Add Capacity to your next pilot stat roll."
+  },
+  {
+    "id": "manuFlyDang",
+    "name": "Fly Dangerously",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain Catch. Escalate."
+  },
+  {
+    "id": "manuPullLead",
+    "name": "Pull Lead",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain Lock On at the start of your next turn."
+  },
+  {
+    "id": "manuDrawFire",
+    "name": "Draw Fire",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Choose a target. Gain {Locked}, grant an Ally Catch."
+  },
+  {
+    "id": "manuMIP",
+    "name": "Maneuver Into Position",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Spend a Temper. Gain one extra Reaction Maneuver this round."
+  },
+  {
+    "id": "manuOverwatch",
+    "name": "Overwatch",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Spend a Nerve. Gain {Overwatch}. \n{Overwatch}: Choose a target. Until the start of your next turn, whenever that target Faces Consequences, you may lose {Overwatch} to make an Attack."
+  },
+  {
+    "id": "manuBait",
+    "name": "Bait",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Spend X Reaction. Choose X enemy targets. On their next turn, at least one action has to target you."
+  },
+  {
+    "id": "manuHighG",
+    "name": "High-G Turn",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Whenever, Spend a G-Res. Negate. Fatigue."
+  },
+  {
+    "id": "manuZC",
+    "name": "Zoom Climb",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain Dive. Lose -1 Speed until you Exhaust it."
+  },
+  {
+    "id": "manuFlyDef",
+    "name": "Fly Defensively",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain {Mitigate}."
+  },
+  {
+    "id": "manuFlareD",
+    "name": "Flare Dump",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Defeat."
+  },
+  {
+    "id": "manuShoot",
+    "name": "Shoot",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Make an Attack."
+  },
+  {
+    "id": "manuJoust",
+    "name": "Joust",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
+  },
+  {
+    "id": "manuCobra",
+    "name": "Cobra",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "X",
+    "tags": "n/a",
+    "desc": "Gain +X Forward, then Escalate. Escalate again if X is greater than 4."
+  },
+  {
+    "id": "manuEyesOpen",
+    "name": "Eyes Open",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "X",
+    "tags": "n/a",
+    "desc": "You try to do something outside of a traditional maneuver, or there are special circumstances such as you lining up a shot down a tunnel \u2013 your AWACS will tell you the Energy Cost and any additional costs, such as a Pilot Stat Check."
+  },
+  {
+    "id": "manuAPOSSpin",
+    "name": "Spin to Win",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "Positioning",
+    "engCost": "-2",
+    "tags": "n/a",
+    "desc": "Gain 2 Energy. Add your Maneuverability to your Maneuver limit and ignore MAP this turn.\n\nExhaust."
+  },
+  {
+    "id": "manuAPOSSpdSpr",
+    "name": "Speed Spree",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Choose one for each point of Speed. \nGain Snapshot. Lose 1 Energy.\n\nAdd your Speed to your next [ATTACK].\n\nGain 2 Energy. Lose 1 Manu or Speed.\n\nGain {Mitigate}.\n\nGain an XP. Burn 1 Survivability\n\nExhaust."
+  },
+  {
+    "id": "manuAPreflare",
+    "name": "Preflare",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "-1",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Gain Dazzle twice."
+  },
+  {
+    "id": "manuAExDazzle",
+    "name": "Dazzle",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "Exhaust",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Whenever, Negate."
+  },
+  {
+    "id": "manuABurner",
+    "name": "Afterburner On",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAYoYo",
+    "name": "Yo-Yo",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuABreak",
+    "name": "Break",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAPinning",
+    "name": "Pinning Shot",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAHighside",
+    "name": "High Side Pass",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuATurnfight",
+    "name": "Turnfight",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAFormFli",
+    "name": "Formation Flight",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAHerbst",
+    "name": "Herbst Maneuver",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAKulbit",
+    "name": "Kulbit",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAKESlide",
+    "name": "Knife-Edge Slide",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuABell",
+    "name": "Kvochur\u2019s Bell",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuANotch",
+    "name": "Notch",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuADespBait",
+    "name": "Desperate Bait",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAImmel",
+    "name": "Immelman",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuADefensiveTurn",
+    "name": "Defensive Turn",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuAFlatSciss",
+    "name": "Flat Scissors",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuARollingSciss",
+    "name": "Rolling Scissors",
+    "isCommon": false,
+    "isAdvanced": true,
+    "type": "ManuType",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "manuZaslon",
+    "name": "Zaslon Array",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you Attack or Overwatch, give an Ally Snapshot. It ignores Jamming."
+  },
+  {
+    "id": "manuDataflow",
+    "name": "Dataflow Master",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[REACT - 2] Whenever you Attack, give an Ally Lock On. If this attack is a Snapshot, gain Lock On."
+  },
+  {
+    "id": "manuDLAWACS",
+    "name": "Datalink AWACS",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you Overwatch, either give one ally Meld or three allies Lock On."
+  },
+  {
+    "id": "manuBellToller",
+    "name": "Bell Toller",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "[ATTACK, MAP - 4] Make an Attack. The next AOA Maneuver you use gains Mitigate Consequences.  "
+  },
+  {
+    "id": "manuRFM",
+    "name": "Reverse-Firing Missiles",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[REACT, CAP, MAP - 2] Requires a Manuverable or Knife Weapon. Whenever you are threatened, you may make an attack against that threat. This does not take a Maneuver slot."
+  },
+  {
+    "id": "manuEyeChakra",
+    "name": "Eye of the Chakra",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever, use any AOA Maneuver. This Maneuver doesn't count towards your Maneuver limit.  Exhaust."
+  },
+  {
+    "id": "manuThreeStroke",
+    "name": "Three Strokes",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you Face Consequences from an AA site, you may spend a G-Res. If you do, Negate Consequences caused by an AA Source (SAMs, AA, CIWS), then flip a coin. On a tails, burn another G-Res and try again."
+  },
+  {
+    "id": "manuHHLL",
+    "name": "Higher Highs, Lower Lows",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you Jettison the Excess, choose one of [Interdiction] or [Alley Fighter]. You gain its effects until the start of your next turn. "
+  },
+  {
+    "id": "manuRedGlint",
+    "name": "Red Glint",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Gain [MANU] Energy. Then, spend a G-Resist; for the rest of your turn, your Manuverability is equal to your G-Resist. Exhaust."
+  },
+  {
+    "id": "manuBadWeather",
+    "name": "Bad Weather Inbound",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Notice bad weather on the horizon. This will have consequences on the current operation (it may increase the Current Escalation or make targetting harder, for example). All of your Positioning Maneuvers gain \"Gain Lock On\"."
+  },
+  {
+    "id": "manuRiot",
+    "name": "Riot Against the Orders",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Ignore AWACS orders this round. Gain Meld and Closure, but take Major Narrative Consequences."
+  },
+  {
+    "id": "manuHighTurb",
+    "name": "High Turbulence",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[3] - Make a hard turn. You may spend any amount of G-Resist; for every 2 G-Resist spent, gain one extra Reaction Maneuver this turn. This Maneuver doesn't count towards your Maneuver limit. "
+  },
+  {
+    "id": "manuKraken",
+    "name": "Kraken",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "[ATTACK - 4] Make an Attack against up to four targets, but apply MAP. If you choose three or more targets, make the roll with Disadvantage instead. "
+  },
+  {
+    "id": "manuSelkie",
+    "name": "Selkie Hunter",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[CAP(1), MAP - 1] Requires targeting a Naval target or an aircraft tagged with Naval. Make an Attack."
+  },
+  {
+    "id": "manuRiflescope",
+    "name": "Riflescope Math",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[2] Spend a Temper and/or Nerve. Gain a Minor Narrative Boon; if you spent both, upgrade it. Exhaust."
+  },
+  {
+    "id": "manuBirdbrain",
+    "name": "Birdbrain",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[CAP(1) - 1] Make an Attack. You don't choose the target. Gain +1 Manu until the end of your next turn. Exhaust."
+  },
+  {
+    "id": "manuShedding",
+    "name": "Shedding Pounds from the Air to the Ground",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "[POS, CAP(3)] Gain +1 Manuverability for the rest of the mission; gain a Guaranteed Mixed Success Snapshot."
+  },
+  {
+    "id": "manuBuddyFlare",
+    "name": "Buddy Flares",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[CAP, REACT - 1] Whenever an ally Faces Consequences, you may Mitigate them. If you do, you face them instead."
+  },
+  {
+    "id": "manuNoseOnHim",
+    "name": "Put the Nose On Him",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[POS] Lose 3 Energy. Gain Lock on and Snapshot (A2A)."
+  },
+  {
+    "id": "manuTightFit",
+    "name": "Tight Fit",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you make a Check to fly in a confined space, recover a Pilot Stat. Comment on the small size of your plane."
+  },
+  {
+    "id": "manuWeekendWarrior",
+    "name": "Week-end Warrior",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "[POS] Requires having used both of your Downtime Activities prior to this mission. Gain Snapshot if you lament wanting to return to base to go home; spend a Temper to Gain Lock On, spend a Nerve to gain Closure."
+  },
+  {
+    "id": "manuVIFF",
+    "name": "VIFF",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "[POS] Gain [MANU] Energy, then add your Speed to your Manuverability for the rest of this turn. At the beginning of your next turn, set one of them to -1 until the start of your next turn."
+  },
+  {
+    "id": "manuFullThrustForward",
+    "name": "Full Thrust Forward",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[POS] Spend a Survivability. Gain [SPEED + MANU] Energy."
+  },
+  {
+    "id": "manuMatador",
+    "name": "Matador",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever you Joust, if you do not Face further Consequences, you gain Closure."
+  },
+  {
+    "id": "manuHeartsMinds",
+    "name": "Hearts and Minds",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you don't use Ordnance to support a ground target by attacking, you may spend a Reaction. When you do, the AWACS holds a Minor Narrative Boon for those ground troops and you deal 1 extra damage to your target."
+  },
+  {
+    "id": "manuJustice",
+    "name": "Justice and Honor",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever you notice Dubious Ordnance in use, gain Snapshot against the user."
+  },
+  {
+    "id": "manuBurning",
+    "name": "Burning Daylight",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[1] Gain [MANU] Energy. The AWACS Holds a Move. Exhaust."
+  },
+  {
+    "id": "manuRollReversal",
+    "name": "Roll Reversal",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] You may set your Speed to -1 until the start of your next turn. Gain the difference in Manueverability, but roll Reaction. On a failed check, Face Major Consequences."
+  },
+  {
+    "id": "manuDemon",
+    "name": "Demon of the Sea's Straits",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "[REACT - 4] Whenever you successfully hitting an enemy over water, gain a Guaranteed Success Snapshot. Exhaust."
+  },
+  {
+    "id": "manuSkiesUnknown",
+    "name": "Skies Unknown",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Admire the colors of the sky; your next Eyes Open is free. Exhaust."
+  },
+  {
+    "id": "manuLawnDart",
+    "name": "Not a Lawn Dart",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[REACT - 2] Whenever you fail a Manuverability or G-Resist check, Mitigate."
+  },
+  {
+    "id": "manuLockheed",
+    "name": "Heeding Rusted Locks",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[1] The AWACS makes a Bargain with you. Exhaust."
+  },
+  {
+    "id": "manuHoldt",
+    "name": "Forgot to Holdt On",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Face Minor Consequences and lose something. The AWACS holds a Narrative Boon. Exhaust."
+  },
+  {
+    "id": "manuCCC",
+    "name": "Common Core Curriculum",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[REACT - 2] Whenever you spend a Capacity on a non-Ordnance expenditure, flip a coin. On a heads, recover it. You may only recover a total of three Capacity per mission this way. "
+  },
+  {
+    "id": "manuMPA",
+    "name": "Mission Probably Accomplished",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "5",
+    "tags": "n/a",
+    "desc": "[5] Declare the mission accomplished preemptively. Decrease the Current Escalation by two. Next turn, choose two between taking four Survivability Damage, Face Extreme Narrative Consequences, or increase the Current Escalation by three."
+  },
+  {
+    "id": "manuPeaceOfMind",
+    "name": "Peace of Mind",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Recover a Temper, Nerve, and Reaction. Exhaust. "
+  },
+  {
+    "id": "manuZenful",
+    "name": "Zenful Space",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever you or an ally gain a Narrative Boon, gain Lock On."
+  },
+  {
+    "id": "manuFlood",
+    "name": "The Great Flood",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-2",
+    "tags": "n/a",
+    "desc": "[POS] Gain 2 Energy. This turn, ignore MAP."
+  },
+  {
+    "id": "manuGuitar",
+    "name": "Guitar Solo",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "[POS] Gain a Minor Narrative Boon. You may Spend a Coin; if you do, upgrade it to a Major Narrative Boon. Exhaust."
+  },
+  {
+    "id": "manuUnchange",
+    "name": "Unchangable",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever, Negate a Malus. Exhaust."
+  },
+  {
+    "id": "manuTagHunt",
+    "name": "Tag Hunt",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "[POS] Whenever you give an ally an Exhaust Maneuver this turn, you gain it too."
+  },
+  {
+    "id": "manuPackwatch",
+    "name": "Packwatch",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[REACT - 2] Whenever an ally scores a kill, give them Closure or Lock On. You gain the other."
+  },
+  {
+    "id": "manuHounds",
+    "name": "Hound's Tooth",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "[ATTACK, MAP - 4] Make an Attack. Any ally who attacks that Target next round gains Lock-On. "
+  },
+  {
+    "id": "manuLiXingQing",
+    "name": "Li Xing Qing",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Accuse an enemy on open comms of being not who they say they are. If you're right, gain a Severe Narrative Boon; if you're not, gain Catch and Closure against them but face Minor Narrative Consequences. Exhaust."
+  },
+  {
+    "id": "manuRoundRobin",
+    "name": "Round Robin",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] Whenever you give an ally an Exhaust Maneuver this turn,\n- If you gave them Snapshot, Gain Closure.\n- If you gave them any other Maneuver, Gain Lock On. "
+  },
+  {
+    "id": "manuShowtime",
+    "name": "Showtime",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "-4",
+    "tags": "n/a",
+    "desc": "[POS] You can only use this Maneuver after scoring a kill this mission. Gain 4 Energy, then give an ally Closure. Exhaust."
+  },
+  {
+    "id": "manuPopUp",
+    "name": "Pop Up Shop",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you take Survivability Damage, gain 20 RP. Exhaust."
+  },
+  {
+    "id": "manuPicky",
+    "name": "Picky Eaters",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever you roll a Mixed Success, you may choose to Negate Consequences. If you do, you gain no benefits of the Success, but you also recover a Pilot Stat. Exhaust. "
+  },
+  {
+    "id": "manuFlocks",
+    "name": "Flocks of Them",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[POS] An Allied Flight of Fulcrums is nearby. Flip a Coin - on a tails, they call for aid, on a heads, you can call them for aid. Exhaust."
+  },
+  {
+    "id": "manuPanache",
+    "name": "Panache",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever you or an ally faces Narrative Consequences, you may sacrifice an Exhaust Maneuver you have. If you do, reduce the severity of the Consequences by one step."
+  },
+  {
+    "id": "manuOPR",
+    "name": "Opportune Parry-Riposte",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you gain a Boon, you may downgrade it and switch its kind (Mechanical to Narrative or vice versa)."
+  },
+  {
+    "id": "manuOldDog",
+    "name": "Old Dog, New Tricks",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "[REACT - 3] Whenever you use an Advanced Maneuver you haven't used yet this mission, gain a Minor Narrative Boon."
+  },
+  {
+    "id": "manuWhaler",
+    "name": "Whale Watching",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Whenever you use a Role Maneuver, give an Ally Lock On."
+  },
+  {
+    "id": "manuFamily",
+    "name": "Family Fun",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[0] Do something fun with your copilot(s). Face Minor Narrative Consequences, but Recover a Pilot Stat. Exhaust."
+  },
+  {
+    "id": "manuEyeOnThat",
+    "name": "Keep an Eye On That",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "[REACT - 2] Whenever you give an Ally Lock On, give them Lock On again. This Maneuver doesn\u2019t count towards your Maneuver limit. "
+  },
+  {
+    "id": "manuDoritoDrift",
+    "name": "Dorito Drifter",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Set your Speed to -1 until the end of your next turn. If you do, add your base Speed to your Manuverability."
+  },
+  {
+    "id": "manuAerobatic",
+    "name": "Deploy Aerobatic Smoke",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "[Cap - 2] Make a G-Res test, on a success gain stealth until your next attack."
+  },
+  {
+    "id": "manuBigFlare",
+    "name": "Big Flares",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": [
+      "manuCap2",
+      "manuDefend"
+    ],
+    "desc": "[CAP (2) REACT - 3] Defeat, Defeat."
+  },
+  {
+    "id": "manuCrossUp",
+    "name": "Cross Up",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "??? For every stack of Locked gain a stack of Lock On."
+  },
+  {
+    "id": "manuGAddict",
+    "name": "G-Addict",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Maneuverability check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
+  },
+  {
+    "id": "manuSpeedDemon",
+    "name": "Speed Demon",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Speed Check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
+  },
+  {
+    "id": "manuThroughIvy",
+    "name": "Through Ivy",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "X",
+    "tags": "n/a",
+    "desc": "Whenever you make a Speed Check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
+  },
+  {
+    "id": "manuITC",
+    "name": "Into Their Connection",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "You may spend a Reflex or Nerve; when you do, choose an enemy and gain information based on their tier. Your AWACS will tell you what this information gives you. You may use this any number of times per mission, but each time you do, roll 1d6. On a 6, they figure out someone is listening in and change the channel; Exhaust. This threshold is lowered for every additional use."
+  },
+  {
+    "id": "manuMatchstick",
+    "name": "Mach Matchstick",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Make a Speed Check. On a failure, take -1 to Maneuverability until the start of your next turn. On a Mixed, gain +1 Forward. On a Full Success or better, Mitigate."
+  },
+  {
+    "id": "manuDD",
+    "name": "Noticeable Rank",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever an ally would fail a Pilot Stat Check, you may spend a Reflex to let them reroll. Fatigue."
+  },
+  {
+    "id": "manuFavour",
+    "name": "Commander's Favour",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "Whenever you would spend a Capacity, you may instead not; when you do, take a Minor Narrative Consequence, for example having to explain yourself when you land to avoid losing the commander\u2019s favor. Exhaust."
+  },
+  {
+    "id": "manuWingComm",
+    "name": "Wing Commander",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "Give your flight an order. They all gain Lock-On, and if everyone follows it they additionally gain Closure and you get both benefits as well. Exhaust."
+  },
+  {
+    "id": "manuPressgang",
+    "name": "Pressganged Squadron",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you would fail a Temper or Nerve Check, start bitching instead; when you do, you may roll again. Flip a coin; on heads, you annoy your flightmates, on tails, Face a Major Narrative Consequence: you might get told to shut up or your Callsign may become Catty, for example. Exhaust."
+  },
+  {
+    "id": "manuGood",
+    "name": "Good Natured",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever the going gets tough, you may crack a joke or say something inspirational; when you do, roll 2d6. On a 10 or up, any ally may recover one Spent Stat Point if they describe how their character responds. On a 6 through 9, any ally may expend one Pilot Stat to restore another. On a 5 or lower, it falls flat, and you spend a Nerve in embarrassment. Exhaust."
+  },
+  {
+    "id": "manuBad",
+    "name": "Bad Natured",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Whenever, you may go on a villainous monologue on Open Comms; when you do, spend a Temper or Nerve and roll 2d6. On an 8 or higher, you succeed in trying to scare every enemy within communication distance, causing all allies to Gain Lock-On and Meld. On a 7 or lower, you fail to do so and take a Minor Narrative Consequence. Exhaust."
+  },
+  {
+    "id": "manuNCA",
+    "name": "Non-Critical Area",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "x",
+    "tags": "n/a",
+    "desc": "X is equal to 2 + the amount of stats you have at -1 (whether or not they were caused by Non-Critical Area). Spend a Reflex or Spend a Coin. Negate a Consequence. Set a Plane Stat to -1. If you\u2019ve used this perk this mission, if at any point all stats are -1, you run out of Reflex, or you Stall, you die."
+  },
+  {
+    "id": "manuLucky",
+    "name": "Born Lucky",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you roll 12 without any modifiers (that is, two sixes on the dice), you may count it as a Perfect Success or Recover a Luck Maneuver. Exhaust."
+  },
+  {
+    "id": "manuManufactured",
+    "name": "Manufactured Luck",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you roll over 13, you may spend a Nerve. If you do, Gain Meld or recover a [LUCK] Maneuver. Exhaust."
+  },
+  {
+    "id": "manuPerfectTempo",
+    "name": "Perfect Tempo",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you gain a third Perfect Success in one mission, recover two [LUCK] Maneuvers. Exhaust."
+  },
+  {
+    "id": "manuTemptingFate",
+    "name": "Tempting Fate",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you make a Check or attempt to Mitigate Consequences, spend a Reflex and flip a Coin. On a Heads, improve the results by one tier; on a tails, downgrade it by one tier but Recover a [LUCK] Maneuver. Exhaust."
+  },
+  {
+    "id": "manuBoldFavour",
+    "name": "Bold's Favour",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you Risk It after entering a Critical State, for any Coins that come up Tails, you may Burn them. This removes them from the result. Gain a guaranteed Perfect Success Snapshot for each burnt coin. Recover all Luck Maneuvers."
+  },
+  {
+    "id": "manuWhoDares",
+    "name": "Who Dares Wins",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Pilot Skill Check, you may wager an additional point of that stat. If you succeed on that check, recover that pilot stat, up to a maximum of 3. If you fail, lose two. Exhaust."
+  },
+  {
+    "id": "manuEagerEye",
+    "name": "Eager Eye",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you are on Overwatch, if an Ally would fail an [Attack], you may instead replace their Attack with yours. Lose {Overwatch}."
+  },
+  {
+    "id": "manuApproach",
+    "name": "Ace Approach",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Ace Type stat instead. This doesn\u2019t count as a Maneuver. Additionally, you may use the chosen stat instead of one other when you calculate your Stress track."
+  },
+  {
+    "id": "manuDefensive",
+    "name": "Ace Defensive",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Make that Pilot Stat Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+  },
+  {
+    "id": "manuStyle",
+    "name": "Ace Style",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you make an Attack, Spend that Pilot Stat and hit an additional target. Fatigue. "
+  },
+  {
+    "id": "manuAdaptability",
+    "name": "Ace Adaptability",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Replace one of your plane stats with the current value of the chosen Pilot Stat until the end of your turn. Fatigue. "
+  },
+  {
+    "id": "manuRollingThunder",
+    "name": "Rolling Thunder",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "X",
+    "tags": [
+      "manuORD"
+    ],
+    "desc": "Spend X Capacity and choose X ground targets close to each other. Make an Attack, use that roll result for all of them. Any of your targets that aren\u2019t destroyed must take an action to get out of cover when they next act. Exhaust."
+  },
+  {
+    "id": "manuStallion",
+    "name": "Stall-Out Stallion",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you do something tagged with [AOA], you may gain Snapshot."
+  },
+  {
+    "id": "manuHoldem",
+    "name": "Know When to Hold'em",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "Whenever you make a check, you may roll 1d6. If you rolled a 1 through 3, upgrade the success of that roll by 1 step. On a 4 or 5, do nothing. On a 6, downgrade the roll one step. Exhaust."
+  },
+  {
+    "id": "manuSoundOfSilence",
+    "name": "Sound of Silence",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": [
+      "manuCap2"
+    ],
+    "desc": "Choose any number of allies. They Gain Lock-On and Closure. Exhaust."
+  },
+  {
+    "id": "manuEagleEye",
+    "name": "Eagle Eye",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Whenever you make an Attack as part of Overwatch, you may choose to double your damage for that Attack against that target. Lose Overwatch."
+  },
+  {
+    "id": "manuAcroTac3",
+    "name": "Adagio [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you make an [Attack], you may Gain Snapshot. Fatigue."
+  },
+  {
+    "id": "manuAcroTac6",
+    "name": "Lion Tamer [ATTACK - 4]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": [
+      "manuAttack"
+    ],
+    "desc": "Make an Attack, targeting a noncritical area deliberately. Downgrade the Success of this Maneuver by one Step. On a Mixed Success or better, they may retreat or surrender. If they don\u2019t do either, your flight has to put them down instead \u2013 Exhaust this maneuver, but you and all your allies gain Snapshot. On a Failure or worse, Exhaust."
+  },
+  {
+    "id": "manuAirConTac1",
+    "name": "How about a show of force? [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Summon or retreat a squad of friendly ground to ground assets"
+  },
+  {
+    "id": "manuAirConTac2",
+    "name": "Keepin' 'em in line down there. [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Summon or retreat a squad of friendly air to ground assets."
+  },
+  {
+    "id": "manuAirConTac3",
+    "name": "Let's give 'em an air show. [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Summon or retreat a squad of friendly air to air assets."
+  },
+  {
+    "id": "manuAirConTac4",
+    "name": "I got my missile launcher right here. [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Summon or retreat a unit of friendly ground to air assets."
+  },
+  {
+    "id": "manuAirConTac5",
+    "name": "Stormbringer [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Summon a large bomber. Gain Snapshot, it can only be used to allow this asset to make an Attack this turn, as an additional cost, pay 100 RP."
+  },
+  {
+    "id": "manuAirConTac6",
+    "name": "Gonna be like new. [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Choose an already summoned Asset. They retreat from the mission, however, they return at the start of your next turn with 2 additional Combat Effectiveness. This cannot go over their maximum CE. Exhaust."
+  },
+  {
+    "id": "manuAirConTac7",
+    "name": "Prepared for signal distortion. [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Summon a group of balloon targets. Unless the enemies have some way of discovering their true nature, whenever you use Order Attack with this asset, treat it as Enemy Jam instead."
+  },
+  {
+    "id": "manuAmbushTac1",
+    "name": "Rattlesnake Eyes [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you would fail as a result of rolling Snake Eyes, you may gain a Guaranteed Perfect Success instead. Exhaust."
+  },
+  {
+    "id": "manuAmbushTac3",
+    "name": "Lyudmila\u2019s Legacy [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you destroy a target, you may gain 2 Energy."
+  },
+  {
+    "id": "manuAmbushTac4",
+    "name": "Katya and Lydia [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever an ally Faces Consequences from Baiting, you may gain Snapshot. Exhaust."
+  },
+  {
+    "id": "manuAmbushTac5",
+    "name": "Cutting Through Ivy [3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "At the start of your next turn, gain Snap Shot; it costs X and additionally says \u201cGain +1 to this maneuver a number of times equal to X. This Snap Shot counts as an Ambush Predator tactic and deals double damage.\u201d Exhaust."
+  },
+  {
+    "id": "manuAmbushTac6",
+    "name": "Signal to Attack [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "You and your allies gain Snapshot. It gains \u201cEscalate, Exhaust at the end of this turn if not used.\u201d Exhaust."
+  },
+  {
+    "id": "manuAmbushTac7",
+    "name": "Ghillied Up [X]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "X",
+    "tags": "n/a",
+    "desc": "Spend X Energy, where X is the [number of Exhausted Ambush Predator Tactics * 2], to Recover them all."
+  },
+  {
+    "id": "manuArchonTac2",
+    "name": "Nullification [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you Bait, you may gain {Mitigate}."
+  },
+  {
+    "id": "manuArchonTac4",
+    "name": "Shield Battery [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever, choose an Ally. They Gain {Shielded}. Fatigue."
+  },
+  {
+    "id": "manuArchonTac6",
+    "name": "Phase Disruption [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever an Ally loses {Shielded}, you may gain Snapshot. Fatigue."
+  },
+  {
+    "id": "manuBragTac1",
+    "name": "Influencer [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make an [Attack], you may explain your course of action and why it was probably the best. Any ally may Spend a Reflex to gain +1 Forward."
+  },
+  {
+    "id": "manuBragTac2",
+    "name": "Bark Over Bite [3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Choose an ally and an enemy target. That ally gains Meld against that target. If they Attack that target this turn, they gain a mental stress and you lose one. If they refuse, you gain a mental stress."
+  },
+  {
+    "id": "manuBragTac3",
+    "name": "Mental Tempest [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Get on open comms and try to start shit. Spend a Temper and a Nerve, but any ally may join in and gain +1 Forward when they do"
+  },
+  {
+    "id": "manuBragTac5",
+    "name": "Home on the Stage [POS, CAP(1)]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Gain 2 Energy. Whenever you Bait or Draw Fire this turn, increase your Speed or Maneuverability by 1 until the end of your next turn."
+  },
+  {
+    "id": "manuBragTac6",
+    "name": "Center of Attention [REACT, CAP(1) - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever you Draw Fire from your second target or above, you may Spend a Pilot Stat for each target beyond the first you Draw Fire from to ignore those stacks of Locked."
+  },
+  {
+    "id": "manuBragTac7",
+    "name": "Showing Your Guns [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you [Attack], you may Flip a Coin. On Heads, choose another Braggart Maneuver and perform it for free. On a Tails, Exhaust."
+  },
+  {
+    "id": "manuCloudTac1",
+    "name": "Aloof Parent [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Spend a Reflex. The next time you would make an [Attack] as a result of Overwatch, make two instead."
+  },
+  {
+    "id": "manuCloudTac2",
+    "name": "Good Vibes [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Spend a Temper and give a positive, happy-go-lucky comment. Your family may recover a Temper or Nerve. Exhaust"
+  },
+  {
+    "id": "manuCloudTac3",
+    "name": "Bright Smile [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Your smile fills your voice. Whenever a family member would Spend a Temper, you may instead. Fatigue."
+  },
+  {
+    "id": "manuCloudTac6",
+    "name": "Often in a Lifetime [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you Overwatch, if the turn would end without you making an [Attack] as a result of it, recover a Nerve."
+  },
+  {
+    "id": "manuCowTac2",
+    "name": "Warning Shot [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever, tick your Gunslinger die down by 1. Gain +1 Forward. If the Gunslinger die is at 0, you can\u2019t use this Maneuver."
+  },
+  {
+    "id": "manuCowTac3",
+    "name": "Quick Reload",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "Tick your Gunslinger die up by 1. Gain 1 Energy. If the Gunslinger die is at 6 or 0, you can\u2019t use this Maneuver."
+  },
+  {
+    "id": "manuCowTac4",
+    "name": "Fan the Hammer [X]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "X",
+    "tags": "n/a",
+    "desc": "Spend X Energy, where X is 2 * your current Gunslinger die value. Set the Gunslinger die to 0, gaining Snapshot a number of times equal to X; these Gain [MAP]."
+  },
+  {
+    "id": "manuCowTac6",
+    "name": "Tip your Hat [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Acknowledge an enemy action on open comms positively. Recover any pilot stat. Exhaust."
+  },
+  {
+    "id": "manuCowTac7",
+    "name": "Fast Draw [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you Joust, you may make a Reflex Check. If you succeed, gain +2 Forward."
+  },
+  {
+    "id": "manuDJTac1",
+    "name": "Diss Track [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Diss the enemy on Open Comms, then choose an ally to recover a Pilot Stat. Exhaust"
+  },
+  {
+    "id": "manuDJTac6",
+    "name": "Sound Suppression [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you Jam, or Overwatch, you may choose an enemy. The next attack against them has the effect of enemy jamming downgraded by one step."
+  },
+  {
+    "id": "manuDJTac7",
+    "name": "Priority Channel [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you give an Ally the benefits of a WAVE, you may give them the benefits of another. If you don\u2019t spend a Capacity, Exhaust."
+  },
+  {
+    "id": "manuDuelTac4",
+    "name": "Riposte [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you affect Consequences using a Reflex, you may gain Snapshot. Fatigue."
+  },
+  {
+    "id": "manuDuelTac6",
+    "name": "Hearts of Steel [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Whenever you would fail a pilot stat roll after Facing Consequences, reroll it. Exhaust."
+  },
+  {
+    "id": "manuDuelTac7",
+    "name": "Combat Patrol [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 2 Energy. This turn, you may use Joust whenever an Ally Faces Consequences, instead of just you."
+  },
+  {
+    "id": "manuFairyTac3",
+    "name": "Recovery Step [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever, if you have {Adagio}, recover 1 of any Pilot Stat. If you have {Allegro, recover a Capacity. Exhaust."
+  },
+  {
+    "id": "manuFairyTac4",
+    "name": "Whirlwind of Movement [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "The next time you Gain {Adagio} or {Allegro}, gain a benefit. Fatigue.\nAdagio: Gain Snapshot. \nAllegro: Gain 3 Energy. \n"
+  },
+  {
+    "id": "manuFairyTac6",
+    "name": "Beat of a Different Drum [X]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "x",
+    "tags": "n/a",
+    "desc": "Choose another Maneuver that costs up to X Energy. Gain it as a 0-cost Exhaust at the start of your next turn. If it\u2019s an X cost maneuver, resolve it based on how much energy this Maneuver cost."
+  },
+  {
+    "id": "manuGamblerTac2",
+    "name": "Stand [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you may reroll, you may choose to burn the reroll. Upgrade your next roll one step instead."
+  },
+  {
+    "id": "manuGamblerTac3",
+    "name": "Hit [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you roll, you may choose to roll again. If it\u2019s better than your previous roll, upgrade it one step. If it\u2019s worse, downgrade it one step."
+  },
+  {
+    "id": "manuGamblerTac5",
+    "name": "Bust [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "At the start of the mission, roll a d6. Every time you acquire that amount of stacks of Locked in a mission, recover a pilot stat."
+  },
+  {
+    "id": "manuGamblerTac6",
+    "name": "Split [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Roll 2d6. Add one die result to your next Maneuver roll and the other to the Maneuver roll after that."
+  },
+  {
+    "id": "manuHDTac1",
+    "name": "Just a Flesh Wound [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you Face Consequences, you may gain +1 Forward."
+  },
+  {
+    "id": "manuHDTac2",
+    "name": "Gun Runner [ATTACK, A2G - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": [
+      "manuAttack"
+    ],
+    "desc": "Make an Attack. After you use this Maneuver, flip a coin. If it\u2019s tails, Exhaust and Face Major Consequences."
+  },
+  {
+    "id": "manuHDTac3",
+    "name": "Reinforced Plates [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you take 1 Survivability damage, you may spend two Capacity to negate it."
+  },
+  {
+    "id": "manuHDTac4",
+    "name": "Armor Penetration [REACT, A2G, CAP(1) - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever you deal damage, you may double it. Fatigue."
+  },
+  {
+    "id": "manuHDTac5",
+    "name": "Fire Fangs [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you hit a ground target, you may Gain Snapshot; add your A2G to it."
+  },
+  {
+    "id": "manuHDTac6",
+    "name": "Shark\u2019s Smile [REACT, CAP(1) - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever you use Ordnance on an [ATTACK], you may gain 2 Energy. Escalate."
+  },
+  {
+    "id": "manuHDTac7",
+    "name": "Clutch CAS [ATTACK - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": [
+      "manuAttack"
+    ],
+    "desc": "Make an Attack targeting the biggest threat to allied ground units."
+  },
+  {
+    "id": "manuJaegerTac1",
+    "name": "Postmodern Poet [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever, you may deliver some sort of \u201cslam poetry\u201d designed to motivate an ally. They may choose to spend an XP to recover a Pilot Stat."
+  },
+  {
+    "id": "manuJaegerTac2",
+    "name": "Relatable Moments [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Reveal something awkward or cringe. Lose -1 Reflex when you do, but you and all allies may recover a G-Resist."
+  },
+  {
+    "id": "manuJaegerTac3",
+    "name": "Wealth of Experience [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Refer back to a previous fight you were in that\u2019s relevant to the situation at hand. Gain Lock-on. If your reference was from this campaign, you may Give an Ally Lock-On instead."
+  },
+  {
+    "id": "manuJaegerTac4",
+    "name": "Three Act Structure [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever an AWACS makes a Move, you may Face an appropriate Consequence. On your first action to deal with the results of that Maneuver, gain a +1 Forward. If you help resolve that Maneuver, gain +1 XP. Exhaust."
+  },
+  {
+    "id": "manuJaegerTac5",
+    "name": "Creation Myths [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever the AWACS uses a Move to foreshadow reinforcements, give your flight Lock On."
+  },
+  {
+    "id": "manuKFTac1",
+    "name": "Bloodletting [REACT, CAP(1) - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever you deal damage to an air target, you may deal the same amount of damage to it again."
+  },
+  {
+    "id": "manuKFTac2",
+    "name": "Blades Edge [REACT, CAP(1) - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever you would suffer a Failure, you may flip a coin. On a heads, upgrade it to a Full Success instead. Exhaust."
+  },
+  {
+    "id": "manuKFTac3",
+    "name": "Tip of the Spear [REACT - 6]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "6",
+    "tags": "n/a",
+    "desc": "Whenever an ally Interdicts, you may join them. If you do, gain a Guaranteed Perfect Success Snapshot."
+  },
+  {
+    "id": "manuKFTac4",
+    "name": "Razor Wire [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you Face Severe or higher Consequences, you may gain {Advantage} on your next [ATTACK]."
+  },
+  {
+    "id": "manuKFTac5",
+    "name": "Icepick Precision [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you\u2019re off by one from a better tier of success, you may mark 1 Stress of either type to upgrade it."
+  },
+  {
+    "id": "manuKFTac6",
+    "name": "35 Foot Rule [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you fail an [ATTACK] roll, you may make a Speed Check. On a Mixed Success, ignore the consequences of the failure; on a Full Success, you instead get a Mixed Success."
+  },
+  {
+    "id": "manuKFTac7",
+    "name": "Puuko [ATTACK, A2A - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": [
+      "manuAttack"
+    ],
+    "desc": "Make an Attack. After you use this Maneuver, flip a coin. If it\u2019s tails, Exhaust, Escalate."
+  },
+  {
+    "id": "manuNoviceTac1",
+    "name": "Pure of Heart [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Make light of the situation. Choose an Ally, they recover a point of your currently highest pilot stat. Exhaust"
+  },
+  {
+    "id": "manuNoviceTac2",
+    "name": "Waiting With Flowers [REACT - 3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Whenever you Face Consequences, you may say something that\u2019s clearly a death flag. If you do, Negate it, but Gain {Locked}."
+  },
+  {
+    "id": "manuNoviceTac4",
+    "name": "Beginner\u2019s Luck [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you\u2019ve made any roll, reroll it. Exhaust."
+  },
+  {
+    "id": "manuNoviceTac5",
+    "name": "I Can Save Them All [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever a non-player Ally would Face Consequences, you may gain proportional stacks of {Locked} instead. Fatigue."
+  },
+  {
+    "id": "manuNoviceTac6",
+    "name": "How Did You Do That? [REACT, CAP(1) - X]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "x",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever an Ally uses a Maneuver you can\u2019t, you may gain the ability to use that until the end of your next turn. X is equal to the energy cost of the target Maneuver before reductions. Exhaust."
+  },
+  {
+    "id": "manuNoviceTac7",
+    "name": "Rookie Mistakes [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever you roll a Mixed Success or lower, an Ally may berate you. If they do, gain +1 retroactively to that roll. Escalate"
+  },
+  {
+    "id": "manuOODATac2",
+    "name": "Observer [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Nerve check, Give an ally +1 Forward. Exhaust unless you spend a G-Resist."
+  },
+  {
+    "id": "manuOODATac3",
+    "name": "Orientator [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a G-Resist check, Give an ally +1 Forward. Exhaust unless you spend a Reflex."
+  },
+  {
+    "id": "manuOODATac4",
+    "name": "Decider [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Reflex check, Gain +1 Forward. Exhaust unless you spend a Temper."
+  },
+  {
+    "id": "manuOODATac5",
+    "name": "Acter [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Temper check, Gain +1 Forward. Exhaust unless you spend a Nerve."
+  },
+  {
+    "id": "manuOODATac6",
+    "name": "Boydian Analysis [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you fail a Pilot Stat check, you may spend a different one and adjust your glasses to reroll. Exhaust."
+  },
+  {
+    "id": "manuOODATac7",
+    "name": "Five-Sided Wars [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you\u2019re outnumbered and someone makes a bad decision, spend a pilot stat and explain why. If you convince them that, actually, you\u2019re right, they gain +1 Forward"
+  },
+  {
+    "id": "manuOracleTac1",
+    "name": "Emperor [CARD - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Gain Lock-On. If you spend a card, choose an Ally to also gain Lock-On."
+  },
+  {
+    "id": "manuOracleTac2",
+    "name": "Wheel of Fortune [CAP(4), - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": [
+      "manuCap4"
+    ],
+    "desc": "Draw five more cards. Exhaust."
+  },
+  {
+    "id": "manuOracleTac3",
+    "name": "Hierophant [CARD - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Recover a pilot stat. If you spend a card, you and an Ally may do so instead. Exhaust."
+  },
+  {
+    "id": "manuOracleTac5",
+    "name": "Magician [REACT - 3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Whenever an Ally would make a roll, you may replace their roll result before modifiers with a card value."
+  },
+  {
+    "id": "manuOracleTac6",
+    "name": "Devil [CARD - 3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Put 1 card from your hand into the deck, then shuffle. Draw 1 card. If you spend a card, gain Meld."
+  },
+  {
+    "id": "manuOracleTac7",
+    "name": "World [CARD, REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Add the spent card value to your next roll as a modifier instead. Fatigue."
+  },
+  {
+    "id": "manuReconTac1",
+    "name": "Pushpin Idealism [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Get a hunch about enemy deployment, reinforcements, or tactics. Your AWACS will Flip a Coin. On heads, the AWACS tells you if your hunch is correct. On a tails, the AWACS tells you the opposite of the truth."
+  },
+  {
+    "id": "manuReconTac2",
+    "name": "Dig For Details [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Call back to base for more information. You or an ally can gain Meld, but it can only be used in relation to the information you get. Exhaust."
+  },
+  {
+    "id": "manuReconTac3",
+    "name": "Picking Pieces [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Weave together scraps of signals intelligence. Your AWACS tells you the next AWACS Maneuver they\u2019re planning to make."
+  },
+  {
+    "id": "manuReconTac4",
+    "name": "Multistream Misinformation [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever, you may activate your Radar Decoy. If you are Facing Consequences, you may Negate Consequences and Exhaust. If you aren\u2019t, spend a Capacity and fool the enemy about your force size and disposition."
+  },
+  {
+    "id": "manuReconTac6",
+    "name": "Infamous Rank [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever, you may choose an Enemy, spend a Reflex and identify their livery. Choose an Ally, they may reroll the last roll they made relating to that target."
+  },
+  {
+    "id": "manuReconTac7",
+    "name": "For Your Ears Only [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Tell only one Ally something, which they may then pass to your other allies. They gain +2 Forward and you gain -1 Forward."
+  },
+  {
+    "id": "manuRedlineTac1",
+    "name": "Watch Me Accelerate [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you make a Speed check, choose an ally. They may spend a Nerve or Reflex to gain +1 Forward on their next roll."
+  },
+  {
+    "id": "manuRedlineTac2",
+    "name": "Tear Apart the Interstate [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you would roll a Failure or Mixed Success on a Speed check while flying at a low altitude, you may reroll."
+  },
+  {
+    "id": "manuRedlineTac3",
+    "name": "Cheetah on the Planes",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Once per turn, you may make a Speed check as part of making an [Attack]. If you succeed, gain a +1 Forward. You still Face any Consequences from the Speed check."
+  },
+  {
+    "id": "manuRedlineTac4",
+    "name": "Supersonic Princess [CAP(1), REACT]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever you make a Speed check, you may upgrade the roll\u2019s success by one step, to a maximum of a Full Success."
+  },
+  {
+    "id": "manuRedlineTac5",
+    "name": "Hyperdrive [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 1 Energy. Whenever you make a Speed check this turn, gain a stacking +1 Forward."
+  },
+  {
+    "id": "manuRedlineTac6",
+    "name": "Breakneck Trainwreck [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever a Speed check would result in you Facing Consequences, you may spend a Reflex or Nerve. Delay them until the next Round."
+  },
+  {
+    "id": "manuSibylTac1",
+    "name": "To Return the Jesters [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever, you may give an ally +2 Forward. The AWACS Holds a Disadvantage. This Maneuver doesn\u2019t count towards your Maneuver limit if you Spend a Capacity."
+  },
+  {
+    "id": "manuSibylTac2",
+    "name": "To Recognize the Dark [3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Accept the darkness within you and cross the Rubicon. Burn 2 Survivability and gain +1 to each of your plane stats for three turns. Exhaust."
+  },
+  {
+    "id": "manuSibylTac3",
+    "name": "To Release the Known [1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Bait a specific Enemy, but the Catch you grant only grants 2 Energy. If this is the second time in one mission, you may induce Stall in them."
+  },
+  {
+    "id": "manuSibylTac4",
+    "name": "To Repair the Forgiven [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever an ally Faces Consequences, you may Face them instead. They get a +1 Forward."
+  },
+  {
+    "id": "manuSibylTac5",
+    "name": "To Renounce the Dead [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "You may ominously mourn a loss on open radio. You get to deny an AWACS Move. They get to deny you a Maneuver later."
+  },
+  {
+    "id": "manuSibylTac6",
+    "name": "To Ratify the Unsure [0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Tell a confusing joke or ask an insane question over the radio and stun someone out of their bad mood. Choose an Ally, they recover a Pilot stat of their choice. Exhaust."
+  },
+  {
+    "id": "manuSibylTac7",
+    "name": "To Rebuke the Heavens [REACT - 3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Force fate to change at a crucial moment. Something terrible happens to you as a result. Exhaust."
+  },
+  {
+    "id": "manuTacticianTac1",
+    "name": "No, Over There! [POS]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "Gain 2 Energy. Choose an Ally and change their Zone."
+  },
+  {
+    "id": "manuTacticianTac2",
+    "name": "How Did You Miss? [REACT - 2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Whenever an Ally rolls a failure on a plane stat roll, you may make them reroll. Fatigue."
+  },
+  {
+    "id": "manuTacticianTac4",
+    "name": "DUCK! [REACT, CAP(1) - 3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": [
+      "manuCap1"
+    ],
+    "desc": "Whenever an Ally Faces Consequences, they Negate."
+  },
+  {
+    "id": "manuTacticianTac5",
+    "name": "Get Back Here! [2]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": "n/a",
+    "desc": "Choose an Ally. They gain 1 Speed until the end of their next turn."
+  },
+  {
+    "id": "manuTacticianTac6",
+    "name": "Just Shoot Already! [3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "3",
+    "tags": "n/a",
+    "desc": "Choose an Ally. They may make an Attack."
+  },
+  {
+    "id": "manuTacticianTac7",
+    "name": "What The Hell Was That? [REACT - 4]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "Whenever an Ally has performed a Maneuver and seen the result, you may retract it, including all effects of its resolution. Exhaust."
+  },
+  {
+    "id": "manuTalonTac1",
+    "name": "Seven Heavens [4]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "Choose a Zone. As long as you stay in that zone, at the start of your turn, choose a target in that Zone. They gain {Brand}."
+  },
+  {
+    "id": "manuTalonTac3",
+    "name": "Qaswarah [REACT, TRICK - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "Whenever you deal damage to a target with {Brand}, you may choose another target. If you do, they also gain {Brand}."
+  },
+  {
+    "id": "manuTalonTac5",
+    "name": "Sadiq fi Al\u2019zil [ATTACK, MAP - 5]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "5",
+    "tags": [
+      "manuMAP",
+      "manuAttack"
+    ],
+    "desc": "Choose an Ally. You both make an Attack against a target with Brand; if you consume {Brand}, apply any Hidden One [Passive] Tactic that triggers to both you and your Ally."
+  },
+  {
+    "id": "manuTalonTac6",
+    "name": "Ukhuwwah [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever, choose an Ally. They gain +2 Forward. Fatigue."
+  },
+  {
+    "id": "manuTruckTac3",
+    "name": "Right After a Beer [REACT - 0]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "Whenever you roll a Mixed Success or a Failure, you may choose to enter Critical State without facing a test of fate with your Coins. If you do, you Stay with the Craft and recover a Pilot Stat."
+  },
+  {
+    "id": "manuTruckTac4",
+    "name": "Hey that Bogey [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you gain Lock-On, you may choose a target and gain Closure. It only applies to Maneuvers made against the chosen target."
+  },
+  {
+    "id": "manuTruckTac5",
+    "name": "Is Shaped like a Deer [REACT - 1]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Whenever you use Wings of Steel, you may lose a Survivability. If you do, double your damage."
+  },
+  {
+    "id": "manuTruckTac7",
+    "name": "Manually Piloted ICBM [ATTACK - 3]",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "3",
+    "tags": [
+      "manuAttack"
+    ],
+    "desc": "Make an Attack. When you do, roll a number of d6s equal to your current Capacity and add that result to your damage. Bail Out. Exhaust."
+  },
+  {
+    "id": "manuSSEAllyShield",
+    "name": "Ally Shield",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": "n/a",
+    "desc": "Choose an Ally. They gain {Shielded}.\nShielded: Whenever you would take Survivability damage as a result of Locked, remove all stacks of {Shielded} and reduce it by 1 for each stack you\u2019ve removed. "
+  },
+  {
+    "id": "manuSSETempoChange",
+    "name": "Tempo Change",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "Tempo Change [1]: Gain, Lose or switch between {Adagio} or {Allegro}. \n{Adagio}: Gain {Mitigate}. Whenever you would lose {Mitigate}, gain it again. Whenever you would gain Energy, gain 2 less. You can\u2019t have this condition if you have {Allegro}. \n{Allegro}: Whenever you make an [ATTACK], Escalate. Whenever you deal damage, deal an additional point. You can\u2019t have this condition if you have {Adagio}.\n"
+  },
+  {
+    "id": "manuSSEBaseOrder",
+    "name": "Base Orders - 2",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": [
+      "manuAttack",
+      "manuMAP"
+    ],
+    "desc": "Base Orders [MAP, ATTACK - 2]. Choose an Asset and a target. They Spend one Combat Effectiveness and make an Attack against that target, using their Attack stat. Or you may order them to withdraw."
+  },
+  {
+    "id": "manuApproachT",
+    "name": "Knight's Approach",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Nerve instead. "
+  },
+  {
+    "id": "manuApproachN",
+    "name": "Soldier's Approach",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Nerve stat instead. "
+  },
+  {
+    "id": "manuApproachR",
+    "name": "Mercenary's Approach",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Reflex stat instead. "
+  },
+  {
+    "id": "manuApproachG",
+    "name": "Monarch's Approach",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your G-Resist stat instead. "
+  },
+  {
+    "id": "manuDefensiveT",
+    "name": "Knight's Defensive",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Make a Temper Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+  },
+  {
+    "id": "manuDefensiveN",
+    "name": "Soldier's Defensive",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Make a Nerve Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+  },
+  {
+    "id": "manuDefensiveG",
+    "name": "Monarch's Defensive",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Make a Reflex Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+  },
+  {
+    "id": "manuDefensiveR",
+    "name": "Mercenary's Defensive",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Make a G-Resist Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+  },
+  {
+    "id": "manuStyleT",
+    "name": "Knight's Style",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you make an Attack, Spend a Temper and hit an additional target. Fatigue. "
+  },
+  {
+    "id": "manuStyleN",
+    "name": "Soldier's Style",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you make an Attack, Spend a Nerve and hit an additional target. Fatigue. "
+  },
+  {
+    "id": "manuStyleG",
+    "name": "Monarch's Style",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you make an Attack, Spend a Reflex and hit an additional target. Fatigue. "
+  },
+  {
+    "id": "manuStyleR",
+    "name": "Mercenary's Style",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": "n/a",
+    "desc": "[REACT - 0] Whenever you make an Attack, Spend a G-Resist and hit an additional target. Fatigue. "
+  },
+  {
+    "id": "manuAdaptabilityT",
+    "name": "Knight's Adapdability",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Replace one of your plane stats with the current value of your Temper until the end of your turn. Fatigue. "
+  },
+  {
+    "id": "manuAdaptabilityN",
+    "name": "Soldier's Adapability",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Replace one of your plane stats with the current value of your Nerve until the end of your turn. Fatigue. "
+  },
+  {
+    "id": "manuAdaptabilityG",
+    "name": "Monarch's Adaptability",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "1",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Replace one of your plane stats with the current value of your Reflex until the end of your turn. Fatigue. "
+  },
+  {
+    "id": "manuAdaptabilityR",
+    "name": "Mercenary's Adaptability",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "[REACT - 1] Replace one of your plane stats with the current value of your G-Resist until the end of your turn. Fatigue. "
+  },
+  {
+    "id": "manuBourbon",
+    "name": "Old Fashioned",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Positioning",
+    "engCost": "n/a",
+    "tags": "n/a",
+    "desc": "As a rather down to earth man, Husker knows how to keep the classics alive -- and himself. As a Positioning Maneuver, he may choose Sweet or Sour and deliver a remark in line with the flavor he chose. If he chose Sweet, each ally may recover either a Temper or a Nerve. If he chose Sour, spend a Temper or Nerve and gain Snapshot. Exhaust."
+  }
+]
