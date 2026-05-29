@@ -57,7 +57,7 @@ function Ordnance() {
           FILTERS
         </button>
       )}
-        
+
       <div className="flex gap-6">
         <OrdnanceSidebar
           selectedDomain={selectedDomain}
@@ -68,7 +68,7 @@ function Ordnance() {
           setSidebarOpen={setSidebarOpen}
         />
 
-        {/* Card List */}
+        {/* Ordnance Cards */}
         <main className="flex-1 min-w-0">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredOrdnance.map((ordnance) => (

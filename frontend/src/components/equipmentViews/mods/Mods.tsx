@@ -13,7 +13,6 @@ function Modules() {
 
       return true;
     })
-
     .filter((module) => {
       if (!searchQuery.trim()) return true;
 

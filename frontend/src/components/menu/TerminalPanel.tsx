@@ -45,6 +45,7 @@ function TerminalPanel({
           {/* Header */}
           <div className="">
             <div className="flex items-center gap-3">
+              {icon && (
               <span
                 className="
                   text-cyan-300
@@ -54,6 +55,7 @@ function TerminalPanel({
               >
                 {icon}
               </span>
+              )}
 
               <h1
                 className="

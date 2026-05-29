@@ -22,13 +22,13 @@ const Footer = () => {
                     <Link to="/about" className="hover:underline">ABOUT</Link>
                 </div>
 
-                {/* Legal Text */}
+                {/* Legal Fluff Text */}
                 <p className="text-xs text-gray-300 px-4 leading-relaxed">
-                    © 2026 Aces High TTRPG. All rights reserved. Dates and content subject to change.
+                    © 2026 Aces High TTRPG. All rights reserved. Dates and content subject to change via balancing.
                     <br />
-                    ACES HIGH, the ACES HIGH logo, are among the trademarks of respective parties (Not actually).
+                    ACES HIGH, the ACES HIGH logo, are among the trademarks of respective parties 
                     <br />
-                    Website developed by Spiny from SpinyNA studios.
+                    Website developed by Spiny (AKA Spingus, Spinach)
                 </p>
             </div>
         </footer>

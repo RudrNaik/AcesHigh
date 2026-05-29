@@ -6,6 +6,7 @@ import TerminalFeed from "./components/menu/TerminalFeed";
 
 const something: string[] = [
   ">This is a test message to ensure the menu is working as intended.",
+  ">WARN: Much is under development, please excuse any links that route to 404.",
   ">Eyes up pilot."
 ];
 
@@ -115,7 +116,7 @@ function TerminalPage() {
                 subtitle="Pilot Records"
                 icon="❖"
                 onHover={handleHover}
-                link="/characters"
+                link="/InDev"
               />
             </motion.div>
           </div>

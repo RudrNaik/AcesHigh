@@ -19,10 +19,12 @@ function ManeuverSidebar({
 }: ManeuverSidebarProps) {
   const categories = [
     "ALL",
+    "COMMON",
     "EXHAUST",
     "POSITIONING",
     "NORMAL",
     "REACTION",
+    "ADVANCED"
   ];
 
   return (

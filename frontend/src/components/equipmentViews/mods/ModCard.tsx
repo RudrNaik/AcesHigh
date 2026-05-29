@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { resolveTag, resolveManeuver } from "../../common/tagResolver";
 
 interface Module {
@@ -72,7 +71,7 @@ function ModuleCard(module: Module) {
         </div>
       )}
 
-      {/* Special Fields */}
+      {/* Chars, Type, Tags, and AddManu */}
       <div className="mt-4 space-y-2 text-xs text-cyan-100">
 
         {module.checkForChars && module.charChecked && (

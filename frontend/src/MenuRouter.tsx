@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from './Menu';
 import MissingPage from "./Missing";
+import InDev from "./InDev"
 import Equipment from "./Equipment"
 import Airframes from "./components/equipmentViews/airframes/Airframes"
 import Ordnance from "./components/equipmentViews/munitions/Ordnance"
@@ -20,6 +21,7 @@ function MenuRouter() {
         <Routes>
           <Route path="/" element={<Menu />} />
           <Route path="*" element={<MissingPage/>}/>
+          <Route path="/InDev" element={<InDev/>}/>
           <Route path="/equipment" element={<Equipment/>}/>
           <Route path="/equipment/airframes" element={<Airframes/>}/>
           <Route path="/equipment/ordnance" element={<Ordnance/>}/>

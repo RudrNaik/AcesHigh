@@ -21,7 +21,7 @@ function AirframeSidebar({
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop for mobile */}
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
@@ -69,7 +69,9 @@ function AirframeSidebar({
         >
           {/* Mobile Header */}
           <div className="flex justify-between items-center mb-4 lg:hidden">
-            <h2 className="text-xl font-bold">FIL<span className="italic">TER</span></h2>
+            <h2 className="text-xl font-bold">
+              FIL<span className="italic">TER</span>
+            </h2>
 
             <button
               onClick={() => setSidebarOpen(false)}
@@ -82,8 +84,10 @@ function AirframeSidebar({
             </button>
           </div>
 
-          {/* Main Header */}
-          <h2 className="hidden lg:block text-xl font-bold mb-4">FIL<span className="italic">TER</span></h2>
+          {/* Desktop Header */}
+          <h2 className="hidden lg:block text-xl font-bold mb-4">
+            FIL<span className="italic">TER</span>
+          </h2>
 
           {/* Search */}
           <div className="mb-6">
@@ -111,7 +115,7 @@ function AirframeSidebar({
             />
           </div>
 
-          {/* Roles*/}
+          {/* Roles */}
           <div>
             <div className="text-xs mb-2 text-cyan-400">ROLE</div>
 

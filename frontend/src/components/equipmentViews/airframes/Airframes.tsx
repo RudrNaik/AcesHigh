@@ -6,7 +6,6 @@ import AirframeSidebar from "./AirframeSidebar";
 function Airframes() {
   const [selectedRole, setSelectedRole] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
-
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const filteredAircraft = aircraftList
@@ -17,16 +16,14 @@ function Airframes() {
       if (!aircraft.stats || aircraft.stats.A2A === "n/a") {
         return false;
       }
-
+      
       return true;
     })
-
     .filter((aircraft) => {
       if (selectedRole === "ALL") return true;
 
       return aircraft.type === selectedRole;
     })
-
     .filter((aircraft) => {
       if (!searchQuery.trim()) return true;
 

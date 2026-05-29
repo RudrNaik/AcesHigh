@@ -37,18 +37,20 @@ function ManeuverCard(maneuver: ManeuverCardProps) {
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-3">
-        <h2 className="text-2xl font-bold text-cyan-100">
+        <h2 className="text-2xl lg:text-xl font-bold text-cyan-100">
           {maneuver.name}
         </h2>
 
-        <div className="text-xs text-cyan-100 flex flex-col items-end">
-          {maneuver.type && <span>{maneuver.type}</span>}
-          {maneuver.engCost && <span>ENG {maneuver.engCost}</span>}
+        <div className="text-sm text-cyan-100 flex ">
+            {maneuver.engCost && maneuver.engCost!=="n/a" && <span>EN:{maneuver.engCost}|</span>}
+            {maneuver.type && <span>{maneuver.type}</span>}
+            {maneuver.isAdvanced && (<span className="font-bold">|ADV</span>)}
+            {maneuver.isCommon && (<span className="font-bold">|CMN</span>)}
         </div>
       </div>
 
       {/* Description */}
-      {maneuver.desc && maneuver.desc !== "n/a" && (
+      {maneuver.desc && (
         <p className="text-sm text-cyan-100 whitespace-pre-line">
           {maneuver.desc}
         </p>

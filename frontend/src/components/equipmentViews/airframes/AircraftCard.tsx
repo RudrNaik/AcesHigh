@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
-
 import intrinsics from "../../../data/IntrinsicList.json";
 import families from "../../../data/AircraftFamilies.json";
-
 import {
   resolveTag,
   getTagValue,
@@ -44,9 +42,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
   );
 
   const tagEntries = Object.entries(tagCounts);
-
   const familyData = families.find((family) => family.id === aircraft.family);
-
   const intrinsicData = intrinsics.find(
     (intrinsic) => intrinsic.id === aircraft.intrinsic,
   );
@@ -99,7 +95,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
         </p>
       )}
 
-      {/* Module Slots */}
+      {/* Mod Slots */}
       <div className="text-xs text-cyan-100">
         <div>
           <span>Module Slots:</span> {aircraft.moduleSlots}
@@ -136,7 +132,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             {tagEntries.map(([tagId, count]) => {
               const tag = resolveTag(tagId);
               if (!tag) return null;
-              
+
               const isActive = activeTag === tag.id;
               const value = getTagValue(tag.id, count);
               const showValue = value > 1;

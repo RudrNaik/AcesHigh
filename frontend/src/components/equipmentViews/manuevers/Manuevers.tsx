@@ -20,14 +20,16 @@ function Maneuvers() {
         (m.desc ?? "").toLowerCase().includes(q)
       );
     })
-    .filter((manu) => {
-      if (manu.id === "manuExampleTech") return false;
-      if (manu.id === "exampleManu") return false;
-
+    .filter((m) => {
+      if (m.id === "manuExampleTech") return false;
+      if (m.id === "exampleManu") return false;
+      if (!m.desc || m.desc === "n/a") return false;
       return true;
     })
     .filter((m) => {
       if (selectedCategory === "ALL") return true;
+      if (selectedCategory === "COMMON" && m.isCommon) return true; 
+      if (selectedCategory === "ADVANCED" && m.isAdvanced) return true;
 
       return (m.type ?? "").toUpperCase() === selectedCategory;
     });
@@ -50,7 +52,7 @@ function Maneuvers() {
             text-sm font-mono
           "
         >
-          FILTERS
+          FILTER
         </button>
       )}
 

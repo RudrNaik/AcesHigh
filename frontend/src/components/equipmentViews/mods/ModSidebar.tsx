@@ -1,7 +1,6 @@
 interface ModSidebarProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
 }
@@ -14,7 +13,7 @@ function ModSidebar({
 }: ModSidebarProps) {
   return (
     <>
-      {/* Mobile Backdrop */}
+      {/* Backdrop for mobile */}
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
@@ -39,21 +38,14 @@ function ModSidebar({
           transform
           transition-transform
           duration-300
-
           bg-[#071018]/95
-
           lg:sticky
           lg:top-25
           lg:h-fit
           lg:translate-x-0
           lg:bg-transparent
           lg:z-auto
-
-          ${
-            sidebarOpen
-              ? "translate-x-0"
-              : "-translate-x-full"
-          }
+          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
         <div
@@ -74,10 +66,7 @@ function ModSidebar({
               FIL<span className="italic">TER</span>
             </h2>
 
-            <button
-              onClick={() => setSidebarOpen(false)}
-              className="text-sm"
-            >
+            <button onClick={() => setSidebarOpen(false)} className="text-sm">
               CLOSE
             </button>
           </div>
@@ -89,16 +78,12 @@ function ModSidebar({
 
           {/* Search */}
           <div>
-            <div className="text-xs mb-2 text-cyan-400">
-              SEARCH
-            </div>
+            <div className="text-xs mb-2 text-cyan-400">SEARCH</div>
 
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) =>
-                setSearchQuery(e.target.value)
-              }
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search modules..."
               className="
                 w-full

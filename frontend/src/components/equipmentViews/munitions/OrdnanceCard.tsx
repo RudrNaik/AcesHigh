@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { resolveTag, formatTagTooltip, getTagCountMap, getTagValue,} from "../../common/tagResolver";
+import {
+  resolveTag,
+  formatTagTooltip,
+  getTagCountMap,
+  getTagValue,
+} from "../../common/tagResolver";
 
 interface OrdnanceCardProps {
   id: string;
