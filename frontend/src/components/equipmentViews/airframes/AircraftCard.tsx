@@ -122,8 +122,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
                   px-2 py-1
                   border border-cyan-100/90
                   text-cyan-100
-                  transition
-                  cursor-pointer"
+                  transition"
         >
           <span className="font-bold text-sm">
             {intrinsicData?.name ?? aircraft.intrinsic}:

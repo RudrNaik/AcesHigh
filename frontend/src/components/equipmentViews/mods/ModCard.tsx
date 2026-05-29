@@ -74,10 +74,10 @@ function ModuleCard(module: Module) {
 
       {/* Special Fields */}
       <div className="mt-4 space-y-2 text-xs text-cyan-100">
-        {module.IntrinsicMod && (
-          <div>
-            <span className="font-bold">Intrinsic Modification:</span>{" "}
-            {module.IntrinsicMod}
+
+        {module.checkForChars && module.charChecked && (
+            <div>
+            <span className="font-bold">Checks aircraft name for: </span>{module.charChecked}  @ {module.checkForChars}
           </div>
         )}
 
@@ -96,8 +96,8 @@ function ModuleCard(module: Module) {
 
             return (
               <div>
-                <span className="font-bold mb-2">Grants Maneuver:</span>{" "}
-                <div className="flex flex-wrap gap-2">
+                <span className="font-bold">Grants Maneuver:</span>{" "}
+                <div className="flex flex-wrap gap-2 mt-2">
                   <div
                     onMouseEnter={() => setActiveTag(manu.id)}
                     onMouseLeave={() => setActiveTag(null)}

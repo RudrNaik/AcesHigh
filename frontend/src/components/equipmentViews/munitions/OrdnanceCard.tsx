@@ -1,5 +1,10 @@
 import { useState } from "react";
-import tagsData from "../../../data/OrdnanceTags.json";
+import {
+  resolveTag,
+  formatTagTooltip,
+  getTagCountMap,
+  getScaledTagValue,
+} from "../../common/tagResolver";
 
 interface OrdnanceCardProps {
   id: string;
@@ -9,33 +14,10 @@ interface OrdnanceCardProps {
   tags?: string[];
 }
 
-interface OrdnanceTag {
-  id: string;
-  name: string;
-  desc: string;
-}
-
-function getScaledTagValue(tagId: string, count: number) {
-  switch (tagId) {
-    case "ordMLTI":
-      return count * 2;
-
-    default:
-      return count;
-  }
-}
-
 function OrdnanceCard(ordnance: OrdnanceCardProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const tagCounts = (ordnance.tags ?? []).reduce(
-    (acc, tagId) => {
-      acc[tagId] = (acc[tagId] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>,
-  );
-
+  const tagCounts = getTagCountMap(ordnance.tags ?? []);
   const tagEntries = Object.entries(tagCounts);
 
   return (
@@ -68,25 +50,14 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
       {tagEntries.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">
           {tagEntries.map(([tagId, count]) => {
-            const tag = (tagsData as OrdnanceTag[]).find((t) => t.id === tagId);
-
+            const tag = resolveTag(tagId);
             if (!tag) return null;
-
+            
             const isActive = activeTag === tag.id;
-
             const scaledValue = getScaledTagValue(tag.id, count);
-
-            const showMultiplier = scaledValue > 1;
-
-            const label = showMultiplier
-              ? `${tag.name} x${scaledValue}`
-              : tag.name;
-
-            const tooltipDesc = tag.desc.includes("[x]")
-              ? tag.desc.replace(/\[x\]/g, `${scaledValue}`)
-              : showMultiplier
-                ? `${tag.desc} x${scaledValue}`
-                : tag.desc;
+            const label =
+              scaledValue > 1 ? `${tag.name} x${scaledValue}` : tag.name;
+            const tooltipDesc = formatTagTooltip(tag.desc, scaledValue);
 
             return (
               <div
@@ -105,10 +76,8 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
                   hover:bg-cyan-100/10
                 "
               >
-                {/* Tag Label */}
                 <span>{label}</span>
 
-                {/* Tooltip */}
                 {isActive && (
                   <div
                     className="
