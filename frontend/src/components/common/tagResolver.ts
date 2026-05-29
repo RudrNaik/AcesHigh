@@ -32,9 +32,13 @@ export function getTagCountMap(tags: string[] = []) {
   }, {} as Record<string, number>);
 }
 
-export function getScaledTagValue(tagId: string, count: number) {
-  if (tagId === "ordMLTI") return count * 2;
-  return count;
+export function getTagValue(tagId: string, count: number) {
+  const rules: Record<string, (c: number) => number> = {
+    ordMLTI: (c) => c * 2,
+    acMCREW: (c) => c * 2,
+  };
+
+  return rules[tagId]?.(count) ?? count;
 }
 
 export function resolveManeuver(manuId: string) {

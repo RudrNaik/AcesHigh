@@ -1,8 +1,14 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
+
 import intrinsics from "../../../data/IntrinsicList.json";
-import tagsData from "../../../data/AircraftTags.json";
 import families from "../../../data/AircraftFamilies.json";
+
+import {
+  resolveTag,
+  getTagValue,
+  formatTagTooltip,
+} from "../../common/tagResolver";
 
 interface AircraftCardProps {
   id: string;
@@ -18,32 +24,18 @@ interface AircraftCardProps {
   intrinsic?: string;
 }
 
-function getAircraftTagValue(tagId: string, count: number) {
-  switch (tagId) {
-    case "acMCREW":
-      return count * 2;
-
-    default:
-      return count;
-  }
-}
-
 function AircraftCard(aircraft: AircraftCardProps) {
   const stats = Object.entries(aircraft?.stats ?? {}) as [string, ReactNode][];
+
   const [activeTag, setActiveTag] = useState<string | null>(null);
+
   const tags = Array.isArray(aircraft.tags)
     ? aircraft.tags
     : aircraft.tags
       ? [aircraft.tags]
       : [];
 
-  const familyData = families.find((family) => family.id === aircraft.family);
-
-  const intrinsicData = intrinsics.find(
-    (intrinsic) => intrinsic.id === aircraft.intrinsic,
-  );
-
-  const tagCounts = (tags ?? []).reduce(
+  const tagCounts = tags.reduce(
     (acc, tagId) => {
       acc[tagId] = (acc[tagId] || 0) + 1;
       return acc;
@@ -52,6 +44,12 @@ function AircraftCard(aircraft: AircraftCardProps) {
   );
 
   const tagEntries = Object.entries(tagCounts);
+
+  const familyData = families.find((family) => family.id === aircraft.family);
+
+  const intrinsicData = intrinsics.find(
+    (intrinsic) => intrinsic.id === aircraft.intrinsic,
+  );
 
   return (
     <section
@@ -67,17 +65,11 @@ function AircraftCard(aircraft: AircraftCardProps) {
         font-mono
       "
     >
-      {/* Title and Misc Info */}
+      {/* Header */}
       <div className="flex justify-between items-start mb-2">
-        <div>
-          <h2 className="text-2xl font-bold text-cyan-100">{aircraft.name}</h2>
-        </div>
+        <h2 className="text-2xl font-bold text-cyan-100">{aircraft.name}</h2>
 
-        <div
-          className="
-            text-xs text-cyan-100
-          "
-        >
+        <div className="text-xs text-cyan-100">
           {aircraft.type} // {familyData?.name ?? aircraft.family} // GEN{" "}
           {aircraft.gen} // Tier {aircraft.tier}
         </div>
@@ -110,7 +102,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
       {/* Module Slots */}
       <div className="text-xs text-cyan-100">
         <div>
-          <span className="">Module Slots:</span> {aircraft.moduleSlots}
+          <span>Module Slots:</span> {aircraft.moduleSlots}
         </div>
       </div>
 
@@ -118,97 +110,75 @@ function AircraftCard(aircraft: AircraftCardProps) {
       <div className="text-xs text-cyan-100 space-y-1 mt-1">
         <div>Intrinsic:</div>
         <div
-          className="text-xs
-                  px-2 py-1
-                  border border-cyan-100/90
-                  text-cyan-100
-                  transition"
+          className="
+            text-xs
+            px-2 py-1
+            border border-cyan-100/90
+            text-cyan-100
+            transition
+            cursor-pointer
+          "
         >
           <span className="font-bold text-sm">
             {intrinsicData?.name ?? aircraft.intrinsic}:
-          </span>{" "}
-          <br></br> {intrinsicData?.desc ?? aircraft.intrinsic}
+          </span>
+          <br />
+          {intrinsicData?.desc ?? aircraft.intrinsic}
         </div>
       </div>
 
       {/* Tags */}
-      {tags.length > 0 && (
+      {tagEntries.length > 0 && (
         <div className="mt-2">
           <div className="text-xs tracking-wide text-cyan-100 mb-1">Tags:</div>
+
           <div className="flex flex-wrap gap-2">
-            {tagEntries.length > 0 && (
-              <div className="mt-2">
-                <div className="text-xs tracking-wide text-cyan-100 mb-1">
-                  Tags:
+            {tagEntries.map(([tagId, count]) => {
+              const tag = resolveTag(tagId);
+              if (!tag) return null;
+              
+              const isActive = activeTag === tag.id;
+              const value = getTagValue(tag.id, count);
+              const showValue = value > 1;
+              const label = showValue ? `${tag.name} x${value}` : tag.name;
+              const tooltip = formatTagTooltip(tag.desc, value);
+
+              return (
+                <div
+                  key={`${aircraft.id}-${tag.id}`}
+                  onMouseEnter={() => setActiveTag(tag.id)}
+                  onMouseLeave={() => setActiveTag(null)}
+                  onClick={() => setActiveTag(isActive ? null : tag.id)}
+                  className="
+                    relative
+                    text-xs
+                    px-2 py-1
+                    border border-cyan-100/90
+                    text-cyan-100
+                    cursor-pointer
+                    transition
+                    hover:bg-cyan-100/10
+                  "
+                >
+                  {/* Label */}
+                  <span>{label}</span>
+
+                  {/* Tooltip */}
+                  {isActive && (
+                    <div
+                      className="
+                        absolute z-50 left-0 top-full mt-2 w-64
+                        bg-black/90 border border-cyan-100
+                        p-3 text-xs text-cyan-100
+                        shadow-lg whitespace-pre-line
+                      "
+                    >
+                      {tooltip}
+                    </div>
+                  )}
                 </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {tagEntries.map(([tagId, count]) => {
-                    const tag = tagsData.find((t) => t.id === tagId);
-                    if (!tag) return null;
-
-                    const isActive = activeTag === tag.id;
-
-                    const scaledValue = getAircraftTagValue(tag.id, count);
-
-                    const label =
-                      scaledValue > 1
-                        ? `${tag.name} x${scaledValue}`
-                        : tag.name;
-
-                    const tooltip = tag.desc.includes("[x]")
-                      ? tag.desc.replace(/\[x\]/g, `${scaledValue}`)
-                      : scaledValue > 1
-                        ? `${tag.desc} x${scaledValue}`
-                        : tag.desc;
-
-                    return (
-                      <div
-                        key={`${aircraft.id}-${tag.id}`}
-                        onMouseEnter={() => setActiveTag(tag.id)}
-                        onMouseLeave={() => setActiveTag(null)}
-                        onClick={() => setActiveTag(isActive ? null : tag.id)}
-                        className="
-                            relative
-                            text-xs
-                            px-2 py-1
-                            border border-cyan-100/90
-                          text-cyan-100
-                            cursor-pointer
-                            transition
-                           hover:bg-cyan-100/10
-                            "
-                      >
-                        {/* Label */}
-                        <span>{label}</span>
-
-                        {/* Tooltip */}
-                        {isActive && (
-                          <div
-                            className="
-                            absolute
-                            z-50
-                            left-0
-                            top-full
-                            mt-2
-                            w-64
-                          bg-black/90
-                            border border-cyan-100
-                            p-3
-                            text-xs text-cyan-100
-                            shadow-lg
-                            whitespace-pre-line
-                            "
-                          >
-                            {tooltip}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+              );
+            })}
           </div>
         </div>
       )}

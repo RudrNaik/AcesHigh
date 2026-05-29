@@ -1,23 +1,31 @@
 import { useState } from "react";
-import { resolveTag, formatTagTooltip, getTagCountMap, getTagValue,} from "../../common/tagResolver";
+import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../common/tagResolver";
 
-interface OrdnanceCardProps {
+interface ManeuverCardProps {
   id: string;
   name: string;
-  domain: string;
+  type?: string;
   desc?: string;
-  tags?: string[];
+  tags?: string[] | "n/a";
+  engCost?: string;
+  isCommon?: boolean;
+  isAdvanced?: boolean;
 }
 
-function OrdnanceCard(ordnance: OrdnanceCardProps) {
+function ManeuverCard(maneuver: ManeuverCardProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const tagCounts = getTagCountMap(ordnance.tags ?? []);
+  const rawTags =
+    maneuver.tags && maneuver.tags !== "n/a"
+      ? (maneuver.tags as string[])
+      : [];
+
+  const tagCounts = getTagCountMap(rawTags);
   const tagEntries = Object.entries(tagCounts);
 
   return (
     <section
-      id={ordnance.id}
+      id={maneuver.id}
       className="
         bg-black/20
         border
@@ -29,15 +37,20 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-3">
-        <h2 className="text-2xl font-bold text-cyan-100">{ordnance.name}</h2>
+        <h2 className="text-2xl font-bold text-cyan-100">
+          {maneuver.name}
+        </h2>
 
-        <div className="text-xs text-cyan-100">{ordnance.domain}</div>
+        <div className="text-xs text-cyan-100 flex flex-col items-end">
+          {maneuver.type && <span>{maneuver.type}</span>}
+          {maneuver.engCost && <span>ENG {maneuver.engCost}</span>}
+        </div>
       </div>
 
       {/* Description */}
-      {ordnance.desc && ordnance.desc !== "n/a" && (
+      {maneuver.desc && maneuver.desc !== "n/a" && (
         <p className="text-sm text-cyan-100 whitespace-pre-line">
-          {ordnance.desc}
+          {maneuver.desc}
         </p>
       )}
 
@@ -50,16 +63,23 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
 
             const isActive = activeTag === tag.id;
             const scaledValue = getTagValue(tag.id, count);
+
             const label =
               scaledValue > 1 ? `${tag.name} x${scaledValue}` : tag.name;
-            const tooltipDesc = formatTagTooltip(tag.desc, scaledValue);
+
+            const tooltipDesc = formatTagTooltip(
+              tag.desc,
+              scaledValue
+            );
 
             return (
               <div
-                key={`${ordnance.id}-${tag.id}`}
+                key={`${maneuver.id}-${tag.id}`}
                 onMouseEnter={() => setActiveTag(tag.id)}
                 onMouseLeave={() => setActiveTag(null)}
-                onClick={() => setActiveTag(isActive ? null : tag.id)}
+                onClick={() =>
+                  setActiveTag(isActive ? null : tag.id)
+                }
                 className="
                   relative
                   text-xs
@@ -101,4 +121,4 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
   );
 }
 
-export default OrdnanceCard;
+export default ManeuverCard;
