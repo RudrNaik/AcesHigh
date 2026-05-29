@@ -95,7 +95,7 @@ function ModuleCard(module: Module) {
 
             return (
               <div>
-                <span className="font-bold">Grants Maneuver:</span>{" "}
+                <span className="font-bold">Adds Maneuver:</span>{" "}
                 <div className="flex flex-wrap gap-2 mt-2">
                   <div
                     onMouseEnter={() => setActiveTag(manu.id)}
