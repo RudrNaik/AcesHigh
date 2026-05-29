@@ -70,7 +70,7 @@ function Ordnance() {
 
         {/* Card List */}
         <main className="flex-1 min-w-0">
-          <div className="grid grid-cols-1 gap-6 lg:px-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredOrdnance.map((ordnance) => (
               <OrdnanceCard
                 key={ordnance.id}

@@ -23,7 +23,12 @@ function EquipmentMenu() {
             link="/equipment/mods"
             icon=""
           />
-          <Panel title="Tags" subtitle="Descriptors" link="*" icon="" />
+          <Panel
+            title="Manuevers"
+            subtitle="BFM/BVR"
+            link="/equipment/manuevers"
+            icon=""
+          />
           <div className="py-20"></div>
         </div>
       </div>

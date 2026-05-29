@@ -6,38 +6,8 @@
     },
     {
         "id": "manuCap1",
-        "name": "CAP (1)",
-        "desc": "Requires Spending 1 Capacity"
-    },
-    {
-        "id": "manuCap2",
-        "name": "CAP (2)",
-        "desc": "Requires Spending 2 Capacity"
-    },
-    {
-        "id": "manuCap3",
-        "name": "CAP (3)",
-        "desc": "Requires Spending 3 Capacity"
-    },
-    {
-        "id": "manuCap4",
-        "name": "CAP (4)",
-        "desc": "Requires Spending 4 Capacity"
-    },
-    {
-        "id": "manuCap5",
-        "name": "CAP (5)",
-        "desc": "Requires Spending 5 Capacity"
-    },
-    {
-        "id": "manuCap6",
-        "name": "CAP (6)",
-        "desc": "Requires Spending 6 Capacity"
-    },
-    {
-        "id": "manuCap7",
-        "name": "CAP (7)",
-        "desc": "Requires Spending 7 Capacity"
+        "name": "CAP [x]",
+        "desc": "Requires Spending [x] Capacity"
     },
     {
         "id": "manuAttack",
