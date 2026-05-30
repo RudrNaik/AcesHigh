@@ -336,7 +336,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-3",
-    "tags": "n/a",
+    "tags": ["manuDefend", "manuCap"],
     "desc": "Defeat."
   },
   {
