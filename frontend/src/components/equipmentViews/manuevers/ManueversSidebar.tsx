@@ -140,8 +140,13 @@ function ManeuverSidebar({
     ];
 
     const rows = sequence.map((s) => {
-      const e = s.m?.energyMod ?? 0;
+      let e = s.m?.energyMod ?? 0;
       const c = s.m?.capacityMod ?? 0;
+
+      // Positioning maneuvers gain energy, so invert the sign
+      if (s.m?.type === "POSITIONING") {
+        e = -e;
+      }
 
       energy += e;
       capacity += c;
@@ -179,8 +184,13 @@ function ManeuverSidebar({
   ) => {
     if (!m) return `[${slot}] - n/a`;
 
-    const e = m.energyMod;
+    let e = m.energyMod;
     let c = m.capacityMod;
+
+    // Positioning maneuvers gain energy, so invert the sign
+    if (m.type === "POSITIONING") {
+      e = -e;
+    }
 
     // Add capacity cost from manuCap tags
     if (m.tags && m.tags.length > 0) {

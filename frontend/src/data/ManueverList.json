@@ -25,7 +25,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "n/a",
+    "engCost": "0",
     "tags": [
       "manuRoleM"
     ],
@@ -37,7 +37,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "n/a",
+    "engCost": "0",
     "tags": [
       "manuRoleI"
     ],
@@ -49,7 +49,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "5",
+    "engCost": "-5",
     "tags": [
       "manuRoleS"
     ],
@@ -61,7 +61,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-2",
     "tags": [
       "manuRoleE"
     ],
@@ -73,7 +73,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-3",
     "tags": [
       "manuRoleE"
     ],
@@ -175,7 +175,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Exhaust",
-    "engCost": "-3",
+    "engCost": "3",
     "tags": "n/a",
     "desc": "Gain 3 Energy. Lose -1 Manu this turn."
   },
@@ -185,7 +185,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Exhaust",
-    "engCost": "-3",
+    "engCost": "3",
     "tags": "n/a",
     "desc": "Gain 3 Energy."
   },
@@ -225,7 +225,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "n/a",
+    "engCost": "0",
     "tags": "n/a",
     "desc": "Reroll a d6. Escalate."
   },
@@ -235,7 +235,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "n/a",
+    "engCost": "0",
     "tags": "n/a",
     "desc": "Add Capacity to your next pilot stat roll."
   },
@@ -245,7 +245,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-1",
     "tags": "n/a",
     "desc": "Gain Catch. Escalate."
   },
@@ -255,7 +255,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-1",
     "tags": "n/a",
     "desc": "Gain Lock On at the start of your next turn."
   },
@@ -265,7 +265,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-1",
     "tags": "n/a",
     "desc": "Choose a target. Gain {Locked}, grant an Ally Catch."
   },
@@ -275,8 +275,8 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
-    "tags": "n/a",
+    "engCost": "-2",
+    "tags": ["manuTrick"],
     "desc": "Spend a Temper. Gain one extra Reaction Maneuver this round."
   },
   {
@@ -285,7 +285,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-2",
     "tags": "n/a",
     "desc": "Spend a Nerve. Gain {Overwatch}. \n{Overwatch}: Choose a target. Until the start of your next turn, whenever that target Faces Consequences, you may lose {Overwatch} to make an Attack."
   },
@@ -295,7 +295,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-2",
     "tags": "n/a",
     "desc": "Spend X Reaction. Choose X enemy targets. On their next turn, at least one action has to target you."
   },
@@ -305,7 +305,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-2",
     "tags": "n/a",
     "desc": "Whenever, Spend a G-Res. Negate. Fatigue."
   },
@@ -315,7 +315,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-2",
     "tags": "n/a",
     "desc": "Gain Dive. Lose -1 Speed until you Exhaust it."
   },
@@ -325,8 +325,8 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
-    "tags": "n/a",
+    "engCost": "-2",
+    "tags": ["manuDefend"],
     "desc": "Gain {Mitigate}."
   },
   {
@@ -335,7 +335,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-3",
     "tags": "n/a",
     "desc": "Defeat."
   },
@@ -345,9 +345,29 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "n/a",
+    "engCost": "-3",
     "tags": "n/a",
     "desc": "Make an Attack."
+  },
+  {
+    "id": "manuShootCap",
+    "name": "Shoot w/Cap",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "-3",
+    "tags": ["manuCap"],
+    "desc": "Make an Attack using Capacity."
+  },
+  {
+    "id": "manuShootOrd",
+    "name": "Shoot w/Ordnance",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "-3",
+    "tags": ["manuCap", "manuORD"],
+    "desc": "Make an Attack using Ordnance, also uses Capacity."
   },
   {
     "id": "manuJoust",
@@ -355,8 +375,8 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "n/a",
-    "tags": "n/a",
+    "engCost": "-3",
+    "tags":["manuAttack"],
     "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
   },
   {
@@ -365,7 +385,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "X",
+    "engCost": "n/a",
     "tags": "n/a",
     "desc": "Gain +X Forward, then Escalate. Escalate again if X is greater than 4."
   },
@@ -375,7 +395,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "X",
+    "engCost": "n/a",
     "tags": "n/a",
     "desc": "You try to do something outside of a traditional maneuver, or there are special circumstances such as you lining up a shot down a tunnel \u2013 your AWACS will tell you the Energy Cost and any additional costs, such as a Pilot Stat Check."
   },
