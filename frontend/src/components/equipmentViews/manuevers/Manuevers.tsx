@@ -58,6 +58,7 @@ function Maneuvers() {
 
       <div className="flex gap-6">
         {/* Sidebar */}
+        <div>
         <ManeuverSidebar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
@@ -66,6 +67,7 @@ function Maneuvers() {
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
         />
+        </div>
 
         {/* Main Grid */}
         <main className="flex-1 min-w-0">

@@ -1157,7 +1157,7 @@
     "type": "Normal",
     "engCost": "2",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "[Cap - 2] Make a G-Res test, on a success gain stealth until your next attack."
   },
@@ -1169,7 +1169,8 @@
     "type": "Reaction",
     "engCost": "3",
     "tags": [
-      "manuCap2",
+      "manuCap",
+      "manuCap",
       "manuDefend"
     ],
     "desc": "[CAP (2) REACT - 3] Defeat, Defeat."
@@ -1458,7 +1459,8 @@
     "type": "Reaction",
     "engCost": "2",
     "tags": [
-      "manuCap2"
+      "manuCap",
+      "manuCap"
     ],
     "desc": "Choose any number of allies. They Gain Lock-On and Closure. Exhaust."
   },
@@ -1692,7 +1694,7 @@
     "type": "Positioning",
     "engCost": "n/a",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Gain 2 Energy. Whenever you Bait or Draw Fire this turn, increase your Speed or Maneuverability by 1 until the end of your next turn."
   },
@@ -1704,7 +1706,7 @@
     "type": "Reaction",
     "engCost": "0",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever you Draw Fire from your second target or above, you may Spend a Pilot Stat for each target beyond the first you Draw Fire from to ignore those stacks of Locked."
   },
@@ -1980,7 +1982,7 @@
     "type": "Reaction",
     "engCost": "0",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever you deal damage, you may double it. Fatigue."
   },
@@ -2002,7 +2004,7 @@
     "type": "Reaction",
     "engCost": "0",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever you use Ordnance on an [ATTACK], you may gain 2 Energy. Escalate."
   },
@@ -2076,7 +2078,7 @@
     "type": "Reaction",
     "engCost": "1",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever you deal damage to an air target, you may deal the same amount of damage to it again."
   },
@@ -2088,7 +2090,7 @@
     "type": "Reaction",
     "engCost": "1",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever you would suffer a Failure, you may flip a coin. On a heads, upgrade it to a Full Success instead. Exhaust."
   },
@@ -2192,7 +2194,7 @@
     "type": "Reaction",
     "engCost": "x",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever an Ally uses a Maneuver you can\u2019t, you may gain the ability to use that until the end of your next turn. X is equal to the energy cost of the target Maneuver before reductions. Exhaust."
   },
@@ -2284,7 +2286,10 @@
     "type": "Reaction",
     "engCost": "1",
     "tags": [
-      "manuCap4"
+      "manuCap",
+      "manuCap",
+      "manuCap",
+      "manuCap"
     ],
     "desc": "Draw five more cards. Exhaust."
   },
@@ -2426,7 +2431,7 @@
     "type": "Reaction",
     "engCost": "0",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever you make a Speed check, you may upgrade the roll\u2019s success by one step, to a maximum of a Full Success."
   },
@@ -2548,7 +2553,7 @@
     "type": "Reaction",
     "engCost": "3",
     "tags": [
-      "manuCap1"
+      "manuCap"
     ],
     "desc": "Whenever an Ally Faces Consequences, they Negate."
   },

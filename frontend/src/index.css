@@ -56,10 +56,9 @@ button{
 
 /* Base dark theme for all dropdowns */
 select.select-themed {
-  color: #ffffff;                 
-  background-color: #171717;      /* black background */
+  color: #CFFAFE;                 
+  background-color: #000000;      /* black background */
   border: 1px solid #06b6d499;    /* cyan-400/60 border */
-  border-radius: 0.25rem;
   padding: 0.25rem 1.75rem 0.25rem 0.5rem;
   background-image:
     linear-gradient(45deg, transparent 50%, #06b6d4 50%),

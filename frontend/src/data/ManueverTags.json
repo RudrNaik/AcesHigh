@@ -5,8 +5,8 @@
         "desc": "example description"
     },
     {
-        "id": "manuCapX",
-        "name": "CAP [x]",
+        "id": "manuCap",
+        "name": "CAP",
         "desc": "Requires Spending [x] Capacity"
     },
     {

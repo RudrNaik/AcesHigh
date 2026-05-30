@@ -36,6 +36,7 @@ export function getTagValue(tagId: string, count: number) {
   const rules: Record<string, (c: number) => number> = {
     ordMLTI: (c) => c * 2,
     acMCREW: (c) => c * 2,
+    manuCap: (c) => c,
   };
 
   return rules[tagId]?.(count) ?? count;
