@@ -379,7 +379,7 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
                   }}
                   className="w-full mt-2 px-3 py-2 bg-cyan-900/40 border border-cyan-100/60 text-cyan-100 text-xs hover:bg-cyan-900/60 transition"
                 >
-                  APPLY SEQUENCE
+                  APPLY TURN
                 </button>
               </div>
             )}
