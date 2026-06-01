@@ -136,7 +136,7 @@
     "isAdvanced": false,
     "type": "Positioning",
     "engCost": "-2",
-    "tags": "n/a",
+    "tags": ["manuZoneRepo"],
     "desc": "Gain 2 Energy. Change your Zone."
   },
   {
@@ -196,7 +196,7 @@
     "isAdvanced": false,
     "type": "Exhaust",
     "engCost": "0",
-    "tags": "n/a",
+    "tags": ["manuAddForward"],
     "desc": "Gain +1 Forward."
   },
   {
@@ -206,7 +206,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": "n/a",
+    "tags": ["manuAddAdvantage"],
     "desc": "Whenever, gain {Advantage}."
   },
   {
@@ -236,7 +236,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": "n/a",
+    "tags": ["manuCap"],
     "desc": "Add Capacity to your next pilot stat roll."
   },
   {
@@ -246,7 +246,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-1",
-    "tags": "n/a",
+    "tags": ["manuAddCatch"],
     "desc": "Gain Catch. Escalate."
   },
   {
@@ -256,7 +256,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-1",
-    "tags": "n/a",
+    "tags": ["manuAddLock"],
     "desc": "Gain Lock On at the start of your next turn."
   },
   {
@@ -266,7 +266,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-1",
-    "tags": "n/a",
+    "tags": ["manuAddLock"],
     "desc": "Choose a target. Gain {Locked}, grant an Ally Catch."
   },
   {
@@ -286,8 +286,8 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": "n/a",
-    "desc": "Spend a Nerve. Gain {Overwatch}. \n{Overwatch}: Choose a target. Until the start of your next turn, whenever that target Faces Consequences, you may lose {Overwatch} to make an Attack."
+    "tags": ["manuAddOverwatch"],
+    "desc": "Spend a Nerve. Gain Overwatch."
   },
   {
     "id": "manuBait",
@@ -306,7 +306,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": "n/a",
+    "tags": ["manuFatigue"],
     "desc": "Whenever, Spend a G-Res. Negate. Fatigue."
   },
   {
@@ -316,7 +316,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": "n/a",
+    "tags": ["manuAddDive"],
     "desc": "Gain Dive. Lose -1 Speed until you Exhaust it."
   },
   {
@@ -326,7 +326,7 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": ["manuDefend"],
+    "tags": ["manuDefend", "manuAddMitigate"],
     "desc": "Gain {Mitigate}."
   },
   {
@@ -1900,7 +1900,7 @@
     "type": "Reaction",
     "engCost": "1",
     "tags": "n/a",
-    "desc": "Whenever, if you have {Adagio}, recover 1 of any Pilot Stat. If you have {Allegro, recover a Capacity. Exhaust."
+    "desc": "Whenever, if you have {Adagio}, recover 1 of any Pilot Stat. If you have {Allegro}, recover a Capacity. Exhaust."
   },
   {
     "id": "manuFairyTac4",

@@ -58,5 +58,55 @@
         "id": "manuTrick",
         "name": "Trick",
         "desc": "Doesn't cost Maneuver Slot"
+    },
+    {
+        "id": "manuFatigue",
+        "name":"Fatigue",
+        "desc": "Cannot be used twice in a row"
+    },
+    {
+        "id": "manuZoneRepo",
+        "name":"Reposition",
+        "desc": "Change Zones"
+    },
+    {
+        "id": "manuAddCatch",
+        "name":"Catch",
+        "desc": "Gain Catch"
+    },
+    {
+        "id": "manuAddAvantage",
+        "name":"Advantage",
+        "desc": "Gains advantage"
+    },
+    {
+        "id": "manuAddForward",
+        "name":"Forward",
+        "desc": "Gain Forward"
+    },
+    {
+        "id": "manuAddMitigate",
+        "name":"Mitigate",
+        "desc": "Gains Mitigate"
+    },
+    {
+        "id": "manuAddClosure",
+        "name":"Closure",
+        "desc": "Gains Closure"
+    },
+    {
+        "id": "manuAddLock",
+        "name":"Lock On",
+        "desc": "Gains Lock On"
+    },
+    {
+        "id": "manuAddOverwatch",
+        "name":"Overwatch",
+        "desc": "Choose a target. Until the start of your next turn, whenever that target Faces Consequences, you may lose Overwatch to make an Attack."
+    },
+    {
+        "id": "manuAddDive",
+        "name":"Dive",
+        "desc": "Gains Dive"
     }
 ]

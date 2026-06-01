@@ -1,66 +1,15 @@
 import { useMemo, useState } from "react";
 import rawManeuvers from "../../../data/ManueverList.json";
-import { getTagCountMap, getTagValue } from "../../common/tagResolver";
 
-interface Maneuver {
-  id: string;
-  name: string;
-  type: string;
-  isCommon: boolean;
-  isAdvanced: boolean;
-  energyMod: number;
-  capacityMod: number;
-  tags: string[];
-  desc: string;
-}
-
-const normalizeTags = (tags: any): string[] => {
-  if (!tags) return [];
-  if (Array.isArray(tags)) return tags.filter(Boolean).map(String);
-  if (typeof tags === "string") {
-    if (tags.toLowerCase() === "n/a") return [];
-    return [tags];
-  }
-  return [];
-};
-
-const normalizeManeuvers = (data: any[]): Maneuver[] => {
-  return data.map((m) => {
-    const mapped = mapCategory(m);
-    return {
-      id: m.id,
-      name: m.name,
-      type: mapped.type,
-      isCommon: mapped.isCommon,
-      isAdvanced: mapped.isAdvanced,
-      energyMod: safeNumber(m.engCost),
-      capacityMod: 0,
-      tags: normalizeTags(m.tags),
-      desc: m.desc ?? "",
-    };
-  });
-};
-const safeNumber = (v: any) => {
-  const n = Number(v);
-  return Number.isFinite(n) ? n : 0;
-};
-
-const mapCategory = (m: any) => {
-  const type = (m.type ?? "").toUpperCase();
-
-  return {
-    type:
-      type === "POSITIONING"
-        ? "POSITIONING"
-        : type === "EXHAUST"
-          ? "EXHAUST"
-          : type === "REACTION"
-            ? "REACTION"
-            : "NORMAL",
-    isCommon: !!m.isCommon,
-    isAdvanced: !!m.isAdvanced,
-  };
-};
+import {
+  normalizeManeuvers,
+  calculateTurn,
+  formatManeuver,
+  getManeuverById,
+  getPositioningManeuvers,
+  getSelectableManeuvers,
+  type Maneuver,
+} from "../../common/manueverHelper";
 
 interface ManeuverSidebarProps {
   selectedCategory: string;
@@ -86,29 +35,8 @@ function ManeuverSidebar({
   const [tab, setTab] = useState<Tab>("FILTER");
 
   const all: Maneuver[] = useMemo(() => normalizeManeuvers(rawManeuvers), []);
-
-  const positionOptions = useMemo(
-    () =>
-      all.filter(
-        (m) =>
-          m.type === "POSITIONING" &&
-          (m.isCommon || m.isAdvanced) &&
-          m.id != "manuExampleTech" &&
-          m.id != "exampleManu",
-      ),
-    [all],
-  );
-
-  const maneuverOptions = useMemo(
-    () =>
-      all.filter(
-        (m) =>
-          m.type !== "POSITIONING" &&
-          m.id != "manuExampleTech" &&
-          m.id != "exampleManu",
-      ),
-    [all],
-  );
+  const positionOptions = useMemo(() => getPositioningManeuvers(all), [all]);
+  const maneuverOptions = useMemo(() => getSelectableManeuvers(all), [all]);
 
   const [temper, setTemper] = useState(0);
   const [nerve, setNerve] = useState(0);
@@ -125,106 +53,45 @@ function ManeuverSidebar({
   const [m3, setM3] = useState("");
   const [m4, setM4] = useState("");
 
-  const get = (id: string) => all.find((m) => m.id === id);
+  const selectedManeuvers = useMemo(
+    () => ({
+      pos: getManeuverById(all, pos),
+      m1: getManeuverById(all, m1),
+      m2: getManeuverById(all, m2),
+      m3: getManeuverById(all, m3),
+      m4: getManeuverById(all, m4),
+    }),
+    [all, pos, m1, m2, m3, m4],
+  );
 
-  const result = useMemo(() => {
-    let energy = energyStart;
-    let capacity = capacityStart;
-
-    const sequence = [
-      { m: get(pos) },
-      { m: get(m1) },
-      { m: get(m2) },
-      { m: get(m3) },
-      { m: get(m4) },
-    ];
-
-    const rows = sequence.map((s) => {
-      let e = s.m?.energyMod ?? 0;
-      const c = s.m?.capacityMod ?? 0;
-
-      // Positioning maneuvers gain energy, so invert the sign
-      if (s.m?.type === "POSITIONING") {
-        e = -e;
-      }
-
-      energy += e;
-      capacity += c;
-
-      if (s.m?.tags && s.m.tags.length > 0) {
-        const tagCounts = getTagCountMap(s.m.tags);
-        const manuCapCount = tagCounts["manuCap"] ?? 0;
-        if (manuCapCount > 0) {
-          const capCost = getTagValue("manuCap", manuCapCount);
-          capacity -= capCost;
-        }
-      }
-
-      return {
-        m: s.m,
-        e,
-        c,
-        after: energy,
-        capAfter: capacity,
-      };
-    });
-
-    return {
-      rows,
-      finalEnergy: energy,
-      finalCapacity: capacity,
-    };
-  }, [pos, m1, m2, m3, m4, energyStart, capacityStart]);
-
-  const formatManeuver = (
-    slot: string,
-    m?: Maneuver,
-    energyAfter?: number,
-    capacityAfter?: number,
-  ) => {
-    if (!m) return `[${slot}] - n/a`;
-
-    let e = m.energyMod;
-    let c = m.capacityMod;
-
-    // Positioning maneuvers gain energy, so invert the sign
-    if (m.type === "POSITIONING") {
-      e = -e;
-    }
-
-    // Add capacity cost from manuCap tags
-    if (m.tags && m.tags.length > 0) {
-      const tagCounts = getTagCountMap(m.tags);
-      const manuCapCount = tagCounts["manuCap"] ?? 0;
-      if (manuCapCount > 0) {
-        const capCost = getTagValue("manuCap", manuCapCount);
-        c -= capCost;
-      }
-    }
-
-    const desc = m.desc ? `: ${m.desc}` : "";
-
-    const math = `${e >= 0 ? "E+" : "E"}${e}=${energyAfter}, CAP${
-      c >= 0 ? "+" : ""
-    }${c}=${capacityAfter}`;
-
-    return `[${slot}] - ${m.name}${desc} // ${math}`;
-  };
+  const result = useMemo(
+    () =>
+      calculateTurn({
+        maneuvers: [
+          selectedManeuvers.pos,
+          selectedManeuvers.m1,
+          selectedManeuvers.m2,
+          selectedManeuvers.m3,
+          selectedManeuvers.m4,
+        ],
+        energyStart,
+        capacityStart,
+      }),
+    [selectedManeuvers, energyStart, capacityStart],
+  );
 
   const output = useMemo(() => {
     const seq = result.rows;
-
-    const name = (id: string) => all.find((m) => m.id === id);
 
     return `T${temper}/N${nerve}/R${reflex}/G${gRes}
 ENG-- ${energyStart} / CAP -- ${capacityStart} / SRV -- ${survival}
 
 -[START]-
-${formatManeuver("POS", name(pos), seq[0]?.after, seq[0]?.capAfter)}
-${formatManeuver("M1", name(m1), seq[1]?.after, seq[1]?.capAfter)}
-${formatManeuver("M2", name(m2), seq[2]?.after, seq[2]?.capAfter)}
-${formatManeuver("M3", name(m3), seq[3]?.after, seq[3]?.capAfter)}
-${formatManeuver("M4", name(m4), seq[4]?.after, seq[4]?.capAfter)}
+${formatManeuver("POS", selectedManeuvers.pos, seq[0]?.after, seq[0]?.capAfter)}
+${formatManeuver("M1", selectedManeuvers.m1, seq[1]?.after, seq[1]?.capAfter)}
+${formatManeuver("M2", selectedManeuvers.m2, seq[2]?.after, seq[2]?.capAfter)}
+${formatManeuver("M3", selectedManeuvers.m3, seq[3]?.after, seq[3]?.capAfter)}
+${formatManeuver("M4", selectedManeuvers.m4, seq[4]?.after, seq[4]?.capAfter)}
 -[END]-
 
 ENG -- ${result.finalEnergy} / CAP -- ${result.finalCapacity} / SRV -- ${survival}
