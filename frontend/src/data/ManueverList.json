@@ -25,7 +25,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "X",
     "tags": [
       "manuRoleM"
     ],

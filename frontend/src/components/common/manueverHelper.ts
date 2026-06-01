@@ -80,7 +80,6 @@ export const getPositioningManeuvers = (maneuvers: Maneuver[]) =>
   maneuvers.filter(
     (m) =>
       m.type === "POSITIONING" &&
-      (m.isCommon || m.isAdvanced) &&
       m.id !== "manuExampleTech" &&
       m.id !== "exampleManu",
   );
