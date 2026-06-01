@@ -8,6 +8,7 @@ import {
   getManeuverById,
   getPositioningManeuvers,
   getSelectableManeuvers,
+  organizeManeuversForDisplay,
   type Maneuver,
 } from "../../common/manueverHelper";
 
@@ -52,16 +53,42 @@ function ManeuverSidebar({
   const [m2, setM2] = useState("");
   const [m3, setM3] = useState("");
   const [m4, setM4] = useState("");
+  const [m5, setM5] = useState("");
+  const [m6, setM6] = useState("");
+  const [m7, setM7] = useState("");
+  const [m8, setM8] = useState("");
+
+  // All maneuver slot ids and setters
+  const allSlots = [
+    { id: m1, set: setM1 },
+    { id: m2, set: setM2 },
+    { id: m3, set: setM3 },
+    { id: m4, set: setM4 },
+    { id: m5, set: setM5 },
+    { id: m6, set: setM6 },
+    { id: m7, set: setM7 },
+    { id: m8, set: setM8 },
+  ];
+
+  // Get the actual maneuver objects for all slots
+  const selectedManeuversArray = useMemo(
+    () => allSlots.map(slot => getManeuverById(all, slot.id)),
+    [all, m1, m2, m3, m4, m5, m6, m7, m8],
+  );
+
+  // Organize maneuvers into labeled slots using the helper
+  const organizedManeuvers = useMemo(
+    () => organizeManeuversForDisplay(selectedManeuversArray),
+    [selectedManeuversArray],
+  );
+  const slotsNeeded = organizedManeuvers.totalSlots;
 
   const selectedManeuvers = useMemo(
     () => ({
       pos: getManeuverById(all, pos),
-      m1: getManeuverById(all, m1),
-      m2: getManeuverById(all, m2),
-      m3: getManeuverById(all, m3),
-      m4: getManeuverById(all, m4),
+      slots: selectedManeuversArray,
     }),
-    [all, pos, m1, m2, m3, m4],
+    [all, pos, selectedManeuversArray],
   );
 
   const result = useMemo(
@@ -69,29 +96,30 @@ function ManeuverSidebar({
       calculateTurn({
         maneuvers: [
           selectedManeuvers.pos,
-          selectedManeuvers.m1,
-          selectedManeuvers.m2,
-          selectedManeuvers.m3,
-          selectedManeuvers.m4,
+          ...selectedManeuversArray.slice(0, slotsNeeded),
         ],
         energyStart,
         capacityStart,
       }),
-    [selectedManeuvers, energyStart, capacityStart],
+    [selectedManeuvers, selectedManeuversArray, slotsNeeded, energyStart, capacityStart],
   );
 
   const output = useMemo(() => {
     const seq = result.rows;
 
+    const posRow = seq[0];
+    const maneuverRows = seq.slice(1);
+
+    const maneuverLines = maneuverRows.map((row, idx) =>
+      formatManeuver(organizedManeuvers.slots[idx]?.label || `M${idx + 1}`, row.m, row.after, row.capAfter)
+    );
+
     return `T${temper}/N${nerve}/R${reflex}/G${gRes}
 ENG-- ${energyStart} / CAP -- ${capacityStart} / SRV -- ${survival}
 
 -[START]-
-${formatManeuver("POS", selectedManeuvers.pos, seq[0]?.after, seq[0]?.capAfter)}
-${formatManeuver("M1", selectedManeuvers.m1, seq[1]?.after, seq[1]?.capAfter)}
-${formatManeuver("M2", selectedManeuvers.m2, seq[2]?.after, seq[2]?.capAfter)}
-${formatManeuver("M3", selectedManeuvers.m3, seq[3]?.after, seq[3]?.capAfter)}
-${formatManeuver("M4", selectedManeuvers.m4, seq[4]?.after, seq[4]?.capAfter)}
+${formatManeuver("POS", posRow?.m, posRow?.after, posRow?.capAfter)}
+${maneuverLines.join("\n")}
 -[END]-
 
 ENG -- ${result.finalEnergy} / CAP -- ${result.finalCapacity} / SRV -- ${survival}
@@ -109,7 +137,12 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
     m2,
     m3,
     m4,
+    m5,
+    m6,
+    m7,
+    m8,
     result,
+    organizedManeuvers,
   ]);
 
   return (
@@ -215,30 +248,19 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
                   setValue={setPos}
                   options={positionOptions}
                 />
-                <Select
-                  label="M1"
-                  value={m1}
-                  setValue={setM1}
-                  options={maneuverOptions}
-                />
-                <Select
-                  label="M2"
-                  value={m2}
-                  setValue={setM2}
-                  options={maneuverOptions}
-                />
-                <Select
-                  label="M3"
-                  value={m3}
-                  setValue={setM3}
-                  options={maneuverOptions}
-                />
-                <Select
-                  label="M4"
-                  value={m4}
-                  setValue={setM4}
-                  options={maneuverOptions}
-                />
+                
+                {organizedManeuvers.slots.map((slot, idx) => {
+                  const slotConfig = allSlots[idx];
+                  return (
+                    <Select
+                      key={idx}
+                      label={slot.label}
+                      value={slotConfig.id}
+                      setValue={slotConfig.set}
+                      options={maneuverOptions}
+                    />
+                  );
+                })}
 
                 <pre className="text-xs bg-black/30 p-2 border border-cyan-100/20 whitespace-pre-wrap">
                   {output}
@@ -253,6 +275,10 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
                     setM2("");
                     setM3("");
                     setM4("");
+                    setM5("");
+                    setM6("");
+                    setM7("");
+                    setM8("");
                   }}
                   className="w-full mt-2 px-3 py-2 bg-cyan-900/40 border border-cyan-100/60 text-cyan-100 text-xs hover:bg-cyan-900/60 transition"
                 >

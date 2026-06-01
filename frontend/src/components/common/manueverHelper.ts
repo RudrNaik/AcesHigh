@@ -26,6 +26,16 @@ export interface TurnResult {
   finalCapacity: number;
 }
 
+export interface ManeuverSlot {
+  label: string;
+  maneuver?: Maneuver;
+}
+
+export interface OrganizedManeuvers {
+  totalSlots: number;
+  slots: ManeuverSlot[];
+}
+
 export const safeNumber = (v: unknown): number => {
   const n = Number(v);
   return Number.isFinite(n) ? n : 0;
@@ -175,4 +185,62 @@ export const formatManeuver = (
   return `[${slot}] - ${m.name}${desc} // ${
     e >= 0 ? "E+" : "E"
   }${e}=${energyAfter}, CAP${c > 0 ? "+" : ""}${c}=${capacityAfter}`;
+};
+
+/**
+ * Calculate how many maneuver slots should be displayed.
+ * Always shows at least 4 slots (for 4 non-exhaust maneuvers).
+ * Adds additional slots for each exhaust maneuver selected.
+ * Max 8 slots total.
+ */
+export const calculateSlotsNeeded = (maneuvers: (Maneuver | undefined)[]): number => {
+  const selectedCount = maneuvers.filter(m => m).length;
+  if (selectedCount === 0) return 4; // Show 4 empty slots initially
+
+  const nonExhaustCount = maneuvers.filter(m => m && m.type !== "EXHAUST").length;
+  const exhaustCount = maneuvers.filter(m => m?.type === "EXHAUST").length;
+
+  // Always ensure at least 4 non-exhaust slots, plus any exhausts selected
+  return Math.min(8, Math.max(4, nonExhaustCount) + exhaustCount);
+};
+
+/**
+ * Get the display label for a maneuver slot (M1, M2, M3, M4, or XHST).
+ * XHST is used for exhaust maneuvers.
+ * Regular maneuvers are labeled M1-M4 in order (skipping exhaust slots).
+ */
+export const getManeuverSlotLabel = (
+  slotIndex: number,
+  maneuvers: (Maneuver | undefined)[],
+): string => {
+  const m = maneuvers[slotIndex];
+  if (m?.type === "EXHAUST") {
+    return "XHST";
+  }
+
+  // Count non-exhaust maneuvers up to this point
+  const nonExhaustBefore = maneuvers
+    .slice(0, slotIndex)
+    .filter(ma => !ma || ma.type !== "EXHAUST").length;
+
+  return `M${nonExhaustBefore + 1}`;
+};
+
+/**
+ * Organize maneuvers into labeled slots for display.
+ * Returns the total slots needed and an array of labeled slots with their maneuvers.
+ */
+export const organizeManeuversForDisplay = (
+  maneuvers: (Maneuver | undefined)[],
+): OrganizedManeuvers => {
+  const totalSlots = calculateSlotsNeeded(maneuvers);
+
+  const slots: ManeuverSlot[] = Array.from({ length: totalSlots }).map((_, idx) => {
+    const label = getManeuverSlotLabel(idx, maneuvers);
+    const maneuver = maneuvers[idx];
+
+    return { label, maneuver };
+  });
+
+  return { totalSlots, slots };
 };
