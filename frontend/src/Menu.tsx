@@ -116,7 +116,7 @@ function TerminalPage() {
                 subtitle="Pilot Records"
                 icon="❖"
                 onHover={handleHover}
-                link="/InDev"
+                link="/charactermanager"
               />
             </motion.div>
           </div>
