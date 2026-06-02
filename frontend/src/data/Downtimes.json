@@ -1,0 +1,377 @@
+[
+    {
+        "id": "baseSpar",
+        "name": "Sparring",
+        "description": "A test of your reflexes to some extent, a good spar is just as much a measure of your Temper and your ability to stay in control. Both participants in a spar roll Temper until they empty their pool - whoever gets the most total successes wins. Then, you both gain +1 Temper on their next Mission."
+    },
+    {
+        "id": "baseChess",
+        "name": "Chess",
+        "description": "Both participants in a chess match roll Nerve until they empty their pool - whoever gets the most total successes wins. Then, you both gain +1 Nerve on their next Mission."
+    },
+    {
+        "id": "baseRange",
+        "name": "Range Time",
+        "description": "Both participants in a shooting match roll Reflex until they empty their pool - whoever gets the most total successes wins. Then, you both gain +1 Reflex on their next Mission."
+    },
+    {
+        "id": "basePT",
+        "name": "PT",
+        "description": "You both lose whenever you go on PT, until the other downtime activities, but you can still try to outlast the other person: both participants roll G-Resist until they empty their pool - whoever gets the most total success wins. Oh, and you both gain +1 G-Resist."
+    },
+    {
+        "id": "basePaperwork",
+        "name": "Paperwork",
+        "description": "Work with your AWACS to advance the story - either do a small thing regarding the overall campaign story, or something smaller that’s more character focused. Either way, there should be a small, but tangible narrative result."
+    },
+    {
+        "id": "baseBudgeting",
+        "name": "Budget Meeting",
+        "description": ""
+    },
+    {
+        "id": "kfDT1",
+        "name": "Knife Throwing",
+        "description": "Throw knives and talk out complex emotions as you do. You both may lose -1 Temper or Nerve. If you do, gain +2 Reflex."
+    },
+    {
+        "id": "kfDT2",
+        "name": "Sharpening the Blade",
+        "description": "Requires Throwing Knives with someone. You both may either choose to spend 25 RP or lose -1 Temper and Nerve on the next mission. You cannot do this right after Knife Throwing."
+    },
+    {
+        "id": "kfDT3",
+        "name": "Whittling Down",
+        "description": "Requires having Sharpened a Blade with a Partner. Craft something and talk out more emotions. Both gain +1 Temper and Nerve on the next mission, as well as 75 RP. You cannot do this right after Sharpening a Blade."
+    },
+    {
+        "id": "hdDT1",
+        "name": "Fire Forged",
+        "description": "Take a sauna with up to three of your buddies. Don’t be weird about it. You all gain +1 Nerve, then, you all roll 2d6. If the average result is a failure, you all made it weird, and get -1 Temper; on a Mixed, only you do; on a Full, no one made it weird, and on a Perfect, you all gain +1 Temper from the Perfect Sauna."
+    },
+    {
+        "id": "hdDT2",
+        "name": "Casting Iron",
+        "description": "Go to the gym with a spotter and lift some heavy weights. Your partner gets +1 Reflex and G-Resist, while you may choose to either gain +2 G-Resist or Spend an RP. If you spend an 8 RP, you take a -1 to all Pilot Stats from the fatigue, but on your next level, gain +1 G-Resist for free."
+    },
+    {
+        "id": "hdDT3",
+        "name": "Frying Pan",
+        "description": "Cook for your wingmen. You spend 5 RP, but you all gain a +1 bonus to two Pilot Stats of your choice from the delicious home cooking."
+    },
+    {
+        "id": "djDT1",
+        "name": "Freshest Beats",
+        "description": "Listen to some music on a boombox while you spar with your partner. If they like the song, you gain +1 Nerve and +1 G-Resist; if they dislike it, you lose -1 Temper but gain +1 Reflex and +1 G-Resist."
+    },
+    {
+        "id": "djDT2",
+        "name": "Sample Gathering",
+        "description": "Record some noises around you or from other songs pointed out by your partner. You lose -1 Reflex and they lose -1 Nerve, as some of them were probably quite loud, but you and your partner may lose 1 Stress."
+    },
+    {
+        "id": "djDT3",
+        "name": "Talking With The Producers",
+        "description": "Find a way to sell an idea or something you recorded to your captain or to some people with money. If you’re successful, you both gain 20 RP but you lose -1 to all Pilot Stats. If you’re not, lose -1 Temper and Nerve, and gain an additional 10 RP the next time you level up."
+    },
+    {
+        "id": "acroDT1",
+        "name": "Unwind",
+        "description": "Spend time figuring out life struggles and how to address them with a friend or posse. You all gain +1 Nerve and Temper."
+    },
+    {
+        "id": "acroDT2",
+        "name": "Ring of Fire",
+        "description": "You and your partner have to jump through a lot of hoops in the process to get something. You take -1 to two of your Pilot Stats, and they take -1 to the other two, but one gains a Narrative Boon and the other 12 RP."
+    },
+    {
+        "id": "acroDT3",
+        "name": "Stretched Out",
+        "description": "Work through some stretches with a posse. You all gain +1 G-Resist and Reflex from your newly limber limbs."
+    },
+    {
+        "id": "ambuDT1",
+        "name": "Camping Trip",
+        "description": "Spend at least one night roughing it out with someone. You both gain 17 RP for what you saved on your per diem, but you both take a -2 to a Pilot Stat."
+    },
+    {
+        "id": "ambuDT2",
+        "name": "Sight Zero",
+        "description": "Spend some time improving or refining the accuracy of your or your partner’s weapon. You both gain Snapshot at the start of your next Mission."
+    },
+    {
+        "id": "ambuDT3",
+        "name": "Fights in Tight Spaces",
+        "description": "Get into something with someone when you’re both positionally compromised (in a locker, say). You and your partner now lose a Capacity from doing it, and you either gain 10 RP if you get out by yourselves or you, your partner, and your savior gain two Mental and Physical Stress but 15RP each."
+    },
+    {
+        "id": "bragDT1",
+        "name": "Posturing",
+        "description": "Spend time with your downtime partner sizing up the rest of the “competition”, whatever you see that as right now. You gain +2 Nerve or Reflex, and they gain the other."
+    },
+    {
+        "id": "bragDT2",
+        "name": "Captain Worldwide",
+        "description": "You (at least claim to) have been everywhere or know someone anywhere. Recount your tales and how they’re relevant to the current situation to someone; in doing so, you either learn more about the ongoing events outside of your base, more of the on-base gossip, or gain +1 Reflex."
+    },
+    {
+        "id": "bragDT3",
+        "name": "Always the Bridesmaid",
+        "description": "Complain about missing out on something that you totally would’ve been better at than someone. They get -1 Nerve or Temper for having to listen to you complain, and you take a -1 to the other stat, but you both gain 15 additional RP when you finish your next deployment."
+    },
+    {
+        "id": "cloudDT1",
+        "name": "Color of the Sky",
+        "description": "Look at (or try to) your choice of clouds (if day) or the aurora borealis (if night) with a friend. Gain +1 Temper and Nerve."
+    },
+    {
+        "id": "cloudDT2",
+        "name": "Wonder Why",
+        "description": "You and your partner may both either spend 5 RP or take a -1 to Nerve and Reflex to do research on a seemingly inane topic. In doing so, you either uncover more of the ongoing situation and gain intelligence (a Narrative Boon) or find a new way to do something on base and recover 13 RP (for you both) in the process."
+    },
+    {
+        "id": "cloudDT3",
+        "name": "Brightside",
+        "description": "Try to find the upside to some of the stress or negative consequences a buddy is facing (be it from a story consequence or other downtimes). You may either choose to take on their debuffs in their stead or spend 5 RP to negate one of them."
+    },
+    {
+        "id": "duelDT1",
+        "name": "Hastilude",
+        "description": "Practice the arcane art of some form of throwing hands with a Partner holding your target up for you. Trade your G-Resist scores."
+    },
+    {
+        "id": "duelDT2",
+        "name": "Harnischfechten",
+        "description": "Surreptitiously acquire some kind of armor with someone. Next mission, one of you gains +1 Survivability and the other loses -1 G-Resist."
+    },
+    {
+        "id": "duelDT3",
+        "name": "Dance in the Round",
+        "description": "Do some dancing with as many people that want to come. Everyone puts up to one Nerve or Temper into a pool; when you’re done dancing everyone bows or curtseys to each other and the pool is divided any way the participants wish."
+    },
+    {
+        "id": "highDT1",
+        "name": "All In",
+        "description": "Play a round of Poker with some of your wingmen. You may individually all bet up to 30RP. Gamble (at easiest, flip five coins – whoever has the most heads, wins). Winner takes all of the RP."
+    },
+    {
+        "id": "highDT2",
+        "name": "Bankruptcy",
+        "description": "You and your buddies (up to three) are broke (have under 10RP). You may each take a -1 to each Pilot Stat as you scrounge around couch cushions; if you do, you each gain 3d6RP."
+    },
+    {
+        "id": "highDT3",
+        "name": "Tip Out the Dealer",
+        "description": "Make a Pool of up to 30RP and split it among up to three of your buddies. Anyone that participates gains a +1 to a Pilot Stat of their choice on their next mission, even if they didn’t receive any RP."
+    },
+    {
+        "id": "oodaDT1",
+        "name": "Lean It Out",
+        "description": "With up to three other buddies, you may each burn an RP. Whoever does gains a +1 to two Pilot Stats on their next mission. Bitch about downsizing."
+    },
+    {
+        "id": "oodaDT2",
+        "name": "Scrum It Up",
+        "description": "Discuss how things are going with at least three other buddies. You pay all put any amount of your spare RP into a pool; then, add an additional 10 RP to it and distribute it back out amongst yourselves. Whoever gets the most RP back loses -1 Nerve on their next mission; the least, -1 Temper."
+    },
+    {
+        "id": "oodaDT3",
+        "name": "Agile Mindset",
+        "description": "Find a willing sap to take a -2 to two Pilot Stats of their choice for their next mission. You take a -2 to the other two for your next mission. You both gain 10 RP now and an additional 15 RP on your next level up."
+    },
+    {
+        "id": "reconDT1",
+        "name": "Chorus of Thought",
+        "description": "Bounce theories and shoot the shit with the other pilots. Each participant may put any amount of RP they have into a pool. Gain a Narrative Boon. The value of this boon should be related to the amount of RP put into the pool."
+    },
+    {
+        "id": "reconDT2",
+        "name": "Carol, Dylan, and Silvia",
+        "description": "Sketch out a theory on paper or some kind of board. Walk someone through every single connection. On the next mission, you both lose -1 Temper or Nerve, but gain +2 Reflex."
+    },
+    {
+        "id": "reconDT3",
+        "name": "Ledepuller",
+        "description": "Poke around documents or a conversation you maybe shouldn’t read or hear with someone. Gain a Severe Narrative Boon and a Major Narrative Consequence."
+    },
+    {
+        "id": "redDT1",
+        "name": "Can’t Drive 55",
+        "description": "Go on a drive with as many people as your personal vehicle can fit. You all lose -1 G-Resist, but gain +2 Reflex."
+    },
+    {
+        "id": "redDT2",
+        "name": "Hocus Pocus Focus",
+        "description": "Play a reaction-based game with up to three other pilots. You all lose -1 Reflex, but gain +2 Nerve."
+    },
+    {
+        "id": "redDT3",
+        "name": "Drag Racer",
+        "description": "It’s race time. Gather bets in the form of RP (or planes, if you want to race for Pinks) from your opponents in the race, plus an RP from your \"sponsors\", and make checks on each pilot pool until they’re empty. Whoever got the most successes, wins, and gets to choose how to distribute the RP. Alternatively, play Aces Horse. Winner still distributes."
+    },
+    {
+        "id": "sibylDT1",
+        "name": "Sage Burning, Vibe Clearing",
+        "description": "Find some space and burn some sage or other aromatic to clear the air. Vent alongside your partner, bury any hatchets, and let it all out. You gain +1 Reflex and your partner gains +1 to whatever stat their specialization has a penalty. If they don’t have one, they gain +1 Reflex."
+    },
+    {
+        "id": "sibylDT2",
+        "name": "Deer in the Arcane Headlights",
+        "description": "Do some sort of arcane reading on your Partner, be it tarot or palm readings. If they take the reading to be positive, they gain +1 G-Resist and Temper; if they take it negatively, they gain +1 Nerve and Reflex. You take a -1 to all Pilot Stats but get paid 20 RP for your reading."
+    },
+    {
+        "id": "sibylDT3",
+        "name": "Cats and Ladders",
+        "description": "You or your Partner encounter an ill omen. Do a ritual together to restore karmic balance to the both of you. Despite this, its effects linger on the both of you. At the start of the mission, you both face Minor Consequences, but you gain Meld."
+    },
+    {
+        "id": "jaegerDT1",
+        "name": "By the Firelight",
+        "description": "Tell a group of people a story in the dark, with props of some kind - even if it’s just the shadow your hands cast on the wall. Everyone loses -1 Nerve and -1 Temper on the next mission, but may reduce their Mental Stress by 3."
+    },
+    {
+        "id": "jaegerDT2",
+        "name": "Scars of the Past",
+        "description": "Swap stories with someone about injuries and show off your scars - mental, or physical. You both gain +1 G-Res and +1 Temper."
+    },
+    {
+        "id": "jaegerDT3",
+        "name": "A Dozen Times, as a Matter of Fact",
+        "description": "Calm someone down after something’s happened to them - or if nobody’s in a bad state, tell someone a story from your home country. Afterwards, you both gain +1 Nerve and +1 Temper."
+    },
+    {
+        "id": "sseArchonDT1",
+        "name": "Wings of Protection",
+        "description": "Bail someone out of a situation where physical or emotional damage was about to happen. You mark 1 Mental Stress, but they gain +2 Nerve and +1 Temper."
+    },
+    {
+        "id": "sseArchonDT2",
+        "name": "Heart of the Squadron",
+        "description": "Bring any number, but at least four, people together to reaffirm your relationships to each other. Everyone else gains +2 Reflex and +1 Temper, but you mark 2 Mental Stress."
+    },
+    {
+        "id": "sseArchonDT3",
+        "name": "Legacy of the Ancients",
+        "description": "Get another pilot ready for something that might hurt them. They either gain +1 Survivability on the next mission or 15 RP."
+    },
+    {
+        "id": "sseFairyDT1",
+        "name": "Barre Stretch",
+        "description": "Go through a warmup routine with someone. Both of you gain +1 G Res and Lock-On."
+    },
+    {
+        "id": "sseFairyDT2",
+        "name": "Yes, I Can Do The Splits",
+        "description": "Put someone in (a) uncomfortable position(s), under the guise of “self improvement.” If they survive your trials, they get 12 RP. If they don’t, you get 12 RP instead."
+    },
+    {
+        "id": "sseFairyDT3",
+        "name": "Under the Lights",
+        "description": "Put on a show for any number of people, of any kind. Lose -1 Nerve, but gain +1 Reflex and +1 Temper. Anyone in the audience gains +1 Reflex."
+    },
+    {
+        "id": "sseCowDT1",
+        "name": "Campfire Tunes",
+        "description": "Set up a warm gathering place with any amount of people. Anyone may start a song, everyone should join in. Everyone that does may Recover 1 of either Stress Track, but start the next mission with -2 Capacity."
+    },
+    {
+        "id": "sseCowDT2",
+        "name": "Deal or No Deal",
+        "description": "Join or start a game of chance with any number of people. Everyone’s cheating, of course, it’s about not getting caught. If you’re caught, get kicked out of the game and lose -1 Nerve but +2 Reflex. If you stick around until the game devolves, gain +2 Reflex but lose -1 G-Res instead."
+    },
+    {
+        "id": "sseCowDT3",
+        "name": "Barroom Brawl",
+        "description": "Get into a fight at a watering hole. The winner is determined by the crowd, barring that, by rolling off 2d6. Winner gains 20 RP, loser takes -1 Temper."
+    },
+    {
+        "id": "sseTruckDT1",
+        "name": "Reckless Driving",
+        "description": "Get involved in a wreck, literally or metaphorically. Everyone involves loses -1 G-Res and -1 Reflex, but gains 10 RP."
+    },
+    {
+        "id": "sseTruckDT2",
+        "name": "Under The Influence",
+        "description": "Broaden your horizons with new experiences or substances that allow your mind to see beyond. You mark 1 Physical Stress, but gain +2 G-Res. If your partner joins you, they gain the same. If they rescue you, they gain +1 Temper instead."
+    },
+    {
+        "id": "sseTruckDT3",
+        "name": "Running Red Lights",
+        "description": "Proceed with a plan even though your partner’s told you it’s a terrible, terrible idea. You Lose -1 Temper, but gain +1 Nerve and +1 Reflex. Your partner marks 1 Mental Stress, but gains +2 Nerve."
+    },
+    {
+        "id": "sseTacticDT1",
+        "name": "Lost Item Return",
+        "description": "Find something that someone lost. Return it to them. You gain 10 RP, they gain +1 Temper and recover 1 Mental Stress."
+    },
+    {
+        "id": "sseTacticDT2",
+        "name": "All According To Plan",
+        "description": "Lay out an extremely detailed plan for the next mission to any amount of the rest of the flight. This plan must be so detailed as to be useless if anything goes remotely wrong. As long as they follow it, they Gain +1 on all rolls. When they inevitably deviate, they Recover any Pilot Stat of their choice and lose the +1 bonus."
+    },
+    {
+        "id": "sseTacticDT3",
+        "name": "Tea Party",
+        "description": "Meticulously prepare a tea party, with drinks and refreshments. Invite another Pilot, and have a nice conversation by discussing topics that interest your guest. You both gain +1 Nerve and +1 Reflex."
+    },
+    {
+        "id": "sseOracleDT1",
+        "name": "Delphi",
+        "description": "Have someone come to you for a prediction. Do your reading, make a statement. If it comes true during the mission, they gain Snapshot. Either way, you Gain +1 Reflex and Lose -1 G-Res."
+    },
+    {
+        "id": "sseOracleDT2",
+        "name": "For Prophet",
+        "description": "Bribe someone, or get bribed for something. The briber in predictive crimes gains +1 Nerve. Whoever got bribed gains 15 RP."
+    },
+    {
+        "id": "sseOracleDT3",
+        "name": "Divine Retribution",
+        "description": "Something bad happens to you as a result of your hubris. For their part in punishing you, your partner gains +1 Temper and +1 Reflex. On your next mission, you choose the cards you draw, but you only draw 2."
+    },
+    {
+        "id": "sseNoviceDT1",
+        "name": "Listening and Learning",
+        "description": "Get a lesson from one of your squadronmates. Forget at least part of it, and fuck up immediately, of course. You both gain +1 Reflex and +1 Nerve."
+    },
+    {
+        "id": "sseNoviceDT2",
+        "name": "Care Package",
+        "description": "Get a supply box shipped to you from friends or family. Share the contents with a partner, they gain +1 Temper. You gain 12 RP."
+    },
+    {
+        "id": "sseNoviceDT3",
+        "name": "Someone Has To",
+        "description": "Get assigned some task that nobody else wants to do. Rope someone into helping, or at least observing. Switch either your Mental or Physical Stress tracks."
+    },
+    {
+        "id": "sseTalonDT1",
+        "name": "Nothing Is True",
+        "description": "Argue with a superior or allies over the current orders, trying to prove a different version of events. Whoever wins gains a Minor Narrative Boon, whoever loses gains +1 Nerve."
+    },
+    {
+        "id": "sseTalonDT2",
+        "name": "Shifting Sands",
+        "description": "Scrounge around for extra supplies with a partner. Flip a Coin. On a heads, you both gain 16 RP. On a tails, you get caught - you both gain 10 RP instead, and you both lose -1 Capacity on the next mission."
+    },
+    {
+        "id": "sseTalonDT3",
+        "name": "Undercover Agent",
+        "description": "Practice pretending to be something you aren’t, with a partner. If they’re fooled, you both gain +1 Nerve and +1 Reflex. If they aren’t, gain +1 Temper and +1 G-Res."
+    },
+    {
+        "id": "sseAirConDT1",
+        "name": "Supply Lines",
+        "description": "Spend time with your commander (AWACS) discussing the available assets for deployment. Spend RP on new assets, repairing surviving assets, or gain RP by salvaging assets."
+    },
+    {
+        "id": "sseAirConDT2",
+        "name": "Intelligence",
+        "description": "Communicate with your AWACS. Do spook things with a confidant and get intelligence on the war. If you find a way to act on it either before or during your next mission, you both gain 25 RP. If you don't, face Narrative Consequences."
+    },
+    {
+        "id": "sseAirConDT3",
+        "name": "Advanced Training",
+        "description": "You spend some time commanding your soldiers off the field. Your partner(s) mark three Mental Stress from your special attention, but they may mark off any one advancement on their deployment as a result."
+    }
+]

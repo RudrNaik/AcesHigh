@@ -1,0 +1,164 @@
+[
+  {
+    "id": "static1Nerve1G",
+    "name": "+1 Nerve, +1 G-Resist",
+    "description": "",
+    "mods": {
+      "nerve": 1,
+      "gResist": 1
+    },
+    "resources": {}
+  },
+  {
+    "id": "static1Nerve1R",
+    "name": "+1 Nerve, +1 Reflex",
+    "description": "",
+    "mods": {
+      "nerve": 1,
+      "reflex": 1
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticGetRobbedNerd",
+    "name": "Stat Shift (Mental +2 / Physical -1 / RP loss)",
+    "description": "They stole your lunch money.",
+    "mods": {
+      "nerve": 2,
+      "temper": 2,
+      "reflex": -1,
+      "gResist": -1
+    },
+    "resources": {
+      "rp": -10
+    }
+  },
+  {
+    "id": "staticGodhood",
+    "name": "+1 to everything",
+    "description": "",
+    "mods": {
+      "temp": 1,
+      "nerve": 1,
+      "reflex": 1,
+      "gResist": 1
+    },
+    "resources": {"rp": 1}
+  },
+  {
+    "id": "staticGResBoon",
+    "name": "+2 G-Resist",
+    "description": "",
+    "mods": {
+      "gResist": 2
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticNerveBoon",
+    "name": "+2 Nerve",
+    "description": "",
+    "mods": {
+      "nerve": 2
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticReflexBoon",
+    "name": "+2 Reflex",
+    "description": "",
+    "mods": {
+      "reflex": 2
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticTemperBoom",
+    "name": "+2 Temper",
+    "description": "",
+    "mods": {
+      "temp": 2
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticNoBoon",
+    "name": "No Boons",
+    "description": "",
+    "mods": {},
+    "resources": {}
+  },
+  {
+    "id": "staticSeriousInj",
+    "name": "Serious Injuries",
+    "description": "Roll twice more on this table. If you roll 1 again on either roll, you get to choose the injury instead.",
+    "mods": {},
+    "resources": {}
+  },
+  {
+    "id": "staticSpinal",
+    "name": "Spinal Damage",
+    "description": "Permanently lose -1 G-Resist.",
+    "mods": {
+      "gResist": -1
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticEyeTrauma",
+    "name": "Eye Damage",
+    "description": "Choose: permanently lose -1 Reflex or -1 Nerve.",
+    "mods": {},
+    "resources": {},
+    "modOptions": [
+      { "reflex": -1 },
+      { "nerve": -1 }
+    ]
+  },
+  {
+    "id": "staticLimbLost",
+    "name": "Lost Limb",
+    "description": "Choose two stats each mission to suffer -1. Can be bought off over time.",
+    "mods": {},
+    "resources": {}
+  },
+  {
+    "id": "staticConc",
+    "name": "Concussion",
+    "description": "You take -1 to all Pilot Stats until recovered.",
+    "mods": {
+      "temp": -1,
+      "nerve": -1,
+      "reflex": -1,
+      "gResist": -1
+    },
+    "resources": {}
+  },
+  {
+    "id": "staticLimbDam",
+    "name": "Limb Damage",
+    "description": "Choose a stat; it suffers -1 until healed.",
+    "mods": {},
+    "resources": {},
+    "modOptions": [
+      { "temp": -1 },
+      { "nerve": -1 },
+      { "reflex": -1 },
+      { "gResist": -1 }
+    ]
+  },
+  {
+    "id": "staticFailedGambler",
+    "name": "Failed Gambler",
+    "description": "Start with 0 RP but gain +1 to all stats.",
+    "mods": {
+      "temp": 1,
+      "nerve": 1,
+      "reflex": 1,
+      "gResist": 1
+    },
+    "resources": {
+      "rp": -30
+    }
+  }
+]
