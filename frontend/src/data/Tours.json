@@ -1,0 +1,86 @@
+[
+  {
+    "tourID": "tourKnight",
+    "tourName": "Knight's Tour",
+    "tourDesc": [
+      "...have a code of honor that goes beyond even the laws of war",
+      "...let wounded troops retreat so you can fight them at full strength",
+      "...show mercy even at great personal risk"
+    ],
+    "tourPerkIDs": [
+      "perkDefensive"
+    ]
+  },
+  {
+    "tourID": "tourSoldier",
+    "tourName": "Soldier's Tour",
+    "tourDesc": [
+      "...fight for a nation over any sense of loftier ideals",
+      "...firmly believe that there is no honor in war, without falling into ruthlessness",
+      "...stand by your unit’s side, no matter what"
+    ],
+    "tourPerkIDs": [
+      "perkStyle"
+    ]
+  },
+  {
+    "tourID": "tourMerc",
+    "tourName": "Mercenary's Tour",
+    "tourDesc": [
+      "...only be there for a paycheck",
+      "...exploit the flow of the battlefield to maximize your profit",
+      "...try and stamp your mark on history"
+    ],
+    "tourPerkIDs": [
+      "perkApproach"
+    ]
+  },
+  {
+    "tourID": "tourMonarch",
+    "tourName": "Monarch's Tour",
+    "tourDesc": [
+      "...fashion yourself as the ruler of the sky",
+      "...care less about whatever goes on groundside",
+      "...find a reason to fight, buddy"
+    ],
+    "tourPerkIDs": [
+      "perkFlexibility"
+    ]
+  },
+  {
+    "tourID": "tourPhoenix",
+    "tourName": "Phoenix's Tour",
+    "tourDesc": [
+      "...chafe at not being able to do things your own way",
+      "...look for the most exciting part of the battlefield",
+      "...keep trying new things, in the air and on the ground"
+    ],
+    "tourPerkIDs": [
+      "perkRecovery"
+    ]
+  },
+  {
+    "tourID": "tourGaruda",
+    "tourName": "Garuda's Tour",
+    "tourDesc": [
+      "...sacrifice yourself to empower your allies",
+      "...reach out to enemies and give them chances",
+      "...make sure everyone in the squad is tight-knit"
+    ],
+    "tourPerkIDs": [
+      "perkRest"
+    ]
+  },
+  {
+    "tourID": "tourWolf",
+    "tourName": "Wolf's Tour",
+    "tourDesc": [
+      "...constantly tinker with your strategy, plane, or outlook",
+      "...try and absorb as much knowledge as you can, even from your opponents",
+      "...insist on hunting together, no matter what"
+    ],
+    "tourPerkIDs": [
+      "perkAdaptability"
+    ]
+  }
+]

@@ -1,0 +1,623 @@
+[
+    {
+        "id": "perkLootPerk",
+        "name": "Example Loot Perk",
+        "type": "",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Example Perk from the Loot Tree"
+    },
+    {
+        "id": "perkExtraRations",
+        "name": "Extra Rations",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "This perk is unavailable from deployments. Gain a Pilot Stat or 10 RP. You can take this perk any number of times."
+    },
+    {
+        "id": "perkGAddict",
+        "name": "G-Addict",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuGAddict",
+        "advancement": "To gain this perk, you must be put into danger by your reckless maneuvering.",
+        "description": "Whenever you make a Maneuverability check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
+    },
+    {
+        "id": "perkSpeedDemon",
+        "name": "Speed Demon",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuSpeedDemon",
+        "advancement": "To gain this perk, you must be put into danger by your reckless speeding.",
+        "description": "Whenever you make a Speed Check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
+    },
+    {
+        "id": "perkThroughIvy",
+        "name": "Through Ivy",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuThroughIvy",
+        "advancement": "To gain this perk, you must take survivability damage from flying recklessly.",
+        "description": "Whenever you make a Speed Check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
+    },
+    {
+        "id": "perkITC",
+        "name": "Into Their Connection",
+        "type": "basePerk",
+        "tags": "perkEWO",
+        "addManuID": "manuITC",
+        "advancement": "To gain this perk, you must get into trouble for listening in when you shouldn't.",
+        "description": "You may spend a Reflex or Nerve; when you do, choose an enemy and gain information based on their tier. Your AWACS will tell you what this information gives you. You may use this any number of times per mission, but each time you do, roll 1d6. On a 6, they figure out someone is listening in and change the channel; Exhaust. This threshold is lowered for every additional use."
+    },
+    {
+        "id": "perkHarmAddict",
+        "name": "Harm Addiction",
+        "type": "basePerk",
+        "tags": "perkEWO",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must take survivability damage from AA fire.",
+        "description": "Whenever you spend a Capacity on an [Attack] against an AA target in an EWO aircraft, you gain Snapshot (AA)."
+    },
+    {
+        "id": "perkDestructive",
+        "name": "Destructive Interference",
+        "type": "basePerk",
+        "tags": "perkEWO",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must suffer the consequences from enemy jamming.",
+        "description": "Whenever you take a malus to hit a target protected by jamming, reduce the malus by 1."
+    },
+    {
+        "id": "perkWorth",
+        "name": "Knowledge of your Worth",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must have been the priority target.",
+        "description": "Whenever you Bait or Draw Fire, Gain Closure; it can only be applied to [EWO] Maneuvers."
+    },
+    {
+        "id": "perkMatchstick",
+        "name": "Mach matchstick",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuMatchstick",
+        "advancement": "To gain this perk, you must beat someone in a race.",
+        "description": "Make a Speed Check. On a failure, take -1 to Maneuverability until the start of your next turn. On a Mixed, gain +1 Forward. On a Full Success or better, Mitigate."
+    },
+    {
+        "id": "perkDD",
+        "name": "Noticeable Rank",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuDD",
+        "advancement": "To gain this perk, you must get overruled by someone of a higher rank.",
+        "description": "Whenever an ally would fail a Pilot Stat Check, you may spend a Reflex to let them reroll. Fatigue."
+    },
+    {
+        "id": "perkFavour",
+        "name": "Commander's Favour",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuFavour",
+        "advancement": "To gain this perk, you must be praised by someone of a higher rank.",
+        "description": "Whenever you would spend a Capacity, you may instead not; when you do, take a Minor Narrative Consequence, for example having to explain yourself when you land to avoid losing the commander’s favor. Exhaust."
+    },
+    {
+        "id": "perkWingComm",
+        "name": "Wing Commander",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuWingComm",
+        "advancement": "To gain this perk, you must earn the trust of your squadron.",
+        "description": "Give your flight an order. They all gain Lock-On, and if everyone follows it they additionally gain Closure and you get both benefits as well. Exhaust."
+    },
+    {
+        "id": "perkPressgang",
+        "name": "Pressganged Squadron",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuPressgang",
+        "advancement": "To gain this perk, you must go against orders.",
+        "description": "Whenever you would fail a Temper or Nerve Check, start bitching instead; when you do, you may roll again. Flip a coin; on heads, you annoy your flightmates, on tails, Face a Major Narrative Consequence: you might get told to shut up or your Callsign may become Catty, for example. Exhaust."
+    },
+    {
+        "id": "perkIAC",
+        "name": "Insane Coffee Adict",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must shit yourself.",
+        "description": "You may drink way too much coffee before a mission; if you do, you gain 2 Reflex, even above the normal cap of 7. When you do drink too much coffee, you may spend the 2 extra Reflex in place of other Pilot Pools. Then, whenever you fail one of the following checks, bad things start to happen: Temper: The coffee gave you a headache. Spend a G-Resist or Reflex. Face E1 Minor Narrative Consequences. Nerve: The coffee made you irritable. Spend a Nerve. Face E1 Minor Narrative Consequences. G-Resist: The coffee upset your stomach. Spend a Reflex. If this is the second G-Resist check failed, you puke. Face E1 Major Narrative Consequences. Maneuverability: There is not a good feeling in your gut or bladder. Spend a Nerve. If this is the second Maneuverability check failed, you lose control of one of those two organs. Face E1 Major Narrative Consequences. When you use a Supply Line, you lose both the benefits and drawbacks of Insane Coffee Addict."
+    },
+    {
+        "id": "perkGood",
+        "name": "Good Natured",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuGood",
+        "advancement": "To gain this perk, you must act against your own interests to help someone else.",
+        "description": "Whenever the going gets tough, you may crack a joke or say something inspirational; when you do, roll 2d6. On a 10 or up, any ally may recover one Spent Stat Point if they describe how their character responds. On a 6 through 9, any ally may expend one Pilot Stat to restore another. On a 5 or lower, it falls flat, and you spend a Nerve in embarrassment. Exhaust."
+    },
+    {
+        "id": "perkBad",
+        "name": "Bad Natured",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuBad",
+        "advancement": "To gain this perk, you must act in your own interests over helping someone else.",
+        "description": "Whenever you may go on a villainous monologue on Open Comms; when you do, spend a Temper or Nerve and roll 2d6. On an 8 or higher, you succeed in trying to scare every enemy within communication distance, causing all allies to Gain Lock-On and Meld. On a 7 or lower, you fail to do so and take a Minor Narrative Consequence. Exhaust."
+    },
+    {
+        "id": "perkNCA",
+        "name": "Non-Critical Area",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuNCA",
+        "advancement": "To gain this perk, you must survive risking the odds.",
+        "description": "X is equal to 2 + the amount of stats you have at -1 (whether or not they were caused by Non-Critical Area). Spend a Reflex or Spend a Coin. Negate a Consequence. Set a Plane Stat to -1. If you’ve used this perk this mission, if at any point all stats are -1, you run out of Reflex, or you Stall, you die."
+    },
+    {
+        "id": "perkSewerSlide",
+        "name": "Some Sort of Suicide Squad",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must have two burnt coins.",
+        "description": "While you Stay With the Craft, you may upgrade the success of any roll by 1 step (Failures to Mixed Success, Mixed Success to Full Success, Full Success to Perfect Success) by Spending a Pilot Stat or Spending a Coin."
+    },
+    {
+        "id": "perkNaps",
+        "name": "Naps Standing Up",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must resupply.",
+        "description": "Whenever you return to a Resupply Line, you may refill one point in each Pilot Stat."
+    },
+    {
+        "id": "perkFailing",
+        "name": "Failing Upwards",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "To gain this perk, you must fail a pilot stat check.",
+        "description": "Whenever you would make a pilot stat check, you may choose to fail instead. Explain why you failed, and if there are no other consequences Face Minor Narrative Consequences. However, you don’t spend that pilot stat, and gain a +2 Forward."
+    },
+    {
+        "id": "perkLucky",
+        "name": "Born Lucky",
+        "type": "basePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuLucky",
+        "advancement": "To gain this perk, you must roll a 12 without modifiers.",
+        "description": "Whenever you roll 12 without any modifiers (that is, two sixes on the dice), you may count it as a Perfect Success or Recover a Luck Maneuver. Exhaust."
+    },
+    {
+        "id": "perkManufactured",
+        "name": "Manufactured Luck",
+        "type": "basePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuManufactured",
+        "advancement": "To gain this perk, you must roll a 13",
+        "description": "Whenever you roll over 13, you may spend a Nerve. If you do, Gain Meld or recover a [LUCK] Maneuver. Exhaust."
+    },
+    {
+        "id": "perkPerfectTemp",
+        "name": "Perfect Tempo",
+        "type": "basePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuPerfectTempo",
+        "advancement": "To gain this perk, you must roll three 11's in a row.",
+        "description": "Whenever you gain a third Perfect Success in one mission, recover two [LUCK] Maneuvers. Exhaust."
+    },
+    {
+        "id": "perkTemptingFate",
+        "name": "Tempting Fate",
+        "type": "basePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuTemptingFate",
+        "advancement": "To gain this perk, you must fail to Mitigate Consequences.",
+        "description": "Whenever you make a Check or attempt to Mitigate Consequences, spend a Reflex and flip a Coin. On a Heads, improve the results by one tier; on a tails, downgrade it by one tier but Recover a [LUCK] Maneuver. Exhaust."
+    },
+    {
+        "id": "perkBoldFavour",
+        "name": "Bold's Favour",
+        "type": "basePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuBoldFavour",
+        "advancement": "To gain this perk, you must have a coin come up Tails when you Risk the Odds.",
+        "description": "Whenever you Risk It after entering a Critical State, for any Coins that come up Tails, you may Burn them. This removes them from the result. Gain a guaranteed Perfect Success Snapshot for each burnt coin. Recover all Luck Maneuvers."
+    },
+    {
+        "id": "perkWhoDares",
+        "name": "Who Dares Wins",
+        "type": "basePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuWhoDares",
+        "advancement": "To gain this perk, you must succeed on a pilot stat check despite being at 0.",
+        "description": "Whenever you make a Pilot Skill Check, you may wager an additional point of that stat. If you succeed on that check, recover that pilot stat, up to a maximum of 3. If you fail, lose two. Exhaust."
+    },
+    {
+        "id": "perkEagerEye",
+        "name": "Eager Eye",
+        "type": "basePerk",
+        "tags": "",
+        "addManuID": "manuEagerEye",
+        "advancement": "To gain this perk, you must kill a target through Overwatch that has an ally Locked",
+        "description": "Whenever you are on Overwatch, if an Ally would fail an [Attack], you may instead replace their Attack with yours. Lose {Overwatch}."
+    },
+    {
+        "id": "perkApproach",
+        "name": "Ace Approach",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuApproach",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Choose a Pilot Stat when you gain this perk. [REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Ace Type stat instead. This doesn’t count as a Maneuver. Additionally, you may use the chosen stat instead of one other when you calculate your Stress track."
+    },
+    {
+        "id": "perkDefensive",
+        "name": "Ace Defensive",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuDefensive",
+        "advancement": "This perk is unavailable from deployments. Choose a Pilot Stat when you gain this perk.",
+        "description": "[REACT - 1] Make that Pilot Stat Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+    },
+    {
+        "id": "perkStyle",
+        "name": "Ace Style",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuStyle",
+        "advancement": "This perk is unavailable from deployments. Choose a Pilot Stat when you gain this perk.",
+        "description": "[REACT - 0] Whenever you make an Attack, Spend that Pilot Stat and hit an additional target. Fatigue."
+    },
+    {
+        "id": "perkFlexibility",
+        "name": "Ace Flexibility",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Choose a Specialization tactic from a specialization that isn’t yours. Add it to your tactics list."
+    },
+    {
+        "id": "perkRecovery",
+        "name": "Ace Recovery",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Recover a burnt coin. You may gain this Ace Perk more than once."
+    },
+    {
+        "id": "perkRest",
+        "name": "Ace Rest",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Choose the first listed Specialization downtime from a specialization that isn’t yours. Add it to your downtime list."
+    },
+    {
+        "id": "perkAdaptability",
+        "name": "Ace Adaptability",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuAdaptability",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Choose a Pilot Stat when you gain this perk. [REACT - 1] Replace one of your plane stats with the current value of the chosen Pilot Stat until the end of your turn. Fatigue."
+    },
+    {
+        "id": "perkHARMReduction",
+        "name": "HARM Reduction",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "Requires at least two EWO perks.",
+        "description": "Whenever you do an EWO Action, you may Spend a Capacity and additionally do a different EWO action for free without it counting as its own Maneuver. Exhaust."
+    },
+    {
+        "id": "perkHunter",
+        "name": "Ace Hunter",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Whenever you hit an enemy aircraft, you may deal double damage. Exhaust."
+    },
+    {
+        "id": "perkSPAMRAAM",
+        "name": "Spamraam Addict",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Whenever you use a Multilock Ordnance against an A2A target, add a stacking +1 to the die roll against each target past the second. (As in, if you roll 7, against 4 targets, it would be 7 7 8 9)"
+    },
+    {
+        "id": "perkRollingThunder",
+        "name": "Rolling Thunder",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuRollingThunder",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Spend X Capacity and choose X ground targets close to each other. Make an Attack, use that roll result for all of them. Any of your targets that aren’t destroyed must take an action to get out of cover when they next act. Exhaust."
+    },
+    {
+        "id": "perkHIM",
+        "name": "It's Not The Plane",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Whenever you make a roll using an Aircraft stat, you may use a Pilot Stat instead. If you do, spend Two points of the Pilot Stat you used. Use Temper in place of A2A, Nerve in place of A2G, G-Resist in place of Manu, and Reflex in place of Speed."
+    },
+    {
+        "id": "perkStallion",
+        "name": "Stall-Out Stallion",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuStallion",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Whenever you do something tagged with [AOA], you may gain Snapshot."
+    },
+    {
+        "id": "perkHoldem",
+        "name": "Know When to Hold'em",
+        "type": "acePerk",
+        "tags": "perkLuck",
+        "addManuID": "manuHoldem",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Whenever you make a check, you may roll 1d6. If you rolled a 1 through 3, upgrade the success of that roll by 1 step. On a 4 or 5, do nothing. On a 6, downgrade the roll one step. Exhaust."
+    },
+    {
+        "id": "perkSoundOfSilence",
+        "name": "Sound of Silence",
+        "type": "acePerk",
+        "tags": "perkEWO",
+        "addManuID": "manuSoundOfSilence",
+        "advancement": "Requires at least two EWO perks.",
+        "description": "Choose any number of allies. They Gain Lock-On and Closure. Exhaust."
+    },
+    {
+        "id": "perkEagleEye",
+        "name": "Eagle Eye",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuEagleEye",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "Whenever you make an Attack as part of Overwatch, you may choose to double your damage for that Attack against that target. Lose Overwatch."
+    },
+    {
+        "id": "perkBigShot",
+        "name": "Big Shot",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "Requires three other Ace Perks.",
+        "description": "Whenever you Exhaust another Ace Perk, instead gain another usage of it at the start of your next turn. The AWACS Holds a Move. Exhaust."
+    },
+    {
+        "id": "perkApproachT",
+        "name": "Knight's Approach",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuApproachT",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Nerve instead."
+    },
+    {
+        "id": "perkApproachN",
+        "name": "Soldier's Approach",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuApproachN",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Nerve stat instead."
+    },
+    {
+        "id": "perkApproachR",
+        "name": "Mercenary's Approach",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuApproachR",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Reflex stat instead."
+    },
+    {
+        "id": "perkApproachG",
+        "name": "Monarch's Approach",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuApproachG",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your G-Resist stat instead."
+    },
+    {
+        "id": "perkDefensiveT",
+        "name": "Knight's Defensive",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuDefensiveT",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Make a Temper Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+    },
+    {
+        "id": "perkDefensiveN",
+        "name": "Soldier's Defensive",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuDefensiveN",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Make a Nerve Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+    },
+    {
+        "id": "perkDefensiveR",
+        "name": "Mercenary's Defensive",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuDefensiveR",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Make a Reflex Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+    },
+    {
+        "id": "perkDefensiveG",
+        "name": "Monarch's Defensive",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuDefensiveG",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Make a G-Resist Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+    },
+    {
+        "id": "perkStyleT",
+        "name": "Knight's Style",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuStyleT",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a Temper and hit an additional target. Fatigue."
+    },
+    {
+        "id": "perkStyleN",
+        "name": "Soldier's Style",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuStyleN",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a Nerve and hit an additional target. Fatigue."
+    },
+    {
+        "id": "perkStyleR",
+        "name": "Mercenary's Style",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuStyleR",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a Reflex and hit an additional target. Fatigue."
+    },
+    {
+        "id": "perkStyleG",
+        "name": "Monarch's Style",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuStyleG",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a G-Resist and hit an additional target. Fatigue."
+    },
+    {
+        "id": "perkAdaptabilityT",
+        "name": "Knight's Adapdability",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuAdaptabilityT",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Temper until the end of your turn. Fatigue."
+    },
+    {
+        "id": "perkAdaptabilityN",
+        "name": "Soldier's Adapability",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuAdaptabilityN",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Nerve until the end of your turn. Fatigue."
+    },
+    {
+        "id": "perkAdaptabilityR",
+        "name": "Mercenary's Adaptability",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuAdaptabilityR",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Reflex until the end of your turn. Fatigue."
+    },
+    {
+        "id": "perkAdaptabilityG",
+        "name": "Monarch's Adaptability",
+        "type": "acePerk",
+        "tags": "",
+        "addManuID": "manuAdaptabilityG",
+        "advancement": "This perk is unavailable from deployments.",
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your G-Resist until the end of your turn. Fatigue."
+    },
+    {
+        "id": "perkExampleBGPerk",
+        "name": "Example BG Perk",
+        "type": "bgPerk",
+        "tags": "perkLuck",
+        "addManuID": "exampleManu",
+        "advancement": "This is a background perk. It cannot be obtained by any normal means outside of character creation.",
+        "description": "This is an example background perk, granting exampleManu"
+    },
+    {
+        "id": "bgJackdaw",
+        "name": "Greed of the Jackdaw",
+        "type": "bgPerk",
+        "tags": "perkLuck",
+        "addManuID": "",
+        "advancement": "",
+        "description": "You took something that did not belong to you. Few know, but they will not let you forget. Should the truth of this act come out, suffer the consequences. Add the loot item lootJackdaw to your loot sheet (under Contracts)"
+    },
+    {
+        "id": "bgBoozeCruise",
+        "name": "Booze Cruise Avionics",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Gain the Upgrade Package \"Vodka Pack\". It reads \"Take a -1 to A2A, A2G, and Survivability. At the end of each mission you go on, gain 20RP as you siphon your avionic's alcoholic coolant to sell to your mates.\" To gain this Upgrade Pack, add lootBooze to your Loot Chart."
+    },
+    {
+        "id": "bgDesertGuide",
+        "name": "Desert Guide",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "When this land was still peaceful you traveled it, so you have an uncanny sense of knowing where you are in the Sotoan subcontinent. Once a mission you may declare a feature of the local area, the GM will incorporate this into their next turn."
+    },
+    {
+        "id": "bgACA",
+        "name": "Affordable Care Act",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Whenever someone receives an injury or suffers a Stress Break, you may forgo a Downtime and choose Claim or Cure. If you choose Claim, recover both a Mental and Physical Stress and gain 6RP as you file the paperwork to make it not your problem and receive a payout for handling it. If you choose Cure, spend 13 RP instead and either undo one of the Stat Downs from the Break or instantly heal the Injury."
+    },
+    {
+        "id": "bgFailedODST",
+        "name": "Feet First Away From Danger",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "You like to kick back and relax at the first sign of being away from danger. Whenever you Withdraw, you may forgo recovering any Survivability. If you do, recover a Physical Stress -- recover a Mental Stress, too, if you are flying a Multicrew (3) or greater aircraft."
+    },
+    {
+        "id": "bgBourbon",
+        "name": "Old Fashioned",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBourbon",
+        "advancement": "",
+        "description": "As a rather down to earth man, Husker knows how to keep the classics alive -- and himself. As a Positioning Maneuver, he may choose Sweet or Sour and deliver a remark in line with the flavor he chose. If he chose Sweet, each ally may recover either a Temper or a Nerve. If he chose Sour, spend a Temper or Nerve and gain Snapshot. Exhaust."
+    },
+    {
+        "id": "bgWidows",
+        "name": "Widows Once Made",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Keep a tracker on your sheet under the notes category. It should have two columns: one for Alert Count and one for the Results. Whenever an Ally hits 0 Survivability on a mission (that is, right before they would enter a Critical State), enter Alert for the next two turns. Mark this down. While in Alert, if an ally then Enters a Critical State, mark down Widow; if you intervene to stop them from doing so, mark down Maker; if nothing happens before you exit Alert, mark down Smurf. After 13 Alerts, this Background Perk will evolve."
+    }
+]

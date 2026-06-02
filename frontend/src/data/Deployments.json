@@ -1,0 +1,90 @@
+[
+  {
+    "id": "baseDepFury",
+    "name": "Fury",
+    "description": "Gain a Temper by having your Temper fail. Snap, overreact, or overextend when you fail a Temper check",
+    "advancement": "",
+    "reqMod": null,
+    "perkID": null,
+    "pilotMods": {
+      "temp": 1,
+      "nerve": 0,
+      "reflex": 0,
+      "gResist": 0
+    }
+  },
+  {
+    "id": "baseDepAcuity",
+    "name": "Acuity",
+    "description": "Gain a Reflex by having your Reflexes fail. Panic, freeze up, or get overwhelmed when you fail a Reflex check.",
+    "advancement": "",
+    "reqMod": null,
+    "perkID": null,
+    "pilotMods": {
+      "temp": 0,
+      "nerve": 0,
+      "reflex": 1,
+      "gResist": 0
+    }
+  },
+  {
+    "id": "baseDepPat",
+    "name": "Patience",
+    "description": "Gain a Nerve by having your Nerve fail. Disconnect, lag, or stall when you fail a Nerve check.",
+    "advancement": "",
+    "reqMod": null,
+    "perkID": null,
+    "pilotMods": {
+      "temp": 0,
+      "nerve": 1,
+      "reflex": 0,
+      "gResist": 0
+    }
+  },
+  {
+    "id": "baseDepEnd",
+    "name": "Endurance",
+    "description": "Black out, get sick, or otherwise wind up weakened by failing a G-Res check.",
+    "advancement": "",
+    "reqMod": null,
+    "perkID": null,
+    "pilotMods": {
+      "temp": 0,
+      "nerve": 0,
+      "reflex": 0,
+      "gResist": 1
+    }
+  },
+  {
+    "id": "baseDepReq",
+    "name": "Requisitions",
+    "description": "Face Consequences even when you use Capacity.",
+    "advancement": "",
+    "reqMod": 50,
+    "perkID": null,
+    "pilotMods": {
+      "temp": 0,
+      "nerve": 0,
+      "reflex": 0,
+      "gResist": 0
+    }
+  },
+  {
+    "id": "baseDepGen",
+    "name": "Genesis",
+    "description": "Use the Override to the right to select a Perk Advancement for the Perk you want.",
+    "advancement": "",
+    "reqMod": null,
+    "perkID": null,
+    "pilotMods": {}
+  },
+  {
+    "id": "baseDepMastery",
+    "name": "Mastery",
+    "description": "Roll a Perfect or a Failure in this family of Aircraft.",
+    "advancement": "",
+    "reqMod": null,
+    "perkID": null,
+    "pilotMods": {}
+  }
+]

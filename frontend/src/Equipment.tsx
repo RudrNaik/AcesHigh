@@ -1,5 +1,4 @@
 import Panel from "./components/menu/TerminalPanel";
-import "./flicker.css"
 
 function EquipmentMenu() {
   return (

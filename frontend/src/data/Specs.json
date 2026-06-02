@@ -1,0 +1,1786 @@
+[
+  {
+    "id": "exampleSpec",
+    "prefix": "",
+    "name": "Example",
+    "flavor": "This is an example Spec",
+    "staticMods": "staticGodhood",
+    "info": "This is where fun facts go!",
+    "addManu": "",
+    "preFlights": [],
+    "tactics": [],
+    "advancements": [],
+    "masteries": []
+  },
+  {
+    "id": "specBaseKF",
+    "prefix": "KF",
+    "name": "Knife Fighter",
+    "flavor": "They live life on the edge of a blade, taking daring offensive risks in combat and living life with open passion. There is no resource that is not better spent now, and every tomorrow is only a hope, so why not live a little? Make no mistake, however, they are often highly technically skilled pilots, adept at eking out the tiniest of advantages in the air.",
+    "staticMods": "staticReflexBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "kfDT1",
+      "kfDT2",
+      "kfDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Bloodletting [REACT, CAP(1) - 1]",
+        "id": "manuKFTac1",
+        "description": "Whenever you deal damage to an air target, you may deal the same amount of damage to it again."
+      },
+      {
+        "name": "Blades Edge [REACT, CAP(1) - 1]",
+        "id": "manuKFTac2",
+        "description": "Whenever you would suffer a Failure, you may flip a coin. On a heads, upgrade it to a Full Success instead. Exhaust."
+      },
+      {
+        "name": "Tip of the Spear [REACT - 6]",
+        "id": "manuKFTac3",
+        "description": "Whenever an ally Interdicts, you may join them. If you do, gain a Guaranteed Perfect Success Snapshot."
+      },
+      {
+        "name": "Razor Wire [REACT - 0]",
+        "id": "manuKFTac4",
+        "description": "Whenever you Face Severe or higher Consequences, you may gain {Advantage} on your next [ATTACK]."
+      },
+      {
+        "name": "Icepick Precision [REACT - 2]",
+        "id": "manuKFTac5",
+        "description": "Whenever you’re off by one from a better tier of success, you may mark 1 Stress of either type to upgrade it."
+      },
+      {
+        "name": "35 Foot Rule [REACT - 1]",
+        "id": "manuKFTac6",
+        "description": "Whenever you fail an [ATTACK] roll, you may make a Speed Check. On a Mixed Success, ignore the consequences of the failure; on a Full Success, you instead get a Mixed Success."
+      },
+      {
+        "name": "Puuko [ATTACK, A2A - 1]",
+        "id": "manuKFTac7",
+        "description": "Make an Attack. After you use this Maneuver, flip a coin. If it’s tails, Exhaust, Escalate."
+      }
+    ],
+    "advancements": [
+      "Destroy two enemy fighters in one round",
+      "Make Ace (kill five enemy aircraft).",
+      "Make Ace of Aces (kill or assist in killing five ace-level aircraft).",
+      "Overkill an enemy by rolling with a +7 modifier to your attack or by dealing damage to it again after killing it.",
+      "Win an Air to Air duel while in critical state. Crash afterwards, either on landing or from the fight.",
+      "Fall for someone’s false opening.",
+      "Take a hit to deal one."
+    ],
+    "masteries": [
+      {
+        "name": "PUNCHDAGGER [PASSIVE]",
+        "id": "manuKFMast1",
+        "description": "Whenever you use Alley Fighter, you gain Snapshot every 3 Energy spent instead."
+      },
+      {
+        "name": "Point Towards Enemy [TRICK - 2]",
+        "id": "manuKFMast2",
+        "description": "Gain one extra [REACT] Maneuver this round."
+      },
+      {
+        "name": "Make Your Own Luck [3]",
+        "id": "manuKFMast3",
+        "description": "Kill someone. Burn coins equal to their difficulty level above Rookie. Exhaust."
+      }
+    ]
+  },
+  {
+    "id": "specBaseHD",
+    "prefix": "HD",
+    "name": "Hammer Dropper",
+    "flavor": "They find their homes in fire and iron, forging their reputations in the highest of heats and coming out the other side stronger for it. To make attack runs requires guts and the ability to keep going no matter what, and these pilots have both in spades, shrugging off hits to deliver precision munitions and then returning to base to gather their buddies for a good time before going out and doing it again.",
+    "staticMods": "staticNerveBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "hdDT1",
+      "hdDT2",
+      "hdDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Just a Flesh Wound [REACT - 0]",
+        "id": "manuHDTac1",
+        "description": "Whenever you Face Consequences, you may gain +1 Forward."
+      },
+      {
+        "name": "Gun Runner [ATTACK, A2G - 1]",
+        "id": "manuHDTac2",
+        "description": "Make an Attack. After you use this Maneuver, flip a coin. If it’s tails, Exhaust and Face Major Consequences."
+      },
+      {
+        "name": "Reinforced Plates [REACT - 0]",
+        "id": "manuHDTac3",
+        "description": "Whenever you take 1 Survivability damage, you may spend two Capacity to negate it."
+      },
+      {
+        "name": "Armor Penetration [REACT, A2G, CAP(1) - 0]",
+        "id": "manuHDTac4",
+        "description": "Whenever you deal damage, you may double it. Fatigue."
+      },
+      {
+        "name": "Fire Fangs [REACT - 2]",
+        "id": "manuHDTac5",
+        "description": "Whenever you hit a ground target, you may Gain Snapshot; add your A2G to it."
+      },
+      {
+        "name": "Shark’s Smile [REACT, CAP(1) - 0]",
+        "id": "manuHDTac6",
+        "description": "Whenever you use Ordnance on an [ATTACK], you may gain 2 Energy. Escalate."
+      },
+      {
+        "name": "Clutch CAS [ATTACK - 2]",
+        "id": "manuHDTac7",
+        "description": "Make an Attack targeting the biggest threat to allied ground units."
+      }
+    ],
+    "advancements": [
+      "Shrug off large amounts of fire/far too many hits in your aircraft.",
+      "Hear the cheers from allies after you’re called in to support them.",
+      "While in a Critical State, keep going.",
+      "Receive an award from ground troops you saved before.",
+      "Be the most damaged aircraft, yet the last one to retreat.",
+      "Make an attack run in the teeth of enemy fire.",
+      "Dodge improvised anti-air fire (an enemy unit your attacks caused to fly into the air)"
+    ],
+    "masteries": [
+      {
+        "name": "HAMMERFALL [PASSIVE]",
+        "id": "manuHDMast1",
+        "description": "Whenever you Interdict, gain Snapshot twice."
+      },
+      {
+        "name": "DANGER CLOSE [REACT, CAP(2), - 0]",
+        "id": "manuHDMast2",
+        "description": "Whenever a ground unit becomes threatened, gain Snapshot. Fatigue."
+      },
+      {
+        "name": "ABLATIVE ARMOUR [REACT, TRICK - 0]",
+        "id": "manuHDMast3",
+        "description": "Whenever you would take damage from {Locked} at the end of your turn, you may instead Spend a Survivability and Defeat, Defeat, Defeat. Exhaust."
+      }
+    ]
+  },
+  {
+    "id": "specBaseDJ",
+    "prefix": "DJ",
+    "name": "Disc Jockey",
+    "flavor": "They rule the waves on air, land, and sea, filling the electromagnetic spectrum with a finely tuned cocktail that hinders enemy systems with an overflow of noise while boosting the signals of their allies. Their medium is the invisible and the message is simple: you listen to me.",
+    "staticMods": "staticReflexBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "djDT1",
+      "djDT2",
+      "djDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Diss Track [1]",
+        "id": "manuDJTac1",
+        "description": "Diss the enemy on Open Comms, then choose an ally to recover a Pilot Stat. Exhaust."
+      },
+      {
+        "name": "Bit Waves [WAVE]",
+        "id": "manuDJTac2",
+        "description": "Whenever you Jam, choose someone. They gain one of the following benefits:\nSaw: Change the range for a Perfect Success: 12 to 13 and 20 to 21.\nSquare: Change the range for a Full Success: 11 to 12 and 14 up. \nTriangle: Change the range for a Mixed Success: 5 to 11.\nAn ally can only benefit from one such benefit at a time.\n"
+      },
+      {
+        "name": "Scatman’s Spirit [PASSIVE]",
+        "id": "",
+        "description": "It’s a Scatman’s world. You count as an ally for your Ally Jams."
+      },
+      {
+        "name": "Ska Track On Deck [PASSIVE]",
+        "id": "",
+        "description": "Play a song. You may spend a Nerve and Reflex a number of times equal to how many minutes long it is (round down). For each minute you paid for, you may Ally Jam during your POS for free. Exhaust."
+      },
+      {
+        "name": "Amplifier to 11 [WAVE]",
+        "id": "manuDJTac5",
+        "description": "Whenever you give a buff, you may spend 1 Capacity to also give it to another ally."
+      },
+      {
+        "name": "Sound Suppression [REACT - 1]",
+        "id": "manuDJTac6",
+        "description": "Whenever you Jam, or Overwatch, you may choose an enemy. The next attack against them has the effect of enemy jamming downgraded by one step."
+      },
+      {
+        "name": "Priority Channel [REACT - 0]",
+        "id": "manuDJTac7",
+        "description": "Whenever you give an Ally the benefits of a WAVE, you may give them the benefits of another. If you don’t spend a Capacity, Exhaust."
+      }
+    ],
+    "advancements": [
+      "Annoy someone with your noise.",
+      "Save an ally by interrupting the highest-priority threat to them.",
+      "Play an entire song uninterrupted over comms.",
+      "Disable enemy defenses just in the nick of time.",
+      "Jam all of the other noises to make the way for an ally’s assault.",
+      "Become overwhelmed from a noise that’s not your own.",
+      "Get a new callsign from your music."
+    ],
+    "masteries": [
+      {
+        "name": "FOUR AND THIRTY THREE [POS]",
+        "id": "manuDJMast1",
+        "description": "Spend a Reflex and Nerve. Disable an Enemy Jammer for Temper turns."
+      },
+      {
+        "name": "CLEAR THE WAVES [POS]",
+        "id": "manuDJMast2",
+        "description": "Gain 2 Energy. You may use 2 [WAVE] buffs at a time this turn."
+      },
+      {
+        "name": "RHAPSODY IN THE SKY [POS]",
+        "id": "manuDJMast3",
+        "description": "The next jam you and all Allied EWOs make is free."
+      }
+    ]
+  },
+  {
+    "id": "specAddAcro",
+    "prefix": "Acro",
+    "name": "Acrobat",
+    "flavor": "They are aerial performance artists, equally at home pulling five G’s as their plane spins on three axes to line up a shot and demonstrating slow speed maneuvers right on top of an airshow crowd.",
+    "staticMods": "staticGResBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "acroDT1",
+      "acroDT2",
+      "acroDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Pirouette [PASSIVE]",
+        "id": "",
+        "description": "Once per turn, whenever you Gain a Maneuver from an Ally, gain Closure."
+      },
+      {
+        "name": "High Top [PASSIVE]",
+        "id": "",
+        "description": "Whenever you spend time getting to a higher altitude, usually by Flying Defensively or Zoom Climbing, Gain +1 Forward."
+      },
+      {
+        "name": "Adagio [REACT - 2]",
+        "id": "manuAcroTac3",
+        "description": "Whenever you make an [Attack], you may Gain Snapshot. Fatigue."
+      },
+      {
+        "name": "Aerial Silk [PASSIVE]",
+        "id": "",
+        "description": "Increase your maneuver limit per turn by 1, but you lose -2 Capacity."
+      },
+      {
+        "name": "High Wire [PASSIVE]",
+        "id": "",
+        "description": "Gain +1 Forward whenever you fail a Nerve or Reflex check."
+      },
+      {
+        "name": "Lion Tamer [ATTACK - 4]",
+        "id": "manuAcroTac6",
+        "description": "Make an Attack, targeting a noncritical area deliberately. Downgrade the Success of this Maneuver by one Step. On a Mixed Success or better, they may retreat or surrender. If they don’t do either, your flight has to put them down instead – Exhaust this maneuver, but you and all your allies gain Snapshot. On a Failure or worse, Exhaust."
+      },
+      {
+        "name": "PARKOUR [PASSIVE]",
+        "id": "",
+        "description": "Whenever you use one of your other Tactics, you may grant an Ally Meld. If they say no, you gain Snapshot instead. Fatigue."
+      }
+    ],
+    "advancements": [
+      "Fly through a tight space - through a tunnel, between skyscrapers, etc.",
+      "Pull so many G’s you temporarily pass out.",
+      "Dodge multiple incoming attacks in one turn.",
+      "Tame three enemies on one mission.",
+      "Succeed on a G-Resist check when you have 1 G-Resist remaining.",
+      "Make someone drop something when you fly too close.",
+      "Get too flashy for your own good."
+    ],
+    "masteries": [
+      {
+        "name": "RINGMASTER [PASSIVE]",
+        "id": "manuAcroMast1",
+        "description": "Whenever you use Lion Tamer, you may grant an Ally the Maneuver, except it additionally has the [EXHAUST] tag."
+      },
+      {
+        "name": "THE GREATEST SHOW [PASSIVE]",
+        "id": "manuAcroMast2",
+        "description": "Whenever you Maneuver Into Position, you may forego the usual benefits to show off and gain a minor narrative boon instead. Exhaust."
+      },
+      {
+        "name": "MIRROR’S EDGE",
+        "id": "manuAcroMast3",
+        "description": "Burn a coin. Face yourself. Flip a trait and lose all stacks of Locked. Exhaust."
+      }
+    ]
+  },
+  {
+    "id": "specAddAmbush",
+    "prefix": "Ambush",
+    "name": "Ambush Predator",
+    "flavor": "They are the hunters and the sharpshooters of the sky, letting others take center stage so that they can line up the perfect strike.",
+    "staticMods": "staticNerveBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "ambuDT1",
+      "ambuDT2",
+      "ambuDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Rattlesnake Eyes [REACT - 1]",
+        "id": "manuAmbushTac1",
+        "description": "Whenever you would fail as a result of rolling Snake Eyes, you may gain a Guaranteed Perfect Success instead. Exhaust."
+      },
+      {
+        "name": "White of their Eyes [PASSIVE]",
+        "id": "manuAmbushTac2",
+        "description": "If you would end a turn without making an [Attack], the next turn you may use your next Ambush Predator tactic without paying its normal Energy cost. "
+      },
+      {
+        "name": "Lyudmila’s Legacy [REACT - 1]",
+        "id": "manuAmbushTac3",
+        "description": "Whenever you destroy a target, you may gain 2 Energy."
+      },
+      {
+        "name": "Katya and Lydia [REACT - 0]",
+        "id": "manuAmbushTac4",
+        "description": "Whenever an ally Faces Consequences from Baiting, you may gain Snapshot. Exhaust."
+      },
+      {
+        "name": "Cutting Through Ivy [3]",
+        "id": "manuAmbushTac5",
+        "description": "At the start of your next turn, gain Snap Shot; it costs X and additionally says “Gain +1 to this maneuver a number of times equal to X. This Snap Shot counts as an Ambush Predator tactic and deals double damage.” Exhaust."
+      },
+      {
+        "name": "Signal to Attack [POS]",
+        "id": "manuAmbushTac6",
+        "description": "You and your allies gain Snapshot. It gains “Escalate, Exhaust at the end of this turn if not used.” Exhaust."
+      },
+      {
+        "name": "Ghillied Up [X]",
+        "id": "manuAmbushTac7",
+        "description": "Spend X Energy, where X is the [number of Exhausted Ambush Predator Tactics * 2], to Recover them all."
+      }
+    ],
+    "advancements": [
+      "Lie in wait for at least one turn.",
+      "Save an ally with a well timed shot.",
+      "Kill a high value target with an Ambush Predator Tactic",
+      "Fly under the radar (literally, or figuratively) of a group of enemies.",
+      "Surprise an ally with your sudden appearance.",
+      "Win a battle against the odds via your wits and cunning.",
+      "Use a Narrative Boon to surprise someone unexpected."
+    ],
+    "masteries": [
+      {
+        "name": "HAVE A PLAN TO KILL EVERYONE YOU MEET [PASSIVE]",
+        "id": "manuAmbushMast1",
+        "description": "Whenever a new enemy enters the AO, gain +2 Forward."
+      },
+      {
+        "name": "DISHONOURABLE POCKET SAND [POS]",
+        "id": "manuAmbushMast2",
+        "description": "A distraction happens. If you caused it, the AWACS holds narrative consequences. All Knife Ordnance gains “Agnostic, Gain +2 Forward when used” and loses Knife. If you did not cause it, All Knife Ordnance gains “Agnostic, Dangerous.”"
+      },
+      {
+        "name": "EXPERT OF CQC AND OSP [PASSIVE]",
+        "id": "manuAmbushMast3",
+        "description": "Lose your Ordnance. Gain +1 to each Plane Stat (ie. A2A, A2G, Manu, Speed)."
+      }
+    ]
+  },
+  {
+    "id": "specAddBrag",
+    "prefix": "Brag",
+    "name": "Braggart",
+    "flavor": "They are the best of the best, the top of the game, the cream of the crop; or so they would have you believe. Bold and brash, the Braggart makes sure you know they’re around, whether it is just to tell you that they were better than you, or to tell you what to do. Still, their behaviour makes them likely to be of interest to the enemy, for who cannot resist shooting down a rising star?",
+    "staticMods": "staticGResBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "bragDT1",
+      "bragDT2",
+      "bragDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Influencer [REACT - 0]",
+        "id": "manuBragTac1",
+        "description": "Whenever you make an [Attack], you may explain your course of action and why it was probably the best. Any ally may Spend a Reflex to gain +1 Forward."
+      },
+      {
+        "name": "Bark Over Bite [3]",
+        "id": "manuBragTac2",
+        "description": "Choose an ally and an enemy target. That ally gains Meld against that target. If they Attack that target this turn, they gain a mental stress and you lose one. If they refuse, you gain a mental stress."
+      },
+      {
+        "name": "Mental Tempest [2]",
+        "id": "manuBragTac3",
+        "description": "Get on open comms and try to start shit. Spend a Temper and a Nerve, but any ally may join in and gain +1 Forward when they do."
+      },
+      {
+        "name": "Class Superstar [PASSIVE]",
+        "id": "",
+        "description": "You carried too many chairs in grade school. Now you carry too much Ordnance. Carry an additional Ordnance on Mission at the cost of either -2 Maneuverability, -2 Speed, or -4 Capacity."
+      },
+      {
+        "name": "Home on the Stage [POS, CAP(1)]",
+        "id": "manuBragTac5",
+        "description": "Gain 2 Energy. Whenever you Bait or Draw Fire this turn, increase your Speed or Maneuverability by 1 until the end of your next turn."
+      },
+      {
+        "name": "Center of Attention [REACT, CAP(1) - 0]",
+        "id": "manuBragTac6",
+        "description": "Whenever you Draw Fire from your second target or above, you may Spend a Pilot Stat for each target beyond the first you Draw Fire from to ignore those stacks of Locked."
+      },
+      {
+        "name": "Showing Your Guns [REACT - 1]",
+        "id": "manuBragTac7",
+        "description": "Whenever you [Attack], you may Flip a Coin. On Heads, choose another Braggart Maneuver and perform it for free. On a Tails, Exhaust."
+      }
+    ],
+    "advancements": [
+      "Brag about how good you are. Fail right after.",
+      "Follow through on your brags, and have another character actually appreciate it.",
+      "Get teased on your brags – at the worst possible moment. Crash out as a result.",
+      "Gain the attention of the biggest threat on the battlefield. Get swatted down for it.",
+      "Make a name for yourself.",
+      "Get flirted with as a result of your bragging – you do not, however, need to reciprocate.",
+      "Find out you’re someone’s hero due to your claims"
+    ],
+    "masteries": [
+      {
+        "name": "AUTOBIOGRAPHY [REACT - 0]",
+        "id": "manuBragMast1",
+        "description": "Whenever you Bait or Draw Fire, you may boast into comms. If you do, gain {Advantage} on the next Attack you make this turn; however, Face Consequences the next time you Face Consequences this turn."
+      },
+      {
+        "name": "BARNUM AFFECTED [PASSIVE]",
+        "id": "manuBragMast2",
+        "description": "Whenever you use a Braggart Tactic, an Ally may use your Maneuver slot instead of theirs to use a Maneuver."
+      },
+      {
+        "name": "LEADED DIESEL [PASSIVE]",
+        "id": "manuBragMast3",
+        "description": "Whenever you would have to Spend a Pilot Stat as a result of a Maneuver, you may instead spend a stack of Lock On or two stacks of Locked. Fatigue"
+      }
+    ]
+  },
+  {
+    "id": "specAddCloud",
+    "prefix": "Cloud",
+    "name": "Cloudhead",
+    "flavor": "They’re the eternal optimists. Not everyone may be a fan of their manic behaviour, but they warm up to others quickly, and when the chips are down, they are up, and they’ve got your back.",
+    "staticMods": "staticTemperBoom",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "cloudDT1",
+      "cloudDT2",
+      "cloudDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Aloof Parent [1]",
+        "id": "manuCloudTac1",
+        "description": "Spend a Reflex. The next time you would make an [Attack] as a result of Overwatch, make two instead."
+      },
+      {
+        "name": "Good Vibes [1]",
+        "id": "manuCloudTac2",
+        "description": "Spend a Temper and give a positive, happy-go-lucky comment. Your family may recover a Temper or Nerve. Exhaust. "
+      },
+      {
+        "name": "Bright Smile [REACT - 0]",
+        "id": "manuCloudTac3",
+        "description": "Your smile fills your voice. Whenever a family member would Spend a Temper, you may instead. Fatigue."
+      },
+      {
+        "name": "Happy-Go-Lucky [PASSIVE]",
+        "id": "",
+        "description": "Whenever you take Survivability damage, you and your “family” gain +1 Forward."
+      },
+      {
+        "name": "How Did We Get Here? [PASSIVE]",
+        "id": "manuCloudTac5",
+        "description": "Whenever you assist a family member, you may ask them this Tactic’s name. When you do, you both suffer Major Consequences and gain 3 Energy."
+      },
+      {
+        "name": "Often in a Lifetime [REACT - 0]",
+        "id": "manuCloudTac6",
+        "description": "Whenever you Overwatch, if the turn would end without you making an [Attack] as a result of it, recover a Nerve."
+      },
+      {
+        "name": "Water Flowing Over [PASSIVE]",
+        "id": "",
+        "description": "Whenever an ally helps out you or a “family” member, they may become part of your family for that mission by spending any Pilot Stat."
+      }
+    ],
+    "advancements": [
+      "Save a family member from entering a Critical State.",
+      "Have your “family” member enter a Critical State. Make a bad choice as a result.",
+      "Have everyone on a mission be part of your “family”.",
+      "Fight with your “family”.",
+      "Make up with your “family”.",
+      "Forget someone is in your “family”.",
+      "Make an enemy in your “family”."
+    ],
+    "masteries": [
+      {
+        "name": "HIGH ON LIFE [PASSIVE]",
+        "id": "manuCloudMast1",
+        "description": "Whenever you are on {Overwatch}, if an Ally would fail an [Attack], you may instead replace their Attack with yours. Negate their Consequences and lose {Overwatch}."
+      },
+      {
+        "name": "WHAT HAVE I DONE [PASSIVE]",
+        "id": "manuCloudMast2",
+        "description": "Whenever you fail a Check, give your “family” +1 Forward."
+      },
+      {
+        "name": "QU'EST-CE QUE C'EST? [PASSIVE]",
+        "id": "manuCloudMast3",
+        "description": "Ask “What is this”? If no one says “Aces High” or the name of the campaign, gain Snapshot. Otherwise, give the entire team -2 Forward and Meld. Exhaust."
+      }
+    ]
+  },
+  {
+    "id": "specAddDuel",
+    "prefix": "Duel",
+    "name": "Duelist",
+    "flavor": "They’re the knights of the sky, like pilots of old, and they act it. Whether they live for the thrill of the fight or an honourable duel, there’s nobody better for a one on one battle.",
+    "staticMods": "staticGResBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "duelDT1",
+      "duelDT2",
+      "duelDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Lancebreaker [PASSIVE]",
+        "id": "",
+        "description": "Whenever you deal damage as a result of a Joust, increase it by 1."
+      },
+      {
+        "name": "Tilt Tactician [PASSIVE]",
+        "id": "",
+        "description": "Whenever you Joust, gain Closure. "
+      },
+      {
+        "name": "Armor Astir [PASSIVE]",
+        "id": "",
+        "description": "Before a mission, you may trade 3 Capacity for 1 Survivability up to two times, as long as you have the Capacity to trade."
+      },
+      {
+        "name": "Riposte [REACT - 2]",
+        "id": "manuDuelTac4",
+        "description": "Whenever you affect Consequences using a Reflex, you may gain Snapshot. Fatigue."
+      },
+      {
+        "name": "Remise [PASSIVE]",
+        "id": "",
+        "description": "Gain an extra Reflex per turn, even above your normal Maneuver limit. You may only Joust or use Duelist Maneuvers with this Reflex."
+      },
+      {
+        "name": "Hearts of Steel [REACT - 2]",
+        "id": "manuDuelTac6",
+        "description": "Whenever you would fail a pilot stat roll after Facing Consequences, reroll it. Exhaust."
+      },
+      {
+        "name": "Combat Patrol [POS]",
+        "id": "manuDuelTac7",
+        "description": "Gain 2 Energy. This turn, you may use Joust whenever an Ally Faces Consequences, instead of just you."
+      }
+    ],
+    "advancements": [
+      "Falter on your code.",
+      "Distract someone by challenging them to a duel",
+      "Be so damaged you need help to land or immediately after landing.",
+      "Be challenged by someone else during a mission",
+      "Serve your commander with distinction",
+      "Strike fear in the hearts of your opponents",
+      "Charge into the dragon’s lair."
+    ],
+    "masteries": [
+      {
+        "name": "WHEEL OF THE INFINITE [PASSIVE]",
+        "id": "manuDuelMast1",
+        "description": "Whenever you take Survivability damage as a result of a Joust, gain +1 Forward."
+      },
+      {
+        "name": "SEVENTH PILLAR",
+        "id": "manuDuelMast2",
+        "description": "Choose Death or Dismissal when you take this Tactic. If you choose Death, when you Enter a Critical State, you instantly deal 4 Survivability Damage to one target, but you can no longer Eject. If you choose Dismissal, whenever you Enter a Critical State, you may instantly Withdraw, but face Narrative Consequences."
+      },
+      {
+        "name": "YOU, ON THE OTHER FACE OF MY COIN",
+        "id": "manuDuelMast3",
+        "description": "Choose a target. You both deal double damage to each other until someone dies; if you are victorious, you then may either Retire or Reset all of your Advancements – and unlocked Tactics – except for this one. Gain 50RP."
+      }
+    ]
+  },
+  {
+    "id": "specAddGamble",
+    "prefix": "Gambler",
+    "name": "High-Roller",
+    "flavor": "Roll 1d6 for flavour text. It’s gambling time, baby – time to shake some dice up.",
+    "staticMods": "staticFailedGambler",
+    "info": "With your AWACS, roll two d6 when you pick this Specialization (that is, at Character Creation).  Afterwards, consult The Chart To The Right.\nYou may Burn a Coin to reroll once.\n",
+    "addManu": "",
+    "preFlights": [
+      "highDT1",
+      "highDT2",
+      "highDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Double Down [PASSIVE]",
+        "id": "",
+        "description": "Before you roll, you may Spend a Pilot Stat; if you do, anything below a Full Success is a Failure - but any Full Success is a Perfect Success."
+      },
+      {
+        "name": "Stand [REACT - 2]",
+        "id": "manuGamblerTac2",
+        "description": "Whenever you may reroll, you may choose to burn the reroll. Upgrade your next roll one step instead."
+      },
+      {
+        "name": "Hit [REACT - 1]",
+        "id": "manuGamblerTac3",
+        "description": "Whenever you roll, you may choose to roll again. If it’s better than your previous roll, upgrade it one step. If it’s worse, downgrade it one step."
+      },
+      {
+        "name": "Insurance [PASSIVE]",
+        "id": "",
+        "description": "You may Spend Coins for your allies."
+      },
+      {
+        "name": "Bust [REACT - 1]",
+        "id": "manuGamblerTac5",
+        "description": "At the start of the mission, roll a d6. Every time you acquire that amount of stacks of Locked in a mission, recover a pilot stat."
+      },
+      {
+        "name": "Split [2]",
+        "id": "manuGamblerTac6",
+        "description": "Roll 2d6. Add one die result to your next Maneuver roll and the other to the Maneuver roll after that."
+      },
+      {
+        "name": "How About Caravan Instead? [PASSIVE]",
+        "id": "manuGamblerTac7",
+        "description": "Whenever you roll 7, 8, or 9, gain a bonus Temporary Coin, even above the maximum of three."
+      }
+    ],
+    "advancements": [
+      "Roll 2 back-to-back Perfect Successes",
+      "Gain a Perfect Success - then a Failure as your next roll.",
+      "Roll two 6s on two dice twice in a row.",
+      "Roll snake eyes (a one on both dice) twice in a row.",
+      "Face 3 Perfect Successes and 3 Failures on one Mission.",
+      "Get accused of rigging the odds in your favor.",
+      "Roll 11 11s within 11 missions."
+    ],
+    "masteries": [
+      {
+        "name": "BLACKJACK [PASSIVE]",
+        "id": "manuGamblerMast1",
+        "description": "Whenever you roll 21, recover someone’s Burnt Coin."
+      },
+      {
+        "name": "BUYING BACK IN [PASSIVE]",
+        "id": "manuGamblerMast2",
+        "description": "Whenever you would Enter a Critical State, you may spend [21] RP. If you do, recover all Survivability and Capacity, but you still Burn a Coin."
+      },
+      {
+        "name": "Hate. Hate. Hate. [REACT - 1] Replace whatever you use to roll dice (physical, bot, program, etc) for your next roll, then reroll your last roll. Exhaust.",
+        "id": "manuGamblerMast3",
+        "description": "Replace whatever you use to roll dice (physical, bot, program, etc) for your next roll, then reroll your last roll. Exhaust. "
+      }
+    ]
+  },
+  {
+    "id": "specAddOODA",
+    "prefix": "OODA",
+    "name": "OODA-Looper",
+    "flavor": "They’re the nerds of the sky. Nobody has read up on the theory of aerial combat as much as them, and they will let you know it. While book smarts are no substitute for real world experience, in a pinch, nobody can take advantage of teachable moments like them.",
+    "staticMods": "staticGetRobbedNerd",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "oodaDT1",
+      "oodaDT2",
+      "oodaDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Reformer [PASSIVE]",
+        "id": "",
+        "description": "You may use any Pilot Stat in place of another, but you spend three of it when you do."
+      },
+      {
+        "name": "Observer [REACT - 0]",
+        "id": "manuOODATac2",
+        "description": "Whenever you make a Nerve check, Give an ally +1 Forward. Exhaust unless you spend a G-Resist."
+      },
+      {
+        "name": "Orientator [REACT - 0]",
+        "id": "manuOODATac3",
+        "description": "Whenever you make a G-Resist check, Give an ally +1 Forward. Exhaust unless you spend a Reflex."
+      },
+      {
+        "name": "Decider [REACT - 0]",
+        "id": "manuOODATac4",
+        "description": "Whenever you make a Reflex check, Gain +1 Forward. Exhaust unless you spend a Temper."
+      },
+      {
+        "name": "Acter [REACT - 0]",
+        "id": "manuOODATac5",
+        "description": "Whenever you make a Temper check, Gain +1 Forward. Exhaust unless you spend a Nerve."
+      },
+      {
+        "name": "Boydian Analysis [REACT - 1]",
+        "id": "manuOODATac6",
+        "description": "Whenever you fail a Pilot Stat check, you may spend a different one and adjust your glasses to reroll. Exhaust."
+      },
+      {
+        "name": "Five-Sided Wars [REACT - 0]",
+        "id": "manuOODATac7",
+        "description": "Whenever you’re outnumbered and someone makes a bad decision, spend a pilot stat and explain why. If you convince them that, actually, you’re right, they gain +1 Forward."
+      }
+    ],
+    "advancements": [
+      "Empty your Nerve pool twice.",
+      "Empty your G-Resist pool twice.",
+      "Empty your Reflex pool twice.",
+      "Empty your Temper pool twice.",
+      "Empty every Pilot Stat pool on one mission",
+      "Get Kick-Me slapped on your back.",
+      "Get the anime-glare off your glasses when you adjust them. You have glasses even if you don’t."
+    ],
+    "masteries": [
+      {
+        "name": "BE SQUARE [REACT - 0]",
+        "id": "manuOODAMast1",
+        "description": "Whenever, you may spend one of each Pilot Stat. Gain +4 to a roll. Exhaust."
+      },
+      {
+        "name": "Project Hail Mary [POS]",
+        "id": "manuOODAMast2",
+        "description": "Choose Amaze or Question. On Amaze, comment on an ally’s exceptional maneuver or idea – they recover a Pilot Stat. On Question, ask the AWACS a question and spend one of each Pilot Stat. The AWACS either gives you information useful to the question or loses 4 Escalation."
+      },
+      {
+        "name": "Messageboard Master [PASSIVE]",
+        "id": "manuOODAMast3",
+        "description": "Gain a new Downtime: Keyboard Warrior. You and one partner spend any amount of Nerve, Temper, and Mental Stress. For every multiple of 7, gain a Narrative Boon, then make a Nerve Test. On a fail, face increasing Narrative Consequences as well from accidentally leaking military documents."
+      }
+    ]
+  },
+  {
+    "id": "specAddRecon",
+    "prefix": "Recon",
+    "name": "Reconnoiter Reporter",
+    "flavor": "They’re curious, clever, and more than a little paranoid. Though an annoyance to their higherups, they are a menace to their enemies; their skills in gathering intelligence and putting the pieces together let them know what they’ll do before even they know it.",
+    "staticMods": "staticReflexBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "reconDT1",
+      "reconDT2",
+      "reconDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Pushpin Idealism [2]",
+        "id": "manuReconTac1",
+        "description": "Get a hunch about enemy deployment, reinforcements, or tactics. Your AWACS will Flip a Coin. On heads, the AWACS tells you if your hunch is correct. On a tails, the AWACS tells you the opposite of the truth."
+      },
+      {
+        "name": "Dig For Details [1]",
+        "id": "manuReconTac2",
+        "description": "Call back to base for more information. You or an ally can gain Meld, but it can only be used in relation to the information you get. Exhaust."
+      },
+      {
+        "name": "Picking Pieces [2]",
+        "id": "manuReconTac3",
+        "description": "Weave together scraps of signals intelligence. Your AWACS tells you the next AWACS Maneuver they’re planning to make."
+      },
+      {
+        "name": "Multistream Misinformation [REACT - 2]",
+        "id": "manuReconTac4",
+        "description": "Whenever, you may activate your Radar Decoy. If you are Facing Consequences, you may Negate Consequences and Exhaust. If you aren’t, spend a Capacity and fool the enemy about your force size and disposition."
+      },
+      {
+        "name": "Wallflower Admiration [PASSIVE]",
+        "id": "",
+        "description": "Whenever an Ally would fail a Pilot Check, you may spend that Pilot stat to allow them to reroll. Exhaust unless you spend another Pilot stat."
+      },
+      {
+        "name": "Infamous Rank [REACT - 2]",
+        "id": "manuReconTac6",
+        "description": "Whenever, you may choose an Enemy, spend a Reflex and identify their livery. Choose an Ally, they may reroll the last roll they made relating to that target."
+      },
+      {
+        "name": "For Your Ears Only [1]",
+        "id": "manuReconTac7",
+        "description": "Tell only one Ally something, which they may then pass to your other allies. They gain +2 Forward and you gain -1 Forward."
+      }
+    ],
+    "advancements": [
+      "Give a briefing to at least six people.",
+      "Get two hunches right in a row",
+      "Reveal a trap before it’s sprung",
+      "Find nothing useful in a mission",
+      "Cheer up your flight with some information",
+      "Find out an uncomfortable truth",
+      "Face consequences from above for your nosiness"
+    ],
+    "masteries": [
+      {
+        "name": "WATERSHED MOMENT",
+        "id": "manuReconMast1",
+        "description": "Learn or understand the capstone truth of your theories at a critical moment. When you do, as a [REACT - 0], reveal this information to your flight. You all gain Advantage for the rest of this mission. Exhaust."
+      },
+      {
+        "name": "Crossed Out, Redacted Files [PASSIVE]",
+        "id": "manuReconMast2",
+        "description": "Bury the truth. Abandon your Specialization, losing all of your Tactics as a result, but gain Extreme Narrative Boons for your character, 50RP, and a lingering sense of guilt."
+      },
+      {
+        "name": "Butler’s Racket",
+        "id": "manuReconMast3",
+        "description": "Realize your side is in the wrong on open comms. Choose Insight or Import. If you choose Insight, and are able to convince the flight both of that and that you can fix it – gain a Narrative Boon and a small amount of RP, as well as Lock On for the entire flight. If you choose Import, you defect – make a new character of equal tours and with any leftover RP, but with a different Specialization (mark off three Advancements). Please work with your AWACS before choosing this option."
+      }
+    ]
+  },
+  {
+    "id": "specAddRedline",
+    "prefix": "Redline",
+    "name": "Redline Racer",
+    "flavor": "They aren’t the kind of pilot to keep the throttle at anything less than maximum. Preferring planes with the biggest engines and the most thrust that can fit in an airframes shell, they have on desire: to reach Mach Fuck at altitudes unheard of by any sane craft, entering and leaving the battle at hypersonic speeds.",
+    "staticMods": "staticNerveBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "redDT1",
+      "redDT2",
+      "redDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Watch Me Accelerate [REACT - 0]",
+        "id": "manuRedlineTac1",
+        "description": "Whenever you make a Speed check, choose an ally. They may spend a Nerve or Reflex to gain +1 Forward on their next roll."
+      },
+      {
+        "name": "Tear Apart the Interstate [REACT - 1]",
+        "id": "manuRedlineTac2",
+        "description": "Whenever you would roll a Failure or Mixed Success on a Speed check while flying at a low altitude, you may reroll."
+      },
+      {
+        "name": "Cheetah on the Planes",
+        "id": "manuRedlineTac3",
+        "description": "Once per turn, you may make a Speed check as part of making an [Attack]. If you succeed, gain a +1 Forward. You still Face any Consequences from the Speed check."
+      },
+      {
+        "name": "Supersonic Princess [CAP(1), REACT]",
+        "id": "manuRedlineTac4",
+        "description": "Whenever you make a Speed check, you may upgrade the roll’s success by one step, to a maximum of a Full Success."
+      },
+      {
+        "name": "Hyperdrive [POS]",
+        "id": "manuRedlineTac5",
+        "description": "Gain 1 Energy. Whenever you make a Speed check this turn, gain a stacking +1 Forward."
+      },
+      {
+        "name": "Breakneck Trainwreck [REACT - 1]",
+        "id": "manuRedlineTac6",
+        "description": "Whenever a Speed check would result in you Facing Consequences, you may spend a Reflex or Nerve. Delay them until the next Round."
+      },
+      {
+        "name": "Fuel of Addiction [PASSIVE]",
+        "id": "",
+        "description": "Whenever you spend a Capacity while making a Speed check, you may reroll the extra die that Spending a Capacity gave you."
+      }
+    ],
+    "advancements": [
+      "Overheat your engines from going too fast",
+      "Risk ripping off your wings from your sheer speed.",
+      "Cross an entire country in one night.",
+      "Be the first one into a fight thanks to your speed. Face Consequences from this fact.",
+      "Spend all of your fuel (from going too fast, of course). Face issues as a result of this.",
+      "Miss something important from your eagerness to get shit started.",
+      "Escape harm from your excessive thrust."
+    ],
+    "masteries": [
+      {
+        "name": "CAFFEINE [PASSIVE]",
+        "id": "manuRedlineMast1",
+        "description": "Whenever you spend Capacity, gain an additional +1 Forward to your next Speed check."
+      },
+      {
+        "name": "MILLION DOLLAR CAR",
+        "id": "manuRedlineMast2",
+        "description": "You may spend 15 RP before a Mission to gain +1 Speed for that mission, even past the normal max of 5. You may do this up to five times."
+      },
+      {
+        "name": "KICK ASS JAVA [PASSIVE]",
+        "id": "manuRedlineMast3",
+        "description": "Gain +1 Speed. Whenever you spend Capacity on a Maneuverability Check, you may use your Speed instead. If you do, gain {Slow} until the end of the mission."
+      }
+    ]
+  },
+  {
+    "id": "specAddSibyl",
+    "prefix": "Sibyl",
+    "name": "Sibyl",
+    "flavor": "They are the kind with a dark aura around them, the chilling thrill of the unknown, or perhaps they are just weird. These pilots mutter on about things few actually believe in, but what is the harm in trying? Just don't accept any offers for your blood, first born, or your love. Just in case.",
+    "staticMods": "staticTemperBoom",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "sibylDT1",
+      "sibylDT2",
+      "sibylDT3"
+    ],
+    "tactics": [
+      {
+        "name": "To Return the Jesters [REACT - 2]",
+        "id": "manuSibylTac1",
+        "description": "Whenever, you may give an ally +2 Forward. The AWACS Holds a Disadvantage. This Maneuver doesn’t count towards your Maneuver limit if you Spend a Capacity."
+      },
+      {
+        "name": "To Recognize the Dark [3]",
+        "id": "manuSibylTac2",
+        "description": "Accept the darkness within you and cross the Rubicon. Burn 2 Survivability and gain +1 to each of your plane stats for three turns. Exhaust. "
+      },
+      {
+        "name": "To Release the Known [1]",
+        "id": "manuSibylTac3",
+        "description": "Bait a specific Enemy, but the Catch you grant only grants 2 Energy. If this is the second time in one mission, you may induce Stall in them."
+      },
+      {
+        "name": "To Repair the Forgiven [REACT - 1]",
+        "id": "manuSibylTac4",
+        "description": "Whenever an ally Faces Consequences, you may Face them instead. They get a +1 Forward."
+      },
+      {
+        "name": "To Renounce the Dead [REACT - 1]",
+        "id": "manuSibylTac5",
+        "description": "You may ominously mourn a loss on open radio. You get to deny an AWACS Move. They get to deny you a Maneuver later."
+      },
+      {
+        "name": "To Ratify the Unsure [0]",
+        "id": "manuSibylTac6",
+        "description": "Tell a confusing joke or ask an insane question over the radio and stun someone out of their bad mood. Choose an Ally, they recover a Pilot stat of their choice. Exhaust."
+      },
+      {
+        "name": "To Rebuke the Heavens [REACT - 3]",
+        "id": "manuSibylTac7",
+        "description": "Force fate to change at a crucial moment. Something terrible happens to you as a result. Exhaust."
+      }
+    ],
+    "advancements": [
+      "Start a Coven.",
+      "Negotiate several deals with the devil at the same time.",
+      "Freak out a flight",
+      "Have your third eye open and a reading come true",
+      "Have a ritual save the day",
+      "See a sign and warn your flight (accurately).",
+      "Make a wish or prayer for good luck and either have it go very wrong or very right."
+    ],
+    "masteries": [
+      {
+        "name": "SIX SIDED ORACLE",
+        "id": "manuSibylMast1",
+        "description": "At the start of a mission, roll 4 d6s. You may replace any other d6 with one of your rolled dice. You lose all of your stored die at the end of the mission."
+      },
+      {
+        "name": "Hot Topic Addict [PASSIVE]",
+        "id": "manuSibylMast2",
+        "description": "When you gain this tactic, paint or decorate your aircraft with something non-regulation. Whenever you Mitigate, you may burn a Temper to make it a Negate instead. Exhaust."
+      },
+      {
+        "name": "To End the World [REACT - 1]",
+        "id": "manuSibylMast3",
+        "description": "Kill someone. Take a proportional backlash. Exhaust."
+      }
+    ]
+  },
+  {
+    "id": "specAddJaeger",
+    "prefix": "Jaeger",
+    "name": "Storyteller",
+    "flavor": "They’re veterans, perhaps of a past war, perhaps of something else. While their penchant for telling tales may come off as bragging, they’re always rooted in some kind of truth. Because of their age and their experience, they often take up some kind of leadership position within their squadron, even unofficially. When push comes to shove, stars and bars matter less than keeping a clear head and an open mind.",
+    "staticMods": "staticTemperBoom",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "jaegerDT1",
+      "jaegerDT2",
+      "jaegerDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Postmodern Poet [REACT - 1]",
+        "id": "manuJaegerTac1",
+        "description": "Whenever, you may deliver some sort of “slam poetry” designed to motivate an ally. They may choose to spend an XP to recover a Pilot Stat."
+      },
+      {
+        "name": "Relatable Moments [2]",
+        "id": "manuJaegerTac2",
+        "description": "Reveal something awkward or cringe. Lose -1 Reflex when you do, but you and all allies may recover a G-Resist."
+      },
+      {
+        "name": "Wealth of Experience [1]",
+        "id": "manuJaegerTac3",
+        "description": "Refer back to a previous fight you were in that’s relevant to the situation at hand. Gain Lock-on. If your reference was from this campaign, you may Give an Ally Lock-On instead."
+      },
+      {
+        "name": "Three Act Structure [REACT - 1]",
+        "id": "manuJaegerTac4",
+        "description": "Whenever an AWACS makes a Move, you may Face an appropriate Consequence. On your first action to deal with the results of that Maneuver, gain a +1 Forward. If you help resolve that Maneuver, gain +1 XP. Exhaust."
+      },
+      {
+        "name": "Creation Myths [REACT - 1]",
+        "id": "manuJaegerTac5",
+        "description": "Whenever the AWACS uses a Move to foreshadow reinforcements, give your flight Lock On."
+      },
+      {
+        "name": "Behind the Veil [PASSIVE]",
+        "id": "",
+        "description": "Whenever you make a Check to gain a hint about a situation, Roll with Advantage. Exhaust."
+      },
+      {
+        "name": "Mantle of Command [PASSIVE]",
+        "id": "",
+        "description": "Lose -1 Reflex and Speed. Once per turn when you use a Storyteller Tactic, gain +1 Forward."
+      }
+    ],
+    "advancements": [
+      "Share an Embarrassing Moment and have no one laugh or try to change your Callsign.",
+      "Create a new story to tell to your (future) child.",
+      "See something you’ve never seen before.",
+      "Watch another pilot grow up in front of your eyes",
+      "Tell a story and have it fail to have the expected effect.",
+      "Have someone come to you for advice.",
+      "Reveal a trauma you’ve kept hidden."
+    ],
+    "masteries": [
+      {
+        "name": "BLAZE OF GLORY",
+        "id": "manuJaegerMast1",
+        "description": "Enter Critical State. Take an extra turn after this one. Exhaust."
+      },
+      {
+        "name": "OLD DOG, NEW TRICKS",
+        "id": "manuJaegerMast2",
+        "description": "Gain 3 Perks. Lose -4 total from your Pilot Stats."
+      },
+      {
+        "name": "RECOMMENDED TRAINER",
+        "id": "manuJaegerMast3",
+        "description": "When you choose this Mastery, your character retires from active duty to train the next generation. For each unburnt coin you have, choose an ally: they gain a completed Deployment of your choice. Then, make a new character, gaining both perks from losing a character and completing one of your completed Tours."
+      }
+    ]
+  },
+  {
+    "id": "specSSEArchon",
+    "prefix": "Archon",
+    "name": "Archon",
+    "flavor": "Archons are powerful defenders, tuning their electronic warfare systems for the ability to defend allies instead of improving their offenses or controlling enemies. It’s said that only the slow blade can penetrate their shields.",
+    "staticMods": "static1Nerve1G",
+    "info": "Gain the Maneuver Ally Shield - [4]\nChoose an Ally: they gain Shielded.\n- Shielded: Whenever you would take Survivability damage as a result of Locked, remove all stacks of {Shielded} and reduce it by 1 for each stack you’ve removed.",
+    "addManu": "manuSSEAllyShield",
+    "preFlights": [
+      "sseArchonDT1",
+      "sseArchonDT2",
+      "sseArchonDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Prismatic Link [PASSIVE]",
+        "id": "",
+        "description": "Whenever you Draw Fire, you may have it grant {Locked} to any {Shielded} Ally instead of you."
+      },
+      {
+        "name": "Nullification [REACT - 1]",
+        "id": "manuArchonTac2",
+        "description": "Whenever you Bait, you may gain {Mitigate}. "
+      },
+      {
+        "name": "Psionic Projection",
+        "id": "manuArchonTac3",
+        "description": "Whenever you use Ally Shield, your target may gain Lock-On."
+      },
+      {
+        "name": "Shield Battery [REACT - 1]",
+        "id": "manuArchonTac4",
+        "description": "Whenever, choose an Ally. They Gain {Shielded}. Fatigue."
+      },
+      {
+        "name": "Ace’s Celerity [PASSIVE]",
+        "id": "manuArchonTac5",
+        "description": "Whenever someone has {Shielded}, they gain +1 Speed. This ability doesn’t stack."
+      },
+      {
+        "name": "Phase Disruption [REACT - 2]",
+        "id": "manuArchonTac6",
+        "description": "Whenever an Ally loses {Shielded}, you may gain Snapshot. Fatigue."
+      },
+      {
+        "name": "Psi-Infusion [PASSIVE]",
+        "id": "",
+        "description": "You may use Ally Shield on enemies. Enemies with {Shielded} instead grant you 2 Energy at the start of the turn. This effect lasts until the target takes damage or they take an action to clear it."
+      }
+    ],
+    "advancements": [
+      "Hook someone into a trap.",
+      "Fill your taunt meter.",
+      "Get ignored in favor of someone else in your squadron.",
+      "Get chewed out by your healer or mechanic.",
+      "Make a guttural noise after someone takes a bunch of damage.",
+      "Tell a joke to an allied tank crew.",
+      "Spill something in your cockpit, making you a literal tank."
+    ],
+    "masteries": [
+      {
+        "name": "Oracular Wisdom [PASSIVE]",
+        "id": "manuArchonMast1",
+        "description": "Whenever an Ally loses {Shielded}, gain 1 Energy. Fatigue."
+      },
+      {
+        "name": "Shield Overload [REACT - 1]",
+        "id": "manuArchonMast2",
+        "description": "Whenever a target with {Shielded} would deal damage, you may Spend {Shielded} to have them deal an additional 1 Damage. Fatigue."
+      },
+      {
+        "name": "Force of Will [REACT - 1]",
+        "id": "manuArchonMast3",
+        "description": "Whenever an Ally with {Shielded} would Face Consequences, you may Spend 1 Nerve to have it Negate. Fatigue."
+      }
+    ]
+  },
+  {
+    "id": "specSSEFairy",
+    "prefix": "Fairy",
+    "name": "Coryphee",
+    "flavor": "Coryphees are adept dancers on and off the battlefield, able to switch how they fly to suit any situation. Long traditions have birthed these performers, often dancing in conjunction with drums and oral storytellers. Though their modern form is quite different, eyes still turn towards them when the beat gets going. ",
+    "staticMods": "staticNerveBoon",
+    "info": "Gain the Maneuver Tempo Change as well.\nTempo Change - [1]:\nGain, Lose or switch between {Adagio} or {Allegro}. \n{Adagio}: Gain {Mitigate}. Whenever you would lose {Mitigate}, gain it again. Whenever you would gain Energy, gain 2 less. You can’t have this condition if you have {Allegro}. \n{Allegro}: Whenever you make an [ATTACK], Escalate. Whenever you deal damage, deal an additional point. You can’t have this condition if you have {Adagio}.",
+    "addManu": "manuSSETempoChange",
+    "preFlights": [
+      "sseFairyDT1",
+      "sseFairyDT2",
+      "sseFairyDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Slow and Steady [PASSIVE]",
+        "id": "",
+        "description": "Whenever you Gain {Adagio}, Gain Dive."
+      },
+      {
+        "name": "Feeling the Rhythm [PASSIVE]",
+        "id": "",
+        "description": "Whenever you Gain {Allegro}, gain +1 Forward on your next Pilot Stat roll. Whenever you Gain {Adagio}, gain +1 Forward on your next plane stat roll. "
+      },
+      {
+        "name": "Recovery Step [REACT - 1]",
+        "id": "manuFairyTac3",
+        "description": "Whenever, if you have {Adagio}, recover 1 of any Pilot Stat. If you have {Allegro, recover a Capacity. Exhaust."
+      },
+      {
+        "name": "Whirlwind of Movement [2]",
+        "id": "manuFairyTac4",
+        "description": "The next time you Gain {Adagio} or {Allegro}, gain a benefit. Fatigue. Adagio: Gain Snapshot. Allegro: Gain 3 Energy."
+      },
+      {
+        "name": "Perfect Grace [PASSIVE]",
+        "id": "",
+        "description": "Whenever you make a Maneuverability check, gain +1 Forward."
+      },
+      {
+        "name": "Beat of a Different Drum [X]",
+        "id": "manuFairyTac6",
+        "description": "Choose another Maneuver that costs up to X Energy. Gain it as a 0-cost Exhaust at the start of your next turn. If it’s an X cost maneuver, resolve it based on how much energy this Maneuver cost."
+      },
+      {
+        "name": "Time After Time [PASSIVE]",
+        "id": "",
+        "description": "After your [POS], if your Energy is less than 3 over your Stall, you may make a Maneuverability Test. If you Succeed, Gain Meld."
+      }
+    ],
+    "advancements": [
+      "Start off on the wrong foot.",
+      "Start off on the right foot.",
+      "Dance to something only you can hear.",
+      "Let the rhythm overtake you.",
+      "Miss a beat and stumble.",
+      "Take a leap and land badly.",
+      "Nail a particularly tricky maneuver."
+    ],
+    "masteries": [
+      {
+        "name": "Perfect Tempo [5]",
+        "id": "manuFairyMast1",
+        "description": "Gain {A Piacere}. Gain the benefits of both {Adagio} and {Allegro} and neither of the downsides; counting as being in both stances. Whenever you Gain {A Piacere}, and at the start of every turn, Spend Survivability equal to the number of turns you’ve spent in {A Piacere}. (Min 1)"
+      },
+      {
+        "name": "Fast Feet [REACT, TRICK - 1]",
+        "id": "manuFairyMast2",
+        "description": "Gain, Lose or switch between {Adagio} or {Allegro}. Fatigue."
+      },
+      {
+        "name": "Accelerando",
+        "id": "manuFairyMast3",
+        "description": "Each consecutive turn you spend in Allegro, gain +X Energy at the start of your turn, where X is the number of turns you’ve spent. When you exit Allegro, Face Consequences equal to X."
+      }
+    ]
+  },
+  {
+    "id": "specSSECow",
+    "prefix": "Cow",
+    "name": "Aerial Cowboy",
+    "flavor": "Aerial Cowboys are free spirits, famed for their frontier smarts and fast draw. Hard riding, hard drinking, and hard shooting, these dusty folk are deadly allies to have despite some rough edges. You won’t find them on camels in the Sotoan desert, though - these ones are on fighter jets. ",
+    "staticMods": "staticReflexBoon",
+    "info": "Yee haw.",
+    "addManu": "",
+    "preFlights": [
+      "sseCowDT1",
+      "sseCowDT2",
+      "sseCowDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Six Chambers [PASSIVE]",
+        "id": "",
+        "description": "At the start of a mission, gain a Gunslinger die, a 1d6 starting at 6. Every time you make an [ATTACK], reduce the value of the Gunslinger die by 1. When it hits 0, gain Snap Shot. You also Gain the following Maneuver:"
+      },
+      {
+        "name": "Warning Shot [REACT - 1]",
+        "id": "manuCowTac2",
+        "description": "Whenever, tick your Gunslinger die down by 1. Gain +1 Forward. If the Gunslinger die is at 0, you can’t use this Maneuver. "
+      },
+      {
+        "name": "Quick Reload",
+        "id": "manuCowTac3",
+        "description": "Tick your Gunslinger die up by 1. Gain 1 Energy. If the Gunslinger die is at 6 or 0, you can’t use this Maneuver."
+      },
+      {
+        "name": "Fan the Hammer [X]",
+        "id": "manuCowTac4",
+        "description": "Spend X Energy, where X is 2 * your current Gunslinger die value. Set the Gunslinger die to 0, gaining Snapshot a number of times equal to X; these Gain [MAP]."
+      },
+      {
+        "name": "High Noon",
+        "id": "manuCowTac5",
+        "description": "Whenever you Dive, gain Lock-On."
+      },
+      {
+        "name": "Tip your Hat [REACT - 2]",
+        "id": "manuCowTac6",
+        "description": "Acknowledge an enemy action on open comms positively. Recover any pilot stat. Exhaust."
+      },
+      {
+        "name": "Fast Draw [REACT - 1]",
+        "id": "manuCowTac7",
+        "description": "Whenever you Joust, you may make a Reflex Check. If you succeed, gain +2 Forward."
+      }
+    ],
+    "advancements": [
+      "Blow open the doors dramatically.",
+      "Fly under the influence.",
+      "Draw faster than someone else.",
+      "Fly off into the sunset.",
+      "Watch the tumbleweeds roll by.",
+      "Flash your badge (or rank, as it were.)",
+      "Go into a place too small for you."
+    ],
+    "masteries": [
+      {
+        "name": "Rootin’ Tootin Point and Shootin’ [PASSIVE]",
+        "id": "manuCowMast1",
+        "description": "Gain a second Gunslinger die; it starts at 3. Whenever you tick your die up or down, you may choose which one to do so."
+      },
+      {
+        "name": "Trick Shot [MAP, ATTACK - 3]",
+        "id": "manuCowMast2",
+        "description": "Choose two targets. Make an [ATTACK] against the first, but deal damage to the second, ignoring all their defenses (minus armor). Fatigue."
+      },
+      {
+        "name": "Out of the Saddle [3]",
+        "id": "manuCowMast3",
+        "description": "Choose an Ally ground unit. Save them from certain death, but you’re unable to take actions until the start of your next turn. Fatigue."
+      }
+    ]
+  },
+  {
+    "id": "specSSETruck",
+    "prefix": "Truck",
+    "name": "Truck Driver",
+    "flavor": "Truck Drivers are true mercenaries - flying with reckless abandon, with little care for their planes and even less for some of their foes. They paid for the whole plane, so they’re going to use it. And maybe get another one after. ",
+    "staticMods": "staticNerveBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "sseTruckDT1",
+      "sseTruckDT2",
+      "sseTruckDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Wings of Steel",
+        "id": "manuTruckTac1",
+        "description": "Ordnance - Agnostic, Guided, Knife, Precise, Simple. When you make an attack with this Ordnance, use your Maneuverability stat instead of A2A or A2G. If you would suffer Disadvantage from Knife, you instead cannot employ this ordnance. This ordnance is added to the ordnance list of your currently piloted plane."
+      },
+      {
+        "name": "Flying in my Plane [PASSIVE]",
+        "id": "",
+        "description": "Whenever you lose any Survivability, gain Lock-On."
+      },
+      {
+        "name": "Right After a Beer [REACT - 0]",
+        "id": "manuTruckTac3",
+        "description": "Whenever you roll a Mixed Success or a Failure, you may choose to enter Critical State without facing a test of fate with your Coins. If you do, you Stay with the Craft and recover a Pilot Stat."
+      },
+      {
+        "name": "Hey that Bogey [REACT - 1]",
+        "id": "manuTruckTac4",
+        "description": "Whenever you gain Lock-On, you may choose a target and gain Closure. It only applies to Maneuvers made against the chosen target."
+      },
+      {
+        "name": "Is Shaped like a Deer [REACT - 1]",
+        "id": "manuTruckTac5",
+        "description": "Whenever you use Wings of Steel, you may lose a Survivability. If you do, double your damage."
+      },
+      {
+        "name": "Spare Squadron [PASSIVE]",
+        "id": "",
+        "description": "If the mission has a Resupply Line and you have Bailed Out, you may return in a new plane one round after Bailing Out. You may only choose planes from License Level 0."
+      },
+      {
+        "name": "Manually Piloted ICBM [ATTACK - 3]",
+        "id": "manuTruckTac7",
+        "description": "Make an Attack. When you do, roll a number of d6s equal to your current Capacity and add that result to your damage. Bail Out. Exhaust."
+      }
+    ],
+    "advancements": [
+      "Lose both wings.",
+      "Crash into an Ally by accident.",
+      "Deliver just in the nick of time.",
+      "Fly safely, for once.",
+      "Buzz a tower.",
+      "Throw up in your cockpit.",
+      "Run down a ground unit."
+    ],
+    "masteries": [
+      {
+        "name": "Folded Over 1000 Times [PASSIVE]",
+        "id": "manuTruckMast1",
+        "description": "Whenever you use Wings of Steel, your Attack ignores all armor and damage reduction."
+      },
+      {
+        "name": "500 Kilogram Bomb [PASSIVE]",
+        "id": "manuTruckMast2",
+        "description": "Gain a second use of Manually Piloted ICBM per mission."
+      },
+      {
+        "name": "The Bare Necessities [PASSIVE]",
+        "id": "manuTruckMast3",
+        "description": "Whenever you pilot a LL0 plane, it gains +1 Maneuverability."
+      }
+    ]
+  },
+  {
+    "id": "specSSETactician",
+    "prefix": "Tactician",
+    "name": "Tactician",
+    "flavor": "Tacticians are masters of the battlefield, trained in the best Sotoan military academies - or found lying on the ground somewhere. While their origins may be disputed, their acumen isn’t. Timely orders, friendly reminders, grand strategy, ties that bind - they have it all. ",
+    "staticMods": "staticTemperBoom",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "sseTacticDT1",
+      "sseTacticDT2",
+      "sseTacticDT3"
+    ],
+    "tactics": [
+      {
+        "name": "No, Over There! [POS]",
+        "id": "manuTacticianTac1",
+        "description": "Gain 2 Energy. Choose an Ally and change their Zone."
+      },
+      {
+        "name": "How Did You Miss? [REACT - 2]",
+        "id": "manuTacticianTac2",
+        "description": "Whenever an Ally rolls a failure on a plane stat roll, you may make them reroll. Fatigue. "
+      },
+      {
+        "name": "Wake The Fuck Up! [PASSIVE]",
+        "id": "",
+        "description": "Whenever you gain Energy at the start of combat, you may distribute it among any number of Allies instead."
+      },
+      {
+        "name": "DUCK! [REACT, CAP(1) - 3]",
+        "id": "manuTacticianTac4",
+        "description": "Whenever an Ally Faces Consequences, they Negate."
+      },
+      {
+        "name": "Get Back Here! [2]",
+        "id": "manuTacticianTac5",
+        "description": "Choose an Ally. They gain 1 Speed until the end of their next turn."
+      },
+      {
+        "name": "Just Shoot Already! [3]",
+        "id": "manuTacticianTac6",
+        "description": "Choose an Ally. They may make an Attack."
+      },
+      {
+        "name": "What The Hell Was That? [REACT - 4]",
+        "id": "manuTacticianTac7",
+        "description": "Whenever an Ally has performed a Maneuver and seen the result, you may retract it, including all effects of its resolution. Exhaust."
+      }
+    ],
+    "advancements": [
+      "Save someone from a bandit.",
+      "Assign someone homework.",
+      "Survive through the power of your bonds.",
+      "Forget part of your past.",
+      "Summon allies onto the battlefield.",
+      "Propose a controversial strategy.",
+      "Switch plans twice in one mission."
+    ],
+    "masteries": [
+      {
+        "name": "I Guess I’ll Do It Myself [5]",
+        "id": "manuTacticianMast1",
+        "description": "Take an extra turn after this one. You can’t interact with your allies during this turn. Exhaust."
+      },
+      {
+        "name": "Add Oil! Add Oil! [3]",
+        "id": "manuTacticianMast2",
+        "description": "Choose an Ally. They gain an extra Maneuver slot on their next turn. Fatigue."
+      },
+      {
+        "name": "You Got This, Champ. [REACT - 2]",
+        "id": "manuTacticianMast3",
+        "description": "Choose an Ally. Their next Pilot Stat Check is a Full Success. Exhaust."
+      }
+    ]
+  },
+  {
+    "id": "specSSEOracle",
+    "prefix": "Oracle",
+    "name": "Oracle",
+    "flavor": "Oracles utilize their intuition and all available intelligence to predict the flow of battle, nudging fate in their allies’ favor off of sheer experience. The Tarot is uncommon to the Sotoan continent, with other forms using bones or animals more often seen, but nevertheless fortune tellers abound.",
+    "staticMods": "staticTemperBoom",
+    "info": "Gain the Passive Hand of Fate:\nAt the start of a mission, draw five cards. Aces are 1, face cards continue counting up to 13. Whenever you would make a roll but before you know the result, you may use a card as your roll result before modifiers. You may also spend cards on Oracle Tactics tagged with [CARD] to improve them. Reset the deck after each mission.",
+    "addManu": "",
+    "preFlights": [
+      "sseOracleDT1",
+      "sseOracleDT2",
+      "sseOracleDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Emperor [CARD - 1]",
+        "id": "manuOracleTac1",
+        "description": "Gain Lock-On. If you spend a card, choose an Ally to also gain Lock-On."
+      },
+      {
+        "name": "Wheel of Fortune [CAP(4), - 1]",
+        "id": "manuOracleTac2",
+        "description": "Draw five more cards. Exhaust. "
+      },
+      {
+        "name": "Hierophant [CARD - 2]",
+        "id": "manuOracleTac3",
+        "description": "Recover a pilot stat. If you spend a Card, you and an Ally may do so instead. Exhaust."
+      },
+      {
+        "name": "Strength [PASSIVE]",
+        "id": "",
+        "description": "Whenever you spend a card, gain 1 Energy."
+      },
+      {
+        "name": "Magician [REACT - 3]",
+        "id": "manuOracleTac5",
+        "description": "Whenever an Ally would make a roll, you may replace their roll result before modifiers with a card value."
+      },
+      {
+        "name": "Devil [CARD - 3]",
+        "id": "manuOracleTac6",
+        "description": "Put 1 card from your hand into the deck, then shuffle. Draw 1 card. If you spend a card, gain Meld."
+      },
+      {
+        "name": "World [CARD, REACT - 1]",
+        "id": "manuOracleTac7",
+        "description": "Add the spent card value to your next roll as a modifier instead. Fatigue."
+      }
+    ],
+    "advancements": [
+      "Act purely on your instincts.",
+      "Let nature take its course.",
+      "See the fork in the road.",
+      "Make a reckless decision.",
+      "Accept responsibility to move forward.",
+      "Look beyond yourself and see the whole.",
+      "Find new hope."
+    ],
+    "masteries": [
+      {
+        "name": "Ex Post Facto",
+        "id": "manuOracleMast1",
+        "description": "Draw an extra card when you gain this mastery. You may switch the card out with any of the ones in your hand at any time. This card persists between missions."
+      },
+      {
+        "name": "Mulligan",
+        "id": "manuOracleMast2",
+        "description": "At the start of a mission, you may shuffle your five cards back into the deck and draw five new ones. Put one card at the bottom of your deck for each time past the first you’ve done this this mission."
+      },
+      {
+        "name": "Brainstorm [REACT - 2]",
+        "id": "manuOracleMast3",
+        "description": "Whenever, you may draw three cards. When you do, put any two cards back on the top in any order. Fatigue."
+      }
+    ]
+  },
+  {
+    "id": "specSSENovice",
+    "prefix": "Novice",
+    "name": "The Novice",
+    "flavor": "An FNG, here to learn the truth of war.",
+    "staticMods": "staticReflexBoon",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "sseNoviceDT1",
+      "sseNoviceDT2",
+      "sseNoviceDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Pure of Heart [1]",
+        "id": "manuNoviceTac1",
+        "description": "Make light of the situation. Choose an Ally, they recover a point of your currently highest pilot stat. Exhaust."
+      },
+      {
+        "name": "Waiting With Flowers [REACT - 3]",
+        "id": "manuNoviceTac2",
+        "description": "Whenever you Face Consequences, you may say something that’s clearly a death flag. If you do, Negate it, but Gain {Locked}. "
+      },
+      {
+        "name": "Shield of Innocence",
+        "id": "manuNoviceTac3",
+        "description": "Whenever you Fix the Odds, you may reroll on the injury table. Whenever you Risk the Odds, you may re-flip a coin. Exhaust for the rest of this campaign."
+      },
+      {
+        "name": "Beginner’s Luck [REACT - 0]",
+        "id": "manuNoviceTac4",
+        "description": "Whenever you’ve made any roll, reroll it. Exhaust."
+      },
+      {
+        "name": "I Can Save Them All [REACT - 1]",
+        "id": "manuNoviceTac5",
+        "description": "Whenever a non-player Ally would Face Consequences, you may gain proportional stacks of {Locked} instead. Fatigue."
+      },
+      {
+        "name": "How Did You Do That? [REACT, CAP(1) - X]",
+        "id": "manuNoviceTac6",
+        "description": "Whenever an Ally uses a Maneuver you can’t, you may gain the ability to use that until the end of your next turn. X is equal to the energy cost of the target Maneuver before reductions. Exhaust."
+      },
+      {
+        "name": "Rookie Mistakes [REACT - 2]",
+        "id": "manuNoviceTac7",
+        "description": "Whenever you roll a Mixed Success or lower, an Ally may berate you. If they do, gain +1 retroactively to that roll. Escalate."
+      }
+    ],
+    "advancements": [
+      "Go too far.",
+      "Don’t go far enough.",
+      "Get taken under someone’s wing.",
+      "Get hazed.",
+      "Make an unexpected friend.",
+      "Forget something important.",
+      "Get assigned a new callsign."
+    ],
+    "masteries": [
+      {
+        "name": "Grizzled Veteran",
+        "id": "manuNoviceMast1",
+        "description": "You’ve seen too much, now. You’re the vet that the other new guys look up to, and you barely even noticed the change. Once per Tour, you can reduce one Stress track by 2."
+      },
+      {
+        "name": "Disillusioned Merc",
+        "id": "manuNoviceMast2",
+        "description": "War wasn’t what you expected. You’re in too deep now, but at least you can make some cash. Gain 150 RP."
+      },
+      {
+        "name": "Loyal Soldier",
+        "id": "manuNoviceMast3",
+        "description": "Everything you’ve seen has just affirmed your beliefs and convictions. You’re career now - get promoted, at minimum. Gain another Major Narrative boon."
+      }
+    ]
+  },
+  {
+    "id": "specSSETalon",
+    "prefix": "Talon",
+    "name": "Talon Aspirant",
+    "flavor": "A zealot assassin, adept at singling targets out for elimination.",
+    "staticMods": "static1Nerve1R",
+    "info": "",
+    "addManu": "",
+    "preFlights": [
+      "sseTalonDT1",
+      "sseTalonDT2",
+      "sseTalonDT3"
+    ],
+    "tactics": [
+      {
+        "name": "Seven Heavens [4]",
+        "id": "manuTalonTac1",
+        "description": "Choose a Zone. As long as you stay in that zone, at the start of your turn, choose a target in that Zone. They gain {Brand}."
+      },
+      {
+        "name": "Walayah [PASSIVE]",
+        "id": "",
+        "description": "Whenever you deal damage to a target with {Brand}, you may consume {Brand} and gain {Mitigate} after Facing Consequences. "
+      },
+      {
+        "name": "Qaswarah [REACT, TRICK - 1]",
+        "id": "manuTalonTac3",
+        "description": "Whenever you deal damage to a target with {Brand}, you may choose another target. If you do, they also gain {Brand}."
+      },
+      {
+        "name": "Zulfiqar [PASSIVE]",
+        "id": "",
+        "description": "Whenever you deal damage to a target with {Brand}, you may consume {Brand} and increase that damage by 2."
+      },
+      {
+        "name": "Sadiq fi Al’zil [ATTACK, MAP - 5]",
+        "id": "manuTalonTac5",
+        "description": "Choose an Ally. You both make an Attack against a target with Brand; if you consume {Brand}, apply any Hidden One [Passive] Tactic that triggers to both you and your Ally."
+      },
+      {
+        "name": "Ukhuwwah [REACT - 1]",
+        "id": "manuTalonTac6",
+        "description": "Whenever, choose an Ally. They gain +2 Forward. Fatigue."
+      },
+      {
+        "name": "Eyes of Abad [PASSIVE]",
+        "id": "",
+        "description": "During a pre-flight briefing, you may spend 2 Capacity. Start the mission with 2 less, but gain an additional piece of information about the enemy composition."
+      }
+    ],
+    "advancements": [
+      "Lie to a superior.",
+      "Hide the evidence.",
+      "Strike from the shadows.",
+      "Get somewhere you’re not supposed to be.",
+      "Speak to someone in code.",
+      "Get asked whose side you’re on.",
+      "Poison something. Or someone."
+    ],
+    "masteries": [
+      {
+        "name": "Spear of Judgement [CAP(1), MAP, ATTACK - 2]",
+        "id": "manuTalonMast1",
+        "description": "Make an Attack. If the target has {Brand}, you may consume it to deal damage as if this had the Dangerous tag. Exhaust until you use Seven Heavens again."
+      },
+      {
+        "name": "Spear of Revealing [1]",
+        "id": "manuTalonMast2",
+        "description": "Choose a target. They gain {Brand}. Fatigue."
+      },
+      {
+        "name": "Spear of Justice [MAP, ATTACK, ORD - 2]",
+        "id": "manuTalonMast3",
+        "description": "Make an Attack against a target that has damaged an Ally. Fatigue."
+      }
+    ]
+  },
+  {
+    "id": "specSSEAirCon",
+    "prefix": "AirCon",
+    "name": "Air Controller",
+    "flavor": "A commander, leading other assets in battle from their cockpit.",
+    "staticMods": "static1Nerve1R",
+    "info": "Gain the Maneuver: Base Orders - 2\nYou may order an Asset to either attack or retreat. If they Attack, they spend one Combat Effectiveness and use their own attack stat.\n\nMore is found under Air Controller on the Spec list. It would not all fit here.\n\n",
+    "addManu": "manuSSEBaseOrder",
+    "preFlights": [
+      "sseAirConDT1",
+      "sseAirConDT2",
+      "sseAirConDT3"
+    ],
+    "tactics": [
+      {
+        "name": "How about a show of force? [POS]",
+        "id": "manuAirConTac1",
+        "description": "Gain 1 Energy. Summon or retreat a squad of friendly ground to ground assets. "
+      },
+      {
+        "name": "Keepin' 'em in line down there. [POS]",
+        "id": "manuAirConTac2",
+        "description": "Gain 1 Energy. Summon or retreat a squad of friendly air to ground assets."
+      },
+      {
+        "name": "Let's give 'em an air show. [POS]",
+        "id": "manuAirConTac3",
+        "description": "Gain 1 Energy. Summon or retreat a squad of friendly air to air assets."
+      },
+      {
+        "name": "I got my missile launcher right here. [POS]",
+        "id": "manuAirConTac4",
+        "description": "Gain 1 Energy. Summon or retreat a unit of friendly ground to air assets."
+      },
+      {
+        "name": "Stormbringer [POS]",
+        "id": "manuAirConTac5",
+        "description": "Summon a large bomber. Gain Snapshot, it can only be used to allow this asset to make an Attack this turn, as an additional cost, pay X RP."
+      },
+      {
+        "name": "Gonna be like new. [POS]",
+        "id": "manuAirConTac6",
+        "description": "Choose an already summoned Asset. They retreat from the mission, however, they return at the start of your next turn with X additional Survivability. Exhaust."
+      },
+      {
+        "name": "Prepared for signal distortion. [POS]",
+        "id": "manuAirConTac7",
+        "description": "Gain 1 Energy. Summon a group of balloon targets. Unless the enemies have some way of discovering their true nature, whenever you use Order Attack with this asset, treat it as Enemy Jam instead."
+      }
+    ],
+    "advancements": [
+      "Keep an allied unit combat effective despite the odds.",
+      "Participate in a battle that has units by air, by land, and by sea.",
+      "Receive the praise of a superior",
+      "Save someone that probably should’ve died",
+      "Over five missions, keep the majority of your forces alive and combat operational.",
+      "Raise an Asset's Morale to the maximum – and keep it there over two missions.",
+      "Throw a party or have a medal ceremony with all of your assets present."
+    ],
+    "masteries": [
+      {
+        "name": "Bombardment Battle Plan [ATTACK]",
+        "id": "manuAirConMast1",
+        "description": "Allow all your active units to attack at once. All units must Withdraw afterwards. All units that have already attacked that turn cannot attack again. Exhaust."
+      },
+      {
+        "name": "Search and Destroy Battle Plan [REACT - 1]",
+        "id": "manuAirConMast2",
+        "description": "Whenever you Order Attack, you may mark that target. The next ally that attacks that target gains +1 Forward on their attack."
+      },
+      {
+        "name": "Hold the Line Battle Plan [Passive]",
+        "id": "manuAirConMast3",
+        "description": "Whenever an asset reaches 0 CE, it stays for another turn. It's destroyed after this turn."
+      }
+    ]
+  }
+]
