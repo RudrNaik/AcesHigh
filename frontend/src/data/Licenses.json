@@ -1,0 +1,403 @@
+[
+    {
+        "id": "A1",
+        "name": "MacMillan Modern Warfare",
+        "style": "Sniper",
+        "description": "Something",
+        "unlocks": {
+            "rank1": {
+                "ordnance": ["ordLAGM"],
+                "airframes": ["acF14A"],
+                "modules": ["modDragChute"],
+                "upgrades": []
+            },
+            "rank2": {
+                "ordnance": ["ordLAAM"],
+                "airframes": [],
+                "modules": ["modReconCam"],
+                "upgrades": []
+            },
+            "rank3": {
+                "ordnance": ["ordHVAA","ordHVAG"],
+                "airframes": [],
+                "modules": ["modDatalink"],
+                "upgrades": []
+            },
+            "rank4": {
+                "ordnance": ["ordStandoff","ordASAT"],
+                "airframes": ["acF2000"],
+                "modules": ["modTargetingDirector"],
+                "upgrades": []
+            },
+            "rank5": {
+                "ordnance": [],
+                "airframes": ["acF15E"],
+                "modules": ["modWindTunn"],
+                "upgrades": []
+            },
+            "rank6": {
+                "ordnance": ["ordLACM","ordLASM"],
+                "airframes": [],
+                "modules": ["modHaveGlass"],
+                "upgrades": ["upSlam","upSlamStrike"]
+            },
+            "rank7": {
+                "ordnance": [],
+                "airframes": [],
+                "modules": ["modAFCS"],
+                "upgrades": ["upXC","upXE"]
+            }
+        }
+    },
+    {
+    "id": "A2",
+    "name": "MacMillan Advanced Warfare",
+    "style": "Anti-Material Rifle",
+    "description": "Something",
+    "unlocks": {
+        "rank1": {
+            "ordnance": ["ordSLAAM"],
+            "airframes": ["acF8U3"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank2": {
+            "ordnance": ["ordLGBT"],
+            "airframes": [],
+            "modules": ["modSRA"],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": [],
+            "airframes": ["acMiG25MP","acF117A","acAF12"],
+            "modules": ["modIPC"],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": [],
+            "airframes": [],
+            "modules": [],
+            "upgrades": ["upMPackage"]
+        },
+        "rank5": {
+            "ordnance": ["ordVPSM"],
+            "airframes": ["acMiG31"],
+            "modules": ["modShapedCharge"],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": ["ordACBM"],
+            "airframes": ["acSu37"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank7": {
+            "ordnance": ["ordEGL"],
+            "airframes": [],
+            "modules": ["modPenetrating"],
+            "upgrades": []
+        }
+    }   
+    },
+    {
+    "id": "B1",
+    "name": "General Resources Professional Resources Surplus",
+    "style": "Air to Air",
+    "description": "Something",
+    "unlocks": {
+        "rank1": {
+            "ordnance": ["ordFSAAM"],
+            "airframes": ["acF15A"],
+            "modules": ["modTweakAvi"],
+            "upgrades": []
+        },
+        "rank2": {
+            "ordnance": ["ordMLAA2"],
+            "airframes": [],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": ["ordHPAA"],
+            "airframes": [],
+            "modules": ["modUpAvi"],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": ["ordMLAA4"],
+            "airframes": [],
+            "modules": [],
+            "upgrades": ["upCharlie"]
+        },
+        "rank5": {
+            "ordnance": ["ordMPSAAM"],
+            "airframes": ["acJ10A"],
+            "modules": ["modBlackNapalm"],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": ["ordFMLAA2"],
+            "airframes": [],
+            "modules": ["modImpAvi"],
+            "upgrades": []
+        },
+        "rank7": {
+            "ordnance": ["ordVMLAA2"],
+            "airframes": ["acSu47"],
+            "modules": ["modNapalmWar"],
+            "upgrades": []
+        }
+    }
+    },
+    {
+    "id": "B2",
+    "name": "General Resources Trading",
+    "style": "Air to Ground",
+    "description": "Something",
+    "unlocks": {
+        "rank1": {
+            "ordnance": ["ordUGBL","ordUGB3"],
+            "airframes": ["acFUCK"],
+            "modules": ["modTweakGSR"],
+            "upgrades": []
+        },
+        "rank2": {
+            "ordnance": ["ordMLAG2"],
+            "airframes": ["acSu24"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": ["ordJDAM"],
+            "airframes": ["acA12"],
+            "modules": ["modUpGSR"],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": ["ordASM"],
+            "airframes": ["acF2A"],
+            "modules": [],
+            "upgrades": ["upChasing"]
+        },
+        "rank5": {
+            "ordnance": ["ordMLAG4"],
+            "airframes": ["acF16XL"],
+            "modules": ["modExpExp"],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": ["ordFAEB"],
+            "airframes": [],
+            "modules": ["modImpGSR"],
+            "upgrades": []
+        },
+        "rank7": {
+            "ordnance": [],
+            "airframes": [],
+            "modules": ["modMIRV"],
+            "upgrades": []
+        }
+    }
+    },
+    {
+    "id": "C1",
+    "name": "Gründer Süd",
+    "style": "Its the Pilot",
+    "description": "Here at Gründer Süd we believe that it's not the plane, it's the pilot. We give you the tools you need to dominate the battlefield, expressing how skilled you are.",
+    "unlocks": {
+        "rank1": {
+            "ordnance": [],
+            "airframes": ["acJEFFA"],
+            "modules": ["modImpEject","modReminder","modCushy"],
+            "upgrades": []
+        },
+        "rank2": {
+            "ordnance": ["ordSQAAM"],
+            "airframes": ["acMiG29"],
+            "modules": ["modAerobatic"],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": [],
+            "airframes": ["acJ39A"],
+            "modules": ["modPolishIRST","modUpdatedAlg","modRWR","modReclinedSeat"],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": ["ordSHISM","ordSPBAA"],
+            "airframes": ["acF29A"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank5": {
+            "ordnance": [],
+            "airframes": ["acJ39E"],
+            "modules": ["modAngles","modHim"],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": [],
+            "airframes": [],
+            "modules": ["modArtemis","modML","modMAWS","modOtto"],
+            "upgrades": []
+        },
+        "rank7": {
+            "ordnance": [],
+            "airframes": [],
+            "modules": ["modAPTraining"],
+            "upgrades": ["upKai","upKai1Tag","upKai2Tag"]
+        }
+    }
+    },
+    {
+    "id": "C2",
+    "name": "Gründer Nord",
+    "style": "Its the Plane",
+    "description": "Here at Gründer Nord we believe that it's not the pilot, it's the plane. We give you the tools you need to dominate the battlefield, no matter how skilled you are..",
+    "unlocks": {
+        "rank1": {
+            "ordnance": ["ordMAAM"],
+            "airframes": [],
+            "modules": ["modSmokeBombs","modOverload"],
+            "upgrades": ["upVerusa"]
+        },
+        "rank2": {
+            "ordnance": ["ordHCAA","ordHCAG"],
+            "airframes": ["acSu27","acM2000"],
+            "modules": ["modAOAPack"],
+            "upgrades": ["up33"]
+        },
+        "rank3": {
+            "ordnance": ["ordATGM"],
+            "airframes": [],
+            "modules": ["modImpFuel"],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": ["ordGRKT","ordAAGRKT"],
+            "airframes": ["acSu30"],
+            "modules": ["modReverseSweep"],
+            "upgrades": ["upSM","upSMFlank","upSMNJAF"]
+        },
+        "rank5": {
+            "ordnance": ["ordQAAM"],
+            "airframes": ["acRafale","acS32"],
+            "modules": ["modVTOLEngine","modVariableInt"],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": ["ordQSM"],
+            "airframes": [],
+            "modules": ["modAOADelimit"],
+            "upgrades": ["upSM2","upSM2Flank","upSM2NJAF"]
+        },
+        "rank7": {
+            "ordnance": ["ordTLS"],
+            "airframes": [],
+            "modules": ["modHighway"],
+            "upgrades": []
+        }
+    }
+    },
+    {
+    "id": "D1",
+    "name": "Hammer",
+    "style": "Controller, Artillery (Suppression)",
+    "description": "",
+    "unlocks": {
+        "rank1": {
+            "ordnance": ["ordADNM","ordADCM","ordADMPN"],
+            "airframes": ["acF16A"],
+            "modules": ["modELINT"],
+            "upgrades": ["upStalker"]
+        },
+        "rank2": {
+            "ordnance": ["ordSASM"],
+            "airframes": ["acSu25","acYak141"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": ["ordECM"],
+            "airframes": ["acF20A"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": ["ordNapalm"],
+            "airframes": [],
+            "modules": ["modECCM"],
+            "upgrades": []
+        },
+        "rank5": {
+            "ordnance": ["ordSFFS"],
+            "airframes": ["acTejas2"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": ["ordSOD"],
+            "airframes": [],
+            "modules": ["modHaveGlass"],
+            "upgrades": []
+        },
+        "rank7": {
+            "ordnance": ["ordBIEW"],
+            "airframes": ["acP1214"],
+            "modules": [],
+            "upgrades": []
+        }
+    }
+    },
+    {
+    "id": "D2",
+    "name": "Arm",
+    "style": "Defender",
+    "description": "",
+    "unlocks": {
+        "rank1": {
+            "ordnance": ["ordARM"],
+            "airframes": ["acF13A"],
+            "modules": ["modArmor"],
+            "upgrades": []
+        },
+        "rank2": {
+            "ordnance": ["ordAARM"],
+            "airframes": [],
+            "modules": ["modBigFlares"],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": ["ordESM","ordIRCM"],
+            "airframes": ["acF18A"],
+            "modules": ["modEWO"],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": ["ordHARM"],
+            "airframes": ["acSu34"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank5": {
+            "ordnance": ["ordPAARM"],
+            "airframes": ["acF18E"],
+            "modules": ["modBuddyFlares"],
+            "upgrades": ["upMewler"]
+        },
+        "rank6": {
+            "ordnance": ["ordDecoy"],
+            "airframes": [],
+            "modules": ["modCrossUp"],
+            "upgrades": ["upFox"]
+        },
+        "rank7": {
+            "ordnance": ["ordIEW"],
+            "airframes": [],
+            "modules": [],
+            "upgrades": []
+        }
+    }
+    }
+]
+
