@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import TerminalPanel from "./components/menu/TerminalPanel";
 import TerminalFeed from "./components/menu/TerminalFeed";
+import "./flicker.css"
 
 const something: string[] = [
   ">This is a test message to ensure the menu is working as intended.",

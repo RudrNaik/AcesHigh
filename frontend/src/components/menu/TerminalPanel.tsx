@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import "../../flicker.css";
 
 interface TerminalPanelProps {
   title: string;
   subtitle: string;
   icon: string;
   link: string;
-  onHover?: (
-    path: string,
-    subtitle: string
-  ) => void;
+  onHover?: (path: string, subtitle: string) => void;
 }
 
 function TerminalPanel({
@@ -19,12 +18,23 @@ function TerminalPanel({
   link,
 }: TerminalPanelProps) {
   return (
-    <Link to={link}>
-      <div
-        onMouseEnter={() => {
-          if (onHover) {onHover(`/access/${title.toLowerCase()}`,subtitle);}
-        }}
-        className="
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        duration: 0.3,
+        delay: 0.1,
+      }}
+      className="flicker"
+    >
+      <Link to={link}>
+        <div
+          onMouseEnter={() => {
+            if (onHover) {
+              onHover(`/access/${title.toLowerCase()}`, subtitle);
+            }
+          }}
+          className="
           group
           relative
           overflow-hidden
@@ -38,53 +48,53 @@ function TerminalPanel({
           mb-3
           pt-2
         "
-      >
-
-        {/* Content */}
-        <div className="relative z-10 p-5 font-mono">
-          {/* Header */}
-          <div className="">
-            <div className="flex items-center gap-3">
-              {icon && (
-              <span
-                className="
+        >
+          {/* Content */}
+          <div className="relative z-10 p-5 font-mono">
+            {/* Header */}
+            <div className="">
+              <div className="flex items-center gap-3">
+                {icon && (
+                  <span
+                    className="
                   text-cyan-300
                   text-2xl
                   font-bold
                 "
-              >
-                {icon}
-              </span>
-              )}
+                  >
+                    {icon}
+                  </span>
+                )}
 
-              <h1
-                className="
+                <h1
+                  className="
                   text-lg
                   md:text-2xl
                   font-semibold
                   uppercase
                   text-cyan-100
                 "
-              >
-                {title}
-              </h1>
+                >
+                  {title}
+                </h1>
+              </div>
             </div>
-          </div>
 
-          {/* Subtitle */}
-          <p
-            className="
+            {/* Subtitle */}
+            <p
+              className="
               text-xs
               tracking-[0.2em]
               uppercase
               text-cyan-200/70
             "
-          >
-            {subtitle}
-          </p>
+            >
+              {subtitle}
+            </p>
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 }
 
