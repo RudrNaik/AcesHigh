@@ -9,7 +9,7 @@ interface Props {
 
 function DossierTab({
   character,
-  updateCharacter,
+  //updateCharacter,
 }: Props) {
   return (
     <div className="grid gap-4">
@@ -34,6 +34,7 @@ function DossierTab({
         }
         placeholder="Last Name"
       />
+
     </div>
   );
 }
