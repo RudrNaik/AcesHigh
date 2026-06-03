@@ -5,32 +5,22 @@ interface Props {
   onSelect: () => void;
 }
 
-function CharacterCard({
-  character,
-  onSelect,
-}: Props) {
+function CharacterCard({ character, onSelect }: Props) {
   return (
     <button
       onClick={onSelect}
       className="
-      w-full
-      rounded-xl
-      border
-      border-white/20
-      bg-black/30
-      p-4
-      text-left
-      hover:bg-black/50
+       bg-black/20
+        border
+        border-cyan-100
+        p-6
+        border-l-4
       "
     >
-      <h3 className="text-xl font-bold">
-        {character.dossier.callsign}
-      </h3>
-
+      <h3 className="text-xl font-bold">{character?.dossier.callsign}</h3>
+      <p className="text-xs">{character.id}</p>
       <p>
-        {character.dossier.firstName}
-        {" "}
-        {character.dossier.lastName}
+        {character?.dossier.firstName} {character?.dossier.lastName}
       </p>
     </button>
   );

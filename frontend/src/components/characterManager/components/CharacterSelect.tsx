@@ -22,7 +22,7 @@ function CharacterSelect({
 
         <button
           onClick={onCreate}
-          className="borderborder-cyan-100 p-6 border-l-4"
+          className="borderborder-cyan-100 px-2 py-2 border"
         >
           Create Character
         </button>
@@ -33,7 +33,7 @@ function CharacterSelect({
           No characters created yet.
         </div>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 border p-8">
           {characters.map((character) => (
             <CharacterCard
               key={character.id}

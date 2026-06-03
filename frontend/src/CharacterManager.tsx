@@ -16,6 +16,8 @@ function CharacterManager() {
     setSelectedId(character.id);
   };
 
+  console.log(selectedId);
+
   return (
     <div className="w-full min-h-screen">
 
