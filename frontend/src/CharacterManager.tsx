@@ -1,16 +1,31 @@
-
-
-
+import { useState } from "react";
+import CharacterSelect from "./components/characterManager/components/CharacterSelect";
+import { createDefaultCharacter } from "./components/characterManager/handlers/characterTemplate";
+import { useCharacterStorage } from "./components/characterManager/handlers/characterStorage";
 
 function CharacterManager() {
+  const { characters, addCharacter } = useCharacterStorage();
+
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const handleCreate = () => {
+    const character = createDefaultCharacter();
+
+    addCharacter(character);
+
+    setSelectedId(character.id);
+  };
+
   return (
-    <div
-      className="w-full min-h-screen"
-    >
-      <div className="py-30"></div>
-      <div className="z-10 grid h-full place-items-center text-center text-white drop-shadow">
+    <div className="w-full min-h-screen">
+
+      <div className="max-w-6xl mx-auto px-4 font-mono">
+        <CharacterSelect
+          characters={characters}
+          onSelect={setSelectedId}
+          onCreate={handleCreate}
+        />
       </div>
-      <div className="py-20"></div>
     </div>
   );
 }
