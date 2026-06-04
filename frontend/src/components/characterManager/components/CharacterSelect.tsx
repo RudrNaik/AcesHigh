@@ -5,12 +5,14 @@ interface Props {
   characters: CharacterData[];
   onSelect: (id: string) => void;
   onCreate: () => void;
+  onDelete: (id: string) => void;
 }
 
 function CharacterSelect({
   characters,
   onSelect,
   onCreate,
+  onDelete
 }: Props) {
   return (
     <div className="space-y-6">
@@ -41,6 +43,8 @@ function CharacterSelect({
               onSelect={() =>
                 onSelect(character.id)
               }
+              onDelete={() =>
+                onDelete(character.id)}
             />
           ))}
         </div>

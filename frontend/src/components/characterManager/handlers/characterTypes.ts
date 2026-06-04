@@ -15,16 +15,46 @@ export interface CharacterDossier {
   lastName: string;
   callsign: string;
 
-  age: number | null;
-
   gender: string;
   pronouns: string;
 
-  quirk1: string;
-  quirk2: string;
-  quirk3: string;
+  dateOfBirth: string;
+  placeOfBirth: string;
+  nationality: string;
+
+  rank: string;
+  squadron: string;
+
+  faith: string;
+  sexuality: string;
+
+  height: string;
+  weight: string;
+
+  hairColor: string;
+  eyeColor: string;
+
+  biography: string;
+  description: string;
+  serviceRecord: string;
+  psychologicalReport: string;
+
+  languages: string;
+
+  relationships: string;
 
   notes: string;
+}
+
+export interface CharacterQuirks {
+    quirk1Name: string
+    quirk1Desc: string
+
+    quirk2Name: string
+    quirk2Desc: string
+
+    quirk3Name: string
+    quirk3Desc: string
 }
 
 export interface CharacterData {
@@ -39,6 +69,8 @@ export interface CharacterData {
   aircraftId: string | null;
 
   perks: string[];
+
+  quirks: CharacterQuirks;
 
   licenses: string[];
 

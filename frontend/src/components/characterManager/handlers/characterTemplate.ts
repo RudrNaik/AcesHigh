@@ -8,14 +8,33 @@ export const createDefaultCharacter = (): CharacterData => ({
     lastName: "",
     callsign: "",
 
-    age: null,
-
     gender: "",
     pronouns: "",
 
-    quirk1: "",
-    quirk2: "",
-    quirk3: "",
+    dateOfBirth: "",
+    placeOfBirth: "",
+    nationality: "",
+
+    rank: "",
+    squadron: "",
+
+    faith: "",
+    sexuality: "",
+
+    height: "",
+    weight: "",
+
+    hairColor: "",
+    eyeColor: "",
+
+    biography: "",
+    description: "",
+    serviceRecord: "",
+    psychologicalReport: "",
+
+    languages: "",
+
+    relationships:"",
 
     notes: "",
   },
@@ -30,6 +49,17 @@ export const createDefaultCharacter = (): CharacterData => ({
   stress: {
     mental: 0,
     physical: 0,
+  },
+
+  quirks: {
+    quirk1Name: "",
+    quirk1Desc: "",
+
+    quirk2Name: "",
+    quirk2Desc: "",
+
+    quirk3Name: "",
+    quirk3Desc: "",
   },
 
   aircraftId: null,
