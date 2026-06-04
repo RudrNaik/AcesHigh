@@ -15,10 +15,11 @@ function CharacterCard({ character, onSelect, onDelete }: Props) {
     border-cyan-100
     hover:border-cyan-400
     transition-all
-    duration-100
+    duration-50
     p-4
     border-l-4
     flex justify-between
+    cursor:pointer
   "
     >
       <div onClick={onSelect} className="cursor-pointer">
@@ -41,7 +42,7 @@ function CharacterCard({ character, onSelect, onDelete }: Props) {
 
           onDelete();
         }}
-        className="text-red-400 hover:text-red-300 transition-all"
+        className="hover:animate-pulse text-red-300 hover:text-red-500 transition-all border-red-300 border px-2 py-1 hover:border-red-500"
       >
         X
       </button>

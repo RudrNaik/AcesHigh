@@ -57,6 +57,23 @@ export interface CharacterQuirks {
     quirk3Desc: string
 }
 
+export interface Aircraft {
+    aircraftId: string
+    upgradePackage: string
+    modules :{
+        m1: string
+        m2: string
+        m3: string
+        m4: string
+        m5: string
+        m6: string
+        m7: string
+        m8: string
+        m9: string
+        m10: string
+    }
+}
+
 export interface CharacterData {
   id: string;
 
@@ -66,9 +83,10 @@ export interface CharacterData {
 
   stress: CharacterStress;
 
-  aircraftId: string | null;
+  aircraftId: Aircraft;
 
-  perks: string[];
+  aceperks: string[];
+  baseperks: string[];
 
   quirks: CharacterQuirks;
 

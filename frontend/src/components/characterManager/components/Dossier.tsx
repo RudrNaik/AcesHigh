@@ -1,40 +1,252 @@
 import type { CharacterData } from "../handlers/characterTypes";
+import { useState } from "react";
 
 interface Props {
   character: CharacterData;
-  updateCharacter: (
-    updated: CharacterData
-  ) => void;
+  updateCharacter: (updated: CharacterData) => void;
 }
 
-function DossierTab({
-  character,
-  //updateCharacter,
-}: Props) {
+interface FieldProps {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+}
+
+function DossierTab({ character, updateCharacter }: Props) {
+  const updateField = (
+    field: keyof CharacterData["dossier"],
+    value: string,
+  ) => {
+    updateCharacter({
+      ...character,
+      dossier: {
+        ...character.dossier,
+        [field]: value,
+      },
+    });
+  };
+
   return (
-    <div className="grid gap-4">
+    <div className="">
+      <div className=" border-cyan-100 p-4 space-y-4">
+        <Section title="Identity">
+          <div className="grid grid-cols-3 gap-4">
+            <TextField
+              label="Callsign"
+              value={character.dossier.callsign}
+              onChange={(v) => updateField("callsign", v)}
+            />
+
+            <TextField
+              label="First Name"
+              value={character.dossier.firstName}
+              onChange={(v) => updateField("firstName", v)}
+            />
+
+            <TextField
+              label="Last Name"
+              value={character.dossier.lastName}
+              onChange={(v) => updateField("lastName", v)}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <TextField
+              label="Gender"
+              value={character.dossier.gender}
+              onChange={(v) => updateField("gender", v)}
+            />
+
+            <TextField
+              label="Pronouns"
+              value={character.dossier.pronouns}
+              onChange={(v) => updateField("pronouns", v)}
+            />
+          </div>
+
+          <TextField
+            label="Languages"
+            value={character.dossier.languages}
+            onChange={(v) => updateField("languages", v)}
+          />
+        </Section>
+      </div>
+
+      <div className=" border-cyan-100 p-4 space-y-4">
+        <Section title="Details">
+          <div className="grid grid-cols-2 gap-4">
+            <TextField
+              label="Rank"
+              value={character.dossier.rank}
+              onChange={(v) => updateField("rank", v)}
+            />
+
+            <TextField
+              label="Squadron"
+              value={character.dossier.squadron}
+              onChange={(v) => updateField("squadron", v)}
+            />
+
+            <TextField
+              label="Nationality"
+              value={character.dossier.nationality}
+              onChange={(v) => updateField("nationality", v)}
+            />
+
+            <TextField
+              label="Faith"
+              value={character.dossier.faith}
+              onChange={(v) => updateField("faith", v)}
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <TextField
+              label="Date of Birth"
+              value={character.dossier.dateOfBirth}
+              onChange={(v) => updateField("dateOfBirth", v)}
+            />
+
+            <TextField
+              label="Place of Birth"
+              value={character.dossier.placeOfBirth}
+              onChange={(v) => updateField("placeOfBirth", v)}
+            />
+          </div>
+        </Section>
+      </div>
+
+      <div className=" border-cyan-100 p-4 space-y-4">
+        <Section title="Physical Profile">
+          <div className="grid grid-cols-2 gap-4">
+            <TextField
+              label="Height"
+              value={character.dossier.height}
+              onChange={(v) => updateField("height", v)}
+            />
+
+            <TextField
+              label="Weight"
+              value={character.dossier.weight}
+              onChange={(v) => updateField("weight", v)}
+            />
+
+            <TextField
+              label="Hair Color"
+              value={character.dossier.hairColor}
+              onChange={(v) => updateField("hairColor", v)}
+            />
+
+            <TextField
+              label="Eye Color"
+              value={character.dossier.eyeColor}
+              onChange={(v) => updateField("eyeColor", v)}
+            />
+          </div>
+        </Section>
+      </div>
+
+      <div className=" border-cyan-100 p-4 space-y-4">
+        <Section title="Background">
+          <label className="text-cyan-400 text-sm">Biography</label>
+          <textarea
+            value={character.dossier.biography}
+            placeholder="Biography"
+            onChange={(e) => updateField("biography", e.target.value)}
+            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+          />
+
+          <label className="text-cyan-400 text-sm">Psychological Report</label>
+          <textarea
+            value={character.dossier.psychologicalReport}
+            placeholder="Psychological Report"
+            onChange={(e) => updateField("psychologicalReport", e.target.value)}
+            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+          />
+
+          <label className="text-cyan-400 text-sm">Physical Description</label>
+          <textarea
+            value={character.dossier.description}
+            placeholder="Physical Description"
+            onChange={(e) => updateField("description", e.target.value)}
+            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+          />
+
+          <label className="text-cyan-400 text-sm">Service Record</label>
+          <textarea
+            value={character.dossier.serviceRecord}
+            placeholder="Service Record"
+            onChange={(e) => updateField("serviceRecord", e.target.value)}
+            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+          />
+        </Section>
+      </div>
+
+      <div className="border-cyan-100 p-4 space-y-2">
+        <Section title="Connections and Relations">
+          <textarea
+            value={character.dossier.relationships}
+            onChange={(e) => updateField("relationships", e.target.value)}
+            className="w-full min-h-35 border border-cyan-100 bg-black/20 p-2"
+          />
+        </Section>
+      </div>
+
+      <div className=" border-cyan-100 p-4 space-y-4">
+        <Section title="Misc">
+          <textarea
+            value={character.dossier.notes}
+            placeholder="Notes"
+            onChange={(e) => updateField("notes", e.target.value)}
+            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+          />
+        </Section>
+      </div>
+    </div>
+  );
+}
+
+function TextField({ label, value, onChange, placeholder }: FieldProps) {
+  return (
+    <div className="flex flex-col gap-1">
+      <label className="text-cyan-400 text-sm">{label}</label>
 
       <input
-        value={
-          character.dossier.firstName
-        }
-        placeholder="First Name"
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+        className="border border-cyan-100 bg-black/20 px-2 py-1"
       />
+    </div>
+  );
+}
 
-      <input
-        value={
-          character.dossier.callsign
-        }
-        placeholder="Callsign"
-      />
+function Section({
+  title,
+  children,
+  defaultOpen = true,
+}: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
 
-      <input
-        value={
-          character.dossier.lastName
-        }
-        placeholder="Last Name"
-      />
+  return (
+    <div className="">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex justify-between items-center p-4 text-cyan-300 font-bold"
+      >
+        <span>
+          {open ? "▼" : "▶"} {title}
+        </span>
+      </button>
 
+      {open && (
+        <div className="p-4 space-y-4 border-t border-cyan-100">{children}</div>
+      )}
     </div>
   );
 }
