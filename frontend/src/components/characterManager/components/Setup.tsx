@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
 
 type Props = {
@@ -11,15 +11,22 @@ type Props = {
 function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
   const [local, setLocal] = useState<CharacterData>(character);
 
-  // ================= SPECIALIZATION =================
+  useEffect(() => {
+    if (!character.metadata.setupComplete) {
+      setLocal(character);
+    }
+  }, [character.metadata.setupComplete]);
 
-  const selectedSpec = useMemo(() => {
-    return specs.find((s) => s.id === local.specialization.specId);
-  }, [local.specialization.specId, specs]);
+  const selectedSpec = specs.find((s) => s.id === local.specialization.specId);
 
   const availableTactics = selectedSpec?.tactics ?? [];
 
+  const selectedTacticCount = local.specialization.tactics.filter((id) =>
+    availableTactics.some((t: any) => t.id === id),
+  ).length;
+
   const isTacticSelected = (id: string) =>
+    availableTactics.some((t: any) => t.id === id) &&
     local.specialization.tactics.includes(id);
 
   const toggleTactic = (id: string) => {
@@ -30,7 +37,7 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     if (exists) {
       updated = local.specialization.tactics.filter((t) => t !== id);
     } else {
-      if (local.specialization.tactics.length >= 3) return;
+      if (selectedTacticCount >= 3) return;
       updated = [...local.specialization.tactics, id];
     }
 
@@ -59,8 +66,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     updateCharacter(next);
   };
 
-  // ================= META =================
-
   const updateMeta = (key: keyof CharacterData["metadata"], value: any) => {
     const next = {
       ...local,
@@ -73,8 +78,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     setLocal(next);
     updateCharacter(next);
   };
-
-  // ================= DOSSIER =================
 
   const updateDossier = (
     key: keyof CharacterData["dossier"],
@@ -92,7 +95,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     updateCharacter(next);
   };
 
-  // ================= QUIRKS =================
 
   const updateQuirk = (key: keyof CharacterData["quirks"], value: string) => {
     const next = {
@@ -107,8 +109,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     updateCharacter(next);
   };
 
-  // ================= BACKGROUND =================
-
   const setBackgroundPerk = (id: string) => {
     const next = {
       ...local,
@@ -119,13 +119,14 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     updateCharacter(next);
   };
 
-  // ================= STATS (HARD CAP 8) =================
 
   const stats = local.metadata.startingPilotStats;
 
   const totalStats = stats.temper + stats.nerve + stats.reflex + stats.gResist;
 
   const updateStat = (key: keyof typeof stats, value: number) => {
+    if (value > 5) return;
+
     const nextStats = {
       ...stats,
       [key]: value,
@@ -134,7 +135,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     const newTotal =
       nextStats.temper + nextStats.nerve + nextStats.reflex + nextStats.gResist;
 
-    // HARD CAP
     if (newTotal > 8) return;
 
     updateMeta("startingPilotStats", nextStats);
@@ -142,15 +142,13 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
 
   const statsValid = totalStats === 8;
 
-  // ================= VALIDATION =================
-
   const canComplete =
     statsValid &&
     local.dossier.firstName !== "" &&
     local.dossier.lastName !== "" &&
     local.dossier.callsign !== "" &&
     local.specialization.specId !== "" &&
-    local.specialization.tactics.length === 3 &&
+    selectedTacticCount === 3 &&
     local.backgroundPerk !== "";
 
   const completeSetup = () => {
@@ -165,10 +163,9 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     });
   };
 
-  // ================= RENDER =================
-
   return (
     <div className="space-y-8 text-white">
+      {/*Identity*/}
       <section className="border p-4 space-y-3">
         <h2 className="text-cyan-300 font-bold">Identity</h2>
 
@@ -176,35 +173,41 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
           <label className="text-cyan-400 text-sm">First Name</label>
           <input
             value={local.dossier.firstName}
+            className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("firstName", e.target.value)}
           />
 
           <label className="text-cyan-400 text-sm">Last Name</label>
           <input
             value={local.dossier.lastName}
+            className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("lastName", e.target.value)}
           />
 
           <label className="text-cyan-400 text-sm">Callsign</label>
           <input
             value={local.dossier.callsign}
+            className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("callsign", e.target.value)}
           />
 
           <label className="text-cyan-400 text-sm">Gender</label>
           <input
             value={local.dossier.gender}
+            className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("gender", e.target.value)}
           />
 
           <label className="text-cyan-400 text-sm">Rank</label>
           <input
             value={local.dossier.rank}
+            className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("rank", e.target.value)}
           />
         </div>
       </section>
 
+      {/* metadata */}
       <section className="border p-4 space-y-3">
         <h2 className="text-cyan-300 font-bold">Generation</h2>
         <div className="flex flex-col gap-2">
@@ -226,64 +229,68 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
         </div>
       </section>
 
+      {/* Quirks */}
       <section className="border p-4 space-y-3">
         <h2 className="text-cyan-300 font-bold">Quirks</h2>
 
         <div className="grid grid-cols-3 gap-4">
-          {/* POSITIVE */}
-          <div className="border p-2 space-y-2">
-            <h3 className="text-green-300">Positive</h3>
+          <div className="border p-2 space-y-2 flex flex-col">
+            <h3 className="">Quirk 1</h3>
 
             <label className="text-cyan-400 text-sm">Name</label>
             <input
               value={local.quirks.quirk1Name}
+              className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk1Name", e.target.value)}
             />
 
             <label className="text-cyan-400 text-sm">Description</label>
             <input
               value={local.quirks.quirk1Desc}
+              className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk1Desc", e.target.value)}
             />
           </div>
 
-          {/* NEUTRAL */}
-          <div className="border p-2 space-y-2">
-            <h3 className="text-yellow-300">Neutral</h3>
+          <div className="border p-2 space-y-2 flex flex-col">
+            <h3 className="">Quirk 2</h3>
 
             <label className="text-cyan-400 text-sm">Name</label>
             <input
               value={local.quirks.quirk2Name}
+              className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk2Name", e.target.value)}
             />
 
             <label className="text-cyan-400 text-sm">Description</label>
             <input
               value={local.quirks.quirk2Desc}
+              className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk2Desc", e.target.value)}
             />
           </div>
 
-          {/* NEGATIVE */}
-          <div className="border p-2 space-y-2">
-            <h3 className="text-red-300">Negative</h3>
+          <div className="border p-2 space-y-2 flex flex-col">
+            <h3 className="">Quirk 3</h3>
 
             <label className="text-cyan-400 text-sm">Name</label>
             <input
               value={local.quirks.quirk3Name}
+              className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk3Name", e.target.value)}
             />
 
             <label className="text-cyan-400 text-sm">Description</label>
             <input
               value={local.quirks.quirk3Desc}
+              className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk3Desc", e.target.value)}
             />
           </div>
         </div>
       </section>
 
-      {/* ================= STATS ================= */}
+      {/*stats*/}
       <section className="border p-4 space-y-3">
         <h2 className="text-cyan-300 font-bold">
           Pilot Stats (Total {totalStats}/8)
@@ -293,17 +300,33 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
           <div key={key} className="flex gap-4 items-center">
             <span className="w-24">{key.toUpperCase()}</span>
 
+            <button
+              onClick={() => updateStat(key, stats[key] - 1)}
+              disabled={stats[key] <= 0}
+              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+            >
+              −
+            </button>
+
             <input
               type="number"
               className="num-themed px-2 py-1 max-w-3xs"
               value={stats[key]}
               onChange={(e) => updateStat(key, Number(e.target.value))}
             />
+
+            <button
+              onClick={() => updateStat(key, stats[key] + 1)}
+              disabled={stats[key] >= 5}
+              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+            >
+              +
+            </button>
           </div>
         ))}
       </section>
 
-      {/* ================= SPECIALIZATION (UPGRADED) ================= */}
+      {/*Specs*/}
       <section className="border p-4 space-y-4">
         <h2 className="text-cyan-300 font-bold">Specialization</h2>
 
@@ -313,31 +336,30 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
           className="select-themed"
         >
           <option value="">Select Spec</option>
-          {specs.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name}
-            </option>
-          ))}
+          {specs
+            .filter((p) => p.id != "exampleSpec")
+            .map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.name}
+              </option>
+            ))}
         </select>
 
         {selectedSpec && (
           <div className="space-y-4">
-            {/* FLAVOR */}
             <div className="border p-3 text-sm opacity-80">
               {selectedSpec.flavor}
             </div>
 
-            {/* TACTICS AS CARDS */}
             <div className="grid md:grid-cols-2 gap-3">
-              {availableTactics.map((t: any) => {
+              {availableTactics.map((t: any, idx: number) => {
                 const selected = isTacticSelected(t.id);
 
-                const locked =
-                  !selected && local.specialization.tactics.length >= 3;
+                const locked = !selected && selectedTacticCount >= 3;
 
                 return (
                   <button
-                    key={t.id}
+                    key={`${local.specialization.specId}-${t.id || idx}`}
                     disabled={locked}
                     onClick={() => toggleTactic(t.id)}
                     className={`
@@ -356,7 +378,7 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
         )}
       </section>
 
-      {/* ================= BACKGROUND ================= */}
+      {/* backghround perk*/}
       <section className="border p-4 space-y-3">
         <h2 className="text-cyan-300 font-bold">Background Perk</h2>
 
@@ -366,20 +388,30 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
           className="select-themed"
         >
           <option value="">Select Perk</option>
-          {backgroundPerks.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.name}
-            </option>
-          ))}
+          {backgroundPerks
+            .filter((p) => p.type === "bgPerk")
+            .map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.name}
+              </option>
+            ))}
         </select>
+        <div className="border p-3 text-sm opacity-80">
+              {backgroundPerks.filter((p) => p.id === local.backgroundPerk).map((p) => (
+                <span>
+                    {p.description}
+                </span>
+              ))}
+        </div>
+
       </section>
 
-      {/* ================= FINAL ================= */}
+      {/* submit*/}
       <section className="border p-4 space-y-3">
         <h2 className="text-cyan-300 font-bold">Final Check</h2>
 
         <div className={canComplete ? "text-green-400" : "text-red-400"}>
-          {canComplete ? "Ready to launch" : "Incomplete setup"}
+          {canComplete ? "Ready" : "Incomplete Setup"}
         </div>
 
         <button

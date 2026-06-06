@@ -192,12 +192,12 @@
       },
       {
         "name": "Scatman’s Spirit [PASSIVE]",
-        "id": "",
+        "id": "manuDJTac3",
         "description": "It’s a Scatman’s world. You count as an ally for your Ally Jams."
       },
       {
         "name": "Ska Track On Deck [PASSIVE]",
-        "id": "",
+        "id": "manuDJTac4",
         "description": "Play a song. You may spend a Nerve and Reflex a number of times equal to how many minutes long it is (round down). For each minute you paid for, you may Ally Jam during your POS for free. Exhaust."
       },
       {
@@ -259,12 +259,12 @@
     "tactics": [
       {
         "name": "Pirouette [PASSIVE]",
-        "id": "",
+        "id": "manuAcroTac1",
         "description": "Once per turn, whenever you Gain a Maneuver from an Ally, gain Closure."
       },
       {
         "name": "High Top [PASSIVE]",
-        "id": "",
+        "id": "manuAcroTac2",
         "description": "Whenever you spend time getting to a higher altitude, usually by Flying Defensively or Zoom Climbing, Gain +1 Forward."
       },
       {
@@ -274,12 +274,12 @@
       },
       {
         "name": "Aerial Silk [PASSIVE]",
-        "id": "",
+        "id": "manuAcroTac4",
         "description": "Increase your maneuver limit per turn by 1, but you lose -2 Capacity."
       },
       {
         "name": "High Wire [PASSIVE]",
-        "id": "",
+        "id": "manuAcroTac5",
         "description": "Gain +1 Forward whenever you fail a Nerve or Reflex check."
       },
       {
@@ -289,7 +289,7 @@
       },
       {
         "name": "PARKOUR [PASSIVE]",
-        "id": "",
+        "id": "manuAcroTac7",
         "description": "Whenever you use one of your other Tactics, you may grant an Ally Meld. If they say no, you gain Snapshot instead. Fatigue."
       }
     ],
@@ -428,7 +428,7 @@
       },
       {
         "name": "Class Superstar [PASSIVE]",
-        "id": "",
+        "id": "manuBragTac4",
         "description": "You carried too many chairs in grade school. Now you carry too much Ordnance. Carry an additional Ordnance on Mission at the cost of either -2 Maneuverability, -2 Speed, or -4 Capacity."
       },
       {
@@ -505,7 +505,7 @@
       },
       {
         "name": "Happy-Go-Lucky [PASSIVE]",
-        "id": "",
+        "id": "manuCloudTac4",
         "description": "Whenever you take Survivability damage, you and your “family” gain +1 Forward."
       },
       {
@@ -520,7 +520,7 @@
       },
       {
         "name": "Water Flowing Over [PASSIVE]",
-        "id": "",
+        "id": "manuCloudTac7",
         "description": "Whenever an ally helps out you or a “family” member, they may become part of your family for that mission by spending any Pilot Stat."
       }
     ],
@@ -567,17 +567,17 @@
     "tactics": [
       {
         "name": "Lancebreaker [PASSIVE]",
-        "id": "",
+        "id": "manuDuelTac1",
         "description": "Whenever you deal damage as a result of a Joust, increase it by 1."
       },
       {
         "name": "Tilt Tactician [PASSIVE]",
-        "id": "",
+        "id": "manuDuelTac2",
         "description": "Whenever you Joust, gain Closure. "
       },
       {
         "name": "Armor Astir [PASSIVE]",
-        "id": "",
+        "id": "manuDuelTac3",
         "description": "Before a mission, you may trade 3 Capacity for 1 Survivability up to two times, as long as you have the Capacity to trade."
       },
       {
@@ -587,7 +587,7 @@
       },
       {
         "name": "Remise [PASSIVE]",
-        "id": "",
+        "id": "manuDuelTac5",
         "description": "Gain an extra Reflex per turn, even above your normal Maneuver limit. You may only Joust or use Duelist Maneuvers with this Reflex."
       },
       {
@@ -644,7 +644,7 @@
     "tactics": [
       {
         "name": "Double Down [PASSIVE]",
-        "id": "",
+        "id": "manuGamblerTac1",
         "description": "Before you roll, you may Spend a Pilot Stat; if you do, anything below a Full Success is a Failure - but any Full Success is a Perfect Success."
       },
       {
@@ -659,7 +659,7 @@
       },
       {
         "name": "Insurance [PASSIVE]",
-        "id": "",
+        "id": "manuGamblerTac4",
         "description": "You may Spend Coins for your allies."
       },
       {
@@ -721,7 +721,7 @@
     "tactics": [
       {
         "name": "Reformer [PASSIVE]",
-        "id": "",
+        "id": "manuOODATac1",
         "description": "You may use any Pilot Stat in place of another, but you spend three of it when you do."
       },
       {
@@ -818,7 +818,7 @@
       },
       {
         "name": "Wallflower Admiration [PASSIVE]",
-        "id": "",
+        "id": "manuReconTac5",
         "description": "Whenever an Ally would fail a Pilot Check, you may spend that Pilot stat to allow them to reroll. Exhaust unless you spend another Pilot stat."
       },
       {
@@ -905,7 +905,7 @@
       },
       {
         "name": "Fuel of Addiction [PASSIVE]",
-        "id": "",
+        "id": "manuRedlineTac7",
         "description": "Whenever you spend a Capacity while making a Speed check, you may reroll the extra die that Spending a Capacity gave you."
       }
     ],
@@ -1054,12 +1054,12 @@
       },
       {
         "name": "Behind the Veil [PASSIVE]",
-        "id": "",
+        "id": "manuJaegerTac6",
         "description": "Whenever you make a Check to gain a hint about a situation, Roll with Advantage. Exhaust."
       },
       {
         "name": "Mantle of Command [PASSIVE]",
-        "id": "",
+        "id": "manuJaegerTac7",
         "description": "Lose -1 Reflex and Speed. Once per turn when you use a Storyteller Tactic, gain +1 Forward."
       }
     ],
@@ -1106,7 +1106,7 @@
     "tactics": [
       {
         "name": "Prismatic Link [PASSIVE]",
-        "id": "",
+        "id": "manuArchonTac1",
         "description": "Whenever you Draw Fire, you may have it grant {Locked} to any {Shielded} Ally instead of you."
       },
       {
@@ -1136,7 +1136,7 @@
       },
       {
         "name": "Psi-Infusion [PASSIVE]",
-        "id": "",
+        "id": "manuArchonTac7",
         "description": "You may use Ally Shield on enemies. Enemies with {Shielded} instead grant you 2 Energy at the start of the turn. This effect lasts until the target takes damage or they take an action to clear it."
       }
     ],
@@ -1183,12 +1183,12 @@
     "tactics": [
       {
         "name": "Slow and Steady [PASSIVE]",
-        "id": "",
+        "id": "manuFairyTac1",
         "description": "Whenever you Gain {Adagio}, Gain Dive."
       },
       {
         "name": "Feeling the Rhythm [PASSIVE]",
-        "id": "",
+        "id": "manuFairyTac2",
         "description": "Whenever you Gain {Allegro}, gain +1 Forward on your next Pilot Stat roll. Whenever you Gain {Adagio}, gain +1 Forward on your next plane stat roll. "
       },
       {
@@ -1203,7 +1203,7 @@
       },
       {
         "name": "Perfect Grace [PASSIVE]",
-        "id": "",
+        "id": "manuFairyTac5",
         "description": "Whenever you make a Maneuverability check, gain +1 Forward."
       },
       {
@@ -1213,7 +1213,7 @@
       },
       {
         "name": "Time After Time [PASSIVE]",
-        "id": "",
+        "id": "manuFairyTac7",
         "description": "After your [POS], if your Energy is less than 3 over your Stall, you may make a Maneuverability Test. If you Succeed, Gain Meld."
       }
     ],
@@ -1260,7 +1260,7 @@
     "tactics": [
       {
         "name": "Six Chambers [PASSIVE]",
-        "id": "",
+        "id": "manuCowTac1",
         "description": "At the start of a mission, gain a Gunslinger die, a 1d6 starting at 6. Every time you make an [ATTACK], reduce the value of the Gunslinger die by 1. When it hits 0, gain Snap Shot. You also Gain the following Maneuver:"
       },
       {
@@ -1342,7 +1342,7 @@
       },
       {
         "name": "Flying in my Plane [PASSIVE]",
-        "id": "",
+        "id": "manuTruckTac2",
         "description": "Whenever you lose any Survivability, gain Lock-On."
       },
       {
@@ -1362,7 +1362,7 @@
       },
       {
         "name": "Spare Squadron [PASSIVE]",
-        "id": "",
+        "id": "manuTruckTac6",
         "description": "If the mission has a Resupply Line and you have Bailed Out, you may return in a new plane one round after Bailing Out. You may only choose planes from License Level 0."
       },
       {
@@ -1424,7 +1424,7 @@
       },
       {
         "name": "Wake The Fuck Up! [PASSIVE]",
-        "id": "",
+        "id": "manuTacticianTac3",
         "description": "Whenever you gain Energy at the start of combat, you may distribute it among any number of Allies instead."
       },
       {
@@ -1506,7 +1506,7 @@
       },
       {
         "name": "Strength [PASSIVE]",
-        "id": "",
+        "id": "manuOracleTac4",
         "description": "Whenever you spend a card, gain 1 Energy."
       },
       {
@@ -1650,7 +1650,7 @@
       },
       {
         "name": "Walayah [PASSIVE]",
-        "id": "",
+        "id": "manuTalonTac2",
         "description": "Whenever you deal damage to a target with {Brand}, you may consume {Brand} and gain {Mitigate} after Facing Consequences. "
       },
       {
@@ -1660,7 +1660,7 @@
       },
       {
         "name": "Zulfiqar [PASSIVE]",
-        "id": "",
+        "id": "manuTalonTac4",
         "description": "Whenever you deal damage to a target with {Brand}, you may consume {Brand} and increase that damage by 2."
       },
       {
@@ -1675,7 +1675,7 @@
       },
       {
         "name": "Eyes of Abad [PASSIVE]",
-        "id": "",
+        "id": "manuTalonTac7",
         "description": "During a pre-flight briefing, you may spend 2 Capacity. Start the mission with 2 less, but gain an additional piece of information about the enemy composition."
       }
     ],

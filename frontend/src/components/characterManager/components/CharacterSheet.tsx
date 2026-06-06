@@ -1,5 +1,5 @@
 import type { CharacterData } from "../handlers/characterTypes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CharacterTabs from "./CharacterTabs";
 import Dossier from "./Dossier";
 import Sortie from "./Sortie";
@@ -18,9 +18,12 @@ function CharacterSheet({
   onBack: () => void;
 }) {
   const [activeTab, setActiveTab] = useState("Setup");
-  if(character.metadata.setupComplete){
-    setActiveTab("Dossier")
-  }
+
+  useEffect(() => {
+    if (character.metadata.setupComplete) {
+      setActiveTab("Dossier");
+    }
+  }, [character.metadata.setupComplete]);
 
   return (
     <div className="w-full min-h-screen space-y-6 px-4 py-2 border-l-4 border-cyan-100 border bg-black/20">
