@@ -1,21 +1,20 @@
-const tabs = [
-  "Dossier",
-  "Sortie",
-  "Tour",
-  "Licenses",
-  "Logs"
-];
+const tabs = ["Dossier", "Sortie", "Tour", "Licenses", "Logs"];
+const setupTabs = ["Setup", "Dossier"];
 
 function CharacterTabs({
   activeTab,
   setActiveTab,
+  setupCompleted,
 }: {
   activeTab: string;
   setActiveTab: (t: string) => void;
+  setupCompleted: boolean;
 }) {
+  const visibleTabs = setupCompleted ? tabs : setupTabs;
+
   return (
     <div className="flex gap-2 border-b pb-2">
-      {tabs.map((tab) => (
+      {visibleTabs.map((tab) => (
         <button
           key={tab}
           onClick={() => setActiveTab(tab)}

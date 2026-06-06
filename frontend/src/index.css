@@ -33,7 +33,7 @@ input[type="number"].num-themed {
   color: #e5e7eb;                 /* neutral-200 */
   background-color: #0a0a0a;      /* near black */
   border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
-  border-radius: 0.25rem;
+  border-radius: 0.15rem;
   line-height: 1.5rem;
 }
 
@@ -57,7 +57,7 @@ button{
 /* Base dark theme for all dropdowns */
 select.select-themed {
   color: #CFFAFE;                 
-  background-color: #000000;      /* black background */
+  background-color: #0a0a0a;      /* black background */
   border: 1px solid #06b6d499;    /* cyan-400/60 border */
   padding: 0.25rem 1.75rem 0.25rem 0.5rem;
   background-image:

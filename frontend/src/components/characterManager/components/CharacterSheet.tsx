@@ -2,6 +2,11 @@ import type { CharacterData } from "../handlers/characterTypes";
 import { useState } from "react";
 import CharacterTabs from "./CharacterTabs";
 import Dossier from "./Dossier";
+import Sortie from "./Sortie";
+import Setup from "./Setup"
+
+import specializations from "../../../data/Specs.json"
+import perks from "../../../data/PerkList.json"
 
 function CharacterSheet({
   character,
@@ -12,7 +17,10 @@ function CharacterSheet({
   onUpdate: (c: CharacterData) => void;
   onBack: () => void;
 }) {
-  const [activeTab, setActiveTab] = useState("Dossier");
+  const [activeTab, setActiveTab] = useState("Setup");
+  if(character.metadata.setupComplete){
+    setActiveTab("Dossier")
+  }
 
   return (
     <div className="w-full min-h-screen space-y-6 px-4 py-2 border-l-4 border-cyan-100 border bg-black/20">
@@ -26,15 +34,17 @@ function CharacterSheet({
         </h1>
       </div>
 
-      <CharacterTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      <CharacterTabs activeTab={activeTab} setActiveTab={setActiveTab} setupCompleted={character.metadata.setupComplete} />
+
+      {activeTab === "Setup" && (
+        <Setup character={character} updateCharacter={onUpdate} specs={specializations} backgroundPerks={perks} />
+      )}
 
       {activeTab === "Dossier" && (
         <Dossier character={character} updateCharacter={onUpdate} />
       )}
 
-      {/* {activeTab === "pilot" && (
-        <PilotStats character={character} updateCharacter={onUpdate} />
-      )} */}
+      {activeTab === "Sortie" && <Sortie character={character} />}
     </div>
   );
 }

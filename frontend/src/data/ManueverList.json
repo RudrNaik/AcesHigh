@@ -166,7 +166,7 @@
     "isAdvanced": false,
     "type": "Exhaust",
     "engCost": "0",
-    "tags": "n/a",
+    "tags": ["manuDiscount"],
     "desc": "Discount your next Maneuver by 1 Energy."
   },
   {
@@ -1542,7 +1542,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "n/a",
+    "engCost": "-1",
     "tags": "n/a",
     "desc": "Gain 1 Energy. Summon or retreat a squad of friendly air to air assets."
   },
@@ -1787,7 +1787,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "1",
-    "tags": "n/a",
+    "tags": ["manuAddForward"],
     "desc": "Whenever, tick your Gunslinger die down by 1. Gain +1 Forward. If the Gunslinger die is at 0, you can\u2019t use this Maneuver."
   },
   {
@@ -2255,7 +2255,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": "n/a",
+    "tags": ["manuAddForward"],
     "desc": "Whenever you make a Reflex check, Gain +1 Forward. Exhaust unless you spend a Temper."
   },
   {
@@ -2265,7 +2265,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": "n/a",
+    "tags": ["manuAddForward"],
     "desc": "Whenever you make a Temper check, Gain +1 Forward. Exhaust unless you spend a Nerve."
   },
   {

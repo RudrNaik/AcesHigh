@@ -3,6 +3,19 @@ import type { CharacterData } from "./characterTypes";
 export const createDefaultCharacter = (): CharacterData => ({
   id: crypto.randomUUID(),
 
+  metadata: {
+    setupComplete: false,
+
+    startingPilotStats: {
+      temper: 0,
+      nerve: 0,
+      reflex: 0,
+      gResist: 0,
+    },
+    startingRP: 0,
+    generation: 0,
+  },
+
   dossier: {
     firstName: "",
     lastName: "",
@@ -34,7 +47,7 @@ export const createDefaultCharacter = (): CharacterData => ({
 
     languages: "",
 
-    relationships:"",
+    relationships: "",
 
     notes: "",
   },
@@ -62,23 +75,28 @@ export const createDefaultCharacter = (): CharacterData => ({
     quirk3Desc: "",
   },
 
+  specialization: {
+    specId: "",
+    tactics: [],
+  },
+
   aircraft: {
     aircraftId: "",
     upgradePackage: "",
-    modules :{
-        m1: "",
-        m2: "",
-        m3: "",
-        m4: "",
-        m5: "",
-        m6: "",
-        m7: "",
-        m8: "",
-        m9: "",
-        m10: "",
-    }
-},
+    modules: {
+      m1: "",
+      m2: "",
+      m3: "",
+      m4: "",
+      m5: "",
+      m6: "",
+      m7: "",
+      m8: "",
+    },
+  },
 
+  backgroundPerk: "",
+  masteredAircraft: [],
   aceperks: [],
   baseperks: [],
   licenses: [],
