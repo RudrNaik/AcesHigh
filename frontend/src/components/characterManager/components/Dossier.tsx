@@ -154,7 +154,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.biography}
             placeholder="Biography"
             onChange={(e) => updateField("biography", e.target.value)}
-            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-50 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
           />
 
           <label className="text-cyan-400 text-sm">Psychological Report</label>
@@ -162,7 +162,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.psychologicalReport}
             placeholder="Psychological Report"
             onChange={(e) => updateField("psychologicalReport", e.target.value)}
-            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-50 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
           />
 
           <label className="text-cyan-400 text-sm">Physical Description</label>
@@ -170,7 +170,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.description}
             placeholder="Physical Description"
             onChange={(e) => updateField("description", e.target.value)}
-            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-30 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
           />
 
           <label className="text-cyan-400 text-sm">Service Record</label>
@@ -178,7 +178,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.serviceRecord}
             placeholder="Service Record"
             onChange={(e) => updateField("serviceRecord", e.target.value)}
-            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-20 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
           />
         </Section>
       </div>
@@ -188,7 +188,7 @@ function DossierTab({ character, updateCharacter }: Props) {
           <textarea
             value={character.dossier.relationships}
             onChange={(e) => updateField("relationships", e.target.value)}
-            className="w-full min-h-35 border border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-35 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
           />
         </Section>
       </div>
@@ -199,7 +199,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.notes}
             placeholder="Notes"
             onChange={(e) => updateField("notes", e.target.value)}
-            className="w-full min-h-30 border border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-30 focus:border-l-4 transition-all border-l-2 border-cyan-100 bg-black/20 p-2"
           />
         </Section>
       </div>
@@ -216,7 +216,7 @@ function TextField({ label, value, onChange, placeholder }: FieldProps) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="border border-cyan-100 bg-black/20 px-2 py-1"
+        className="border-b border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
       />
     </div>
   );
@@ -234,7 +234,7 @@ function Section({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="">
+    <div className="border border-cyan-100">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center p-4 text-cyan-300 font-bold"
@@ -244,9 +244,7 @@ function Section({
         </span>
       </button>
 
-      {open && (
-        <div className="p-4 space-y-4 border-t border-cyan-100">{children}</div>
-      )}
+      {open && <div className="p-4 space-y-2">{children}</div>}
     </div>
   );
 }
