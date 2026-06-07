@@ -11,12 +11,19 @@ type PilotStatsType = {
 };
 
 function SortieView({ character }: { character: CharacterData }) {
-  const [pilotStats, setPilotStats] = useState(
-    charEngine.getPilotStatsModified(character),
-  );
-
-  const [refreshKey, setRefreshKey] = useState(0);
   const { updateCharacter } = useCharacterStorage();
+
+  // Track a local copy so break mutations reflect immediately
+  const [localCharacter, setLocalCharacter] = useState(character);
+
+  // Sync if the parent passes a fresh character (e.g. on load)
+  useEffect(() => {
+    setLocalCharacter(character);
+  }, [character]);
+
+  const [pilotStats, setPilotStats] = useState(
+    charEngine.getPilotStatsModified(localCharacter),
+  );
 
   const [sortieStats, setSortieStats] = useState({
     temper: pilotStats.temper,
@@ -26,11 +33,10 @@ function SortieView({ character }: { character: CharacterData }) {
   });
 
   useEffect(() => {
-    const updated = charEngine.getPilotStatsModified(character);
-
+    const updated = charEngine.getPilotStatsModified(localCharacter);
     setPilotStats(updated);
     setSortieStats(updated);
-  }, [character, refreshKey]);
+  }, [localCharacter]); // <-- depend on localCharacter, not character + refreshKey
 
   const [stress, setStress] = useState({
     mental: 0,
@@ -83,7 +89,7 @@ function SortieView({ character }: { character: CharacterData }) {
               <div className="w-8 text-center text-cyan-400">
                 {stress.mental}/
                 <span className="text-cyan-100">
-                  {charEngine.getMentalStress(character)}
+                  {charEngine.getMentalStress(localCharacter)}
                 </span>
               </div>
 
@@ -108,7 +114,7 @@ function SortieView({ character }: { character: CharacterData }) {
                   })
                 }
                 disabled={
-                  stress.mental >= charEngine.getMentalStress(character)
+                  stress.mental >= charEngine.getMentalStress(localCharacter)
                 }
                 className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
               >
@@ -117,14 +123,14 @@ function SortieView({ character }: { character: CharacterData }) {
 
               <button
                 onClick={() => {
-                  charEngine.mindBreak(character, updateCharacter);
-                  setRefreshKey((k) => k + 1);
-                  setStress({
-                    mental: 0,
-                    physical: 0,
-                  });
+                  const updated = charEngine.mindBreak(
+                    localCharacter,
+                    updateCharacter,
+                  );
+                  setLocalCharacter(updated);
+                  setStress({ mental: 0, physical: stress.physical });
                 }}
-                disabled={stress.mental < charEngine.getMentalStress(character)}
+                disabled={stress.mental < charEngine.getMentalStress(localCharacter)}
                 className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
               >
                 BREAK
@@ -141,7 +147,7 @@ function SortieView({ character }: { character: CharacterData }) {
               <div className="w-8 text-center text-cyan-400">
                 {stress.physical}/
                 <span className="text-cyan-100">
-                  {charEngine.getPhysStress(character)}
+                  {charEngine.getPhysStress(localCharacter)}
                 </span>
               </div>
 
@@ -166,7 +172,7 @@ function SortieView({ character }: { character: CharacterData }) {
                   })
                 }
                 disabled={
-                  stress.physical >= charEngine.getPhysStress(character)
+                  stress.physical >= charEngine.getPhysStress(localCharacter)
                 }
                 className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
               >
@@ -174,14 +180,14 @@ function SortieView({ character }: { character: CharacterData }) {
               </button>
               <button
                 onClick={() => {
-                  charEngine.Drained(character, updateCharacter);
-                  setRefreshKey((k) => k + 1);
-                  setStress({
-                    mental: 0,
-                    physical: 0,
-                  });
+                  const updated = charEngine.Drained(
+                    localCharacter,
+                    updateCharacter,
+                  );
+                  setLocalCharacter(updated);
+                  setStress({ mental: stress.mental, physical: 0 });
                 }}
-                disabled={stress.mental < charEngine.getMentalStress(character)}
+                disabled={stress.mental < charEngine.getMentalStress(localCharacter)}
                 className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
               >
                 BREAK
@@ -194,7 +200,7 @@ function SortieView({ character }: { character: CharacterData }) {
         <div className="border border-cyan-100 p-4 space-y-2">
           <h2 className="text-cyan-300 font-bold">Aircraft</h2>
 
-          <div>Aircraft ID: {character.aircraft.aircraftId || "None"}</div>
+          <div>Aircraft ID: {localCharacter.aircraft.aircraftId || "None"}</div>
 
           <div className="text-sm text-cyan-200">
             (Stats, loadout, mods will come here)
