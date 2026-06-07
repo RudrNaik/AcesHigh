@@ -172,41 +172,41 @@ function Setup({
   };
 
   return (
-    <div className="space-y-8 text-white">
+    <div className="space-y-8 text-cyan-100">
       {/*Identity*/}
       <section className="border p-4 space-y-3">
-        <h2 className="text-cyan-300 font-bold">Identity</h2>
+        <h2 className="text-cyan-100 font-bold">Identity</h2>
 
         <div className="grid gap-2">
-          <label className="text-cyan-400 text-sm">First Name</label>
+          <label className="text-cyan-100 text-sm">First Name</label>
           <input
             value={local.dossier.firstName}
             className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("firstName", e.target.value)}
           />
 
-          <label className="text-cyan-400 text-sm">Last Name</label>
+          <label className="text-cyan-100 text-sm">Last Name</label>
           <input
             value={local.dossier.lastName}
             className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("lastName", e.target.value)}
           />
 
-          <label className="text-cyan-400 text-sm">Callsign</label>
+          <label className="text-cyan-100 text-sm">Callsign</label>
           <input
             value={local.dossier.callsign}
             className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("callsign", e.target.value)}
           />
 
-          <label className="text-cyan-400 text-sm">Gender</label>
+          <label className="text-cyan-100 text-sm">Gender</label>
           <input
             value={local.dossier.gender}
             className="border-b border-cyan-100 max-w-sm"
             onChange={(e) => updateDossier("gender", e.target.value)}
           />
 
-          <label className="text-cyan-400 text-sm">Rank</label>
+          <label className="text-cyan-100 text-sm">Rank</label>
           <input
             value={local.dossier.rank}
             className="border-b border-cyan-100 max-w-sm"
@@ -217,9 +217,9 @@ function Setup({
 
       {/* metadata */}
       <section className="border p-4 space-y-3">
-        <h2 className="text-cyan-300 font-bold">Generation</h2>
+        <h2 className="text-cyan-100 font-bold">Generation</h2>
         <div className="flex flex-col gap-2">
-          <label className="text-cyan-400 text-sm">Generation</label>
+          <label className="text-cyan-100 text-sm">Generation</label>
           <input
             type="number"
             className="num-themed px-2 py-1 max-w-2xs"
@@ -227,7 +227,7 @@ function Setup({
             onChange={(e) => updateMeta("generation", Number(e.target.value))}
           />
 
-          <label className="text-cyan-400 text-sm">Starting RP</label>
+          <label className="text-cyan-100 text-sm">Starting RP</label>
           <input
             type="number"
             className="num-themed px-2 py-1 max-w-2xs"
@@ -239,20 +239,20 @@ function Setup({
 
       {/* Quirks */}
       <section className="border p-4 space-y-3">
-        <h2 className="text-cyan-300 font-bold">Quirks</h2>
+        <h2 className="text-cyan-100 font-bold">Quirks</h2>
 
         <div className="grid grid-cols-3 gap-4">
           <div className="border p-2 space-y-2 flex flex-col">
             <h3 className="">Quirk 1</h3>
 
-            <label className="text-cyan-400 text-sm">Name</label>
+            <label className="text-cyan-100 text-sm">Name</label>
             <input
               value={local.quirks.quirk1Name}
               className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk1Name", e.target.value)}
             />
 
-            <label className="text-cyan-400 text-sm">Description</label>
+            <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk1Desc}
               className="border-b border-cyan-100 max-w-sm"
@@ -263,14 +263,14 @@ function Setup({
           <div className="border p-2 space-y-2 flex flex-col">
             <h3 className="">Quirk 2</h3>
 
-            <label className="text-cyan-400 text-sm">Name</label>
+            <label className="text-cyan-100 text-sm">Name</label>
             <input
               value={local.quirks.quirk2Name}
               className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk2Name", e.target.value)}
             />
 
-            <label className="text-cyan-400 text-sm">Description</label>
+            <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk2Desc}
               className="border-b border-cyan-100 max-w-sm"
@@ -281,14 +281,14 @@ function Setup({
           <div className="border p-2 space-y-2 flex flex-col">
             <h3 className="">Quirk 3</h3>
 
-            <label className="text-cyan-400 text-sm">Name</label>
+            <label className="text-cyan-100 text-sm">Name</label>
             <input
               value={local.quirks.quirk3Name}
               className="border-b border-cyan-100 max-w-sm"
               onChange={(e) => updateQuirk("quirk3Name", e.target.value)}
             />
 
-            <label className="text-cyan-400 text-sm">Description</label>
+            <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk3Desc}
               className="border-b border-cyan-100 max-w-sm"
@@ -300,28 +300,28 @@ function Setup({
 
       {/*stats*/}
       <section className="border p-4 space-y-3">
-        <h2 className="text-cyan-300 font-bold">
+        <h2 className="text-cyan-100 font-bold">
           Pilot Stats (Total {totalStats}/8)
         </h2>
 
         {(["temper", "nerve", "reflex", "gResist"] as const).map((key) => (
-          <div key={key} className="flex gap-4 items-center">
+          <div key={key} className="flex gap-2 items-center">
             <span className="w-24">{key.toUpperCase()}</span>
+
+            <input
+              type="number"
+              className="num-themed px-2 py-1 max-w-40"
+              value={stats[key]}
+              onChange={(e) => updateStat(key, Number(e.target.value))}
+            />
 
             <button
               onClick={() => updateStat(key, stats[key] - 1)}
               disabled={stats[key] <= 0}
               className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
             >
-              −
+              -
             </button>
-
-            <input
-              type="number"
-              className="num-themed px-2 py-1 max-w-3xs"
-              value={stats[key]}
-              onChange={(e) => updateStat(key, Number(e.target.value))}
-            />
 
             <button
               onClick={() => updateStat(key, stats[key] + 1)}
@@ -336,7 +336,7 @@ function Setup({
 
       {/*Specs*/}
       <section className="border p-4 space-y-4">
-        <h2 className="text-cyan-300 font-bold">Specialization</h2>
+        <h2 className="text-cyan-100 font-bold">Specialization</h2>
 
         <select
           value={local.specialization.specId}
@@ -355,21 +355,28 @@ function Setup({
 
         {selectedSpec && (
           <div className="space-y-4">
-            <div className="border p-3 text-sm opacity-80 space-y-2">
+            <div className="border p-3 text-sm opacity-80 space-y-4">
               <div className="">{selectedSpec.flavor}</div>
               <div>{selectedSpec.info}</div>
-              <div>Modifiers: {selectedSpec.staticMods}</div>
+              {selectedSpec.staticMods != "n/a" &&
+                selectedSpec.staticMods != "" && (
+                  <div>
+                    Modifiers:{" "}
+                    <span className="border px-2 py-1 text-xs border-cyan-100">
+                    {
+                      staticMods.find((m) => m.id === selectedSpec.staticMods)
+                        .name
+                    }
+                    </span>
+                  </div>
+                )}
               {selectedSpec.addManu != "n/a" && selectedSpec.addManu != "" && (
                 <div>
                   Extra Manuevers:{" "}
                   {manuvers
                     .filter((m) => m.id === selectedSpec.addManu)
                     .map((m) => (
-                      <ManuCard
-                        id={m.id}
-                        name={m.name}
-                        autofill = {true}
-                      />
+                      <ManuCard id={m.id} name={m.name} autofill={true} />
                     ))}
                 </div>
               )}
@@ -404,7 +411,7 @@ function Setup({
 
       {/* backghround perk*/}
       <section className="border p-4 space-y-3">
-        <h2 className="text-cyan-300 font-bold">Background Perk</h2>
+        <h2 className="text-cyan-100 font-bold">Background Perk</h2>
 
         <select
           value={local.backgroundPerk}
@@ -433,7 +440,7 @@ function Setup({
 
       {/* submit*/}
       <section className="border p-4 space-y-3">
-        <h2 className="text-cyan-300 font-bold">Final Check</h2>
+        <h2 className="text-cyan-100 font-bold">Final Check</h2>
 
         <div className={canComplete ? "text-green-400" : "text-red-400"}>
           {canComplete ? "Ready" : "Incomplete Setup"}
