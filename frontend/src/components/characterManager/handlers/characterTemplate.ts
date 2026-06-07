@@ -61,7 +61,9 @@ export const createDefaultCharacter = (): CharacterData => ({
 
   stress: {
     mental: 0,
+    permMentalAdj: 0,
     physical: 0,
+    permPhysicalAdj: 0
   },
 
   quirks: {
@@ -92,6 +94,8 @@ export const createDefaultCharacter = (): CharacterData => ({
       m6: "",
       m7: "",
       m8: "",
+      m9: "",
+      m10:""
     },
   },
 
@@ -102,5 +106,5 @@ export const createDefaultCharacter = (): CharacterData => ({
   licenses: [],
   loot: [],
 
-  tourId: null,
+  tours: []
 });

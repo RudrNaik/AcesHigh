@@ -6,12 +6,14 @@ import specializations from "../../../data/Specs.json";
 
 export function getMentalStress(character: CharacterData) {
   let charStats = getPilotStatsModified(character)
-  return (charStats.nerve + charStats.temper)
+  let permMod = character.stress.permMentalAdj;
+  return (charStats.nerve + charStats.temper + permMod)
 }
 
 export function getPhysStress(character: CharacterData) {
   let charStats = getPilotStatsModified(character)
-  return (charStats.reflex + charStats.gResist)
+  let permMod = character.stress.permPhysicalAdj;
+  return (charStats.reflex + charStats.gResist + permMod)
 }
 
 export function getStaticModifiersFromSpec(character: CharacterData) {

@@ -8,12 +8,11 @@ export function useCharacterStorage() {
 
   const [hydrated, setHydrated] = useState(false);
 
-  useEffect(() => {
-    console.log("hydrated:", hydrated);
-    console.log("characters:", characters);
-  }, [hydrated, characters]);
+  // useEffect(() => {
+  //   console.log("hydrated:", hydrated);
+  //   console.log("characters:", characters);
+  // }, [hydrated, characters]);
 
-  // LOAD ONCE
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
 
@@ -28,7 +27,6 @@ export function useCharacterStorage() {
     setHydrated(true);
   }, []);
 
-  // SAVE ONLY AFTER HYDRATION
   useEffect(() => {
     if (!hydrated) return;
 

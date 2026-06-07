@@ -7,7 +7,9 @@ export interface CharacterStats {
 
 export interface CharacterStress {
   mental: number;
+  permMentalAdj: number;
   physical: number;
+  permPhysicalAdj: number;
 }
 
 export interface MetaData {
@@ -71,8 +73,8 @@ export interface CharacterQuirks {
 }
 
 export interface Specialization {
-    specId: string; 
-    tactics: string[];
+  specId: string;
+  tactics: string[];
 }
 
 export interface Aircraft {
@@ -87,7 +89,32 @@ export interface Aircraft {
     m6: string;
     m7: string;
     m8: string;
+    m9: string;
+    m10: string;
   };
+}
+
+export interface Deployment {
+  type: string;
+  modifier: string;
+  override: string;
+  advancement: boolean;
+  actTour: boolean;
+  actYourself: boolean;
+  actSpec: boolean;
+  defbrief: boolean;
+  maxStress: boolean;
+  survCrit: boolean;
+}
+
+export interface Tour {
+  currTour: string
+  acePerk: string
+  dep1: Deployment;
+  dep2: Deployment;
+  dep3: Deployment;
+  dep4: Deployment;
+  dep5: Deployment;
 }
 
 export interface CharacterData {
@@ -118,5 +145,5 @@ export interface CharacterData {
 
   masteredAircraft: string[];
 
-  tourId: string | null;
+  tours: Tour[];
 }
