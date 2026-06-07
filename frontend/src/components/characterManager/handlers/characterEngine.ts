@@ -5,15 +5,13 @@ import staticMods from "../../../data/StaticMods.json";
 import specializations from "../../../data/Specs.json";
 
 export function getMentalStress(character: CharacterData) {
-  let charStats = getPilotStatsModified(character)
-  let permMod = character.stress.permMentalAdj;
-  return (charStats.nerve + charStats.temper + permMod)
+  let charStats = getPilotStatsModified(character);
+  return charStats.nerve + charStats.temper;
 }
 
 export function getPhysStress(character: CharacterData) {
-  let charStats = getPilotStatsModified(character)
-  let permMod = character.stress.permPhysicalAdj;
-  return (charStats.reflex + charStats.gResist + permMod)
+  let charStats = getPilotStatsModified(character);
+  return charStats.reflex + charStats.gResist;
 }
 
 export function getStaticModifiersFromSpec(character: CharacterData) {
@@ -45,10 +43,54 @@ export function getPilotStatsModified(character: CharacterData) {
 
   let modifiers = getStaticModifiersFromSpec(character);
 
-  temp += modifiers?.temper || 0;
-  nerv += modifiers?.nerve || 0;
-  rflx += modifiers?.reflex || 0;
-  gres += modifiers?.gResist || 0;
+  let mindBreak = character.stress.permMentalAdj;
+  let succedDry = character.stress.permPhysicalAdj;
+
+  console.log(mindBreak);
+  console.log(succedDry);
+
+  temp += (modifiers?.temper || 0) - mindBreak;
+  nerv += (modifiers?.nerve || 0) - mindBreak;
+  rflx += (modifiers?.reflex || 0) - succedDry;
+  gres += (modifiers?.gResist || 0) - succedDry;
 
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
+}
+
+//Reduces mental stats by 1 when mentally stressed out
+export function mindBreak(
+  character: CharacterData,
+  updateCharacter?: (c: CharacterData) => void,
+) {
+  const newPerm = (character.stress?.permMentalAdj ?? 0) + 1;
+  const updated: CharacterData = {
+    ...character,
+    stress: {
+      ...character.stress,
+      permMentalAdj: newPerm,
+    },
+  };
+
+  if (updateCharacter) updateCharacter(updated);
+
+  return updated;
+}
+
+//Reduces physical stats by 1 when sucked dry (physical stressout)
+export function Drained(
+  character: CharacterData,
+  updateCharacter?: (c: CharacterData) => void,
+) {
+  const newPerm = (character.stress?.permPhysicalAdj ?? 0) + 1;
+  const updated: CharacterData = {
+    ...character,
+    stress: {
+      ...character.stress,
+      permPhysicalAdj: newPerm,
+    },
+  };
+
+  if (updateCharacter) updateCharacter(updated);
+
+  return updated;
 }

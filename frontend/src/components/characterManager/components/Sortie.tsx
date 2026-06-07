@@ -1,14 +1,40 @@
 import type { CharacterData } from "../handlers/characterTypes";
-import {useState } from "react";
+import { useEffect, useState } from "react";
 import * as charEngine from "../handlers/characterEngine";
+import { useCharacterStorage } from "../handlers/characterStorage";
+
+type PilotStatsType = {
+  temper: number;
+  nerve: number;
+  reflex: number;
+  gResist: number;
+};
 
 function SortieView({ character }: { character: CharacterData }) {
-  const pilotStats = charEngine.getPilotStatsModified(character);
+  const [pilotStats, setPilotStats] = useState(
+    charEngine.getPilotStatsModified(character),
+  );
+
+  const [refreshKey, setRefreshKey] = useState(0);
+  const { updateCharacter } = useCharacterStorage();
+
   const [sortieStats, setSortieStats] = useState({
     temper: pilotStats.temper,
     nerve: pilotStats.nerve,
     reflex: pilotStats.reflex,
     gResist: pilotStats.gResist,
+  });
+
+  useEffect(() => {
+    const updated = charEngine.getPilotStatsModified(character);
+
+    setPilotStats(updated);
+    setSortieStats(updated);
+  }, [character, refreshKey]);
+
+  const [stress, setStress] = useState({
+    mental: 0,
+    physical: 0,
   });
 
   const statDefs = [
@@ -44,9 +70,123 @@ function SortieView({ character }: { character: CharacterData }) {
             />
           ))}
 
-          <div className="pt-2">
-            <div>Mental Stress: {charEngine.getMentalStress(character)}</div>
-            <div>Physical Stress: {charEngine.getPhysStress(character)}</div>
+          <h2 className="text-cyan-300 font-bold border-t-2 pt-2 border-cyan-100">
+            Stress
+          </h2>
+          {/* Mental */}
+          <div>
+            <div className="flex gap-2 items-center">
+              <span className="w-24 border border-cyan-100 px-2 py-1">
+                Mental
+              </span>
+
+              <div className="w-8 text-center text-cyan-400">
+                {stress.mental}/
+                <span className="text-cyan-100">
+                  {charEngine.getMentalStress(character)}
+                </span>
+              </div>
+
+              <button
+                onClick={() =>
+                  setStress({
+                    mental: stress.mental - 1,
+                    physical: stress.physical,
+                  })
+                }
+                disabled={stress.mental <= 0}
+                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              >
+                -
+              </button>
+
+              <button
+                onClick={() =>
+                  setStress({
+                    mental: stress.mental + 1,
+                    physical: stress.physical,
+                  })
+                }
+                disabled={
+                  stress.mental >= charEngine.getMentalStress(character)
+                }
+                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              >
+                +
+              </button>
+
+              <button
+                onClick={() => {
+                  charEngine.mindBreak(character, updateCharacter);
+                  setRefreshKey((k) => k + 1);
+                  setStress({
+                    mental: 0,
+                    physical: 0,
+                  });
+                }}
+                disabled={stress.mental < charEngine.getMentalStress(character)}
+                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              >
+                BREAK
+              </button>
+            </div>
+          </div>
+          {/* Physical */}
+          <div>
+            <div className="flex gap-2 items-center">
+              <span className="w-24 border border-cyan-100 px-2 py-1">
+                Physical
+              </span>
+
+              <div className="w-8 text-center text-cyan-400">
+                {stress.physical}/
+                <span className="text-cyan-100">
+                  {charEngine.getPhysStress(character)}
+                </span>
+              </div>
+
+              <button
+                onClick={() =>
+                  setStress({
+                    mental: stress.mental,
+                    physical: stress.physical - 1,
+                  })
+                }
+                disabled={stress.physical <= 0}
+                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              >
+                -
+              </button>
+
+              <button
+                onClick={() =>
+                  setStress({
+                    mental: stress.mental,
+                    physical: stress.physical + 1,
+                  })
+                }
+                disabled={
+                  stress.physical >= charEngine.getPhysStress(character)
+                }
+                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              >
+                +
+              </button>
+              <button
+                onClick={() => {
+                  charEngine.Drained(character, updateCharacter);
+                  setRefreshKey((k) => k + 1);
+                  setStress({
+                    mental: 0,
+                    physical: 0,
+                  });
+                }}
+                disabled={stress.mental < charEngine.getMentalStress(character)}
+                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              >
+                BREAK
+              </button>
+            </div>
           </div>
         </div>
 
@@ -65,15 +205,6 @@ function SortieView({ character }: { character: CharacterData }) {
   );
 }
 
-type PilotStatKey = "temper" | "nerve" | "reflex" | "gResist";
-
-type PilotStatsType = {
-  temper: number;
-  nerve: number;
-  reflex: number;
-  gResist: number;
-};
-
 function PilotStat({
   label,
   statKey,
@@ -82,7 +213,7 @@ function PilotStat({
   setSortieStats,
 }: {
   label: string;
-  statKey: PilotStatKey;
+  statKey: "temper" | "nerve" | "reflex" | "gResist";
   baseStats: PilotStatsType;
   sortieStats: PilotStatsType;
   setSortieStats: React.Dispatch<React.SetStateAction<PilotStatsType>>;
@@ -99,7 +230,7 @@ function PilotStat({
 
   return (
     <div className="flex gap-2 items-center">
-      <span className="w-24">{label}</span>
+      <span className="w-24 border border-cyan-100 px-2 py-1">{label}</span>
 
       <div className="w-8 text-center">{currentValue}</div>
 
