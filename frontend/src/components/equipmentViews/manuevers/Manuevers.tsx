@@ -76,13 +76,7 @@ function Maneuvers() {
               <ManeuverCard
                 key={m.id}
                 id={m.id}
-                name={m.name}
-                type={m.type}
-                desc={m.desc}
-                tags={m.tags as any}
-                engCost={m.engCost}
-                isCommon={m.isCommon}
-                isAdvanced={m.isAdvanced}
+                autofill={true}
               />
             ))}
           </div>

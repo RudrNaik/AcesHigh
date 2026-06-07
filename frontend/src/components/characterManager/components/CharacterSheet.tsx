@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import CharacterTabs from "./CharacterTabs";
 import Dossier from "./Dossier";
 import Sortie from "./Sortie";
-import Setup from "./Setup"
+import Setup from "./Setup";
 
-import specializations from "../../../data/Specs.json"
-import perks from "../../../data/PerkList.json"
+import specializations from "../../../data/Specs.json";
+import perks from "../../../data/PerkList.json";
+import manus from "../../../data/ManueverList.json";
+import staticMods from "../../../data/StaticMods.json";
 
 function CharacterSheet({
   character,
@@ -37,10 +39,21 @@ function CharacterSheet({
         </h1>
       </div>
 
-      <CharacterTabs activeTab={activeTab} setActiveTab={setActiveTab} setupCompleted={character.metadata.setupComplete} />
+      <CharacterTabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        setupCompleted={character.metadata.setupComplete}
+      />
 
       {activeTab === "Setup" && (
-        <Setup character={character} updateCharacter={onUpdate} specs={specializations} backgroundPerks={perks} />
+        <Setup
+          character={character}
+          updateCharacter={onUpdate}
+          specs={specializations}
+          backgroundPerks={perks}
+          manuvers={manus}
+          staticMods={staticMods}
+        />
       )}
 
       {activeTab === "Dossier" && (

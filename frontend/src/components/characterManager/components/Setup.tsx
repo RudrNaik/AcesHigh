@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
+import ManuCard from "./setupComponents/MiniManueverCard";
 
 type Props = {
   character: CharacterData;
   updateCharacter: (c: CharacterData) => void;
   specs: any[];
   backgroundPerks: any[];
+  staticMods: any[];
+  manuvers: any[];
 };
 
-function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
+function Setup({
+  character,
+  updateCharacter,
+  specs,
+  backgroundPerks,
+  staticMods,
+  manuvers,
+}: Props) {
   const [local, setLocal] = useState<CharacterData>(character);
 
   useEffect(() => {
@@ -95,7 +105,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     updateCharacter(next);
   };
 
-
   const updateQuirk = (key: keyof CharacterData["quirks"], value: string) => {
     const next = {
       ...local,
@@ -118,7 +127,6 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
     setLocal(next);
     updateCharacter(next);
   };
-
 
   const stats = local.metadata.startingPilotStats;
 
@@ -347,8 +355,24 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
 
         {selectedSpec && (
           <div className="space-y-4">
-            <div className="border p-3 text-sm opacity-80">
-              {selectedSpec.flavor}
+            <div className="border p-3 text-sm opacity-80 space-y-2">
+              <div className="">{selectedSpec.flavor}</div>
+              <div>{selectedSpec.info}</div>
+              <div>Modifiers: {selectedSpec.staticMods}</div>
+              {selectedSpec.addManu != "n/a" && selectedSpec.addManu != "" && (
+                <div>
+                  Extra Manuevers:{" "}
+                  {manuvers
+                    .filter((m) => m.id === selectedSpec.addManu)
+                    .map((m) => (
+                      <ManuCard
+                        id={m.id}
+                        name={m.name}
+                        autofill = {true}
+                      />
+                    ))}
+                </div>
+              )}
             </div>
 
             <div className="grid md:grid-cols-2 gap-3">
@@ -397,13 +421,14 @@ function Setup({ character, updateCharacter, specs, backgroundPerks }: Props) {
             ))}
         </select>
         <div className="border p-3 text-sm opacity-80">
-              {backgroundPerks.filter((p) => p.id === local.backgroundPerk).map((p) => (
-                <span>
-                    {p.description}
-                </span>
-              ))}
+          {backgroundPerks
+            .filter((p) => p.id === local.backgroundPerk)
+            .map((p) => (
+              <div>
+                <div>{p.description}</div>
+              </div>
+            ))}
         </div>
-
       </section>
 
       {/* submit*/}
