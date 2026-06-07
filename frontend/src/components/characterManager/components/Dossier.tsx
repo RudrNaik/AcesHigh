@@ -1,4 +1,4 @@
-import type { CharacterData } from "../characterHandlers/characterTypes";
+import type { CharacterData } from "../handlers/characterTypes";
 import { useState } from "react";
 
 interface Props {
