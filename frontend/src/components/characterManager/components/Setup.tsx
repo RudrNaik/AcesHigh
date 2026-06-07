@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
-import ManuCard from "./setupComponents/MiniManueverCard";
+import ManuCard from "./common/MiniManueverCard";
 
 type Props = {
   character: CharacterData;

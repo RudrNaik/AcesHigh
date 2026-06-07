@@ -237,7 +237,7 @@ function Section({
     <div className="border border-cyan-100">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center p-4 text-cyan-300 font-bold"
+        className="w-full flex justify-between items-center p-2 text-cyan-300 font-bold"
       >
         <span>
           {open ? "▼" : "▶"} {title}
