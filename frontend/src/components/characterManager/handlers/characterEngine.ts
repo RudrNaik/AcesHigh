@@ -112,6 +112,13 @@ export function getCurrentTactics(character: CharacterData){
   return currTactics
 }
 
+export function getAdvancements(character: CharacterData){
+  const spec = getSpecialization(character);
+  let specAdvancements = spec.advancements;
+  let charAdvancements = character.specialization.advancements;
+  return {fromSpec: specAdvancements, fromChar: charAdvancements}
+}
+
 //Reduces mental stats by 1 when mentally stressed out
 export function mindBreak(
   character: CharacterData,

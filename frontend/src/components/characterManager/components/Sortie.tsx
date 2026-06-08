@@ -55,6 +55,12 @@ function SortieView({ character }: { character: CharacterData }) {
   const currentTactics = charEngine.getCurrentTactics(localCharacter);
   const unlockedIds = new Set(currentTactics);
 
+  const [showCompletedAdvancements, setShowCompletedAdvancements] =
+    useState(true);
+
+  const advancements = charEngine.getAdvancements(character);
+  const completedAdvancements = new Set(advancements.fromChar);
+
   //console.log(pilotStats.toString())
 
   return (
@@ -243,11 +249,12 @@ function SortieView({ character }: { character: CharacterData }) {
             <h1 className="text-lg italic">
               {charEngine.getSpecialization(localCharacter).name}
             </h1>
+
             {/* Preflights */}
             <div className="">
-              <h3 className="font-bold">Preflights</h3>
+              <h3 className="font-bold py-2">Preflights</h3>
               <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
-                <div>
+                <div className="font-semibold">
                   PFC-1 | {charEngine.getDowntimes(localCharacter)?.dt1.name}
                 </div>
                 <div className="text-xs">
@@ -255,7 +262,7 @@ function SortieView({ character }: { character: CharacterData }) {
                 </div>
               </div>
               <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
-                <div>
+                <div className="font-semibold">
                   PFC-2 | {charEngine.getDowntimes(localCharacter)?.dt2.name}
                 </div>
                 <div className="text-xs">
@@ -263,7 +270,7 @@ function SortieView({ character }: { character: CharacterData }) {
                 </div>
               </div>
               <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2">
-                <div>
+                <div className="font-semibold">
                   PFC-3 | {charEngine.getDowntimes(localCharacter)?.dt3.name}
                 </div>
                 <div className="text-xs">
@@ -271,6 +278,7 @@ function SortieView({ character }: { character: CharacterData }) {
                 </div>
               </div>
             </div>
+
             {/* Tactics */}
             <div>
               <div className="flex flex-row justify-between mb-2">
@@ -319,7 +327,7 @@ function SortieView({ character }: { character: CharacterData }) {
                                 : "border border-cyan-900 text-cyan-100"
                             }`}
                           >
-                            {unlocked ? "Unlocked" : "Locked"}
+                            {unlocked ? "UNLK" : "LOCK"}
                           </span>
                         </div>
 
@@ -332,6 +340,62 @@ function SortieView({ character }: { character: CharacterData }) {
               </div>
             </div>
 
+            {/* Advancements */}
+            <div>
+              <div className="flex flex-row justify-between mb-2">
+                <h3 className="font-bold">Advancements</h3>
+
+                <button
+                  onClick={() =>
+                    setShowCompletedAdvancements(!showCompletedAdvancements)
+                  }
+                  className="text-xs border border-cyan-900 px-2 py-1 hover:bg-cyan-950"
+                >
+                  {showCompletedAdvancements
+                    ? "Hide Completed"
+                    : "Show Completed"}
+                </button>
+              </div>
+
+              <div className="space-y-2">
+                {advancements.fromSpec
+                  .map((advancement, index) => ({
+                    advancement,
+                    index,
+                    completed: completedAdvancements.has(index),
+                  }))
+                  .sort((a, b) => Number(b.completed) - Number(a.completed))
+                  .filter((item) => {
+                    if (showCompletedAdvancements) return true;
+
+                    return !item.completed;
+                  })
+                  .map(({ advancement, index, completed }) => (
+                    <div
+                      key={index}
+                      className={`border p-2 ${
+                        completed
+                          ? "border-cyan-100 border-l-4"
+                          : "border-cyan-900 opacity-60"
+                      }`}
+                    >
+                      <div className="flex justify-between items-start gap-2">
+                        <span>{advancement}</span>
+
+                        <span
+                          className={`text-xs px-2 py-1 whitespace-nowrap ${
+                            completed
+                              ? "bg-cyan-100 text-black"
+                              : "border border-cyan-900 text-cyan-100"
+                          }`}
+                        >
+                          {completed ? "Complete" : "Incomplete"}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
 

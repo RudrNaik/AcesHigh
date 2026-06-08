@@ -75,7 +75,7 @@ export interface CharacterQuirks {
 export interface Specialization {
   specId: string;
   tactics: string[];
-  advancements: string[];
+  advancements: number[];
 }
 
 export interface Aircraft {
