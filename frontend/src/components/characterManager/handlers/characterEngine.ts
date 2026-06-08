@@ -112,6 +112,11 @@ export function getCurrentTactics(character: CharacterData) {
   return currTactics;
 }
 
+export function getTacticAdvancementCount(character: CharacterData) {
+  return character.specialization.advancements.filter((a) => !a.perkConversion)
+    .length;
+}
+
 export function getAdvancements(character: CharacterData) {
   const spec = getSpecialization(character);
 
@@ -154,13 +159,11 @@ export function toggleAdvancement(
 export function reconcileTactics(character: CharacterData): CharacterData {
   const spec = character.specialization;
 
-  const tacticAllowance =
-    2 + spec.advancements.filter((a) => !a.perkConversion).length;
+  const allowed = 2 + spec.advancements.filter((a) => !a.perkConversion).length;
 
   const current = [...spec.tactics];
 
-  // If over limit, remove most recently added tactics
-  while (current.length > tacticAllowance) {
+  while (current.length > allowed) {
     current.pop();
   }
 
@@ -214,8 +217,7 @@ export function addTacticToSpecialization(
 }
 
 export function getAllowedTacticCount(character: CharacterData) {
-  const advCount = getAdvancements(character).fromChar.length;
-  return 2 + advCount;
+  return 2 + getTacticAdvancementCount(character);
 }
 
 export function getAvailableTacticSlots(character: CharacterData) {

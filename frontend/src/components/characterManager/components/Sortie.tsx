@@ -49,7 +49,9 @@ function SortieView({
   const [showCompletedAdvancements, setShowCompletedAdvancements] =
     useState(true);
   const advancements = charEngine.getAdvancements(character);
-  const completedAdvancements = new Set(advancements.fromChar);
+  const completedAdvancements = new Set(
+    advancements.fromChar.map((a) => a.index),
+  );
   const advancementState = new Map(
     advancements.fromChar.map((a) => [a.index, a]),
   );
