@@ -53,7 +53,7 @@ function SortieView({ character }: { character: CharacterData }) {
   //console.log(pilotStats.toString())
 
   return (
-    <div className="w-full min-h-screen text-white space-y-6">
+    <div className="w-full min-h-screen text-cyan-100 space-y-6">
       {/* HEADER */}
       <div className="border border-cyan-100 p-4">
         <h1 className="text-2xl font-bold">SORTIE</h1>
@@ -63,136 +63,170 @@ function SortieView({ character }: { character: CharacterData }) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* PILOT STATS */}
         <div className="border border-cyan-100 p-4 space-y-2">
-          <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
-
-          {statDefs.map((stat) => (
-            <PilotStat
-              key={stat.key}
-              label={stat.label}
-              statKey={stat.key}
-              baseStats={pilotStats}
-              sortieStats={sortieStats}
-              setSortieStats={setSortieStats}
-            />
-          ))}
-
-          <h2 className="text-cyan-300 font-bold border-t-2 pt-2 border-cyan-100">
-            Stress
-          </h2>
-          {/* Mental */}
+          {/* Pilot Stats */}
           <div>
-            <div className="flex gap-2 items-center">
-              <span className="w-24 border border-cyan-100 px-2 py-1">
-                Mental
-              </span>
+            <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
+            {statDefs.map((stat) => (
+              <PilotStat
+                key={stat.key}
+                label={stat.label}
+                statKey={stat.key}
+                baseStats={pilotStats}
+                sortieStats={sortieStats}
+                setSortieStats={setSortieStats}
+              />
+            ))}
+          </div>
 
-              <div className="w-8 text-center text-cyan-400">
-                {stress.mental}/
-                <span className="text-cyan-100">
-                  {charEngine.getMentalStress(localCharacter)}
+          {/* Stress */}
+          <div>
+            <h2 className="text-cyan-300 font-bold border-t-2 pt-2 border-cyan-100">
+              Stress
+            </h2>
+            {/* Mental */}
+            <div className="py-2">
+              <div className="flex gap-2 items-center">
+                <span className="w-24 border border-cyan-100 px-2 py-1">
+                  Mental
                 </span>
+
+                <div className="w-8 text-center text-cyan-400">
+                  {stress.mental}/
+                  <span className="text-cyan-100">
+                    {charEngine.getMentalStress(localCharacter)}
+                  </span>
+                </div>
+
+                <button
+                  onClick={() =>
+                    setStress({
+                      mental: stress.mental - 1,
+                      physical: stress.physical,
+                    })
+                  }
+                  disabled={stress.mental <= 0}
+                  className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+                >
+                  -
+                </button>
+
+                <button
+                  onClick={() =>
+                    setStress({
+                      mental: stress.mental + 1,
+                      physical: stress.physical,
+                    })
+                  }
+                  disabled={
+                    stress.mental >= charEngine.getMentalStress(localCharacter)
+                  }
+                  className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+                >
+                  +
+                </button>
+
+                <button
+                  onClick={() => {
+                    const updated = charEngine.mindBreak(
+                      localCharacter,
+                      updateCharacter,
+                    );
+                    setLocalCharacter(updated);
+                    setStress({ mental: 0, physical: stress.physical });
+                  }}
+                  disabled={
+                    stress.mental < charEngine.getMentalStress(localCharacter)
+                  }
+                  hidden={
+                    stress.mental < (charEngine.getMentalStress(localCharacter)-1)
+                  }
+                  className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+                >
+                  BREAK
+                </button>
               </div>
+            </div>
+            {/* Physical */}
+            <div>
+              <div className="flex gap-2 items-center">
+                <span className="w-24 border border-cyan-100 px-2 py-1">
+                  Physical
+                </span>
 
-              <button
-                onClick={() =>
-                  setStress({
-                    mental: stress.mental - 1,
-                    physical: stress.physical,
-                  })
-                }
-                disabled={stress.mental <= 0}
-                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
-              >
-                -
-              </button>
+                <div className="w-8 text-center text-cyan-400">
+                  {stress.physical}/
+                  <span className="text-cyan-100">
+                    {charEngine.getPhysStress(localCharacter)}
+                  </span>
+                </div>
 
-              <button
-                onClick={() =>
-                  setStress({
-                    mental: stress.mental + 1,
-                    physical: stress.physical,
-                  })
-                }
-                disabled={
-                  stress.mental >= charEngine.getMentalStress(localCharacter)
-                }
-                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
-              >
-                +
-              </button>
+                <button
+                  onClick={() =>
+                    setStress({
+                      mental: stress.mental,
+                      physical: stress.physical - 1,
+                    })
+                  }
+                  disabled={stress.physical <= 0}
+                  className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+                >
+                  -
+                </button>
 
-              <button
-                onClick={() => {
-                  const updated = charEngine.mindBreak(
-                    localCharacter,
-                    updateCharacter,
-                  );
-                  setLocalCharacter(updated);
-                  setStress({ mental: 0, physical: stress.physical });
-                }}
-                disabled={stress.mental < charEngine.getMentalStress(localCharacter)}
-                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
-              >
-                BREAK
-              </button>
+                <button
+                  onClick={() =>
+                    setStress({
+                      mental: stress.mental,
+                      physical: stress.physical + 1,
+                    })
+                  }
+                  disabled={
+                    stress.physical >= charEngine.getPhysStress(localCharacter)
+                  }
+                  className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+                >
+                  +
+                </button>
+                <button
+                  onClick={() => {
+                    const updated = charEngine.Drained(
+                      localCharacter,
+                      updateCharacter,
+                    );
+                    setLocalCharacter(updated);
+                    setStress({ mental: stress.mental, physical: 0 });
+                  }}
+                  disabled={
+                    stress.physical < charEngine.getPhysStress(localCharacter)
+                  }
+                  hidden={
+                    stress.physical < (charEngine.getPhysStress(localCharacter)-1)
+                  }
+                  className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+                >
+                  BREAK
+                </button>
+              </div>
             </div>
           </div>
-          {/* Physical */}
+
+          {/* Background Perk */}
           <div>
-            <div className="flex gap-2 items-center">
-              <span className="w-24 border border-cyan-100 px-2 py-1">
-                Physical
-              </span>
-
-              <div className="w-8 text-center text-cyan-400">
-                {stress.physical}/
-                <span className="text-cyan-100">
-                  {charEngine.getPhysStress(localCharacter)}
-                </span>
+            <h2 className="text-cyan-300 font-bold border-t-2 pt-2 border-cyan-100">
+              Background Perk
+            </h2>
+            <div>
+              <div className="border p-3 text-sm opacity-80 space-y-2">
+                <span className="border-b border-cyan-100">{charEngine.getBackGroundPerk(character).name}</span>
+                <br/>
+                <span className="italic ">{charEngine.getBackGroundPerk(character).description}</span>
               </div>
-
-              <button
-                onClick={() =>
-                  setStress({
-                    mental: stress.mental,
-                    physical: stress.physical - 1,
-                  })
-                }
-                disabled={stress.physical <= 0}
-                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
-              >
-                -
-              </button>
-
-              <button
-                onClick={() =>
-                  setStress({
-                    mental: stress.mental,
-                    physical: stress.physical + 1,
-                  })
-                }
-                disabled={
-                  stress.physical >= charEngine.getPhysStress(localCharacter)
-                }
-                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
-              >
-                +
-              </button>
-              <button
-                onClick={() => {
-                  const updated = charEngine.Drained(
-                    localCharacter,
-                    updateCharacter,
-                  );
-                  setLocalCharacter(updated);
-                  setStress({ mental: stress.mental, physical: 0 });
-                }}
-                disabled={stress.mental < charEngine.getMentalStress(localCharacter)}
-                className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
-              >
-                BREAK
-              </button>
             </div>
+          </div>
+
+          {/* Specs */}
+          <div>
+
           </div>
         </div>
 
@@ -235,7 +269,7 @@ function PilotStat({
   };
 
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-2 items-center mt-2">
       <span className="w-24 border border-cyan-100 px-2 py-1">{label}</span>
 
       <div className="w-8 text-center">{currentValue}</div>

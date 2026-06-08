@@ -1,7 +1,7 @@
 import type { CharacterData } from "./characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
 import staticMods from "../../../data/StaticMods.json";
-//import perks from "../../../data/PerkList.json"
+import perks from "../../../data/PerkList.json"
 import specializations from "../../../data/Specs.json";
 
 export function getMentalStress(character: CharacterData) {
@@ -55,6 +55,17 @@ export function getPilotStatsModified(character: CharacterData) {
   gres += (modifiers?.gResist || 0) - succedDry;
 
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
+}
+
+export function getBackGroundPerk(character: CharacterData){
+  let bgPerk = perks.find((p) => p.id === character.backgroundPerk)
+  return {id: bgPerk?.id,
+    name: bgPerk?.name,
+    type: bgPerk?.type,
+    tags: bgPerk?.tags,
+    addManuID: bgPerk?.addManuID,
+    advancement: bgPerk?.advancement,
+    description: bgPerk?.description}
 }
 
 //Reduces mental stats by 1 when mentally stressed out

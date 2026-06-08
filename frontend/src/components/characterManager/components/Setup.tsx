@@ -386,7 +386,7 @@ function Setup({
               {availableTactics.map((t: any, idx: number) => {
                 const selected = isTacticSelected(t.id);
 
-                const locked = !selected && selectedTacticCount >= 3;
+                const locked = !selected && selectedTacticCount >= 2;
 
                 return (
                   <button
