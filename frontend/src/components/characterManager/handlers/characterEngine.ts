@@ -121,27 +121,54 @@ export function getAdvancements(character: CharacterData) {
   };
 }
 
-export function completeAdvancement(
+export function toggleAdvancement(
   character: CharacterData,
   index: number,
 ): CharacterData {
   const existing = character.specialization.advancements;
 
-  const already = existing.some((a) => a.index === index);
+  const exists = existing.some((a) => a.index === index);
 
-  if (already) return character;
-
-  return {
-    ...character,
-    specialization: {
-      ...character.specialization,
-      advancements: [
+  const updatedAdvancements = exists
+    ? existing.filter((a) => a.index !== index)
+    : [
         ...existing,
         {
           index,
           perkConversion: false,
+          completed: true,
         },
-      ],
+      ];
+
+  const updated = {
+    ...character,
+    specialization: {
+      ...character.specialization,
+      advancements: updatedAdvancements,
+    },
+  };
+
+  return reconcileTactics(updated);
+}
+
+export function reconcileTactics(character: CharacterData): CharacterData {
+  const spec = character.specialization;
+
+  const tacticAllowance =
+    2 + spec.advancements.filter((a) => !a.perkConversion).length;
+
+  const current = [...spec.tactics];
+
+  // If over limit, remove most recently added tactics
+  while (current.length > tacticAllowance) {
+    current.pop();
+  }
+
+  return {
+    ...character,
+    specialization: {
+      ...spec,
+      tactics: current,
     },
   };
 }
@@ -150,14 +177,67 @@ export function convertAdvancementToPerk(
   character: CharacterData,
   index: number,
 ): CharacterData {
-  return {
+  const updated = {
     ...character,
     specialization: {
       ...character.specialization,
       advancements: character.specialization.advancements.map((a) =>
-        a.index === index ? { ...a, perkConversion: true } : a,
+        a.index === index ? { ...a, perkConversion: !a.perkConversion } : a,
       ),
     },
+  };
+
+  return reconcileTactics(updated);
+}
+
+export function addTacticToSpecialization(
+  character: CharacterData,
+  tactic: string,
+  updateCharacter: (c: CharacterData) => void,
+) {
+  const allowed = getAllowedTacticCount(character);
+  const current = character.specialization.tactics;
+
+  // prevent duplicates
+  if (current.some((t) => t === tactic)) return character;
+
+  // enforce cap
+  if (current.length >= allowed) return character;
+
+  const updated = structuredClone(character);
+
+  updated.specialization.tactics.push(tactic);
+
+  updateCharacter(updated);
+
+  return updated;
+}
+
+export function getAllowedTacticCount(character: CharacterData) {
+  const advCount = getAdvancements(character).fromChar.length;
+  return 2 + advCount;
+}
+
+export function getAvailableTacticSlots(character: CharacterData) {
+  const allowed = getAllowedTacticCount(character);
+  const current = character.specialization.tactics.length;
+
+  return Math.max(0, allowed - current);
+}
+
+export function canPickTactic(character: CharacterData) {
+  return getAvailableTacticSlots(character) > 0;
+}
+
+export function validateTactics(character: CharacterData) {
+  const allowed = getAllowedTacticCount(character);
+  const current = character.specialization.tactics.length;
+
+  return {
+    allowed,
+    current,
+    remaining: allowed - current,
+    valid: current <= allowed,
   };
 }
 

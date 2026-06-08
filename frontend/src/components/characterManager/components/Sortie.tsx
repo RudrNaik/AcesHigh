@@ -16,8 +16,6 @@ function SortieView({
   character: CharacterData;
   updateCharacter: (updated: CharacterData) => void;
 }) {
-  // Remove character state entirely — use character directly
-
   const [pilotStats, setPilotStats] = useState(
     charEngine.getPilotStatsModified(character),
   );
@@ -56,11 +54,9 @@ function SortieView({
     advancements.fromChar.map((a) => [a.index, a]),
   );
 
-  // Now just calls updateCharacter — parent re-renders with new character prop
   const applyCharacterUpdate = (updated: CharacterData) => {
     updateCharacter(updated);
   };
-  //console.log(pilotStats.toString())
 
   return (
     <div className="w-full min-h-screen text-cyan-100 space-y-6">
@@ -296,6 +292,8 @@ function SortieView({
                   })
                   .map((tactic) => {
                     const unlocked = unlockedIds.has(tactic.id);
+                    const canPick = charEngine.canPickTactic(character);
+                    const alreadyOwned = unlockedIds.has(tactic.id);
 
                     return (
                       <div
@@ -323,6 +321,21 @@ function SortieView({
                         <p className="text-sm text-gray-300">
                           {tactic.description}
                         </p>
+
+                        {canPick && !alreadyOwned && (
+                          <button
+                            onClick={() =>
+                              charEngine.addTacticToSpecialization(
+                                character,
+                                tactic.id,
+                                updateCharacter,
+                              )
+                            }
+                            className="text-xs px-2 py-1 border border-cyan-900 hover:border-cyan-100 hover:text-cyan-900 hover:bg-cyan-50"
+                          >
+                            SELECT
+                          </button>
+                        )}
                       </div>
                     );
                   })}
@@ -395,7 +408,7 @@ function SortieView({
                       </div>
                       <button
                         onClick={() => {
-                          const updated = charEngine.completeAdvancement(
+                          const updated = charEngine.toggleAdvancement(
                             character,
                             item.index,
                           );
