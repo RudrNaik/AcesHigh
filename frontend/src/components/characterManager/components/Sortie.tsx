@@ -438,6 +438,81 @@ function SortieView({
                   ))}
               </div>
             </div>
+
+            {/* Masteries */}
+            <div>
+              <h3 className="font-bold border-t-2 py-2 border-cyan-100">
+                Mastery
+              </h3>
+
+              {character.specialization.mastery ? (
+                (() => {
+                  const mastery = charEngine
+                    .getSpecialization(character)
+                    .masteries.find(
+                      (m) => m.id === character.specialization.mastery,
+                    );
+
+                  if (!mastery) return null;
+
+                  return (
+                    <div className="border border-yellow-400 border-l-4 p-2">
+                      <div className="flex justify-between items-center">
+                        <span className="font-semibold">{mastery.name}</span>
+
+                        <span className="bg-yellow-400 text-black text-xs px-2 py-1">
+                          MASTERY
+                        </span>
+                      </div>
+
+                      <p className="text-sm text-gray-300">
+                        {mastery.description}
+                      </p>
+                    </div>
+                  );
+                })()
+              ) : charEngine.canSelectMastery(character) ? (
+                <div className="space-y-2">
+                  {charEngine
+                    .getSpecialization(character)
+                    .masteries.map((mastery) => (
+                      <div
+                        key={mastery.id}
+                        className="border border-cyan-100 p-2"
+                      >
+                        <div className="font-semibold">{mastery.name}</div>
+
+                        <p className="text-sm text-gray-300">
+                          {mastery.description}
+                        </p>
+
+                        <button
+                          onClick={() => {
+                            const updated = charEngine.selectMastery(
+                              character,
+                              mastery.id,
+                            );
+
+                            applyCharacterUpdate(updated);
+                          }}
+                          className="mt-2 text-xs px-2 py-1 border border-cyan-400"
+                        >
+                          SELECT
+                        </button>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <div className="border border-cyan-900 p-2 opacity-60">
+                  Unlock all tactics in your specialization to gain access to
+                  mastery.
+                  <div className="text-xs mt-1">
+                    Progress: {character.specialization.tactics.length}/
+                    {charEngine.getSpecialization(character).tactics.length}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 

@@ -158,20 +158,27 @@ export function toggleAdvancement(
 
 export function reconcileTactics(character: CharacterData): CharacterData {
   const spec = character.specialization;
-
   const allowed = 2 + spec.advancements.filter((a) => !a.perkConversion).length;
-
   const current = [...spec.tactics];
 
   while (current.length > allowed) {
     current.pop();
   }
 
+  const updatedSpec = {
+    ...spec,
+    tactics: current,
+  };
+
+  const fullSpecTactics = getSpecialization(character).tactics;
+  const hasAllTactics = fullSpecTactics.every((t) => current.includes(t.id));
+  const masteryStillValid = spec.mastery && hasAllTactics ? spec.mastery : "";
+
   return {
     ...character,
     specialization: {
-      ...spec,
-      tactics: current,
+      ...updatedSpec,
+      mastery: masteryStillValid,
     },
   };
 }
@@ -240,6 +247,64 @@ export function validateTactics(character: CharacterData) {
     current,
     remaining: allowed - current,
     valid: current <= allowed,
+  };
+}
+
+export function canSelectMastery(character: CharacterData) {
+  const spec = getSpecialization(character);
+
+  return (
+    character.specialization.tactics.length >= spec.tactics.length &&
+    !character.specialization.mastery
+  );
+}
+
+export function selectMastery(
+  character: CharacterData,
+  masteryId: string,
+): CharacterData {
+  const spec = getSpecialization(character);
+
+  const validMastery = spec.masteries.some((m) => m.id === masteryId);
+
+  if (!validMastery) {
+    return character;
+  }
+
+  if (!canSelectMastery(character)) {
+    return character;
+  }
+
+  return {
+    ...character,
+    specialization: {
+      ...character.specialization,
+      mastery: masteryId,
+    },
+  };
+}
+
+export function reconcileMastery(character: CharacterData): CharacterData {
+  if (!character.specialization.mastery) {
+    return character;
+  }
+
+  const spec = getSpecialization(character);
+
+  const hasAllTactics = spec.tactics.every((t) =>
+    character.specialization.tactics.includes(t.id),
+  );
+
+  if (hasAllTactics) {
+    return character;
+  }
+
+  return {
+    ...character,
+    specialization: {
+      ...character.specialization,
+      mastery: "",
+    },
   };
 }
 

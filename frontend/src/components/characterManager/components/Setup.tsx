@@ -69,7 +69,8 @@ function Setup({
       specialization: {
         specId: id,
         tactics: [],
-        advancements: []
+        advancements: [],
+        mastery: "",
       },
     };
 
@@ -364,10 +365,10 @@ function Setup({
                   <div>
                     Modifiers:{" "}
                     <span className="border px-2 py-1 text-xs border-cyan-100">
-                    {
-                      staticMods.find((m) => m.id === selectedSpec.staticMods)
-                        .name
-                    }
+                      {
+                        staticMods.find((m) => m.id === selectedSpec.staticMods)
+                          .name
+                      }
                     </span>
                   </div>
                 )}

@@ -76,6 +76,7 @@ export interface Specialization {
   specId: string;
   tactics: string[];
   advancements: Advancement[];
+  mastery: string;
 }
 
 export interface Advancement{
