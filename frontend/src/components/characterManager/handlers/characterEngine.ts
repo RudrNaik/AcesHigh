@@ -68,6 +68,23 @@ export function getBackGroundPerk(character: CharacterData){
     description: bgPerk?.description}
 }
 
+export function getSpecialization(character: CharacterData){
+  let spec = specializations.find((spec)=> spec.id === character.specialization.specId);
+  return {
+    id: spec?.id,
+    prefix: spec?.prefix,
+    name: spec?.name,
+    flavor: spec?.flavor,
+    staticMods: spec?.staticMods,
+    info: spec?.info,
+    addManu: spec?.addManu,
+    preFlights: spec?.preFlights,
+    tactics: spec?.tactics,
+    advancements: spec?.advancements,
+    masteries: spec?.masteries
+  }
+}
+
 //Reduces mental stats by 1 when mentally stressed out
 export function mindBreak(
   character: CharacterData,

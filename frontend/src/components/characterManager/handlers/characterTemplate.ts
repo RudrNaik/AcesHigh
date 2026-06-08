@@ -80,6 +80,7 @@ export const createDefaultCharacter = (): CharacterData => ({
   specialization: {
     specId: "",
     tactics: [],
+    advancements: [],
   },
 
   aircraft: {

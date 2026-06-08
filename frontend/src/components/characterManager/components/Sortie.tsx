@@ -138,7 +138,8 @@ function SortieView({ character }: { character: CharacterData }) {
                     stress.mental < charEngine.getMentalStress(localCharacter)
                   }
                   hidden={
-                    stress.mental < (charEngine.getMentalStress(localCharacter)-1)
+                    stress.mental <
+                    charEngine.getMentalStress(localCharacter) - 1
                   }
                   className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
                 >
@@ -200,7 +201,8 @@ function SortieView({ character }: { character: CharacterData }) {
                     stress.physical < charEngine.getPhysStress(localCharacter)
                   }
                   hidden={
-                    stress.physical < (charEngine.getPhysStress(localCharacter)-1)
+                    stress.physical <
+                    charEngine.getPhysStress(localCharacter) - 1
                   }
                   className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
                 >
@@ -212,21 +214,30 @@ function SortieView({ character }: { character: CharacterData }) {
 
           {/* Background Perk */}
           <div>
-            <h2 className="text-cyan-300 font-bold border-t-2 pt-2 border-cyan-100">
+            <h2 className="text-cyan-300 font-bold border-t-2 py-2 border-cyan-100">
               Background Perk
             </h2>
             <div>
               <div className="border p-3 text-sm opacity-80 space-y-2">
-                <span className="border-b border-cyan-100">{charEngine.getBackGroundPerk(character).name}</span>
-                <br/>
-                <span className="italic ">{charEngine.getBackGroundPerk(character).description}</span>
+                <span className="border-b border-cyan-100">
+                  {charEngine.getBackGroundPerk(character).name}
+                </span>
+                <br />
+                <span className="italic ">
+                  {charEngine.getBackGroundPerk(character).description}
+                </span>
               </div>
             </div>
           </div>
 
           {/* Specs */}
           <div>
+            <h2 className="text-cyan-300 font-bold border-t-2 py-2 border-cyan-100">
+              Specialization
+            </h2>
+            <div>
 
+            </div>
           </div>
         </div>
 
