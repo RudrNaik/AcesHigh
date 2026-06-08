@@ -1,7 +1,6 @@
 import type { CharacterData } from "../handlers/characterTypes";
 import { useEffect, useState } from "react";
 import * as charEngine from "../handlers/characterEngine";
-import { useCharacterStorage } from "../handlers/characterStorage";
 
 type PilotStatsType = {
   temper: number;
@@ -10,19 +9,17 @@ type PilotStatsType = {
   gResist: number;
 };
 
-function SortieView({ character }: { character: CharacterData }) {
-  const { updateCharacter } = useCharacterStorage();
-
-  // Track a local copy so break mutations reflect immediately
-  const [localCharacter, setLocalCharacter] = useState(character);
-
-  // Sync if the parent passes a fresh character (e.g. on load)
-  useEffect(() => {
-    setLocalCharacter(character);
-  }, [character]);
+function SortieView({
+  character,
+  updateCharacter,
+}: {
+  character: CharacterData;
+  updateCharacter: (updated: CharacterData) => void;
+}) {
+  // Remove character state entirely — use character directly
 
   const [pilotStats, setPilotStats] = useState(
-    charEngine.getPilotStatsModified(localCharacter),
+    charEngine.getPilotStatsModified(character),
   );
 
   const [sortieStats, setSortieStats] = useState({
@@ -33,15 +30,12 @@ function SortieView({ character }: { character: CharacterData }) {
   });
 
   useEffect(() => {
-    const updated = charEngine.getPilotStatsModified(localCharacter);
+    const updated = charEngine.getPilotStatsModified(character);
     setPilotStats(updated);
     setSortieStats(updated);
-  }, [localCharacter]); // <-- depend on localCharacter, not character + refreshKey
+  }, [character]);
 
-  const [stress, setStress] = useState({
-    mental: 0,
-    physical: 0,
-  });
+  const [stress, setStress] = useState({ mental: 0, physical: 0 });
 
   const statDefs = [
     { key: "temper", label: "Temper" },
@@ -51,16 +45,21 @@ function SortieView({ character }: { character: CharacterData }) {
   ] as const;
 
   const [showLockedTactics, setShowLockedTactics] = useState(true);
-
-  const currentTactics = charEngine.getCurrentTactics(localCharacter);
+  const currentTactics = charEngine.getCurrentTactics(character);
   const unlockedIds = new Set(currentTactics);
 
   const [showCompletedAdvancements, setShowCompletedAdvancements] =
     useState(true);
-
   const advancements = charEngine.getAdvancements(character);
   const completedAdvancements = new Set(advancements.fromChar);
+  const advancementState = new Map(
+    advancements.fromChar.map((a) => [a.index, a]),
+  );
 
+  // Now just calls updateCharacter — parent re-renders with new character prop
+  const applyCharacterUpdate = (updated: CharacterData) => {
+    updateCharacter(updated);
+  };
   //console.log(pilotStats.toString())
 
   return (
@@ -104,7 +103,7 @@ function SortieView({ character }: { character: CharacterData }) {
                 <div className="w-8 text-center text-cyan-400">
                   {stress.mental}/
                   <span className="text-cyan-100">
-                    {charEngine.getMentalStress(localCharacter)}
+                    {charEngine.getMentalStress(character)}
                   </span>
                 </div>
 
@@ -129,7 +128,7 @@ function SortieView({ character }: { character: CharacterData }) {
                     })
                   }
                   disabled={
-                    stress.mental >= charEngine.getMentalStress(localCharacter)
+                    stress.mental >= charEngine.getMentalStress(character)
                   }
                   className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
                 >
@@ -138,19 +137,14 @@ function SortieView({ character }: { character: CharacterData }) {
 
                 <button
                   onClick={() => {
-                    const updated = charEngine.mindBreak(
-                      localCharacter,
-                      updateCharacter,
-                    );
-                    setLocalCharacter(updated);
+                    charEngine.mindBreak(character, updateCharacter);
                     setStress({ mental: 0, physical: stress.physical });
                   }}
                   disabled={
-                    stress.mental < charEngine.getMentalStress(localCharacter)
+                    stress.mental < charEngine.getMentalStress(character)
                   }
                   hidden={
-                    stress.mental <
-                    charEngine.getMentalStress(localCharacter) - 1
+                    stress.mental < charEngine.getMentalStress(character) - 1
                   }
                   className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
                 >
@@ -168,7 +162,7 @@ function SortieView({ character }: { character: CharacterData }) {
                 <div className="w-8 text-center text-cyan-400">
                   {stress.physical}/
                   <span className="text-cyan-100">
-                    {charEngine.getPhysStress(localCharacter)}
+                    {charEngine.getPhysStress(character)}
                   </span>
                 </div>
 
@@ -193,7 +187,7 @@ function SortieView({ character }: { character: CharacterData }) {
                     })
                   }
                   disabled={
-                    stress.physical >= charEngine.getPhysStress(localCharacter)
+                    stress.physical >= charEngine.getPhysStress(character)
                   }
                   className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
                 >
@@ -201,19 +195,14 @@ function SortieView({ character }: { character: CharacterData }) {
                 </button>
                 <button
                   onClick={() => {
-                    const updated = charEngine.Drained(
-                      localCharacter,
-                      updateCharacter,
-                    );
-                    setLocalCharacter(updated);
+                    charEngine.Drained(character, updateCharacter);
                     setStress({ mental: stress.mental, physical: 0 });
                   }}
                   disabled={
-                    stress.physical < charEngine.getPhysStress(localCharacter)
+                    stress.physical < charEngine.getPhysStress(character)
                   }
                   hidden={
-                    stress.physical <
-                    charEngine.getPhysStress(localCharacter) - 1
+                    stress.physical < charEngine.getPhysStress(character) - 1
                   }
                   className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
                 >
@@ -247,7 +236,7 @@ function SortieView({ character }: { character: CharacterData }) {
               Specialization
             </h2>
             <h1 className="text-lg italic">
-              {charEngine.getSpecialization(localCharacter).name}
+              {charEngine.getSpecialization(character).name}
             </h1>
 
             {/* Preflights */}
@@ -255,26 +244,26 @@ function SortieView({ character }: { character: CharacterData }) {
               <h3 className="font-bold py-2">Preflights</h3>
               <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
                 <div className="font-semibold">
-                  PFC-1 | {charEngine.getDowntimes(localCharacter)?.dt1.name}
+                  PFC-1 | {charEngine.getDowntimes(character)?.dt1.name}
                 </div>
                 <div className="text-xs">
-                  {charEngine.getDowntimes(localCharacter)?.dt1.description}
+                  {charEngine.getDowntimes(character)?.dt1.description}
                 </div>
               </div>
               <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
                 <div className="font-semibold">
-                  PFC-2 | {charEngine.getDowntimes(localCharacter)?.dt2.name}
+                  PFC-2 | {charEngine.getDowntimes(character)?.dt2.name}
                 </div>
                 <div className="text-xs">
-                  {charEngine.getDowntimes(localCharacter)?.dt2.description}
+                  {charEngine.getDowntimes(character)?.dt2.description}
                 </div>
               </div>
               <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2">
                 <div className="font-semibold">
-                  PFC-3 | {charEngine.getDowntimes(localCharacter)?.dt3.name}
+                  PFC-3 | {charEngine.getDowntimes(character)?.dt3.name}
                 </div>
                 <div className="text-xs">
-                  {charEngine.getDowntimes(localCharacter)?.dt3.description}
+                  {charEngine.getDowntimes(character)?.dt3.description}
                 </div>
               </div>
             </div>
@@ -292,7 +281,7 @@ function SortieView({ character }: { character: CharacterData }) {
               </div>
               <div className="space-y-2">
                 {charEngine
-                  .getSpecialization(localCharacter)
+                  .getSpecialization(character)
                   .tactics.slice()
                   .sort((a, b) => {
                     const unlockedA = unlockedIds.has(a.id);
@@ -353,45 +342,83 @@ function SortieView({ character }: { character: CharacterData }) {
                 >
                   {showCompletedAdvancements
                     ? `Hide Completed`
-                    : `Show Completed ${advancements.fromSpec.length - 7 - completedAdvancements.size}`}
+                    : `Show Completed [${completedAdvancements.size}]`}
                 </button>
               </div>
 
               <div className="space-y-2">
                 {advancements.fromSpec
-                  .map((advancement, index) => ({
-                    advancement,
-                    index,
-                    completed: completedAdvancements.has(index),
-                  }))
+                  .map((text, index) => {
+                    const state = advancementState.get(index);
+
+                    return {
+                      text,
+                      index,
+                      completed: !!state,
+                      converted: state?.perkConversion ?? false,
+                    };
+                  })
                   .sort((a, b) => Number(b.completed) - Number(a.completed))
                   .filter((item) => {
                     if (showCompletedAdvancements) return true;
-
                     return !item.completed;
                   })
-                  .map(({ advancement, index, completed }) => (
+                  .map((item) => (
                     <div
-                      key={index}
+                      key={item.index}
                       className={`border p-2 ${
-                        completed
-                          ? "border-cyan-100 border-l-4"
-                          : "border-cyan-900 opacity-60"
+                        item.converted
+                          ? "border-yellow-400 border-l-4"
+                          : item.completed
+                            ? "border-cyan-100 border-l-4"
+                            : "border-cyan-900 opacity-60"
                       }`}
                     >
                       <div className="flex justify-between items-start gap-2">
-                        <span>{advancement}</span>
+                        <span>{item.text}</span>
 
                         <span
                           className={`text-xs px-2 py-1 whitespace-nowrap ${
-                            completed
-                              ? "bg-cyan-100 text-black"
-                              : "border border-cyan-900 text-cyan-100"
+                            item.converted
+                              ? "bg-yellow-400 text-black"
+                              : item.completed
+                                ? "bg-cyan-100 text-black"
+                                : "border border-cyan-900 text-cyan-100"
                           }`}
                         >
-                          {completed ? "Complete" : "Incomplete"}
+                          {item.converted
+                            ? "Perk"
+                            : item.completed
+                              ? "Complete"
+                              : "Incomplete"}
                         </span>
                       </div>
+                      <button
+                        onClick={() => {
+                          const updated = charEngine.completeAdvancement(
+                            character,
+                            item.index,
+                          );
+
+                          applyCharacterUpdate(updated);
+                        }}
+                        className="text-xs px-2 py-1 border border-cyan-400"
+                      >
+                        Complete
+                      </button>
+                      <button
+                        onClick={() => {
+                          const updated = charEngine.convertAdvancementToPerk(
+                            character,
+                            item.index,
+                          );
+
+                          applyCharacterUpdate(updated);
+                        }}
+                        className="text-xs px-2 py-1 border border-yellow-400"
+                      >
+                        Convert
+                      </button>
                     </div>
                   ))}
               </div>
@@ -403,7 +430,7 @@ function SortieView({ character }: { character: CharacterData }) {
         <div className="border border-cyan-100 p-4 space-y-2">
           <h2 className="text-cyan-300 font-bold">Aircraft</h2>
 
-          <div>Aircraft ID: {localCharacter.aircraft.aircraftId || "None"}</div>
+          <div>Aircraft ID: {character.aircraft.aircraftId || "None"}</div>
 
           <div className="text-sm text-cyan-200">
             (Stats, loadout, mods will come here)

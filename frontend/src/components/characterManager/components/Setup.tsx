@@ -157,7 +157,7 @@ function Setup({
     local.dossier.lastName !== "" &&
     local.dossier.callsign !== "" &&
     local.specialization.specId !== "" &&
-    selectedTacticCount === 3 &&
+    selectedTacticCount === 2 &&
     local.backgroundPerk !== "";
 
   const completeSetup = () => {
@@ -318,7 +318,7 @@ function Setup({
 
             <button
               onClick={() => updateStat(key, stats[key] - 1)}
-              disabled={stats[key] <= 0}
+              disabled={stats[key] <= 1}
               className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
             >
               -

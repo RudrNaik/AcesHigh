@@ -107,16 +107,58 @@ export function getDowntimes(character: CharacterData) {
   return { dt1: downtime1, dt2: downtime2, dt3: downtime3 };
 }
 
-export function getCurrentTactics(character: CharacterData){
-  let currTactics = character.specialization.tactics
-  return currTactics
+export function getCurrentTactics(character: CharacterData) {
+  let currTactics = character.specialization.tactics;
+  return currTactics;
 }
 
-export function getAdvancements(character: CharacterData){
+export function getAdvancements(character: CharacterData) {
   const spec = getSpecialization(character);
-  let specAdvancements = spec.advancements;
-  let charAdvancements = character.specialization.advancements;
-  return {fromSpec: specAdvancements, fromChar: charAdvancements}
+
+  return {
+    fromSpec: spec?.advancements ?? [],
+    fromChar: character?.specialization?.advancements ?? [],
+  };
+}
+
+export function completeAdvancement(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  const existing = character.specialization.advancements;
+
+  const already = existing.some((a) => a.index === index);
+
+  if (already) return character;
+
+  return {
+    ...character,
+    specialization: {
+      ...character.specialization,
+      advancements: [
+        ...existing,
+        {
+          index,
+          perkConversion: false,
+        },
+      ],
+    },
+  };
+}
+
+export function convertAdvancementToPerk(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  return {
+    ...character,
+    specialization: {
+      ...character.specialization,
+      advancements: character.specialization.advancements.map((a) =>
+        a.index === index ? { ...a, perkConversion: true } : a,
+      ),
+    },
+  };
 }
 
 //Reduces mental stats by 1 when mentally stressed out

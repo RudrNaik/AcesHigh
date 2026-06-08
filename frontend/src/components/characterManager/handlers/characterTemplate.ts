@@ -7,10 +7,10 @@ export const createDefaultCharacter = (): CharacterData => ({
     setupComplete: false,
 
     startingPilotStats: {
-      temper: 0,
-      nerve: 0,
-      reflex: 0,
-      gResist: 0,
+      temper: 1,
+      nerve: 1,
+      reflex: 1,
+      gResist: 1,
     },
     startingRP: 0,
     generation: 0,

@@ -60,7 +60,7 @@ function CharacterSheet({
         <Dossier character={character} updateCharacter={onUpdate} />
       )}
 
-      {activeTab === "Sortie" && <Sortie character={character} />}
+      {activeTab === "Sortie" && <Sortie character={character} updateCharacter={onUpdate}/>}
     </div>
   );
 }
