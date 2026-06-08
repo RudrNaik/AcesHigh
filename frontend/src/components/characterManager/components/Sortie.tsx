@@ -352,8 +352,8 @@ function SortieView({ character }: { character: CharacterData }) {
                   className="text-xs border border-cyan-900 px-2 py-1 hover:bg-cyan-950"
                 >
                   {showCompletedAdvancements
-                    ? "Hide Completed"
-                    : "Show Completed"}
+                    ? `Hide Completed`
+                    : `Show Completed ${advancements.fromSpec.length - 7 - completedAdvancements.size}`}
                 </button>
               </div>
 
