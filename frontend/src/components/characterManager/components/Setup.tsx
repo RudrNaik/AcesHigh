@@ -69,6 +69,7 @@ function Setup({
       specialization: {
         specId: id,
         tactics: [],
+        advancements: []
       },
     };
 

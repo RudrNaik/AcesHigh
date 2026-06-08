@@ -1,8 +1,9 @@
 import type { CharacterData } from "./characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
 import staticMods from "../../../data/StaticMods.json";
-import perks from "../../../data/PerkList.json"
+import perks from "../../../data/PerkList.json";
 import specializations from "../../../data/Specs.json";
+import downtime from "../../../data/Downtimes.json";
 
 export function getMentalStress(character: CharacterData) {
   let charStats = getPilotStatsModified(character);
@@ -57,32 +58,58 @@ export function getPilotStatsModified(character: CharacterData) {
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
 }
 
-export function getBackGroundPerk(character: CharacterData){
-  let bgPerk = perks.find((p) => p.id === character.backgroundPerk)
-  return {id: bgPerk?.id,
+export function getBackGroundPerk(character: CharacterData) {
+  let bgPerk = perks.find((p) => p.id === character.backgroundPerk);
+  return {
+    id: bgPerk?.id,
     name: bgPerk?.name,
     type: bgPerk?.type,
     tags: bgPerk?.tags,
     addManuID: bgPerk?.addManuID,
     advancement: bgPerk?.advancement,
-    description: bgPerk?.description}
+    description: bgPerk?.description,
+  };
 }
 
-export function getSpecialization(character: CharacterData){
-  let spec = specializations.find((spec)=> spec.id === character.specialization.specId);
-  return {
-    id: spec?.id,
-    prefix: spec?.prefix,
-    name: spec?.name,
-    flavor: spec?.flavor,
-    staticMods: spec?.staticMods,
-    info: spec?.info,
-    addManu: spec?.addManu,
-    preFlights: spec?.preFlights,
-    tactics: spec?.tactics,
-    advancements: spec?.advancements,
-    masteries: spec?.masteries
+export function getSpecialization(character: CharacterData) {
+  const spec = specializations.find(
+    (spec) => spec.id === character.specialization.specId,
+  );
+
+  if (!spec) {
+    throw new Error(
+      `Specialization '${character.specialization.specId}' not found`,
+    );
   }
+
+  return spec;
+}
+
+export function getDowntimes(character: CharacterData) {
+  const spec = getSpecialization(character);
+
+  if (!spec.preFlights?.length) {
+    return undefined;
+  }
+
+  const downtime1 = downtime.find((dt) => dt.id === spec.preFlights[0]);
+  const downtime2 = downtime.find((dt) => dt.id === spec.preFlights[1]);
+  const downtime3 = downtime.find((dt) => dt.id === spec.preFlights[2]);
+
+  console.log(downtime1);
+  console.log(downtime2);
+  console.log(downtime3);
+
+  if (!downtime1 || !downtime2 || !downtime3) {
+    throw new Error("downtimes not found");
+  }
+
+  return { dt1: downtime1, dt2: downtime2, dt3: downtime3 };
+}
+
+export function getCurrentTactics(character: CharacterData){
+  let currTactics = character.specialization.tactics
+  return currTactics
 }
 
 //Reduces mental stats by 1 when mentally stressed out

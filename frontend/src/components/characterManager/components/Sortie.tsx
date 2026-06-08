@@ -50,6 +50,11 @@ function SortieView({ character }: { character: CharacterData }) {
     { key: "gResist", label: "G-Resist" },
   ] as const;
 
+  const [showLockedTactics, setShowLockedTactics] = useState(true);
+
+  const currentTactics = charEngine.getCurrentTactics(localCharacter);
+  const unlockedIds = new Set(currentTactics);
+
   //console.log(pilotStats.toString())
 
   return (
@@ -231,13 +236,102 @@ function SortieView({ character }: { character: CharacterData }) {
           </div>
 
           {/* Specs */}
-          <div>
+          <div className="space-y-2">
             <h2 className="text-cyan-300 font-bold border-t-2 py-2 border-cyan-100">
               Specialization
             </h2>
-            <div>
-
+            <h1 className="text-lg italic">
+              {charEngine.getSpecialization(localCharacter).name}
+            </h1>
+            {/* Preflights */}
+            <div className="">
+              <h3 className="font-bold">Preflights</h3>
+              <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
+                <div>
+                  PFC-1 | {charEngine.getDowntimes(localCharacter)?.dt1.name}
+                </div>
+                <div className="text-xs">
+                  {charEngine.getDowntimes(localCharacter)?.dt1.description}
+                </div>
+              </div>
+              <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
+                <div>
+                  PFC-2 | {charEngine.getDowntimes(localCharacter)?.dt2.name}
+                </div>
+                <div className="text-xs">
+                  {charEngine.getDowntimes(localCharacter)?.dt2.description}
+                </div>
+              </div>
+              <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2">
+                <div>
+                  PFC-3 | {charEngine.getDowntimes(localCharacter)?.dt3.name}
+                </div>
+                <div className="text-xs">
+                  {charEngine.getDowntimes(localCharacter)?.dt3.description}
+                </div>
+              </div>
             </div>
+            {/* Tactics */}
+            <div>
+              <div className="flex flex-row justify-between mb-2">
+                <h3 className="font-bold">Tactics</h3>{" "}
+                <button
+                  onClick={() => setShowLockedTactics(!showLockedTactics)}
+                  className="text-xs border border-cyan-900 px-2 py-1 hover:bg-cyan-950"
+                >
+                  {showLockedTactics ? "Hide Locked" : "Show Locked"}
+                </button>
+              </div>
+              <div className="space-y-2">
+                {charEngine
+                  .getSpecialization(localCharacter)
+                  .tactics.slice()
+                  .sort((a, b) => {
+                    const unlockedA = unlockedIds.has(a.id);
+                    const unlockedB = unlockedIds.has(b.id);
+
+                    return Number(unlockedB) - Number(unlockedA);
+                  })
+                  .filter((tactic) => {
+                    if (showLockedTactics) return true;
+
+                    return unlockedIds.has(tactic.id);
+                  })
+                  .map((tactic) => {
+                    const unlocked = unlockedIds.has(tactic.id);
+
+                    return (
+                      <div
+                        key={tactic.id}
+                        className={`border p-2 ${
+                          unlocked
+                            ? "border-cyan-100 border-l-4"
+                            : "border-cyan-900 opacity-50"
+                        }`}
+                      >
+                        <div className="flex justify-between items-center">
+                          <span className="font-semibold">{tactic.name}</span>
+
+                          <span
+                            className={`text-xs px-2 py-1 ${
+                              unlocked
+                                ? "bg-cyan-100 text-black"
+                                : "border border-cyan-900 text-cyan-100"
+                            }`}
+                          >
+                            {unlocked ? "Unlocked" : "Locked"}
+                          </span>
+                        </div>
+
+                        <p className="text-sm text-gray-300">
+                          {tactic.description}
+                        </p>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+
           </div>
         </div>
 
