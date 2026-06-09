@@ -63,14 +63,14 @@ function SortieView({
   return (
     <div className="w-full min-h-screen text-cyan-100 space-y-6">
       {/* HEADER */}
-      <div className="border border-cyan-100 p-4">
+      <div className="border border-cyan-100 lg:p-4">
         <h1 className="text-2xl font-bold">SORTIE</h1>
       </div>
 
       {/* MAIN GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        {/* PILOT STATS */}
-        <div className="border border-cyan-100 p-4 space-y-2">
+        {/* PILOT */}
+        <div className="border border-cyan-100 lg:p-4 space-y-2">
           {/* Pilot Stats */}
           <div>
             <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
@@ -517,7 +517,7 @@ function SortieView({
         </div>
 
         {/* AIRCRAFT STATE */}
-        <div className="border border-cyan-100 p-4 space-y-2">
+        <div className="border border-cyan-100 lg:p-4 space-y-2">
           <h2 className="text-cyan-300 font-bold">Aircraft</h2>
 
           <div>Aircraft ID: {character.aircraft.aircraftId || "None"}</div>

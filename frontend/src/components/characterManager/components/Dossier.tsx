@@ -29,7 +29,7 @@ function DossierTab({ character, updateCharacter }: Props) {
 
   return (
     <div className="">
-      <div className=" border-cyan-100 p-4 space-y-4">
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
         <Section title="Identity">
           <div className="grid grid-cols-3 gap-4">
             <TextField
