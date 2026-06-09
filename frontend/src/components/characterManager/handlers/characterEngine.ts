@@ -4,7 +4,7 @@ import staticMods from "../../../data/StaticMods.json";
 import perks from "../../../data/PerkList.json";
 import specializations from "../../../data/Specs.json";
 import downtime from "../../../data/Downtimes.json";
-import licenses from "../../../data/Licenses.json";
+//import licenses from "../../../data/Licenses.json";
 
 export function getMentalStress(character: CharacterData) {
   let charStats = getPilotStatsModified(character);
@@ -307,40 +307,6 @@ export function reconcileMastery(character: CharacterData): CharacterData {
       mastery: "",
     },
   };
-}
-
-export type LicenseRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
-
-export type RankKey = `rank${LicenseRank}`;
-
-export function getLicenseUnlocks(licenseId: string, rank: number) {
-  const license = licenses.find((l) => l.id === licenseId);
-  if (!license) return null;
-
-  const result = {
-    ordnance: [] as string[],
-    airframes: [] as string[],
-    modules: [] as string[],
-    upgrades: [] as string[],
-  };
-
-  const applyTier = (key: RankKey) => {
-    const tier = license.unlocks[key];
-    if (!tier) return;
-
-    result.ordnance.push(...tier.ordnance);
-    result.airframes.push(...tier.airframes);
-    result.modules.push(...tier.modules);
-    result.upgrades.push(...tier.upgrades);
-  };
-
-  applyTier("rank0");
-
-  for (let r = 1; r <= rank; r++) {
-    applyTier(`rank${r}` as RankKey);
-  }
-
-  return result;
 }
 
 //Reduces mental stats by 1 when mentally stressed out
