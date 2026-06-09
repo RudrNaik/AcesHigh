@@ -24,7 +24,7 @@ function CharacterSelect({
 
         <button
           onClick={onCreate}
-          className="borderborder-cyan-100 px-2 py-2 border"
+          className="border border-cyan-100 px-2 py-2"
         >
           Create Character
         </button>

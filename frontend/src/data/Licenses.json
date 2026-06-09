@@ -118,8 +118,8 @@
     "description": "Something",
     "unlocks": {
         "rank0": {
-                "ordnance": ["ordUGB"],
-                "airframes": ["acMiG27", "acHarrier"],
+                "ordnance": [],
+                "airframes": ["acF5E", "acJ9A"],
                 "modules": [],
                 "upgrades": []
         },
@@ -174,8 +174,8 @@
     "description": "Something",
     "unlocks": {
         "rank0": {
-                "ordnance": [],
-                "airframes": ["acA4E", "acJ8"],
+                "ordnance": ["ordUGB"],
+                "airframes": ["acMiG27", "acHarrier"],
                 "modules": [],
                 "upgrades": []
         },
@@ -229,6 +229,12 @@
     "style": "Its the Pilot",
     "description": "Here at Gründer Süd we believe that it's not the plane, it's the pilot. We give you the tools you need to dominate the battlefield, expressing how skilled you are.",
     "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acA4E", "acJ8"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": [],
             "airframes": ["acJEFFA"],
@@ -279,6 +285,12 @@
     "style": "Its the Plane",
     "description": "Here at Gründer Nord we believe that it's not the pilot, it's the plane. We give you the tools you need to dominate the battlefield, no matter how skilled you are..",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordMinSM"],
+                "airframes": ["acMiG21Bis", "acFX27"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordMAAM"],
             "airframes": [],
@@ -329,6 +341,12 @@
     "style": "Controller, Artillery (Suppression)",
     "description": "",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordRKTP"],
+                "airframes": ["acA6E", "acYF17"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordADNM","ordADCM","ordADMPN"],
             "airframes": ["acF16A"],
@@ -379,6 +397,12 @@
     "style": "Defender",
     "description": "",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordGUNPOD"],
+                "airframes": ["acTornado", "acF111C", "acEA3B"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordARM"],
             "airframes": ["acF13A"],

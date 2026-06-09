@@ -101,9 +101,10 @@ export interface Aircraft {
   };
 }
 
-export interface License {
-  id: string;
-  level: number;
+export interface licenses {
+  [licenseId: string]: {
+    rank: number;
+  };
 }
 
 export interface Deployment {

@@ -28,7 +28,7 @@ function CharacterSheet({
   }, [character.metadata.setupComplete]);
 
   return (
-    <div className="w-full min-h-screen space-y-6 px-4 py-2 border-l-4 border-cyan-100 border bg-black/20">
+    <div className="w-full min-h-screen space-y-6 lg:px-4 lg:py-2 lg:border-l-4 border-cyan-100 lg:border bg-black/20">
       <button onClick={onBack} className="border px-2 py-1 border-cyan-100">
         ← Back
       </button>
