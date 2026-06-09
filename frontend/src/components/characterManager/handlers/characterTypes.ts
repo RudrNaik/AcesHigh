@@ -101,6 +101,11 @@ export interface Aircraft {
   };
 }
 
+export interface License {
+  id: string;
+  level: number;
+}
+
 export interface Deployment {
   type: string;
   modifier: string;

@@ -5,6 +5,12 @@
         "style": "Sniper",
         "description": "Something",
         "unlocks": {
+            "rank0": {
+                "ordnance": ["ordSAAM"],
+                "airframes": ["acF4E", "acMiG23MLD"],
+                "modules": [],
+                "upgrades": []
+            },
             "rank1": {
                 "ordnance": ["ordLAGM"],
                 "airframes": ["acF14A"],
@@ -55,6 +61,12 @@
     "style": "Anti-Material Rifle",
     "description": "Something",
     "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acCF105A", "acJ35J"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordSLAAM"],
             "airframes": ["acF8U3"],
@@ -105,6 +117,12 @@
     "style": "Air to Air",
     "description": "Something",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordUGB"],
+                "airframes": ["acMiG27", "acHarrier"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordFSAAM"],
             "airframes": ["acF15A"],
@@ -155,6 +173,12 @@
     "style": "Air to Ground",
     "description": "Something",
     "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acA4E", "acJ8"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordUGBL","ordUGB3"],
             "airframes": ["acFUCK"],
