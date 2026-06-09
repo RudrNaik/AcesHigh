@@ -27,7 +27,7 @@ function CharacterManager() {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="px-10 mx-auto font-mono py-8">
+      <div className="lg:px-10 mx-auto font-mono lg:py-8">
         {!activeCharacter ? (
           <CharacterSelect
             characters={characters}

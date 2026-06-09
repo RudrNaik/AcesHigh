@@ -73,7 +73,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 p-4 space-y-4">
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
         <Section title="Details">
           <div className="grid grid-cols-2 gap-4">
             <TextField
@@ -117,7 +117,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 p-4 space-y-4">
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
         <Section title="Physical Profile">
           <div className="grid grid-cols-2 gap-4">
             <TextField
@@ -147,7 +147,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 p-4 space-y-4">
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
         <Section title="Background">
           <label className="text-cyan-400 text-sm">Biography</label>
           <textarea
@@ -183,7 +183,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className="border-cyan-100 p-4 space-y-2">
+      <div className="border-cyan-100 lg:p-4 space-y-2">
         <Section title="Connections and Relations">
           <textarea
             value={character.dossier.relationships}
@@ -193,7 +193,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 p-4 space-y-4">
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
         <Section title="Misc">
           <textarea
             value={character.dossier.notes}
