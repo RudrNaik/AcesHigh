@@ -7,8 +7,9 @@ export interface CharacterStats {
 
 export interface CharacterStress {
   mental: number;
-  permMentalAdj: number;
   physical: number;
+
+  permMentalAdj: number;
   permPhysicalAdj: number;
 }
 
@@ -79,13 +80,14 @@ export interface Specialization {
   mastery: string;
 }
 
-export interface Advancement{
-  index: number
-  perkConversion: boolean
+export interface Advancement {
+  index: number;
+  perkConversion: boolean;
 }
 
 export interface Aircraft {
   aircraftId: string;
+  ordnanceId: string;
   upgradePackage: string;
   modules: {
     m1: string;
@@ -99,6 +101,9 @@ export interface Aircraft {
     m9: string;
     m10: string;
   };
+  currentCapacity: number;
+  currentSurvivability: number;
+  currentEnergy: number;
 }
 
 export interface licenses {
@@ -121,8 +126,8 @@ export interface Deployment {
 }
 
 export interface Tour {
-  currTour: string
-  acePerk: string
+  currTour: string;
+  acePerk: string;
   dep1: Deployment;
   dep2: Deployment;
   dep3: Deployment;

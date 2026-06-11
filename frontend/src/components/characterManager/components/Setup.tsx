@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
 import ManuCard from "./charManagerCommon/MiniManueverCard";
+import * as charEngine from "../handlers/characterEngine";
 
 type Props = {
   character: CharacterData;
@@ -162,16 +163,18 @@ function Setup({
     local.backgroundPerk !== "";
 
   const completeSetup = () => {
-    if (!canComplete) return;
+  if (!canComplete) return;
 
-    updateCharacter({
-      ...local,
-      metadata: {
-        ...local.metadata,
-        setupComplete: true,
-      },
-    });
+  const updated = {
+    ...charEngine.initializeTempStats(local),
+    metadata: {
+      ...local.metadata,
+      setupComplete: true,
+    },
   };
+
+  updateCharacter(updated);
+};
 
   return (
     <div className="space-y-8 text-cyan-100">

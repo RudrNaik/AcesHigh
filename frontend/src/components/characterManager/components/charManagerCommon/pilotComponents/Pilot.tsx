@@ -1,13 +1,9 @@
-import type { CharacterData } from "../../../handlers/characterTypes";
+import type {
+  CharacterData,
+  CharacterStats,
+} from "../../../handlers/characterTypes";
 import { useEffect, useState } from "react";
 import * as charEngine from "../../../handlers/characterEngine";
-
-type PilotStatsType = {
-  temper: number;
-  nerve: number;
-  reflex: number;
-  gResist: number;
-};
 
 function PilotView({
   character,
@@ -16,24 +12,8 @@ function PilotView({
   character: CharacterData;
   updateCharacter: (updated: CharacterData) => void;
 }) {
-  const [pilotStats, setPilotStats] = useState(
-    charEngine.getPilotStatsModified(character),
-  );
-
-  const [sortieStats, setSortieStats] = useState({
-    temper: pilotStats.temper,
-    nerve: pilotStats.nerve,
-    reflex: pilotStats.reflex,
-    gResist: pilotStats.gResist,
-  });
-
-  useEffect(() => {
-    const updated = charEngine.getPilotStatsModified(character);
-    setPilotStats(updated);
-    setSortieStats(updated);
-  }, [character]);
-
-  const [stress, setStress] = useState({ mental: 0, physical: 0 });
+  const pilotStats = charEngine.getTempPilotStats(character);
+  const maxStats = charEngine.getPilotStatsModified(character);
 
   const statDefs = [
     { key: "temper", label: "Temper" },
@@ -41,6 +21,39 @@ function PilotView({
     { key: "reflex", label: "Reflex" },
     { key: "gResist", label: "G-Resist" },
   ] as const;
+
+  const updateStat = (statKey: keyof CharacterStats, delta: number) => {
+    const current = charEngine.getTempPilotStats(character);
+    const max = charEngine.getPilotStatsModified(character);
+
+    const updatedStats = {
+      ...current,
+      [statKey]: Math.max(0, Math.min(max[statKey], current[statKey] + delta)),
+    };
+
+    updateCharacter(charEngine.setTempPilotStats(character, updatedStats));
+  };
+
+  const stress = charEngine.getTempStress(character);
+
+  useEffect(() => {
+    //console.log("PilotView received character stress:", character.stress);
+  }, [character]);
+
+  const updateStress = (key: "mental" | "physical", delta: number) => {
+    const current = charEngine.getTempStress(character);
+    const max =
+      key === "mental"
+        ? charEngine.getMentalStress(character)
+        : charEngine.getPhysStress(character);
+
+    const updated = {
+      ...current,
+      [key]: Math.max(0, Math.min(max, current[key] + delta)),
+    };
+
+    updateCharacter(charEngine.setTempStress(character, updated));
+  };
 
   const [showLockedTactics, setShowLockedTactics] = useState(true);
   const currentTactics = charEngine.getCurrentTactics(character);
@@ -69,10 +82,9 @@ function PilotView({
           <PilotStat
             key={stat.key}
             label={stat.label}
-            statKey={stat.key}
-            baseStats={pilotStats}
-            sortieStats={sortieStats}
-            setSortieStats={setSortieStats}
+            value={pilotStats[stat.key]}
+            maxValue={maxStats[stat.key]}
+            onChange={(delta) => updateStat(stat.key, delta)}
           />
         ))}
       </div>
@@ -97,12 +109,7 @@ function PilotView({
             </div>
 
             <button
-              onClick={() =>
-                setStress({
-                  mental: stress.mental - 1,
-                  physical: stress.physical,
-                })
-              }
+              onClick={() => updateStress("mental", -1)}
               disabled={stress.mental <= 0}
               className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
             >
@@ -110,12 +117,7 @@ function PilotView({
             </button>
 
             <button
-              onClick={() =>
-                setStress({
-                  mental: stress.mental + 1,
-                  physical: stress.physical,
-                })
-              }
+              onClick={() => updateStress("mental", 1)}
               disabled={stress.mental >= charEngine.getMentalStress(character)}
               className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
             >
@@ -124,8 +126,12 @@ function PilotView({
 
             <button
               onClick={() => {
-                charEngine.mindBreak(character, updateCharacter);
-                setStress({ mental: 0, physical: stress.physical });
+                const afterBreak = charEngine.mindBreak(character);
+                const withStressReset = charEngine.setTempStress(afterBreak, {
+                  ...charEngine.getTempStress(afterBreak),
+                  mental: 0,
+                });
+                updateCharacter(withStressReset);
               }}
               disabled={stress.mental < charEngine.getMentalStress(character)}
               hidden={stress.mental < charEngine.getMentalStress(character) - 1}
@@ -150,12 +156,7 @@ function PilotView({
             </div>
 
             <button
-              onClick={() =>
-                setStress({
-                  mental: stress.mental,
-                  physical: stress.physical - 1,
-                })
-              }
+              onClick={() => updateStress("physical", -1)}
               disabled={stress.physical <= 0}
               className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
             >
@@ -163,12 +164,7 @@ function PilotView({
             </button>
 
             <button
-              onClick={() =>
-                setStress({
-                  mental: stress.mental,
-                  physical: stress.physical + 1,
-                })
-              }
+              onClick={() => updateStress("physical", 1)}
               disabled={stress.physical >= charEngine.getPhysStress(character)}
               className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
             >
@@ -176,8 +172,12 @@ function PilotView({
             </button>
             <button
               onClick={() => {
-                charEngine.Drained(character, updateCharacter);
-                setStress({ mental: stress.mental, physical: 0 });
+                const afterDrained = charEngine.Drained(character);
+                const withStressReset = charEngine.setTempStress(afterDrained, {
+                  ...charEngine.getTempStress(afterDrained),
+                  physical: 0,
+                });
+                updateCharacter(withStressReset);
               }}
               disabled={stress.physical < charEngine.getPhysStress(character)}
               hidden={stress.physical < charEngine.getPhysStress(character) - 1}
@@ -496,44 +496,32 @@ export default PilotView;
 
 function PilotStat({
   label,
-  statKey,
-  baseStats,
-  sortieStats,
-  setSortieStats,
+  value,
+  maxValue,
+  onChange,
 }: {
   label: string;
-  statKey: "temper" | "nerve" | "reflex" | "gResist";
-  baseStats: PilotStatsType;
-  sortieStats: PilotStatsType;
-  setSortieStats: React.Dispatch<React.SetStateAction<PilotStatsType>>;
+  value: number;
+  maxValue: number;
+  onChange: (delta: number) => void;
 }) {
-  const currentValue = sortieStats[statKey];
-  const maxValue = baseStats[statKey];
-
-  const changeStat = (delta: number) => {
-    setSortieStats((prev) => ({
-      ...prev,
-      [statKey]: Math.max(0, Math.min(maxValue, prev[statKey] + delta)),
-    }));
-  };
-
   return (
     <div className="flex gap-2 items-center mt-2">
       <span className="w-24 border border-cyan-100 px-2 py-1">{label}</span>
 
-      <div className="w-8 text-center">{currentValue}</div>
+      <div className="w-8 text-center">{value}</div>
 
       <button
-        onClick={() => changeStat(-1)}
-        disabled={currentValue <= 0}
+        onClick={() => onChange(-1)}
+        disabled={value <= 0}
         className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
       >
         -
       </button>
 
       <button
-        onClick={() => changeStat(1)}
-        disabled={currentValue >= maxValue}
+        onClick={() => onChange(1)}
+        disabled={value >= maxValue}
         className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
       >
         +

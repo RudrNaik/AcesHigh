@@ -53,17 +53,17 @@ export const createDefaultCharacter = (): CharacterData => ({
   },
 
   stats: {
-    temper: 0,
-    nerve: 0,
-    reflex: 0,
-    gResist: 0,
+    temper: 1,
+    nerve: 1,
+    reflex: 1,
+    gResist: 1,
   },
 
   stress: {
     mental: 0,
     permMentalAdj: 0,
     physical: 0,
-    permPhysicalAdj: 0
+    permPhysicalAdj: 0,
   },
 
   quirks: {
@@ -81,12 +81,13 @@ export const createDefaultCharacter = (): CharacterData => ({
     specId: "",
     tactics: [],
     advancements: [],
-    mastery: ""
+    mastery: "",
   },
 
   aircraft: {
     aircraftId: "",
     upgradePackage: "",
+    ordnanceId: "",
     modules: {
       m1: "",
       m2: "",
@@ -97,8 +98,11 @@ export const createDefaultCharacter = (): CharacterData => ({
       m7: "",
       m8: "",
       m9: "",
-      m10:""
+      m10: "",
     },
+    currentCapacity: 0,
+    currentSurvivability: 0,
+    currentEnergy: 0,
   },
 
   backgroundPerk: "",
@@ -108,5 +112,5 @@ export const createDefaultCharacter = (): CharacterData => ({
   licenses: [],
   loot: [],
 
-  tours: []
+  tours: [],
 });

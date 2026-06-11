@@ -1,4 +1,4 @@
-import type { CharacterData } from "./characterTypes";
+import type { CharacterData, CharacterStats } from "./characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
 import staticMods from "../../../data/StaticMods.json";
 import perks from "../../../data/PerkList.json";
@@ -37,7 +37,9 @@ export function getStaticModifiersFromSpec(character: CharacterData) {
   };
 }
 
-export function getPilotStatsModified(character: CharacterData) {
+export function getPilotStatsModified(
+  character: CharacterData,
+): CharacterStats {
   let temp = character.metadata.startingPilotStats.temper;
   let nerv = character.metadata.startingPilotStats.nerve;
   let rflx = character.metadata.startingPilotStats.reflex;
@@ -48,15 +50,101 @@ export function getPilotStatsModified(character: CharacterData) {
   let mindBreak = character.stress.permMentalAdj;
   let succedDry = character.stress.permPhysicalAdj;
 
-  console.log(mindBreak);
-  console.log(succedDry);
-
   temp += (modifiers?.temper || 0) - mindBreak;
   nerv += (modifiers?.nerve || 0) - mindBreak;
   rflx += (modifiers?.reflex || 0) - succedDry;
   gres += (modifiers?.gResist || 0) - succedDry;
 
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
+}
+
+export function getTempPilotStats(character: CharacterData): CharacterStats {
+  let temp = character.stats.temper;
+  let nerv = character.stats.nerve;
+  let rflx = character.stats.reflex;
+  let gres = character.stats.gResist;
+  return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
+}
+
+export function getTempStress(character: CharacterData) {
+  return {
+    mental: character.stress.mental ?? 0,
+    physical: character.stress.physical ?? 0,
+  };
+}
+
+export function setTempPilotStats(
+  character: CharacterData,
+  pilotStats: CharacterStats,
+): CharacterData {
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      temper: pilotStats.temper,
+      nerve: pilotStats.nerve,
+      reflex: pilotStats.reflex,
+      gResist: pilotStats.gResist,
+    },
+  };
+}
+
+export function setTempStress(
+  character: CharacterData,
+  stress: { mental: number; physical: number },
+): CharacterData {
+  return {
+    ...character,
+    stress: {
+      ...character.stress,
+      mental: stress.mental,
+      physical: stress.physical,
+    },
+  };
+}
+
+export function initializeTempStats(character: CharacterData): CharacterData {
+  const maxStats = getPilotStatsModified(character);
+
+  return {
+    ...character,
+    stats: {
+      temper: maxStats.temper,
+      nerve: maxStats.nerve,
+      reflex: maxStats.reflex,
+      gResist: maxStats.gResist,
+    },
+  };
+}
+
+export function spendPilotStat(
+  character: CharacterData,
+  stat: keyof CharacterStats,
+  amount = 1,
+): CharacterData {
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      [stat]: Math.max(0, character.stats[stat] - amount),
+    },
+  };
+}
+
+export function recoverPilotStat(
+  character: CharacterData,
+  stat: keyof CharacterStats,
+  amount = 1,
+): CharacterData {
+  const maxStats = getPilotStatsModified(character);
+
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      [stat]: Math.min(maxStats[stat], character.stats[stat] + amount),
+    },
+  };
 }
 
 export function getBackGroundPerk(character: CharacterData) {
@@ -96,10 +184,6 @@ export function getDowntimes(character: CharacterData) {
   const downtime1 = downtime.find((dt) => dt.id === spec.preFlights[0]);
   const downtime2 = downtime.find((dt) => dt.id === spec.preFlights[1]);
   const downtime3 = downtime.find((dt) => dt.id === spec.preFlights[2]);
-
-  console.log(downtime1);
-  console.log(downtime2);
-  console.log(downtime3);
 
   if (!downtime1 || !downtime2 || !downtime3) {
     throw new Error("downtimes not found");
@@ -315,13 +399,15 @@ export function mindBreak(
   updateCharacter?: (c: CharacterData) => void,
 ) {
   const newPerm = (character.stress?.permMentalAdj ?? 0) + 1;
-  const updated: CharacterData = {
+  let updated: CharacterData = {
     ...character,
     stress: {
       ...character.stress,
       permMentalAdj: newPerm,
     },
   };
+
+  updated = reconcileTempStats(updated);
 
   if (updateCharacter) updateCharacter(updated);
 
@@ -334,7 +420,7 @@ export function Drained(
   updateCharacter?: (c: CharacterData) => void,
 ) {
   const newPerm = (character.stress?.permPhysicalAdj ?? 0) + 1;
-  const updated: CharacterData = {
+  let updated: CharacterData = {
     ...character,
     stress: {
       ...character.stress,
@@ -342,7 +428,23 @@ export function Drained(
     },
   };
 
+  updated = reconcileTempStats(updated);
+
   if (updateCharacter) updateCharacter(updated);
 
   return updated;
+}
+
+export function reconcileTempStats(character: CharacterData): CharacterData {
+  const maxStats = getPilotStatsModified(character);
+
+  return {
+    ...character,
+    stats: {
+      temper: Math.min(character.stats.temper, maxStats.temper),
+      nerve: Math.min(character.stats.nerve, maxStats.nerve),
+      reflex: Math.min(character.stats.reflex, maxStats.reflex),
+      gResist: Math.min(character.stats.gResist, maxStats.gResist),
+    },
+  };
 }
