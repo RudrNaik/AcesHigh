@@ -1,6 +1,7 @@
 import type { CharacterData } from "../../../handlers/characterTypes";
 import * as planeEngine from "../../../handlers/planeEngine";
 import AircraftCard from "./MiniAircraftCard";
+import OrdnanceCard from "./MiniOrdnanceCard";
 
 function AircraftView({
   character,
@@ -47,6 +48,20 @@ function AircraftView({
           onRecoverEnergy: () =>
             updateCharacter(planeEngine.recoverEnergy(character)),
         }}
+      />
+
+      <h2 className="text-cyan-300 font-bold">Ordnance</h2>
+
+      <OrdnanceCard
+        id={planeEngine.getPlaneOrdnance(character).id}
+        name={planeEngine.getPlaneOrdnance(character).name}
+        domain={planeEngine.getPlaneOrdnance(character).domain}
+        desc={planeEngine.getPlaneOrdnance(character).desc}
+        tags={planeEngine.getPlaneOrdnance(character).tags}
+        ordnanceOptions={planeEngine.getOrdnanceList()}
+        onSelectOrdnance={(id) =>
+          updateCharacter(planeEngine.setOrdnance(character, id))
+        }
       />
     </div>
   );

@@ -1,6 +1,12 @@
 import type { CharacterData } from "./characterTypes";
+import type {
+  //AircraftSelectOption,
+  AircraftCardProps,
+} from "../components/charManagerCommon/planeComponents/MiniAircraftCard";
+import type { OrdnanceSelectOption } from "../components/charManagerCommon/planeComponents/MiniOrdnanceCard";
 import aircraft from "../../../data/AircraftList.json";
 import licenses from "../../../data/Licenses.json";
+import ordnance from "../../../data/OrdnanceList.json";
 
 export type AirplaneStats = {
   A2A: string | number;
@@ -11,31 +17,49 @@ export type AirplaneStats = {
   CAP: string | number;
 };
 
-export type AircraftCardProps = {
-  id: string;
-  name: string;
-  type: string;
-  family: string;
-  gen: string | number;
-  tier: string | number;
-  stats?: AirplaneStats;
-  tags?: string | string[];
-  moduleSlots?: string | number;
-  desc?: string;
-  intrinsic?: string;
-};
+export type OrdnanceDeets={
+  id: string,
+  name: string,
+  domain: string,
+  desc: string,
+  tags: string[]
+}
 
 export type LicenseRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 export type RankKey = `rank${LicenseRank}`;
 
 function getAircraftData(character: CharacterData) {
-  return aircraft.find(
-    (plane) => plane.id === character.aircraft.aircraftId,
-  );
+  return aircraft.find((plane) => plane.id === character.aircraft.aircraftId);
 }
 
 export function getAircraftList() {
-  return aircraft;
+  return aircraft.filter(
+    (p) =>
+      p.id !== "acExample" &&
+      p.gen !== "n/a" &&
+      p.tier !== "n/a" &&
+      p.tier !== "n/a",
+  );
+}
+
+export function getOrdnanceList(): OrdnanceSelectOption[] {
+  return ordnance.map((o) => ({
+    id: o.id,
+    name: o.name,
+    domain: o.domain,
+  }));
+}
+
+export function getPlaneOrdnance(character: CharacterData): OrdnanceDeets {
+  let ord = ordnance.find((ord)=> ord.id === character.aircraft.ordnanceId)
+  
+  return {
+    id : ord?.id ?? "ordERROR",
+    name : ord?.name ?? "None",
+    domain: ord?.domain ?? "None",
+    desc: ord?.desc ?? "None",
+    tags: ord?.tags ?? ["error"]
+  }
 }
 
 export function getPlaneId(character: CharacterData) {
@@ -67,17 +91,12 @@ export function getAircraftState(character: CharacterData) {
   const stats = getPlaneStats(character);
 
   return {
-    capacity:
-      character.aircraft.currentCapacity ??
-      Number(stats.CAP),
+    capacity: character.aircraft.currentCapacity ?? Number(stats.CAP),
 
     survivability:
-      character.aircraft.currentSurvivability ??
-      Number(stats.SURV),
+      character.aircraft.currentSurvivability ?? Number(stats.SURV),
 
-    energy:
-      character.aircraft.currentEnergy ??
-      (Number(stats.SPEED) + 1),
+    energy: character.aircraft.currentEnergy ?? Number(stats.SPEED) + 1,
   };
 }
 
@@ -93,7 +112,7 @@ export function getAircraftCardStats(character: CharacterData) {
 
     SURV: `${current.survivability}/${base.SURV}`,
     CAP: `${current.capacity}/${base.CAP}`,
-    ENGY: `${current.energy}/${Number(base.SPEED) + 1}`,
+    ENRG: `${current.energy}/${Number(base.SPEED) + 1}`,
   };
 }
 
@@ -127,17 +146,13 @@ export function initializeAircraftState(
     aircraft: {
       ...character.aircraft,
 
-      currentCapacity:
-        character.aircraft.currentCapacity ??
-        Number(stats.CAP),
+      currentCapacity: character.aircraft.currentCapacity ?? Number(stats.CAP),
 
       currentSurvivability:
-        character.aircraft.currentSurvivability ??
-        Number(stats.SURV),
+        character.aircraft.currentSurvivability ?? Number(stats.SURV),
 
       currentEnergy:
-        character.aircraft.currentEnergy ??
-        (Number(stats.SPEED) + 1),
+        character.aircraft.currentEnergy ?? Number(stats.SPEED) + 1,
     },
   };
 }
@@ -150,10 +165,7 @@ export function spendCapacity(
     ...character,
     aircraft: {
       ...character.aircraft,
-      currentCapacity: Math.max(
-        0,
-        character.aircraft.currentCapacity - amount,
-      ),
+      currentCapacity: Math.max(0, character.aircraft.currentCapacity - amount),
     },
   };
 }
@@ -218,10 +230,7 @@ export function spendEnergy(
     ...character,
     aircraft: {
       ...character.aircraft,
-      currentEnergy: Math.max(
-        0,
-        character.aircraft.currentEnergy - amount,
-      ),
+      currentEnergy: Math.max(0, character.aircraft.currentEnergy - amount),
     },
   };
 }
@@ -230,17 +239,13 @@ export function recoverEnergy(
   character: CharacterData,
   amount = 1,
 ): CharacterData {
-  const max =
-    Number(getPlaneStats(character).SPEED) + 1;
+  const max = Number(getPlaneStats(character).SPEED) + 1;
 
   return {
     ...character,
     aircraft: {
       ...character.aircraft,
-      currentEnergy: Math.min(
-        max,
-        character.aircraft.currentEnergy + amount,
-      ),
+      currentEnergy: Math.min(max, character.aircraft.currentEnergy + amount),
     },
   };
 }
@@ -268,20 +273,37 @@ export function setAircraft(
 
       currentCapacity: Number(plane.stats.CAP),
       currentSurvivability: Number(plane.stats.SURV),
-      currentEnergy:
-        Number(plane.stats.SPEED) + 1,
+      currentEnergy: Number(plane.stats.SPEED) + 1,
     },
   };
 }
 
-export function getLicenseUnlocks(
-  licenseId: string,
-  rank: number,
-) {
-  const license = licenses.find(
-    (l) => l.id === licenseId,
-  );
+export function setOrdnance(
+  character: CharacterData,
+  id: string,
+): CharacterData {
+  if (!id) {
+    id = "ordNone";
+  }
 
+  const ord = ordnance.find((ord) => ord.id === id);
+
+  if (!ord) {
+    return character;
+  }
+
+  return {
+    ...character,
+    aircraft: {
+      ...character.aircraft,
+
+      ordnanceId: id,
+    },
+  };
+}
+
+export function getLicenseProgressionUnlocks(licenseId: string, rank: number) {
+  const license = licenses.find((l) => l.id === licenseId);
   if (!license) return null;
 
   const result = {
@@ -293,7 +315,6 @@ export function getLicenseUnlocks(
 
   const applyTier = (key: RankKey) => {
     const tier = license.unlocks[key];
-
     if (!tier) return;
 
     result.ordnance.push(...tier.ordnance);
@@ -301,8 +322,6 @@ export function getLicenseUnlocks(
     result.modules.push(...tier.modules);
     result.upgrades.push(...tier.upgrades);
   };
-
-  applyTier("rank0");
 
   for (let r = 1; r <= rank; r++) {
     applyTier(`rank${r}` as RankKey);

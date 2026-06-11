@@ -109,7 +109,9 @@ export const createDefaultCharacter = (): CharacterData => ({
   masteredAircraft: [],
   aceperks: [],
   baseperks: [],
-  licenses: [],
+  licenses: {
+    
+  },
   loot: [],
 
   tours: [],

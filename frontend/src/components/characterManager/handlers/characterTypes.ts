@@ -106,11 +106,7 @@ export interface Aircraft {
   currentEnergy: number;
 }
 
-export interface licenses {
-  [licenseId: string]: {
-    rank: number;
-  };
-}
+export type Licenses = Record<string, number>;
 
 export interface Deployment {
   type: string;
@@ -157,7 +153,7 @@ export interface CharacterData {
 
   quirks: CharacterQuirks;
 
-  licenses: string[];
+  licenses: Licenses;
 
   loot: string[];
 

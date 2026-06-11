@@ -51,7 +51,7 @@ export interface AircraftCardProps {
 function AircraftCard(aircraft: AircraftCardProps) {
   const stats = Object.entries(aircraft?.stats ?? {}) as [string, ReactNode][];
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  const [showDropdown, setShowDropdown] = useState(true);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const tags = Array.isArray(aircraft.tags)
     ? aircraft.tags
@@ -165,7 +165,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             onIncrement={aircraft.aircraftState.onRecoverCap}
           />
           <AircraftStatControl
-            label="ENGY"
+            label="ENRG"
             value={aircraft.aircraftState.energy}
             maxValue={aircraft.aircraftState.maxEnergy}
             onDecrement={aircraft.aircraftState.onSpendEnergy}
