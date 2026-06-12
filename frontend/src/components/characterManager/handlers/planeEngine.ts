@@ -8,6 +8,8 @@ import aircraft from "../../../data/AircraftList.json";
 import licenses from "../../../data/Licenses.json";
 import ordnance from "../../../data/OrdnanceList.json";
 import modules from "../../../data/ModList.json";
+import masteries from "../../../data/AircraftFamilies.json";
+import techniques from "../../../data/TechniqueList.json";
 
 export type AirplaneStats = {
   A2A: string | number;
@@ -43,6 +45,14 @@ export type ModuleDeets = {
   checkForChars: string | null;
   charChecked: string | null;
 };
+
+export type MasteryDeets = {
+  tech1: string;
+  tech2: string;
+  tech3: string;
+};
+
+export type TechniqueDeets = {};
 
 type AppliedModEffects = {
   acTags: string[];
@@ -253,6 +263,33 @@ export function getAircraftCardStats(character: CharacterData) {
   };
 }
 
+export function getAircraftMasteries(character: CharacterData): MasteryDeets {
+  let family =
+    aircraft.find((p) => p.id === character.aircraft.aircraftId)?.family ||
+    "none";
+  if (!character.masteredAircraft.find((fam) => fam == family)) {
+    return {
+      tech1: "none",
+      tech2: "none",
+      tech3: "none",
+    };
+  }
+  let techs = masteries.find((fam) => fam.id === family);
+  return {
+    tech1: techs?.tech1 || "none",
+    tech2: techs?.tech2 || "none",
+    tech3: techs?.tech3 || "none",
+  };
+}
+
+export function getTechnique(id: string) {
+  if (id === "none") {
+    return;
+  }
+  let technique = techniques.find((tech) => tech.id === id);
+  return technique;
+}
+
 export function getAirplaneStatsForCard(
   character: CharacterData,
 ): AircraftCardProps {
@@ -414,7 +451,7 @@ export function setAircraft(
       modules: trimmedModules,
       currentCapacity: Number(plane.stats.CAP),
       currentSurvivability: Number(plane.stats.SURV),
-      currentEnergy: Number(plane.stats.SPEED) + 1,
+      currentEnergy: Number(plane.stats.SPEED) + 5,
     },
   };
 }

@@ -709,7 +709,7 @@
     "TypeMod": null,
     "AddManuID": null,
     "moduleTags": null,
-    "mods": null,
+    "mods": {"A2G": 1},
     "AddTags": [
       "acVTOL"
     ],

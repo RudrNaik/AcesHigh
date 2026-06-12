@@ -1,16 +1,20 @@
 const tabs = ["Dossier", "Sortie", "Tour", "Licenses", "Logs"];
 const setupTabs = ["Setup", "Dossier"];
+const gameplayTabs = ["Pilot", "Plane"];
 
 function CharacterTabs({
   activeTab,
   setActiveTab,
   setupCompleted,
+  gameplay = false,
 }: {
   activeTab: string;
   setActiveTab: (t: string) => void;
   setupCompleted: boolean;
+  gameplay: boolean;
 }) {
-  const visibleTabs = setupCompleted ? tabs : setupTabs;
+  let visibleTabs = setupCompleted ? tabs : setupTabs;
+  visibleTabs = gameplay ? gameplayTabs : tabs;
 
   return (
     <div className="flex gap-2 border-b pb-2">

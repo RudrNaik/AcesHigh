@@ -177,9 +177,9 @@ function Setup({
 };
 
   return (
-    <div className="space-y-8 text-cyan-100">
+    <div className="space-y-8 text-cyan-100 py-1">
       {/*Identity*/}
-      <section className="border lg:p-4 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">Identity</h2>
 
         <div className="grid gap-2">
@@ -221,7 +221,7 @@ function Setup({
       </section>
 
       {/* metadata */}
-      <section className="border lg:p-4 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">Generation</h2>
         <div className="flex flex-col gap-2">
           <label className="text-cyan-100 text-sm">Generation</label>
@@ -243,10 +243,10 @@ function Setup({
       </section>
 
       {/* Quirks */}
-      <section className="border lg:p-4 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">Quirks</h2>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="flex flex-col gap-4">
           <div className="border p-2 space-y-2 flex flex-col">
             <h3 className="">Quirk 1</h3>
 
@@ -304,7 +304,7 @@ function Setup({
       </section>
 
       {/*stats*/}
-      <section className="border lg:p-4 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">
           Pilot Stats (Total {totalStats}/8)
         </h2>
@@ -340,7 +340,7 @@ function Setup({
       </section>
 
       {/*Specs*/}
-      <section className="border lg:p-4 space-y-4">
+      <section className="border lg:p-4 p-2 space-y-4">
         <h2 className="text-cyan-100 font-bold">Specialization</h2>
 
         <select
@@ -415,7 +415,7 @@ function Setup({
       </section>
 
       {/* backghround perk*/}
-      <section className="border lg:p-4 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">Background Perk</h2>
 
         <select
@@ -444,7 +444,7 @@ function Setup({
       </section>
 
       {/* submit*/}
-      <section className="border lg:p-4 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">Final Check</h2>
 
         <div className={canComplete ? "text-green-400" : "text-red-400"}>

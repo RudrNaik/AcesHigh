@@ -37,7 +37,7 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
         bg-black/20
         border
         border-cyan-100
-        p-6 border-l-4
+        p-4 border-l-4
         font-mono
       "
     >

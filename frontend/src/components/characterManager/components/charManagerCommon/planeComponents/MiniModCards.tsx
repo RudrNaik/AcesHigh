@@ -36,7 +36,7 @@ function ModuleSlot({
   ];
 
   return (
-    <div className="border border-cyan-100/40 border-l-4 border-l-cyan-100 p-4 font-mono space-y-3">
+    <div className="border border-cyan-100 border-l-4 border-l-cyan-100 p-4 font-mono space-y-3">
       {/* Slot header + dropdown */}
       <div className="flex justify-between items-center">
         <select

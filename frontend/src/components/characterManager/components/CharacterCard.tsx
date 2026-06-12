@@ -24,12 +24,13 @@ function CharacterCard({ character, onSelect, onDelete }: Props) {
     >
       <div onClick={onSelect} className="cursor-pointer">
         <h3 className="text-xl font-bold">{character?.dossier.callsign}</h3>
-
-        <p className="text-xs">{character.id}</p>
-
         <p>
           {character?.dossier.firstName} {character?.dossier.lastName}
         </p>
+        <p>
+          {character?.aircraft.aircraftId}
+        </p>
+        <p className="text-xs">{character.id}</p>
       </div>
 
       <button

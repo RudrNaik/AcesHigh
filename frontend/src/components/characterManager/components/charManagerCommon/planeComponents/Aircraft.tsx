@@ -3,6 +3,7 @@ import * as planeEngine from "../../../handlers/planeEngine";
 import AircraftCard from "./MiniAircraftCard";
 import OrdnanceCard from "./MiniOrdnanceCard";
 import ModuleManager from "./MiniModCards"
+import Masteries from "./MasteryCards"
 
 function AircraftView({
   character,
@@ -63,6 +64,10 @@ function AircraftView({
           updateCharacter(planeEngine.setOrdnance(character, id))
         }
       />
+
+      <h2 className="text-cyan-300 font-bold">Masteries</h2>
+
+      <Masteries character={character}/>
 
       <h2 className="text-cyan-300 font-bold">Modules</h2>
 
