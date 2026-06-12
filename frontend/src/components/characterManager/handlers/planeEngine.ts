@@ -132,7 +132,9 @@ export function getOrdnanceList(): OrdnanceSelectOption[] {
   }));
 }
 
-export function getUnlockedOrdnance(character: CharacterData): OrdnanceSelectOption[] {
+export function getUnlockedOrdnance(
+  character: CharacterData,
+): OrdnanceSelectOption[] {
   const { ordnance: ordnanceIds } = getAllUnlocks(character);
   return ordnance
     .filter((o) => ordnanceIds.includes(o.id))
@@ -152,14 +154,14 @@ export function getModList() {
     TypeMod: m.TypeMod,
     AddManuID: m.AddManuID,
     moduleTags: m.moduleTags,
-    mods: m.mods,
+    mods: m.mods as Record<string, number> | null,
     AddTags: m.AddTags,
     checkForChars: m.checkForChars,
     charChecked: m.charChecked,
   }));
 }
 
-export function getUnlockedModules(character: CharacterData){
+export function getUnlockedModules(character: CharacterData) {
   const { modules: moduleIds } = getAllUnlocks(character);
   return modules
     .filter((m) => moduleIds.includes(m.id))
@@ -171,7 +173,7 @@ export function getUnlockedModules(character: CharacterData){
       TypeMod: m.TypeMod,
       AddManuID: m.AddManuID,
       moduleTags: m.moduleTags,
-      mods: m.mods,
+      mods: m.mods as Record<string, number> | null,
       AddTags: m.AddTags,
       checkForChars: m.checkForChars,
       charChecked: m.charChecked,
@@ -197,6 +199,12 @@ export function getPlaneId(character: CharacterData) {
 
 export function getPlaneMods(character: CharacterData) {
   return character.aircraft.modules;
+}
+
+export function getModuleSlotCount(character: CharacterData): number {
+  const plane = aircraft.find((p) => p.id === character.aircraft.aircraftId);
+  if (!plane) return 0;
+  return Number(plane.moduleSlots) || 0;
 }
 
 export function getUpPackage(character: CharacterData) {
@@ -225,7 +233,7 @@ export function getAircraftState(character: CharacterData) {
     survivability:
       character.aircraft.currentSurvivability ?? Number(stats.SURV),
 
-    energy: character.aircraft.currentEnergy ?? Number(stats.SPEED) + 1,
+    energy: character.aircraft.currentEnergy ?? Number(stats.SPEED) + 5,
   };
 }
 
@@ -263,38 +271,6 @@ export function getAirplaneStatsForCard(
     desc: plane?.desc ?? "",
     intrinsic: plane?.intrinsic ?? "",
   };
-}
-
-function applyModules(character: CharacterData): AppliedModEffects {
-  const effects: AppliedModEffects = {
-    acTags: [],
-    ordTags: [],
-    statDeltas: {},
-  };
-
-  const equippedIds: string[] = character.aircraft.modules ?? [];
-
-  for (const modId of equippedIds) {
-    const mod = modules.find((m) => m.id === modId);
-    if (!mod) continue;
-
-    // Split AddTags by prefix
-    for (const tag of mod.AddTags ?? []) {
-      if (tag.startsWith("ord")) {
-        effects.ordTags.push(tag);
-      } else if (tag.startsWith("ac")) {
-        effects.acTags.push(tag);
-      }
-      // unknown prefix: ignore for now
-    }
-
-    // Accumulate stat deltas
-    for (const [stat, delta] of Object.entries(mod.mods ?? {})) {
-      effects.statDeltas[stat] = (effects.statDeltas[stat] ?? 0) + delta;
-    }
-  }
-
-  return effects;
 }
 
 export function initializeAircraftState(
@@ -415,30 +391,27 @@ export function setAircraft(
   character: CharacterData,
   id: string,
 ): CharacterData {
-  if (!id) {
-    id = "acNone";
-  }
+  if (!id) id = "acF4E";
 
   const plane = aircraft.find((p) => p.id === id);
-  let currPlaneBaseOrd = aircraft.find((p) => p.id === character.aircraft.aircraftId)?.baseOrdID || "";
-  let currOrd = character.aircraft.ordnanceId || "ordNone"
+  if (!plane) return character;
 
-  if (!plane) {
-    return character;
-  }
+  const newTier = Number(plane.tier) || 0;
+  const newBase = Number(plane.moduleSlots) || 0;
+  const newSlotCount = Math.max(0, newBase - newTier);
 
-  if((character.aircraft.ordnanceId !== plane.baseOrdID) && (character.aircraft.ordnanceId === currPlaneBaseOrd)){
-    currOrd = "ordNone"
-  }
+  // Trim modules from the end if the new plane has fewer slots
+  const trimmedModules = (character.aircraft.modules ?? []).slice(
+    0,
+    newSlotCount,
+  );
 
   return {
     ...character,
     aircraft: {
       ...character.aircraft,
-
       aircraftId: id,
-      ordnanceId: currOrd,
-
+      modules: trimmedModules,
       currentCapacity: Number(plane.stats.CAP),
       currentSurvivability: Number(plane.stats.SURV),
       currentEnergy: Number(plane.stats.SPEED) + 1,
@@ -468,6 +441,72 @@ export function setOrdnance(
       ordnanceId: id,
     },
   };
+}
+
+export function setModule(
+  character: CharacterData,
+  modId: string,
+): CharacterData {
+  const current = character.aircraft.modules ?? [];
+  const slotCount = getModuleSlotCount(character);
+
+  // No duplicates
+  if (current.includes(modId)) return character;
+  // No overflow
+  if (current.length >= slotCount) return character;
+
+  return {
+    ...character,
+    aircraft: {
+      ...character.aircraft,
+      modules: [...current, modId],
+    },
+  };
+}
+
+export function removeModule(
+  character: CharacterData,
+  modId: string,
+): CharacterData {
+  return {
+    ...character,
+    aircraft: {
+      ...character.aircraft,
+      modules: (character.aircraft.modules ?? []).filter((id) => id !== modId),
+    },
+  };
+}
+
+function applyModules(character: CharacterData): AppliedModEffects {
+  const effects: AppliedModEffects = {
+    acTags: [],
+    ordTags: [],
+    statDeltas: {},
+  };
+
+  const equippedIds: string[] = character.aircraft.modules ?? [];
+
+  for (const modId of equippedIds) {
+    const mod = modules.find((m) => m.id === modId);
+    if (!mod) continue;
+
+    // Split AddTags by prefix
+    for (const tag of mod.AddTags ?? []) {
+      if (tag.startsWith("ord")) {
+        effects.ordTags.push(tag);
+      } else if (tag.startsWith("ac")) {
+        effects.acTags.push(tag);
+      }
+      // unknown prefix: ignore for now
+    }
+
+    // Accumulate stat deltas
+    for (const [stat, delta] of Object.entries(mod.mods ?? {})) {
+      effects.statDeltas[stat] = (effects.statDeltas[stat] ?? 0) + delta;
+    }
+  }
+
+  return effects;
 }
 
 export function getLicenseProgressionUnlocks(licenseId: string, rank: number) {
@@ -511,7 +550,7 @@ export function getAllUnlocks(character: CharacterData) {
     const unlocks = getLicenseProgressionUnlocks(licenseId, rank);
     if (!unlocks) continue;
 
-    let baseOrd = getAircraftData(character)?.baseOrdID || ""
+    let baseOrd = getAircraftData(character)?.baseOrdID || "";
     result.ordnance.push(...unlocks.ordnance, baseOrd, "ordNone");
     result.airframes.push(...unlocks.airframes);
     result.modules.push(...unlocks.modules);

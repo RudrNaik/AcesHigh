@@ -2,7 +2,7 @@ import type { CharacterData } from "../../../handlers/characterTypes";
 import * as planeEngine from "../../../handlers/planeEngine";
 import AircraftCard from "./MiniAircraftCard";
 import OrdnanceCard from "./MiniOrdnanceCard";
-//import ModCards from "./MiniModCards"
+import ModuleManager from "./MiniModCards"
 
 function AircraftView({
   character,
@@ -63,6 +63,10 @@ function AircraftView({
           updateCharacter(planeEngine.setOrdnance(character, id))
         }
       />
+
+      <h2 className="text-cyan-300 font-bold">Modules</h2>
+
+      <ModuleManager character={character} updateCharacter={updateCharacter} />
 
       
     </div>
