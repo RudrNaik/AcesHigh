@@ -1,29 +1,29 @@
 import { useState } from "react";
 
-export interface EntitySelectOption {
+export interface SelectOption {
   id: string;
   name: string;
   subtitle?: string;
 }
 
-interface EntitySelectorProps {
+interface SelectorProps {
   selectedId: string;
   selectedName: string;
 
-  options: EntitySelectOption[];
+  options: SelectOption[];
 
   onSelect: (id: string) => void;
 
   placeholder?: string;
 }
 
-function EntitySelector({
+function Selector({
   selectedId,
   selectedName,
   options,
   onSelect,
   placeholder = "Select Item",
-}: EntitySelectorProps) {
+}: SelectorProps) {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
@@ -76,9 +76,7 @@ function EntitySelector({
               <span>{option.name}</span>
 
               {option.subtitle && (
-                <span className="text-xs text-cyan-600">
-                  {option.subtitle}
-                </span>
+                <span className="text-xs text-cyan-600">{option.subtitle}</span>
               )}
             </button>
           ))}
@@ -88,4 +86,4 @@ function EntitySelector({
   );
 }
 
-export default EntitySelector;
+export default Selector;

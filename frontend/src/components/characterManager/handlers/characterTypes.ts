@@ -89,18 +89,7 @@ export interface Aircraft {
   aircraftId: string;
   ordnanceId: string;
   upgradePackage: string;
-  modules: {
-    m1: string;
-    m2: string;
-    m3: string;
-    m4: string;
-    m5: string;
-    m6: string;
-    m7: string;
-    m8: string;
-    m9: string;
-    m10: string;
-  };
+  modules: string[]
   currentCapacity: number;
   currentSurvivability: number;
   currentEnergy: number;

@@ -109,7 +109,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ordMAAM",
     "desc": "n/a",
     "tags": [
       "acSWEEP",

@@ -7,6 +7,7 @@ import type { OrdnanceSelectOption } from "../components/charManagerCommon/plane
 import aircraft from "../../../data/AircraftList.json";
 import licenses from "../../../data/Licenses.json";
 import ordnance from "../../../data/OrdnanceList.json";
+import modules from "../../../data/ModList.json";
 
 export type AirplaneStats = {
   A2A: string | number;
@@ -17,19 +18,89 @@ export type AirplaneStats = {
   CAP: string | number;
 };
 
-export type OrdnanceDeets={
-  id: string,
-  name: string,
-  domain: string,
-  desc: string,
-  tags: string[]
-}
+export type OrdnanceDeets = {
+  id: string;
+  name: string;
+  domain: string;
+  desc: string;
+  tags: string[];
+};
+
+export type ModuleDeets = {
+  id: string;
+  name: string;
+  desc: string;
+
+  IntrinsicMod: string | null;
+  TypeMod: string | null;
+  AddManuID: string | null;
+
+  moduleTags: string[] | null;
+  AddTags: string[] | null;
+
+  mods: Record<string, number> | null;
+
+  checkForChars: string | null;
+  charChecked: string | null;
+};
+
+type AppliedModEffects = {
+  acTags: string[];
+  ordTags: string[];
+  statDeltas: Record<string, number>;
+};
 
 export type LicenseRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 export type RankKey = `rank${LicenseRank}`;
 
 function getAircraftData(character: CharacterData) {
-  return aircraft.find((plane) => plane.id === character.aircraft.aircraftId);
+  const plane = aircraft.find((p) => p.id === character.aircraft.aircraftId);
+  if (!plane) return plane;
+
+  const { acTags, statDeltas } = applyModules(character);
+
+  const baseTags: string[] =
+    typeof plane.tags === "string"
+      ? plane.tags
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean)
+      : [...(plane.tags as string[])];
+
+  const mergedTags = [...new Set([...baseTags, ...acTags])];
+
+  const statKeyMap: Record<string, keyof AirplaneStats> = {
+    Manu: "MANU",
+    manu: "MANU",
+    MANU: "MANU",
+    Cap: "CAP",
+    cap: "CAP",
+    CAP: "CAP",
+    A2a: "A2A",
+    a2a: "A2A",
+    A2A: "A2A",
+    A2g: "A2G",
+    a2g: "A2G",
+    A2G: "A2G",
+    Speed: "SPEED",
+    speed: "SPEED",
+    SPEED: "SPEED",
+    Surv: "SURV",
+    surv: "SURV",
+    SURV: "SURV",
+  };
+
+  const mergedStats = { ...plane.stats };
+  for (const [stat, delta] of Object.entries(statDeltas)) {
+    const normalizedKey = statKeyMap[stat];
+    if (normalizedKey && normalizedKey in mergedStats) {
+      mergedStats[normalizedKey] = String(
+        Number(mergedStats[normalizedKey]) + delta,
+      );
+    }
+  }
+
+  return { ...plane, tags: mergedTags, stats: mergedStats };
 }
 
 export function getAircraftList() {
@@ -42,6 +113,17 @@ export function getAircraftList() {
   );
 }
 
+export function getUnlockedAircraft(character: CharacterData) {
+  const { airframes } = getAllUnlocks(character);
+  return aircraft.filter(
+    (p) =>
+      airframes.includes(p.id) &&
+      p.id !== "acExample" &&
+      p.gen !== "n/a" &&
+      p.tier !== "n/a",
+  );
+}
+
 export function getOrdnanceList(): OrdnanceSelectOption[] {
   return ordnance.map((o) => ({
     id: o.id,
@@ -50,16 +132,63 @@ export function getOrdnanceList(): OrdnanceSelectOption[] {
   }));
 }
 
+export function getUnlockedOrdnance(character: CharacterData): OrdnanceSelectOption[] {
+  const { ordnance: ordnanceIds } = getAllUnlocks(character);
+  return ordnance
+    .filter((o) => ordnanceIds.includes(o.id))
+    .map((o) => ({
+      id: o.id,
+      name: o.name,
+      domain: o.domain,
+    }));
+}
+
+export function getModList() {
+  return modules.map((m) => ({
+    id: m.id,
+    name: m.name,
+    desc: m.desc,
+    IntrinsicMod: m.IntrinsicMod,
+    TypeMod: m.TypeMod,
+    AddManuID: m.AddManuID,
+    moduleTags: m.moduleTags,
+    mods: m.mods,
+    AddTags: m.AddTags,
+    checkForChars: m.checkForChars,
+    charChecked: m.charChecked,
+  }));
+}
+
+export function getUnlockedModules(character: CharacterData){
+  const { modules: moduleIds } = getAllUnlocks(character);
+  return modules
+    .filter((m) => moduleIds.includes(m.id))
+    .map((m) => ({
+      id: m.id,
+      name: m.name,
+      desc: m.desc,
+      IntrinsicMod: m.IntrinsicMod,
+      TypeMod: m.TypeMod,
+      AddManuID: m.AddManuID,
+      moduleTags: m.moduleTags,
+      mods: m.mods,
+      AddTags: m.AddTags,
+      checkForChars: m.checkForChars,
+      charChecked: m.charChecked,
+    }));
+}
+
 export function getPlaneOrdnance(character: CharacterData): OrdnanceDeets {
-  let ord = ordnance.find((ord)=> ord.id === character.aircraft.ordnanceId)
-  
+  const ord = ordnance.find((o) => o.id === character.aircraft.ordnanceId);
+  const { ordTags } = applyModules(character);
+
   return {
-    id : ord?.id ?? "ordERROR",
-    name : ord?.name ?? "None",
+    id: ord?.id ?? "ordERROR",
+    name: ord?.name ?? "None",
     domain: ord?.domain ?? "None",
     desc: ord?.desc ?? "None",
-    tags: ord?.tags ?? ["error"]
-  }
+    tags: [...new Set([...(ord?.tags ?? ["error"]), ...ordTags])],
+  };
 }
 
 export function getPlaneId(character: CharacterData) {
@@ -134,6 +263,38 @@ export function getAirplaneStatsForCard(
     desc: plane?.desc ?? "",
     intrinsic: plane?.intrinsic ?? "",
   };
+}
+
+function applyModules(character: CharacterData): AppliedModEffects {
+  const effects: AppliedModEffects = {
+    acTags: [],
+    ordTags: [],
+    statDeltas: {},
+  };
+
+  const equippedIds: string[] = character.aircraft.modules ?? [];
+
+  for (const modId of equippedIds) {
+    const mod = modules.find((m) => m.id === modId);
+    if (!mod) continue;
+
+    // Split AddTags by prefix
+    for (const tag of mod.AddTags ?? []) {
+      if (tag.startsWith("ord")) {
+        effects.ordTags.push(tag);
+      } else if (tag.startsWith("ac")) {
+        effects.acTags.push(tag);
+      }
+      // unknown prefix: ignore for now
+    }
+
+    // Accumulate stat deltas
+    for (const [stat, delta] of Object.entries(mod.mods ?? {})) {
+      effects.statDeltas[stat] = (effects.statDeltas[stat] ?? 0) + delta;
+    }
+  }
+
+  return effects;
 }
 
 export function initializeAircraftState(
@@ -239,7 +400,7 @@ export function recoverEnergy(
   character: CharacterData,
   amount = 1,
 ): CharacterData {
-  const max = Number(getPlaneStats(character).SPEED) + 1;
+  const max = 22;
 
   return {
     ...character,
@@ -255,13 +416,19 @@ export function setAircraft(
   id: string,
 ): CharacterData {
   if (!id) {
-    id = "acF4E";
+    id = "acNone";
   }
 
   const plane = aircraft.find((p) => p.id === id);
+  let currPlaneBaseOrd = aircraft.find((p) => p.id === character.aircraft.aircraftId)?.baseOrdID || "";
+  let currOrd = character.aircraft.ordnanceId || "ordNone"
 
   if (!plane) {
     return character;
+  }
+
+  if((character.aircraft.ordnanceId !== plane.baseOrdID) && (character.aircraft.ordnanceId === currPlaneBaseOrd)){
+    currOrd = "ordNone"
   }
 
   return {
@@ -270,6 +437,7 @@ export function setAircraft(
       ...character.aircraft,
 
       aircraftId: id,
+      ordnanceId: currOrd,
 
       currentCapacity: Number(plane.stats.CAP),
       currentSurvivability: Number(plane.stats.SURV),
@@ -323,9 +491,38 @@ export function getLicenseProgressionUnlocks(licenseId: string, rank: number) {
     result.upgrades.push(...tier.upgrades);
   };
 
-  for (let r = 1; r <= rank; r++) {
+  for (let r = 0; r <= rank; r++) {
+    // start at 0
     applyTier(`rank${r}` as RankKey);
   }
 
   return result;
+}
+
+export function getAllUnlocks(character: CharacterData) {
+  const result = {
+    ordnance: [] as string[],
+    airframes: [] as string[],
+    modules: [] as string[],
+    upgrades: [] as string[],
+  };
+
+  for (const [licenseId, rank] of Object.entries(character.licenses ?? {})) {
+    const unlocks = getLicenseProgressionUnlocks(licenseId, rank);
+    if (!unlocks) continue;
+
+    let baseOrd = getAircraftData(character)?.baseOrdID || ""
+    result.ordnance.push(...unlocks.ordnance, baseOrd, "ordNone");
+    result.airframes.push(...unlocks.airframes);
+    result.modules.push(...unlocks.modules);
+    result.upgrades.push(...unlocks.upgrades);
+  }
+
+  // Deduplicate across licenses
+  return {
+    ordnance: [...new Set(result.ordnance)],
+    airframes: [...new Set(result.airframes)],
+    modules: [...new Set(result.modules)],
+    upgrades: [...new Set(result.upgrades)],
+  };
 }

@@ -14,7 +14,6 @@ export interface AircraftStateProps {
   capacity: number;
   maxCapacity: number;
   energy: number;
-  maxEnergy: number;
   onSpendSurv: () => void;
   onRecoverSurv: () => void;
   onSpendCap: () => void;
@@ -38,7 +37,7 @@ export interface AircraftCardProps {
   family: string;
   gen: string | number;
   tier: string | number;
-  stats?: Record<string, ReactNode>;
+  stats: Record<string, ReactNode>;
   tags?: string | string[];
   moduleSlots?: string | number;
   desc?: string;
@@ -77,7 +76,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
     <section
       id={aircraft.id}
       className="
-        bg-black/20 border border-cyan-100 p-4
+        bg-black/20 border border-cyan-100 p-4 border-l-4
         transition-all duration-100 font-mono
       "
     >
@@ -147,9 +146,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
       {/* Aircraft State */}
       {aircraft.aircraftState && (
         <div className="mb-4 space-y-2 border-t border-cyan-100/30 pt-3">
-          <div className="text-xs text-cyan-300 font-bold mb-1">
-            Current:
-          </div>
+          <div className="text-xs text-cyan-300 font-bold mb-1">Current:</div>
           <AircraftStatControl
             label="SURV"
             value={aircraft.aircraftState.survivability}
@@ -164,13 +161,18 @@ function AircraftCard(aircraft: AircraftCardProps) {
             onDecrement={aircraft.aircraftState.onSpendCap}
             onIncrement={aircraft.aircraftState.onRecoverCap}
           />
-          <AircraftStatControl
+          <AircraftStatControlEnergy
             label="ENRG"
             value={aircraft.aircraftState.energy}
-            maxValue={aircraft.aircraftState.maxEnergy}
             onDecrement={aircraft.aircraftState.onSpendEnergy}
             onIncrement={aircraft.aircraftState.onRecoverEnergy}
+            stats={aircraft.stats}
           />
+          <div className="flex text-center text-xs text-cyan-400">
+            STLL: {5- Number(aircraft.stats.MANU)} | OVRSTR:{" "}
+            {13 + Number(aircraft.stats.SPEED) + Number(aircraft.stats.MANU)}
+            <span className="text-cyan-100"></span>
+          </div>
         </div>
       )}
 
@@ -267,8 +269,7 @@ function AircraftStatControl({
       </span>
 
       <div className="w-12 text-center text-xs text-cyan-400">
-        {value}/
-        <span className="text-cyan-100">{maxValue}</span>
+        {value}/<span className="text-cyan-100">{maxValue}</span>
       </div>
 
       <button
@@ -282,6 +283,51 @@ function AircraftStatControl({
       <button
         onClick={onIncrement}
         disabled={value >= maxValue}
+        className="px-2 py-1 border border-cyan-400 text-xs disabled:opacity-30"
+      >
+        +
+      </button>
+    </div>
+  );
+}
+
+function AircraftStatControlEnergy({
+  label,
+  value,
+  onDecrement,
+  onIncrement,
+  stats
+}: {
+  label: string;
+  value: number;
+  onDecrement: () => void;
+  onIncrement: () => void;
+  stats: Record<string, ReactNode>;
+}) {
+  const overstress = 13+ Number(stats.MANU) + Number(stats.SPEED)
+  const stall = 5 - Number(stats.SPEED)
+  const getWarn = (val: number): string => {
+    return ((val<= stall+1) || (val >= overstress-2)) ? "text-red-300" : ""
+  };
+  return (
+    <div className="flex gap-2 items-center">
+      <span className={"w-12 text-xs border border-cyan-100 px-2 py-1"}>
+        {label}
+      </span>
+
+      <div className={`w-12 text-center text-xs text-cyan-400 ${getWarn(value)}`}>{value} </div>
+
+      <button
+        onClick={onDecrement}
+        disabled={value <= 0}
+        className="px-2 py-1 border border-cyan-400 text-xs disabled:opacity-30"
+      >
+        -
+      </button>
+
+      <button
+        onClick={onIncrement}
+        disabled={value >= 22}
         className="px-2 py-1 border border-cyan-400 text-xs disabled:opacity-30"
       >
         +

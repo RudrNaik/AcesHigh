@@ -2,6 +2,7 @@ import type { CharacterData } from "../../../handlers/characterTypes";
 import * as planeEngine from "../../../handlers/planeEngine";
 import AircraftCard from "./MiniAircraftCard";
 import OrdnanceCard from "./MiniOrdnanceCard";
+//import ModCards from "./MiniModCards"
 
 function AircraftView({
   character,
@@ -16,7 +17,6 @@ function AircraftView({
 
   const maxSurv = Number(planeStats.SURV);
   const maxCap = Number(planeStats.CAP);
-  const maxEnergy = Number(planeStats.SPEED) + 1;
 
   return (
     <div className="border border-cyan-100 lg:p-4 p-2 space-y-2">
@@ -24,17 +24,17 @@ function AircraftView({
 
       <AircraftCard
         {...cardProps}
-        aircraftOptions={planeEngine.getAircraftList()}
+        aircraftOptions={planeEngine.getUnlockedAircraft(character)}
         onSelectAircraft={(id) =>
           updateCharacter(planeEngine.setAircraft(character, id))
         }
+        stats={planeEngine.getPlaneStats(character)}
         aircraftState={{
           survivability: aircraftState.survivability,
           maxSurvivability: maxSurv,
           capacity: aircraftState.capacity,
           maxCapacity: maxCap,
           energy: aircraftState.energy,
-          maxEnergy: maxEnergy,
           onSpendSurv: () =>
             updateCharacter(planeEngine.spendSurvivability(character)),
           onRecoverSurv: () =>
@@ -58,11 +58,13 @@ function AircraftView({
         domain={planeEngine.getPlaneOrdnance(character).domain}
         desc={planeEngine.getPlaneOrdnance(character).desc}
         tags={planeEngine.getPlaneOrdnance(character).tags}
-        ordnanceOptions={planeEngine.getOrdnanceList()}
+        ordnanceOptions={planeEngine.getUnlockedOrdnance(character)}
         onSelectOrdnance={(id) =>
           updateCharacter(planeEngine.setOrdnance(character, id))
         }
       />
+
+      
     </div>
   );
 }

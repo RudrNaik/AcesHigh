@@ -37,24 +37,29 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
         bg-black/20
         border
         border-cyan-100
-        p-6
+        p-6 border-l-4
         font-mono
       "
     >
       {/* Header */}
-      <Selector
-        selectedId={ordnance.id}
-        selectedName={ordnance.name}
-        options={
-          ordnance.ordnanceOptions?.map((item) => ({
-            id: item.id,
-            name: item.name,
-            subtitle: item.domain,
-          })) ?? []
-        }
-        onSelect={(id) => ordnance.onSelectOrdnance?.(id)}
-        placeholder="Select Ordnance"
-      />
+      <div className="flex justify-between">
+        <Selector
+          selectedId={ordnance.id}
+          selectedName={ordnance.name}
+          options={
+            ordnance.ordnanceOptions?.map((item) => ({
+              id: item.id,
+              name: item.name,
+              subtitle: item.domain,
+            })) ?? []
+          }
+          onSelect={(id) => ordnance.onSelectOrdnance?.(id)}
+          placeholder="Select Ordnance"
+        />
+        <p className="text-sm text-cyan-400 whitespace-pre-line">
+          {ordnance.domain}
+        </p>
+      </div>
 
       {/* Description */}
       {ordnance.desc && ordnance.desc !== "n/a" && (
