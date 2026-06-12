@@ -1,7 +1,5 @@
 import * as planeEngine from "../../../handlers/planeEngine";
 import type { CharacterData } from "../../../handlers/characterTypes";
-import { resolveTag, resolveManeuver } from "../../../../common/tagResolver";
-import { useState } from "react";
 
 function Masteries({ character }: { character: CharacterData }) {
   const currFam = planeEngine.getAircraftMasteries(character);
