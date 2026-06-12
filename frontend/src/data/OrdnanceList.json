@@ -32,7 +32,7 @@
     "tags": ["ordSIMP"]
   },
   {
-    "id": "itemID",
+    "id": "ID",
     "name": "Missing Ordnance",
     "domain": "Agnostic",
     "desc": "Please contact Spiny as this aircraft's base ordnance is not implemented if present.",

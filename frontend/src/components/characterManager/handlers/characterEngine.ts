@@ -322,10 +322,7 @@ export function addTacticToSpecialization(
   const allowed = getAllowedTacticCount(character);
   const current = character.specialization.tactics;
 
-  // prevent duplicates
   if (current.some((t) => t === tactic)) return character;
-
-  // enforce cap
   if (current.length >= allowed) return character;
 
   const updated = structuredClone(character);
@@ -443,7 +440,7 @@ export function mindBreak(
   return updated;
 }
 
-//Reduces physical stats by 1 when sucked dry (physical stressout)
+//Reduces physical stats by 1 when sucked dry :3 (physical stressout)
 export function Drained(
   character: CharacterData,
   updateCharacter?: (c: CharacterData) => void,
