@@ -437,7 +437,6 @@ export function setAircraft(
   const newBase = Number(plane.moduleSlots) || 0;
   const newSlotCount = Math.max(0, newBase - newTier);
 
-  // Trim modules from the end if the new plane has fewer slots
   const trimmedModules = (character.aircraft.modules ?? []).slice(
     0,
     newSlotCount,
@@ -486,10 +485,8 @@ export function setModule(
 ): CharacterData {
   const current = character.aircraft.modules ?? [];
   const slotCount = getModuleSlotCount(character);
-
-  // No duplicates
+  
   if (current.includes(modId)) return character;
-  // No overflow
   if (current.length >= slotCount) return character;
 
   return {
@@ -527,17 +524,16 @@ export function applyModules(character: CharacterData): AppliedModEffects {
     const mod = modules.find((m) => m.id === modId);
     if (!mod) continue;
 
-    // Split AddTags by prefix
+
     for (const tag of mod.AddTags ?? []) {
       if (tag.startsWith("ord")) {
         effects.ordTags.push(tag);
       } else if (tag.startsWith("ac")) {
         effects.acTags.push(tag);
       }
-      // unknown prefix: ignore for now
+
     }
 
-    // Accumulate stat deltas
     for (const [stat, delta] of Object.entries(mod.mods ?? {})) {
       effects.statDeltas[stat] = (effects.statDeltas[stat] ?? 0) + delta;
     }
@@ -568,7 +564,6 @@ export function getLicenseProgressionUnlocks(licenseId: string, rank: number) {
   };
 
   for (let r = 0; r <= rank; r++) {
-    // start at 0
     applyTier(`rank${r}` as RankKey);
   }
 
@@ -594,7 +589,6 @@ export function getAllUnlocks(character: CharacterData) {
     result.upgrades.push(...unlocks.upgrades);
   }
 
-  // Deduplicate across licenses
   return {
     ordnance: [...new Set(result.ordnance)],
     airframes: [...new Set(result.airframes)],
