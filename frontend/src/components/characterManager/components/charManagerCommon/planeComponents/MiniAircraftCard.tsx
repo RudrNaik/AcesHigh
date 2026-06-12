@@ -305,7 +305,7 @@ function AircraftStatControlEnergy({
   stats: Record<string, ReactNode>;
 }) {
   const overstress = 13+ Number(stats.MANU) + Number(stats.SPEED)
-  const stall = 5 - Number(stats.SPEED)
+  const stall = 5 - Number(stats.MANU)
   const getWarn = (val: number): string => {
     return ((val<= stall+1) || (val >= overstress-2)) ? "text-red-300" : ""
   };

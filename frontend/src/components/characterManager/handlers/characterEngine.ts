@@ -4,6 +4,7 @@ import staticMods from "../../../data/StaticMods.json";
 import perks from "../../../data/PerkList.json";
 import specializations from "../../../data/Specs.json";
 import downtime from "../../../data/Downtimes.json";
+import * as planeEngine from "./planeEngine";
 //import licenses from "../../../data/Licenses.json";
 
 export function getMentalStress(character: CharacterData) {
@@ -45,15 +46,43 @@ export function getPilotStatsModified(
   let rflx = character.metadata.startingPilotStats.reflex;
   let gres = character.metadata.startingPilotStats.gResist;
 
-  let modifiers = getStaticModifiersFromSpec(character);
+  const modifiers = getStaticModifiersFromSpec(character);
+  const { statDeltas } = planeEngine.applyModules(character);
 
-  let mindBreak = character.stress.permMentalAdj;
-  let succedDry = character.stress.permPhysicalAdj;
+  const pilotKeyMap: Record<string, keyof CharacterStats> = {
+    Temper: "temper",
+    temper: "temper",
+    TEMPER: "temper",
+    Nerve: "nerve",
+    nerve: "nerve",
+    NERVE: "nerve",
+    Reflex: "reflex",
+    reflex: "reflex",
+    REFLEX: "reflex",
+    GRes: "gResist",
+    gres: "gResist",
+    GRES: "gResist",
+    gResist: "gResist",
+  };
 
-  temp += (modifiers?.temper || 0) - mindBreak;
-  nerv += (modifiers?.nerve || 0) - mindBreak;
-  rflx += (modifiers?.reflex || 0) - succedDry;
-  gres += (modifiers?.gResist || 0) - succedDry;
+  const pilotDeltas: CharacterStats = {
+    temper: 0,
+    nerve: 0,
+    reflex: 0,
+    gResist: 0,
+  };
+  for (const [stat, delta] of Object.entries(statDeltas)) {
+    const key = pilotKeyMap[stat];
+    if (key) pilotDeltas[key] += delta;
+  }
+
+  const mindBreak = character.stress.permMentalAdj;
+  const succedDry = character.stress.permPhysicalAdj;
+
+  temp += (modifiers?.temper || 0) + pilotDeltas.temper - mindBreak;
+  nerv += (modifiers?.nerve || 0) + pilotDeltas.nerve - mindBreak;
+  rflx += (modifiers?.reflex || 0) + pilotDeltas.reflex - succedDry;
+  gres += (modifiers?.gResist || 0) + pilotDeltas.gResist - succedDry;
 
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
 }

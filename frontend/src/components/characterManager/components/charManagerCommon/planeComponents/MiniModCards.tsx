@@ -39,15 +39,11 @@ function ModuleSlot({
     <div className="border border-cyan-100/40 border-l-4 border-l-cyan-100 p-4 font-mono space-y-3">
       {/* Slot header + dropdown */}
       <div className="flex justify-between items-center">
-        <span className="text-xs text-cyan-100/60">SLOT {slotIndex + 1}</span>
-
         <select
           value={equippedId ?? ""}
           onChange={(e) => onSelect(e.target.value || null)}
           className="
-            bg-black/60 border border-cyan-100/60 text-cyan-100
-            text-xs px-2 py-1 font-mono
-            focus:outline-none focus:border-cyan-400
+            select-themed text-xs
           "
         >
           <option value="">— empty —</option>
@@ -57,6 +53,7 @@ function ModuleSlot({
             </option>
           ))}
         </select>
+        <span className="text-xs text-cyan-100/60">SLOT {slotIndex + 1}</span>
       </div>
 
       {/* Equipped module details */}
@@ -119,11 +116,13 @@ function ModuleSlot({
                     >
                       {manu.name}
                       {isActive && (
-                        <div className="
+                        <div
+                          className="
                           absolute top-full left-0 mt-2 z-50 w-64
                           bg-black/95 border border-cyan-100 p-3
                           text-xs text-cyan-100 whitespace-pre-line
-                        ">
+                        "
+                        >
                           {manu.desc}
                         </div>
                       )}
@@ -155,11 +154,13 @@ function ModuleSlot({
                     >
                       {tag.name}
                       {isActive && (
-                        <div className="
+                        <div
+                          className="
                           absolute top-full left-0 mt-2 z-50 w-64
                           bg-black/95 border border-cyan-100 p-3
                           text-xs text-cyan-100 whitespace-pre-line
-                        ">
+                        "
+                        >
                           {tag.desc}
                         </div>
                       )}
@@ -199,9 +200,7 @@ function ModuleManager({ character, updateCharacter }: ModuleManagerProps) {
 
   // Modules already equipped in OTHER slots are unavailable for this slot
   const getAvailableForSlot = (slotIndex: number) => {
-    const otherEquipped = equippedModules.filter(
-      (_, i) => i !== slotIndex,
-    );
+    const otherEquipped = equippedModules.filter((_, i) => i !== slotIndex);
     return unlockedModules.filter((m) => !otherEquipped.includes(m.id));
   };
 

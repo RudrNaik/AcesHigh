@@ -477,7 +477,7 @@ export function removeModule(
   };
 }
 
-function applyModules(character: CharacterData): AppliedModEffects {
+export function applyModules(character: CharacterData): AppliedModEffects {
   const effects: AppliedModEffects = {
     acTags: [],
     ordTags: [],
