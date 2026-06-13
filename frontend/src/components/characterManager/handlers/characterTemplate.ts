@@ -66,20 +66,20 @@ export const createDefaultCharacter = (): CharacterData => ({
     permPhysicalAdj: 0,
   },
 
-  coins: {
-    coin1:{
+  coins: [
+    {
       used: false,
       burned: false
     },
-    coin2:{
+    {
       used: false,
       burned: false
     },
-    coin3:{
+    {
       used: false,
       burned: false
     }
-  },
+  ],
 
   quirks: {
     quirk1Name: "",

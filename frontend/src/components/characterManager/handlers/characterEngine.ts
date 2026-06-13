@@ -1,4 +1,4 @@
-import type { CharacterData, CharacterStats } from "./characterTypes";
+import type { CharacterData, CharacterStats, Coin } from "./characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
 import staticMods from "../../../data/StaticMods.json";
 import perks from "../../../data/PerkList.json";
@@ -15,6 +15,10 @@ export function getMentalStress(character: CharacterData) {
 export function getPhysStress(character: CharacterData) {
   let charStats = getPilotStatsModified(character);
   return charStats.reflex + charStats.gResist;
+}
+
+export function getCoins(character: CharacterData): Coin[]{
+  return character.coins
 }
 
 export function getStaticModifiersFromSpec(character: CharacterData) {
@@ -129,6 +133,51 @@ export function setTempStress(
       mental: stress.mental,
       physical: stress.physical,
     },
+  };
+}
+
+export function setUsedCoin(
+  character: CharacterData,
+  index: number
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: true } : coin
+    ),
+  };
+}
+
+export function resetUsedCoin(character: CharacterData,
+  index: number
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: false } : coin
+    ),
+  };
+}
+
+export function burnCoin(character: CharacterData,
+  index: number
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: true, burned: true } : coin
+    ),
+  };
+}
+
+export function pheonixCoin(character: CharacterData,
+  index: number
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: false, burned: false } : coin
+    ),
   };
 }
 

@@ -136,7 +136,7 @@ export interface CharacterData {
 
   metadata: MetaData;
 
-  coins: Coins
+  coins: Coin[]
 
   dossier: CharacterDossier;
 

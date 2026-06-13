@@ -1,20 +1,19 @@
 // src/components/Navbar.jsx
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import icon from "../../assets/aces_high_logo.svg"
-
+import icon from "../../assets/aces_high_logo.svg";
 
 const Navbar = ({}) => {
   const [scrolled, setScrolled] = useState(false);
-  const [,setDropdownOpen] = useState(false);
+  const [, setDropdownOpen] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-  const dropdownRef:any = useRef(false);
+  const dropdownRef: any = useRef(false);
 
   /**
    * UseEffect to handle clicking outside of the dropdown's box while on mobile.
    */
   useEffect(() => {
-    const handleClickOutside = (event: { target: any; }) => {
+    const handleClickOutside = (event: { target: any }) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
@@ -85,10 +84,8 @@ const Navbar = ({}) => {
             <path d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-        
       </div>
 
-      
       <div
         id="mobile-nav"
         className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 font-mono ${

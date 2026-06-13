@@ -1,8 +1,9 @@
 import type {
   CharacterData,
   CharacterStats,
+  Coin,
 } from "../../../handlers/characterTypes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import * as charEngine from "../../../handlers/characterEngine";
 
 function PilotView({
@@ -76,19 +77,34 @@ function PilotView({
   return (
     <div className="border border-cyan-100 lg:p-4 p-2 space-y-2">
       {/* Pilot Stats */}
-      <div>
-        <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
-        {statDefs.map((stat) => (
-          <PilotStat
-            key={stat.key}
-            label={stat.label}
-            value={pilotStats[stat.key]}
-            maxValue={maxStats[stat.key]}
-            onChange={(delta) => updateStat(stat.key, delta)}
+      <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
+      <div className="flex md:space-x-20 lg:flex-row flex-col">
+        <div>
+          {statDefs.map((stat) => (
+            <PilotStat
+              key={stat.key}
+              label={stat.label}
+              value={pilotStats[stat.key]}
+              maxValue={maxStats[stat.key]}
+              onChange={(delta) => updateStat(stat.key, delta)}
+            />
+          ))}
+        </div>
+        <div className="p-4">
+          <CoinStats
+            coins={character.coins}
+            onUse={(index) =>
+              updateCharacter(charEngine.setUsedCoin(character, index))
+            }
+            onReset={(index) =>
+              updateCharacter(charEngine.resetUsedCoin(character, index))
+            }
+            onBurn={(index) =>
+              updateCharacter(charEngine.burnCoin(character, index))
+            }
           />
-        ))}
+        </div>
       </div>
-
       {/* Stress */}
       <div>
         <h2 className="text-cyan-300 font-bold border-t-2 pt-2 border-cyan-100">
@@ -97,7 +113,7 @@ function PilotView({
         {/* Mental */}
         <div className="py-2">
           <div className="flex gap-2 items-center">
-            <span className="w-24 border border-cyan-100 px-2 py-1">
+            <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">
               Mental
             </span>
 
@@ -144,7 +160,7 @@ function PilotView({
         {/* Physical */}
         <div>
           <div className="flex gap-2 items-center">
-            <span className="w-24 border border-cyan-100 px-2 py-1">
+            <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">
               Physical
             </span>
 
@@ -195,7 +211,7 @@ function PilotView({
           Background Perk
         </h2>
         <div>
-          <div className="border p-3 text-sm opacity-80 space-y-2">
+          <div className="border p-3 bg-black/20 text-sm opacity-80 space-y-2">
             <span className="border-b border-cyan-100">
               {charEngine.getBackGroundPerk(character).name}
             </span>
@@ -219,7 +235,7 @@ function PilotView({
         {/* Preflights */}
         <div className="">
           <h3 className="font-bold py-2">Preflights</h3>
-          <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
+          <div className="flex flex-col bg-black/20 border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
             <div className="font-semibold">
               PFC-1 | {charEngine.getDowntimes(character)?.dt1.name}
             </div>
@@ -227,7 +243,7 @@ function PilotView({
               {charEngine.getDowntimes(character)?.dt1.description}
             </div>
           </div>
-          <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
+          <div className="flex flex-col bg-black/20 border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
             <div className="font-semibold">
               PFC-2 | {charEngine.getDowntimes(character)?.dt2.name}
             </div>
@@ -235,7 +251,7 @@ function PilotView({
               {charEngine.getDowntimes(character)?.dt2.description}
             </div>
           </div>
-          <div className="flex flex-col border border-l-4 border-cyan-100 px-2 py-1 space-y-2">
+          <div className="flex flex-col bg-black/20 border border-l-4 border-cyan-100 px-2 py-1 space-y-2">
             <div className="font-semibold">
               PFC-3 | {charEngine.getDowntimes(character)?.dt3.name}
             </div>
@@ -279,7 +295,7 @@ function PilotView({
                 return (
                   <div
                     key={tactic.id}
-                    className={`border p-2 ${
+                    className={`border p-2 bg-black/20 ${
                       unlocked
                         ? "border-cyan-100 border-l-4"
                         : "border-cyan-900"
@@ -362,15 +378,15 @@ function PilotView({
               .map((item) => (
                 <div
                   key={item.index}
-                  className={`border p-2 ${
+                  className={`border p-2 bg-black/20 ${
                     item.converted
                       ? "border-yellow-400 border-l-4"
                       : item.completed
                         ? "border-cyan-100 border-l-4"
-                        : "border-cyan-900"
+                        : "border-cyan-800 opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <div className="flex justify-between items-start gap-2">
+                  <div className="flex justify-between items-start gap-2 ">
                     <span>{item.text}</span>
 
                     <span
@@ -453,7 +469,7 @@ function PilotView({
               {charEngine
                 .getSpecialization(character)
                 .masteries.map((mastery) => (
-                  <div key={mastery.id} className="border border-cyan-100 p-2">
+                  <div key={mastery.id} className="border border-cyan-100 p-2 bg-black/20">
                     <div className="font-semibold">{mastery.name}</div>
 
                     <p className="text-sm text-gray-300">
@@ -477,7 +493,7 @@ function PilotView({
                 ))}
             </div>
           ) : (
-            <div className="border border-cyan-900 p-2 opacity-60">
+            <div className="border border-cyan-900 p-2 opacity-60 bg-black/20">
               Unlock all tactics in your specialization to gain access to
               mastery.
               <div className="text-xs mt-1">
@@ -507,7 +523,7 @@ function PilotStat({
 }) {
   return (
     <div className="flex gap-2 items-center mt-2">
-      <span className="w-24 border border-cyan-100 px-2 py-1">{label}</span>
+      <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">{label}</span>
 
       <div className="w-8 text-center">{value}</div>
 
@@ -528,6 +544,111 @@ function PilotStat({
       </button>
 
       <div className="text-sm text-cyan-300">Base: {maxValue}</div>
+    </div>
+  );
+}
+
+function CoinStats({
+  coins,
+  onUse,
+  onReset,
+  onBurn,
+}: {
+  coins: Coin[];
+  onUse: (index: number) => void;
+  onReset: (index: number) => void;
+  onBurn: (index: number) => void;
+}) {
+  const [confirmBurn, setConfirmBurn] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setConfirmBurn(null);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="grid grid-cols-3 gap-4"
+    >
+      {coins.map((coin, index) => {
+        const classes = coin.burned
+          ? "bg-red-900 border-red-500"
+          : coin.used
+            ? "border-cyan-800"
+            : "bg-black/20 border-cyan-100";
+
+        return (
+          <div
+            key={index}
+            className="border border-cyan-800 bg-black/20 rounded p-3 flex flex-col items-center"
+          >
+            <div
+              className={`w-14 h-14 transition-all rounded-full border-2 flex items-center justify-center font-bold mb-2 ${classes}`}
+            >
+              {index + 1}
+            </div>
+
+            {!coin.burned && (
+              <div className="flex flex-col gap-1 w-full">
+                {coin.used ? (
+                  <button
+                    onClick={() => onReset(index)}
+                    className="border border-cyan-400 px-2 py-1 text-xs"
+                  >
+                    Reset
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => onUse(index)}
+                    className="border border-cyan-400 px-2 py-1 text-xs"
+                  >
+                    Spend
+                  </button>
+                )}
+
+                {confirmBurn === index ? (
+                  <button
+                    onClick={() => {
+                      onBurn(index);
+                      setConfirmBurn(null);
+                    }}
+                    className="border text-red-100 border-red-500 bg-red-950 px-2 py-1 text-xs"
+                  >
+                    CNFRM
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setConfirmBurn(index)}
+                    className="border border-red-900 px-2 py-1 text-xs"
+                  >
+                    Burn
+                  </button>
+                )}
+              </div>
+            )}
+
+            {coin.burned && (
+              <div className="text-xs text-red-400 font-bold px-2 py-1">
+                BURNED
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
