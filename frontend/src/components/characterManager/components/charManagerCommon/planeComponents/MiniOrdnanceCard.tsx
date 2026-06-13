@@ -1,76 +1,70 @@
 import { useState } from "react";
-import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../common/tagResolver";
-import manus from "../../../data/ManueverList.json"
+import {
+  resolveTag,
+  formatTagTooltip,
+  getTagCountMap,
+  getTagValue,
+} from "../../../../common/tagResolver";
+import Selector from "./Selector";
 
-interface ManeuverCardProps {
+export interface OrdnanceSelectOption {
   id: string;
-  name?: string;
-  type?: string;
-  desc?: string | "n/a";
-  tags?: string | string[] | "n/a";
-  engCost?: string;
-  isCommon?: boolean;
-  isAdvanced?: boolean;
-  autofill?: boolean;
+  name: string;
+  domain: string;
 }
 
-function ManeuverCard(props: ManeuverCardProps) {
+interface OrdnanceCardProps {
+  id: string;
+  name: string;
+  domain: string;
+  desc?: string;
+  tags?: string[];
+
+  ordnanceOptions?: OrdnanceSelectOption[];
+  onSelectOrdnance?: (id: string) => void;
+}
+
+function OrdnanceCard(ordnance: OrdnanceCardProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const autoFilled =
-    props.autofill
-      ? manus.find((m) => m.id === props.id)
-      : null;
-
-  const maneuver = {
-    ...props,
-    name: autoFilled?.name ?? props.name,
-    desc: autoFilled?.desc ?? props.desc,
-    type: autoFilled?.type ?? props.type,
-    tags: autoFilled?.tags ?? props.tags,
-    engCost: autoFilled?.engCost ?? props.engCost,
-    isCommon: autoFilled?.isCommon ?? props.isCommon,
-    isAdvanced: autoFilled?.isAdvanced ?? props.isAdvanced,
-  };
-
-  const rawTags =
-    maneuver.tags && maneuver.tags !== "n/a"
-      ? (maneuver.tags as string[])
-      : [];
-
-  const tagCounts = getTagCountMap(rawTags);
+  const tagCounts = getTagCountMap(ordnance.tags ?? []);
   const tagEntries = Object.entries(tagCounts);
 
   return (
     <section
-      id={maneuver.id}
+      id={ordnance.id}
       className="
         bg-black/20
         border
         border-cyan-100
-        border-l-4
-        p-6
+        p-4 border-l-4
         font-mono
       "
     >
       {/* Header */}
-      <div className="flex justify-between items-start mb-3">
-        <h2 className="text-2xl lg:text-xl font-bold text-cyan-100">
-          {maneuver.name}
-        </h2>
-
-        <div className="text-sm text-cyan-100 flex ">
-            {maneuver.engCost && maneuver.engCost!=="n/a" && <span>EN:{maneuver.engCost}|</span>}
-            {maneuver.type && <span>{maneuver.type}</span>}
-            {maneuver.isAdvanced && (<span className="font-bold">|ADV</span>)}
-            {maneuver.isCommon && (<span className="font-bold">|CMN</span>)}
-        </div>
+      <div className="flex justify-between">
+        <Selector
+          selectedId={ordnance.id}
+          selectedName={ordnance.name}
+          options={
+            ordnance.ordnanceOptions?.map((item) => ({
+              id: item.id,
+              name: item.name,
+              subtitle: item.domain,
+            })) ?? []
+          }
+          onSelect={(id) => ordnance.onSelectOrdnance?.(id)}
+          placeholder="Select Ordnance"
+        />
+        <p className="text-sm text-cyan-400 whitespace-pre-line">
+          {ordnance.domain}
+        </p>
       </div>
 
       {/* Description */}
-      {maneuver.desc && (
+      {ordnance.desc && ordnance.desc !== "n/a" && (
         <p className="text-sm text-cyan-100 whitespace-pre-line">
-          {maneuver.desc}
+          {ordnance.desc}
         </p>
       )}
 
@@ -83,23 +77,16 @@ function ManeuverCard(props: ManeuverCardProps) {
 
             const isActive = activeTag === tag.id;
             const scaledValue = getTagValue(tag.id, count);
-
             const label =
               scaledValue > 1 ? `${tag.name} x${scaledValue}` : tag.name;
-
-            const tooltipDesc = formatTagTooltip(
-              tag.desc,
-              scaledValue
-            );
+            const tooltipDesc = formatTagTooltip(tag.desc, scaledValue);
 
             return (
               <div
-                key={`${maneuver.id}-${tag.id}`}
+                key={`${ordnance.id}-${tag.id}`}
                 onMouseEnter={() => setActiveTag(tag.id)}
                 onMouseLeave={() => setActiveTag(null)}
-                onClick={() =>
-                  setActiveTag(isActive ? null : tag.id)
-                }
+                onClick={() => setActiveTag(isActive ? null : tag.id)}
                 className="
                   relative
                   text-xs
@@ -141,4 +128,4 @@ function ManeuverCard(props: ManeuverCardProps) {
   );
 }
 
-export default ManeuverCard;
+export default OrdnanceCard;

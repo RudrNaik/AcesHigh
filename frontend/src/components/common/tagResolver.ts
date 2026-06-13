@@ -38,6 +38,8 @@ export function getTagValue(tagId: string, count: number) {
     ordMLTI: (c) => c * 2,
     acMCREW: (c) => c * 2,
     manuCap: (c) => c,
+    manuDiscount: (c) => c,
+    manuAddForward: (c) => c,
   };
 
   return rules[tagId]?.(count) ?? count;

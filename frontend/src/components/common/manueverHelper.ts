@@ -12,12 +12,18 @@ export interface Maneuver {
   desc: string;
 }
 
+export interface ManeuverEffect {
+  discountCost: number;
+  forwardBonus: number;
+}
+
 export interface TurnRow {
   m?: Maneuver;
   e: number;
   c: number;
   after: number;
   capAfter: number;
+  appliedEffects?: ManeuverEffect;
 }
 
 export interface TurnResult {
@@ -121,6 +127,29 @@ export const getManeuverCapacityCost = (m?: Maneuver) => {
   return getTagValue("manuCap", count);
 };
 
+export const getManeuverEffects = (m?: Maneuver): ManeuverEffect => {
+  const effects: ManeuverEffect = {
+    discountCost: 0,
+    forwardBonus: 0,
+  };
+
+  if (!m?.tags?.length) return effects;
+
+  const tagCounts = getTagCountMap(m.tags);
+
+  // Check for discount tags
+  if (tagCounts["manuDiscount"]) {
+    effects.discountCost = getTagValue("manuDiscount", tagCounts["manuDiscount"]);
+  }
+
+  // Check for forward bonus tags
+  if (tagCounts["manuAddForward"]) {
+    effects.forwardBonus = getTagValue("manuAddForward", tagCounts["manuAddForward"]);
+  }
+
+  return effects;
+};
+
 export const calculateTurn = ({
   maneuvers,
   energyStart,
@@ -132,10 +161,14 @@ export const calculateTurn = ({
 }): TurnResult => {
   let energy = energyStart;
   let capacity = capacityStart;
+  let activeEffects: ManeuverEffect = { discountCost: 0, forwardBonus: 0 };
 
   const rows = maneuvers.map((m) => {
     let e = m?.energyMod ?? 0;
     let c = m?.capacityMod ?? 0;
+
+    // Apply active effects from previous maneuver
+    e -= activeEffects.discountCost;
 
     if (m?.type === "POSITIONING") {
       e = -e;
@@ -146,12 +179,16 @@ export const calculateTurn = ({
     energy += e;
     capacity += c - capCost;
 
+    // Get effects from current maneuver for next iteration
+    activeEffects = getManeuverEffects(m);
+
     return {
       m,
       e,
       c: c - capCost,
       after: energy,
       capAfter: capacity,
+      appliedEffects: activeEffects,
     };
   });
 

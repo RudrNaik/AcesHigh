@@ -29,8 +29,7 @@ function MenuRouter() {
           <Route path="/equipment/ordnance" element={<Ordnance/>}/>
           <Route path="/equipment/mods" element={<Mods/>}/>
           <Route path="/equipment/manuevers" element={<Maneuvers/>}/>
-          <Route path="/charactermanager" element={<InDev/>}/>
-          <Route path="/charactermanagerdev" element={<CharacterManager/>}/>
+          <Route path="/charactermanager" element={<CharacterManager/>}/>
         </Routes>
         <Footer/>
       </div>

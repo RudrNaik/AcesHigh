@@ -1,6 +1,6 @@
 import { useState } from "react";
-import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../common/tagResolver";
-import manus from "../../../data/ManueverList.json"
+import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../../common/tagResolver";
+import manus from "../../../../data/ManueverList.json"
 
 interface ManeuverCardProps {
   id: string;
@@ -49,12 +49,12 @@ function ManeuverCard(props: ManeuverCardProps) {
         border
         border-cyan-100
         border-l-4
-        p-6
+        p-4
         font-mono
       "
     >
       {/* Header */}
-      <div className="flex justify-between items-start mb-3">
+      <div className="flex justify-between items-start mb-1">
         <h2 className="text-2xl lg:text-xl font-bold text-cyan-100">
           {maneuver.name}
         </h2>

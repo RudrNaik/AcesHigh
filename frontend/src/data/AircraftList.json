@@ -17,7 +17,7 @@
     },
     "moduleSlots": 1,
     "mSMod": 0,
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -109,7 +109,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ordMAAM",
     "desc": "n/a",
     "tags": [
       "acSWEEP",
@@ -136,7 +136,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG",
@@ -164,7 +164,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -191,7 +191,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM",
@@ -218,7 +218,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG"
@@ -244,7 +244,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM",
@@ -272,7 +272,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM",
@@ -299,7 +299,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM"
@@ -325,7 +325,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": "n/a",
     "startingChars": "Fx",
@@ -349,7 +349,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acGLESS",
@@ -379,7 +379,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -406,7 +406,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -434,7 +434,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -462,7 +462,7 @@
     },
     "moduleSlots": 4,
     "mSMod": -4,
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acGLESS",
@@ -491,7 +491,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acSWEEP"
@@ -517,7 +517,7 @@
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acSUB",
@@ -545,7 +545,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acSWEEP",
@@ -574,7 +574,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acNAVAL"
@@ -600,7 +600,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acGLESS"
@@ -626,7 +626,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG"
@@ -652,7 +652,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM"
@@ -678,7 +678,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -705,7 +705,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM"
@@ -731,7 +731,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM"
@@ -757,7 +757,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG",
@@ -784,7 +784,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -813,7 +813,7 @@
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -840,7 +840,7 @@
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acCOMM",
@@ -869,7 +869,7 @@
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acVTOL",
@@ -896,7 +896,7 @@
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -924,7 +924,7 @@
     },
     "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acGLESS",
@@ -953,7 +953,7 @@
     },
     "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acGLESS",
@@ -982,7 +982,7 @@
     },
     "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acGLESS",
@@ -1012,7 +1012,7 @@
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1040,7 +1040,7 @@
     },
     "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1067,7 +1067,7 @@
     },
     "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1095,7 +1095,7 @@
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG"
@@ -1121,7 +1121,7 @@
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": "n/a",
     "startingChars": "F",
@@ -1145,7 +1145,7 @@
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acHSTRUNG"
@@ -1171,7 +1171,7 @@
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1200,7 +1200,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG"
@@ -1226,7 +1226,7 @@
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": "n/a",
     "startingChars": "F",
@@ -1250,7 +1250,7 @@
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -1277,7 +1277,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -1304,7 +1304,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acMENG",
@@ -1331,7 +1331,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": "n/a",
     "startingChars": "J",
@@ -1355,7 +1355,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": "n/a",
     "startingChars": "F",
@@ -1379,7 +1379,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1406,7 +1406,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1435,7 +1435,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA"
@@ -1461,7 +1461,7 @@
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1489,7 +1489,7 @@
     },
     "moduleSlots": 2,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1517,7 +1517,7 @@
     },
     "moduleSlots": 1,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -1545,7 +1545,7 @@
     },
     "moduleSlots": 1,
     "mSMod": "n/a",
-    "baseOrdID": "itemID",
+    "baseOrdID": "ID",
     "desc": "n/a",
     "tags": [
       "acAOA",

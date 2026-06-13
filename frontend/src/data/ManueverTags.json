@@ -85,6 +85,11 @@
         "desc": "Gain Forward"
     },
     {
+        "id": "manuDiscount",
+        "name":"Discount",
+        "desc": "reduce next action by [x] energy"
+    },
+    {
         "id": "manuAddMitigate",
         "name":"Mitigate",
         "desc": "Gains Mitigate"

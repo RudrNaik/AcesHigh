@@ -3,40 +3,132 @@ import type { CharacterData } from "./characterTypes";
 export const createDefaultCharacter = (): CharacterData => ({
   id: crypto.randomUUID(),
 
+  metadata: {
+    setupComplete: false,
+    userName: "",
+    startingPilotStats: {
+      temper: 1,
+      nerve: 1,
+      reflex: 1,
+      gResist: 1,
+    },
+    startingRP: 0,
+    generation: 0,
+  },
+
   dossier: {
     firstName: "",
     lastName: "",
     callsign: "",
 
-    age: null,
-
     gender: "",
     pronouns: "",
 
-    quirk1: "",
-    quirk2: "",
-    quirk3: "",
+    dateOfBirth: "",
+    placeOfBirth: "",
+    nationality: "",
+
+    rank: "",
+    squadron: "",
+
+    faith: "",
+    sexuality: "",
+
+    height: "",
+    weight: "",
+
+    hairColor: "",
+    eyeColor: "",
+
+    biography: "",
+    description: "",
+    serviceRecord: "",
+    psychologicalReport: "",
+
+    languages: "",
+
+    relationships: "",
 
     notes: "",
   },
 
   stats: {
-    temper: 0,
-    nerve: 0,
-    reflex: 0,
-    gResist: 0,
+    temper: 1,
+    nerve: 1,
+    reflex: 1,
+    gResist: 1,
   },
 
   stress: {
     mental: 0,
+    permMentalAdj: 0,
     physical: 0,
+    permPhysicalAdj: 0,
   },
 
-  aircraftId: null,
+  coins: [
+    {
+      used: false,
+      burned: false,
+    },
+    {
+      used: false,
+      burned: false,
+    },
+    {
+      used: false,
+      burned: false,
+    },
+  ],
 
-  perks: [],
-  licenses: [],
+  quirks: {
+    quirk1Name: "",
+    quirk1Desc: "",
+
+    quirk2Name: "",
+    quirk2Desc: "",
+
+    quirk3Name: "",
+    quirk3Desc: "",
+  },
+
+  specialization: {
+    specId: "",
+    tactics: [],
+    advancements: [],
+    mastery: "",
+  },
+
+  aircraft: {
+    aircraftId: "",
+    upgradePackage: "",
+    ordnanceId: "",
+    modules: [],
+    currentCapacity: 0,
+    currentSurvivability: 0,
+    currentEnergy: 0,
+  },
+
+  backgroundPerk: "",
+  masteredAircraft: ["acFamPhantoms"],
+  aceperks: [],
+  baseperks: [],
+  licenses: {
+    A1: 7,
+    A2: 7,
+    B1: 7,
+    B2: 7,
+    B3: 7,
+    C1: 7,
+    C2: 7,
+    D1: 7,
+    D2: 7,
+  },
   loot: [],
 
-  tourId: null,
+  tours: [],
+
+  resets: [],
+
+  bonusMoola: 0,
 });

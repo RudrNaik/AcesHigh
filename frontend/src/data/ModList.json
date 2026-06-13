@@ -334,7 +334,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordSLOW"],
     "checkForChars": null,
     "charChecked": null
   },
@@ -445,7 +445,7 @@
     "TypeMod": null,
     "AddManuID": null,
     "moduleTags": null,
-    "mods": null,
+    "mods": ["ordMLTI", "ordIMP"],
     "AddTags": null,
     "checkForChars": null,
     "charChecked": null
@@ -472,7 +472,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordHYPER"],
     "checkForChars": null,
     "charChecked": null
   },
@@ -607,7 +607,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordSMOKE"],
     "checkForChars": null,
     "charChecked": null
   },
@@ -709,7 +709,7 @@
     "TypeMod": null,
     "AddManuID": null,
     "moduleTags": null,
-    "mods": null,
+    "mods": {"A2G": 1},
     "AddTags": [
       "acVTOL"
     ],
@@ -751,7 +751,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordGUIDE"],
     "checkForChars": null,
     "charChecked": null
   }

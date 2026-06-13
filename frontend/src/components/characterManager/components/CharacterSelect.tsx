@@ -5,12 +5,14 @@ interface Props {
   characters: CharacterData[];
   onSelect: (id: string) => void;
   onCreate: () => void;
+  onDelete: (id: string) => void;
 }
 
 function CharacterSelect({
   characters,
   onSelect,
   onCreate,
+  onDelete
 }: Props) {
   return (
     <div className="space-y-6">
@@ -22,7 +24,7 @@ function CharacterSelect({
 
         <button
           onClick={onCreate}
-          className="borderborder-cyan-100 p-6 border-l-4"
+          className="border border-cyan-100 px-2 py-2"
         >
           Create Character
         </button>
@@ -33,7 +35,7 @@ function CharacterSelect({
           No characters created yet.
         </div>
       ) : (
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 border p-8">
           {characters.map((character) => (
             <CharacterCard
               key={character.id}
@@ -41,6 +43,8 @@ function CharacterSelect({
               onSelect={() =>
                 onSelect(character.id)
               }
+              onDelete={() =>
+                onDelete(character.id)}
             />
           ))}
         </div>

@@ -5,6 +5,12 @@
         "style": "Sniper",
         "description": "Something",
         "unlocks": {
+            "rank0": {
+                "ordnance": ["ordSAAM"],
+                "airframes": ["acF4E", "acMiG23MLD"],
+                "modules": [],
+                "upgrades": []
+            },
             "rank1": {
                 "ordnance": ["ordLAGM"],
                 "airframes": ["acF14A"],
@@ -55,6 +61,12 @@
     "style": "Anti-Material Rifle",
     "description": "Something",
     "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acCF105A", "acJ35J"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordSLAAM"],
             "airframes": ["acF8U3"],
@@ -105,6 +117,12 @@
     "style": "Air to Air",
     "description": "Something",
     "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acF5E", "acJ9A"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordFSAAM"],
             "airframes": ["acF15A"],
@@ -155,6 +173,12 @@
     "style": "Air to Ground",
     "description": "Something",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordUGB"],
+                "airframes": ["acMiG27", "acHarrier"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordUGBL","ordUGB3"],
             "airframes": ["acFUCK"],
@@ -205,6 +229,12 @@
     "style": "Its the Pilot",
     "description": "Here at Gründer Süd we believe that it's not the plane, it's the pilot. We give you the tools you need to dominate the battlefield, expressing how skilled you are.",
     "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acA4E", "acJ8"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": [],
             "airframes": ["acJEFFA"],
@@ -255,6 +285,12 @@
     "style": "Its the Plane",
     "description": "Here at Gründer Nord we believe that it's not the pilot, it's the plane. We give you the tools you need to dominate the battlefield, no matter how skilled you are..",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordMinSM"],
+                "airframes": ["acMiG21Bis", "acFX27"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordMAAM"],
             "airframes": [],
@@ -305,6 +341,12 @@
     "style": "Controller, Artillery (Suppression)",
     "description": "",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordRKTP"],
+                "airframes": ["acA6E", "acYF17"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordADNM","ordADCM","ordADMPN"],
             "airframes": ["acF16A"],
@@ -355,6 +397,12 @@
     "style": "Defender",
     "description": "",
     "unlocks": {
+        "rank0": {
+                "ordnance": ["ordGUNPOD"],
+                "airframes": ["acTornado", "acF111C", "acEA3B"],
+                "modules": [],
+                "upgrades": []
+        },
         "rank1": {
             "ordnance": ["ordARM"],
             "airframes": ["acF13A"],
