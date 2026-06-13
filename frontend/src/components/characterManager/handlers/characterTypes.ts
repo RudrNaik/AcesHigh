@@ -62,6 +62,17 @@ export interface CharacterDossier {
   notes: string;
 }
 
+export interface Coin {
+    used: boolean
+    burned: boolean
+  }
+
+export interface Coins {
+  coin1: Coin
+  coin2: Coin
+  coin3: Coin
+}
+
 export interface CharacterQuirks {
   quirk1Name: string;
   quirk1Desc: string;
@@ -124,6 +135,8 @@ export interface CharacterData {
   id: string;
 
   metadata: MetaData;
+
+  coins: Coins
 
   dossier: CharacterDossier;
 
