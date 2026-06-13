@@ -365,7 +365,7 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "-3",
+    "engCost": "-4",
     "tags": ["manuCap", "manuORD"],
     "desc": "Make an Attack using Ordnance, also uses Capacity."
   },
