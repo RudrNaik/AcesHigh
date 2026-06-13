@@ -5,7 +5,7 @@ export const createDefaultCharacter = (): CharacterData => ({
 
   metadata: {
     setupComplete: false,
-
+    userName: "",
     startingPilotStats: {
       temper: 1,
       nerve: 1,
@@ -69,16 +69,16 @@ export const createDefaultCharacter = (): CharacterData => ({
   coins: [
     {
       used: false,
-      burned: false
+      burned: false,
     },
     {
       used: false,
-      burned: false
+      burned: false,
     },
     {
       used: false,
-      burned: false
-    }
+      burned: false,
+    },
   ],
 
   quirks: {
@@ -121,8 +121,14 @@ export const createDefaultCharacter = (): CharacterData => ({
     B3: 7,
     C1: 7,
     C2: 7,
+    D1: 7,
+    D2: 7,
   },
   loot: [],
 
   tours: [],
+
+  resets: [],
+
+  bonusMoola: 0,
 });

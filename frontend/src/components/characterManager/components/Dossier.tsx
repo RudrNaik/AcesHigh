@@ -8,7 +8,7 @@ interface Props {
 
 interface FieldProps {
   label: string;
-  value: string;
+  value: string | number;
   onChange: (v: string) => void;
   placeholder?: string;
 }
@@ -22,6 +22,29 @@ function DossierTab({ character, updateCharacter }: Props) {
       ...character,
       dossier: {
         ...character.dossier,
+        [field]: value,
+      },
+    });
+  };
+
+  const updateMeta = (
+    field: keyof CharacterData["metadata"],
+    value: string,
+  ) => {
+    updateCharacter({
+      ...character,
+      metadata: {
+        ...character.metadata,
+        [field]: value,
+      },
+    });
+  };
+
+  const updateQuirk = (field: keyof CharacterData["quirks"], value: string) => {
+    updateCharacter({
+      ...character,
+      quirks: {
+        ...character.quirks,
         [field]: value,
       },
     });
@@ -70,6 +93,52 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.languages}
             onChange={(v) => updateField("languages", v)}
           />
+        </Section>
+      </div>
+
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
+        <Section title="Quirks">
+          <div className="grid lg:grid-cols-3 gap-4">
+            <div className="space-y-4">
+              <TextField
+                label="Name"
+                value={character.quirks.quirk1Name}
+                onChange={(v) => updateQuirk("quirk1Name", v)}
+              />
+
+              <TextArea
+                label="Description"
+                value={character.quirks.quirk1Desc}
+                onChange={(v) => updateQuirk("quirk1Desc", v)}
+              />
+            </div>
+            <div className="space-y-4">
+              <TextField
+                label="Name"
+                value={character.quirks.quirk2Name}
+                onChange={(v) => updateQuirk("quirk2Name", v)}
+              />
+
+              <TextArea
+                label="Description"
+                value={character.quirks.quirk2Desc}
+                onChange={(v) => updateQuirk("quirk2Desc", v)}
+              />
+            </div>
+            <div className="space-y-4">
+              <TextField
+                label="Name"
+                value={character.quirks.quirk3Name}
+                onChange={(v) => updateQuirk("quirk3Name", v)}
+              />
+
+              <TextArea
+                label="Description"
+                value={character.quirks.quirk3Desc}
+                onChange={(v) => updateQuirk("quirk3Desc", v)}
+              />
+            </div>
+          </div>
         </Section>
       </div>
 
@@ -203,6 +272,30 @@ function DossierTab({ character, updateCharacter }: Props) {
           />
         </Section>
       </div>
+
+      <div className=" border-cyan-100 lg:p-4 space-y-4">
+        <Section title="Meta-Data">
+          <div className="gap-4 max-w-md">
+            <TextField
+              label="User Name"
+              value={character.metadata.userName}
+              onChange={(v) => updateMeta("userName", v)}
+            />
+
+            <TextField
+              label="Generation"
+              value={String(character.metadata.generation)}
+              onChange={(v) => updateMeta("generation", v)}
+            />
+
+            <TextField
+              label="Starting RP"
+              value={String(character.metadata.startingRP)}
+              onChange={(v) => updateMeta("startingRP", v)}
+            />
+          </div>
+        </Section>
+      </div>
     </div>
   );
 }
@@ -216,7 +309,22 @@ function TextField({ label, value, onChange, placeholder }: FieldProps) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="border-b border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
+        className="w-full border-b border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
+      />
+    </div>
+  );
+}
+
+function TextArea({ label, value, onChange, placeholder }: FieldProps) {
+  return (
+    <div className="flex flex-col gap-1">
+      <label className="text-cyan-400 text-sm">{label}</label>
+
+      <textarea
+        value={value}
+        placeholder={placeholder}
+        onChange={(e) => onChange(e.target.value)}
+        className="w-full border-b min-h-25 border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
       />
     </div>
   );

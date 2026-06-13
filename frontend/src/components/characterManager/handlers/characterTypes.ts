@@ -16,6 +16,8 @@ export interface CharacterStress {
 export interface MetaData {
   setupComplete: boolean;
 
+  userName: string
+
   startingPilotStats: {
     temper: number;
     nerve: number;
@@ -131,6 +133,17 @@ export interface Tour {
   dep5: Deployment;
 }
 
+export interface Reset {
+  DT: [Downtime, Downtime]
+  BonusRp: number
+}
+
+export interface Downtime {
+   id: string,
+   starter: boolean
+   notes: string
+}
+
 export interface CharacterData {
   id: string;
 
@@ -162,4 +175,8 @@ export interface CharacterData {
   masteredAircraft: string[];
 
   tours: Tour[];
+
+  resets: Reset[];
+
+  bonusMoola: number
 }

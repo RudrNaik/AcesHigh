@@ -594,7 +594,7 @@ function CoinStats({
         return (
           <div
             key={index}
-            className="border border-cyan-800 bg-black/20 rounded p-3 flex flex-col items-center"
+            className="border max-w-sm border-cyan-800 bg-black/20 p-3 flex flex-col items-center"
           >
             <div
               className={`w-14 h-14 transition-all rounded-full border-2 flex items-center justify-center font-bold mb-2 ${classes}`}

@@ -472,7 +472,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordHYPER"],
     "checkForChars": null,
     "charChecked": null
   },
@@ -607,7 +607,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordSMOKE"],
     "checkForChars": null,
     "charChecked": null
   },
@@ -751,7 +751,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": null,
+    "AddTags": ["ordGUIDE"],
     "checkForChars": null,
     "charChecked": null
   }

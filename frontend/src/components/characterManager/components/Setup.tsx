@@ -183,6 +183,13 @@ function Setup({
         <h2 className="text-cyan-100 font-bold">Identity</h2>
 
         <div className="grid gap-2">
+          <label className="text-cyan-100 text-sm">Player Username</label>
+          <input
+            value={local.metadata.userName}
+            className="border-b border-cyan-100 max-w-sm"
+            onChange={(e) => updateMeta("userName", e.target.value)}
+          />
+
           <label className="text-cyan-100 text-sm">First Name</label>
           <input
             value={local.dossier.firstName}

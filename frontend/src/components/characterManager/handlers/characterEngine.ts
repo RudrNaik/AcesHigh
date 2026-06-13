@@ -17,8 +17,8 @@ export function getPhysStress(character: CharacterData) {
   return charStats.reflex + charStats.gResist;
 }
 
-export function getCoins(character: CharacterData): Coin[]{
-  return character.coins
+export function getCoins(character: CharacterData): Coin[] {
+  return character.coins;
 }
 
 export function getStaticModifiersFromSpec(character: CharacterData) {
@@ -106,125 +106,6 @@ export function getTempStress(character: CharacterData) {
   };
 }
 
-export function setTempPilotStats(
-  character: CharacterData,
-  pilotStats: CharacterStats,
-): CharacterData {
-  return {
-    ...character,
-    stats: {
-      ...character.stats,
-      temper: pilotStats.temper,
-      nerve: pilotStats.nerve,
-      reflex: pilotStats.reflex,
-      gResist: pilotStats.gResist,
-    },
-  };
-}
-
-export function setTempStress(
-  character: CharacterData,
-  stress: { mental: number; physical: number },
-): CharacterData {
-  return {
-    ...character,
-    stress: {
-      ...character.stress,
-      mental: stress.mental,
-      physical: stress.physical,
-    },
-  };
-}
-
-export function setUsedCoin(
-  character: CharacterData,
-  index: number
-): CharacterData {
-  return {
-    ...character,
-    coins: character.coins.map((coin, i) =>
-      i === index ? { ...coin, used: true } : coin
-    ),
-  };
-}
-
-export function resetUsedCoin(character: CharacterData,
-  index: number
-): CharacterData {
-  return {
-    ...character,
-    coins: character.coins.map((coin, i) =>
-      i === index ? { ...coin, used: false } : coin
-    ),
-  };
-}
-
-export function burnCoin(character: CharacterData,
-  index: number
-): CharacterData {
-  return {
-    ...character,
-    coins: character.coins.map((coin, i) =>
-      i === index ? { ...coin, used: true, burned: true } : coin
-    ),
-  };
-}
-
-export function pheonixCoin(character: CharacterData,
-  index: number
-): CharacterData {
-  return {
-    ...character,
-    coins: character.coins.map((coin, i) =>
-      i === index ? { ...coin, used: false, burned: false } : coin
-    ),
-  };
-}
-
-export function initializeTempStats(character: CharacterData): CharacterData {
-  const maxStats = getPilotStatsModified(character);
-
-  return {
-    ...character,
-    stats: {
-      temper: maxStats.temper,
-      nerve: maxStats.nerve,
-      reflex: maxStats.reflex,
-      gResist: maxStats.gResist,
-    },
-  };
-}
-
-export function spendPilotStat(
-  character: CharacterData,
-  stat: keyof CharacterStats,
-  amount = 1,
-): CharacterData {
-  return {
-    ...character,
-    stats: {
-      ...character.stats,
-      [stat]: Math.max(0, character.stats[stat] - amount),
-    },
-  };
-}
-
-export function recoverPilotStat(
-  character: CharacterData,
-  stat: keyof CharacterStats,
-  amount = 1,
-): CharacterData {
-  const maxStats = getPilotStatsModified(character);
-
-  return {
-    ...character,
-    stats: {
-      ...character.stats,
-      [stat]: Math.min(maxStats[stat], character.stats[stat] + amount),
-    },
-  };
-}
-
 export function getBackGroundPerk(character: CharacterData) {
   let bgPerk = perks.find((p) => p.id === character.backgroundPerk);
   return {
@@ -286,6 +167,128 @@ export function getAdvancements(character: CharacterData) {
   return {
     fromSpec: spec?.advancements ?? [],
     fromChar: character?.specialization?.advancements ?? [],
+  };
+}
+
+export function setTempPilotStats(
+  character: CharacterData,
+  pilotStats: CharacterStats,
+): CharacterData {
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      temper: pilotStats.temper,
+      nerve: pilotStats.nerve,
+      reflex: pilotStats.reflex,
+      gResist: pilotStats.gResist,
+    },
+  };
+}
+
+export function setTempStress(
+  character: CharacterData,
+  stress: { mental: number; physical: number },
+): CharacterData {
+  return {
+    ...character,
+    stress: {
+      ...character.stress,
+      mental: stress.mental,
+      physical: stress.physical,
+    },
+  };
+}
+
+export function setUsedCoin(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: true } : coin,
+    ),
+  };
+}
+
+export function resetUsedCoin(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: false } : coin,
+    ),
+  };
+}
+
+export function burnCoin(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: true, burned: true } : coin,
+    ),
+  };
+}
+
+export function pheonixCoin(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  return {
+    ...character,
+    coins: character.coins.map((coin, i) =>
+      i === index ? { ...coin, used: false, burned: false } : coin,
+    ),
+  };
+}
+
+export function initializeTempStats(character: CharacterData): CharacterData {
+  const maxStats = getPilotStatsModified(character);
+
+  return {
+    ...character,
+    stats: {
+      temper: maxStats.temper,
+      nerve: maxStats.nerve,
+      reflex: maxStats.reflex,
+      gResist: maxStats.gResist,
+    },
+  };
+}
+
+export function spendPilotStat(
+  character: CharacterData,
+  stat: keyof CharacterStats,
+  amount = 1,
+): CharacterData {
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      [stat]: Math.max(0, character.stats[stat] - amount),
+    },
+  };
+}
+
+export function recoverPilotStat(
+  character: CharacterData,
+  stat: keyof CharacterStats,
+  amount = 1,
+): CharacterData {
+  const maxStats = getPilotStatsModified(character);
+
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      [stat]: Math.min(maxStats[stat], character.stats[stat] + amount),
+    },
   };
 }
 
@@ -444,30 +447,6 @@ export function selectMastery(
   };
 }
 
-export function reconcileMastery(character: CharacterData): CharacterData {
-  if (!character.specialization.mastery) {
-    return character;
-  }
-
-  const spec = getSpecialization(character);
-
-  const hasAllTactics = spec.tactics.every((t) =>
-    character.specialization.tactics.includes(t.id),
-  );
-
-  if (hasAllTactics) {
-    return character;
-  }
-
-  return {
-    ...character,
-    specialization: {
-      ...character.specialization,
-      mastery: "",
-    },
-  };
-}
-
 //Reduces mental stats by 1 when mentally stressed out
 export function mindBreak(
   character: CharacterData,
@@ -520,6 +499,30 @@ export function reconcileTempStats(character: CharacterData): CharacterData {
       nerve: Math.min(character.stats.nerve, maxStats.nerve),
       reflex: Math.min(character.stats.reflex, maxStats.reflex),
       gResist: Math.min(character.stats.gResist, maxStats.gResist),
+    },
+  };
+}
+
+export function reconcileMastery(character: CharacterData): CharacterData {
+  if (!character.specialization.mastery) {
+    return character;
+  }
+
+  const spec = getSpecialization(character);
+
+  const hasAllTactics = spec.tactics.every((t) =>
+    character.specialization.tactics.includes(t.id),
+  );
+
+  if (hasAllTactics) {
+    return character;
+  }
+
+  return {
+    ...character,
+    specialization: {
+      ...character.specialization,
+      mastery: "",
     },
   };
 }

@@ -35,7 +35,7 @@ function CharacterSheet({
 
       <div className="border-b-2 border-cyan-100">
         <h1 className="text-2xl font-bold">
-          {character.dossier.callsign || "Unnamed Pilot"}
+          {character.dossier.callsign || "Unnamed Pilot"} //  {character.metadata.userName}
         </h1>
       </div>
 
