@@ -2,7 +2,7 @@ import type {
   CharacterData,
   //CharacterStats,
   //Coin
-} from "./characterTypes";
+} from "../characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
 //import staticMods from "../../../data/StaticMods.json";
 //import perks from "../../../data/PerkList.json";

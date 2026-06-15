@@ -1,4 +1,4 @@
-import * as planeEngine from "../../../handlers/planeEngine";
+import * as planeEngine from "../../../handlers/Engines/planeEngine";
 import type { CharacterData } from "../../../handlers/characterTypes";
 
 function Masteries({ character }: { character: CharacterData }) {

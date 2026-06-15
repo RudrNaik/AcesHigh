@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { resolveTag, resolveManeuver } from "../../../../common/tagResolver";
 import type { CharacterData } from "../../../handlers/characterTypes";
-import * as planeEngine from "../../../handlers/planeEngine";
+import * as planeEngine from "../../../handlers/Engines/planeEngine";
 
 interface UpgradePackageSlotProps {
   character: CharacterData;

@@ -4,7 +4,7 @@ import type {
   Coin,
 } from "../../../handlers/characterTypes";
 import { useEffect, useState, useRef } from "react";
-import * as charEngine from "../../../handlers/characterEngine";
+import * as charEngine from "../../../handlers/Engines/characterEngine";
 
 function PilotView({
   character,

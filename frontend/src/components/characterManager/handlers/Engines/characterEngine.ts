@@ -1,9 +1,9 @@
-import type { CharacterData, CharacterStats, Coin } from "./characterTypes";
+import type { CharacterData, CharacterStats, Coin } from "../characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
-import staticMods from "../../../data/StaticMods.json";
-import perks from "../../../data/PerkList.json";
-import specializations from "../../../data/Specs.json";
-import downtime from "../../../data/Downtimes.json";
+import staticMods from "../../../../data/StaticMods.json";
+import perks from "../../../../data/PerkList.json";
+import specializations from "../../../../data/Specs.json";
+import downtime from "../../../../data/Downtimes.json";
 import * as planeEngine from "./planeEngine";
 //import licenses from "../../../data/Licenses.json";
 

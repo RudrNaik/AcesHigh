@@ -1,16 +1,16 @@
-import type { CharacterData } from "./characterTypes";
+import type { CharacterData } from "../characterTypes";
 import type {
   //AircraftSelectOption,
   AircraftCardProps,
-} from "../components/charManagerCommon/planeComponents/MiniAircraftCard";
-import type { OrdnanceSelectOption } from "../components/charManagerCommon/planeComponents/MiniOrdnanceCard";
-import aircraft from "../../../data/AircraftList.json";
-import licenses from "../../../data/Licenses.json";
-import ordnance from "../../../data/OrdnanceList.json";
-import modules from "../../../data/ModList.json";
-import masteries from "../../../data/AircraftFamilies.json";
-import techniques from "../../../data/TechniqueList.json";
-import upgrades from "../../../data/UpgradePackageList.json";
+} from "../../components/charManagerCommon/planeComponents/MiniAircraftCard";
+import type { OrdnanceSelectOption } from "../../components/charManagerCommon/planeComponents/MiniOrdnanceCard";
+import aircraft from "../../../../data/AircraftList.json";
+import licenses from "../../../../data/Licenses.json";
+import ordnance from "../../../../data/OrdnanceList.json";
+import modules from "../../../../data/ModList.json";
+import masteries from "../../../../data/AircraftFamilies.json";
+import techniques from "../../../../data/TechniqueList.json";
+import upgrades from "../../../../data/UpgradePackageList.json";
 
 export type AirplaneStats = {
   A2A: string | number;

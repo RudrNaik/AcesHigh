@@ -4,6 +4,7 @@ import CharacterTabs from "./CharacterTabs";
 import Dossier from "./Dossier";
 import Sortie from "./Sortie";
 import Setup from "./Setup";
+import Logistics from "./Logistics"
 
 import specializations from "../../../data/Specs.json";
 import perks from "../../../data/PerkList.json";
@@ -62,6 +63,8 @@ function CharacterSheet({
       )}
 
       {activeTab === "Sortie" && <Sortie character={character} updateCharacter={onUpdate}/>}
+
+      {activeTab === "Logistics" && <Logistics/>}
     </div>
   );
 }

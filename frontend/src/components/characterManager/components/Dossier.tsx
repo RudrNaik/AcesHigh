@@ -40,6 +40,13 @@ function DossierTab({ character, updateCharacter }: Props) {
     });
   };
 
+  const updateBase = (value: number) => {
+    updateCharacter({
+      ...character,
+      bonusMoola: value,
+    });
+  };
+
   const updateQuirk = (field: keyof CharacterData["quirks"], value: string) => {
     updateCharacter({
       ...character,
@@ -292,6 +299,12 @@ function DossierTab({ character, updateCharacter }: Props) {
               label="Starting RP"
               value={String(character.metadata.startingRP)}
               onChange={(v) => updateMeta("startingRP", v)}
+            />
+
+            <TextField
+              label="Moola"
+              value={String(character.bonusMoola)}
+              onChange={(v) => updateBase(Number(v))}
             />
           </div>
         </Section>

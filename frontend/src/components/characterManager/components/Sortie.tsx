@@ -26,6 +26,7 @@ function SortieView({
           setActiveTab={setActiveTab}
           setupCompleted={true}
           gameplay={true}
+          logi={false}
         />
 
         {activeTab === "Pilot" && (

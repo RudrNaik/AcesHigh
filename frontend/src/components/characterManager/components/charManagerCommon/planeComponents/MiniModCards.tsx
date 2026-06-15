@@ -5,9 +5,9 @@ import {
   getModuleSlotCount,
   setModule,
   removeModule,
-} from "../../../handlers/planeEngine";
+} from "../../../handlers/Engines/planeEngine";
 import type { CharacterData } from "../../../handlers/characterTypes";
-import type { ModuleDeets as Module } from "../../../handlers/planeEngine";
+import type { ModuleDeets as Module } from "../../../handlers/Engines/planeEngine";
 
 interface ModuleManagerProps {
   character: CharacterData;
