@@ -10,6 +10,7 @@ import ordnance from "../../../data/OrdnanceList.json";
 import modules from "../../../data/ModList.json";
 import masteries from "../../../data/AircraftFamilies.json";
 import techniques from "../../../data/TechniqueList.json";
+import upgrades from "../../../data/UpgradePackageList.json";
 
 export type AirplaneStats = {
   A2A: string | number;
@@ -60,24 +61,58 @@ type AppliedModEffects = {
   statDeltas: Record<string, number>;
 };
 
+type Airplane = {
+  id: string;
+  name: string;
+  family: string;
+  intrinsic: string;
+  type: string;
+  gen: number;
+  tier: number;
+  stats: {
+    A2A: number;
+    A2G: number;
+    MANU: number;
+    SPEED: number;
+    SURV: number;
+    CAP: number;
+  };
+  moduleSlots: number;
+  mSMod: number;
+  baseOrdID: string;
+  desc: string;
+  tags: string[];
+  startingChars: string;
+  endingChars: string;
+};
+
 export type LicenseRank = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 export type RankKey = `rank${LicenseRank}`;
 
 function getAircraftData(character: CharacterData) {
-  const plane = aircraft.find((p) => p.id === character.aircraft.aircraftId);
+  const plane = aircraft.find(
+    (p) => p.id === character.aircraft.aircraftId,
+  ) as Airplane;
   if (!plane) return plane;
 
   const { acTags, statDeltas } = applyModules(character);
+  const upgradeEffects = applyUpgradePackage(character, plane);
 
-  const baseTags: string[] =
-    typeof plane.tags === "string"
-      ? plane.tags
-          .split(",")
-          .map((t) => t.trim())
-          .filter(Boolean)
-      : [...(plane.tags as string[])];
+  const baseTags: string[] = Array.isArray(plane.tags)
+    ? [...plane.tags]
+    : (plane.tags as string)
+        .split(",")
+        .map((t) => t.trim())
+        .filter(Boolean);
 
-  const mergedTags = [...new Set([...baseTags, ...acTags])];
+  const mergedTags = [
+    ...new Set([...baseTags, ...acTags, ...(upgradeEffects.acTags ?? [])]),
+  ];
+
+  const mergedStatDeltas = { ...statDeltas };
+  for (const [stat, delta] of Object.entries(upgradeEffects.statDeltas ?? {})) {
+    mergedStatDeltas[stat] = (mergedStatDeltas[stat] ?? 0) + delta;
+  }
 
   const statKeyMap: Record<string, keyof AirplaneStats> = {
     Manu: "MANU",
@@ -100,17 +135,15 @@ function getAircraftData(character: CharacterData) {
     SURV: "SURV",
   };
 
-  const mergedStats = { ...plane.stats };
-  for (const [stat, delta] of Object.entries(statDeltas)) {
+  const mergedStats: Record<string, number> = { ...plane.stats };
+  for (const [stat, delta] of Object.entries(mergedStatDeltas)) {
     const normalizedKey = statKeyMap[stat];
     if (normalizedKey && normalizedKey in mergedStats) {
-      mergedStats[normalizedKey] = String(
-        Number(mergedStats[normalizedKey]) + delta,
-      );
+      mergedStats[normalizedKey] = Number(mergedStats[normalizedKey]) + delta;
     }
   }
 
-  return { ...plane, tags: mergedTags, stats: mergedStats };
+  return { ...plane, tags: mergedTags, stats: mergedStats as AirplaneStats };
 }
 
 export function getAircraftList() {
@@ -190,16 +223,46 @@ export function getUnlockedModules(character: CharacterData) {
     }));
 }
 
+export function getUnlockedUpgrades(character: CharacterData) {
+  const { upgrades: upgradeIDs } = getAllUnlocks(character);
+  return upgrades
+    .filter((m) => upgradeIDs.includes(m.id))
+    .map((m) => ({
+      id: m.id,
+      name: m.name || "",
+      desc: m.desc || "",
+      IntrinsicMod: m.IntrinsicMod || "",
+      TypeMod: m.TypeMod || "",
+      AddManuID: m.AddManuID || "",
+      moduleTags: m.moduleTags || "",
+      mods: m.mods || "",
+      AddTags: m.AddTags || "",
+      checkForChars: m.checkForChars || "",
+      charChecked: m.charChecked || "",
+    }));
+}
+
 export function getPlaneOrdnance(character: CharacterData): OrdnanceDeets {
   const ord = ordnance.find((o) => o.id === character.aircraft.ordnanceId);
   const { ordTags } = applyModules(character);
+
+  const plane = aircraft.find((p) => p.id === character.aircraft.aircraftId) as
+    | Airplane
+    | undefined;
+  const upgradeEffects = plane ? applyUpgradePackage(character, plane) : {};
 
   return {
     id: ord?.id ?? "ordERROR",
     name: ord?.name ?? "None",
     domain: ord?.domain ?? "None",
     desc: ord?.desc ?? "None",
-    tags: [...new Set([...(ord?.tags ?? ["error"]), ...ordTags])],
+    tags: [
+      ...new Set([
+        ...(ord?.tags ?? ["error"]),
+        ...ordTags,
+        ...(upgradeEffects.ordTags ?? []),
+      ]),
+    ],
   };
 }
 
@@ -485,7 +548,7 @@ export function setModule(
 ): CharacterData {
   const current = character.aircraft.modules ?? [];
   const slotCount = getModuleSlotCount(character);
-  
+
   if (current.includes(modId)) return character;
   if (current.length >= slotCount) return character;
 
@@ -494,6 +557,21 @@ export function setModule(
     aircraft: {
       ...character.aircraft,
       modules: [...current, modId],
+    },
+  };
+}
+
+export function setUpgrade(
+  character: CharacterData,
+  upID: string,
+): CharacterData {
+  const newUp = getUnlockedUpgrades(character).find((u) => u.id == upID);
+
+  return {
+    ...character,
+    aircraft: {
+      ...character.aircraft,
+      upgradePackage: newUp?.id || "",
     },
   };
 }
@@ -524,18 +602,69 @@ export function applyModules(character: CharacterData): AppliedModEffects {
     const mod = modules.find((m) => m.id === modId);
     if (!mod) continue;
 
-
     for (const tag of mod.AddTags ?? []) {
       if (tag.startsWith("ord")) {
         effects.ordTags.push(tag);
       } else if (tag.startsWith("ac")) {
         effects.acTags.push(tag);
       }
-
     }
 
     for (const [stat, delta] of Object.entries(mod.mods ?? {})) {
       effects.statDeltas[stat] = (effects.statDeltas[stat] ?? 0) + delta;
+    }
+  }
+
+  return effects;
+}
+
+export function applyUpgradePackage(
+  character: CharacterData,
+  plane: Airplane,
+): Partial<AppliedModEffects> {
+  const effects: Partial<AppliedModEffects> = {
+    acTags: [],
+    ordTags: [],
+    statDeltas: {},
+  };
+
+  const packageId = getUpPackage(character);
+  if (!packageId || packageId === "n/a") return effects;
+
+  const upgrade = upgrades.find((u) => u.id === packageId);
+  if (!upgrade) return effects;
+
+  if (upgrade.TypeMod && upgrade.TypeMod !== plane.type) return effects;
+
+  if (upgrade.checkForChars) {
+    const charToCheck = upgrade.charChecked;
+    const passes =
+      upgrade.checkForChars === "End"
+        ? plane.endingChars === charToCheck
+        : upgrade.checkForChars === "Start"
+          ? plane.startingChars === charToCheck
+          : true;
+
+    if (!passes) {
+      return effects;
+    }
+  }
+
+  if (upgrade.mods && typeof upgrade.mods === "object") {
+    for (const [stat, delta] of Object.entries(upgrade.mods)) {
+      effects.statDeltas![stat] =
+        (effects.statDeltas![stat] ?? 0) + Number(delta);
+    }
+  }
+
+  if (upgrade.AddTags) {
+    const tags: string[] = Array.isArray(upgrade.AddTags)
+      ? upgrade.AddTags
+      : [upgrade.AddTags];
+
+    for (const tag of tags) {
+      if (tag.startsWith("ord")) effects.ordTags!.push(tag);
+      else if (tag.startsWith("ac")) effects.acTags!.push(tag);
     }
   }
 

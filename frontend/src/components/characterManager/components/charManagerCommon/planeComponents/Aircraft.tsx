@@ -4,6 +4,7 @@ import AircraftCard from "./MiniAircraftCard";
 import OrdnanceCard from "./MiniOrdnanceCard";
 import ModuleManager from "./MiniModCards"
 import Masteries from "./MasteryCards"
+import UpPackage from "./MiniUpgradeCard"
 
 function AircraftView({
   character,
@@ -68,6 +69,9 @@ function AircraftView({
       <h2 className="text-cyan-300 font-bold">Masteries</h2>
 
       <Masteries character={character}/>
+
+      <h2 className="text-cyan-300 font-bold">Upgrade Package</h2>
+      <UpPackage character={character} onSelect={(id) => updateCharacter(planeEngine.setUpgrade(character, id))}/>
 
       <h2 className="text-cyan-300 font-bold">Modules</h2>
 

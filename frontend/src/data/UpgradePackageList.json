@@ -87,7 +87,7 @@
   },
   {
     "id": "upXC",
-    "name": "X Package C",
+    "name": "X Package -> C",
     "desc": "If a plane ends in E, gain +1 A2A, +2 Capacity, and +1 Survivability. If it ends in C, gain +2 Survivability and +2 A2A. Then add an X to the end of its name.",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -98,12 +98,12 @@
       "Surv": 2
     },
     "AddTags": null,
-    "checkForChars": null,
-    "charChecked": null
+    "checkForChars": "End",
+    "charChecked": "C"
   },
   {
     "id": "upXE",
-    "name": "X Package E",
+    "name": "X Package -> E",
     "desc": "If a plane ends in E, gain +1 A2A, +2 Capacity, and +1 Survivability. If it ends in C, gain +2 Survivability and +2 A2A. Then add an X to the end of its name.",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -115,8 +115,8 @@
       "CAP": 2
     },
     "AddTags": null,
-    "checkForChars": null,
-    "charChecked": null
+    "checkForChars": "End",
+    "charChecked": "E"
   },
   {
     "id": "upKai",
