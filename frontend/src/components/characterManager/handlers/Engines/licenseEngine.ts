@@ -8,7 +8,7 @@ import type {
 //import perks from "../../../data/PerkList.json";
 //import specializations from "../../../data/Specs.json";
 //import downtime from "../../../data/Downtimes.json";
-//import licenses from "../../../data/Licenses.json";
+import licenses from "../../../../data/Licenses.json";
 import * as planeEngine from "./planeEngine";
 //import * as charEngine from "./characterEngine";
 
@@ -24,6 +24,13 @@ export type LicenseFormat = {
 };
 
 export type LicenseKey = keyof LicenseFormat;
+
+type UnlockBucket = {
+  ordnance: string[];
+  airframes: string[];
+  modules: string[];
+  upgrades: string[];
+};
 
 const TIER_COSTS: Record<number, number> = {
   0: 0,
@@ -103,8 +110,18 @@ export function setLicenseTier(
   license: LicenseKey,
   targetTier: number,
 ): CharacterData {
-  if (targetTier < 0 || targetTier > 7) return character;
-  if (!canAffordUpgrade(character, license, targetTier)) return character;
+  if (targetTier < 0 || targetTier > 7) {
+    return character;
+  }
+
+  const currentTier = character.licenses[license] ?? 0;
+
+  if (
+    targetTier > currentTier &&
+    !canAffordUpgrade(character, license, targetTier)
+  ) {
+    return character;
+  }
 
   const updated: CharacterData = {
     ...character,
@@ -115,4 +132,48 @@ export function setLicenseTier(
   };
 
   return planeEngine.sanitizeAircraft(updated);
+}
+
+function collectUnlocks(character: CharacterData): UnlockBucket {
+  const result: UnlockBucket = {
+    ordnance: [],
+    airframes: [],
+    modules: [],
+    upgrades: [],
+  };
+
+  for (const license of licenses) {
+    const tier =
+      character.licenses[license.id as keyof typeof character.licenses] ?? 0;
+
+    for (let rank = 0; rank <= tier; rank++) {
+      const unlocks =
+        license.unlocks[`rank${rank}` as keyof typeof license.unlocks];
+
+      if (!unlocks) continue;
+
+      result.ordnance.push(...unlocks.ordnance);
+      result.airframes.push(...unlocks.airframes);
+      result.modules.push(...unlocks.modules);
+      result.upgrades.push(...unlocks.upgrades);
+    }
+  }
+
+  return result;
+}
+
+export function getUnlockedAircraft(character: CharacterData): string[] {
+  return [...new Set(collectUnlocks(character).airframes)];
+}
+
+export function getUnlockedOrdnance(character: CharacterData): string[] {
+  return [...new Set(collectUnlocks(character).ordnance)];
+}
+
+export function getUnlockedModules(character: CharacterData): string[] {
+  return [...new Set(collectUnlocks(character).modules)];
+}
+
+export function getUnlockedUpgradePacks(character: CharacterData): string[] {
+  return [...new Set(collectUnlocks(character).upgrades)];
 }

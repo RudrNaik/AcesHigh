@@ -1,8 +1,16 @@
 import Tabs from "./CharacterTabs";
 import { useState } from "react";
+import type { CharacterData } from "../handlers/characterTypes";
+import Licenses from "./charManagerCommon/LogisticsComponents/Licenses"
 
-function SortieView({}: {}) {
-  const [activeTab, setActiveTab] = useState("Pilot");
+function LogisticsView({
+  character,
+  updateCharacter,
+}: {
+  character: CharacterData;
+  updateCharacter: (updated: CharacterData) => void;
+}) {
+  const [activeTab, setActiveTab] = useState("Licenses");
   return (
     <div className="w-full min-h-screen text-cyan-100 space-y-6">
       {/* HEADER */}
@@ -18,11 +26,11 @@ function SortieView({}: {}) {
         logi={true}
       />
 
-      {activeTab === "Licenses" && <div>Licenses and unlocks here.</div>}
+      {activeTab === "Licenses" && <Licenses character={character} updateCharacter={updateCharacter}/>}
 
       {activeTab === "Loot" && <div>Loot and other items here.</div>}
     </div>
   );
 }
 
-export default SortieView;
+export default LogisticsView;

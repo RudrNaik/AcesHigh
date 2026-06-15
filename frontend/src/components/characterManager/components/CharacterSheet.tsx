@@ -65,7 +65,7 @@ function CharacterSheet({
 
       {activeTab === "Sortie" && <Sortie character={character} updateCharacter={onUpdate}/>}
 
-      {activeTab === "Logistics" && <Logistics/>}
+      {activeTab === "Logistics" && <Logistics character={character} updateCharacter={onUpdate}/>}
     </div>
   );
 }

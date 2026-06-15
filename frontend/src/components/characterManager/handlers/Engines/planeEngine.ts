@@ -59,6 +59,7 @@ type AppliedModEffects = {
   acTags: string[];
   ordTags: string[];
   statDeltas: Record<string, number>;
+  newIntrinsic: string
 };
 
 type Airplane = {
@@ -143,7 +144,9 @@ function getAircraftData(character: CharacterData) {
     }
   }
 
-  return { ...plane, tags: mergedTags, stats: mergedStats as AirplaneStats };
+  const newIntrinsic = upgradeEffects.newIntrinsic || plane.intrinsic
+
+  return { ...plane, tags: mergedTags, stats: mergedStats as AirplaneStats, intrinsic: newIntrinsic };
 }
 
 export function getAircraftList() {
@@ -594,6 +597,7 @@ export function applyModules(character: CharacterData): AppliedModEffects {
     acTags: [],
     ordTags: [],
     statDeltas: {},
+    newIntrinsic: ""
   };
 
   const equippedIds: string[] = character.aircraft.modules ?? [];
@@ -626,6 +630,7 @@ export function applyUpgradePackage(
     acTags: [],
     ordTags: [],
     statDeltas: {},
+    newIntrinsic:""
   };
 
   const packageId = getUpPackage(character);
@@ -666,6 +671,10 @@ export function applyUpgradePackage(
       if (tag.startsWith("ord")) effects.ordTags!.push(tag);
       else if (tag.startsWith("ac")) effects.acTags!.push(tag);
     }
+  }
+
+  if(upgrade.IntrinsicMod){
+    effects.newIntrinsic = upgrade.IntrinsicMod
   }
 
   return effects;
