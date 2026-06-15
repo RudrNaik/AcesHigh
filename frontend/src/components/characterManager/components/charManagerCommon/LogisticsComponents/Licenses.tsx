@@ -93,7 +93,7 @@ function LicenseView({
 
               {/* TIER CONTROLS */}
               <div className="flex items-center gap-2">
-                <div className="text-cyan-300 font-bold text-lg">T{tier}</div>
+                <div className="text-cyan-300 font-bold text-lg">Tier: {tier}</div>
 
                 <button
                   className="px-2 border border-cyan-800 text-cyan-300 disabled:opacity-30"
