@@ -725,3 +725,53 @@ export function getAllUnlocks(character: CharacterData) {
     upgrades: [...new Set(result.upgrades)],
   };
 }
+
+export function sanitizeAircraft(character: CharacterData): CharacterData {
+  const { ordnance, airframes, modules, upgrades } = getAllUnlocks(character);
+
+  // If current aircraft is no longer unlocked, reset to default
+  const currentAircraftId = character.aircraft.aircraftId;
+  const validAircraftId = airframes.includes(currentAircraftId)
+    ? currentAircraftId
+    : "acF4E"; // or whatever your default is
+
+  const needsAircraftReset = validAircraftId !== currentAircraftId;
+
+  // Strip modules not in unlocked pool
+  const validModules = (character.aircraft.modules ?? []).filter((id) =>
+    modules.includes(id),
+  );
+
+  // Strip ordnance if no longer unlocked
+  const currentOrdnanceId = character.aircraft.ordnanceId;
+  const validOrdnanceId = ordnance.includes(currentOrdnanceId)
+    ? currentOrdnanceId
+    : "ordNone";
+
+  // Strip upgrade package if no longer unlocked
+  const currentUpgrade = character.aircraft.upgradePackage;
+  const validUpgrade =
+    !currentUpgrade ||
+    currentUpgrade === "n/a" ||
+    upgrades.includes(currentUpgrade)
+      ? currentUpgrade
+      : "";
+
+  const sanitized: CharacterData = {
+    ...character,
+    aircraft: {
+      ...character.aircraft,
+      aircraftId: validAircraftId,
+      ordnanceId: validOrdnanceId,
+      modules: validModules,
+      upgradePackage: validUpgrade,
+    },
+  };
+
+  // If aircraft itself changed, re-initialize its stats
+  if (needsAircraftReset) {
+    return setAircraft(sanitized, validAircraftId);
+  }
+
+  return sanitized;
+}

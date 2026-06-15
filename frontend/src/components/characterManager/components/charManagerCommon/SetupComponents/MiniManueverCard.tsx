@@ -1,6 +1,6 @@
 import { useState } from "react";
-import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../../common/tagResolver";
-import manus from "../../../../data/ManueverList.json"
+import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../../../common/tagResolver";
+import manus from "../../../../../data/ManueverList.json"
 
 interface ManeuverCardProps {
   id: string;

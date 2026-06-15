@@ -45,6 +45,7 @@ function CharacterSheet({
         setActiveTab={setActiveTab}
         setupCompleted={character.metadata.setupComplete}
         gameplay = {false}
+        logi={false}
       />
 
       {activeTab === "Setup" && (
