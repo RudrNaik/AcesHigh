@@ -16,7 +16,7 @@ export interface CharacterStress {
 export interface MetaData {
   setupComplete: boolean;
 
-  userName: string
+  userName: string;
 
   startingPilotStats: {
     temper: number;
@@ -65,14 +65,14 @@ export interface CharacterDossier {
 }
 
 export interface Coin {
-    used: boolean
-    burned: boolean
-  }
+  used: boolean;
+  burned: boolean;
+}
 
 export interface Coins {
-  coin1: Coin
-  coin2: Coin
-  coin3: Coin
+  coin1: Coin;
+  coin2: Coin;
+  coin3: Coin;
 }
 
 export interface CharacterQuirks {
@@ -102,7 +102,7 @@ export interface Aircraft {
   aircraftId: string;
   ordnanceId: string;
   upgradePackage: string;
-  modules: string[]
+  modules: string[];
   currentCapacity: number;
   currentSurvivability: number;
   currentEnergy: number;
@@ -114,17 +114,17 @@ export interface Deployment {
   type: string;
   modifier: string;
   override: string;
-  advancement: boolean;
-  actTour: boolean;
-  actYourself: boolean;
-  actSpec: boolean;
-  defbrief: boolean;
-  maxStress: boolean;
-  survCrit: boolean;
+  advancementComplete: boolean;
+  actTourComplete: boolean;
+  actYourselfComplete: boolean;
+  actSpecComplete: boolean;
+  defbriefComplete: boolean;
+  maxStressComplete: boolean;
+  survCritComplete: boolean;
 }
 
 export interface Tour {
-  currTour: string;
+  currTourID: string;
   acePerk: string;
   dep1: Deployment;
   dep2: Deployment;
@@ -134,14 +134,14 @@ export interface Tour {
 }
 
 export interface Reset {
-  DT: [Downtime, Downtime]
-  BonusRp: number
+  DT: [Downtime, Downtime];
+  BonusRp: number;
 }
 
 export interface Downtime {
-   id: string,
-   starter: boolean
-   notes: string
+  id: string;
+  starter: boolean;
+  notes: string;
 }
 
 export interface CharacterData {
@@ -149,7 +149,7 @@ export interface CharacterData {
 
   metadata: MetaData;
 
-  coins: Coin[]
+  coins: Coin[];
 
   dossier: CharacterDossier;
 
@@ -178,5 +178,5 @@ export interface CharacterData {
 
   resets: Reset[];
 
-  bonusMoola: number
+  bonusMoola: number;
 }
