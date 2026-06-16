@@ -113,7 +113,8 @@ export type Licenses = Record<string, number>;
 export interface Deployment {
   type: string;
   modifier: string;
-  override: string;
+  genesis?: string;
+  mastery?: string;
   advancementComplete: boolean;
   actTourComplete: boolean;
   actYourselfComplete: boolean;

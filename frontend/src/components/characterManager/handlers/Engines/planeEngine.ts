@@ -1,9 +1,7 @@
 import type { CharacterData } from "../characterTypes";
-import type {
-  //AircraftSelectOption,
-  AircraftCardProps,
-} from "../../components/charManagerCommon/planeComponents/MiniAircraftCard";
+import type { AircraftCardProps } from "../../components/charManagerCommon/planeComponents/MiniAircraftCard";
 import type { OrdnanceSelectOption } from "../../components/charManagerCommon/planeComponents/MiniOrdnanceCard";
+import * as tourEngine from "./tourEngine";
 import aircraft from "../../../../data/AircraftList.json";
 import licenses from "../../../../data/Licenses.json";
 import ordnance from "../../../../data/OrdnanceList.json";
@@ -59,7 +57,7 @@ type AppliedModEffects = {
   acTags: string[];
   ordTags: string[];
   statDeltas: Record<string, number>;
-  newIntrinsic: string
+  newIntrinsic: string;
 };
 
 type Airplane = {
@@ -144,9 +142,14 @@ function getAircraftData(character: CharacterData) {
     }
   }
 
-  const newIntrinsic = upgradeEffects.newIntrinsic || plane.intrinsic
+  const newIntrinsic = upgradeEffects.newIntrinsic || plane.intrinsic;
 
-  return { ...plane, tags: mergedTags, stats: mergedStats as AirplaneStats, intrinsic: newIntrinsic };
+  return {
+    ...plane,
+    tags: mergedTags,
+    stats: mergedStats as AirplaneStats,
+    intrinsic: newIntrinsic,
+  };
 }
 
 export function getAircraftList() {
@@ -330,17 +333,24 @@ export function getAircraftCardStats(character: CharacterData) {
 }
 
 export function getAircraftMasteries(character: CharacterData): MasteryDeets {
-  let family =
+  const family =
     aircraft.find((p) => p.id === character.aircraft.aircraftId)?.family ||
     "none";
-  if (!character.masteredAircraft.find((fam) => fam == family)) {
+
+  const masteredFamilies = new Set(
+    tourEngine.getDeploymentMasteries(character),
+  );
+
+  if (!masteredFamilies.has(family)) {
     return {
       tech1: "none",
       tech2: "none",
       tech3: "none",
     };
   }
-  let techs = masteries.find((fam) => fam.id === family);
+
+  const techs = masteries.find((fam) => fam.id === family);
+
   return {
     tech1: techs?.tech1 || "none",
     tech2: techs?.tech2 || "none",
@@ -597,7 +607,7 @@ export function applyModules(character: CharacterData): AppliedModEffects {
     acTags: [],
     ordTags: [],
     statDeltas: {},
-    newIntrinsic: ""
+    newIntrinsic: "",
   };
 
   const equippedIds: string[] = character.aircraft.modules ?? [];
@@ -630,7 +640,7 @@ export function applyUpgradePackage(
     acTags: [],
     ordTags: [],
     statDeltas: {},
-    newIntrinsic:""
+    newIntrinsic: "",
   };
 
   const packageId = getUpPackage(character);
@@ -673,8 +683,8 @@ export function applyUpgradePackage(
     }
   }
 
-  if(upgrade.IntrinsicMod){
-    effects.newIntrinsic = upgrade.IntrinsicMod
+  if (upgrade.IntrinsicMod) {
+    effects.newIntrinsic = upgrade.IntrinsicMod;
   }
 
   return effects;
@@ -783,4 +793,32 @@ export function sanitizeAircraft(character: CharacterData): CharacterData {
   }
 
   return sanitized;
+}
+
+export function addPlaneMastery(
+  character: CharacterData,
+  id: string,
+): CharacterData {
+  if (character.masteredAircraft.includes(id)) {
+    return character;
+  }
+
+  return {
+    ...character,
+    masteredAircraft: [...character.masteredAircraft, id],
+  };
+}
+
+export function removePlaneMastery(
+  character: CharacterData,
+  id: string,
+): CharacterData {
+  if (!character.masteredAircraft.includes(id)) {
+    return character;
+  }
+
+  return {
+    ...character,
+    masteredAircraft: character.masteredAircraft.filter((x) => x !== id),
+  };
 }

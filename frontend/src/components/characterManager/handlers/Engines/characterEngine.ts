@@ -170,6 +170,38 @@ export function getAdvancements(character: CharacterData) {
   };
 }
 
+export function getAcePerks(character: CharacterData): string[] {
+  return character.aceperks;
+}
+
+export function addAcePerks(
+  character: CharacterData,
+  id: string,
+): CharacterData {
+  if (character.aceperks.includes(id)) {
+    return character;
+  }
+
+  return {
+    ...character,
+    aceperks: [...character.aceperks, id],
+  };
+}
+
+export function removeAcePerks(
+  character: CharacterData,
+  id: string,
+): CharacterData {
+  if (!character.aceperks.includes(id)) {
+    return character;
+  }
+
+  return {
+    ...character,
+    aceperks: character.aceperks.filter((p) => p !== id),
+  };
+}
+
 export function setTempPilotStats(
   character: CharacterData,
   pilotStats: CharacterStats,

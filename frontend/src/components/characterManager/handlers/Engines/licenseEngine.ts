@@ -10,6 +10,7 @@ import type {
 //import downtime from "../../../data/Downtimes.json";
 import licenses from "../../../../data/Licenses.json";
 import * as planeEngine from "./planeEngine";
+import * as tourEngine from "./tourEngine";
 //import * as charEngine from "./characterEngine";
 
 export type LicenseFormat = {
@@ -59,8 +60,9 @@ export function getLicenses(character: CharacterData): LicenseFormat {
 export function getRP(character: CharacterData): number {
   let bonus = character.bonusMoola;
   let starting = character.metadata.startingRP;
+  let deps = tourEngine.getCharacterRequisitionPoints(character)
 
-  return bonus + starting;
+  return bonus + starting + deps;
 }
 
 export function getSpentRP(character: CharacterData): number {
