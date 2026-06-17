@@ -174,32 +174,28 @@ export function getAcePerks(character: CharacterData): string[] {
   return character.aceperks;
 }
 
-export function addAcePerks(
+export function setBasePerk(
   character: CharacterData,
-  id: string,
+  slot: number,
+  perkID: string,
 ): CharacterData {
-  if (character.aceperks.includes(id)) {
-    return character;
-  }
+  const updated = structuredClone(character);
 
-  return {
-    ...character,
-    aceperks: [...character.aceperks, id],
-  };
+  updated.baseperks[slot] = perkID;
+
+  return updated;
 }
 
-export function removeAcePerks(
+export function setAcePerk(
   character: CharacterData,
-  id: string,
+  slot: number,
+  perkID: string,
 ): CharacterData {
-  if (!character.aceperks.includes(id)) {
-    return character;
-  }
+  const updated = structuredClone(character);
 
-  return {
-    ...character,
-    aceperks: character.aceperks.filter((p) => p !== id),
-  };
+  updated.aceperks[slot] = perkID;
+
+  return updated;
 }
 
 export function setTempPilotStats(
