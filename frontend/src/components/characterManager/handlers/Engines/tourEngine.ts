@@ -420,14 +420,7 @@ export function setTourID(
 ): CharacterData {
   const updated = structuredClone(character);
 
-  const tour = updated.tours[tourIndex];
-
-  if (!tourID) {
-    tour.currTourID = "";
-    return updated;
-  }
-
-  updated.tours[tourIndex] = createTour(tourID);
+  updated.tours[tourIndex] = tourID ? createTour(tourID) : createTour("");
 
   return updated;
 }
@@ -465,10 +458,15 @@ export function getUnlockedGenesisPerks(character: CharacterData): string[] {
 }
 
 export function getTourRequisitionPoints(tour: Tour): number {
-  return (
-    getCompletedDeploymentData(tour).filter((dep) => dep.reqMod !== null)
-      .length * 30
-  );
+  return getCompletedDeploymentData(tour).reduce((total, dep) => {
+    total += 20;
+
+    if (dep.reqMod !== null) {
+      total += 30;
+    }
+
+    return total;
+  }, 0);
 }
 
 export function getCharacterRequisitionPoints(

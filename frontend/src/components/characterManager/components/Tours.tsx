@@ -22,9 +22,7 @@ export default function TourView({ character, updateCharacter }: Props) {
       text-cyan-300
     "
           onClick={() => {
-            const firstTour = tourEngine.getAllTours()[0];
-
-            updateCharacter(tourEngine.addTour(character, firstTour.tourID));
+            updateCharacter(tourEngine.addTour(character, ""));
           }}
         >
           Add Tour
