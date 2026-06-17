@@ -1532,7 +1532,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "n/a",
+    "engCost": "-1",
     "tags": "n/a",
     "desc": "Gain 1 Energy. Summon or retreat a squad of friendly air to ground assets."
   },
@@ -2720,7 +2720,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "2",
+    "engCost": "-2",
     "tags": [
       "manuAttack",
       "manuMAP"

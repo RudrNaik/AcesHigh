@@ -24,18 +24,12 @@ function PerksView({
   );
 
   const genesisPerks = useMemo(
-    () =>
-      allPerks.filter((perk) =>
-        unlockedGenesisPerks.includes(perk.id),
-      ),
+    () => allPerks.filter((perk) => unlockedGenesisPerks.includes(perk.id)),
     [allPerks, unlockedGenesisPerks],
   );
 
   const acePerks = useMemo(
-    () =>
-      allPerks.filter((perk) =>
-        unlockedAcePerks.includes(perk.id),
-      ),
+    () => allPerks.filter((perk) => unlockedAcePerks.includes(perk.id)),
     [allPerks, unlockedAcePerks],
   );
 
@@ -43,9 +37,7 @@ function PerksView({
     const current = character.baseperks[slot];
 
     return genesisPerks.filter(
-      (perk) =>
-        perk.id === current ||
-        !character.baseperks.includes(perk.id),
+      (perk) => perk.id === current || !character.baseperks.includes(perk.id),
     );
   }
 
@@ -53,52 +45,34 @@ function PerksView({
     const current = character.aceperks[slot];
 
     return acePerks.filter(
-      (perk) =>
-        perk.id === current ||
-        !character.aceperks.includes(perk.id),
+      (perk) => perk.id === current || !character.aceperks.includes(perk.id),
     );
   }
 
   function updateGenesisSlot(slot: number, perkID: string) {
-    updateCharacter(
-      characterEngine.setBasePerk(
-        character,
-        slot,
-        perkID,
-      ),
-    );
+    updateCharacter(characterEngine.setBasePerk(character, slot, perkID));
   }
 
   function updateAceSlot(slot: number, perkID: string) {
-    updateCharacter(
-      characterEngine.setAcePerk(
-        character,
-        slot,
-        perkID,
-      ),
-    );
+    updateCharacter(characterEngine.setAcePerk(character, slot, perkID));
   }
 
   return (
-    <div className="flex flex-row gap-6 border border-cyan-100 lg:p-4 p-2">
-      {/* Genesis */}
-      <section className="flex-1">
-        <h2 className="text-lg font-bold text-cyan-300 mb-2">
-          Genesis Perks
-        </h2>
-
-        <div className="border border-cyan-100 lg:p-4 p-2 space-y-3">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      {/* Ace */}
+      <section className="">
+        <div className="border border-cyan-100 lg:p-4 p-2 space-y-3 h-full">
+          <h2 className="text-lg font-bold text-cyan-300 mb-2">Ace Perks</h2>
           {Array.from({ length: 10 }).map((_, slot) => {
-            const selectedID = character.baseperks[slot] ?? "";
+            const selectedID = character.aceperks[slot] ?? "";
 
             const selectedPerk =
-              genesisPerks.find((p) => p.id === selectedID) ??
-              null;
+              acePerks.find((p) => p.id === selectedID) ?? null;
 
             return (
               <div
                 key={slot}
-                className="border border-cyan-800 p-2"
+                className={`border transition-all p-2 hover:opacity-100 ${selectedID === "" ? `opacity-20 border-cyan-800` : `opacity-100 border-l-4 border-cyan-100`}`}
               >
                 <div className="text-xs text-cyan-400 mb-1">
                   Slot {slot + 1}
@@ -106,21 +80,13 @@ function PerksView({
 
                 <select
                   value={selectedID}
-                  onChange={(e) =>
-                    updateGenesisSlot(
-                      slot,
-                      e.target.value,
-                    )
-                  }
-                  className="w-full bg-black border border-cyan-800 p-2"
+                  onChange={(e) => updateAceSlot(slot, e.target.value)}
+                  className="select-themed text-xs"
                 >
                   <option value="">Empty Slot</option>
 
-                  {getGenesisOptions(slot).map((perk) => (
-                    <option
-                      key={perk.id}
-                      value={perk.id}
-                    >
+                  {getAceOptions(slot).map((perk) => (
+                    <option key={perk.id} value={perk.id}>
                       {perk.name}
                     </option>
                   ))}
@@ -137,24 +103,22 @@ function PerksView({
         </div>
       </section>
 
-      {/* Ace */}
-      <section className="flex-1">
-        <h2 className="text-lg font-bold text-cyan-300 mb-2">
-          Ace Perks
-        </h2>
-
-        <div className="border border-cyan-100 lg:p-4 p-2 space-y-3">
+      {/* Base */}
+      <section className="">
+        <div className="border border-cyan-100 lg:p-4 p-2 space-y-3 h-full">
+          <h2 className="text-lg font-bold text-cyan-300 mb-2">
+            Base Perks
+          </h2>
           {Array.from({ length: 10 }).map((_, slot) => {
-            const selectedID = character.aceperks[slot] ?? "";
+            const selectedID = character.baseperks[slot] ?? "";
 
             const selectedPerk =
-              acePerks.find((p) => p.id === selectedID) ??
-              null;
+              genesisPerks.find((p) => p.id === selectedID) ?? null;
 
             return (
               <div
                 key={slot}
-                className="border border-cyan-800 p-2"
+                className={`border transition-all p-2 hover:opacity-100 ${selectedID === "" ? `opacity-20 border-cyan-800` : `opacity-100 border-l-4 border-cyan-100`}`}
               >
                 <div className="text-xs text-cyan-400 mb-1">
                   Slot {slot + 1}
@@ -162,21 +126,13 @@ function PerksView({
 
                 <select
                   value={selectedID}
-                  onChange={(e) =>
-                    updateAceSlot(
-                      slot,
-                      e.target.value,
-                    )
-                  }
-                  className="w-full bg-black border border-cyan-800 p-2"
+                  onChange={(e) => updateGenesisSlot(slot, e.target.value)}
+                  className="select-themed text-xs"
                 >
                   <option value="">Empty Slot</option>
 
-                  {getAceOptions(slot).map((perk) => (
-                    <option
-                      key={perk.id}
-                      value={perk.id}
-                    >
+                  {getGenesisOptions(slot).map((perk) => (
+                    <option key={perk.id} value={perk.id}>
                       {perk.name}
                     </option>
                   ))}

@@ -37,10 +37,14 @@ function SortieView({
         {activeTab === "Plane" && (
           <Aircraft character={character} updateCharacter={updateCharacter} />
         )}
+
+        {activeTab === "Perks" && (
+          <Perks character={character} updateCharacter={updateCharacter} />
+        )}
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:flex flex-col">
+      <div className="hidden md:flex flex-col gap-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Pilot */}
           <Pilot character={character} updateCharacter={updateCharacter} />
