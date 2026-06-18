@@ -174,6 +174,10 @@ export function getAcePerks(character: CharacterData): string[] {
   return character.aceperks;
 }
 
+export function getBasePerks(character: CharacterData): string[] {
+  return character.baseperks;
+}
+
 export function setBasePerk(
   character: CharacterData,
   slot: number,

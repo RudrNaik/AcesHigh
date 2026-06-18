@@ -340,7 +340,7 @@ export function setDeployment(
       break;
   }
 
-  return updated;
+  return sanitizeTours(updated);
 }
 
 export function setDeploymentField<K extends keyof Deployment>(
@@ -410,7 +410,7 @@ export function removeTour(
 
   updated.tours.splice(tourIndex, 1);
 
-  return updated;
+  return sanitizeTours(updated);
 }
 
 export function setTourID(
@@ -476,4 +476,35 @@ export function getCharacterRequisitionPoints(
     (total, tour) => total + getTourRequisitionPoints(tour),
     0,
   );
+}
+
+export function sanitizeGenesis(character: CharacterData): CharacterData {
+  return {
+    ...character,
+    baseperks: Array.from(new Set(getUnlockedGenesisPerks(character))),
+  };
+}
+
+export function sanitizeMastery(character: CharacterData): CharacterData {
+  return {
+    ...character,
+    masteredAircraft: Array.from(new Set(getDeploymentMasteries(character))),
+  };
+}
+
+export function sanitizeAcePerks(character: CharacterData): CharacterData {
+  return {
+    ...character,
+    aceperks: Array.from(new Set(getCharacterTourPerks(character))),
+  };
+}
+
+export function sanitizeTours(character: CharacterData): CharacterData {
+  let updated = character;
+
+  updated = sanitizeGenesis(updated);
+  updated = sanitizeMastery(updated);
+  updated = sanitizeAcePerks(updated);
+
+  return updated;
 }
