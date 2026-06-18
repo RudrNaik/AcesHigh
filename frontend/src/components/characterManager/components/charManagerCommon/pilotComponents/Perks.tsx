@@ -101,7 +101,7 @@ function PerksView({
                   !eligible
                     ? "opacity-20 border-cyan-800"
                     : isConverted
-                      ? "opacity-100 border-l-4 border-cyan-500"
+                      ? "opacity-100 border-l-4 border-cyan-400"
                       : selection.perkID
                         ? "opacity-100 border-l-4 border-cyan-100"
                         : "opacity-60 border-cyan-800"
@@ -167,11 +167,33 @@ function PerksView({
                       ))}
                     </select>
 
+                    {selectedPerk?.choiceType === "pilotStat" && (
+                      <select
+                        value={selection.choice}
+                        onChange={(e) =>
+                          updateTourAcePerk(
+                            tourIndex,
+                            selection.perkID,
+                            e.target.value,
+                          )
+                        }
+                        className="select-themed text-xs"
+                      >
+                        <option value="">Choose a Pilot Stat...</option>
+                        {tourEngine.PILOT_STAT_OPTIONS.map((stat) => (
+                          <option key={stat.id} value={stat.id}>
+                            {stat.label}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+
                     {selectedPerk?.choiceType === "specTactic" &&
                       (() => {
-                        const tacticOptions = tourEngine.getAllSpecTacticsNotChar(
-                          character.specialization.specId,
-                        );
+                        const tacticOptions =
+                          tourEngine.getAllSpecTacticsNotChar(
+                            character.specialization.specId,
+                          );
                         const selectedTactic =
                           tacticOptions.find(
                             (t) => t.id === selection.choice,
@@ -267,14 +289,17 @@ function PerksView({
               allBasePerks.find((p) => p.id === selectedID) ?? null;
             const isConversionPick =
               selectedID !== "" && !unlockedGenesisPerks.includes(selectedID);
+            const options = getGenesisOptions(slot);
 
             return (
               <div
                 key={slot}
                 className={`border transition-all p-2 hover:opacity-100 ${
-                  selectedID === ""
-                    ? "opacity-20 border-cyan-800"
-                    : "opacity-100 border-l-4 border-cyan-100"
+                  selectedID !== ""
+                    ? "opacity-100 border-l-4 border-cyan-100"
+                    : options.length > 0
+                      ? "opacity-100 border-cyan-800"
+                      : "opacity-20 border-cyan-800"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
