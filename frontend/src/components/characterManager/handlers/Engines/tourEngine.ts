@@ -1,9 +1,18 @@
-import type { CharacterData, Tour, Deployment } from "../characterTypes";
+//TourEngine
+
+import type {
+  CharacterData,
+  Tour,
+  Deployment,
+  CharacterStats,
+} from "../characterTypes";
 
 import Deployments from "../../../../data/Deployments.json";
 import Tours from "../../../../data/Tours.json";
 import Families from "../../../../data/AircraftFamilies.json";
 import Perks from "../../../../data/PerkList.json";
+import Specializations from "../../../../data/Specs.json";
+import Downtimes from "../../../../data/Downtimes.json";
 
 const DEPLOYMENT_REWARD_RULES: Record<
   string,
@@ -507,4 +516,174 @@ export function sanitizeTours(character: CharacterData): CharacterData {
   updated = sanitizeAcePerks(updated);
 
   return updated;
+}
+
+export type AcePerkChoiceType = "pilotStat" | "specTactic" | "specDT" | "none";
+
+export const PILOT_STAT_OPTIONS: { id: keyof CharacterStats; label: string }[] =
+  [
+    { id: "temper", label: "Temper" },
+    { id: "nerve", label: "Nerve" },
+    { id: "reflex", label: "Reflex" },
+    { id: "gResist", label: "G-Resist" },
+  ];
+
+const ACE_CHOICE_DELIMITER = "::";
+
+export type ParsedAceSelection = {
+  perkID: string;
+  choice: string;
+};
+
+export function parseAceSelection(raw: string): ParsedAceSelection {
+  if (!raw) {
+    return { perkID: "", choice: "" };
+  }
+
+  const [perkID, choice = ""] = raw.split(ACE_CHOICE_DELIMITER);
+
+  return { perkID, choice };
+}
+
+export function formatAceSelection(
+  perkID: string,
+  choice: string = "",
+): string {
+  if (!perkID) return "";
+
+  return choice ? `${perkID}${ACE_CHOICE_DELIMITER}${choice}` : perkID;
+}
+
+export function getNormalAcePerks() {
+  return getAllPerks().filter((p) => p.type === "acePerk");
+}
+
+export function getUnlockedTourAcePerkIDs(character: CharacterData): string[] {
+  return character.tours.flatMap(getTourCompletionPerks);
+}
+
+export function getUsedAcePerkBaseIDs(character: CharacterData): string[] {
+  const chosen = character.tours
+    .map((tour) => parseAceSelection(tour.acePerk).perkID)
+    .filter((id): id is string => !!id);
+
+  const autoGranted = character.tours.flatMap(getDeploymentPerks);
+
+  return [...chosen, ...autoGranted];
+}
+
+export function canSelectAcePerk(tour: Tour): boolean {
+  return isTourComplete(tour);
+}
+
+export function getTourAcePerkSelection(tour: Tour): ParsedAceSelection {
+  return parseAceSelection(tour.acePerk);
+}
+
+export function getAvailableAcePerkOptions(
+  character: CharacterData,
+  tourIndex: number,
+) {
+  const tour = character.tours[tourIndex];
+
+  if (!tour) return [];
+
+  const used = new Set(getUsedAcePerkBaseIDs(character));
+  const current = parseAceSelection(tour.acePerk).perkID;
+  const unlockedTourPerkIDs = new Set(getUnlockedTourAcePerkIDs(character));
+
+  const pool = [
+    ...getNormalAcePerks(),
+    ...getAllPerks().filter((p) => unlockedTourPerkIDs.has(p.id)),
+  ];
+
+  const deduped = Array.from(new Map(pool.map((p) => [p.id, p])).values());
+
+  return deduped.filter((perk) => perk.id === current || !used.has(perk.id));
+}
+
+export function setTourAcePerk(
+  character: CharacterData,
+  tourIndex: number,
+  perkID: string,
+  choice: string = "",
+): CharacterData {
+  const updated = structuredClone(character);
+  const tour = updated.tours[tourIndex];
+
+  if (!tour) return character;
+
+  tour.acePerk = formatAceSelection(perkID, choice);
+
+  return sanitizeTours(updated);
+}
+
+export function getCharacterAcePerkSelections(
+  character: CharacterData,
+): string[] {
+  return character.tours
+    .filter((tour) => !isTourAcePerkConverted(tour))
+    .map((tour) => tour.acePerk)
+    .filter((v): v is string => !!v && v !== "");
+}
+export function getCharacterDeploymentPerks(
+  character: CharacterData,
+): string[] {
+  return character.tours.flatMap(getDeploymentPerks);
+}
+
+export function isTourAcePerkConverted(tour: Tour): boolean {
+  return isTourComplete(tour) && tour.acePerk === "basePerk";
+}
+
+export function convertTourAcePerk(
+  character: CharacterData,
+  tourIndex: number,
+  toBase: boolean,
+): CharacterData {
+  const updated = structuredClone(character);
+  updated.tours[tourIndex].acePerk = toBase ? "basePerk" : "";
+  return sanitizeTours(updated);
+}
+
+export function getAcePerkConversionCount(character: CharacterData): number {
+  return character.tours.filter(isTourAcePerkConverted).length;
+}
+
+export function getAdvancementConversionCount(
+  character: CharacterData,
+): number {
+  return character.specialization.advancements.filter((a) => a.perkConversion)
+    .length;
+}
+
+export function getTotalBasePerkConversionCount(
+  character: CharacterData,
+): number {
+  return (
+    getAcePerkConversionCount(character) +
+    getAdvancementConversionCount(character)
+  );
+}
+
+export function getAllSpecTacticsNotChar(excludeSpecId?: string) {
+  return Specializations.filter(
+    (spec) => !excludeSpecId || spec.id !== excludeSpecId,
+  ).flatMap((spec) =>
+    spec.tactics.map((tactic) => ({
+      ...tactic,
+      specName: spec.name,
+      specId: spec.id,
+    })),
+  );
+}
+
+export function getAllSpecDowntimesNotChar(excludeSpecId?: string) {
+  const preFlightIds = new Set(
+    Specializations.filter(
+      (spec) => !excludeSpecId || spec.id !== excludeSpecId,
+    ).flatMap((spec) => spec.preFlights),
+  );
+
+  return Downtimes.filter((dt) => preFlightIds.has(dt.id));
 }
