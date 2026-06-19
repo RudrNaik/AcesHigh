@@ -5,6 +5,8 @@ import type {
   CharacterStats,
 } from "../characterTypes";
 
+import * as licenseEngine from "./licenseEngine";
+
 import Deployments from "../../../../data/Deployments.json";
 import Tours from "../../../../data/Tours.json";
 import Families from "../../../../data/AircraftFamilies.json";
@@ -483,12 +485,18 @@ export function getDeploymentMasteries(character: CharacterData): string[] {
 }
 
 export function getUnlockedGenesisPerks(character: CharacterData): string[] {
-  return character.tours.flatMap((tour) =>
+  let updated = character.tours.flatMap((tour) =>
     getDeployments(tour)
       .filter((dep) => getDeploymentProgress(dep) >= 5)
       .map((dep) => dep.genesis)
       .filter((g): g is string => !!g && g !== ""),
   );
+  let loot = getUnlockedLootPerks(character);
+  return [...updated, ...loot];
+}
+
+export function getUnlockedLootPerks(character: CharacterData): string[] {
+  return licenseEngine.collectLootUnlocks(character).perks;
 }
 
 export function getTourRequisitionPoints(tour: Tour): number {
