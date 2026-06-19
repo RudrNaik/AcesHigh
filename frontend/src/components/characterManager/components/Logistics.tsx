@@ -1,8 +1,8 @@
 import Tabs from "./CharacterTabs";
 import { useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
-import Licenses from "./charManagerCommon/LogisticsComponents/Licenses"
-import Loot from "./charManagerCommon/LogisticsComponents/Loot"
+import Licenses from "./CharManagerComponents/LogisticsComponents/Licenses"
+import Loot from "./CharManagerComponents/LogisticsComponents/Loot"
 
 function LogisticsView({
   character,
