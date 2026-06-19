@@ -1,5 +1,5 @@
 import type { CharacterData } from "../handlers/characterTypes";
-import TourCard from "./charManagerCommon/TourComponents/TourCard";
+import TourCard from "./CharManagerComponents/TourComponents/TourCard";
 import * as tourEngine from "../handlers/Engines/tourEngine";
 
 type Props = {
