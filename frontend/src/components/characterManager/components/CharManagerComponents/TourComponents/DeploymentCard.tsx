@@ -23,7 +23,7 @@ export default function DeploymentCard({
   updateCharacter,
 }: Props) {
   const [expanded, setExpanded] = useState(
-    deployment.type ? !tourEngine.isDeploymentComplete(deployment) : false,
+    deployment.type ? !tourEngine.isDeploymentComplete(deployment) : true,
   );
 
   const updateField = <K extends keyof Deployment>(

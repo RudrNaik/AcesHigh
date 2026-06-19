@@ -292,35 +292,9 @@ export function getAvailableGenesisOptions(
     });
 }
 
-export function applyGenesis(character: CharacterData): CharacterData {
-  const genesis = character.tours.flatMap(getDeploymentGenesisPerks);
-
-  return {
-    ...character,
-    baseperks: Array.from(new Set([...character.baseperks, ...genesis])),
-  };
-}
-
 export function getUsedGenesis(tour: Tour): string[] {
   return getDeployments(tour)
     .map((d) => d.genesis)
-    .filter((v): v is string => !!v);
-}
-
-export function applyMastery(character: CharacterData): CharacterData {
-  const mastery = character.tours.flatMap(getDeploymentMasteryFamilies);
-
-  return {
-    ...character,
-    masteredAircraft: Array.from(
-      new Set([...(character.masteredAircraft ?? []), ...mastery]),
-    ),
-  };
-}
-
-export function getDeploymentMasteryFamilies(tour: Tour): string[] {
-  return getCompletedDeployments(tour)
-    .map((d) => d.mastery)
     .filter((v): v is string => !!v);
 }
 
@@ -504,7 +478,7 @@ export function getTourRequisitionPoints(tour: Tour): number {
     total += 20;
 
     if (dep.reqMod !== null) {
-      total += 30;
+      total += dep.reqMod;
     }
 
     return total;
@@ -521,9 +495,20 @@ export function getCharacterRequisitionPoints(
 }
 
 export function sanitizeGenesis(character: CharacterData): CharacterData {
+  const validBasePerkIDs = new Set(
+    getAllPerks()
+      .filter((p) => p.type === "basePerk")
+      .map((p) => p.id),
+  );
+
+  const cleaned = (character.baseperks ?? []).filter((id) => {
+    if (!id) return false;
+    return validBasePerkIDs.has(id);
+  });
+
   return {
     ...character,
-    baseperks: Array.from(new Set(getUnlockedGenesisPerks(character))),
+    baseperks: [...new Set(cleaned)],
   };
 }
 

@@ -430,10 +430,12 @@ function PilotView({
                   </button>
                   <button
                     onClick={() => {
-                      const updated = charEngine.convertAdvancementToPerk(
+                      let updated = charEngine.convertAdvancementToPerk(
                         character,
                         item.index,
                       );
+
+                      updated = tourEngine.sanitizeTours(updated);
 
                       applyCharacterUpdate(updated);
                     }}
