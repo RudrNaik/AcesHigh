@@ -1,6 +1,6 @@
 import type { CharacterData } from "../characterTypes";
-import type { AircraftCardProps } from "../../components/charManagerCommon/planeComponents/MiniAircraftCard";
-import type { OrdnanceSelectOption } from "../../components/charManagerCommon/planeComponents/MiniOrdnanceCard";
+import type { AircraftCardProps } from "../../components/CharManagerComponents/planeComponents/MiniAircraftCard";
+import type { OrdnanceSelectOption } from "../../components/CharManagerComponents/planeComponents/MiniOrdnanceCard";
 import * as tourEngine from "./tourEngine";
 import * as licenseEngine from "./licenseEngine";
 import aircraft from "../../../../data/AircraftList.json";
