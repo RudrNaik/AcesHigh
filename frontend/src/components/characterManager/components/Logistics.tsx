@@ -2,6 +2,7 @@ import Tabs from "./CharacterTabs";
 import { useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
 import Licenses from "./charManagerCommon/LogisticsComponents/Licenses"
+import Loot from "./charManagerCommon/LogisticsComponents/Loot"
 
 function LogisticsView({
   character,
@@ -28,7 +29,7 @@ function LogisticsView({
 
       {activeTab === "Licenses" && <Licenses character={character} updateCharacter={updateCharacter}/>}
 
-      {activeTab === "Loot" && <div>Loot and other items here.</div>}
+      {activeTab === "Loot" && <Loot character={character} updateCharacter={updateCharacter}/>}
     </div>
   );
 }

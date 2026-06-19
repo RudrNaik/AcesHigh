@@ -1,8 +1,4 @@
-import type {
-  CharacterData,
-  //CharacterStats,
-  //Coin
-} from "../characterTypes";
+import type { CharacterData, LootItem, LootCategory } from "../characterTypes";
 //import aircraft from "../../../data/AircraftList.json"
 //import staticMods from "../../../data/StaticMods.json";
 //import perks from "../../../data/PerkList.json";
@@ -12,6 +8,8 @@ import licenses from "../../../../data/Licenses.json";
 import * as planeEngine from "./planeEngine";
 import * as tourEngine from "./tourEngine";
 //import * as charEngine from "./characterEngine";
+
+export type { LootItem, LootCategory };
 
 export type LicenseFormat = {
   A1: number;
@@ -60,7 +58,7 @@ export function getLicenses(character: CharacterData): LicenseFormat {
 export function getRP(character: CharacterData): number {
   let bonus = character.bonusMoola;
   let starting = character.metadata.startingRP;
-  let deps = tourEngine.getCharacterRequisitionPoints(character)
+  let deps = tourEngine.getCharacterRequisitionPoints(character);
 
   return bonus + starting + deps;
 }
@@ -165,17 +163,99 @@ function collectUnlocks(character: CharacterData): UnlockBucket {
 }
 
 export function getUnlockedAircraft(character: CharacterData): string[] {
-  return [...new Set(collectUnlocks(character).airframes)];
+  const fromLicenses = collectUnlocks(character).airframes;
+  const fromLoot = collectLootUnlocks(character).airframes;
+  return [...new Set([...fromLicenses, ...fromLoot])];
 }
 
 export function getUnlockedOrdnance(character: CharacterData): string[] {
-  return [...new Set(collectUnlocks(character).ordnance)];
+  const fromLicenses = collectUnlocks(character).ordnance;
+  const fromLoot = collectLootUnlocks(character).ordnancee;
+  return [...new Set([...fromLicenses, ...fromLoot])];
 }
 
 export function getUnlockedModules(character: CharacterData): string[] {
-  return [...new Set(collectUnlocks(character).modules)];
+  const fromLicenses = collectUnlocks(character).modules;
+  const fromLoot = collectLootUnlocks(character).modules;
+  return [...new Set([...fromLicenses, ...fromLoot])];
 }
 
 export function getUnlockedUpgradePacks(character: CharacterData): string[] {
-  return [...new Set(collectUnlocks(character).upgrades)];
+  const fromLicenses = collectUnlocks(character).upgrades;
+  const fromLoot = collectLootUnlocks(character).upgrades;
+  return [...new Set([...fromLicenses, ...fromLoot])];
+}
+
+export function collectLootUnlocks(character: CharacterData) {
+  const result = {
+    perks: [] as string[],
+    airframes: [] as string[],
+    modules: [] as string[],
+    upgrades: [] as string[],
+    ordnancee: [] as string[],
+  };
+
+  for (const item of character.loot ?? []) {
+    switch (item.category) {
+      case "perk":
+        result.perks.push(item.id);
+        break;
+      case "aircraft":
+        result.airframes.push(item.id);
+        break;
+      case "module":
+        result.modules.push(item.id);
+        break;
+      case "upgrade":
+        result.upgrades.push(item.id);
+        break;
+      case "ordnance":
+        result.ordnancee.push(item.id);
+        break;
+    }
+  }
+
+  return result;
+}
+
+export function addLoot(
+  character: CharacterData,
+  item: LootItem,
+): CharacterData {
+  const alreadyOwned = (character.loot ?? []).some(
+    (l) => l.category === item.category && l.id === item.id,
+  );
+  if (alreadyOwned) return character;
+
+  const updated: CharacterData = {
+    ...character,
+    loot: [...(character.loot ?? []), item],
+  };
+  return planeEngine.sanitizeAircraft(updated);
+}
+
+export function removeLoot(
+  character: CharacterData,
+  index: number,
+): CharacterData {
+  const loot = [...(character.loot ?? [])];
+  loot.splice(index, 1);
+
+  let updated: CharacterData = { ...character, loot };
+
+  updated = planeEngine.sanitizeAircraft(updated);
+
+  const stillUnlockedPerks = new Set(getUnlockedPerks(updated));
+  updated = {
+    ...updated,
+    baseperks: (updated.baseperks ?? []).filter((perkId) =>
+      stillUnlockedPerks.has(perkId),
+    )
+  };
+
+  return updated;
+}
+
+export function getUnlockedPerks(character: CharacterData): string[] {
+  return [...new Set(collectLootUnlocks(character).perks)];
 }

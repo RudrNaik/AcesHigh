@@ -2,6 +2,7 @@ import type { CharacterData } from "../characterTypes";
 import type { AircraftCardProps } from "../../components/charManagerCommon/planeComponents/MiniAircraftCard";
 import type { OrdnanceSelectOption } from "../../components/charManagerCommon/planeComponents/MiniOrdnanceCard";
 import * as tourEngine from "./tourEngine";
+import * as licenseEngine from "./licenseEngine";
 import aircraft from "../../../../data/AircraftList.json";
 import licenses from "../../../../data/Licenses.json";
 import ordnance from "../../../../data/OrdnanceList.json";
@@ -156,20 +157,21 @@ export function getAircraftList() {
   return aircraft.filter(
     (p) =>
       p.id !== "acExample" &&
-      p.gen !== "n/a" &&
-      p.tier !== "n/a" &&
-      p.tier !== "n/a",
+      !(
+        p.stats.A2A === 0 &&
+        p.stats.A2G === 0 &&
+        p.stats.CAP === 0 &&
+        p.stats.MANU === 0 &&
+        p.stats.SPEED === 0 &&
+        p.stats.SURV === 0
+      ),
   );
 }
 
 export function getUnlockedAircraft(character: CharacterData) {
   const { airframes } = getAllUnlocks(character);
   return aircraft.filter(
-    (p) =>
-      airframes.includes(p.id) &&
-      p.id !== "acExample" &&
-      p.gen !== "n/a" &&
-      p.tier !== "n/a",
+    (p) => airframes.includes(p.id) && p.id !== "acExample",
   );
 }
 
@@ -729,12 +731,19 @@ export function getAllUnlocks(character: CharacterData) {
   for (const [licenseId, rank] of Object.entries(character.licenses ?? {})) {
     const unlocks = getLicenseProgressionUnlocks(licenseId, rank);
     if (!unlocks) continue;
+    const loot = licenseEngine.collectLootUnlocks(character);
+    if (!loot) continue;
 
     let baseOrd = getAircraftData(character)?.baseOrdID || "";
-    result.ordnance.push(...unlocks.ordnance, baseOrd, "ordNone");
-    result.airframes.push(...unlocks.airframes);
-    result.modules.push(...unlocks.modules);
-    result.upgrades.push(...unlocks.upgrades);
+    result.ordnance.push(
+      ...unlocks.ordnance,
+      ...loot.ordnancee,
+      baseOrd,
+      "ordNone",
+    );
+    result.airframes.push(...unlocks.airframes, ...loot.airframes);
+    result.modules.push(...unlocks.modules, ...loot.modules);
+    result.upgrades.push(...unlocks.upgrades, ...loot.upgrades);
   }
 
   return {
@@ -748,26 +757,22 @@ export function getAllUnlocks(character: CharacterData) {
 export function sanitizeAircraft(character: CharacterData): CharacterData {
   const { ordnance, airframes, modules, upgrades } = getAllUnlocks(character);
 
-  // If current aircraft is no longer unlocked, reset to default
   const currentAircraftId = character.aircraft.aircraftId;
   const validAircraftId = airframes.includes(currentAircraftId)
     ? currentAircraftId
-    : "acF4E"; // or whatever your default is
+    : "acF4E";
 
   const needsAircraftReset = validAircraftId !== currentAircraftId;
 
-  // Strip modules not in unlocked pool
   const validModules = (character.aircraft.modules ?? []).filter((id) =>
     modules.includes(id),
   );
 
-  // Strip ordnance if no longer unlocked
   const currentOrdnanceId = character.aircraft.ordnanceId;
   const validOrdnanceId = ordnance.includes(currentOrdnanceId)
     ? currentOrdnanceId
     : "ordNone";
 
-  // Strip upgrade package if no longer unlocked
   const currentUpgrade = character.aircraft.upgradePackage;
   const validUpgrade =
     !currentUpgrade ||
@@ -787,7 +792,6 @@ export function sanitizeAircraft(character: CharacterData): CharacterData {
     },
   };
 
-  // If aircraft itself changed, re-initialize its stats
   if (needsAircraftReset) {
     return setAircraft(sanitized, validAircraftId);
   }

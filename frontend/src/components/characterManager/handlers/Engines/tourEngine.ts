@@ -727,10 +727,8 @@ export function getModifierPilotBonuses(character: CharacterData) {
 }
 
 export function isPhoenixTour(tour: Tour): boolean {
-  console.log(tour.currTourID)
   return tour.currTourID === PHOENIX_TOUR_ID;
 }
-
 
 export function getAvailablePhoenixCharges(character: CharacterData): number {
   return character.tours.filter(
@@ -743,7 +741,6 @@ export function hasBurnedCoin(character: CharacterData): boolean {
 }
 
 export function canUsePhoenix(character: CharacterData): boolean {
-  console.log(getAvailablePhoenixCharges(character) > 0 && hasBurnedCoin(character))
   return getAvailablePhoenixCharges(character) > 0 && hasBurnedCoin(character);
 }
 

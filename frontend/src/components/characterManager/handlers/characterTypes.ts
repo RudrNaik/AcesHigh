@@ -75,6 +75,13 @@ export interface Coins {
   coin3: Coin;
 }
 
+export type LootCategory = "perk" | "aircraft" | "module" | "ordnance" | "upgrade";
+
+export type LootItem = {
+  id: string;
+  category: LootCategory;
+};
+
 export interface CharacterQuirks {
   quirk1Name: string;
   quirk1Desc: string;
@@ -174,7 +181,7 @@ export interface CharacterData {
 
   licenses: Licenses;
 
-  loot: string[];
+  loot: LootItem[];
 
   masteredAircraft: string[];
 
