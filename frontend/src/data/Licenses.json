@@ -350,24 +350,24 @@
         "rank1": {
             "ordnance": ["ordADNM","ordADCM","ordADMPN"],
             "airframes": ["acF16A"],
-            "modules": ["modELINT"],
+            "modules": [],
             "upgrades": ["upStalker"]
         },
         "rank2": {
             "ordnance": ["ordSASM"],
             "airframes": ["acSu25","acYak141"],
-            "modules": [],
+            "modules": ["modELINT"],
             "upgrades": []
         },
         "rank3": {
             "ordnance": ["ordECM"],
-            "airframes": ["acF20A"],
+            "airframes": [],
             "modules": [],
             "upgrades": []
         },
         "rank4": {
             "ordnance": ["ordNapalm"],
-            "airframes": [],
+            "airframes": ["acF20A"],
             "modules": ["modECCM"],
             "upgrades": []
         },

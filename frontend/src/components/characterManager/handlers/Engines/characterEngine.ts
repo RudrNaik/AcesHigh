@@ -5,6 +5,7 @@ import perks from "../../../../data/PerkList.json";
 import specializations from "../../../../data/Specs.json";
 import downtime from "../../../../data/Downtimes.json";
 import * as planeEngine from "./planeEngine";
+import * as tourEngine from "./tourEngine";
 //import licenses from "../../../data/Licenses.json";
 
 export function getMentalStress(character: CharacterData) {
@@ -51,6 +52,8 @@ export function getPilotStatsModified(
   let gres = character.metadata.startingPilotStats.gResist;
 
   const modifiers = getStaticModifiersFromSpec(character);
+  const depModifiers = tourEngine.getModifierPilotBonuses(character);
+
   const { statDeltas } = planeEngine.applyModules(character);
 
   const pilotKeyMap: Record<string, keyof CharacterStats> = {
@@ -83,10 +86,26 @@ export function getPilotStatsModified(
   const mindBreak = character.stress.permMentalAdj;
   const succedDry = character.stress.permPhysicalAdj;
 
-  temp += (modifiers?.temper || 0) + pilotDeltas.temper - mindBreak;
-  nerv += (modifiers?.nerve || 0) + pilotDeltas.nerve - mindBreak;
-  rflx += (modifiers?.reflex || 0) + pilotDeltas.reflex - succedDry;
-  gres += (modifiers?.gResist || 0) + pilotDeltas.gResist - succedDry;
+  temp +=
+    (modifiers?.temper || 0) +
+    pilotDeltas.temper +
+    depModifiers.temp -
+    mindBreak;
+  nerv +=
+    (modifiers?.nerve || 0) +
+    pilotDeltas.nerve +
+    depModifiers.nerve -
+    mindBreak;
+  rflx +=
+    (modifiers?.reflex || 0) +
+    pilotDeltas.reflex +
+    depModifiers.reflex -
+    succedDry;
+  gres +=
+    (modifiers?.gResist || 0) +
+    pilotDeltas.gResist +
+    depModifiers.gResist -
+    succedDry;
 
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
 }
@@ -168,6 +187,38 @@ export function getAdvancements(character: CharacterData) {
     fromSpec: spec?.advancements ?? [],
     fromChar: character?.specialization?.advancements ?? [],
   };
+}
+
+export function getAcePerks(character: CharacterData): string[] {
+  return character.aceperks;
+}
+
+export function getBasePerks(character: CharacterData): string[] {
+  return character.baseperks;
+}
+
+export function setBasePerk(
+  character: CharacterData,
+  slot: number,
+  perkID: string,
+): CharacterData {
+  const updated = structuredClone(character);
+
+  updated.baseperks[slot] = perkID;
+
+  return updated;
+}
+
+export function setAcePerk(
+  character: CharacterData,
+  slot: number,
+  perkID: string,
+): CharacterData {
+  const updated = structuredClone(character);
+
+  updated.aceperks[slot] = perkID;
+
+  return updated;
 }
 
 export function setTempPilotStats(

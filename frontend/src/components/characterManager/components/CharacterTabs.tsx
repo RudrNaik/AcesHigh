@@ -1,6 +1,6 @@
 const tabs = ["Dossier", "Sortie", "Logistics", "Tour", "Logs"];
 const setupTabs = ["Setup", "Dossier"];
-const gameplayTabs = ["Pilot", "Plane"];
+const gameplayTabs = ["Pilot", "Plane", "Perks"];
 const logiTabs = ["Licenses", "Loot"];
 
 function CharacterTabs({
@@ -8,7 +8,7 @@ function CharacterTabs({
   setActiveTab,
   setupCompleted,
   gameplay = false,
-  logi  = false
+  logi = false,
 }: {
   activeTab: string;
   setActiveTab: (t: string) => void;
@@ -16,9 +16,15 @@ function CharacterTabs({
   gameplay: boolean;
   logi: boolean;
 }) {
-  let visibleTabs = setupCompleted ? tabs : setupTabs;
-  visibleTabs = gameplay ? gameplayTabs : tabs;
-  visibleTabs = logi ? logiTabs : tabs;
+  let visibleTabs: string[];
+
+  if (gameplay) {
+    visibleTabs = gameplayTabs;
+  } else if (logi) {
+    visibleTabs = logiTabs;
+  } else {
+    visibleTabs = setupCompleted ? tabs : setupTabs;
+  }
 
   return (
     <div className="flex gap-2 border-b pb-2">

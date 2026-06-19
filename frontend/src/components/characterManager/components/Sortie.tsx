@@ -1,6 +1,7 @@
 import type { CharacterData } from "../handlers/characterTypes";
 import Pilot from "../components/charManagerCommon/pilotComponents/Pilot";
 import Aircraft from "../components/charManagerCommon/planeComponents/Aircraft";
+import Perks from "../components/charManagerCommon/pilotComponents/Perks";
 import Tabs from "./CharacterTabs";
 import { useState } from "react";
 
@@ -36,10 +37,14 @@ function SortieView({
         {activeTab === "Plane" && (
           <Aircraft character={character} updateCharacter={updateCharacter} />
         )}
+
+        {activeTab === "Perks" && (
+          <Perks character={character} updateCharacter={updateCharacter} />
+        )}
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:flex">
+      <div className="hidden md:flex flex-col gap-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Pilot */}
           <Pilot character={character} updateCharacter={updateCharacter} />
@@ -47,6 +52,7 @@ function SortieView({
           {/* AIRCRAFT STATE */}
           <Aircraft character={character} updateCharacter={updateCharacter} />
         </div>
+        <Perks character={character} updateCharacter={updateCharacter} />
       </div>
     </div>
   );

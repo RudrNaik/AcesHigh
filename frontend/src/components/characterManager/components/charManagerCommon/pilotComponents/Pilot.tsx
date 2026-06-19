@@ -5,6 +5,7 @@ import type {
 } from "../../../handlers/characterTypes";
 import { useEffect, useState, useRef } from "react";
 import * as charEngine from "../../../handlers/Engines/characterEngine";
+import * as tourEngine from "../../../handlers/Engines/tourEngine";
 
 function PilotView({
   character,
@@ -93,15 +94,24 @@ function PilotView({
         <div className="p-4">
           <CoinStats
             coins={character.coins}
-            onUse={(index) =>
-              updateCharacter(charEngine.setUsedCoin(character, index))
+            canPhoenix={tourEngine.canUsePhoenix(character)}
+            onUse={(i) => updateCharacter(charEngine.setUsedCoin(character, i))}
+            onReset={(i) =>
+              updateCharacter(charEngine.resetUsedCoin(character, i))
             }
-            onReset={(index) =>
-              updateCharacter(charEngine.resetUsedCoin(character, index))
-            }
-            onBurn={(index) =>
-              updateCharacter(charEngine.burnCoin(character, index))
-            }
+            onBurn={(i) => updateCharacter(charEngine.burnCoin(character, i))}
+            onPhoenix={(i) => {
+              const tourIndex = character.tours.findIndex(
+                (t) =>
+                  tourEngine.isPhoenixTour(t) &&
+                  tourEngine.isTourComplete(t) &&
+                  !t.pheonix,
+              );
+              if (tourIndex === -1) return;
+              let updated = tourEngine.markPhoenixUsed(character, tourIndex);
+              updated = charEngine.pheonixCoin(updated, i);
+              updateCharacter(updated);
+            }}
           />
         </div>
       </div>
@@ -469,7 +479,10 @@ function PilotView({
               {charEngine
                 .getSpecialization(character)
                 .masteries.map((mastery) => (
-                  <div key={mastery.id} className="border border-cyan-100 p-2 bg-black/20">
+                  <div
+                    key={mastery.id}
+                    className="border border-cyan-100 p-2 bg-black/20"
+                  >
                     <div className="font-semibold">{mastery.name}</div>
 
                     <p className="text-sm text-gray-300">
@@ -523,7 +536,9 @@ function PilotStat({
 }) {
   return (
     <div className="flex gap-2 items-center mt-2">
-      <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">{label}</span>
+      <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">
+        {label}
+      </span>
 
       <div className="w-8 text-center">{value}</div>
 
@@ -550,16 +565,21 @@ function PilotStat({
 
 function CoinStats({
   coins,
+  canPhoenix,
   onUse,
   onReset,
   onBurn,
+  onPhoenix,
 }: {
   coins: Coin[];
+  canPhoenix: boolean;
   onUse: (index: number) => void;
   onReset: (index: number) => void;
   onBurn: (index: number) => void;
+  onPhoenix: (index: number) => void;
 }) {
   const [confirmBurn, setConfirmBurn] = useState<number | null>(null);
+  const [confirmPhoenix, setConfirmPhoenix] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -569,21 +589,16 @@ function CoinStats({
         !containerRef.current.contains(event.target as Node)
       ) {
         setConfirmBurn(null);
+        setConfirmPhoenix(null);
       }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="grid grid-cols-3 gap-4"
-    >
+    <div ref={containerRef} className="grid grid-cols-3 gap-4">
       {coins.map((coin, index) => {
         const classes = coin.burned
           ? "bg-red-900 border-red-500"
@@ -642,8 +657,30 @@ function CoinStats({
             )}
 
             {coin.burned && (
-              <div className="text-xs text-red-400 font-bold px-2 py-1">
-                BURNED
+              <div className="flex flex-col gap-1 w-full items-center">
+                <div className="text-xs text-red-400 font-bold px-2 py-1">
+                  BURNED
+                </div>
+
+                {canPhoenix &&
+                  (confirmPhoenix === index ? (
+                    <button
+                      onClick={() => {
+                        onPhoenix(index);
+                        setConfirmPhoenix(null);
+                      }}
+                      className="border text-cyan-100 border-cyan-400 bg-cyan-950 px-2 py-1 text-xs w-full"
+                    >
+                      CNFRM
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => setConfirmPhoenix(index)}
+                      className="border border-cyan-800 text-cyan-500 px-2 py-1 text-xs w-full"
+                    >
+                      PHNX
+                    </button>
+                  ))}
               </div>
             )}
           </div>

@@ -106,6 +106,8 @@ export interface Aircraft {
   currentCapacity: number;
   currentSurvivability: number;
   currentEnergy: number;
+  sweep: boolean;
+  vtol: boolean;
 }
 
 export type Licenses = Record<string, number>;
@@ -113,7 +115,8 @@ export type Licenses = Record<string, number>;
 export interface Deployment {
   type: string;
   modifier: string;
-  override: string;
+  genesis?: string;
+  mastery?: string;
   advancementComplete: boolean;
   actTourComplete: boolean;
   actYourselfComplete: boolean;
@@ -131,6 +134,7 @@ export interface Tour {
   dep3: Deployment;
   dep4: Deployment;
   dep5: Deployment;
+  pheonix: boolean;
 }
 
 export interface Reset {

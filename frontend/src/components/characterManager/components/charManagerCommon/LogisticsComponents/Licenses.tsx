@@ -106,7 +106,7 @@ function LicenseView({
                 <button
                   className="px-2 border border-cyan-800 text-cyan-300 disabled:opacity-30"
                   onClick={() => setTier(tier + 1)}
-                  disabled={tier >= 7}
+                  disabled={tier >= 7 || (licenseEngine.getRemainingRP(character) < 0)}
                 >
                   +
                 </button>

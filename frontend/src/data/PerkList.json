@@ -257,6 +257,7 @@
         "type": "acePerk",
         "tags": "",
         "addManuID": "manuApproach",
+        "choiceType": "pilotStat",
         "advancement": "This perk is unavailable from deployments.",
         "description": "Choose a Pilot Stat when you gain this perk. [REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Ace Type stat instead. This doesn’t count as a Maneuver. Additionally, you may use the chosen stat instead of one other when you calculate your Stress track."
     },
@@ -266,6 +267,7 @@
         "type": "acePerk",
         "tags": "",
         "addManuID": "manuDefensive",
+        "choiceType": "pilotStat",
         "advancement": "This perk is unavailable from deployments. Choose a Pilot Stat when you gain this perk.",
         "description": "[REACT - 1] Make that Pilot Stat Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
     },
@@ -275,6 +277,7 @@
         "type": "acePerk",
         "tags": "",
         "addManuID": "manuStyle",
+        "choiceType": "pilotStat",
         "advancement": "This perk is unavailable from deployments. Choose a Pilot Stat when you gain this perk.",
         "description": "[REACT - 0] Whenever you make an Attack, Spend that Pilot Stat and hit an additional target. Fatigue."
     },
@@ -285,6 +288,7 @@
         "tags": "",
         "addManuID": "",
         "advancement": "This perk is unavailable from deployments.",
+        "choiceType": "specTactic",
         "description": "Choose a Specialization tactic from a specialization that isn’t yours. Add it to your tactics list."
     },
     {
@@ -303,6 +307,7 @@
         "tags": "",
         "addManuID": "",
         "advancement": "This perk is unavailable from deployments.",
+        "choiceType": "specDT",
         "description": "Choose the first listed Specialization downtime from a specialization that isn’t yours. Add it to your downtime list."
     },
     {
@@ -311,6 +316,7 @@
         "type": "acePerk",
         "tags": "",
         "addManuID": "manuAdaptability",
+        "choiceType": "pilotStat",
         "advancement": "This perk is unavailable from deployments.",
         "description": "Choose a Pilot Stat when you gain this perk. [REACT - 1] Replace one of your plane stats with the current value of the chosen Pilot Stat until the end of your turn. Fatigue."
     },
