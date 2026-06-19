@@ -1,5 +1,3 @@
-//TourEngine
-
 import type {
   CharacterData,
   Tour,
@@ -24,6 +22,16 @@ const DEPLOYMENT_REWARD_RULES: Record<
   baseDepMastery: { genesis: false, mastery: true },
 };
 
+export const PILOT_STAT_OPTIONS: { id: keyof CharacterStats; label: string }[] =
+  [
+    { id: "temper", label: "Temper" },
+    { id: "nerve", label: "Nerve" },
+    { id: "reflex", label: "Reflex" },
+    { id: "gResist", label: "G-Resist" },
+  ];
+
+const ACE_CHOICE_DELIMITER = "::";
+
 export type TourData = {
   tourID: string;
   tourName: string;
@@ -47,6 +55,20 @@ export type DeploymentData = {
 
   genesisPerkID?: string;
   masteryFamily?: string;
+};
+
+export type AcePerkChoiceType = "pilotStat" | "specTactic" | "specDT" | "none";
+
+export type ParsedAceSelection = {
+  perkID: string;
+  choice: string;
+};
+
+export type ModifierCounts = {
+  fury: number;
+  acuity: number;
+  patience: number;
+  endurance: number;
 };
 
 export function getDepById(id: string): DeploymentData {
@@ -518,23 +540,6 @@ export function sanitizeTours(character: CharacterData): CharacterData {
   return updated;
 }
 
-export type AcePerkChoiceType = "pilotStat" | "specTactic" | "specDT" | "none";
-
-export const PILOT_STAT_OPTIONS: { id: keyof CharacterStats; label: string }[] =
-  [
-    { id: "temper", label: "Temper" },
-    { id: "nerve", label: "Nerve" },
-    { id: "reflex", label: "Reflex" },
-    { id: "gResist", label: "G-Resist" },
-  ];
-
-const ACE_CHOICE_DELIMITER = "::";
-
-export type ParsedAceSelection = {
-  perkID: string;
-  choice: string;
-};
-
 export function parseAceSelection(raw: string): ParsedAceSelection {
   if (!raw) {
     return { perkID: "", choice: "" };
@@ -686,4 +691,34 @@ export function getAllSpecDowntimesNotChar(excludeSpecId?: string) {
   );
 
   return Downtimes.filter((dt) => preFlightIds.has(dt.id));
+}
+
+export function getCompletedDeploymentModifiers(
+  character: CharacterData,
+): string[] {
+  return character.tours.flatMap((tour) =>
+    getCompletedDeployments(tour)
+      .map((dep) => dep.type)
+      .filter((m): m is string => !!m && m !== ""),
+  );
+}
+
+export function getModifierCounts(character: CharacterData): ModifierCounts {
+  const modifiers = getCompletedDeploymentModifiers(character);
+  return {
+    fury: modifiers.filter((m) => m === "baseDepFury").length,
+    acuity: modifiers.filter((m) => m === "baseDepAcuity").length,
+    patience: modifiers.filter((m) => m === "baseDepPat").length,
+    endurance: modifiers.filter((m) => m === "baseDepEnd").length,
+  };
+}
+
+export function getModifierPilotBonuses(character: CharacterData) {
+  const counts = getModifierCounts(character);
+  return {
+    temp: counts.fury,
+    nerve: counts.patience,
+    reflex: counts.acuity,
+    gResist: counts.endurance,
+  };
 }

@@ -23,8 +23,6 @@ export default function TourCard({
 
   const [expanded, setExpanded] = useState(hasTour ? defaultExpanded : false);
 
-  console.log(tour.currTourID);
-
   if (!hasTour) {
     return (
       <div className="border border-cyan-800 hover:border-cyan-100 transition-all bg-black/20 w-full text-left p-3">
