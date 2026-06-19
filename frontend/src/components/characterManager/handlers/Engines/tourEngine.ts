@@ -22,6 +22,8 @@ const DEPLOYMENT_REWARD_RULES: Record<
   baseDepMastery: { genesis: false, mastery: true },
 };
 
+const PHOENIX_TOUR_ID = "tourPhoenix";
+
 export const PILOT_STAT_OPTIONS: { id: keyof CharacterStats; label: string }[] =
   [
     { id: "temper", label: "Temper" },
@@ -420,6 +422,7 @@ export function createTour(tourID: string = ""): Tour {
     dep3: createDeployment(),
     dep4: createDeployment(),
     dep5: createDeployment(),
+    pheonix: false,
   };
 }
 
@@ -721,4 +724,34 @@ export function getModifierPilotBonuses(character: CharacterData) {
     reflex: counts.acuity,
     gResist: counts.endurance,
   };
+}
+
+export function isPhoenixTour(tour: Tour): boolean {
+  console.log(tour.currTourID)
+  return tour.currTourID === PHOENIX_TOUR_ID;
+}
+
+
+export function getAvailablePhoenixCharges(character: CharacterData): number {
+  return character.tours.filter(
+    (tour) => isPhoenixTour(tour) && isTourComplete(tour) && !tour.pheonix,
+  ).length;
+}
+
+export function hasBurnedCoin(character: CharacterData): boolean {
+  return character.coins.some((c) => c.burned);
+}
+
+export function canUsePhoenix(character: CharacterData): boolean {
+  console.log(getAvailablePhoenixCharges(character) > 0 && hasBurnedCoin(character))
+  return getAvailablePhoenixCharges(character) > 0 && hasBurnedCoin(character);
+}
+
+export function markPhoenixUsed(
+  character: CharacterData,
+  tourIndex: number,
+): CharacterData {
+  const updated = structuredClone(character);
+  updated.tours[tourIndex].pheonix = true;
+  return updated;
 }

@@ -132,6 +132,7 @@ export interface Tour {
   dep3: Deployment;
   dep4: Deployment;
   dep5: Deployment;
+  pheonix: boolean;
 }
 
 export interface Reset {

@@ -86,6 +86,7 @@ function PerksView({
           {character.tours.map((tour, tourIndex) => {
             const eligible = tourEngine.canSelectAcePerk(tour);
             const isConverted = tourEngine.isTourAcePerkConverted(tour);
+            const isPheonixed = tourEngine.isPhoenixTour(tour) && tourEngine.isTourComplete(tour) && tour.pheonix
             const selection = tourEngine.getTourAcePerkSelection(tour);
             const tourData = tourEngine.getTourById(tour.currTourID);
             const options =
@@ -98,7 +99,9 @@ function PerksView({
               <div
                 key={tourIndex}
                 className={`border transition-all p-2 hover:opacity-100 ${
-                  !eligible
+                  isPheonixed
+                  ? "hidden"
+                  : !eligible 
                     ? "opacity-20 border-cyan-800"
                     : isConverted
                       ? "opacity-100 border-l-4 border-cyan-400"
@@ -115,7 +118,7 @@ function PerksView({
                       : ""}
                   </div>
 
-                  {/* Ace / Base toggle, only visible once tour is complete */}
+                  {/* Ace / Base toggle*/}
                   {eligible && (
                     <div className="flex gap-1">
                       <button
@@ -142,7 +145,7 @@ function PerksView({
                   )}
                 </div>
 
-                {!eligible ? (
+                {(!eligible ) ? (
                   <div className="text-xs opacity-60">
                     Finish this Tour to gain an Ace Perk.
                   </div>
