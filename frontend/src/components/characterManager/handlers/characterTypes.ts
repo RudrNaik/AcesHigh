@@ -106,6 +106,8 @@ export interface Aircraft {
   currentCapacity: number;
   currentSurvivability: number;
   currentEnergy: number;
+  sweep: boolean;
+  vtol: boolean;
 }
 
 export type Licenses = Record<string, number>;
