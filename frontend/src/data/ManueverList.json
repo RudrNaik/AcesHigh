@@ -682,7 +682,7 @@
     "isAdvanced": true,
     "type": "Normal",
     "engCost": "X",
-    "tags": ["manuEngX"],
+    "tags": ["manuX"],
     "desc": "Make X Attacks against one target. Escalate X."
   },
   {
@@ -692,7 +692,7 @@
     "isAdvanced": true,
     "type": "Reaction",
     "engCost": "X",
-    "tags": ["manuEngX"],
+    "tags": ["manuX"],
     "desc": "Whenever, do not resolve the previous maneuver but pay all costs as part of this Maneuver instead. If you do, set a simple trigger condition against any target. When the condition is met, perform the previous maneuver. If X ≥ 1, refund the cost if the maneuver doesn’t go off.  "
   },
   {
@@ -1334,7 +1334,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "X",
-    "tags": ["manuEngX"],
+    "tags": ["manuX"],
     "desc": "Whenever you make a Speed Check, you may describe the emotion and sensation your character feels. If you do, gain Lock On."
   },
   {
@@ -1426,7 +1426,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "x",
-    "tags": ["manuEngX"],
+    "tags": ["manuX"],
     "desc": "X is equal to 2 + the amount of stats you have at -1 (whether or not they were caused by Non-Critical Area). Spend a Reflex or Spend a Coin. Negate a Consequence. Set a Plane Stat to -1. If you’ve used this perk this mission, if at any point all stats are -1, you run out of Reflex, or you Stall, you die."
   },
   {
@@ -1549,7 +1549,7 @@
     "tags": [
       "manuORD",
       "manuCapX",
-      "manuEngX"
+      "manuX"
     ],
     "desc": "Spend X Capacity and choose X ground targets close to each other. Make an Attack, use that roll result for all of them. Any of your targets that aren’t destroyed must take an action to get out of cover when they next act. Exhaust."
   },
@@ -1748,7 +1748,7 @@
     "type": "Normal",
     "engCost": "X",
     "tags": [
-      "manuEngX"
+      "manuX"
     ],
     "desc": "Spend X Energy, where X is the [number of Exhausted Ambush Predator Tactics * 2], to Recover them all."
   },

@@ -57,10 +57,10 @@ export function getLicenses(character: CharacterData): LicenseFormat {
 }
 
 export function getRP(character: CharacterData): number {
-  let bonus = character.bonusMoola;
-  let starting = character.metadata.startingRP;
-  let deps = tourEngine.getCharacterRequisitionPoints(character);
-  let resets = resetEngine.getTotalBonusRP(character);
+  let bonus = Number(character.bonusMoola) || 0;
+  let starting = Number(character.metadata.startingRP) || 0;
+  let deps = Number(tourEngine.getCharacterRequisitionPoints(character)) || 0;
+  let resets = Number(resetEngine.getTotalBonusRP(character)) || 0;
 
   return bonus + starting + deps + resets;
 }
