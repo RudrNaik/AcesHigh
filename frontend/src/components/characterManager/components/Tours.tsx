@@ -10,8 +10,9 @@ type Props = {
 export default function TourView({ character, updateCharacter }: Props) {
   return (
     <div className="space-y-4 font-mono text-xs">
-      <div className="flex justify-between items-center border-b border-cyan-900">
-        <h1 className="text-xl pr-3 py-2 text-cyan-100 font-bold">Tours</h1>
+      <div className="flex justify-between items-center border border-cyan-100 lg:p-4 p-2">
+        <h1 className="text-2xl font-bold">TOURS</h1>
+
         <button
           className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
           onClick={() => {

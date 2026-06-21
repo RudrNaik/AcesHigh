@@ -58,8 +58,13 @@ function DossierTab({ character, updateCharacter }: Props) {
   };
 
   return (
-    <div className="">
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+    <div className="space-y-4">
+
+      <div className="border border-cyan-100 lg:p-4">
+        <h1 className="text-2xl font-bold">DOSSIER</h1>
+      </div>
+      
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Identity">
           <div className="grid grid-cols-3 gap-4">
             <TextField
@@ -103,7 +108,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Quirks">
           <div className="grid lg:grid-cols-3 gap-4">
             <div className="space-y-4">
@@ -149,7 +154,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Details">
           <div className="grid grid-cols-2 gap-4">
             <TextField
@@ -193,7 +198,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Physical Profile">
           <div className="grid grid-cols-2 gap-4">
             <TextField
@@ -223,7 +228,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Background">
           <label className="text-cyan-400 text-sm">Biography</label>
           <textarea
@@ -259,7 +264,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className="border-cyan-100 lg:p-4 space-y-2">
+      <div className="border-cyan-100 space-y-2">
         <Section title="Connections and Relations">
           <textarea
             value={character.dossier.relationships}
@@ -269,7 +274,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Misc">
           <textarea
             value={character.dossier.notes}
@@ -280,7 +285,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-100 lg:p-4 space-y-4">
+      <div className=" border-cyan-100 space-y-4">
         <Section title="Meta-Data">
           <div className="gap-4 max-w-md">
             <TextField

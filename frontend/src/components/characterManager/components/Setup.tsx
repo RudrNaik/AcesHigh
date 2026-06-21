@@ -36,6 +36,9 @@ function Setup({
     availableTactics.some((t: any) => t.id === id),
   ).length;
 
+  const tacticLimit = 2;
+  const remainingTactics = tacticLimit - selectedTacticCount;
+
   const isTacticSelected = (id: string) =>
     availableTactics.some((t: any) => t.id === id) &&
     local.specialization.tactics.includes(id);
@@ -153,31 +156,48 @@ function Setup({
 
   const statsValid = totalStats === 8;
 
-  const canComplete =
-    statsValid &&
-    local.dossier.firstName !== "" &&
-    local.dossier.lastName !== "" &&
-    local.dossier.callsign !== "" &&
-    local.specialization.specId !== "" &&
-    selectedTacticCount === 2 &&
-    local.backgroundPerk !== "";
-
-  const completeSetup = () => {
-  if (!canComplete) return;
-
-  const updated = {
-    ...charEngine.initializeTempStats(local),
-    metadata: {
-      ...local.metadata,
-      setupComplete: true,
-    },
+  const missing = {
+    stats: !statsValid,
+    firstName: local.dossier.firstName === "",
+    lastName: local.dossier.lastName === "",
+    callsign: local.dossier.callsign === "",
+    spec: local.specialization.specId === "",
+    tactics: selectedTacticCount !== 2,
+    backgroundPerk: local.backgroundPerk === "",
   };
 
-  updateCharacter(updated);
-};
+  const missingList = [
+    missing.stats && "Pilot stats must total 8",
+    missing.firstName && "First name required",
+    missing.lastName && "Last name required",
+    missing.callsign && "Callsign required",
+    missing.spec && "Specialization required",
+    missing.tactics && "Must select 2 tactics",
+    missing.backgroundPerk && "Background perk required",
+  ].filter(Boolean) as string[];
+
+  const canComplete = missingList.length === 0;
+
+  const completeSetup = () => {
+    if (!canComplete) return;
+
+    const updated = {
+      ...charEngine.initializeTempStats(local),
+      metadata: {
+        ...local.metadata,
+        setupComplete: true,
+      },
+    };
+
+    updateCharacter(updated);
+  };
 
   return (
     <div className="space-y-8 text-cyan-100 py-1">
+      <div className="border border-cyan-100 lg:p-4 p-2">
+        <h1 className="text-2xl font-bold">SETUP</h1>
+      </div>
+
       {/*Identity*/}
       <section className="border lg:p-4 p-2 space-y-3">
         <h2 className="text-cyan-100 font-bold">Identity</h2>
@@ -348,7 +368,14 @@ function Setup({
 
       {/*Specs*/}
       <section className="border lg:p-4 p-2 space-y-4">
-        <h2 className="text-cyan-100 font-bold">Specialization</h2>
+        <h2 className="text-cyan-100 font-bold flex items-center gap-2">
+          Specialization
+          {local.specialization.specId && (
+            <span className="border px-2 py-0.5 opacity-70">
+              {remainingTactics} tactic selections remaining
+            </span>
+          )}
+        </h2>
 
         <select
           value={local.specialization.specId}
@@ -457,6 +484,17 @@ function Setup({
         <div className={canComplete ? "text-green-400" : "text-red-400"}>
           {canComplete ? "Ready" : "Incomplete Setup"}
         </div>
+
+        {!canComplete && (
+          <ul className="text-xs text-red-400 space-y-1">
+            {missingList.map((m, i) => (
+              <li key={i}>
+                {" "}
+                {">"} {m}
+              </li>
+            ))}
+          </ul>
+        )}
 
         <button
           disabled={!canComplete}
