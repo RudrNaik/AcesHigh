@@ -95,7 +95,7 @@ function UpgradePackageSlot({ character, onSelect }: UpgradePackageSlotProps) {
 
           {equipped.TypeMod && (
             <div className="text-xs text-cyan-100">
-              <span className="font-bold">Restricted to type: </span>
+              <span className="font-bold">Alters aircraft type to: </span>
               {equipped.TypeMod}
             </div>
           )}
