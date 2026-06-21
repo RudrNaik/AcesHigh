@@ -15,7 +15,7 @@ function LogisticsView({
   return (
     <div className="w-full min-h-screen text-cyan-100 space-y-6">
       {/* HEADER */}
-      <div className="border border-cyan-100 lg:p-4 p-2">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
         <h1 className="text-2xl font-bold">LOGISTICS</h1>
       </div>
 

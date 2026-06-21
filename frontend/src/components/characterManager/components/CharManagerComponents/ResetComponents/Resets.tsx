@@ -44,7 +44,7 @@ function ResetView({
   return (
     <div className="space-y-4 tewt-xs">
       {/* Header */}
-      <div className="border border-cyan-100 lg:p-4 p-2">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-cyan-100">RESETS</h2>

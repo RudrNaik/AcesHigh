@@ -76,7 +76,7 @@ function PilotView({
   };
 
   return (
-    <div className="border border-cyan-100 lg:p-4 p-2 space-y-2">
+    <div className="border border-cyan-800 lg:p-4 p-2 space-y-2 bg-black/20">
       {/* Pilot Stats */}
       <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
       <div className="flex md:space-x-20 lg:flex-row flex-col">

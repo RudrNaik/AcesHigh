@@ -193,13 +193,13 @@ function Setup({
   };
 
   return (
-    <div className="space-y-8 text-cyan-100 py-1">
-      <div className="border border-cyan-100 lg:p-4 p-2">
+    <div className="space-y-4 text-cyan-100 py-1">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
         <h1 className="text-2xl font-bold">SETUP</h1>
       </div>
 
       {/*Identity*/}
-      <section className="border lg:p-4 p-2 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Identity</h2>
 
         <div className="grid gap-2">
@@ -248,7 +248,7 @@ function Setup({
       </section>
 
       {/* metadata */}
-      <section className="border lg:p-4 p-2 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Generation</h2>
         <div className="flex flex-col gap-2">
           <label className="text-cyan-100 text-sm">Generation</label>
@@ -270,7 +270,7 @@ function Setup({
       </section>
 
       {/* Quirks */}
-      <section className="border lg:p-4 p-2 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Quirks</h2>
 
         <div className="flex flex-col gap-4">
@@ -331,7 +331,7 @@ function Setup({
       </section>
 
       {/*stats*/}
-      <section className="border lg:p-4 p-2 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">
           Pilot Stats (Total {totalStats}/8)
         </h2>
@@ -367,12 +367,12 @@ function Setup({
       </section>
 
       {/*Specs*/}
-      <section className="border lg:p-4 p-2 space-y-4">
+      <section className="border lg:p-4 p-2 space-y-4 bg-black/20">
         <h2 className="text-cyan-100 font-bold flex items-center gap-2">
           Specialization
           {local.specialization.specId && (
-            <span className="border px-2 py-0.5 opacity-70">
-              {remainingTactics} tactic selections remaining
+            <span className="">
+              // {remainingTactics} tactic selections remaining
             </span>
           )}
         </h2>
@@ -449,7 +449,7 @@ function Setup({
       </section>
 
       {/* backghround perk*/}
-      <section className="border lg:p-4 p-2 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Background Perk</h2>
 
         <select
@@ -478,7 +478,7 @@ function Setup({
       </section>
 
       {/* submit*/}
-      <section className="border lg:p-4 p-2 space-y-3">
+      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Final Check</h2>
 
         <div className={canComplete ? "text-green-400" : "text-red-400"}>
