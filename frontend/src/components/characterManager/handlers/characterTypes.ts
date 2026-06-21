@@ -149,6 +149,10 @@ export interface Reset {
   BonusRp: number;
 }
 
+export interface Receipt {
+  
+}
+
 export interface Downtime {
   id: string;
   starter: boolean;

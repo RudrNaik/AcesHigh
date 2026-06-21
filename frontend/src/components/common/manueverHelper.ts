@@ -139,12 +139,18 @@ export const getManeuverEffects = (m?: Maneuver): ManeuverEffect => {
 
   // Check for discount tags
   if (tagCounts["manuDiscount"]) {
-    effects.discountCost = getTagValue("manuDiscount", tagCounts["manuDiscount"]);
+    effects.discountCost = getTagValue(
+      "manuDiscount",
+      tagCounts["manuDiscount"],
+    );
   }
 
   // Check for forward bonus tags
   if (tagCounts["manuAddForward"]) {
-    effects.forwardBonus = getTagValue("manuAddForward", tagCounts["manuAddForward"]);
+    effects.forwardBonus = getTagValue(
+      "manuAddForward",
+      tagCounts["manuAddForward"],
+    );
   }
 
   return effects;
@@ -210,9 +216,7 @@ export const formatManeuver = (
   let e = m.energyMod;
   let c = m.capacityMod;
 
-  if (m.type === "POSITIONING") {
-    e = -e;
-  }
+  e = -e;
 
   c -= getManeuverCapacityCost(m);
 
@@ -223,12 +227,16 @@ export const formatManeuver = (
   }${e}=${energyAfter}, CAP${c > 0 ? "+" : ""}${c}=${capacityAfter}`;
 };
 
-export const calculateSlotsNeeded = (maneuvers: (Maneuver | undefined)[]): number => {
-  const selectedCount = maneuvers.filter(m => m).length;
-  if (selectedCount === 0) return 4; 
+export const calculateSlotsNeeded = (
+  maneuvers: (Maneuver | undefined)[],
+): number => {
+  const selectedCount = maneuvers.filter((m) => m).length;
+  if (selectedCount === 0) return 4;
 
-  const nonExhaustCount = maneuvers.filter(m => m && m.type !== "EXHAUST").length;
-  const exhaustCount = maneuvers.filter(m => m?.type === "EXHAUST").length;
+  const nonExhaustCount = maneuvers.filter(
+    (m) => m && m.type !== "EXHAUST",
+  ).length;
+  const exhaustCount = maneuvers.filter((m) => m?.type === "EXHAUST").length;
 
   return Math.min(8, Math.max(4, nonExhaustCount) + exhaustCount);
 };
@@ -244,7 +252,7 @@ export const getManeuverSlotLabel = (
 
   const nonExhaustBefore = maneuvers
     .slice(0, slotIndex)
-    .filter(ma => !ma || ma.type !== "EXHAUST").length;
+    .filter((ma) => !ma || ma.type !== "EXHAUST").length;
 
   return `M${nonExhaustBefore + 1}`;
 };
@@ -254,12 +262,14 @@ export const organizeManeuversForDisplay = (
 ): OrganizedManeuvers => {
   const totalSlots = calculateSlotsNeeded(maneuvers);
 
-  const slots: ManeuverSlot[] = Array.from({ length: totalSlots }).map((_, idx) => {
-    const label = getManeuverSlotLabel(idx, maneuvers);
-    const maneuver = maneuvers[idx];
+  const slots: ManeuverSlot[] = Array.from({ length: totalSlots }).map(
+    (_, idx) => {
+      const label = getManeuverSlotLabel(idx, maneuvers);
+      const maneuver = maneuvers[idx];
 
-    return { label, maneuver };
-  });
+      return { label, maneuver };
+    },
+  );
 
   return { totalSlots, slots };
 };

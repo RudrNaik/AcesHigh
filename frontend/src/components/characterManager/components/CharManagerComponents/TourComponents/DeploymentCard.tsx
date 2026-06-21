@@ -113,7 +113,7 @@ export default function DeploymentCard({
   );
 
   return (
-    <div className="border border-cyan-800 bg-black/10">
+    <div className={`border border-cyan-800 bg-black/10 `}>
       <button
         className="w-full p-2 text-left"
         onClick={() => setExpanded(!expanded)}
@@ -122,10 +122,16 @@ export default function DeploymentCard({
           <div>
             <div className="text-cyan-300 font-bold">{depData.name}</div>
 
-            <div className="text-gray-400">{progress}/7 Complete</div>
+            {completed ? (
+              <span className="font-bold">Completed</span>
+            ) : (
+              <div className="text-gray-400">{progress}/7 Complete</div>
+            )}
           </div>
 
-          <div>{completed ? "✓" : ""}</div>
+          <div>
+            <span className="text-xl">{completed ? "✓" : ""}</span>
+          </div>
         </div>
       </button>
 
@@ -260,10 +266,11 @@ export default function DeploymentCard({
                 {tourEngine
                   .getAllPerks()
                   .find((p) => p.id == deployment.genesis)?.name ?? "missing"}
-                <br/>
+                <br />
                 {tourEngine
                   .getAllPerks()
-                  .find((p) => p.id == deployment.genesis)?.description ?? "missing"}
+                  .find((p) => p.id == deployment.genesis)?.description ??
+                  "missing"}
               </div>
             )}
 
