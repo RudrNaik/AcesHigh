@@ -448,32 +448,39 @@ function Setup({
         )}
       </section>
 
-      {/* backghround perk*/}
+      {/* Background Perk */}
       <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Background Perk</h2>
 
-        <select
+        <input
+          type="text"
           value={local.backgroundPerk}
           onChange={(e) => setBackgroundPerk(e.target.value)}
-          className="select-themed"
-        >
-          <option value="">Select Perk</option>
-          {backgroundPerks
-            .filter((p) => p.type === "bgPerk")
-            .map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.name}
-              </option>
-            ))}
-        </select>
-        <div className="border p-3 text-sm opacity-80">
-          {backgroundPerks
-            .filter((p) => p.id === local.backgroundPerk)
-            .map((p) => (
+          placeholder="Enter perk ID"
+          className="text-themed w-full px-2 py-1"
+        />
+
+        <div className="border p-3 text-sm opacity-80 min-h-20 bg-black/20">
+          {(() => {
+            const perk = backgroundPerks.find(
+              (p) => p.id === local.backgroundPerk,
+            );
+
+            if (!local.backgroundPerk) {
+              return <div>Enter a perk ID.</div>;
+            }
+
+            if (!perk) {
+              return <div>Perk not found.</div>;
+            }
+
+            return (
               <div>
-                <div>{p.description}</div>
+                <div className="font-semibold">{perk.name}</div>
+                <div>{perk.description}</div>
               </div>
-            ))}
+            );
+          })()}
         </div>
       </section>
 

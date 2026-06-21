@@ -321,22 +321,13 @@
         "description": "Choose a Pilot Stat when you gain this perk. [REACT - 1] Replace one of your plane stats with the current value of the chosen Pilot Stat until the end of your turn. Fatigue."
     },
     {
-        "id": "perkHARMReduction",
-        "name": "HARM Reduction",
-        "type": "acePerk",
-        "tags": "",
-        "addManuID": "",
-        "advancement": "Requires at least two EWO perks.",
-        "description": "Whenever you do an EWO Action, you may Spend a Capacity and additionally do a different EWO action for free without it counting as its own Maneuver. Exhaust."
-    },
-    {
         "id": "perkHunter",
         "name": "Ace Hunter",
         "type": "acePerk",
         "tags": "",
         "addManuID": "",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "Whenever you hit an enemy aircraft, you may deal double damage. Exhaust."
+        "description": "Whenever you hit an enemy aircraft, you may deal double damage. Exhaust. "
     },
     {
         "id": "perkSPAMRAAM",
@@ -453,7 +444,7 @@
         "tags": "",
         "addManuID": "manuDefensiveT",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Make a Temper Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+        "description": "[REACT - 1] Make a Temper Check. On a Full Success, Defeat thrice. On a Mixed, Defeat. Fatigue."
     },
     {
         "id": "perkDefensiveN",
@@ -462,7 +453,7 @@
         "tags": "",
         "addManuID": "manuDefensiveN",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Make a Nerve Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+        "description": "[REACT - 1] Make a Nerve Check. On a Full Success, Defeat thrice. On a Mixed, Defeat. Fatigue."
     },
     {
         "id": "perkDefensiveR",
@@ -471,7 +462,7 @@
         "tags": "",
         "addManuID": "manuDefensiveR",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Make a Reflex Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+        "description": "[REACT - 1] Make a Reflex Check. On a Full Success, Defeat thrice. On a Mixed, Defeat. Fatigue."
     },
     {
         "id": "perkDefensiveG",
@@ -480,7 +471,7 @@
         "tags": "",
         "addManuID": "manuDefensiveG",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Make a G-Resist Check. On a full, clear 3 Locked. On a mixed, clear 1 Locked. Fatigue."
+        "description": "[REACT - 1] Make a G-Resist Check. On a Full Success, Defeat thrice. On a Mixed, Defeat. Fatigue."
     },
     {
         "id": "perkStyleT",
@@ -489,7 +480,7 @@
         "tags": "",
         "addManuID": "manuStyleT",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 0] Whenever you make an Attack, Spend a Temper and hit an additional target. Fatigue."
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a Temper and hit an additional target. Fatigue. "
     },
     {
         "id": "perkStyleN",
@@ -498,7 +489,7 @@
         "tags": "",
         "addManuID": "manuStyleN",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 0] Whenever you make an Attack, Spend a Nerve and hit an additional target. Fatigue."
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a Nerve and hit an additional target. Fatigue. "
     },
     {
         "id": "perkStyleR",
@@ -507,7 +498,7 @@
         "tags": "",
         "addManuID": "manuStyleR",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 0] Whenever you make an Attack, Spend a Reflex and hit an additional target. Fatigue."
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a Reflex and hit an additional target. Fatigue. "
     },
     {
         "id": "perkStyleG",
@@ -516,7 +507,7 @@
         "tags": "",
         "addManuID": "manuStyleG",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 0] Whenever you make an Attack, Spend a G-Resist and hit an additional target. Fatigue."
+        "description": "[REACT - 0] Whenever you make an Attack, Spend a G-Resist and hit an additional target. Fatigue. "
     },
     {
         "id": "perkAdaptabilityT",
@@ -525,7 +516,7 @@
         "tags": "",
         "addManuID": "manuAdaptabilityT",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Temper until the end of your turn. Fatigue."
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Temper until the end of your turn. Fatigue. "
     },
     {
         "id": "perkAdaptabilityN",
@@ -534,7 +525,7 @@
         "tags": "",
         "addManuID": "manuAdaptabilityN",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Nerve until the end of your turn. Fatigue."
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Nerve until the end of your turn. Fatigue. "
     },
     {
         "id": "perkAdaptabilityR",
@@ -543,7 +534,7 @@
         "tags": "",
         "addManuID": "manuAdaptabilityR",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Reflex until the end of your turn. Fatigue."
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your Reflex until the end of your turn. Fatigue. "
     },
     {
         "id": "perkAdaptabilityG",
@@ -552,7 +543,7 @@
         "tags": "",
         "addManuID": "manuAdaptabilityG",
         "advancement": "This perk is unavailable from deployments.",
-        "description": "[REACT - 1] Replace one of your plane stats with the current value of your G-Resist until the end of your turn. Fatigue."
+        "description": "[REACT - 1] Replace one of your plane stats with the current value of your G-Resist until the end of your turn. Fatigue. "
     },
     {
         "id": "perkExampleBGPerk",
@@ -588,7 +579,7 @@
         "tags": "",
         "addManuID": "",
         "advancement": "",
-        "description": "When this land was still peaceful you traveled it, so you have an uncanny sense of knowing where you are in the Sotoan subcontinent. Once a mission you may declare a feature of the local area, the GM will incorporate this into their next turn."
+        "description": "When this land was still peaceful you traveled it, so you have an uncanny sense of knowing where you are in the Sotoan subcontinent. Once a mission you may declare a feature of the local area, the GM will incorporate this into their next turn"
     },
     {
         "id": "bgACA",
@@ -597,7 +588,7 @@
         "tags": "",
         "addManuID": "",
         "advancement": "",
-        "description": "Whenever someone receives an injury or suffers a Stress Break, you may forgo a Downtime and choose Claim or Cure. If you choose Claim, recover both a Mental and Physical Stress and gain 6RP as you file the paperwork to make it not your problem and receive a payout for handling it. If you choose Cure, spend 13 RP instead and either undo one of the Stat Downs from the Break or instantly heal the Injury."
+        "description": "Whenever someone receives an injury or suffers a Stress Break, you may forgo a Downtime and choose Claim or Cure. If you choose Claim, recover both a Mental and Physical Stress and gain 6RP as you file the paperwork to make it not your problem and receive a payout for handling it. If you choose Cure, spend 13 RP instead and either undue one of the Stat Downs from the Break or instantly heal the Injury."
     },
     {
         "id": "bgFailedODST",
@@ -606,7 +597,7 @@
         "tags": "",
         "addManuID": "",
         "advancement": "",
-        "description": "You like to kick back and relax at the first sign of being away from danger. Whenever you Withdraw, you may forgo recovering any Survivability. If you do, recover a Physical Stress -- recover a Mental Stress, too, if you are flying a Multicrew (3) or greater aircraft."
+        "description": "You like to kick back and relax at the first sign of being away from danger. Whenever you Withdraw, you may forgo recovering any Survivability. If you do, recover a Physical Stress -- recover a Mental Stress, too, if you flying a Multicrew (3) or greater aircraft. "
     },
     {
         "id": "bgBourbon",
@@ -624,6 +615,186 @@
         "tags": "",
         "addManuID": "",
         "advancement": "",
-        "description": "Keep a tracker on your sheet under the notes category. It should have two columns: one for Alert Count and one for the Results. Whenever an Ally hits 0 Survivability on a mission (that is, right before they would enter a Critical State), enter Alert for the next two turns. Mark this down. While in Alert, if an ally then Enters a Critical State, mark down Widow; if you intervene to stop them from doing so, mark down Maker; if nothing happens before you exit Alert, mark down Smurf. After 13 Alerts, this Background Perk will evolve."
+        "description": "Keep a tracker on your sheet under the notes category. It should have two columns: one for Alert Count and one for the Results.\n\nWhenever an Ally hits 0 Survivability on a mission (that is, right before they would enter a Critical State), enter Alert for the next two turns. Mark this down.\n\nWhile in Alert, if an ally then Enters a Critical State, mark down Widow; if you intervene to stop them from doing so, mark down Maker. If nothing happens before you exit Alert, mark down Smurf.\n\nAfter 13 Alerts have been reached, this Background Perk will evolve. "
+    },
+    {
+        "id": "bgBlackOut",
+        "name": "Blacked Out Black Mail",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Once, make sure Kraken knows why you're here. Suffer appropriate Narrative Consequences but gain also appropriate Narrative and Mechanical Boons."
+    },
+    {
+        "id": "bgBurnt",
+        "name": "Burnt by History",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "For as long as you keep the truth hidden about who you are, start each mission with an Ambiguous Boon on the level of a small Narrative Boon or Locked On. \n\nIf they figure it out or the truth becomes too heavy to bear, this Background Perk will Evolve."
+    },
+    {
+        "id": "bgFuze",
+        "name": "Blown Fuze",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuFuze",
+        "advancement": "",
+        "description": "Whenever Valka is brought up, you may make a Temper and Nerve Test.\n\nIf you fail both Tests, the AWACS gains 2 Escalation. If you pass your Temper Test, hold Closure. If you pass your Nerve Test, hold Lock On. If you passed them both, hold Snapshot as well."
+    },
+    {
+        "id": "bgBold",
+        "name": "Fortune Favoring Boldness",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBoldness",
+        "advancement": "",
+        "description": "REACTION, TRICK - 1\nYou're desperate to prove yourself and make a name. Whenever, you may give the AWACS either 2 or 4 Escalation. \n\nIf you gave them 2, gain Snapshot. If you gave them 4, either gain Snapshot twice or add [REACT] to the Snapshot you gained.\n\nThen, Exhaust unless you spend a Physical and Mental Pilot Stat."
+    },
+    {
+        "id": "bgMoney",
+        "name": "Inverse Funnel Scheme",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "You may move RP between other Pilots without risk of any Consequences...\n\nSo long as you siphon some off for yourself, of course. A finders fee.\n\nThis fee is not optional. If it is found to have been failed to have been taken, then this Background Perk will Evolve."
+    },
+    {
+        "id": "bgAboveItAll",
+        "name": "Above it All",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "At the start of a mission, based off of your character's mood, choose Commanding or Comet. If you choose Commanding, you may spend one of each Pilot Stat during your Positioning Maneuvers to gain Snapshot, then Exhaust. If you choose Comet, the first time you would Break, don't -- spend a Survivability or two Capacity instead."
+    },
+    {
+        "id": "bgPhobia",
+        "name": "Pentaheptaphobia",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Whenever one of your rolls results in 5 or 7, Flip a Coin. If it was a 5, on a Heads, gain Snapshot, on a Tails, gain a point of Mental Stress; if it was a 7, on a Heads, gain Lock-On, on a Tails, give the AWACS 1 Escalation.\n\nWhenever one of your rolls results in 12, gain Closure."
+    },
+    {
+        "id": "bgBBB",
+        "name": "By Bye Black Sheep",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBBB",
+        "advancement": "",
+        "description": "REACT - 0\nWhenever you Strike a Quirk on mission to Reduce Stress, you may spend either a Capacity or a Survivability. If you spend a Capacity, recover a Pilot Stat. If you spend a Survivability, gain Snapshot.\n"
+    },
+    {
+        "id": "bgPirateQueen",
+        "name": "The Pirate Queen Jeanne",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Replace your second Quirk with \"Boisterous History\".\n\nWhenever you mark an Advancement on a Deployment using this Quirk, make note of if the history Jeanne proclaimed was Fact or Fiction. If it was Fact, spend a Nerve and gain Closure. If it was Fiction, spend a Temper and G-Resist and gain Lock On twice.\n\nWhen either Jeanne makes their call to greatness -- or if she has revealed too much -- this Background Perk will evolve based off of if she is more Fact or Fiction."
+    },
+    {
+        "id": "bgBigPP",
+        "name": "Pronounced Privateer, Not Pirate",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Whenever a mission has a Side Objective, you may try and convince the flight to all go after it. If you do, increase the RP payout for it, but add a complication along the way."
+    },
+    {
+        "id": "bgIntern",
+        "name": "Itinerant Sha'ir",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBGIntern",
+        "advancement": "",
+        "description": "[REACT, TRICK - 0] \nWhenever an Ally makes a Check, they may treat it as if they had added capacity to the roll. This can add an additional die if capacity was already used. Exhaust."
+    },
+    {
+        "id": "bgHeirApparent",
+        "name": "Take the Crown",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Gain a new Mastery Option for The Novice called \"Heir Apparent\". \n\nWhenever you mark an Advancement for The Novice, note down in your Misc Notes if you gained it through Guile or Force.\n\nWhen you reach Heir Apparent, if you stick to this path, the choices you made manifest will shape the future of this want-to-be ruler."
+    },
+    {
+        "id": "bgFemcel",
+        "name": "Female Living Space",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBGFemcel",
+        "advancement": "",
+        "description": "You never gain any benefits from a Multicrew Aircraft (as it is your female living space instead). Gain the following Maneuver instead:\n\nREACT, TRICK - 0.\n\nWhenever you Face Consequences, you may throw something out of your backseat. Negate, but roll a d3 for how important it was and gain that much Mental Stress.\n\nRequires a Multicrew Aircraft."
+    },
+    {
+        "id": "bgFireIce",
+        "name": "Elemental Temperment",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBGFireIce",
+        "advancement": "",
+        "description": "REACT, TRICK - 0\nWhenever, choose the relevant side.\nFIRE - \nWhenever you make a Temper Check or Test, you may choose to fail. Gain Snapshot.\nICE - \nWhenever you make a Nerve Check or Test, you may choose to fail. The AWACS loses 2 Escalation, to a minimum of 0, and you gain thrice the Escalation lost in RP.\n\nExhaust."
+    },
+    {
+        "id": "bgPrincess",
+        "name": "Voslage in Exile",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "You're the last representative of a dead kingdom. Whenever, spend a Nerve and try to use your title to gain connections. Gain a Narrative Boon related to your quest to take back the throne. When you feel ready, you may proclaim yourself and this perk will evolve."
+    },
+    {
+        "id": "bgCourier",
+        "name": "Just Lucky to Be Alive",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "",
+        "advancement": "",
+        "description": "Whenever you make an Attack, count up your completed Deployments, then roll a d100. If the result is less than or equal to that number, the Attack is a Perfect Success."
+    },
+    {
+        "id": "bgCressie",
+        "name": "Know Thy Enemy",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuBGCressie",
+        "advancement": "",
+        "description": "[2 - TRICK]\nYou add your own constructive input to the situation at hand, in the most irritating way possible. Allies can acknowledge your words as correct. If they do so, they take 1d3 Mental Stress for the same amount of Snapshots."
+    },
+    {
+        "id": "bgWarAndPeace",
+        "name": "War and Peace are a Racket",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuWarAndPeace",
+        "advancement": "",
+        "description": "Reaction, Trick, 0.\n\nWhenever during your Positioning Maneuver, Choose War or Peace. If you choose War, gain a Stress and Snapshot. If you choose Peace, you or an ally may recover a Pilot Stat. Exhaust.\n\nThis Background Perk has the potential to Evolve."
+    },
+    {
+        "id": "bgSimpods",
+        "name": "Just Like the Simulations",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuSimpods",
+        "advancement": "",
+        "description": "REACTION - 0\nChoose Boredom or Bravery. If you choose Boredom, add your Reaction minus your Nerve to a roll. If you choose Bravery, add your G-Resist and Temper to a roll, but take a Mental and Physical Stress. Exhaust."
+    },
+    {
+        "id": "bgHobo",
+        "name": "Hobo with a Shotgun",
+        "type": "bgPerk",
+        "tags": "",
+        "addManuID": "manuHoboShotgun",
+        "advancement": "",
+        "description": "React, trick - 0\nWhenever, spend 10 times X RP. Gain that many snapshots."
     }
 ]

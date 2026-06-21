@@ -10,6 +10,16 @@
         "desc": "Requires Spending [x] Capacity"
     },
     {
+        "id": "manuCapX",
+        "name": "CAP [X]",
+        "desc": "Requires Spending Variable Capacity"
+    },
+    {
+        "id": "manuX",
+        "name":"Variable EN Cost",
+        "desc": "Has a variable Energy Cost"
+    },
+    {
         "id": "manuAttack",
         "name": "Attack",
         "desc": "Deals damage"
