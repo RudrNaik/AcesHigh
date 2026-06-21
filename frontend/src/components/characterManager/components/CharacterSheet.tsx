@@ -13,6 +13,8 @@ import perks from "../../../data/PerkList.json";
 import manus from "../../../data/ManueverList.json";
 import staticMods from "../../../data/StaticMods.json";
 
+import { motion } from "framer-motion";
+
 function CharacterSheet({
   character,
   onUpdate,
@@ -51,36 +53,46 @@ function CharacterSheet({
         logi={false}
       />
 
-      {activeTab === "Setup" && (
-        <Setup
-          character={character}
-          updateCharacter={onUpdate}
-          specs={specializations}
-          backgroundPerks={perks}
-          manuvers={manus}
-          staticMods={staticMods}
-        />
-      )}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: 0.1,
+        }}
+        className="flicker"
+      >
+        {activeTab === "Setup" && (
+          <Setup
+            character={character}
+            updateCharacter={onUpdate}
+            specs={specializations}
+            backgroundPerks={perks}
+            manuvers={manus}
+            staticMods={staticMods}
+          />
+        )}
 
-      {activeTab === "Dossier" && (
-        <Dossier character={character} updateCharacter={onUpdate} />
-      )}
+        {activeTab === "Dossier" && (
+          <Dossier character={character} updateCharacter={onUpdate} />
+        )}
 
-      {activeTab === "Sortie" && (
-        <Sortie character={character} updateCharacter={onUpdate} />
-      )}
+        {activeTab === "Sortie" && (
+          <Sortie character={character} updateCharacter={onUpdate} />
+        )}
 
-      {activeTab === "Logistics" && (
-        <Logistics character={character} updateCharacter={onUpdate} />
-      )}
+        {activeTab === "Logistics" && (
+          <Logistics character={character} updateCharacter={onUpdate} />
+        )}
 
-      {activeTab === "Tour" && (
-        <Tours character={character} updateCharacter={onUpdate} />
-      )}
+        {activeTab === "Tour" && (
+          <Tours character={character} updateCharacter={onUpdate} />
+        )}
 
-      {activeTab === "Logs" && (
-        <Logs character={character} updateCharacter={onUpdate} />
-      )}
+        {activeTab === "Logs" && (
+          <Logs character={character} updateCharacter={onUpdate} />
+        )}
+      </motion.div>
     </div>
   );
 }

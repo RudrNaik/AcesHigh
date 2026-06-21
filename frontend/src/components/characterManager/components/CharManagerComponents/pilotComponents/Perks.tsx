@@ -74,7 +74,7 @@ function PerksView({
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {/* Ace */}
       <section>
-        <div className="border border-cyan-100 lg:p-4 p-2 space-y-3 h-full">
+        <div className="border border-cyan-800 lg:p-4 p-2 space-y-3 h-full bg-black/20">
           <h2 className="text-lg font-bold text-cyan-300 mb-2">Ace Perks</h2>
 
           {character.tours.length === 0 && (
@@ -284,7 +284,7 @@ function PerksView({
 
       {/* Base */}
       <section>
-        <div className="border border-cyan-100 lg:p-4 p-2 space-y-3 h-full">
+        <div className="border border-cyan-800 lg:p-4 p-2 space-y-3 h-full bg-black/20">
           <h2 className="text-lg font-bold text-cyan-300 mb-2">Base Perks</h2>
           {Array.from({ length: 10 }).map((_, slot) => {
             const selectedID = character.baseperks[slot] ?? "";
