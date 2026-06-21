@@ -106,9 +106,7 @@ function getAircraftData(character: CharacterData) {
         .map((t) => t.trim())
         .filter(Boolean);
 
-  const mergedTags = [
-    ...new Set([...baseTags, ...acTags, ...(upgradeEffects.acTags ?? [])]),
-  ];
+  const mergedTags = [...baseTags, ...acTags, ...(upgradeEffects.acTags ?? [])];
 
   const mergedStatDeltas = { ...statDeltas };
   for (const [stat, delta] of Object.entries(upgradeEffects.statDeltas ?? {})) {
