@@ -106,7 +106,9 @@
     "isAdvanced": false,
     "type": "Positioning",
     "engCost": "-7",
-    "tags": "n/a",
+    "tags": [
+      "manuCap"
+    ],
     "desc": "Gain 7 Energy. Fatigue."
   },
   {
@@ -116,7 +118,9 @@
     "isAdvanced": false,
     "type": "Positioning",
     "engCost": "-3",
-    "tags": "n/a",
+    "tags": [
+      "manuCap"
+    ],
     "desc": "Gain 3 Energy. Gain 1 Energy at the start of your next turn for a number of turns equal to your Speed."
   },
   {
@@ -126,7 +130,9 @@
     "isAdvanced": false,
     "type": "Positioning",
     "engCost": "-2",
-    "tags": "n/a",
+    "tags": [
+      "manuCap"
+    ],
     "desc": "Gain 2 Energy. Gain Closure a number of times equal to your Maneuverability."
   },
   {
@@ -136,7 +142,9 @@
     "isAdvanced": false,
     "type": "Positioning",
     "engCost": "-2",
-    "tags": ["manuZoneRepo"],
+    "tags": [
+      "manuZoneRepo"
+    ],
     "desc": "Gain 2 Energy. Change your Zone."
   },
   {
@@ -166,7 +174,9 @@
     "isAdvanced": false,
     "type": "Exhaust",
     "engCost": "0",
-    "tags": ["manuDiscount"],
+    "tags": [
+      "manuDiscount"
+    ],
     "desc": "Discount your next Maneuver by 1 Energy."
   },
   {
@@ -196,7 +206,9 @@
     "isAdvanced": false,
     "type": "Exhaust",
     "engCost": "0",
-    "tags": ["manuAddForward"],
+    "tags": [
+      "manuAddForward"
+    ],
     "desc": "Gain +1 Forward."
   },
   {
@@ -206,7 +218,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": ["manuAddAdvantage"],
+    "tags": [
+      "manuAddAdvantage"
+    ],
     "desc": "Whenever, gain {Advantage}."
   },
   {
@@ -236,7 +250,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": ["manuCap"],
+    "tags": [
+      "manuCap"
+    ],
     "desc": "Add Capacity to your next pilot stat roll."
   },
   {
@@ -246,7 +262,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-1",
-    "tags": ["manuAddCatch"],
+    "tags": [
+      "manuAddCatch"
+    ],
     "desc": "Gain Catch. Escalate."
   },
   {
@@ -256,7 +274,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-1",
-    "tags": ["manuAddLock"],
+    "tags": [
+      "manuAddLock"
+    ],
     "desc": "Gain Lock On at the start of your next turn."
   },
   {
@@ -266,7 +286,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-1",
-    "tags": ["manuAddLock"],
+    "tags": [
+      "manuAddLock"
+    ],
     "desc": "Choose a target. Gain {Locked}, grant an Ally Catch."
   },
   {
@@ -276,7 +298,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": ["manuTrick"],
+    "tags": [
+      "manuTrick"
+    ],
     "desc": "Spend a Temper. Gain one extra Reaction Maneuver this round."
   },
   {
@@ -286,7 +310,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": ["manuAddOverwatch"],
+    "tags": [
+      "manuAddOverwatch"
+    ],
     "desc": "Spend a Nerve. Gain Overwatch."
   },
   {
@@ -306,7 +332,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": ["manuFatigue"],
+    "tags": [
+      "manuFatigue"
+    ],
     "desc": "Whenever, Spend a G-Res. Negate. Fatigue."
   },
   {
@@ -316,7 +344,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": ["manuAddDive"],
+    "tags": [
+      "manuAddDive"
+    ],
     "desc": "Gain Dive. Lose -1 Speed until you Exhaust it."
   },
   {
@@ -326,7 +356,10 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-2",
-    "tags": ["manuDefend", "manuAddMitigate"],
+    "tags": [
+      "manuDefend",
+      "manuAddMitigate"
+    ],
     "desc": "Gain {Mitigate}."
   },
   {
@@ -336,7 +369,10 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-3",
-    "tags": ["manuDefend", "manuCap"],
+    "tags": [
+      "manuDefend",
+      "manuCap"
+    ],
     "desc": "Defeat."
   },
   {
@@ -356,7 +392,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-3",
-    "tags": ["manuCap"],
+    "tags": [
+      "manuCap"
+    ],
     "desc": "Make an Attack using Capacity."
   },
   {
@@ -366,7 +404,10 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "-4",
-    "tags": ["manuCap", "manuORD"],
+    "tags": [
+      "manuCap",
+      "manuORD"
+    ],
     "desc": "Make an Attack using Ordnance, also uses Capacity."
   },
   {
@@ -376,7 +417,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "-3",
-    "tags":["manuAttack"],
+    "tags": [
+      "manuAttack"
+    ],
     "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
   },
   {
@@ -1787,7 +1830,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "1",
-    "tags": ["manuAddForward"],
+    "tags": [
+      "manuAddForward"
+    ],
     "desc": "Whenever, tick your Gunslinger die down by 1. Gain +1 Forward. If the Gunslinger die is at 0, you can\u2019t use this Maneuver."
   },
   {
@@ -2255,7 +2300,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": ["manuAddForward"],
+    "tags": [
+      "manuAddForward"
+    ],
     "desc": "Whenever you make a Reflex check, Gain +1 Forward. Exhaust unless you spend a Temper."
   },
   {
@@ -2265,7 +2312,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": ["manuAddForward"],
+    "tags": [
+      "manuAddForward"
+    ],
     "desc": "Whenever you make a Temper check, Gain +1 Forward. Exhaust unless you spend a Nerve."
   },
   {

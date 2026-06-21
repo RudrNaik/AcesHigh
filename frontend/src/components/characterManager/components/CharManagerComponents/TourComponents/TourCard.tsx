@@ -115,14 +115,7 @@ export default function TourCard({
 
               updateCharacter(tourEngine.removeTour(character, tourIndex));
             }}
-            className="
-              px-2
-              py-1
-              border
-              border-red-900
-              text-red-400
-              hover:border-red-500
-            "
+            className="border border-red-800 px-2 py-1 text-xs text-red-300 transition hover:bg-red-900/30"
           >
             Remove
           </button>

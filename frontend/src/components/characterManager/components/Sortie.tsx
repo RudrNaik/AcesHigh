@@ -1,7 +1,7 @@
 import type { CharacterData } from "../handlers/characterTypes";
-import Pilot from "../components/charManagerCommon/pilotComponents/Pilot";
-import Aircraft from "../components/charManagerCommon/planeComponents/Aircraft";
-import Perks from "../components/charManagerCommon/pilotComponents/Perks";
+import Pilot from "../components/CharManagerComponents/pilotComponents/Pilot";
+import Aircraft from "../components/CharManagerComponents/planeComponents/Aircraft";
+import Perks from "../components/CharManagerComponents/pilotComponents/Perks";
 import Tabs from "./CharacterTabs";
 import { useState } from "react";
 

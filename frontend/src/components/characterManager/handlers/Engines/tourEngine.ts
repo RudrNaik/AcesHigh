@@ -5,6 +5,8 @@ import type {
   CharacterStats,
 } from "../characterTypes";
 
+import * as licenseEngine from "./licenseEngine";
+
 import Deployments from "../../../../data/Deployments.json";
 import Tours from "../../../../data/Tours.json";
 import Families from "../../../../data/AircraftFamilies.json";
@@ -290,35 +292,9 @@ export function getAvailableGenesisOptions(
     });
 }
 
-export function applyGenesis(character: CharacterData): CharacterData {
-  const genesis = character.tours.flatMap(getDeploymentGenesisPerks);
-
-  return {
-    ...character,
-    baseperks: Array.from(new Set([...character.baseperks, ...genesis])),
-  };
-}
-
 export function getUsedGenesis(tour: Tour): string[] {
   return getDeployments(tour)
     .map((d) => d.genesis)
-    .filter((v): v is string => !!v);
-}
-
-export function applyMastery(character: CharacterData): CharacterData {
-  const mastery = character.tours.flatMap(getDeploymentMasteryFamilies);
-
-  return {
-    ...character,
-    masteredAircraft: Array.from(
-      new Set([...(character.masteredAircraft ?? []), ...mastery]),
-    ),
-  };
-}
-
-export function getDeploymentMasteryFamilies(tour: Tour): string[] {
-  return getCompletedDeployments(tour)
-    .map((d) => d.mastery)
     .filter((v): v is string => !!v);
 }
 
@@ -483,12 +459,18 @@ export function getDeploymentMasteries(character: CharacterData): string[] {
 }
 
 export function getUnlockedGenesisPerks(character: CharacterData): string[] {
-  return character.tours.flatMap((tour) =>
+  let updated = character.tours.flatMap((tour) =>
     getDeployments(tour)
       .filter((dep) => getDeploymentProgress(dep) >= 5)
       .map((dep) => dep.genesis)
       .filter((g): g is string => !!g && g !== ""),
   );
+  let loot = getUnlockedLootPerks(character);
+  return [...updated, ...loot];
+}
+
+export function getUnlockedLootPerks(character: CharacterData): string[] {
+  return licenseEngine.collectLootUnlocks(character).perks;
 }
 
 export function getTourRequisitionPoints(tour: Tour): number {
@@ -496,8 +478,10 @@ export function getTourRequisitionPoints(tour: Tour): number {
     total += 20;
 
     if (dep.reqMod !== null) {
-      total += 30;
+      total += dep.reqMod;
     }
+
+    console.log(total);
 
     return total;
   }, 0);
@@ -513,9 +497,20 @@ export function getCharacterRequisitionPoints(
 }
 
 export function sanitizeGenesis(character: CharacterData): CharacterData {
+  const validBasePerkIDs = new Set(
+    getAllPerks()
+      .filter((p) => p.type === "basePerk")
+      .map((p) => p.id),
+  );
+
+  const cleaned = (character.baseperks ?? []).filter((id) => {
+    if (!id) return false;
+    return validBasePerkIDs.has(id);
+  });
+
   return {
     ...character,
-    baseperks: Array.from(new Set(getUnlockedGenesisPerks(character))),
+    baseperks: [...new Set(cleaned)],
   };
 }
 
@@ -727,10 +722,8 @@ export function getModifierPilotBonuses(character: CharacterData) {
 }
 
 export function isPhoenixTour(tour: Tour): boolean {
-  console.log(tour.currTourID)
   return tour.currTourID === PHOENIX_TOUR_ID;
 }
-
 
 export function getAvailablePhoenixCharges(character: CharacterData): number {
   return character.tours.filter(
@@ -743,7 +736,6 @@ export function hasBurnedCoin(character: CharacterData): boolean {
 }
 
 export function canUsePhoenix(character: CharacterData): boolean {
-  console.log(getAvailablePhoenixCharges(character) > 0 && hasBurnedCoin(character))
   return getAvailablePhoenixCharges(character) > 0 && hasBurnedCoin(character);
 }
 

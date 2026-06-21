@@ -1,6 +1,6 @@
 import { useState } from "react";
-import aircraftList from "../../../data/AircraftList.json";
 import AircraftCard from "./AircraftCard";
+import * as planeEngine from "../../characterManager/handlers/Engines/planeEngine";
 import AirframeSidebar from "./AirframeSidebar";
 
 function Airframes() {
@@ -8,17 +8,8 @@ function Airframes() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const filteredAircraft = aircraftList
-    .filter((aircraft) => {
-      if (aircraft.id === "acExample") return false;
-      if (aircraft.id === "acNone") return false;
-
-      if (!aircraft.stats || aircraft.stats.A2A === "n/a") {
-        return false;
-      }
-      
-      return true;
-    })
+  const filteredAircraft = planeEngine
+    .getAircraftList()
     .filter((aircraft) => {
       if (selectedRole === "ALL") return true;
 
