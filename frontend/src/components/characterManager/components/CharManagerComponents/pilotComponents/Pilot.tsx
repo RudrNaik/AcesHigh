@@ -624,14 +624,14 @@ function CoinStats({
                 {coin.used ? (
                   <button
                     onClick={() => onReset(index)}
-                    className="border border-cyan-400 px-2 py-1 text-xs"
+                    className="border border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
                   >
                     Reset
                   </button>
                 ) : (
                   <button
                     onClick={() => onUse(index)}
-                    className="border border-cyan-400 px-2 py-1 text-xs"
+                    className="border border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
                   >
                     Spend
                   </button>
@@ -643,14 +643,14 @@ function CoinStats({
                       onBurn(index);
                       setConfirmBurn(null);
                     }}
-                    className="border text-red-100 border-red-500 bg-red-950 px-2 py-1 text-xs"
+                    className="border border-red-800 px-2 py-1 text-xs text-red-100 transition hover:bg-red-800"
                   >
                     CNFRM
                   </button>
                 ) : (
                   <button
                     onClick={() => setConfirmBurn(index)}
-                    className="border border-red-900 px-2 py-1 text-xs"
+                    className="border border-red-800 px-2 py-1 text-xs text-red-300 transition hover:bg-red-900/30"
                   >
                     Burn
                   </button>

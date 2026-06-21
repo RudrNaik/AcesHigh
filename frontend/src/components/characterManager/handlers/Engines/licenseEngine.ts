@@ -8,6 +8,7 @@ import licenses from "../../../../data/Licenses.json";
 import * as planeEngine from "./planeEngine";
 import * as tourEngine from "./tourEngine";
 //import * as charEngine from "./characterEngine";
+import * as resetEngine from "./downtimeEngine";
 
 export type { LootItem, LootCategory };
 
@@ -59,8 +60,9 @@ export function getRP(character: CharacterData): number {
   let bonus = character.bonusMoola;
   let starting = character.metadata.startingRP;
   let deps = tourEngine.getCharacterRequisitionPoints(character);
+  let resets = resetEngine.getTotalBonusRP(character);
 
-  return bonus + starting + deps;
+  return bonus + starting + deps + resets;
 }
 
 export function getSpentRP(character: CharacterData): number {
@@ -250,7 +252,7 @@ export function removeLoot(
     ...updated,
     baseperks: (updated.baseperks ?? []).filter((perkId) =>
       stillUnlockedPerks.has(perkId),
-    )
+    ),
   };
 
   return updated;

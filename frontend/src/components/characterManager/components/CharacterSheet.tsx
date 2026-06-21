@@ -4,8 +4,9 @@ import CharacterTabs from "./CharacterTabs";
 import Dossier from "./Dossier";
 import Sortie from "./Sortie";
 import Setup from "./Setup";
-import Logistics from "./Logistics"
-import Tours from "./Tours"
+import Logistics from "./Logistics";
+import Tours from "./Tours";
+import Logs from "./Logs";
 
 import specializations from "../../../data/Specs.json";
 import perks from "../../../data/PerkList.json";
@@ -37,7 +38,8 @@ function CharacterSheet({
 
       <div className="border-b-2 border-cyan-100">
         <h1 className="text-2xl font-bold">
-          {character.dossier.callsign || "Unnamed Pilot"} //  {character.metadata.userName}
+          {character.dossier.callsign || "Unnamed Pilot"} //{" "}
+          {character.metadata.userName}
         </h1>
       </div>
 
@@ -45,7 +47,7 @@ function CharacterSheet({
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         setupCompleted={character.metadata.setupComplete}
-        gameplay = {false}
+        gameplay={false}
         logi={false}
       />
 
@@ -64,11 +66,21 @@ function CharacterSheet({
         <Dossier character={character} updateCharacter={onUpdate} />
       )}
 
-      {activeTab === "Sortie" && <Sortie character={character} updateCharacter={onUpdate}/>}
+      {activeTab === "Sortie" && (
+        <Sortie character={character} updateCharacter={onUpdate} />
+      )}
 
-      {activeTab === "Logistics" && <Logistics character={character} updateCharacter={onUpdate}/>}
+      {activeTab === "Logistics" && (
+        <Logistics character={character} updateCharacter={onUpdate} />
+      )}
 
-      {activeTab === "Tour" && <Tours character={character} updateCharacter={onUpdate}/>}
+      {activeTab === "Tour" && (
+        <Tours character={character} updateCharacter={onUpdate} />
+      )}
+
+      {activeTab === "Logs" && (
+        <Logs character={character} updateCharacter={onUpdate} />
+      )}
     </div>
   );
 }

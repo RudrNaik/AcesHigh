@@ -60,7 +60,7 @@
     "name": "Requisitions",
     "description": "Face Consequences even when you use Capacity.",
     "advancement": "",
-    "reqMod": 50,
+    "reqMod": 30,
     "perkID": null,
     "pilotMods": {
       "temp": 0,

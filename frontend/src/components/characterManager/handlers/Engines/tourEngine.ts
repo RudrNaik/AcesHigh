@@ -481,6 +481,8 @@ export function getTourRequisitionPoints(tour: Tour): number {
       total += dep.reqMod;
     }
 
+    console.log(total);
+
     return total;
   }, 0);
 }
