@@ -85,3 +85,48 @@ export function useCharacterStorage() {
     hasCharacter,
   };
 }
+
+export function exportCharacter(character: CharacterData) {
+  const fileName = `${getCharacterFileName(character)}.json`;
+
+  const json = JSON.stringify(character, null, 2);
+
+  const blob = new Blob([json], {
+    type: "application/json",
+  });
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = fileName;
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
+}
+
+function getCharacterFileName(character: CharacterData): string {
+  const callsign = character.dossier.callsign?.trim();
+
+  if (callsign) {
+    return sanitizeFileName(callsign);
+  }
+
+  const first = character.dossier.firstName?.trim() ?? "";
+  const last = character.dossier.lastName?.trim() ?? "";
+
+  const fullName = `${first} ${last}`.trim();
+
+  if (fullName) {
+    return sanitizeFileName(fullName);
+  }
+
+  return "character";
+}
+
+function sanitizeFileName(name: string): string {
+  return name.replace(/[<>:"/\\|?*]/g, "_");
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { CharacterData } from "../handlers/characterTypes";
 import * as characterEngine from "../handlers/Engines/characterEngine";
+import * as storage from "../handlers/characterStorage";
 
 function DebugView({
   character,
@@ -50,6 +51,13 @@ function DebugView({
             className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
           >
             Copy JSON
+          </button>
+
+          <button
+            onClick={() => storage.exportCharacter(character)}
+            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+          >
+            Export Character
           </button>
 
           <button
