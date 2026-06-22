@@ -44,7 +44,11 @@ export default function ManuView({ character }: Props) {
     });
 
   return (
-    <div className="w-full min-h-screen text-cyan-100 p-6">
+    <div className="w-full min-h-screen text-cyan-100 space-y-4">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
+        <h1 className="text-2xl font-bold">MANUS</h1>
+      </div>
+
       {/* Mobile Filter Button */}
       {!sidebarOpen && (
         <button
@@ -65,7 +69,7 @@ export default function ManuView({ character }: Props) {
         </button>
       )}
 
-      <div className="flex gap-6">
+      <div className="flex gap-4">
         {/* Sidebar */}
         <div>
           <ManeuverSidebar
