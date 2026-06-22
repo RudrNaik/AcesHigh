@@ -50,7 +50,6 @@ export interface AircraftCardProps {
 function AircraftCard(aircraft: AircraftCardProps) {
   const stats = Object.entries(aircraft?.stats ?? {}) as [string, ReactNode][];
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const tags = Array.isArray(aircraft.tags)
     ? aircraft.tags
@@ -82,41 +81,19 @@ function AircraftCard(aircraft: AircraftCardProps) {
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-2">
-        <div className="relative">
+        <div>
           {aircraft.aircraftOptions ? (
-            <>
-              <button
-                onClick={() => setShowDropdown((prev) => !prev)}
-                className="flex items-center gap-2 text-2xl font-bold text-cyan-100 hover:text-cyan-300"
-              >
-                {aircraft.name || "Select Aircraft"}
-                <span className="text-sm text-cyan-400">
-                  {showDropdown ? "▲" : "▼"}
-                </span>
-              </button>
-
-              {showDropdown && (
-                <div className="absolute z-50 top-full left-0 mt-1 min-w-sm max-h-64 overflow-y-auto bg-black border border-cyan-400 text-sm">
-                  {aircraft.aircraftOptions.map((plane) => (
-                    <button
-                      key={plane.id}
-                      onClick={() => {
-                        aircraft.onSelectAircraft?.(plane.id);
-                        setShowDropdown(false);
-                      }}
-                      className={`w-full text-left px-3 py-2 hover:bg-cyan-950 flex justify-between items-center
-                        ${plane.id === aircraft.id ? "bg-cyan-900 text-cyan-100" : "text-cyan-300"}
-                      `}
-                    >
-                      <span>{plane.name}</span>
-                      <span className="text-xs text-cyan-600">
-                        {plane.type} // T{plane.tier} // G{plane.gen}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </>
+            <select
+              value={aircraft.id}
+              onChange={(e) => aircraft.onSelectAircraft?.(e.target.value)}
+              className="select-themed text-lg font-bold"
+            >
+              {aircraft.aircraftOptions.map((plane) => (
+                <option key={plane.id} value={plane.id}>
+                  {plane.name}
+                </option>
+              ))}
+            </select>
           ) : (
             <h2 className="text-2xl font-bold text-cyan-100">
               {aircraft.name}
@@ -169,7 +146,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             stats={aircraft.stats}
           />
           <div className="flex text-center text-xs text-cyan-400">
-            STLL: {5- Number(aircraft.stats.MANU)} | OVRSTR:{" "}
+            STLL: {5 - Number(aircraft.stats.MANU)} | OVRSTR:{" "}
             {13 + Number(aircraft.stats.SPEED) + Number(aircraft.stats.MANU)}
             <span className="text-cyan-100"></span>
           </div>
@@ -296,7 +273,7 @@ function AircraftStatControlEnergy({
   value,
   onDecrement,
   onIncrement,
-  stats
+  stats,
 }: {
   label: string;
   value: number;
@@ -304,10 +281,10 @@ function AircraftStatControlEnergy({
   onIncrement: () => void;
   stats: Record<string, ReactNode>;
 }) {
-  const overstress = 13+ Number(stats.MANU) + Number(stats.SPEED)
-  const stall = 5 - Number(stats.MANU)
+  const overstress = 13 + Number(stats.MANU) + Number(stats.SPEED);
+  const stall = 5 - Number(stats.MANU);
   const getWarn = (val: number): string => {
-    return ((val<= stall+1) || (val >= overstress-2)) ? "text-red-300" : ""
+    return val <= stall + 1 || val >= overstress - 2 ? "text-red-300" : "";
   };
   return (
     <div className="flex gap-2 items-center">
@@ -315,7 +292,11 @@ function AircraftStatControlEnergy({
         {label}
       </span>
 
-      <div className={`w-12 text-center text-xs text-cyan-400 ${getWarn(value)}`}>{value} </div>
+      <div
+        className={`w-12 text-center text-xs text-cyan-400 ${getWarn(value)}`}
+      >
+        {value}{" "}
+      </div>
 
       <button
         onClick={onDecrement}

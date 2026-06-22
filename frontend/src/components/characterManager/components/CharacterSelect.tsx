@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import CharacterCard from "./CharacterCard";
 import type { CharacterData } from "../handlers/characterTypes";
 
@@ -6,29 +8,75 @@ interface Props {
   onSelect: (id: string) => void;
   onCreate: () => void;
   onDelete: (id: string) => void;
+  onImport: (character: CharacterData) => void;
 }
 
 function CharacterSelect({
   characters,
   onSelect,
   onCreate,
-  onDelete
+  onDelete,
+  onImport,
 }: Props) {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileSelected = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const file = event.target.files?.[0];
+
+    if (!file) return;
+
+    try {
+      const text = await file.text();
+
+      const imported =
+        JSON.parse(text) as CharacterData;
+
+      onImport(imported);
+    } catch (err) {
+      console.error(err);
+      alert("Failed to import character.");
+    }
+
+    event.target.value = "";
+  };
+
   return (
     <div className="space-y-6">
-
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold">
           Character Manager
         </h1>
 
-        <button
-          onClick={onCreate}
-          className="border border-cyan-100 px-2 py-2"
-        >
-          Create Character
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={handleImportClick}
+            className="border border-green-500 px-2 py-2"
+          >
+            Import Character
+          </button>
+
+          <button
+            onClick={onCreate}
+            className="border border-cyan-100 px-2 py-2"
+          >
+            Create Character
+          </button>
+        </div>
       </div>
+
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".json"
+        className="hidden"
+        onChange={handleFileSelected}
+      />
 
       {characters.length === 0 ? (
         <div className="border p-8 text-center">
@@ -44,7 +92,8 @@ function CharacterSelect({
                 onSelect(character.id)
               }
               onDelete={() =>
-                onDelete(character.id)}
+                onDelete(character.id)
+              }
             />
           ))}
         </div>

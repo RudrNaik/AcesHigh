@@ -76,7 +76,7 @@
     },
     {
         "id": "manuORD",
-        "name": "Ordnance Enabled",
+        "name": "Ordnance",
         "desc": "Allows the usage of Ordnance on these attacks"
     },
     {

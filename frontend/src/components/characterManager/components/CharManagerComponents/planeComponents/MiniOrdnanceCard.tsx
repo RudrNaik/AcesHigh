@@ -5,7 +5,6 @@ import {
   getTagCountMap,
   getTagValue,
 } from "../../../../common/tagResolver";
-import Selector from "./Selector";
 
 export interface OrdnanceSelectOption {
   id: string;
@@ -43,19 +42,19 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
     >
       {/* Header */}
       <div className="flex justify-between">
-        <Selector
-          selectedId={ordnance.id}
-          selectedName={ordnance.name}
-          options={
-            ordnance.ordnanceOptions?.map((item) => ({
-              id: item.id,
-              name: item.name,
-              subtitle: item.domain,
-            })) ?? []
-          }
-          onSelect={(id) => ordnance.onSelectOrdnance?.(id)}
-          placeholder="Select Ordnance"
-        />
+        <select
+          value={ordnance.id}
+          onChange={(e) => ordnance.onSelectOrdnance?.(e.target.value)}
+          className="select-themed"
+        >
+          <option value="">Select Ordnance</option>
+
+          {ordnance.ordnanceOptions?.map((item) => (
+            <option key={item.id} value={item.id}>
+              {item.name}
+            </option>
+          ))}
+        </select>
         <p className="text-sm text-cyan-400 whitespace-pre-line">
           {ordnance.domain}
         </p>
@@ -63,7 +62,7 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
 
       {/* Description */}
       {ordnance.desc && ordnance.desc !== "n/a" && (
-        <p className="text-sm text-cyan-100 whitespace-pre-line">
+        <p className="text-sm mt-2 text-cyan-100 whitespace-pre-line">
           {ordnance.desc}
         </p>
       )}

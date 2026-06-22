@@ -577,3 +577,12 @@ export function reconcileMastery(character: CharacterData): CharacterData {
     },
   };
 }
+
+export function sanitizeCharacter(character: CharacterData): CharacterData {
+  let result = structuredClone(character);
+
+  result = tourEngine.sanitizeTours(result);
+  result = planeEngine.sanitizeAircraft(result);
+
+  return result;
+}
