@@ -10,6 +10,8 @@ interface ManeuverSidebarProps {
 
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
+
+  availableManu: string[];
 }
 
 type Tab = "FILTER" | "PLANNER";
@@ -21,6 +23,7 @@ function ManeuverSidebar({
   setSearchQuery,
   sidebarOpen,
   setSidebarOpen,
+  availableManu,
 }: ManeuverSidebarProps) {
   const [tab, setTab] = useState<Tab>("FILTER");
 
@@ -48,14 +51,14 @@ function ManeuverSidebar({
         <div className="h-full flex flex-col p-5 font-mono">
           {/* Header */}
           <div className="flex justify-between mb-3">
-            <h2 className="text-xl font-bold">MANEUVER</h2>
+            <h2 className="text-xl font-bold"></h2>
             <button onClick={() => setSidebarOpen(false)} className="lg:hidden">
               CLOSE
             </button>
           </div>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-4 border-b border-cyan-100/20">
+          <div className="flex gap-2 mb-2 border-b border-cyan-100 text-xl">
             {["FILTER", "PLANNER"].map((t) => (
               <button
                 key={t}
@@ -103,7 +106,7 @@ function ManeuverSidebar({
                 ))}
               </>
             ) : (
-              <ManuBuilder />
+              <ManuBuilder availableManus={availableManu} />
             )}
           </div>
         </div>

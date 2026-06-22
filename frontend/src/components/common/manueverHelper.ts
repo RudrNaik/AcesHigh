@@ -174,11 +174,8 @@ export const calculateTurn = ({
     let c = m?.capacityMod ?? 0;
 
     // Apply active effects from previous maneuver
-    e -= activeEffects.discountCost;
-
-    if (m?.type === "POSITIONING") {
-      e = -e;
-    }
+    e = -e;
+    e += activeEffects.discountCost;
 
     const capCost = getManeuverCapacityCost(m);
 
@@ -238,7 +235,7 @@ export const calculateSlotsNeeded = (
   ).length;
   const exhaustCount = maneuvers.filter((m) => m?.type === "EXHAUST").length;
 
-  return Math.min(8, Math.max(4, nonExhaustCount) + exhaustCount);
+  return Math.max(4, nonExhaustCount) + exhaustCount;
 };
 
 export const getManeuverSlotLabel = (

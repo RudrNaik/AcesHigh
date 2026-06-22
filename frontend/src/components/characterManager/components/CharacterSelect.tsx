@@ -56,14 +56,14 @@ function CharacterSelect({
         <div className="flex gap-2">
           <button
             onClick={handleImportClick}
-            className="border border-green-500 px-2 py-2"
+            className="border border-cyan-800 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-400 hover:text-black"
           >
             Import Character
           </button>
 
           <button
             onClick={onCreate}
-            className="border border-cyan-100 px-2 py-2"
+            className="border border-cyan-800 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
           >
             Create Character
           </button>

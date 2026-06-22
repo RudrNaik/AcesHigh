@@ -260,6 +260,7 @@ export default function DeploymentCard({
             {(depData.reqMod ?? 0) > 0 && (
               <div className="text-gray-400">Req: {depData.reqMod ?? 0}</div>
             )}
+            
             {deployment.genesis && (
               <div className="text-gray-400">
                 Perk:{" "}

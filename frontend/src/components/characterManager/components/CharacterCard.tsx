@@ -12,12 +12,12 @@ function CharacterCard({ character, onSelect, onDelete }: Props) {
       className="
     bg-black/20
     border
-    border-cyan-100
-    hover:border-cyan-400
+    border-cyan-800
+    hover:border-cyan-100
     transition-all
-    duration-50
     p-4
-    border-l-4
+    hover:border-l-4
+    hover:animate-pulse
     flex justify-between
     cursor:pointer
   "
