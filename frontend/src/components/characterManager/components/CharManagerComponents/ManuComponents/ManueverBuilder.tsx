@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import rawManeuvers from "../../../../../data/ManueverList.json";
 import {
   normalizeManeuvers,
@@ -9,24 +9,39 @@ import {
   getSelectableManeuvers,
   organizeManeuversForDisplay,
   type Maneuver,
-} from "../../../../common/manueverHelper";
+} from "../../../handlers/Engines/manuEngine";
+// import * as planeEngine from "../../../handlers/Engines/planeEngine";
+// import * as charEngine from "../../../handlers/Engines/characterEngine";
+import type { CharacterData } from "../../../handlers/characterTypes";
 
 const MIN_SLOTS = 4;
 
-function ManuBuilder({ availableManus }: { availableManus: string[] }) {
+function ManuBuilder({
+  availableManus,
+  character,
+  onUpdate,
+}: {
+  availableManus: string[];
+  character: CharacterData;
+  onUpdate: (character: CharacterData) => void;
+}) {
   const Manus = rawManeuvers.filter((m) => availableManus.includes(m.id));
   const all: Maneuver[] = useMemo(() => normalizeManeuvers(Manus), []);
   const positionOptions = useMemo(() => getPositioningManeuvers(all), [all]);
   const maneuverOptions = useMemo(() => getSelectableManeuvers(all), [all]);
 
-  const [temper, setTemper] = useState(0);
-  const [nerve, setNerve] = useState(0);
-  const [reflex, setReflex] = useState(0);
-  const [gRes, setGRes] = useState(0);
+  const [temp, setTemper] = useState(character.stats.temper);
+  const [nrv, setNerve] = useState(character.stats.nerve);
+  const [rflx, setReflex] = useState(character.stats.reflex);
+  const [gRes, setGRes] = useState(character.stats.gResist);
 
-  const [energyStart, setEnergyStart] = useState(0);
-  const [capacityStart, setCapacityStart] = useState(0);
-  const [survival, setSurv] = useState(0);
+  const [energyStart, setEnergyStart] = useState(
+    character.aircraft.currentEnergy,
+  );
+  const [capacityStart, setCapacityStart] = useState(
+    character.aircraft.currentCapacity,
+  );
+  const [survival, setSurv] = useState(character.aircraft.currentSurvivability);
 
   const [pos, setPos] = useState("");
   // Dynamic slot array instead of m1–m8
@@ -39,6 +54,17 @@ function ManuBuilder({ availableManus }: { availableManus: string[] }) {
       return next;
     });
   };
+
+  useEffect(() => {
+    setTemper(character.stats.temper);
+    setNerve(character.stats.nerve);
+    setReflex(character.stats.reflex);
+    setGRes(character.stats.gResist);
+
+    setCapacityStart(character.aircraft.currentCapacity);
+    setEnergyStart(character.aircraft.currentEnergy);
+    setSurv(character.aircraft.currentSurvivability);
+  }, [character]);
 
   //const addSlot = () => setSlots((prev) => [...prev, ""]);
 
@@ -81,7 +107,7 @@ function ManuBuilder({ availableManus }: { availableManus: string[] }) {
       ),
     );
 
-    return `T${temper}/N${nerve}/R${reflex}/G${gRes}
+    return `T${temp}/N${nrv}/R${rflx}/G${gRes}
 ENG-- ${energyStart} / CAP -- ${capacityStart} / SRV -- ${survival}
 
 -[START]-
@@ -90,11 +116,11 @@ ${maneuverLines.join("\n")}
 -[END]-
 
 ENG -- ${result.finalEnergy} / CAP -- ${result.finalCapacity} / SRV -- ${survival}
-T${temper}/N${nerve}/R${reflex}/G${gRes}`;
+T${temp}/N${nrv}/R${rflx}/G${gRes}`;
   }, [
-    temper,
-    nerve,
-    reflex,
+    temp,
+    nrv,
+    rflx,
     gRes,
     energyStart,
     capacityStart,
@@ -107,9 +133,9 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
   return (
     <div className="space-y-3 text-xs">
       <div className="grid grid-cols-4 gap-1">
-        <Input label="T" value={temper} set={setTemper} />
-        <Input label="N" value={nerve} set={setNerve} />
-        <Input label="R" value={reflex} set={setReflex} />
+        <Input label="T" value={temp} set={setTemper} />
+        <Input label="N" value={nrv} set={setNerve} />
+        <Input label="R" value={rflx} set={setReflex} />
         <Input label="G" value={gRes} set={setGRes} />
       </div>
 
@@ -162,8 +188,23 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
 
       <button
         onClick={() => {
-          setEnergyStart(result.finalEnergy);
-          setCapacityStart(result.finalCapacity);
+          const updatedCharacter = {
+            ...character,
+            aircraft: {
+              ...character.aircraft,
+              currentEnergy: result.finalEnergy,
+              currentCapacity: result.finalCapacity,
+            },
+            stats: {
+              ...character.stats,
+              temper: temp,
+              nerve: nrv,
+              reflex: rflx,
+              gResist: gRes,
+            },
+          };
+
+          onUpdate(updatedCharacter);
           setPos("");
           setSlots(Array(MIN_SLOTS).fill(""));
         }}

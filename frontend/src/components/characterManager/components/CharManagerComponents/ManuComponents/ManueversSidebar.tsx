@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CharacterData } from "../../../handlers/characterTypes";
 import ManuBuilder from "./ManueverBuilder";
 
 interface ManeuverSidebarProps {
@@ -12,6 +13,9 @@ interface ManeuverSidebarProps {
   setSidebarOpen: (open: boolean) => void;
 
   availableManu: string[];
+
+  char: CharacterData;
+  onUpdate: (updated: CharacterData) => void;
 }
 
 type Tab = "FILTER" | "PLANNER";
@@ -24,6 +28,8 @@ function ManeuverSidebar({
   sidebarOpen,
   setSidebarOpen,
   availableManu,
+  char,
+  onUpdate,
 }: ManeuverSidebarProps) {
   const [tab, setTab] = useState<Tab>("FILTER");
 
@@ -106,7 +112,11 @@ function ManeuverSidebar({
                 ))}
               </>
             ) : (
-              <ManuBuilder availableManus={availableManu} />
+              <ManuBuilder
+                availableManus={availableManu}
+                character={char}
+                onUpdate={onUpdate}
+              />
             )}
           </div>
         </div>

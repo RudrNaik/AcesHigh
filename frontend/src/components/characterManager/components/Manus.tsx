@@ -8,10 +8,10 @@ import ManeuverCard from "./CharManagerComponents/ManuComponents/ManueverCard";
 
 type Props = {
   character: CharacterData;
-  updateCharacter?: (updated: CharacterData) => void;
+  updateCharacter: (updated: CharacterData) => void;
 };
 
-export default function ManuView({ character }: Props) {
+export default function ManuView({ character, updateCharacter }: Props) {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -46,7 +46,7 @@ export default function ManuView({ character }: Props) {
   return (
     <div className="w-full min-h-screen text-cyan-100 space-y-4">
       <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
-        <h1 className="text-2xl font-bold">MANUS</h1>
+        <h1 className="text-2xl font-bold">MANEUVERS</h1>
       </div>
 
       {/* Mobile Filter Button */}
@@ -80,6 +80,8 @@ export default function ManuView({ character }: Props) {
             sidebarOpen={sidebarOpen}
             setSidebarOpen={setSidebarOpen}
             availableManu={manuEngine.getAllCharManus(character)}
+            char={character}
+            onUpdate={updateCharacter}
           />
         </div>
 
