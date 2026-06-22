@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CharacterData } from "./components/characterManager/handlers/characterTypes";
 
 import CharacterSelect from "./components/characterManager/components/CharacterSelect";
 import CharacterSheet from "./components/characterManager/components/CharacterSheet";
@@ -25,6 +26,23 @@ function CharacterManager() {
     setSelectedId(null);
   };
 
+  function handleImport(imported: CharacterData) {
+    const existing = characters.find((c) => c.id === imported.id);
+
+    if (existing) {
+      const overwrite = window.confirm(
+        `Character "${existing.dossier.callsign}" already exists.\n\nOverwrite it?`,
+      );
+
+      if (!overwrite) return;
+
+      updateCharacter(imported);
+      return;
+    }
+
+    addCharacter(imported);
+  }
+
   return (
     <div className="w-full min-h-screen">
       <div className="lg:px-10 mx-auto font-mono lg:py-8">
@@ -34,6 +52,7 @@ function CharacterManager() {
             onSelect={setSelectedId}
             onCreate={handleCreate}
             onDelete={deleteCharacter}
+            onImport={handleImport}
           />
         ) : (
           <CharacterSheet

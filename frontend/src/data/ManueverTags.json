@@ -20,6 +20,21 @@
         "desc": "Has a variable Energy Cost"
     },
     {
+        "id": "manuStressM",
+        "name": "Stress (MNTL)",
+        "desc": "Adds a Mental Stress when used"
+    },
+    {
+        "id": "manuStressP",
+        "name": "Stress (PHYS)",
+        "desc": "Adds a Physical Stress when used"
+    },
+    {
+        "id": "manuPos",
+        "name": "Positioning",
+        "desc": "A Positioning Maneuver, can only be used for your positioning action."
+    },
+    {
         "id": "manuAttack",
         "name": "Attack",
         "desc": "Deals damage"
@@ -31,28 +46,28 @@
     },
     {
         "id": "manuRoleM",
-        "name": "Role - Multirole",
+        "name": "Multirole",
         "desc": "Usable only by Multirole Aircraft"
     },
     {
         "id": "manuRoleI",
-        "name": "Role - Interceptor",
+        "name": "Interceptor",
         "desc": "Usable only by Interceptor Aircraft"
     },
     {
         "id": "manuRoleS",
-        "name": "Role - Strike",
+        "name": "Strike",
         "desc": "Usable only by Strike Aircraft"
     },
     {
         "id": "manuRoleE",
-        "name": "Role - EWO",
+        "name": "EWO",
         "desc": "Usable only by EWO Aircraft"
     },
     {
         "id": "manuAdvanced",
         "name": "Advanced Maneuver",
-        "desc": "Requires you to have gone on a Mastery tour in this Aircraft."
+        "desc": "Requires you to have completed a Mastery tour in this Aircraft."
     },
     {
         "id": "manuMAP",
@@ -61,7 +76,7 @@
     },
     {
         "id": "manuORD",
-        "name": "Ordnance Enabled",
+        "name": "Ordnance",
         "desc": "Allows the usage of Ordnance on these attacks"
     },
     {

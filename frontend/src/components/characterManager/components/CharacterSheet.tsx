@@ -7,6 +7,7 @@ import Setup from "./Setup";
 import Logistics from "./Logistics";
 import Tours from "./Tours";
 import Logs from "./Logs";
+import Debug from "./Debug"
 
 import specializations from "../../../data/Specs.json";
 import perks from "../../../data/PerkList.json";
@@ -91,6 +92,10 @@ function CharacterSheet({
 
         {activeTab === "Logs" && (
           <Logs character={character} updateCharacter={onUpdate} />
+        )}
+
+        {activeTab === "Debug" && (
+          <Debug character={character} updateCharacter={onUpdate} />
         )}
       </motion.div>
     </div>

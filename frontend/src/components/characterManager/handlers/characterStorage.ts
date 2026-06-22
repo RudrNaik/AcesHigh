@@ -47,10 +47,41 @@ export function useCharacterStorage() {
     setCharacters((prev) => prev.filter((c) => c.id !== id));
   };
 
+  const hasCharacter = (id: string) => {
+    return characters.some((c) => c.id === id);
+  };
+
+  const overwriteCharacter = (character: CharacterData) => {
+    setCharacters((prev) =>
+      prev.map((c) => (c.id === character.id ? character : c)),
+    );
+  };
+
+  const importCharacter = (character: CharacterData) => {
+    const exists = hasCharacter(character.id);
+
+    if (exists) {
+      return {
+        success: false,
+        duplicate: true,
+      };
+    }
+
+    addCharacter(character);
+
+    return {
+      success: true,
+      duplicate: false,
+    };
+  };
+
   return {
     characters,
     addCharacter,
     updateCharacter,
     deleteCharacter,
+    importCharacter,
+    overwriteCharacter,
+    hasCharacter,
   };
 }
