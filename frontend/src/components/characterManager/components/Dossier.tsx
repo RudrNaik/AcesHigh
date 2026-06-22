@@ -60,7 +60,7 @@ function DossierTab({ character, updateCharacter }: Props) {
   return (
     <div className="space-y-4">
 
-      <div className="border border-cyan-100 lg:p-4 bg-black/20">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
         <h1 className="text-2xl font-bold">DOSSIER</h1>
       </div>
       
