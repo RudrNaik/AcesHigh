@@ -112,7 +112,7 @@ export const createDefaultCharacter = (): CharacterData => ({
   },
 
   backgroundPerk: "",
-  masteredAircraft: ["acFamPhantoms"],
+  masteredAircraft: [],
   aceperks: [],
   baseperks: [],
   licenses: {

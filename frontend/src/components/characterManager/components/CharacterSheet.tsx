@@ -83,11 +83,11 @@ function CharacterSheet({
           <Sortie character={character} updateCharacter={onUpdate} />
         )}
 
-        {activeTab === "Maneuvers" && (
+        {activeTab === "Manus" && (
           <Manus character={character} updateCharacter={onUpdate} />
         )}
 
-        {activeTab === "Logistics" && (
+        {activeTab === "Logi" && (
           <Logistics character={character} updateCharacter={onUpdate} />
         )}
 
@@ -99,7 +99,7 @@ function CharacterSheet({
           <Logs character={character} updateCharacter={onUpdate} />
         )}
 
-        {activeTab === "Debug" && (
+        {activeTab === "Admin" && (
           <Debug character={character} updateCharacter={onUpdate} />
         )}
       </motion.div>
