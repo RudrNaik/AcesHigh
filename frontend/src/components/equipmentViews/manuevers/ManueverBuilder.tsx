@@ -1,7 +1,5 @@
 import { useMemo, useState } from "react";
-
 import rawManeuvers from "../../../data/ManueverList.json";
-
 import {
   normalizeManeuvers,
   calculateTurn,
@@ -12,6 +10,8 @@ import {
   organizeManeuversForDisplay,
   type Maneuver,
 } from "../../common/manueverHelper";
+
+const MIN_SLOTS = 4;
 
 function manuBuilder() {
   const all: Maneuver[] = useMemo(() => normalizeManeuvers(rawManeuvers), []);
@@ -28,72 +28,51 @@ function manuBuilder() {
   const [survival, setSurv] = useState(0);
 
   const [pos, setPos] = useState("");
-  const [m1, setM1] = useState("");
-  const [m2, setM2] = useState("");
-  const [m3, setM3] = useState("");
-  const [m4, setM4] = useState("");
-  const [m5, setM5] = useState("");
-  const [m6, setM6] = useState("");
-  const [m7, setM7] = useState("");
-  const [m8, setM8] = useState("");
+  // Dynamic slot array instead of m1–m8
+  const [slots, setSlots] = useState<string[]>(Array(MIN_SLOTS).fill(""));
 
-  // All maneuver slot ids and setters
-  const allSlots = [
-    { id: m1, set: setM1 },
-    { id: m2, set: setM2 },
-    { id: m3, set: setM3 },
-    { id: m4, set: setM4 },
-    { id: m5, set: setM5 },
-    { id: m6, set: setM6 },
-    { id: m7, set: setM7 },
-    { id: m8, set: setM8 },
-  ];
+  const setSlot = (idx: number, value: string) => {
+    setSlots((prev) => {
+      const next = [...prev];
+      next[idx] = value;
+      return next;
+    });
+  };
 
-  // Get the actual maneuver objects for all slots
+  const addSlot = () => setSlots((prev) => [...prev, ""]);
+
+  const removeSlot = (idx: number) => {
+    setSlots((prev) => {
+      if (prev.length <= MIN_SLOTS) return prev;
+      return prev.filter((_, i) => i !== idx);
+    });
+  };
+
   const selectedManeuversArray = useMemo(
-    () => allSlots.map((slot) => getManeuverById(all, slot.id)),
-    [all, m1, m2, m3, m4, m5, m6, m7, m8],
+    () => slots.map((id) => getManeuverById(all, id)),
+    [all, slots],
   );
 
-  // Organize maneuvers into labeled slots using the helper
   const organizedManeuvers = useMemo(
     () => organizeManeuversForDisplay(selectedManeuversArray),
     [selectedManeuversArray],
-  );
-  const slotsNeeded = organizedManeuvers.totalSlots;
-
-  const selectedManeuvers = useMemo(
-    () => ({
-      pos: getManeuverById(all, pos),
-      slots: selectedManeuversArray,
-    }),
-    [all, pos, selectedManeuversArray],
   );
 
   const result = useMemo(
     () =>
       calculateTurn({
         maneuvers: [
-          selectedManeuvers.pos,
-          ...selectedManeuversArray.slice(0, slotsNeeded),
+          getManeuverById(all, pos),
+          ...selectedManeuversArray,
         ],
         energyStart,
         capacityStart,
       }),
-    [
-      selectedManeuvers,
-      selectedManeuversArray,
-      slotsNeeded,
-      energyStart,
-      capacityStart,
-    ],
+    [all, pos, selectedManeuversArray, energyStart, capacityStart],
   );
 
   const output = useMemo(() => {
-    const seq = result.rows;
-
-    const posRow = seq[0];
-    const maneuverRows = seq.slice(1);
+    const [posRow, ...maneuverRows] = result.rows;
 
     const maneuverLines = maneuverRows.map((row, idx) =>
       formatManeuver(
@@ -114,26 +93,7 @@ ${maneuverLines.join("\n")}
 
 ENG -- ${result.finalEnergy} / CAP -- ${result.finalCapacity} / SRV -- ${survival}
 T${temper}/N${nerve}/R${reflex}/G${gRes}`;
-  }, [
-    temper,
-    nerve,
-    reflex,
-    gRes,
-    energyStart,
-    capacityStart,
-    survival,
-    pos,
-    m1,
-    m2,
-    m3,
-    m4,
-    m5,
-    m6,
-    m7,
-    m8,
-    result,
-    organizedManeuvers,
-  ]);
+  }, [temper, nerve, reflex, gRes, energyStart, capacityStart, survival, pos, result, organizedManeuvers]);
 
   return (
     <div className="space-y-3 text-xs">
@@ -157,18 +117,32 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
         options={positionOptions}
       />
 
-      {organizedManeuvers.slots.map((slot, idx) => {
-        const slotConfig = allSlots[idx];
-        return (
+      {organizedManeuvers.slots.map((slot, idx) => (
+        <div key={idx} className="flex items-center gap-1">
           <Select
-            key={idx}
             label={slot.label}
-            value={slotConfig.id}
-            setValue={slotConfig.set}
+            value={slots[idx] ?? ""}
+            setValue={(v: string) => setSlot(idx, v)}
             options={maneuverOptions}
           />
-        );
-      })}
+          {slots.length > MIN_SLOTS && (
+            <button
+              onClick={() => removeSlot(idx)}
+              className="px-1.5 py-1 text-red-400 border border-red-400/40 hover:bg-red-900/30 transition shrink-0"
+              title="Remove slot"
+            >
+              ✕
+            </button>
+          )}
+        </div>
+      ))}
+
+      <button
+        onClick={addSlot}
+        className="w-full px-3 py-1.5 bg-cyan-900/20 border border-cyan-100/30 text-cyan-400 text-xs hover:bg-cyan-900/40 transition"
+      >
+        + ADD SLOT
+      </button>
 
       <pre className="text-xs bg-black/30 p-2 border border-cyan-100/20 whitespace-pre-wrap">
         {output}
@@ -179,14 +153,7 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
           setEnergyStart(result.finalEnergy);
           setCapacityStart(result.finalCapacity);
           setPos("");
-          setM1("");
-          setM2("");
-          setM3("");
-          setM4("");
-          setM5("");
-          setM6("");
-          setM7("");
-          setM8("");
+          setSlots(Array(MIN_SLOTS).fill(""));
         }}
         className="w-full mt-2 px-3 py-2 bg-cyan-900/40 border border-cyan-100/60 text-cyan-100 text-xs hover:bg-cyan-900/60 transition"
       >
@@ -196,7 +163,7 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
   );
 }
 
-export default manuBuilder
+export default manuBuilder;
 
 function Input({ label, value, set }: any) {
   return (
@@ -213,9 +180,8 @@ function Input({ label, value, set }: any) {
 
 function Select({ label, value, setValue, options }: any) {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-1">
       <div className="text-xs text-cyan-400 whitespace-nowrap">{label}</div>
-
       <select
         value={value}
         onChange={(e) => setValue(e.target.value)}

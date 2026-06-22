@@ -28,7 +28,7 @@
     "engCost": "0",
     "tags": [
       "manuRoleM",
-      "manuPos"
+      "manuPOSTag"
     ],
     "desc": "Reset your Energy to its start of combat value (usually Speed + 5). Exhaust."
   },
@@ -41,7 +41,7 @@
     "engCost": "0",
     "tags": [
       "manuRoleI",
-      "manuPos"
+      "manuPOSTag"
     ],
     "desc": "Until the start of your next turn, every time you spend 4 total Energy, Gain Snapshot. Exhaust."
   },
@@ -54,7 +54,7 @@
     "engCost": "5",
     "tags": [
       "manuRoleS",
-      "manuPos"
+      "manuPOSTag"
     ],
     "desc": "Spend 5 Energy. Gain Snapshot; it’s a perfect success."
   },
@@ -180,7 +180,8 @@
     "type": "Exhaust",
     "engCost": "0",
     "tags": [
-      "manuTrick"
+      "manuTrick",
+      "manuDiscount"
     ],
     "desc": "Discount your next Maneuver by 1 Energy."
   },
