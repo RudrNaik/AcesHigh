@@ -8,6 +8,7 @@ import Logistics from "./Logistics";
 import Tours from "./Tours";
 import Logs from "./Logs";
 import Debug from "./Debug"
+import Manus from "./Manus"
 
 import specializations from "../../../data/Specs.json";
 import perks from "../../../data/PerkList.json";
@@ -80,6 +81,10 @@ function CharacterSheet({
 
         {activeTab === "Sortie" && (
           <Sortie character={character} updateCharacter={onUpdate} />
+        )}
+
+        {activeTab === "Maneuvers" && (
+          <Manus character={character} updateCharacter={onUpdate} />
         )}
 
         {activeTab === "Logistics" && (

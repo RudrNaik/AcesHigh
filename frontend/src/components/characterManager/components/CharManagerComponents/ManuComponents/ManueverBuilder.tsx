@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import rawManeuvers from "../../../data/ManueverList.json";
+import rawManeuvers from "../../../../../data/ManueverList.json";
 import {
   normalizeManeuvers,
   calculateTurn,
@@ -9,12 +9,13 @@ import {
   getSelectableManeuvers,
   organizeManeuversForDisplay,
   type Maneuver,
-} from "../../common/manueverHelper";
+} from "../../../../common/manueverHelper";
 
 const MIN_SLOTS = 4;
 
-function manuBuilder() {
-  const all: Maneuver[] = useMemo(() => normalizeManeuvers(rawManeuvers), []);
+function ManuBuilder({ availableManus }: { availableManus: string[] }) {
+  const Manus = rawManeuvers.filter((m) => availableManus.includes(m.id));
+  const all: Maneuver[] = useMemo(() => normalizeManeuvers(Manus), []);
   const positionOptions = useMemo(() => getPositioningManeuvers(all), [all]);
   const maneuverOptions = useMemo(() => getSelectableManeuvers(all), [all]);
 
@@ -145,10 +146,6 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
         </div>
       ))}
 
-      <pre className="text-xs bg-black/30 p-2 border border-cyan-100/20 whitespace-pre-wrap">
-        {output}
-      </pre>
-
       <button
         onClick={() => {
           setPos("");
@@ -158,6 +155,10 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
       >
         RESET
       </button>
+
+      <pre className="text-xs bg-black/30 p-2 border border-cyan-100/20 whitespace-pre-wrap">
+        {output}
+      </pre>
 
       <button
         onClick={() => {
@@ -174,7 +175,7 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
   );
 }
 
-export default manuBuilder;
+export default ManuBuilder;
 
 function Input({ label, value, set }: any) {
   return (

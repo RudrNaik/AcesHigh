@@ -26,7 +26,7 @@ const Navbar = ({}) => {
    * UseEffect to handle the navbar becoming transparent when scrolling down.
    */
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
+    const handleScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -34,24 +34,44 @@ const Navbar = ({}) => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-200 text-white
-        ${scrolled ? "bg-black/60 shadow-md" : "bg-transparent"}
+        ${scrolled ? "bg-black/80 shadow-md border-b border-cyan-100" : "bg-black/20 shadow-md"}
       `}
     >
-      <div
-        className="flex items-center relative w-full font-mono"
-      >
+      <div className="flex items-center relative w-full font-mono">
         <img src={icon} alt="Logo" className="h-20 pl-5 py-2" />
 
         {/* Normal Navigation Links for desktop, hides when less than md in size. */}
         <ul className="hidden md:flex space-x-6 pl-5 py-8 font-mono">
           <li>
-            <Link to="/" className="hover:bg-cyan-400">
+            <Link
+              to="/"
+              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            >
               [↳] Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="hover:bg-cyan-400">
+            <Link
+              to="/about"
+              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            >
               [↳] About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/charactermanager"
+              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            >
+              [↳] Characters
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/equipment"
+              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            >
+              [↳] Equipment
             </Link>
           </li>
         </ul>
@@ -109,6 +129,22 @@ const Navbar = ({}) => {
               onClick={() => setHamburgerOpen(false)}
             >
               [↳] About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/charactermanager"
+              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+            >
+              [↳] Characters
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/equipment"
+              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+            >
+              [↳] Equipment
             </Link>
           </li>
         </ul>
