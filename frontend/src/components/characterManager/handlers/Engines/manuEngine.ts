@@ -272,6 +272,15 @@ export const getManeuverEffects = (m?: Maneuver): ManeuverEffect => {
   return effects;
 };
 
+export const getVariableCostType = (m?: Maneuver): "cap" | "energy" | null => {
+  if (!m?.tags?.length) return null;
+
+  if (m.tags.includes("manuCapX")) return "cap";
+  if (m.tags.includes("manuEnergyX")) return "energy";
+
+  return null;
+};
+
 export const calculateTurn = ({
   maneuvers,
   energyStart,
