@@ -139,7 +139,7 @@ function ManuBuilder({
     });
   };
 
-  const addSlot = () => setSlots((prev) => [...prev, ""]);
+  //const addSlot = () => setSlots((prev) => [...prev, ""]);
 
   const removeSlot = (idx: number) => {
     setSlots((prev) => {
@@ -260,13 +260,6 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
         className="w-full px-3 py-1.5 bg-cyan-900/20 border border-cyan-100/30 text-cyan-400 text-xs hover:bg-cyan-900/40 transition"
       >
         RESET
-      </button>
-
-      <button
-        onClick={addSlot}
-        className="w-full px-3 py-1.5 bg-cyan-900/20 border border-cyan-100/30 text-cyan-400 text-xs hover:bg-cyan-900/40 transition"
-      >
-        ADD SLOT
       </button>
 
       <pre className="text-xs bg-black/30 p-2 border border-cyan-100/20 whitespace-pre-wrap">
