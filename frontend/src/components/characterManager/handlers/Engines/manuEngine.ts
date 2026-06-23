@@ -1,8 +1,9 @@
 import type { CharacterData } from "../characterTypes";
 import manuList from "../../../../data/ManueverList.json";
 import techList from "../../../../data/TechniqueList.json";
-import specs from "../../../../data/Specs.json"
-import intrinsics from "../../../../data/AircraftList.json"
+import specs from "../../../../data/Specs.json";
+import intrinsics from "../../../../data/AircraftList.json";
+import perks from "../../../../data/PerkList.json";
 
 import * as planeEngine from "./planeEngine";
 
@@ -64,15 +65,32 @@ export function getMasteryManus(character: CharacterData): string[] {
     techList.find((t) => t.id === techs.tech3 && t.maneuverId !== "n/a")
       ?.maneuverId ?? "";
 
-    const intrinsic = intrinsics.find((p)=> p.id === character.aircraft.aircraftId)?.intrinsic || ""
+  const intrinsic =
+    intrinsics.find((p) => p.id === character.aircraft.aircraftId)?.intrinsic ||
+    "";
 
   return [manu1, manu2, manu3, intrinsic];
 }
 
+export function getPerkManus(character: CharacterData): string[] {
+  const perkIds = [
+    ...(character.baseperks ?? []),
+    ...(character.aceperks ?? []),
+  ];
+
+  return perks
+    .filter((perk) => perkIds.includes(perk.id))
+    .map((perk) => perk.addManuID)
+    .filter(
+      (manu): manu is string =>
+        manu !== undefined && manu !== null && manu !== "" && manu !== "n/a",
+    );
+}
+
 export function getTechManus(character: CharacterData): string[] {
   let manus: string[] = character.specialization.tactics;
-  let spec: string = character.specialization.specId
-  let specManu: string = specs.find((s)=> s.id === spec)?.addManu || ""
+  let spec: string = character.specialization.specId;
+  let specManu: string = specs.find((s) => s.id === spec)?.addManu || "";
   return [...manus, specManu];
 }
 
@@ -109,10 +127,12 @@ export function getModManus(character: CharacterData): string[] {
 
 export function getAllCharManus(character: CharacterData): string[] {
   let commonManu = manuList.filter((m) => m.isCommon === true).map((m) => m.id);
+
   let modManu = getModManus(character);
   let roleManu = getRoleManus(character);
   let techManu = getTechManus(character);
   let masterManu = getMasteryManus(character);
+  let perkManu = getPerkManus(character);
 
   return [
     ...commonManu,
@@ -120,7 +140,7 @@ export function getAllCharManus(character: CharacterData): string[] {
     ...roleManu,
     ...techManu,
     ...masterManu,
-    ...modManu,
+    ...perkManu,
   ];
 }
 
