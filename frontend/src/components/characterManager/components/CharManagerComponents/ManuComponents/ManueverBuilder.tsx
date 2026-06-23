@@ -106,6 +106,13 @@ function ManuBuilder({
   }, [character.id, pos, slots]);
 
   useEffect(() => {
+    const draft = loadDraft(character.id);
+
+    setPos(draft.pos);
+    setSlots(draft.slots);
+  }, [character.id]);
+
+  useEffect(() => {
     setTemper(character.stats.temper);
     setNerve(character.stats.nerve);
     setReflex(character.stats.reflex);
@@ -114,12 +121,15 @@ function ManuBuilder({
     setCapacityStart(character.aircraft.currentCapacity);
     setEnergyStart(character.aircraft.currentEnergy);
     setSurv(character.aircraft.currentSurvivability);
-
-    const draft = loadDraft(character.id);
-
-    setPos(draft.pos);
-    setSlots(draft.slots);
-  }, [character.id]);
+  }, [
+    character.aircraft.currentEnergy,
+    character.aircraft.currentCapacity,
+    character.aircraft.currentSurvivability,
+    character.stats.temper,
+    character.stats.nerve,
+    character.stats.reflex,
+    character.stats.gResist,
+  ]);
 
   const setSlot = (idx: number, value: string) => {
     setSlots((prev) => {
