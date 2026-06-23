@@ -373,16 +373,45 @@ export const getManeuverSlotLabel = (
 export const organizeManeuversForDisplay = (
   maneuvers: (Maneuver | undefined)[],
 ): OrganizedManeuvers => {
-  const totalSlots = calculateSlotsNeeded(maneuvers);
+  let maneuverNumber = 1;
 
-  const slots: ManeuverSlot[] = Array.from({ length: totalSlots }).map(
-    (_, idx) => {
-      const label = getManeuverSlotLabel(idx, maneuvers);
-      const maneuver = maneuvers[idx];
+  const slots: ManeuverSlot[] = maneuvers.map((maneuver) => {
+    if (!maneuver) {
+      return {
+        label: `M${maneuverNumber++}`,
+        maneuver,
+      };
+    }
 
-      return { label, maneuver };
-    },
-  );
+    if (maneuver.type === "Exhaust" || maneuver.tags.includes("manuTrick")) {
+      return {
+        label: "XHST",
+        maneuver,
+      };
+    }
 
-  return { totalSlots, slots };
+    if (maneuver.tags.includes("manuTrick")) {
+      return {
+        label: "TRCK",
+        maneuver,
+      };
+    }
+
+    return {
+      label: `M${maneuverNumber++}`,
+      maneuver,
+    };
+  });
+
+  while (slots.filter((s) => s.label.startsWith("M")).length < 4) {
+    slots.push({
+      label: `M${maneuverNumber++}`,
+      maneuver: undefined,
+    });
+  }
+
+  return {
+    totalSlots: slots.length,
+    slots,
+  };
 };

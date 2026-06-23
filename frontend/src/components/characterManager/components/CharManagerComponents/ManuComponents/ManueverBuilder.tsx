@@ -16,6 +16,49 @@ import type { CharacterData } from "../../../handlers/characterTypes";
 
 const MIN_SLOTS = 4;
 
+const getDraftKey = (characterId: string) => `acesHighTurnDraft_${characterId}`;
+
+const loadDraft = (characterId: string) => {
+  try {
+    const raw = localStorage.getItem(getDraftKey(characterId));
+
+    if (!raw) {
+      return {
+        pos: "",
+        slots: Array(MIN_SLOTS).fill(""),
+      };
+    }
+
+    const parsed = JSON.parse(raw);
+
+    return {
+      pos: parsed.pos ?? "",
+      slots: Array.isArray(parsed.slots)
+        ? parsed.slots
+        : Array(MIN_SLOTS).fill(""),
+    };
+  } catch {
+    return {
+      pos: "",
+      slots: Array(MIN_SLOTS).fill(""),
+    };
+  }
+};
+
+const saveDraft = (characterId: string, pos: string, slots: string[]) => {
+  localStorage.setItem(
+    getDraftKey(characterId),
+    JSON.stringify({
+      pos,
+      slots,
+    }),
+  );
+};
+
+const clearDraft = (characterId: string) => {
+  localStorage.removeItem(getDraftKey(characterId));
+};
+
 function ManuBuilder({
   availableManus,
   character,
@@ -25,9 +68,16 @@ function ManuBuilder({
   character: CharacterData;
   onUpdate: (character: CharacterData) => void;
 }) {
-  const Manus = rawManeuvers.filter((m) => availableManus.includes(m.id));
-  const all: Maneuver[] = useMemo(() => normalizeManeuvers(Manus), []);
+  const all: Maneuver[] = useMemo(
+    () =>
+      normalizeManeuvers(
+        rawManeuvers.filter((m) => availableManus.includes(m.id)),
+      ),
+    [availableManus],
+  );
+
   const positionOptions = useMemo(() => getPositioningManeuvers(all), [all]);
+
   const maneuverOptions = useMemo(() => getSelectableManeuvers(all), [all]);
 
   const [temp, setTemper] = useState(character.stats.temper);
@@ -38,22 +88,22 @@ function ManuBuilder({
   const [energyStart, setEnergyStart] = useState(
     character.aircraft.currentEnergy,
   );
+
   const [capacityStart, setCapacityStart] = useState(
     character.aircraft.currentCapacity,
   );
+
   const [survival, setSurv] = useState(character.aircraft.currentSurvivability);
 
-  const [pos, setPos] = useState("");
-  // Dynamic slot array instead of m1–m8
-  const [slots, setSlots] = useState<string[]>(Array(MIN_SLOTS).fill(""));
+  const initialDraft = loadDraft(character.id);
 
-  const setSlot = (idx: number, value: string) => {
-    setSlots((prev) => {
-      const next = [...prev];
-      next[idx] = value;
-      return next;
-    });
-  };
+  const [pos, setPos] = useState(initialDraft.pos);
+
+  const [slots, setSlots] = useState<string[]>(initialDraft.slots);
+
+  useEffect(() => {
+    saveDraft(character.id, pos, slots);
+  }, [character.id, pos, slots]);
 
   useEffect(() => {
     setTemper(character.stats.temper);
@@ -64,13 +114,29 @@ function ManuBuilder({
     setCapacityStart(character.aircraft.currentCapacity);
     setEnergyStart(character.aircraft.currentEnergy);
     setSurv(character.aircraft.currentSurvivability);
-  }, [character]);
+
+    const draft = loadDraft(character.id);
+
+    setPos(draft.pos);
+    setSlots(draft.slots);
+  }, [character.id]);
+
+  const setSlot = (idx: number, value: string) => {
+    setSlots((prev) => {
+      const next = [...prev];
+      next[idx] = value;
+      return next;
+    });
+  };
 
   const addSlot = () => setSlots((prev) => [...prev, ""]);
 
   const removeSlot = (idx: number) => {
     setSlots((prev) => {
-      if (prev.length <= MIN_SLOTS) return prev;
+      if (prev.length <= MIN_SLOTS) {
+        return prev;
+      }
+
       return prev.filter((_, i) => i !== idx);
     });
   };
@@ -100,7 +166,7 @@ function ManuBuilder({
 
     const maneuverLines = maneuverRows.map((row, idx) =>
       formatManeuver(
-        organizedManeuvers.slots[idx]?.label || `M${idx + 1}`,
+        organizedManeuvers.slots[idx]?.label ?? `M${idx + 1}`,
         row.m,
         row.after,
         row.capAfter,
@@ -125,7 +191,6 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
     energyStart,
     capacityStart,
     survival,
-    pos,
     result,
     organizedManeuvers,
   ]);
@@ -160,6 +225,7 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
             setValue={(v: string) => setSlot(idx, v)}
             options={maneuverOptions}
           />
+
           {slots.length > MIN_SLOTS && (
             <button
               onClick={() => removeSlot(idx)}
@@ -174,8 +240,12 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
 
       <button
         onClick={() => {
+          const cleared = Array(MIN_SLOTS).fill("");
+
           setPos("");
-          setSlots(Array(MIN_SLOTS).fill(""));
+          setSlots(cleared);
+
+          clearDraft(character.id);
         }}
         className="w-full px-3 py-1.5 bg-cyan-900/20 border border-cyan-100/30 text-cyan-400 text-xs hover:bg-cyan-900/40 transition"
       >
@@ -183,9 +253,7 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
       </button>
 
       <button
-        onClick={() => {
-          addSlot();
-        }}
+        onClick={addSlot}
         className="w-full px-3 py-1.5 bg-cyan-900/20 border border-cyan-100/30 text-cyan-400 text-xs hover:bg-cyan-900/40 transition"
       >
         ADD SLOT
@@ -214,6 +282,9 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
           };
 
           onUpdate(updatedCharacter);
+
+          clearDraft(character.id);
+
           setPos("");
           setSlots(Array(MIN_SLOTS).fill(""));
         }}
