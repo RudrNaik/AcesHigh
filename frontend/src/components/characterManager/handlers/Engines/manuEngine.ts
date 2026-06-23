@@ -1,6 +1,8 @@
 import type { CharacterData } from "../characterTypes";
 import manuList from "../../../../data/ManueverList.json";
 import techList from "../../../../data/TechniqueList.json";
+import specs from "../../../../data/Specs.json"
+import intrinsics from "../../../../data/AircraftList.json"
 
 import * as planeEngine from "./planeEngine";
 
@@ -62,12 +64,16 @@ export function getMasteryManus(character: CharacterData): string[] {
     techList.find((t) => t.id === techs.tech3 && t.maneuverId !== "n/a")
       ?.maneuverId ?? "";
 
-  return [manu1, manu2, manu3];
+    const intrinsic = intrinsics.find((p)=> p.id === character.aircraft.aircraftId)?.intrinsic || ""
+
+  return [manu1, manu2, manu3, intrinsic];
 }
 
 export function getTechManus(character: CharacterData): string[] {
   let manus: string[] = character.specialization.tactics;
-  return manus;
+  let spec: string = character.specialization.specId
+  let specManu: string = specs.find((s)=> s.id === spec)?.addManu || ""
+  return [...manus, specManu];
 }
 
 export function getRoleManus(character: CharacterData): string[] {
