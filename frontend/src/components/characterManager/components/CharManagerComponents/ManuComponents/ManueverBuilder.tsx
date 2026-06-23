@@ -205,6 +205,15 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
     organizedManeuvers,
   ]);
 
+  const isCapVariable = (id: string[]) => id.includes("manuCapX");
+
+  const isEnergyVariable = (id: string[]) => id.includes("manuX");
+
+  const getVariableValue = (id: string) => {
+    const parts = id.split(":");
+    return Number(parts[1] ?? 0);
+  };
+
   return (
     <div className="space-y-3 text-xs">
       <div className="grid grid-cols-4 gap-1">
@@ -314,22 +323,92 @@ function Input({ label, value, set }: any) {
   );
 }
 
-function Select({ label, value, setValue, options }: any) {
+function Select({
+  label,
+  value,
+  setValue,
+  options,
+}: any) {
+  const isVariable =
+    value?.startsWith("manuCapX") ||
+    value?.startsWith("manuEnergyX");
+
+  const variableType = value?.startsWith("manuCapX")
+    ? "cap"
+    : value?.startsWith("manuEnergyX")
+      ? "energy"
+      : null;
+
+  const variableValue = value?.includes(":")
+    ? Number(value.split(":")[1])
+    : 0;
+
   return (
     <div className="flex items-center gap-2 flex-1">
-      <div className="text-xs text-cyan-400 whitespace-nowrap">{label}</div>
-      <select
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        className="w-full select-themed"
-      >
-        <option value="">---</option>
-        {options.map((m: any) => (
-          <option key={m.id} value={m.id}>
-            {m.name}
-          </option>
-        ))}
-      </select>
+      <div className="text-xs text-cyan-400 whitespace-nowrap">
+        {label}
+      </div>
+
+      {/* NORMAL MODE */}
+      {!isVariable && (
+        <select
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          className="w-full select-themed"
+        >
+          <option value="">---</option>
+          {options.map((m: any) => (
+            <option key={m.id} value={m.id}>
+              {m.name}
+            </option>
+          ))}
+        </select>
+      )}
+
+      {/* VARIABLE MODE (numeric stepper) */}
+      {isVariable && (
+        <div className="flex items-center gap-1 w-full">
+          <button
+            className="px-2 border border-cyan-200/30"
+            onClick={() =>
+              setValue(
+                `${variableType === "cap" ? "manuCapX" : "manuEnergyX"}:${
+                  Math.max(0, variableValue - 1)
+                }`,
+              )
+            }
+          >
+            -
+          </button>
+
+          <input
+            type="number"
+            value={variableValue}
+            min={0}
+            onChange={(e) =>
+              setValue(
+                `${variableType === "cap" ? "manuCapX" : "manuEnergyX"}:${
+                  Number(e.target.value) || 0
+                }`,
+              )
+            }
+            className="w-full bg-black/30 border border-cyan-100/40 px-2 py-1 text-center"
+          />
+
+          <button
+            className="px-2 border border-cyan-200/30"
+            onClick={() =>
+              setValue(
+                `${variableType === "cap" ? "manuCapX" : "manuEnergyX"}:${
+                  variableValue + 1
+                }`,
+              )
+            }
+          >
+            +
+          </button>
+        </div>
+      )}
     </div>
   );
 }
