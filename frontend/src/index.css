@@ -33,7 +33,6 @@ input[type="number"].num-themed {
   color: #e5e7eb;                 /* neutral-200 */
   background-color: #0a0a0a;      /* near black */
   border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
-  border-radius: 0.15rem;
   line-height: 1.5rem;
 }
 
@@ -42,7 +41,6 @@ input[type="text"].text-themed {
   color: #e5e7eb;                 /* neutral-200 */
   background-color: #0a0a0a;      /* near black */
   border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
-  border-radius: 0.15rem;
   line-height: 1.5rem;
 }
 

@@ -32,6 +32,7 @@ export interface TurnRow {
   c: number;
   after: number;
   capAfter: number;
+  variableCost?: number;
   appliedEffects?: ManeuverEffect;
 }
 
@@ -44,11 +45,17 @@ export interface TurnResult {
 export interface ManeuverSlot {
   label: string;
   maneuver?: Maneuver;
+  variableCost?: number; // player input
 }
 
 export interface OrganizedManeuvers {
   totalSlots: number;
   slots: ManeuverSlot[];
+}
+
+export interface DraftSlot {
+  maneuverId: string;
+  variableCost: number;
 }
 
 export function getMasteryManus(character: CharacterData): string[] {
@@ -276,17 +283,17 @@ export const getVariableCostType = (m?: Maneuver): "cap" | "energy" | null => {
   if (!m?.tags?.length) return null;
 
   if (m.tags.includes("manuCapX")) return "cap";
-  if (m.tags.includes("manuEnergyX")) return "energy";
+  if (m.tags.includes("manuX")) return "energy";
 
   return null;
 };
 
 export const calculateTurn = ({
-  maneuvers,
+  slots,
   energyStart,
   capacityStart,
 }: {
-  maneuvers: (Maneuver | undefined)[];
+  slots: ManeuverSlot[];
   energyStart: number;
   capacityStart: number;
 }): TurnResult => {
@@ -294,13 +301,25 @@ export const calculateTurn = ({
   let capacity = capacityStart;
   let activeEffects: ManeuverEffect = { discountCost: 0, forwardBonus: 0 };
 
-  const rows = maneuvers.map((m) => {
+  const rows = slots.map((slot) => {
+    const m = slot.maneuver;
     let e = m?.energyMod ?? 0;
     let c = m?.capacityMod ?? 0;
+
+    const variableType = getVariableCostType(m);
+    const variableCost = slot.variableCost ?? 0;
 
     // Apply active effects from previous maneuver
     e = -e;
     e += activeEffects.discountCost;
+
+    if (variableType === "energy") {
+      e -= variableCost;
+    }
+
+    if (variableType === "cap") {
+      c -= variableCost;
+    }
 
     const capCost = getManeuverCapacityCost(m);
 
@@ -316,6 +335,7 @@ export const calculateTurn = ({
       c: c - capCost,
       after: energy,
       capAfter: capacity,
+      variableCost,
       appliedEffects: activeEffects,
     };
   });
@@ -327,12 +347,11 @@ export const calculateTurn = ({
   };
 };
 
-export const formatManeuver = (
-  slot: string,
-  m?: Maneuver,
-  energyAfter?: number,
-  capacityAfter?: number,
-) => {
+export const formatManeuver = (slot: string, row: TurnRow) => {
+  const m = row.m;
+  const variableType = getVariableCostType(m);
+  const variableCost = row.variableCost ?? 0;
+
   if (!m) return `[${slot}] - RSV`;
 
   let e = m.energyMod;
@@ -342,85 +361,124 @@ export const formatManeuver = (
 
   c -= getManeuverCapacityCost(m);
 
+  if (variableType === "energy") {
+    e -= variableCost;
+  }
+
+  if (variableType === "cap") {
+    c -= variableCost;
+  }
+
   const desc = m.desc ? `: ${m.desc}` : "";
 
   return `[${slot}] - ${m.name}${desc} // ${
     e >= 0 ? "E+" : "E"
-  }${e}=${energyAfter}, CAP${c > 0 ? "+" : ""}${c}=${capacityAfter}`;
+  }${e}=${row.after}, CAP${c > 0 ? "+" : ""}${c}=${row.capAfter}`;
 };
 
-export const calculateSlotsNeeded = (
-  maneuvers: (Maneuver | undefined)[],
-): number => {
-  const selectedCount = maneuvers.filter((m) => m).length;
+export const calculateSlotsNeeded = (slots: ManeuverSlot[]): number => {
+  const selectedCount = slots.filter((s) => s.maneuver).length;
+
   if (selectedCount === 0) return 4;
 
-  const nonExhaustCount = maneuvers.filter(
-    (m) => m && m.type !== "EXHAUST",
+  const nonExhaustCount = slots.filter(
+    (s) =>
+      s.maneuver &&
+      s.maneuver.type !== "Exhaust" &&
+      !s.maneuver.tags.includes("manuTrick"),
   ).length;
-  const exhaustCount = maneuvers.filter((m) => m?.type === "EXHAUST").length;
+
+  const exhaustCount = slots.filter(
+    (s) =>
+      s.maneuver?.type === "Exhaust" || s.maneuver?.tags.includes("manuTrick"),
+  ).length;
 
   return Math.max(4, nonExhaustCount) + exhaustCount;
 };
 
 export const getManeuverSlotLabel = (
   slotIndex: number,
-  maneuvers: (Maneuver | undefined)[],
+  slots: ManeuverSlot[],
 ): string => {
-  const m = maneuvers[slotIndex];
-  if (m?.type === "EXHAUST") {
+  const maneuver = slots[slotIndex]?.maneuver;
+
+  if (!maneuver) {
+    return `M${slotIndex + 1}`;
+  }
+
+  if (maneuver.type === "Exhaust") {
     return "XHST";
   }
 
-  const nonExhaustBefore = maneuvers
+  if (maneuver.tags.includes("manuTrick")) {
+    return "TRCK";
+  }
+
+  const nonExhaustBefore = slots
     .slice(0, slotIndex)
-    .filter((ma) => !ma || ma.type !== "EXHAUST").length;
+    .filter(
+      (s) =>
+        !s.maneuver ||
+        (s.maneuver.type !== "EXHAUST" &&
+          !s.maneuver.tags.includes("manuTrick")),
+    ).length;
 
   return `M${nonExhaustBefore + 1}`;
 };
 
 export const organizeManeuversForDisplay = (
-  maneuvers: (Maneuver | undefined)[],
+  slots: ManeuverSlot[],
 ): OrganizedManeuvers => {
   let maneuverNumber = 1;
 
-  const slots: ManeuverSlot[] = maneuvers.map((maneuver) => {
+  const organized: ManeuverSlot[] = slots.map((slot) => {
+    const maneuver = slot.maneuver;
+
     if (!maneuver) {
       return {
+        ...slot,
         label: `M${maneuverNumber++}`,
-        maneuver,
       };
     }
 
-    if (maneuver.type === "Exhaust" || maneuver.tags.includes("manuTrick")) {
+    if (maneuver.type === "EXHAUST") {
       return {
+        ...slot,
         label: "XHST",
-        maneuver,
       };
     }
 
     if (maneuver.tags.includes("manuTrick")) {
       return {
+        ...slot,
         label: "TRCK",
-        maneuver,
       };
     }
 
     return {
+      ...slot,
       label: `M${maneuverNumber++}`,
-      maneuver,
     };
   });
 
-  while (slots.filter((s) => s.label.startsWith("M")).length < 4) {
-    slots.push({
+  while (
+    organized.filter(
+      (s) =>
+        s.label.startsWith("M") ||
+        !s.maneuver ||
+        (s.maneuver.type !== "EXHAUST" &&
+          !s.maneuver.tags.includes("manuTrick")),
+    ).length < 4
+  ) {
+    organized.push({
       label: `M${maneuverNumber++}`,
       maneuver: undefined,
+      variableCost: 0,
     });
   }
 
   return {
-    totalSlots: slots.length,
-    slots,
+    totalSlots: organized.length,
+    slots: organized,
   };
 };
