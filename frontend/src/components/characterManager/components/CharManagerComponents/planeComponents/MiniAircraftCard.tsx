@@ -81,7 +81,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-2">
-        <div>
+        <div className="flex">
           {aircraft.aircraftOptions ? (
             <select
               value={aircraft.id}
