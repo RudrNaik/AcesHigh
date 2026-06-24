@@ -59,11 +59,10 @@ function DossierTab({ character, updateCharacter }: Props) {
 
   return (
     <div className="space-y-4">
-
       <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
         <h1 className="text-2xl font-bold">DOSSIER</h1>
       </div>
-      
+
       <div className=" border-cyan-800 space-y-4 bg-black/20">
         <Section title="Identity">
           <div className="grid grid-cols-3 gap-4">
@@ -112,40 +111,22 @@ function DossierTab({ character, updateCharacter }: Props) {
         <Section title="Quirks">
           <div className="grid lg:grid-cols-3 gap-4">
             <div className="space-y-4">
-              <TextField
-                label="Name"
-                value={character.quirks.quirk1Name}
-                onChange={(v) => updateQuirk("quirk1Name", v)}
-              />
-
               <TextArea
-                label="Description"
+                label="Quirk 1"
                 value={character.quirks.quirk1Desc}
                 onChange={(v) => updateQuirk("quirk1Desc", v)}
               />
             </div>
             <div className="space-y-4">
-              <TextField
-                label="Name"
-                value={character.quirks.quirk2Name}
-                onChange={(v) => updateQuirk("quirk2Name", v)}
-              />
-
               <TextArea
-                label="Description"
+                label="Quirk 2"
                 value={character.quirks.quirk2Desc}
                 onChange={(v) => updateQuirk("quirk2Desc", v)}
               />
             </div>
             <div className="space-y-4">
-              <TextField
-                label="Name"
-                value={character.quirks.quirk3Name}
-                onChange={(v) => updateQuirk("quirk3Name", v)}
-              />
-
               <TextArea
-                label="Description"
+                label="Quirk 3"
                 value={character.quirks.quirk3Desc}
                 onChange={(v) => updateQuirk("quirk3Desc", v)}
               />

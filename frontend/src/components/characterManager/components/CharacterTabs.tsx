@@ -1,5 +1,5 @@
-const tabs = ["Dossier", "Sortie", "Manus", "Logi", "Tour", "Logs","Admin"];
-const setupTabs = ["Setup", "Dossier", "Debug"];
+const tabs = ["Dossier", "Sortie", "Manus", "Logi", "Tour", "Logs", "Admin"];
+const setupTabs = ["Setup", "Dossier"];
 const gameplayTabs = ["Pilot", "Plane", "Perks"];
 const logiTabs = ["Licenses", "Loot"];
 

@@ -125,7 +125,7 @@ export default function DeploymentCard({
             {completed ? (
               <span className="font-bold">Completed</span>
             ) : (
-              <div className="text-gray-400">{progress}/7 Complete</div>
+              <div className="text-gray-400">{progress}/5 Complete</div>
             )}
           </div>
 
@@ -208,19 +208,29 @@ export default function DeploymentCard({
             />
 
             {deployment.genesis && perk ? (
-              <div>{perkDesc}</div>
+              <div>
+                <span className="font-bold text-cyan-400">
+                  Deployment advancement:
+                </span>{" "}
+                {perkDesc}
+              </div>
             ) : (
-              <div>{depData.description}</div>
+              <div>
+                <span className="font-bold text-cyan-400">
+                  Deployment advancement:
+                </span>{" "}
+                {depData.description}
+              </div>
             )}
           </div>
 
           <div className="grid grid-cols-2 gap-2">
             {[
               ["actTourComplete", "Act in line with your Tour"],
-              ["actYourselfComplete", "Act in line with Yourself"],
-              ["actSpecComplete", "Act in line with your Specialization"],
               ["defbriefComplete", "Participate in a Post-Mission Debrief"],
+              ["actSpecComplete", "Act in line with your Specialization"],
               ["maxStressComplete", "Max out a type of Stress"],
+              ["actYourselfComplete", "Act in line with Yourself"],
               ["survCritComplete", "Survive a Critical State"],
             ].map(([field, label]) => (
               <label key={field} className="flex gap-2 items-center">
@@ -260,7 +270,7 @@ export default function DeploymentCard({
             {(depData.reqMod ?? 0) > 0 && (
               <div className="text-gray-400">Req: {depData.reqMod ?? 0}</div>
             )}
-            
+
             {deployment.genesis && (
               <div className="text-gray-400">
                 Perk:{" "}

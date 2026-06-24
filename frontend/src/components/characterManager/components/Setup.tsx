@@ -199,51 +199,71 @@ function Setup({
       </div>
 
       {/*Identity*/}
-      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-2 bg-black/20">
         <h2 className="text-cyan-100 font-bold">Identity</h2>
 
-        <div className="grid gap-2">
-          <label className="text-cyan-100 text-sm">Player Username</label>
-          <input
-            value={local.metadata.userName}
-            className="border-b border-cyan-100 max-w-sm"
-            onChange={(e) => updateMeta("userName", e.target.value)}
-          />
+        <div className="space-y-2">
+          <div className="flex items-center gap-4">
+            <label className="text-cyan-100 text-sm w-32">
+              Player Username
+            </label>
+            <input
+              value={local.metadata.userName}
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              onChange={(e) => updateMeta("userName", e.target.value)}
+              placeholder="Input"
+            />
+          </div>
 
-          <label className="text-cyan-100 text-sm">First Name</label>
-          <input
-            value={local.dossier.firstName}
-            className="border-b border-cyan-100 max-w-sm"
-            onChange={(e) => updateDossier("firstName", e.target.value)}
-          />
+          <div className="flex items-center gap-4">
+            <label className="text-cyan-100 text-sm w-32">First Name</label>
+            <input
+              value={local.dossier.firstName}
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              onChange={(e) => updateDossier("firstName", e.target.value)}
+              placeholder="Input"
+            />
+          </div>
 
-          <label className="text-cyan-100 text-sm">Last Name</label>
-          <input
-            value={local.dossier.lastName}
-            className="border-b border-cyan-100 max-w-sm"
-            onChange={(e) => updateDossier("lastName", e.target.value)}
-          />
+          <div className="flex items-center gap-4">
+            <label className="text-cyan-100 text-sm w-32">Last Name</label>
+            <input
+              value={local.dossier.lastName}
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              onChange={(e) => updateDossier("lastName", e.target.value)}
+              placeholder="Input"
+            />
+          </div>
 
-          <label className="text-cyan-100 text-sm">Callsign</label>
-          <input
-            value={local.dossier.callsign}
-            className="border-b border-cyan-100 max-w-sm"
-            onChange={(e) => updateDossier("callsign", e.target.value)}
-          />
+          <div className="flex items-center gap-4">
+            <label className="text-cyan-100 text-sm w-32">Callsign</label>
+            <input
+              value={local.dossier.callsign}
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              onChange={(e) => updateDossier("callsign", e.target.value)}
+              placeholder="Input"
+            />
+          </div>
 
-          <label className="text-cyan-100 text-sm">Gender</label>
-          <input
-            value={local.dossier.gender}
-            className="border-b border-cyan-100 max-w-sm"
-            onChange={(e) => updateDossier("gender", e.target.value)}
-          />
+          <div className="flex items-center gap-4">
+            <label className="text-cyan-100 text-sm w-32">Gender</label>
+            <input
+              value={local.dossier.gender}
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              onChange={(e) => updateDossier("gender", e.target.value)}
+              placeholder="Input"
+            />
+          </div>
 
-          <label className="text-cyan-100 text-sm">Rank</label>
-          <input
-            value={local.dossier.rank}
-            className="border-b border-cyan-100 max-w-sm"
-            onChange={(e) => updateDossier("rank", e.target.value)}
-          />
+          <div className="flex items-center gap-4">
+            <label className="text-cyan-100 text-sm w-32">Rank</label>
+            <input
+              value={local.dossier.rank}
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              onChange={(e) => updateDossier("rank", e.target.value)}
+              placeholder="Input"
+            />
+          </div>
         </div>
       </section>
 
@@ -254,17 +274,19 @@ function Setup({
           <label className="text-cyan-100 text-sm">Generation</label>
           <input
             type="number"
-            className="num-themed px-2 py-1 max-w-2xs"
+            className="num-themed px-2 py-1 max-w-2xs bg-black/20"
             value={local.metadata.generation}
             onChange={(e) => updateMeta("generation", Number(e.target.value))}
+            placeholder="Input"
           />
 
           <label className="text-cyan-100 text-sm">Starting RP</label>
           <input
             type="number"
-            className="num-themed px-2 py-1 max-w-2xs"
+            className="num-themed px-2 py-1 max-w-2xs bg-black/20"
             value={local.metadata.startingRP}
             onChange={(e) => updateMeta("startingRP", Number(e.target.value))}
+            placeholder="Input"
           />
         </div>
       </section>
@@ -274,57 +296,39 @@ function Setup({
         <h2 className="text-cyan-100 font-bold">Quirks</h2>
 
         <div className="flex flex-col gap-4">
-          <div className="border p-2 space-y-2 flex flex-col">
+          <div className="border p-2 space-y-2 flex flex-col bg-black/20">
             <h3 className="">Quirk 1</h3>
-
-            <label className="text-cyan-100 text-sm">Name</label>
-            <input
-              value={local.quirks.quirk1Name}
-              className="border-b border-cyan-100 max-w-sm"
-              onChange={(e) => updateQuirk("quirk1Name", e.target.value)}
-            />
 
             <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk1Desc}
-              className="border-b border-cyan-100 max-w-sm"
+              className="border-b border-cyan-100 max-w-sm bg-black/20"
               onChange={(e) => updateQuirk("quirk1Desc", e.target.value)}
+              placeholder="Input"
             />
           </div>
 
           <div className="border p-2 space-y-2 flex flex-col">
             <h3 className="">Quirk 2</h3>
 
-            <label className="text-cyan-100 text-sm">Name</label>
-            <input
-              value={local.quirks.quirk2Name}
-              className="border-b border-cyan-100 max-w-sm"
-              onChange={(e) => updateQuirk("quirk2Name", e.target.value)}
-            />
-
             <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk2Desc}
-              className="border-b border-cyan-100 max-w-sm"
+              className="border-b border-cyan-100 max-w-sm bg-black/20"
               onChange={(e) => updateQuirk("quirk2Desc", e.target.value)}
+              placeholder="Input"
             />
           </div>
 
           <div className="border p-2 space-y-2 flex flex-col">
             <h3 className="">Quirk 3</h3>
 
-            <label className="text-cyan-100 text-sm">Name</label>
-            <input
-              value={local.quirks.quirk3Name}
-              className="border-b border-cyan-100 max-w-sm"
-              onChange={(e) => updateQuirk("quirk3Name", e.target.value)}
-            />
-
             <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk3Desc}
-              className="border-b border-cyan-100 max-w-sm"
+              className="border-b border-cyan-100 max-w-sm bg-black/20"
               onChange={(e) => updateQuirk("quirk3Desc", e.target.value)}
+              placeholder="Input"
             />
           </div>
         </div>

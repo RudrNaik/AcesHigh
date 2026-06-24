@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { CharacterData } from "./characterTypes";
+import { createDefaultCharacter } from "./characterTemplate";
 
 const STORAGE_KEY = "acesHighCharacters";
 
@@ -26,6 +27,14 @@ export function useCharacterStorage() {
 
     setHydrated(true);
   }, []);
+
+  const pruneCharacter = (id: string) => {
+    setCharacters((prev) =>
+      prev.map((character) =>
+        character.id === id ? sanitizeCharacter(character) : character,
+      ),
+    );
+  };
 
   useEffect(() => {
     if (!hydrated) return;
@@ -58,7 +67,9 @@ export function useCharacterStorage() {
   };
 
   const importCharacter = (character: CharacterData) => {
-    const exists = hasCharacter(character.id);
+    const sanitized = sanitizeCharacter(character);
+
+    const exists = hasCharacter(sanitized.id);
 
     if (exists) {
       return {
@@ -67,7 +78,7 @@ export function useCharacterStorage() {
       };
     }
 
-    addCharacter(character);
+    addCharacter(sanitized);
 
     return {
       success: true,
@@ -83,6 +94,7 @@ export function useCharacterStorage() {
     importCharacter,
     overwriteCharacter,
     hasCharacter,
+    pruneCharacter,
   };
 }
 
@@ -129,4 +141,47 @@ function getCharacterFileName(character: CharacterData): string {
 
 function sanitizeFileName(name: string): string {
   return name.replace(/[<>:"/\\|?*]/g, "_");
+}
+
+function pruneToShape<T>(data: unknown, shape: T): T {
+  if (data === null || data === undefined) {
+    return structuredClone(shape);
+  }
+
+  // Arrays
+  if (Array.isArray(shape)) {
+    if (!Array.isArray(data)) {
+      return structuredClone(shape);
+    }
+
+    // Empty schema arrays (most of your arrays)
+    if (shape.length === 0) {
+      return data as T;
+    }
+
+    return data.map((item) => pruneToShape(item, shape[0])) as T;
+  }
+
+  // Primitives
+  if (typeof shape !== "object") {
+    return typeof data === typeof shape ? (data as T) : structuredClone(shape);
+  }
+
+  // Objects
+  const result: any = {};
+
+  for (const key of Object.keys(shape as object)) {
+    result[key] = pruneToShape((data as any)[key], (shape as any)[key]);
+  }
+
+  return result;
+}
+
+function sanitizeCharacter(character: unknown): CharacterData {
+  const schema = createDefaultCharacter();
+
+  // Prevent generation of a fresh UUID during sanitization
+  schema.id = "";
+
+  return pruneToShape(character, schema);
 }

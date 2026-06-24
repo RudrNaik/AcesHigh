@@ -75,7 +75,12 @@ export interface Coins {
   coin3: Coin;
 }
 
-export type LootCategory = "perk" | "aircraft" | "module" | "ordnance" | "upgrade";
+export type LootCategory =
+  | "perk"
+  | "aircraft"
+  | "module"
+  | "ordnance"
+  | "upgrade";
 
 export type LootItem = {
   id: string;
@@ -83,13 +88,10 @@ export type LootItem = {
 };
 
 export interface CharacterQuirks {
-  quirk1Name: string;
   quirk1Desc: string;
 
-  quirk2Name: string;
   quirk2Desc: string;
 
-  quirk3Name: string;
   quirk3Desc: string;
 }
 
@@ -149,9 +151,7 @@ export interface Reset {
   BonusRp: number;
 }
 
-export interface Receipt {
-  
-}
+export interface Receipt {}
 
 export interface Downtime {
   id: string;
