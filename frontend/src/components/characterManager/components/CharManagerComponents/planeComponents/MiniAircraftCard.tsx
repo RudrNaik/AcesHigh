@@ -86,7 +86,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             <select
               value={aircraft.id}
               onChange={(e) => aircraft.onSelectAircraft?.(e.target.value)}
-              className="select-themed text-lg font-bold mr-10 w-full"
+              className="select-themed text-lg font-bold w-full"
             >
               {aircraft.aircraftOptions.map((plane) => (
                 <option key={plane.id} value={plane.id}>
@@ -101,7 +101,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
           )}
         </div>
 
-        <div className="text-xs text-cyan-100">
+        <div className="text-xs text-cyan-100 px-1">
           {aircraft.type} // {familyData?.name ?? aircraft.family} // GEN{" "}
           {aircraft.gen} // Tier {aircraft.tier}
         </div>
