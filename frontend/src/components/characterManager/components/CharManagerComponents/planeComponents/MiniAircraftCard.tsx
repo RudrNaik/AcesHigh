@@ -86,7 +86,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             <select
               value={aircraft.id}
               onChange={(e) => aircraft.onSelectAircraft?.(e.target.value)}
-              className="select-themed text-lg font-bold"
+              className="select-themed text-lg font-bold mr-10 w-full"
             >
               {aircraft.aircraftOptions.map((plane) => (
                 <option key={plane.id} value={plane.id}>
