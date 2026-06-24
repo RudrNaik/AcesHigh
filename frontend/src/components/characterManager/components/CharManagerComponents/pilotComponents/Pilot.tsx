@@ -17,11 +17,20 @@ function PilotView({
   const pilotStats = charEngine.getTempPilotStats(character);
   const maxStats = charEngine.getPilotStatsModified(character);
 
+  const [showOverrides, setShowOverrides] = useState(true);
+
   const statDefs = [
-    { key: "temper", label: "Temper" },
-    { key: "nerve", label: "Nerve" },
-    { key: "reflex", label: "Reflex" },
-    { key: "gResist", label: "G-Resist" },
+    { key: "temper", label: "Temper", modKey: "temperOverride" },
+    { key: "nerve", label: "Nerve", modKey: "nerveOverride" },
+    { key: "reflex", label: "Reflex", modKey: "reflexOverride" },
+    { key: "gResist", label: "G-Resist", modKey: "gResistOverride" },
+  ] as const;
+
+  const overrideDefs = [
+    { key: "temperOverride", label: "Temper" },
+    { key: "nerveOverride", label: "Nerve" },
+    { key: "reflexOverride", label: "Reflex" },
+    { key: "gResistOverride", label: "G-Resist" },
   ] as const;
 
   const updateStat = (statKey: keyof CharacterStats, delta: number) => {
@@ -30,10 +39,27 @@ function PilotView({
 
     const updatedStats = {
       ...current,
-      [statKey]: Math.max(0, Math.min(max[statKey], current[statKey] + delta)),
+      [statKey]: Math.max(
+        0,
+        Math.min(max[statKey] || 0, (current[statKey] || 0) + delta),
+      ),
     };
 
     updateCharacter(charEngine.setTempPilotStats(character, updatedStats));
+  };
+
+  const updateOverrideStat = (statKey: keyof CharacterStats, delta: number) => {
+    const overrides = charEngine.getPilotStatOverrides(character);
+
+    const current = overrides[statKey] ?? 0;
+
+    const updated = charEngine.setPilotStatOverride(
+      character,
+      statKey,
+      current + delta,
+    );
+
+    updateCharacter(updated);
   };
 
   const stress = charEngine.getTempStress(character);
@@ -81,15 +107,48 @@ function PilotView({
       <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
       <div className="flex md:space-x-20 lg:flex-row flex-col">
         <div>
-          {statDefs.map((stat) => (
-            <PilotStat
-              key={stat.key}
-              label={stat.label}
-              value={pilotStats[stat.key]}
-              maxValue={maxStats[stat.key]}
-              onChange={(delta) => updateStat(stat.key, delta)}
-            />
-          ))}
+          <button
+            onClick={() => setShowOverrides(!showOverrides)}
+            className="text-xs border border-cyan-900 px-2 py-1 hover:bg-cyan-950"
+          >
+            {showOverrides ? "Modifiers" : "Actual"}
+          </button>
+          {showOverrides ? (
+            <div>
+              {statDefs.map((stat) => (
+                <PilotStat
+                  key={stat.key}
+                  label={stat.label}
+                  value={pilotStats[stat.key]}
+                  maxValue={maxStats[stat.key]}
+                  mod={character.stats[stat.modKey] ?? 0}
+                  onChange={(delta) => updateStat(stat.key, delta)}
+                />
+              ))}
+            </div>
+          ) : (
+            <div>
+              {overrideDefs.map((stat) => {
+                const baseKey = stat.key.replace(
+                  "Override",
+                  "",
+                ) as keyof CharacterStats;
+
+                const value =
+                  charEngine.getPilotStatOverrides(character)[baseKey] ?? 0;
+
+                return (
+                  <PilotStat
+                    key={stat.key}
+                    label={stat.label}
+                    value={value}
+                    maxValue={null}
+                    onChange={(delta) => updateOverrideStat(baseKey, delta)}
+                  />
+                );
+              })}
+            </div>
+          )}
         </div>
         <div className="p-4">
           <CoinStats
@@ -529,16 +588,18 @@ function PilotStat({
   label,
   value,
   maxValue,
+  mod,
   onChange,
 }: {
   label: string;
   value: number;
-  maxValue: number;
+  maxValue: number | null;
+  mod?: number;
   onChange: (delta: number) => void;
 }) {
   return (
     <div className="flex gap-2 items-center mt-2">
-      <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">
+      <span className="w-25 border border-cyan-100 px-2 py-1 bg-black/20">
         {label}
       </span>
 
@@ -546,7 +607,7 @@ function PilotStat({
 
       <button
         onClick={() => onChange(-1)}
-        disabled={value <= 0}
+        disabled={value <= (!maxValue ? -100 : 0)}
         className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
       >
         -
@@ -554,13 +615,19 @@ function PilotStat({
 
       <button
         onClick={() => onChange(1)}
-        disabled={value >= maxValue}
+        disabled={value >= (!maxValue ? 100 : maxValue)}
         className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
       >
         +
       </button>
 
-      <div className="text-sm text-cyan-300">Base: {maxValue}</div>
+      {!maxValue ? (
+        <div className="text-xs text-cyan-300">Mod: {value}</div>
+      ) : (
+        <div className="text-xs text-cyan-300">
+          Base:{maxValue} <br /> Mod:{mod}
+        </div>
+      )}
     </div>
   );
 }

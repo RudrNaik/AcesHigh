@@ -104,7 +104,7 @@ export const createDefaultCharacter = (): CharacterData => ({
     currentCapacity: 0,
     currentSurvivability: 0,
     currentEnergy: 0,
-    sweep: false,
+    sweep: "neutral",
     vtol: false
   },
 
