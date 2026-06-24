@@ -81,12 +81,12 @@ function AircraftCard(aircraft: AircraftCardProps) {
     >
       {/* Header */}
       <div className="flex justify-between items-start mb-2">
-        <div>
+        <div className="flex">
           {aircraft.aircraftOptions ? (
             <select
               value={aircraft.id}
               onChange={(e) => aircraft.onSelectAircraft?.(e.target.value)}
-              className="select-themed text-lg font-bold"
+              className="select-themed text-lg font-bold w-full"
             >
               {aircraft.aircraftOptions.map((plane) => (
                 <option key={plane.id} value={plane.id}>
@@ -101,7 +101,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
           )}
         </div>
 
-        <div className="text-xs text-cyan-100">
+        <div className="text-xs text-cyan-100 px-1">
           {aircraft.type} // {familyData?.name ?? aircraft.family} // GEN{" "}
           {aircraft.gen} // Tier {aircraft.tier}
         </div>

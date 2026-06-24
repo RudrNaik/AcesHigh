@@ -1,8 +1,12 @@
 export interface CharacterStats {
   temper: number;
+  temperOverride?: number
   nerve: number;
+  nerveOverride?: number
   reflex: number;
+  reflexOverride?: number
   gResist: number;
+  gResistOverride?: number
 }
 
 export interface CharacterStress {
@@ -115,7 +119,12 @@ export interface Aircraft {
   currentCapacity: number;
   currentSurvivability: number;
   currentEnergy: number;
-  sweep: boolean;
+  a2aOverride?: number
+  a2gOverride?: number
+  manuOverride?: number
+  speedOverride?: number
+  capOverride?: Number
+  sweep: string;
   vtol: boolean;
 }
 

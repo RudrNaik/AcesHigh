@@ -51,6 +51,11 @@ export function getPilotStatsModified(
   let rflx = character.metadata.startingPilotStats.reflex;
   let gres = character.metadata.startingPilotStats.gResist;
 
+  let tempOvr = character.stats.temperOverride || 0;
+  let nrvOvr = character.stats.nerveOverride || 0;
+  let rfxOvr = character.stats.reflexOverride || 0;
+  let gresOvr = character.stats.gResistOverride || 0;
+
   const modifiers = getStaticModifiersFromSpec(character);
   const depModifiers = tourEngine.getModifierPilotBonuses(character);
 
@@ -89,22 +94,26 @@ export function getPilotStatsModified(
   temp +=
     (modifiers?.temper || 0) +
     pilotDeltas.temper +
-    depModifiers.temp -
+    depModifiers.temp +
+    tempOvr -
     mindBreak;
   nerv +=
     (modifiers?.nerve || 0) +
     pilotDeltas.nerve +
-    depModifiers.nerve -
+    depModifiers.nerve +
+    nrvOvr -
     mindBreak;
   rflx +=
     (modifiers?.reflex || 0) +
     pilotDeltas.reflex +
-    depModifiers.reflex -
+    depModifiers.reflex +
+    rfxOvr -
     succedDry;
   gres +=
     (modifiers?.gResist || 0) +
     pilotDeltas.gResist +
-    depModifiers.gResist -
+    depModifiers.gResist +
+    gresOvr -
     succedDry;
 
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
@@ -116,6 +125,19 @@ export function getTempPilotStats(character: CharacterData): CharacterStats {
   let rflx = character.stats.reflex;
   let gres = character.stats.gResist;
   return { temper: temp, nerve: nerv, reflex: rflx, gResist: gres };
+}
+
+export function getPilotStatOverrides(
+  character: CharacterData,
+): CharacterStats {
+  const s = character.stats;
+
+  return {
+    temper: s.temperOverride ?? 0,
+    nerve: s.nerveOverride ?? 0,
+    reflex: s.reflexOverride ?? 0,
+    gResist: s.gResistOverride ?? 0,
+  };
 }
 
 export function getTempStress(character: CharacterData) {
@@ -322,7 +344,23 @@ export function spendPilotStat(
     ...character,
     stats: {
       ...character.stats,
-      [stat]: Math.max(0, character.stats[stat] - amount),
+      [stat]: Math.max(0, (character.stats[stat] || 0) - amount),
+    },
+  };
+}
+
+export function setPilotStatOverride(
+  character: CharacterData,
+  stat: keyof CharacterStats,
+  amount: number,
+): CharacterData {
+  const overrideKey = `${stat}Override` as keyof CharacterStats;
+
+  return {
+    ...character,
+    stats: {
+      ...character.stats,
+      [overrideKey]: amount,
     },
   };
 }
@@ -338,7 +376,10 @@ export function recoverPilotStat(
     ...character,
     stats: {
       ...character.stats,
-      [stat]: Math.min(maxStats[stat], character.stats[stat] + amount),
+      [stat]: Math.min(
+        maxStats[stat] || 0,
+        (character.stats[stat] || 0) + amount,
+      ),
     },
   };
 }
