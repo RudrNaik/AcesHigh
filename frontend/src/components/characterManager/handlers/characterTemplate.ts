@@ -82,13 +82,10 @@ export const createDefaultCharacter = (): CharacterData => ({
   ],
 
   quirks: {
-    quirk1Name: "",
     quirk1Desc: "",
 
-    quirk2Name: "",
     quirk2Desc: "",
 
-    quirk3Name: "",
     quirk3Desc: "",
   },
 
