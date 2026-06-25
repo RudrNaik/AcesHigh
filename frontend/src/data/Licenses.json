@@ -69,7 +69,7 @@
         },
         "rank1": {
             "ordnance": ["ordSLAAM"],
-            "airframes": ["acF8U3"],
+            "airframes": ["acF8U3", "acMiG25MP"],
             "modules": [],
             "upgrades": []
         },
@@ -81,14 +81,14 @@
         },
         "rank3": {
             "ordnance": [],
-            "airframes": ["acMiG25MP","acF117A","acAF12"],
-            "modules": ["modIPC"],
+            "airframes": ["acF117A","acAF12"],
+            "modules": [],
             "upgrades": []
         },
         "rank4": {
-            "ordnance": [],
+            "ordnance": ["ordSuperPhoenix"],
             "airframes": [],
-            "modules": [],
+            "modules": ["modIPC"],
             "upgrades": ["upMPackage"]
         },
         "rank5": {
@@ -238,29 +238,29 @@
         "rank1": {
             "ordnance": [],
             "airframes": ["acJEFFA"],
-            "modules": ["modImpEject","modReminder","modCushy"],
+            "modules": ["modImpEject"],
             "upgrades": []
         },
         "rank2": {
             "ordnance": ["ordSQAAM"],
             "airframes": ["acMiG29"],
-            "modules": ["modAerobatic"],
+            "modules": ["modReminder","modCushy"],
             "upgrades": []
         },
         "rank3": {
             "ordnance": [],
             "airframes": ["acJ39A"],
-            "modules": ["modPolishIRST","modUpdatedAlg","modRWR","modReclinedSeat"],
+            "modules": ["modAerobatic"],
             "upgrades": []
         },
         "rank4": {
-            "ordnance": ["ordSHISM","ordSPBAA"],
+            "ordnance": ["ordSHISM"],
             "airframes": ["acF29A"],
-            "modules": [],
+            "modules": ["modPolishIRST","modUpdatedAlg","modRWR","modReclinedSeat"],
             "upgrades": []
         },
         "rank5": {
-            "ordnance": [],
+            "ordnance": ["ordSPBAA"],
             "airframes": ["acJ39E"],
             "modules": ["modAngles","modHim"],
             "upgrades": []
@@ -293,13 +293,13 @@
         },
         "rank1": {
             "ordnance": ["ordMAAM"],
-            "airframes": [],
+            "airframes": ["acSu27","acM2000"],
             "modules": ["modSmokeBombs","modOverload"],
             "upgrades": ["upVerusa"]
         },
         "rank2": {
             "ordnance": ["ordHCAA","ordHCAG"],
-            "airframes": ["acSu27","acM2000"],
+            "airframes": [],
             "modules": ["modAOAPack"],
             "upgrades": ["up33"]
         },
@@ -349,7 +349,7 @@
         },
         "rank1": {
             "ordnance": ["ordADNM","ordADCM","ordADMPN"],
-            "airframes": ["acF16A"],
+            "airframes": ["acF16A", "acA10A"],
             "modules": [],
             "upgrades": ["upStalker"]
         },
