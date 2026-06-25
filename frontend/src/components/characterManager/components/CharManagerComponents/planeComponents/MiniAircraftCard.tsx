@@ -68,7 +68,7 @@ export interface AircraftCardProps {
 function AircraftCard(aircraft: AircraftCardProps) {
   const stats = Object.entries(aircraft?.stats ?? {}) as [string, ReactNode][];
   const [activeTag, setActiveTag] = useState<string | null>(null);
-  const [showOverrides, setShowOverrides] = useState(false);
+  const [showOverrides, setShowOverrides] = useState(true);
 
   const overrideMap: Record<
     string,
