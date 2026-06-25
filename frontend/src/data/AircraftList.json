@@ -1356,7 +1356,7 @@
     "mSMod": "n/a",
     "baseOrdID": "ordATGM",
     "desc": "n/a",
-    "tags": [],
+    "tags": ["acMCREW"],
     "startingChars": "F",
     "endingChars": "XL"
   },

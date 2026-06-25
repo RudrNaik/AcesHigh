@@ -1,4 +1,4 @@
-import type { CharacterData } from "../characterTypes";
+import type { CharacterData, Aircraft } from "../characterTypes";
 import type { AircraftCardProps } from "../../components/CharManagerComponents/planeComponents/MiniAircraftCard";
 import type { OrdnanceSelectOption } from "../../components/CharManagerComponents/planeComponents/MiniOrdnanceCard";
 import * as tourEngine from "./tourEngine";
@@ -96,6 +96,15 @@ function getAircraftData(character: CharacterData) {
   ) as Airplane;
   if (!plane) return plane;
 
+  const planeOver: AirplaneStats = {
+    A2A: character.aircraft.a2aOverride || 0,
+    A2G: character.aircraft.a2gOverride || 0,
+    MANU: character.aircraft.manuOverride || 0,
+    SPEED: character.aircraft.speedOverride || 0,
+    CAP: character.aircraft.capOverride || 0,
+    SURV: character.aircraft.survOverride || 0,
+  };
+
   const { acTags, statDeltas } = applyModules(character);
   const upgradeEffects = applyUpgradePackage(character, plane);
 
@@ -152,6 +161,7 @@ function getAircraftData(character: CharacterData) {
     tags: mergedTags,
     stats: mergedStats as AirplaneStats,
     intrinsic: newIntrinsic,
+    overrides: planeOver as AirplaneStats,
   };
 }
 
@@ -297,14 +307,19 @@ export function getUpPackage(character: CharacterData) {
 export function getPlaneStats(character: CharacterData): AirplaneStats {
   const plane = getAircraftData(character);
 
-  return {
-    A2A: plane?.stats.A2A ?? 0,
-    A2G: plane?.stats.A2G ?? 0,
-    MANU: plane?.stats.MANU ?? 0,
-    SPEED: plane?.stats.SPEED ?? 0,
-    SURV: plane?.stats.SURV ?? 0,
-    CAP: plane?.stats.CAP ?? 0,
+  const output: AirplaneStats = {
+    A2A: Number(plane?.stats.A2A ?? 0) + Number(plane.overrides.A2A || 0),
+    A2G: Number(plane?.stats.A2G ?? 0) + Number(plane.overrides.A2G || 0),
+    MANU: Number(plane?.stats.MANU ?? 0) + Number(plane.overrides.MANU || 0),
+    SPEED: Number(plane?.stats.SPEED ?? 0) + Number(plane.overrides.SPEED || 0),
+    SURV: Number(plane?.stats.SURV ?? 0) + Number(plane.overrides.SURV || 0),
+    CAP: Number(plane?.stats.CAP ?? 0) + Number(plane.overrides.CAP || 0),
   };
+
+  console.log(plane.overrides);
+  console.log(output);
+
+  return output;
 }
 
 export function getAircraftState(character: CharacterData) {
@@ -589,6 +604,20 @@ export function setUpgrade(
     aircraft: {
       ...character.aircraft,
       upgradePackage: newUp?.id || "",
+    },
+  };
+}
+
+export function setAircraftStatOverride(
+  character: CharacterData,
+  stat: keyof Aircraft,
+  amount: number,
+): CharacterData {
+  return {
+    ...character,
+    aircraft: {
+      ...character.aircraft,
+      [stat]: amount,
     },
   };
 }
