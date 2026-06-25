@@ -20,6 +20,16 @@ export interface AircraftStateProps {
   onRecoverCap: () => void;
   onSpendEnergy: () => void;
   onRecoverEnergy: () => void;
+  onUpdateAircraftStat?: (
+    stat:
+      | "a2aOverride"
+      | "a2gOverride"
+      | "manuOverride"
+      | "speedOverride"
+      | "capOverride"
+      | "survOverride",
+    delta: number,
+  ) => void;
 }
 
 export interface AircraftSelectOption {
@@ -45,11 +55,37 @@ export interface AircraftCardProps {
   aircraftState?: AircraftStateProps;
   aircraftOptions?: AircraftSelectOption[];
   onSelectAircraft?: (id: string) => void;
+  aircraftOverrides?: {
+    a2aOverride?: number;
+    a2gOverride?: number;
+    manuOverride?: number;
+    speedOverride?: number;
+    capOverride?: number;
+    survOverride?: number;
+  };
 }
 
 function AircraftCard(aircraft: AircraftCardProps) {
   const stats = Object.entries(aircraft?.stats ?? {}) as [string, ReactNode][];
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [showOverrides, setShowOverrides] = useState(false);
+
+  const overrideMap: Record<
+    string,
+    | "a2aOverride"
+    | "a2gOverride"
+    | "manuOverride"
+    | "speedOverride"
+    | "capOverride"
+    | "survOverride"
+  > = {
+    A2A: "a2aOverride",
+    A2G: "a2gOverride",
+    MANU: "manuOverride",
+    SPEED: "speedOverride",
+    CAP: "capOverride",
+    SURV: "survOverride",
+  };
 
   const tags = Array.isArray(aircraft.tags)
     ? aircraft.tags
@@ -107,18 +143,94 @@ function AircraftCard(aircraft: AircraftCardProps) {
         </div>
       </div>
 
+      <button
+        onClick={() => setShowOverrides(!showOverrides)}
+        className="text-xs border border-cyan-900 px-2 py-1 mb-2 hover:bg-cyan-950"
+      >
+        {showOverrides ? "Modifiers" : "Actual"}
+      </button>
+
       {/* Stats */}
-      <div className="flex flex-wrap gap-3 mb-4">
-        {stats.map(([stat, value]) => (
-          <div
-            key={stat}
-            className="text-xs border border-cyan-100/90 px-3 py-2"
-          >
-            <span className="text-cyan-100">{stat}</span>
-            <span className="ml-2 text-cyan-100 font-semibold">{value}</span>
-          </div>
-        ))}
-      </div>
+      {showOverrides ? (
+        <div className="flex flex-wrap gap-3 mb-4">
+          {stats.map(([stat, value]) => {
+            const overrideKey = overrideMap[stat];
+
+            const overrideValue = overrideKey
+              ? (aircraft.aircraftOverrides?.[overrideKey] ?? 0)
+              : 0;
+
+            return (
+              <div
+                key={stat}
+                className="text-xs border border-cyan-100/90 px-3 py-2"
+              >
+                <span className="text-cyan-100">{stat}</span>
+
+                <span className="ml-2 text-cyan-100">
+                  {value}
+
+                  {overrideValue !== 0 && (
+                    <span className="text-cyan-400 ml-1">
+                      ({overrideValue > 0 ? "+" : ""}
+                      {overrideValue})
+                    </span>
+                  )}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="flex flex-wrap gap-3 mb-4">
+          {stats.map(([stat, value]) => {
+            const overrideKey = overrideMap[stat];
+
+            return (
+              <div
+                key={stat}
+                className="text-xs border border-cyan-100/90 px-3 py-2"
+              >
+                <div className="flex items-center gap-1">
+                  <span className="text-cyan-100">{stat}</span>
+
+                  <span className="text-cyan-100 font-semibold mx-1">
+                    {value}
+                  </span>
+
+                  {overrideKey && (
+                    <button
+                      onClick={() =>
+                        aircraft.aircraftState?.onUpdateAircraftStat?.(
+                          overrideKey,
+                          -1,
+                        )
+                      }
+                      className="px-1 py-0 border border-cyan-400 text-xs"
+                    >
+                      -
+                    </button>
+                  )}
+
+                  {overrideKey && (
+                    <button
+                      onClick={() =>
+                        aircraft.aircraftState?.onUpdateAircraftStat?.(
+                          overrideKey,
+                          1,
+                        )
+                      }
+                      className="px-1 py-0 border border-cyan-400 text-xs"
+                    >
+                      +
+                    </button>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {/* Aircraft State */}
       {aircraft.aircraftState && (

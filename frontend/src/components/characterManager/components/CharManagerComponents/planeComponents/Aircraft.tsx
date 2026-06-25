@@ -2,9 +2,9 @@ import type { CharacterData } from "../../../handlers/characterTypes";
 import * as planeEngine from "../../../handlers/Engines/planeEngine";
 import AircraftCard from "./MiniAircraftCard";
 import OrdnanceCard from "./MiniOrdnanceCard";
-import ModuleManager from "./MiniModCards"
-import Masteries from "./MasteryCards"
-import UpPackage from "./MiniUpgradeCard"
+import ModuleManager from "./MiniModCards";
+import Masteries from "./MasteryCards";
+import UpPackage from "./MiniUpgradeCard";
 
 function AircraftView({
   character,
@@ -31,6 +31,7 @@ function AircraftView({
           updateCharacter(planeEngine.setAircraft(character, id))
         }
         stats={planeEngine.getPlaneStats(character)}
+        aircraftOverrides={character.aircraft}
         aircraftState={{
           survivability: aircraftState.survivability,
           maxSurvivability: maxSurv,
@@ -49,6 +50,17 @@ function AircraftView({
             updateCharacter(planeEngine.spendEnergy(character)),
           onRecoverEnergy: () =>
             updateCharacter(planeEngine.recoverEnergy(character)),
+          onUpdateAircraftStat: (stat, delta) => {
+            const current = character.aircraft[stat] ?? 0;
+
+            updateCharacter(
+              planeEngine.setAircraftStatOverride(
+                character,
+                stat,
+                current + delta,
+              ),
+            );
+          },
         }}
       />
 
@@ -68,16 +80,19 @@ function AircraftView({
 
       <h2 className="text-cyan-300 font-bold">Masteries</h2>
 
-      <Masteries character={character}/>
+      <Masteries character={character} />
 
       <h2 className="text-cyan-300 font-bold">Upgrade Package</h2>
-      <UpPackage character={character} onSelect={(id) => updateCharacter(planeEngine.setUpgrade(character, id))}/>
+      <UpPackage
+        character={character}
+        onSelect={(id) =>
+          updateCharacter(planeEngine.setUpgrade(character, id))
+        }
+      />
 
       <h2 className="text-cyan-300 font-bold">Modules</h2>
 
       <ModuleManager character={character} updateCharacter={updateCharacter} />
-
-      
     </div>
   );
 }
