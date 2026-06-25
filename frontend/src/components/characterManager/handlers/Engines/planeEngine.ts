@@ -308,16 +308,14 @@ export function getPlaneStats(character: CharacterData): AirplaneStats {
   const plane = getAircraftData(character);
 
   const output: AirplaneStats = {
-    A2A: Number(plane?.stats.A2A ?? 0) + Number(plane.overrides.A2A || 0),
-    A2G: Number(plane?.stats.A2G ?? 0) + Number(plane.overrides.A2G || 0),
-    MANU: Number(plane?.stats.MANU ?? 0) + Number(plane.overrides.MANU || 0),
-    SPEED: Number(plane?.stats.SPEED ?? 0) + Number(plane.overrides.SPEED || 0),
-    SURV: Number(plane?.stats.SURV ?? 0) + Number(plane.overrides.SURV || 0),
-    CAP: Number(plane?.stats.CAP ?? 0) + Number(plane.overrides.CAP || 0),
+    A2A: Number(plane?.stats.A2A ?? 0) + Number(plane?.overrides?.A2A || 0),
+    A2G: Number(plane?.stats.A2G ?? 0) + Number(plane?.overrides?.A2G || 0),
+    MANU: Number(plane?.stats.MANU ?? 0) + Number(plane?.overrides?.MANU || 0),
+    SPEED:
+      Number(plane?.stats.SPEED ?? 0) + Number(plane?.overrides?.SPEED || 0),
+    SURV: Number(plane?.stats.SURV ?? 0) + Number(plane?.overrides?.SURV || 0),
+    CAP: Number(plane?.stats.CAP ?? 0) + Number(plane?.overrides?.CAP || 0),
   };
-
-  console.log(plane.overrides);
-  console.log(output);
 
   return output;
 }
