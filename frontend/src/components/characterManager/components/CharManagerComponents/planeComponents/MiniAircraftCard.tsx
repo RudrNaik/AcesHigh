@@ -183,8 +183,12 @@ function AircraftCard(aircraft: AircraftCardProps) {
         </div>
       ) : (
         <div className="flex flex-wrap gap-3 mb-4">
-          {stats.map(([stat, value]) => {
+          {stats.map(([stat]) => {
             const overrideKey = overrideMap[stat];
+
+            const overrideValue = overrideKey
+              ? (aircraft.aircraftOverrides?.[overrideKey] ?? 0)
+              : 0;
 
             return (
               <div
@@ -194,8 +198,9 @@ function AircraftCard(aircraft: AircraftCardProps) {
                 <div className="flex items-center gap-1">
                   <span className="text-cyan-100">{stat}</span>
 
-                  <span className="text-cyan-100 font-semibold mx-1">
-                    {value}
+                  <span className="text-cyan-400 ml-1">
+                    {overrideValue > 0 ? "+" : ""}
+                    {overrideValue}
                   </span>
 
                   {overrideKey && (
@@ -206,7 +211,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
                           -1,
                         )
                       }
-                      className="px-1 py-0 border border-cyan-400 text-xs"
+                      className="px-1 py-0 ml-1 border border-cyan-400 text-xs"
                     >
                       -
                     </button>
