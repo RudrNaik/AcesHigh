@@ -27,16 +27,19 @@ export function formatTagTooltip(desc: string, value?: number) {
 
 export function getTagCountMap(tags: string[] | null | undefined = []) {
   const tagArray = Array.isArray(tags) ? tags : [];
-  return tagArray.reduce((acc, tagId) => {
-    acc[tagId] = (acc[tagId] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
+  return tagArray.reduce(
+    (acc, tagId) => {
+      acc[tagId] = (acc[tagId] || 0) + 1;
+      return acc;
+    },
+    {} as Record<string, number>,
+  );
 }
 
 export function getTagValue(tagId: string, count: number) {
   const rules: Record<string, (c: number) => number> = {
     ordMLTI: (c) => c * 2,
-    acMCREW: (c) => c * 2,
+    acMCREW: (c) => c + 1,
     manuCap: (c) => c,
     manuDiscount: (c) => c,
     manuAddForward: (c) => c,
