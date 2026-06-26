@@ -75,8 +75,8 @@
       "A2A": 1,
       "A2G": 1,
       "MANU": 0,
-      "SPEED": 1,
-      "SURV": 3,
+      "SPEED": 2,
+      "SURV": 4,
       "CAP": 7
     },
     "moduleSlots": 8,
@@ -100,12 +100,12 @@
     "gen": 3,
     "tier": 0,
     "stats": {
-      "A2A": 1,
-      "A2G": 1,
-      "MANU": 1,
-      "SPEED": 1,
-      "SURV": 3,
-      "CAP": 5
+      "A2A": 0,
+      "A2G": 0,
+      "MANU": 2,
+      "SPEED": 2,
+      "SURV": 4,
+      "CAP": 7
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
@@ -157,8 +157,8 @@
     "stats": {
       "A2A": 2,
       "A2G": -1,
-      "MANU": 2,
-      "SPEED": 1,
+      "MANU": 3,
+      "SPEED": 2,
       "SURV": 4,
       "CAP": 4
     },
@@ -184,7 +184,7 @@
     "stats": {
       "A2A": 1,
       "A2G": 0,
-      "MANU": 1,
+      "MANU": 2,
       "SPEED": 2,
       "SURV": 3,
       "CAP": 6
@@ -214,7 +214,7 @@
       "MANU": 2,
       "SPEED": 1,
       "SURV": 3,
-      "CAP": 4
+      "CAP": 7
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
@@ -235,9 +235,9 @@
     "gen": 3,
     "tier": 0,
     "stats": {
-      "A2A": 0,
-      "A2G": 1,
-      "MANU": 1,
+      "A2A": 1,
+      "A2G": 2,
+      "MANU": 2,
       "SPEED": 0,
       "SURV": 4,
       "CAP": 6
@@ -268,7 +268,7 @@
       "MANU": 1,
       "SPEED": 2,
       "SURV": 3,
-      "CAP": 5
+      "CAP": 7
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
@@ -292,8 +292,8 @@
     "stats": {
       "A2A": 2,
       "A2G": 0,
-      "MANU": 1,
-      "SPEED": 1,
+      "MANU": 2,
+      "SPEED": 2,
       "SURV": 2,
       "CAP": 6
     },
@@ -318,8 +318,8 @@
     "stats": {
       "A2A": 1,
       "A2G": 1,
-      "MANU": 0,
-      "SPEED": 2,
+      "MANU": 1,
+      "SPEED": 3,
       "SURV": 2,
       "CAP": 6
     },
@@ -364,18 +364,18 @@
   {
     "id": "acYF17",
     "name": "F-17 Cobra",
-    "family": "acFamPantheras",
+    "family": "acFamVespers",
     "intrinsic": "intrMidway",
     "type": "Interceptor",
     "gen": 4,
     "tier": 0,
     "stats": {
       "A2A": 1,
-      "A2G": 0,
+      "A2G": 1,
       "MANU": 2,
       "SPEED": 1,
       "SURV": 3,
-      "CAP": 6
+      "CAP": 7
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
@@ -397,12 +397,12 @@
     "gen": 4,
     "tier": 0,
     "stats": {
-      "A2A": -1,
+      "A2A": 0,
       "A2G": 0,
       "MANU": 1,
       "SPEED": 2,
-      "SURV": 2,
-      "CAP": 7
+      "SURV": 3,
+      "CAP": 8
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
@@ -411,7 +411,8 @@
     "tags": [
       "acMCREW",
       "acMENG",
-      "acSWEEP"
+      "acSWEEP",
+      "acGLESS"
     ],
     "startingChars": "T",
     "endingChars": "n/a"
@@ -426,9 +427,9 @@
     "tier": 0,
     "stats": {
       "A2A": 0,
-      "A2G": 2,
+      "A2G": 0,
       "MANU": 0,
-      "SPEED": 2,
+      "SPEED": 0,
       "SURV": 7,
       "CAP": 8
     },
@@ -482,11 +483,11 @@
     "tier": 0,
     "stats": {
       "A2A": -1,
-      "A2G": 2,
+      "A2G": 3,
       "MANU": 1,
       "SPEED": 2,
-      "SURV": 3,
-      "CAP": 5
+      "SURV": 4,
+      "CAP": 6
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
@@ -507,8 +508,8 @@
     "gen": 4,
     "tier": 0,
     "stats": {
-      "A2A": 1,
-      "A2G": 1,
+      "A2A": 0,
+      "A2G": 2,
       "MANU": 2,
       "SPEED": 1,
       "SURV": 3,
@@ -567,9 +568,9 @@
       "A2A": 2,
       "A2G": -1,
       "MANU": 3,
-      "SPEED": 0,
+      "SPEED": 1,
       "SURV": 4,
-      "CAP": 5
+      "CAP": 8
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
@@ -592,17 +593,19 @@
     "stats": {
       "A2A": 3,
       "A2G": -1,
-      "MANU": -1,
+      "MANU": 0,
       "SPEED": 4,
       "SURV": 3,
-      "CAP": 5
+      "CAP": 7
     },
     "moduleSlots": 7,
     "mSMod": "n/a",
     "baseOrdID": "ordFSAAM",
     "desc": "n/a",
     "tags": [
-      "acGLESS"
+      "acGLESS",
+      "acMENG",
+      "acMCREW"
     ],
     "startingChars": "MiG",
     "endingChars": "MP"
@@ -628,7 +631,8 @@
     "baseOrdID": "ordHPAA",
     "desc": "n/a",
     "tags": [
-      "acMENG"
+      "acMENG",
+      "acCOMM"
     ],
     "startingChars": "F",
     "endingChars": "A"
@@ -722,9 +726,9 @@
     "tier": 1,
     "stats": {
       "A2A": 1,
-      "A2G": 0,
+      "A2G": 1,
       "MANU": 3,
-      "SPEED": 1,
+      "SPEED": 2,
       "SURV": 3,
       "CAP": 6
     },
@@ -796,7 +800,7 @@
   },
   {
     "id": "acFUCK",
-    "name": "F-CK-1",
+    "name": "F-CK-1B",
     "family": "acFamPantheras",
     "intrinsic": "intrJungle",
     "type": "Multirole",
@@ -861,10 +865,10 @@
     "stats": {
       "A2A": 3,
       "A2G": -1,
-      "MANU": 0,
+      "MANU": 1,
       "SPEED": 2,
       "SURV": 3,
-      "CAP": 6
+      "CAP": 7
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
@@ -887,7 +891,7 @@
     "tier": 2,
     "stats": {
       "A2A": 0,
-      "A2G": 2,
+      "A2G": 3,
       "MANU": 1,
       "SPEED": 2,
       "SURV": 3,
@@ -915,7 +919,7 @@
     "tier": 3,
     "stats": {
       "A2A": 1,
-      "A2G": 2,
+      "A2G": 4,
       "MANU": 0,
       "SPEED": 1,
       "SURV": 5,
@@ -943,11 +947,11 @@
     "gen": 4,
     "tier": 3,
     "stats": {
-      "A2A": 3,
+      "A2A": 4,
       "A2G": -1,
       "MANU": -1,
       "SPEED": 5,
-      "SURV": 4,
+      "SURV": 5,
       "CAP": 7
     },
     "moduleSlots": 5,
@@ -955,10 +959,8 @@
     "baseOrdID": "ordMLAA4",
     "desc": "n/a",
     "tags": [
-      "acGLESS",
       "acMCREW",
-      "acMENG",
-      "acHSTRUNG"
+      "acMENG"
     ],
     "startingChars": "AF",
     "endingChars": "C"
@@ -1002,12 +1004,12 @@
     "gen": 4,
     "tier": 2,
     "stats": {
-      "A2A": 2,
+      "A2A": 1,
       "A2G": 1,
       "MANU": 3,
-      "SPEED": 1,
-      "SURV": 3,
-      "CAP": 5
+      "SPEED": 2,
+      "SURV": 4,
+      "CAP": 7
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
@@ -1030,8 +1032,8 @@
     "gen": 4,
     "tier": 3,
     "stats": {
-      "A2A": 2,
-      "A2G": 2,
+      "A2A": 1,
+      "A2G": 1,
       "MANU": 3,
       "SPEED": 1,
       "SURV": 4,
@@ -1097,7 +1099,8 @@
     "baseOrdID": "ordATGM",
     "desc": "n/a",
     "tags": [
-      "acMENG"
+      "acMENG",
+      "acCOMM"
     ],
     "startingChars": "F",
     "endingChars": "Typhoon"
@@ -1112,11 +1115,11 @@
     "tier": 4,
     "stats": {
       "A2A": 2,
-      "A2G": 3,
+      "A2G": 2,
       "MANU": 3,
       "SPEED": 2,
       "SURV": 4,
-      "CAP": 8
+      "CAP": 7
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
@@ -1140,13 +1143,14 @@
       "MANU": 5,
       "SPEED": 2,
       "SURV": 3,
-      "CAP": 6
+      "CAP": 7
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
     "baseOrdID": "ordVPSM",
     "desc": "n/a",
     "tags": [
+      "acAOA",
       "acHSTRUNG"
     ],
     "startingChars": "F",
@@ -1161,8 +1165,8 @@
     "gen": 4,
     "tier": 4,
     "stats": {
-      "A2A": 3,
-      "A2G": 3,
+      "A2A": 2,
+      "A2G": 2,
       "MANU": 2,
       "SPEED": 2,
       "SURV": 4,
@@ -1190,11 +1194,11 @@
     "gen": 4,
     "tier": 5,
     "stats": {
-      "A2A": 3,
-      "A2G": 3,
-      "MANU": 4,
+      "A2A": 2,
+      "A2G": 2,
+      "MANU": 3,
       "SPEED": 3,
-      "SURV": 4,
+      "SURV": 3,
       "CAP": 9
     },
     "moduleSlots": 3,
@@ -1240,12 +1244,12 @@
     "gen": 4,
     "tier": 4,
     "stats": {
-      "A2A": 1,
+      "A2A": 0,
       "A2G": 3,
       "MANU": 3,
       "SPEED": 2,
       "SURV": 4,
-      "CAP": 12
+      "CAP": 9
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
@@ -1271,8 +1275,8 @@
       "A2G": 3,
       "MANU": 2,
       "SPEED": 3,
-      "SURV": 5,
-      "CAP": 12
+      "SURV": 4,
+      "CAP": 8
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
@@ -1296,7 +1300,7 @@
     "stats": {
       "A2A": 4,
       "A2G": -1,
-      "MANU": -1,
+      "MANU": 0,
       "SPEED": 4,
       "SURV": 5,
       "CAP": 8
@@ -1306,8 +1310,8 @@
     "baseOrdID": "ordVMLAA2",
     "desc": "n/a",
     "tags": [
-      "acMENG",
-      "acMCREW"
+      "acMCREW",
+      "acMENG"
     ],
     "startingChars": "MiG",
     "endingChars": "n/a"
@@ -1325,8 +1329,8 @@
       "A2G": 1,
       "MANU": 3,
       "SPEED": 4,
-      "SURV": 5,
-      "CAP": 9
+      "SURV": 4,
+      "CAP": 8
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
@@ -1350,13 +1354,15 @@
       "MANU": 3,
       "SPEED": 2,
       "SURV": 4,
-      "CAP": 10
+      "CAP": 9
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
     "baseOrdID": "ordATGM",
     "desc": "n/a",
-    "tags": ["acMCREW"],
+    "tags": [
+      "acMCREW"
+    ],
     "startingChars": "F",
     "endingChars": "XL"
   },
@@ -1369,12 +1375,12 @@
     "gen": 4,
     "tier": 5,
     "stats": {
-      "A2A": 3,
-      "A2G": 3,
+      "A2A": 2,
+      "A2G": 2,
       "MANU": 3,
       "SPEED": 2,
       "SURV": 5,
-      "CAP": 9
+      "CAP": 8
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
@@ -1400,8 +1406,8 @@
       "A2G": 3,
       "MANU": 5,
       "SPEED": 3,
-      "SURV": 4,
-      "CAP": 10
+      "SURV": 2,
+      "CAP": 7
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
@@ -1425,12 +1431,12 @@
     "gen": 4,
     "tier": 5,
     "stats": {
-      "A2A": 3,
-      "A2G": 3,
+      "A2A": 2,
+      "A2G": 2,
       "MANU": 4,
       "SPEED": 3,
       "SURV": 4,
-      "CAP": 10
+      "CAP": 8
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
@@ -1451,12 +1457,12 @@
     "gen": 4,
     "tier": 5,
     "stats": {
-      "A2A": 3,
-      "A2G": 3,
-      "MANU": 4,
-      "SPEED": 3,
+      "A2A": 2,
+      "A2G": 2,
+      "MANU": 2,
+      "SPEED": 2,
       "SURV": 4,
-      "CAP": 14
+      "CAP": 13
     },
     "moduleSlots": 3,
     "mSMod": "n/a",
@@ -1465,7 +1471,8 @@
     "tags": [
       "acAOA",
       "acMENG",
-      "acNAVAL"
+      "acNAVAL",
+      "acCOMM"
     ],
     "startingChars": "F",
     "endingChars": "E"
@@ -1482,7 +1489,7 @@
       "A2A": 4,
       "A2G": 0,
       "MANU": 4,
-      "SPEED": 2,
+      "SPEED": 3,
       "SURV": 3,
       "CAP": 9
     },
@@ -1507,7 +1514,7 @@
     "gen": 4,
     "tier": 7,
     "stats": {
-      "A2A": 4,
+      "A2A": 3,
       "A2G": 2,
       "MANU": 5,
       "SPEED": 3,
@@ -1536,11 +1543,11 @@
     "tier": 7,
     "stats": {
       "A2A": 3,
-      "A2G": 4,
+      "A2G": 3,
       "MANU": 5,
       "SPEED": 3,
       "SURV": 4,
-      "CAP": 10
+      "CAP": 8
     },
     "moduleSlots": 1,
     "mSMod": "n/a",

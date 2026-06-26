@@ -148,13 +148,11 @@ function pruneToShape<T>(data: unknown, shape: T): T {
     return structuredClone(shape);
   }
 
-  // Arrays
   if (Array.isArray(shape)) {
     if (!Array.isArray(data)) {
       return structuredClone(shape);
     }
 
-    // Empty schema arrays (most of your arrays)
     if (shape.length === 0) {
       return data as T;
     }
@@ -162,12 +160,10 @@ function pruneToShape<T>(data: unknown, shape: T): T {
     return data.map((item) => pruneToShape(item, shape[0])) as T;
   }
 
-  // Primitives
   if (typeof shape !== "object") {
     return typeof data === typeof shape ? (data as T) : structuredClone(shape);
   }
 
-  // Objects
   const result: any = {};
 
   for (const key of Object.keys(shape as object)) {
