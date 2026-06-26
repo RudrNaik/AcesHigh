@@ -108,7 +108,25 @@ function TerminalPage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.3,
-                delay: 0.2,
+                delay: 0.3,
+              }}
+              className="flicker"
+            >
+              <TerminalPanel
+                title="AWACS"
+                subtitle="AWACS Command and Control Systems"
+                icon="🗊"
+                onHover={handleHover}
+                link="/InDev"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.4,
               }}
               className="flicker"
             >
