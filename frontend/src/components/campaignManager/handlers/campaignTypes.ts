@@ -1,4 +1,4 @@
-import type { CharacterData } from "../../characterManager/handlers/characterTypes"
+import type { CharacterData } from "../../characterManager/handlers/characterTypes";
 
 export interface CampaignData {
   id: string;
