@@ -27,10 +27,8 @@ function CampaignCard({ campaign, onSelect, onDelete }: Props) {
         </p>
       </div>
 
-      <div className="text-sm space-y-1">
+      <div className="text-sm">
         <div>Pilots: {campaign.roster.length}</div>
-
-        <div>Sorties: {campaign.sorties.length}</div>
       </div>
 
       <div className="flex gap-2 pt-2">
