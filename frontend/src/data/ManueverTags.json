@@ -112,7 +112,7 @@
     {
         "id": "manuDiscount",
         "name":"Discount",
-        "desc": "reduce next action by [x] energy"
+        "desc": "Reduce next action by [x] energy"
     },
     {
         "id": "manuAddMitigate",

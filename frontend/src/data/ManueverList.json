@@ -185,7 +185,8 @@
     "type": "Exhaust",
     "engCost": "0",
     "tags": [
-      "manuTrick"
+      "manuTrick",
+      "manuDiscount"
     ],
     "desc": "Discount your next Maneuver by 1 Energy."
   },
@@ -430,6 +431,21 @@
     "tags": [
       "manuAttack",
       "manuMAP",
+      "manuCap"
+    ],
+    "desc": "Make an Attack."
+  },
+  {
+    "id": "manuShootOrd",
+    "name": "Shoot w/Ord",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "4",
+    "tags": [
+      "manuAttack",
+      "manuMAP",
+      "manuCapX",
       "manuORD"
     ],
     "desc": "Make an Attack."
