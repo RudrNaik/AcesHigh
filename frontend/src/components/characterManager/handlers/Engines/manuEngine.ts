@@ -217,7 +217,7 @@ export const getManeuverById = (maneuvers: Maneuver[], id: string) =>
 export const getPositioningManeuvers = (maneuvers: Maneuver[]) =>
   maneuvers.filter(
     (m) =>
-      m.type === "POSITIONING" &&
+      (m.type === "POSITIONING" || m.tags.includes("manuPOSTag")) &&
       m.id !== "manuExampleTech" &&
       m.id !== "exampleManu",
   );
@@ -226,6 +226,7 @@ export const getSelectableManeuvers = (maneuvers: Maneuver[]) =>
   maneuvers.filter(
     (m) =>
       m.type !== "POSITIONING" &&
+      !m.tags.includes("manuPOSTag") &&
       m.id !== "manuExampleTech" &&
       m.id !== "exampleManu",
   );

@@ -30,7 +30,7 @@
         "desc": "Adds a Physical Stress when used"
     },
     {
-        "id": "manuPos",
+        "id": "manuPOSTag",
         "name": "Positioning",
         "desc": "A Positioning Maneuver, can only be used for your positioning action."
     },
