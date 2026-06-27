@@ -163,6 +163,10 @@ function ManuBuilder({
     });
   };
 
+  const addSlot = () => {
+    setSlots((prev) => [...prev, { maneuverId: "", variableCost: 0 }]);
+  };
+
   const engineSlots: ManeuverSlot[] = useMemo(() => {
     return slots.map((s) => ({
       label: "",
@@ -305,9 +309,9 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
             {slots.length > MIN_SLOTS && (
               <button
                 onClick={() => removeSlot(idx)}
-                className="px-2 text-red-400"
+                className="px-2 transition-all text-red-400 hover:bg-red-500 hover:text-white py-1 hover:animate-pulse"
               >
-                ✕
+                X
               </button>
             )}
           </div>
@@ -315,12 +319,22 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
       })}
 
       {/* reset */}
-      <button
-        onClick={resetDraft}
-        className="w-full px-2 py-1 border border-cyan-400/30"
-      >
-        RESET
-      </button>
+      <div className="space-y-1">
+        <button
+          onClick={resetDraft}
+          className="border w-full border-cyan-800 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:border-cyan-100 hover:text-black"
+        >
+          RESET
+        </button>
+
+        {/* add slot */}
+        <button
+          onClick={addSlot}
+          className="border w-full border-cyan-800 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:border-cyan-100 hover:text-black"
+        >
+          ADD MANU
+        </button>
+      </div>
 
       {/* output */}
       <pre className="bg-black/30 p-2 whitespace-pre-wrap">{output}</pre>
@@ -345,7 +359,7 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
           });
           resetDraft();
         }}
-        className="w-full mt-2 px-3 py-2 border border-cyan-100/60"
+        className="border w-full border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
       >
         APPLY TURN
       </button>
