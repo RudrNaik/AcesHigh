@@ -477,6 +477,20 @@
     "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
   },
   {
+    "id": "manuJoustOrd",
+    "name": "Joust w/Ord",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "4",
+    "tags": [
+      "manuAttack",
+      "manuCap",
+      "manuORD"
+    ],
+    "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
+  },
+  {
     "id": "manuCobra",
     "name": "Cobra",
     "isCommon": true,
