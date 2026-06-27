@@ -30,7 +30,7 @@
         "desc": "Adds a Physical Stress when used"
     },
     {
-        "id": "manuPos",
+        "id": "manuPOSTag",
         "name": "Positioning",
         "desc": "A Positioning Maneuver, can only be used for your positioning action."
     },
@@ -112,7 +112,7 @@
     {
         "id": "manuDiscount",
         "name":"Discount",
-        "desc": "reduce next action by [x] energy"
+        "desc": "Reduce next action by [x] energy"
     },
     {
         "id": "manuAddMitigate",

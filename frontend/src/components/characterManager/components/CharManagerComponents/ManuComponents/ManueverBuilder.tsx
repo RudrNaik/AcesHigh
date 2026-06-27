@@ -27,6 +27,7 @@ const loadDraft = (characterId: string) => {
     if (!raw) {
       return {
         pos: "",
+        posVariableCost: 0,
         slots: Array.from({ length: MIN_SLOTS }, () => ({
           maneuverId: "",
           variableCost: 0,
@@ -38,6 +39,7 @@ const loadDraft = (characterId: string) => {
 
     return {
       pos: parsed.pos ?? "",
+      posVariableCost: parsed.posVariableCost ?? 0,
       slots: Array.isArray(parsed.slots)
         ? parsed.slots
         : Array.from({ length: MIN_SLOTS }, () => ({
@@ -48,6 +50,7 @@ const loadDraft = (characterId: string) => {
   } catch {
     return {
       pos: "",
+      posVariableCost: 0,
       slots: Array.from({ length: MIN_SLOTS }, () => ({
         maneuverId: "",
         variableCost: 0,
@@ -56,10 +59,15 @@ const loadDraft = (characterId: string) => {
   }
 };
 
-const saveDraft = (characterId: string, pos: string, slots: DraftSlot[]) => {
+const saveDraft = (
+  characterId: string,
+  pos: string,
+  posVariableCost: number,
+  slots: DraftSlot[],
+) => {
   localStorage.setItem(
     getDraftKey(characterId),
-    JSON.stringify({ pos, slots }),
+    JSON.stringify({ pos, posVariableCost, slots }),
   );
 };
 
@@ -85,7 +93,6 @@ function ManuBuilder({
   );
 
   const positionOptions = useMemo(() => getPositioningManeuvers(all), [all]);
-
   const maneuverOptions = useMemo(() => getSelectableManeuvers(all), [all]);
 
   const [temp, setTemper] = useState(character.stats.temper);
@@ -96,27 +103,29 @@ function ManuBuilder({
   const [energyStart, setEnergyStart] = useState(
     character.aircraft.currentEnergy,
   );
-
   const [capacityStart, setCapacityStart] = useState(
     character.aircraft.currentCapacity,
   );
-
   const [survival, setSurv] = useState(character.aircraft.currentSurvivability);
 
   const initialDraft = loadDraft(character.id);
 
   const [pos, setPos] = useState(initialDraft.pos);
+  const [posVariableCost, setPosVariableCost] = useState(
+    initialDraft.posVariableCost,
+  );
   const [slots, setSlots] = useState<DraftSlot[]>(initialDraft.slots);
 
   // persist draft
   useEffect(() => {
-    saveDraft(character.id, pos, slots);
-  }, [character.id, pos, slots]);
+    saveDraft(character.id, pos, posVariableCost, slots);
+  }, [character.id, pos, posVariableCost, slots]);
 
   // reload when character changes
   useEffect(() => {
     const draft = loadDraft(character.id);
     setPos(draft.pos);
+    setPosVariableCost(draft.posVariableCost);
     setSlots(draft.slots);
   }, [character.id]);
 
@@ -126,7 +135,6 @@ function ManuBuilder({
     setNerve(character.stats.nerve);
     setReflex(character.stats.reflex);
     setGRes(character.stats.gResist);
-
     setEnergyStart(character.aircraft.currentEnergy);
     setCapacityStart(character.aircraft.currentCapacity);
     setSurv(character.aircraft.currentSurvivability);
@@ -135,10 +143,7 @@ function ManuBuilder({
   const setSlotManeuver = (idx: number, maneuverId: string) => {
     setSlots((prev) => {
       const next = [...prev];
-      next[idx] = {
-        ...next[idx],
-        maneuverId,
-      };
+      next[idx] = { ...next[idx], maneuverId };
       return next;
     });
   };
@@ -146,26 +151,20 @@ function ManuBuilder({
   const setSlotVariableCost = (idx: number, value: number) => {
     setSlots((prev) => {
       const next = [...prev];
-      next[idx] = {
-        ...next[idx],
-        variableCost: value,
-      };
+      next[idx] = { ...next[idx], variableCost: value };
       return next;
     });
   };
-
-  // const addSlot = () => {
-  //   setSlots((prev) => [
-  //     ...prev,
-  //     { maneuverId: "", variableCost: 0 },
-  //   ]);
-  // };
 
   const removeSlot = (idx: number) => {
     setSlots((prev) => {
       if (prev.length <= MIN_SLOTS) return prev;
       return prev.filter((_, i) => i !== idx);
     });
+  };
+
+  const addSlot = () => {
+    setSlots((prev) => [...prev, { maneuverId: "", variableCost: 0 }]);
   };
 
   const engineSlots: ManeuverSlot[] = useMemo(() => {
@@ -176,13 +175,19 @@ function ManuBuilder({
     }));
   }, [slots, all]);
 
+  const posManeuver = useMemo(() => getManeuverById(all, pos), [all, pos]);
+  const posVariableType = useMemo(
+    () => getVariableCostType(posManeuver),
+    [posManeuver],
+  );
+
   const positionSlot: ManeuverSlot = useMemo(() => {
     return {
       label: "POS",
-      maneuver: getManeuverById(all, pos),
-      variableCost: 0,
+      maneuver: posManeuver,
+      variableCost: posVariableCost,
     };
-  }, [pos, all]);
+  }, [posManeuver, posVariableCost]);
 
   const organized = useMemo(
     () => organizeManeuversForDisplay(engineSlots),
@@ -228,6 +233,18 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
     organized,
   ]);
 
+  const resetDraft = () => {
+    setPos("");
+    setPosVariableCost(0);
+    setSlots(
+      Array.from({ length: MIN_SLOTS }, () => ({
+        maneuverId: "",
+        variableCost: 0,
+      })),
+    );
+    clearDraft(character.id);
+  };
+
   return (
     <div className="space-y-3 text-xs">
       {/* stats */}
@@ -244,18 +261,31 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
         <Input label="SRV" value={survival} set={setSurv} />
       </div>
 
-      {/* position */}
-      <Select
-        label="POS"
-        value={pos}
-        setValue={setPos}
-        options={positionOptions}
-      />
+      {/* position — with optional variable cost input */}
+      <div className="flex items-center gap-2">
+        <Select
+          label="POS"
+          value={pos}
+          setValue={(v: string) => {
+            setPos(v);
+            setPosVariableCost(0); // reset variable cost on maneuver change
+          }}
+          options={positionOptions}
+        />
+        {posVariableType && (
+          <input
+            type="number"
+            min={-10}
+            value={posVariableCost}
+            onChange={(e) => setPosVariableCost(Number(e.target.value) || 0)}
+            className="w-10 num-themed text-center"
+          />
+        )}
+      </div>
 
       {/* slots */}
       {organized.slots.map((slot, idx) => {
         const draft = slots[idx];
-
         const variableType = getVariableCostType(engineSlots[idx]?.maneuver);
 
         return (
@@ -266,25 +296,22 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
               setValue={(v: string) => setSlotManeuver(idx, v)}
               options={maneuverOptions}
             />
-
             {variableType && (
               <input
                 type="number"
-                min={0}
                 value={draft?.variableCost ?? 0}
                 onChange={(e) =>
                   setSlotVariableCost(idx, Number(e.target.value) || 0)
                 }
-                className="w-20 num-themed text-center"
+                className="w-10 num-themed text-center"
               />
             )}
-
             {slots.length > MIN_SLOTS && (
               <button
                 onClick={() => removeSlot(idx)}
-                className="px-2 text-red-400"
+                className="px-2 transition-all text-red-400 hover:bg-red-500 hover:text-white py-1 hover:animate-pulse"
               >
-                ✕
+                X
               </button>
             )}
           </div>
@@ -292,21 +319,22 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
       })}
 
       {/* reset */}
-      <button
-        onClick={() => {
-          setPos("");
-          setSlots(
-            Array.from({ length: MIN_SLOTS }, () => ({
-              maneuverId: "",
-              variableCost: 0,
-            })),
-          );
-          clearDraft(character.id);
-        }}
-        className="w-full px-2 py-1 border border-cyan-400/30"
-      >
-        RESET
-      </button>
+      <div className="space-y-1">
+        <button
+          onClick={resetDraft}
+          className="border w-full border-cyan-800 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:border-cyan-100 hover:text-black"
+        >
+          RESET
+        </button>
+
+        {/* add slot */}
+        <button
+          onClick={addSlot}
+          className="border w-full border-cyan-800 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:border-cyan-100 hover:text-black"
+        >
+          ADD MANU
+        </button>
+      </div>
 
       {/* output */}
       <pre className="bg-black/30 p-2 whitespace-pre-wrap">{output}</pre>
@@ -329,18 +357,9 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
               gResist: gRes,
             },
           });
-
-          setPos("");
-          setSlots(
-            Array.from({ length: MIN_SLOTS }, () => ({
-              maneuverId: "",
-              variableCost: 0,
-            })),
-          );
-
-          clearDraft(character.id);
+          resetDraft();
         }}
-        className="w-full mt-2 px-3 py-2 border border-cyan-100/60"
+        className="border w-full border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
       >
         APPLY TURN
       </button>

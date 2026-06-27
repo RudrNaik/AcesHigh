@@ -76,7 +76,16 @@ export function getMasteryManus(character: CharacterData): string[] {
     intrinsics.find((p) => p.id === character.aircraft.aircraftId)?.intrinsic ||
     "";
 
-  return [manu1, manu2, manu3, intrinsic];
+  let masteryManuList: string[] = [manu1, manu2, manu3, intrinsic];
+
+  if (techs.tech1 !== "none") {
+    let advanced: string[] = manuList
+      .filter((m) => m.isAdvanced === true)
+      .map((m) => m.id);
+    masteryManuList = [...masteryManuList, ...advanced];
+  }
+
+  return masteryManuList;
 }
 
 export function getPerkManus(character: CharacterData): string[] {
@@ -208,7 +217,7 @@ export const getManeuverById = (maneuvers: Maneuver[], id: string) =>
 export const getPositioningManeuvers = (maneuvers: Maneuver[]) =>
   maneuvers.filter(
     (m) =>
-      m.type === "POSITIONING" &&
+      (m.type === "POSITIONING" || m.tags.includes("manuPOSTag")) &&
       m.id !== "manuExampleTech" &&
       m.id !== "exampleManu",
   );
@@ -217,6 +226,7 @@ export const getSelectableManeuvers = (maneuvers: Maneuver[]) =>
   maneuvers.filter(
     (m) =>
       m.type !== "POSITIONING" &&
+      !m.tags.includes("manuPOSTag") &&
       m.id !== "manuExampleTech" &&
       m.id !== "exampleManu",
   );
@@ -314,11 +324,11 @@ export const calculateTurn = ({
     e += activeEffects.discountCost;
 
     if (variableType === "energy") {
-      e -= variableCost;
+      e += variableCost; // signed delta: positive = gain, negative = lose
     }
 
     if (variableType === "cap") {
-      c -= variableCost;
+      c += variableCost;
     }
 
     const capCost = getManeuverCapacityCost(m);
@@ -362,11 +372,11 @@ export const formatManeuver = (slot: string, row: TurnRow) => {
   c -= getManeuverCapacityCost(m);
 
   if (variableType === "energy") {
-    e -= variableCost;
+    e += variableCost;
   }
 
   if (variableType === "cap") {
-    c -= variableCost;
+    c += variableCost;
   }
 
   const desc = m.desc ? `: ${m.desc}` : "";

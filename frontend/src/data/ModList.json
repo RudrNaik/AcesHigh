@@ -250,7 +250,7 @@
   {
     "id": "modBuddyFlares",
     "name": "Buddy Flares",
-    "desc": "Do the TGM thing. Gain a Manuever: Buddy Flares [REACT, CAP(1), DEFEND - 3]: Choose an Ally. They Defeat.",
+    "desc": "Do the TGM thing. Gain a Manuever: Buddy Flares [REACT, CAP(X, DEFEND - 3]: Choose an Ally. They Defeat X times.",
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": "manuBuddyFlare",
@@ -334,7 +334,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": ["ordSLOW"],
+    "AddTags": null,
     "checkForChars": null,
     "charChecked": null
   },
@@ -445,7 +445,7 @@
     "TypeMod": null,
     "AddManuID": null,
     "moduleTags": null,
-    "mods": ["ordMLTI", "ordIMP"],
+    "mods": null,
     "AddTags": null,
     "checkForChars": null,
     "charChecked": null
@@ -472,7 +472,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": ["ordHYPER"],
+    "AddTags": null,
     "checkForChars": null,
     "charChecked": null
   },
@@ -607,7 +607,7 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": ["ordSMOKE"],
+    "AddTags": null,
     "checkForChars": null,
     "charChecked": null
   },
@@ -709,7 +709,7 @@
     "TypeMod": null,
     "AddManuID": null,
     "moduleTags": null,
-    "mods": {"A2G": 1},
+    "mods": null,
     "AddTags": [
       "acVTOL"
     ],
@@ -751,7 +751,240 @@
     "AddManuID": null,
     "moduleTags": null,
     "mods": null,
-    "AddTags": ["ordGUIDE"],
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootAvi",
+    "name": "Enhanced Avionics (Loot)",
+    "desc": "Enhanced Avionics. Adds +1 A2A. Stacks.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootGMTI",
+    "name": "GMTI Radar (Loot)",
+    "desc": "Enhanced GMTI Radarset. Adds +1 A2G. Stacks",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootFlaps",
+    "name": "Improved Force Flaps (Loot)",
+    "desc": "Improved Force Flaps. Adds +1 Maneuverability. Stacks.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootCycle",
+    "name": "Improved Cycle Engines (Loot)",
+    "desc": "Improved Cycle Engines. Adds +1 Speed. Stacks.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Speed": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootArmor",
+    "name": "Armor Package (Loot)",
+    "desc": "Armor Package. Adds +1 Survivability. Stacks.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootPylons",
+    "name": "Enhanced Pylon Capacity (Loot)",
+    "desc": "Enhanced Pylon Capacity. Adds +1 Capacity. Stacks.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootTargetPod",
+    "name": "Targetting Pod",
+    "desc": "",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootMultilock",
+    "name": "Multilock Seekers",
+    "desc": "Add Multilock 2 to your Ordnance. Lose -2 Capacity and -1 Nerve.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": -2,
+      "Nerve": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootBurst",
+    "name": "Burst Warhead",
+    "desc": "Increase the Burst Step of your Ordnance by 1 Step. Lose -3 Capacity.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": -3
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootDangerous",
+    "name": "High Explosive Filler",
+    "desc": "Add Dangerous to your Ordnance. Lose -1 Survivability and Capacity",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": -1,
+      "CAP": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootRipple",
+    "name": "Weapon Series Enhancement",
+    "desc": "Add Ripple to your Ordnance. Lose -1 to Temper and Manu.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": -1,
+      "Temper": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootMini",
+    "name": "Miniturized Ordnance",
+    "desc": "Add the Mini and Weak tags to your Ordnance. Gain 2 Capacity.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootRecessed",
+    "name": "Recessed Weapon Mounts",
+    "desc": "Add Recessed to your Ordnance.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootKnife",
+    "name": "Enhanced Agility Pylons",
+    "desc": "Add the Knife and Maneuverable tags to your Ordnance.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootRanged",
+    "name": "Improved Sustainer Motors",
+    "desc": "Add Ranged to your Ordnance.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modLootDesignate",
+    "name": "Cooperation Pod",
+    "desc": "Add Designate to your Ordnance.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
     "checkForChars": null,
     "charChecked": null
   }
