@@ -25,10 +25,11 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Role",
-    "engCost": "0",
+    "engCost": "X",
     "tags": [
       "manuRoleM",
-      "manuPOSTag"
+      "manuPOSTag",
+      "manuX"
     ],
     "desc": "Reset your Energy to its start of combat value (usually Speed + 5). Exhaust."
   },
