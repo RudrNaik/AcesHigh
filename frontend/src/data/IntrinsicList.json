@@ -15,13 +15,13 @@
         "id": "intrFlanker",
         "name": "Made to Flank",
         "manuId": "n/a",
-        "desc": "Exploiting vulnerabilities is your jam. Whenever an Ally Overwatches or Baits, gain +1 while they do. This does not stack multiple times."
+        "desc": "Exploiting vulnerabilities is your jam. Whenever an Ally uses a Maneuver tagged with Distraction, you may gain Fragile. If you do, gain +1 Forward."
     },
     {
         "id": "intrLGG",
         "name": "LGG Rivalry",
         "manuId": "n/a",
-        "desc": "You've got a chip on your shoulder about not having a pound for air to ground. Whenever you Bait a Multirole, gain Lock On -- gain Lock On and Closure if it's a Multirole or Strike Eagle instead."
+        "desc": "You've got a chip on your shoulder about not having a pound for air to ground. Whenever you Bait a Multirole, gain Lock On -- gain Lock On and Closure if it's a Multirole or Strike aircraft in the Eagle Family instead."
     },
     {
         "id": "intrTheF15EIs",
@@ -51,7 +51,7 @@
         "id": "intrBHunter",
         "name": "Big Game Hunter",
         "manuId": "n/a",
-        "desc": "Whenever you deal damage to a massive target (sorry, future AWACS, define massive yourself), deal +1 Survivability damage to them."
+        "desc": "Whenever you deal damage to a massive target (sorry, future AWACS, define massive yourself), deal +1 Survivability damage to them. "
     },
     {
         "id": "intrThrush",
@@ -75,7 +75,7 @@
         "id": "intrAvengers",
         "name": "Avengers Assembled",
         "manuId": "n/a",
-        "desc": "Whenever an ally ground unit is endangered, you may burn a Temper. If you do, gain a Guaranteed Mixed Success.Snapshot."
+        "desc": "Whenever an ally ground unit is endangered, you may burn a Temper. If you do, gain a Guaranteed Mixed Success.Snapshot. "
     },
     {
         "id": "intrTreetop",
@@ -105,28 +105,28 @@
         "id": "intrDefense",
         "name": "Impassioned Defense",
         "manuId": "n/a",
-        "desc": "The first time in a Mission an Ally loses Survivability, you Gain a Guaranteed Mixed Success Snapshot."
+        "desc": "The first time in a Mission an Ally loses Survivability, you Gain a Guaranteed Mixed Success Snapshot. "
     },
     {
         "id": "intrMidway",
         "name": "Midway Design",
         "manuId": "manuTightFit",
-        "desc": "Gain [x] from the Family Techniques of the Pantheras as a Maneuver."
+        "desc": "Gain Tight Fit from the Family Techniques of the Pantheras as a Maneuver."
     },
     {
         "id": "intrMidwayRaf",
         "name": "Midway Design",
         "manuId": "manuBurning",
-        "desc": "Gain [x] from the Family Techniques of the Mirages as a Maneuver."
+        "desc": "Gain Burning Daylight from the Family Techniques of the Mirages as a Maneuver."
     },
     {
         "id": "intrEjection",
         "name": "Ejection Pit",
         "manuId": "n/a",
-        "desc": "You no longer have to Burn a Coin whenever you Enter a Critical State through Fixing or Risking the Odds, but immediately eject."
+        "desc": "When you Enter a Critical State, you immediately eject. Do not Fix or Risk the Odds and do not roll on the Injury Table. This is not optional."
     },
     {
-        "id": "intrSupersonic",
+        "id": "intrSuperStick",
         "name": "Supersonic Stick",
         "manuId": "n/a",
         "desc": "At the start of your turn, you may make a Speed Test. If you Pass, gain an additional Maneuver this turn."
@@ -147,13 +147,13 @@
         "id": "intrCrusader",
         "name": "You Are Not Prepared",
         "manuId": "n/a",
-        "desc": "Whenever you have a midflight update, choose Titans or Demons. If you choose Titans, recover a Survivability; if you choose Demons, recover a Temper and a G-Resist. Exhaust."
+        "desc": "Whenever you have a midflight update, choose Titans or Demons. If you choose Titans, recover a Survivability; if you choose Demons, recover a Temper and a G-Resist. Exhaust. "
     },
     {
         "id": "intrLeaf",
         "name": "Leaf Dancing",
         "manuId": "n/a",
-        "desc": "Light like a leaf on the wind. You may let yourself be jostled by the forces around yourself and Face Appropriate Consequences -- but gain +1 Manuverability and Speed for two turns. Exhaust."
+        "desc": "Light like a leaf on the wind. You may let yourself be jostled by the forces around yourself and Face Appropriate Consequences -- but gain +1 Manuverability and Speed for two turns. Exhaust. "
     },
     {
         "id": "intrEvilEye",
@@ -189,13 +189,13 @@
         "id": "intrMonsoon",
         "name": "Monsoon Warning",
         "manuId": "n/a",
-        "desc": "Whenever the winds are about to turn for worse, you know how to prepare. A turn after a mid-mission update, choose Stained Time or Soul's DNA. If you choose Stained Time, Suffer E3 Consequences but gain an extra turn; if you choose Soul's DNA, unexhaust a Maneuver."
+        "desc": "Whenever the winds are about to turn for worse, you know how to prepare. A turn after a mid-mission update, choose Stained Time or Soul's DNA. If you choose Stained Time, Suffer E3 Consequences but gain an extra turn; if you choose Soul's DNA, unexhaust a Maneuver. "
     },
     {
         "id": "intrLeadSled",
         "name": "Lead Sled",
         "manuId": "n/a",
-        "desc": "You may give yourself a minor injury during flight. If you do, take -1 Forward, but gain 1 Energy. You can only gain the mechanical benefits twice per mission."
+        "desc": "You may give yourself a minor injury during flight. If you do, take -1 Forward, but gain 1 Energy. You can only gain the mechanical benefits twice per mission. "
     },
     {
         "id": "intrHoldingHands",

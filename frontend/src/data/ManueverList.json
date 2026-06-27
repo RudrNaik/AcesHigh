@@ -64,7 +64,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Role",
-    "engCost": "-2",
+    "engCost": "2",
     "tags": [
       "manuRoleE"
     ],
@@ -155,7 +155,9 @@
     "isAdvanced": false,
     "type": "Positioning",
     "engCost": "X",
-    "tags": [],
+    "tags": [
+      "manuX"
+    ],
     "desc": "Spend Energy down to your stall and retreat back to base. If you’re resupplying, you return to the fight in 7 turns, minus the Energy spent (minimum 1 turn.)"
   },
   {
@@ -180,8 +182,7 @@
     "type": "Exhaust",
     "engCost": "0",
     "tags": [
-      "manuTrick",
-      "manuDiscount"
+      "manuTrick"
     ],
     "desc": "Discount your next Maneuver by 1 Energy."
   },
@@ -307,7 +308,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "1",
-    "tags": [],
+    "tags": [
+      "manuDistract"
+    ],
     "desc": "Choose a target. Gain {Locked}, grant an Ally Catch."
   },
   {
@@ -339,7 +342,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "2",
-    "tags": [],
+    "tags": [
+      "manuDistract"
+    ],
     "desc": "Spend X Reflex. Choose X enemy targets. On their next turn, at least one action has to target you."
   },
   {
@@ -422,22 +427,7 @@
     "tags": [
       "manuAttack",
       "manuMAP",
-      "manuCap"
-    ],
-    "desc": "Make an Attack."
-  },
-  {
-    "id": "manuShootOrd",
-    "name": "Shoot w/Ord",
-    "isCommon": true,
-    "isAdvanced": false,
-    "type": "Normal",
-    "engCost": "4",
-    "tags": [
-      "manuAttack",
-      "manuMAP",
-      "manuORD",
-      "manuCap"
+      "manuORD"
     ],
     "desc": "Make an Attack."
   },
@@ -655,7 +645,9 @@
     "isAdvanced": true,
     "type": "Reaction",
     "engCost": "3",
-    "tags": [],
+    "tags": [
+      "manuDistract"
+    ],
     "desc": "Whenever, choose an Ally with any amount of {Locked}. Change the target of up to two stacks to you, and gain Catch."
   },
   {
@@ -742,7 +734,7 @@
     "tags": [
       "manuAttack"
     ],
-    "desc": "[ATTACK, MAP - 4] Make an Attack. The next AOA Maneuver you use gains Mitigate Consequences.  "
+    "desc": "[ATTACK, MAP - 4] Make an Attack. The next AOA Maneuver you use grants you {Mitigate}.  "
   },
   {
     "id": "manuRFM",
@@ -756,7 +748,7 @@
       "manuMAP",
       "manuTrick"
     ],
-    "desc": "[REACT, CAP, MAP - 2] Requires a Manuverable or Knife Weapon. Whenever you are threatened, you may make an attack against that threat."
+    "desc": "[REACT, CAP(1), TRICK, MAP - 2] Requires a Manuverable or Knife Weapon. Whenever have Locked, you may make an Attack against the target Locking you. "
   },
   {
     "id": "manuEyeChakra",
@@ -765,8 +757,10 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": [],
-    "desc": "[REACT - 0] Whenever, use any AOA Maneuver. This Maneuver doesn't count towards your Maneuver limit.  Exhaust."
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "[REACT - 0] Whenever, use any AOA Maneuver. Exhaust."
   },
   {
     "id": "manuThreeStroke",
@@ -1373,7 +1367,9 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "2",
-    "tags": [],
+    "tags": [
+      "manuDistract"
+    ],
     "desc": "Whenever an ally would fail a Pilot Stat Check, you may spend a Reflex to let them reroll. Fatigue."
   },
   {
@@ -1517,8 +1513,10 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": [],
-    "desc": "[REACT - 0] Whenever you Spend or Check a Pilot Stat, you may use your Ace Type stat instead. This doesn’t count as a Maneuver. Additionally, you may use the chosen stat instead of one other when you calculate your Stress track."
+    "tags": [
+      "manuTrick"
+    ],
+    "desc": "[REACT, TRICK - 0] Whenever you Spend or Check a Pilot Stat, you may use your Ace Type stat instead."
   },
   {
     "id": "manuDefensive",
@@ -1559,7 +1557,6 @@
     "engCost": "X",
     "tags": [
       "manuORD",
-      "manuCapX",
       "manuX"
     ],
     "desc": "Spend X Capacity and choose X ground targets close to each other. Make an Attack, use that roll result for all of them. Any of your targets that aren’t destroyed must take an action to get out of cover when they next act. Exhaust."
@@ -1829,7 +1826,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "-2",
     "tags": [
       "manuCap"
     ],
@@ -1926,7 +1923,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "X",
-    "tags": [],
+    "tags": [
+      "manuX"
+    ],
     "desc": "Spend X Energy, where X is 2 * your current Gunslinger die value. Set the Gunslinger die to 0, gaining Snapshot a number of times equal to X; these Gain [MAP]."
   },
   {
@@ -2005,7 +2004,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "-2",
     "tags": [],
     "desc": "Gain 2 Energy. This turn, you may use Joust whenever an Ally gains a stack of Locked, instead of just you."
   },
@@ -2036,7 +2035,9 @@
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "x",
-    "tags": [],
+    "tags": [
+      "manuX"
+    ],
     "desc": "Choose another Maneuver that costs up to X Energy. Gain it as a 0-cost Exhaust at the start of your next turn. If it’s an X cost maneuver, resolve it based on how much energy this Maneuver cost."
   },
   {
@@ -2331,7 +2332,8 @@
     "type": "Reaction",
     "engCost": "x",
     "tags": [
-      "manuCap"
+      "manuCap",
+      "manuX"
     ],
     "desc": "Whenever an Ally uses a Maneuver you can’t, you may gain the ability to use that until the end of your next turn. X is equal to the energy cost of the target Maneuver before reductions. Exhaust."
   },

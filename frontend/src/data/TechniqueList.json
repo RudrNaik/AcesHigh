@@ -32,21 +32,21 @@
         "name": "Bell Toller",
         "family": "acFamCrane",
         "maneuverId": "manuBellToller",
-        "description": "[ATTACK, MAP - 4] Make an Attack. The next AOA Maneuver you use gains Mitigate Consequences."
+        "description": "[ATTACK, MAP - 4] Make an Attack. The next AOA Maneuver you use grants you {Mitigate}.  "
     },
     {
         "id": "techRFM",
         "name": "Reverse-Firing Missiles",
         "family": "acFamCrane",
         "maneuverId": "manuRFM",
-        "description": "[REACT, CAP, MAP - 2] Requires a Manuverable or Knife Weapon. Whenever you are threatened, you may make an attack against that threat. This does not take a Maneuver slot."
+        "description": "[REACT, CAP(1), TRICK, MAP - 2] Requires a Manuverable or Knife Weapon. Whenever have Locked, you may make an Attack against the target Locking you. "
     },
     {
         "id": "techEyeChakra",
         "name": "Eye of the Chakra",
         "family": "acFamCrane",
         "maneuverId": "manuEyeChakra",
-        "description": "[REACT - 0] Whenever, use any AOA Maneuver. This Maneuver doesn't count towards your Maneuver limit. Exhaust."
+        "description": "[REACT. TRICK - 0] Whenever, use any AOA Maneuver. Exhaust."
     },
     {
         "id": "techThreeStrokes",
@@ -60,7 +60,7 @@
         "name": "Higher Highs, Lower Lows",
         "family": "acFamViper",
         "maneuverId": "manuHHLL",
-        "description": "[REACT - 3] Whenever you Jettison the Excess, choose one of [Interdiction] or [Alley Fighter]. You gain its effects until the start of your next turn."
+        "description": "[REACT - 3] Whenever you Jettison the Excess, choose one of [Interdiction] or [Alley Fighter]. You gain its effects until the start of your next turn. "
     },
     {
         "id": "techRedGlint",
@@ -88,13 +88,13 @@
         "name": "High Turbulence",
         "family": "acFamWindstorm",
         "maneuverId": "manuHighTurb",
-        "description": "[3] - Make a hard turn. You may spend any amount of G-Resist; for every 2 G-Resist spent, gain one extra Reaction Maneuver this turn. This Maneuver doesn't count towards your Maneuver limit."
+        "description": "[3] - Make a hard turn. You may spend any amount of G-Resist; for every 2 G-Resist spent, gain one extra Reaction Maneuver this turn. This Maneuver doesn't count towards your Maneuver limit. "
     },
     {
         "id": "techHiddenAny",
         "name": "Hidden Anywhere",
         "family": "acFamSvea",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "Your aircraft gains STOL. Once per mission, you may ask the AWACS if there is a highway nearby; if there is, you can create a resupply point there for any aircraft with STOL or VTOL. If there isn't, gain Meld."
     },
     {
@@ -102,7 +102,7 @@
         "name": "Kraken",
         "family": "acFamSvea",
         "maneuverId": "manuKraken",
-        "description": "[ATTACK - 4] Make an Attack against up to four targets, but apply MAP. If you choose three or more targets, make the roll with Disadvantage instead."
+        "description": "[ATTACK - 4] Make an Attack against up to four targets, but apply MAP. If you choose three or more targets, make the roll with Disadvantage instead. "
     },
     {
         "id": "techSelkie",
@@ -136,7 +136,7 @@
         "id": "techMaverick",
         "name": "Not Just a Maverick",
         "family": "acFamVespers",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "You may spend Capacity for any other Vesper."
     },
     {
@@ -144,7 +144,7 @@
         "name": "Buddy Flares",
         "family": "acFamVespers",
         "maneuverId": "manuBuddyFlare",
-        "description": "[CAP, REACT - 1] Whenever an ally Faces Consequences, you may Mitigate them. If you do, you face them instead."
+        "description": "Do the TGM thing. Gain a Manuever: Buddy Flares [REACT, CAP(X), DEFEND - 3]: Choose an Ally. They Defeat X times."
     },
     {
         "id": "techNoseOnHim",
@@ -157,7 +157,7 @@
         "id": "techAnonymity",
         "name": "Anonymity Abuser",
         "family": "acFamPantheras",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "You fly a generic bird. Once per mission, if your flight would be identified as important somehow, gain a Narrative Boon and a Snapshot against whatever target is trying to ID you."
     },
     {
@@ -199,7 +199,7 @@
         "id": "techScattershot",
         "name": "Scattershot",
         "family": "acFamRooks",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "Whenever you use an Ordnance with Ripple, you may have it gain Imprecise. If you do, choose one: it gains Ranged, or recover 1 Energy."
     },
     {
@@ -227,14 +227,14 @@
         "id": "techOasisOracle",
         "name": "Oasis Oracle",
         "family": "acFamMirages",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "At the start of each mission, roll a D6. You may use it at any point to replace a roll for 1E, CAP(1). Whenever you Withdraw to Resupply, gain another D6."
     },
     {
         "id": "techMagidMissile",
         "name": "Magic Missile",
         "family": "acFamMirages",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "You may ignore your first Capacity usage per mission on an [ATTACK] or Ordnance usage if it's a standard missile."
     },
     {
@@ -248,8 +248,8 @@
         "id": "techCostumier",
         "name": "Costumier",
         "family": "acFamTomcats",
-        "maneuverId": "n/a",
-        "description": "You fly a recognizable bird. At the start of the mission, the AWACS Holds Narrative Consequences; when they get revealed, you gain Closure or Lock On. If you spend a Capacity, gain Snapshot instead."
+        "maneuverId": "",
+        "description": "You fly a recognizable bird. At the start of the mission, the AWACS Holds Narrative Consequences; when they get revealed, you gain Closure or Lock On. If you spend a Capacity, gain Snapshot instead. "
     },
     {
         "id": "techDemon",
@@ -290,14 +290,14 @@
         "id": "techTruffle",
         "name": "Truffle Hunter",
         "family": "acFamVarks",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "Any time that flying at a low altitude would require a Manuverability or Pilot Check, you may spend a Capacity. If you do, you Succeed."
     },
     {
         "id": "techMined",
         "name": "Wasn't Mine(d)",
         "family": "acFamVarks",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "Whenever you Employ a Dubious Ordnance, an ally gets a chance to call you out on it. If they do, you gain Catch but face Minor Narrative Consequences. If no one does, you gain Lock On."
     },
     {
@@ -305,14 +305,14 @@
         "name": "Common Core Curriculum",
         "family": "acFamVanguard",
         "maneuverId": "manuCCC",
-        "description": "[REACT - 2] Whenever you spend a Capacity on a non-Ordnance expenditure, flip a coin. On a heads, recover it. You may only recover a total of three Capacity per mission this way."
+        "description": "[REACT - 2] Whenever you spend a Capacity on a non-Ordnance expenditure, flip a coin. On a heads, recover it. You may only recover a total of three Capacity per mission this way. "
     },
     {
         "id": "techNoOrdnance",
         "name": "No Ordnance Left Behind",
         "family": "acFamVanguard",
-        "maneuverId": "n/a",
-        "description": "Lose -1 Manu and Speed. Bring a Second Ordnance. You can't bring a third Ordnance."
+        "maneuverId": "",
+        "description": "Lose -1 Manu and Speed. Bring a Second Ordnance. You can't bring a third Ordnance. "
     },
     {
         "id": "techMPA",
@@ -326,7 +326,7 @@
         "name": "Peace of Mind",
         "family": "acFamPearls",
         "maneuverId": "manuPeaceOfMind",
-        "description": "[POS] Recover a Temper, Nerve, and Reaction. Exhaust."
+        "description": "[POS] Recover a Temper, Nerve, and Reaction. Exhaust. "
     },
     {
         "id": "techZenful",
@@ -353,7 +353,7 @@
         "id": "techLeftThere",
         "name": "Left There Yesterday",
         "family": "acFamFrees",
-        "maneuverId": "n/a",
+        "maneuverId": "",
         "description": "You are always at the start of Initative. At the start of your first turn, Gain Closure."
     },
     {
@@ -382,7 +382,7 @@
         "name": "Hound's Tooth",
         "family": "acFamWolves",
         "maneuverId": "manuHounds",
-        "description": "[ATTACK, MAP - 4] Make an Attack. Any ally who attacks that Target next round gains Lock-On."
+        "description": "[ATTACK, MAP - 4] Make an Attack. Any ally who attacks that Target next round gains Lock-On. "
     },
     {
         "id": "techLiXingQing",
@@ -396,7 +396,7 @@
         "name": "Round Robin",
         "family": "acFamPhantoms",
         "maneuverId": "manuRoundRobin",
-        "description": "[POS] Whenever you give an ally an Exhaust Maneuver this turn,\n- If you gave them Snapshot, Gain Closure.\n- If you gave them any other Maneuver, Gain Lock On."
+        "description": "[POS] Whenever you give an ally an Exhaust Maneuver this turn,\n- If you gave them Snapshot, Gain Closure.\n- If you gave them any other Maneuver, Gain Lock On. "
     },
     {
         "id": "techShowtime",
@@ -417,7 +417,7 @@
         "name": "Picky Eaters",
         "family": "acFamSwallows",
         "maneuverId": "manuPicky",
-        "description": "[REACT - 1] Whenever you roll a Mixed Success, you may choose to Negate Consequences. If you do, you gain no benefits of the Success, but you also recover a Pilot Stat. Exhaust."
+        "description": "[REACT - 1] Whenever you roll a Mixed Success, you may choose to Negate Consequences. If you do, you gain no benefits of the Success, but you also recover a Pilot Stat. Exhaust. "
     },
     {
         "id": "techFlocks",
@@ -466,6 +466,6 @@
         "name": "Keep an Eye On That",
         "family": "acFamRogues",
         "maneuverId": "manuEyeOnThat",
-        "description": "[REACT - 2] Whenever you give an Ally Lock On, give them Lock On again. This Maneuver doesn’t count towards your Maneuver limit."
+        "description": "[REACT - 2] Whenever you give an Ally Lock On, give them Lock On again. This Maneuver doesn’t count towards your Maneuver limit. "
     }
 ]

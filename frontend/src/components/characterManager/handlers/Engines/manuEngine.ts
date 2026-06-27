@@ -76,7 +76,16 @@ export function getMasteryManus(character: CharacterData): string[] {
     intrinsics.find((p) => p.id === character.aircraft.aircraftId)?.intrinsic ||
     "";
 
-  return [manu1, manu2, manu3, intrinsic];
+  let masteryManuList: string[] = [manu1, manu2, manu3, intrinsic];
+
+  if (techs.tech1 !== "none") {
+    let advanced: string[] = manuList
+      .filter((m) => m.isAdvanced === true)
+      .map((m) => m.id);
+    masteryManuList = [...masteryManuList, ...advanced];
+  }
+
+  return masteryManuList;
 }
 
 export function getPerkManus(character: CharacterData): string[] {

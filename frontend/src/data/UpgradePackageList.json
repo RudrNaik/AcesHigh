@@ -26,8 +26,8 @@
     "charChecked": null
   },
   {
-    "id": "upCharlie",
-    "name": "Charlie Don't Surf",
+    "id": "upCharlieA",
+    "name": "Charlie Don't Surf (Ends in A)",
     "desc": "Gain +2 Capacity. If the planes name currently ends in A, then it also gains +2 A2A. It now ends in C.\n",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -42,8 +42,8 @@
     "charChecked": null
   },
   {
-    "id": "upCharlieC",
-    "name": "Charlie Don't Surf C Version",
+    "id": "upCharlie",
+    "name": "Charlie Don't Surf (Doesn't End In A)",
     "desc": "Gain +2 Capacity. If the planes name currently ends in A, then it also gains +2 A2A. It now ends in C.\n",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -58,7 +58,7 @@
   },
   {
     "id": "upSlam",
-    "name": "Slam Package",
+    "name": "Slam Package (Conversion)",
     "desc": "Convert any aircraft into a Strike Craft. If it is already a Strike Craft, gain +1 Survivability and +1 A2G.",
     "IntrinsicMod": null,
     "TypeMod": "Strike",
@@ -71,7 +71,7 @@
   },
   {
     "id": "upSlamStrike",
-    "name": "Slam Package Strike version",
+    "name": "Slam Package (Already in a Strike Craft)",
     "desc": "Convert any aircraft into a Strike Craft. If it is already a Strike Craft, gain +1 Survivability and +1 A2G.",
     "IntrinsicMod": null,
     "TypeMod": "Strike",
@@ -87,7 +87,7 @@
   },
   {
     "id": "upXC",
-    "name": "X Package -> C",
+    "name": "X Package (Ends in C)",
     "desc": "If a plane ends in E, gain +1 A2A, +2 Capacity, and +1 Survivability. If it ends in C, gain +2 Survivability and +2 A2A. Then add an X to the end of its name.",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -98,12 +98,12 @@
       "Surv": 2
     },
     "AddTags": null,
-    "checkForChars": "End",
-    "charChecked": "C"
+    "checkForChars": null,
+    "charChecked": null
   },
   {
     "id": "upXE",
-    "name": "X Package -> E",
+    "name": "X Package (Ends in E)",
     "desc": "If a plane ends in E, gain +1 A2A, +2 Capacity, and +1 Survivability. If it ends in C, gain +2 Survivability and +2 A2A. Then add an X to the end of its name.",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -115,12 +115,12 @@
       "CAP": 2
     },
     "AddTags": null,
-    "checkForChars": "End",
-    "charChecked": "E"
+    "checkForChars": null,
+    "charChecked": null
   },
   {
     "id": "upKai",
-    "name": "EJ-Kai Package",
+    "name": "EJ-Kai Package (No Matchign Tags)",
     "desc": "Gain AOA and Multicrew. If you already had one, gain +1 A2A. If you had both, gain +1 A2A and +1 A2G",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -136,7 +136,7 @@
   },
   {
     "id": "upKai1Tag",
-    "name": "EJ-Kai Package with one tag",
+    "name": "EJ-Kai Package (1 Matching Tag)",
     "desc": "Gain AOA and Multicrew. If you already had one, gain +1 A2A. If you had both, gain +1 A2A and +1 A2G",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -154,7 +154,7 @@
   },
   {
     "id": "upKai2Tag",
-    "name": "EJ-Kai Package with both tags",
+    "name": "EJ-Kai Package (2 Matching Tags)",
     "desc": "Gain AOA and Multicrew. If you already had one, gain +1 A2A. If you had both, gain +1 A2A and +1 A2G",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -218,7 +218,7 @@
   },
   {
     "id": "upSMFlank",
-    "name": "SM Package Flanker",
+    "name": "SM Package (Flanker Instrinic)",
     "desc": "Gain +2 Capacity. Additionally: If you're in a Flanker gain +1A2A. If you have Not Just a Flanker, gain +1 Speed but lose -1A2G",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -234,7 +234,7 @@
   },
   {
     "id": "upSMNJAF",
-    "name": "SM Package Not Just a Flanker",
+    "name": "SM Package (Not Just a Flanker Intrinsic)",
     "desc": "Gain +2 Capacity. Additionally: If you're in a Flanker gain +1A2A. If you have Not Just a Flanker, gain +1 Speed but lose -1A2G",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -276,6 +276,7 @@
       "CAP": -1
     },
     "AddTags": [
+      "acMCREW",
       "acMCREW"
     ],
     "checkForChars": null,
@@ -303,7 +304,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": "upTarget",
+    "moduleTags": [
+      "upTarget"
+    ],
     "mods": {
       "A2G": 1
     },
@@ -315,20 +318,88 @@
   },
   {
     "id": "upMPack",
-    "name": "M Package",
-    "desc": "Liz if you make this name dependent again I will kill you",
+    "name": "M Package (None)",
+    "desc": "Replace your end letter with an M (or add it if it didn't have one before). \nIf it had no letter, gain +1 to A2A and Speed. \nIf you replaced an A, gain +1 Surv and A2A.\nIf you replaced a B, gain +2 Capacity and +1 Surv.\nIf you replaced a C, gain +1 A2G and +1 Manu.\nIf you replaced an E, gain +1 to A2A, Manu, and Speed.",
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
     "moduleTags": null,
-    "mods": null,
+    "mods": {
+      "A2A": 1,
+      "Speed": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upMPackA",
+    "name": "M Package (A)",
+    "desc": "Replace your end letter with an M (or add it if it didn't have one before). \nIf it had no letter, gain +1 to A2A and Speed. \nIf you replaced an A, gain +1 Surv and A2A.\nIf you replaced a B, gain +2 Capacity and +1 Surv.\nIf you replaced a C, gain +1 A2G and +1 Manu.\nIf you replaced an E, gain +1 to A2A, Manu, and Speed.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "Surv": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upMPackB",
+    "name": "M Package (B)",
+    "desc": "Replace your end letter with an M (or add it if it didn't have one before). \nIf it had no letter, gain +1 to A2A and Speed. \nIf you replaced an A, gain +1 Surv and A2A.\nIf you replaced a B, gain +2 Capacity and +1 Surv.\nIf you replaced a C, gain +1 A2G and +1 Manu.\nIf you replaced an E, gain +1 to A2A, Manu, and Speed.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Surv": 1,
+      "CAP": 2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upMPackC",
+    "name": "M Package (C)",
+    "desc": "Replace your end letter with an M (or add it if it didn't have one before). \nIf it had no letter, gain +1 to A2A and Speed. \nIf you replaced an A, gain +1 Surv and A2A.\nIf you replaced a B, gain +2 Capacity and +1 Surv.\nIf you replaced a C, gain +1 A2G and +1 Manu.\nIf you replaced an E, gain +1 to A2A, Manu, and Speed.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1,
+      "Manu": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upMPackE",
+    "name": "M Package (E)",
+    "desc": "Replace your end letter with an M (or add it if it didn't have one before). \nIf it had no letter, gain +1 to A2A and Speed. \nIf you replaced an A, gain +1 Surv and A2A.\nIf you replaced a B, gain +2 Capacity and +1 Surv.\nIf you replaced a C, gain +1 A2G and +1 Manu.\nIf you replaced an E, gain +1 to A2A, Manu, and Speed.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "Manu": 1,
+      "Speed": 1
+    },
     "AddTags": null,
     "checkForChars": null,
     "charChecked": null
   },
   {
     "id": "upChasing",
-    "name": "Chasing The Wind Package",
+    "name": "Chasing The Wind Package (Doesn't end in A)",
     "desc": "Gain +1 Survivability. If the plane's name currently ends in A, then it also gains +1 A2G. It now ends in C.",
     "IntrinsicMod": null,
     "TypeMod": null,
@@ -343,7 +414,7 @@
   },
   {
     "id": "upChasingA",
-    "name": "Chasing The Wind Package A Version",
+    "name": "Chasing The Wind Package (Ends in A)",
     "desc": "Gain +1 Survivability. If the plane's name currently ends in A, then it also gains +1 A2G. It now ends in C.",
     "IntrinsicMod": null,
     "TypeMod": null,
