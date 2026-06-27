@@ -491,6 +491,16 @@
     "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
   },
   {
+    "id": "manuTroika",
+    "name": "Troika",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [],
+    "desc": "Mark a point of Stress in either Stress Track, then make an appropriate Pilot Stat Check (Nerve or Temper for Mental, Reflex or G-Resist for Physical). On a Failure, do nothing. On a Mixed, Defeat, but take -1 Forward. On a Full, Defeat 1, and on a Perfect, Defeat and Mitigate."
+  },
+  {
     "id": "manuCobra",
     "name": "Cobra",
     "isCommon": true,
@@ -554,7 +564,9 @@
     "isAdvanced": true,
     "type": "Positioning",
     "engCost": "X",
-    "tags": ["manuX"],
+    "tags": [
+      "manuX"
+    ],
     "desc": "Spend X Energy. Gain {Mitigate} X times."
   },
   {
