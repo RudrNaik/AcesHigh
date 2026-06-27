@@ -98,8 +98,10 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "-4",
-    "tags": [],
+    "engCost": "X",
+    "tags": [
+      "manuX"
+    ],
     "desc": "Gain up to 4 Energy."
   },
   {
@@ -108,9 +110,10 @@
     "isCommon": true,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "-7",
+    "engCost": "X",
     "tags": [
-      "manuCap"
+      "manuCap",
+      "manuX"
     ],
     "desc": "Gain up to 7 Energy. Fatigue."
   },
@@ -519,8 +522,8 @@
     "isCommon": false,
     "isAdvanced": true,
     "type": "Positioning",
-    "engCost": "0",
-    "tags": [],
+    "engCost": "X",
+    "tags": ["manuX"],
     "desc": "Spend X Energy. Gain {Mitigate} X times."
   },
   {

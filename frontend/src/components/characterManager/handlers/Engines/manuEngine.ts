@@ -323,11 +323,11 @@ export const calculateTurn = ({
     e += activeEffects.discountCost;
 
     if (variableType === "energy") {
-      e -= variableCost;
+      e += variableCost; // signed delta: positive = gain, negative = lose
     }
 
     if (variableType === "cap") {
-      c -= variableCost;
+      c += variableCost;
     }
 
     const capCost = getManeuverCapacityCost(m);
@@ -371,11 +371,11 @@ export const formatManeuver = (slot: string, row: TurnRow) => {
   c -= getManeuverCapacityCost(m);
 
   if (variableType === "energy") {
-    e -= variableCost;
+    e += variableCost;
   }
 
   if (variableType === "cap") {
-    c -= variableCost;
+    c += variableCost;
   }
 
   const desc = m.desc ? `: ${m.desc}` : "";
