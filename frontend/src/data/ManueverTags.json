@@ -20,6 +20,11 @@
         "desc": "Has a variable Energy Cost"
     },
     {
+        "id": "manuAOA",
+        "name":"AOA",
+        "desc": "Requires you to have an aircraft with an AOA Tag"
+    },
+    {
         "id": "manuStressM",
         "name": "Stress (MNTL)",
         "desc": "Adds a Mental Stress when used"
