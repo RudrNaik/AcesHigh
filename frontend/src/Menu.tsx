@@ -28,7 +28,7 @@ const bootLines: string[] = [
   "                  @@@@@@@@@@@@@@@@                      ",
   "                  @@@@@@@@@@@@@@@@                      ",
   "                  @@@@@@@@@@@@@@@@                      ",
-  "                 @@@@@@@@  @@@@@@@              @@      ",
+  "                 @@@@@@      @@@@@              @@      ",
   "                 @@@@          @@@@          @@@        ",
   "                 @@@            @@@    @@@@@@@          ",
   "                @@@@            @@@       @@            ",
@@ -141,7 +141,7 @@ function TerminalPage() {
                 subtitle="AWACS Command and Control Systems"
                 icon="🗊"
                 onHover={handleHover}
-                link="/AWACS"
+                link="/InDev"
               />
             </motion.div>
 
