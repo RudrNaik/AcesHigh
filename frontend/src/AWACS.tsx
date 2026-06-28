@@ -31,7 +31,7 @@ function CampaignManager() {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="lg:px-10 mx-auto font-mono lg:py-8">
+      <div className="lg:px-10 mx-auto   lg:py-8">
         {!activeCampaign ? (
           <CampaignSelect
             campaigns={campaigns}

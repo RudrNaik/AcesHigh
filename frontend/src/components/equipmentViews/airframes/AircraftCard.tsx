@@ -58,7 +58,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
         border-l-4
         transition-all
         duration-100
-        font-mono
+         
       "
     >
       {/* Header */}

@@ -44,7 +44,7 @@ function LicenseView({
   ];
 
   return (
-    <div className="space-y-6 font-mono text-xs">
+    <div className="space-y-6   text-xs">
       {/* RP */}
       <div className="border-l-4 border border-cyan-100 bg-black/20 p-4 flex flex-row gap-5">
         <div>

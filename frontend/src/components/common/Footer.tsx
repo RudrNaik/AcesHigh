@@ -4,7 +4,7 @@ import icon from "../../assets/aces_high_logo_wordmark.svg"
 
 const Footer = () => {
     return (
-        <footer className="relative z-10 scroll-anchor-none bg-black text-cyan-100 py-4 font-mono">
+        <footer className="relative z-10 scroll-anchor-none bg-black text-cyan-100 py-4  ">
             <div className="max-w-screen mx-auto text-center">
 
                 {/* Logo */}

@@ -5,7 +5,7 @@ function InDevPage() {
     >
       <div className="py-30"></div>
       <div className="z-10 grid h-full place-items-center text-center text-white drop-shadow">
-        <div className="font-mono border-cyan-600 border-l-4 pl-1 text-xl bg-black/60 py-1 px-2">
+        <div className="  border-cyan-600 border-l-4 pl-1 text-xl bg-black/60 py-1 px-2">
           <span className="text-4xl">501</span>
           <br />
           <span className="text-sm">

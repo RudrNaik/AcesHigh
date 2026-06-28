@@ -41,7 +41,7 @@ function UpgradePackageSlot({ character, onSelect }: UpgradePackageSlotProps) {
   return (
     <div
       className={`
-        border p-4 font-mono space-y-3 transition-all bg-black/20
+        border p-4   space-y-3 transition-all bg-black/20
         ${
           equipped
             ? "border-cyan-100 border-l-4 border-l-cyan-100"

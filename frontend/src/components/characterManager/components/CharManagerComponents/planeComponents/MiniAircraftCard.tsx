@@ -112,7 +112,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
       id={aircraft.id}
       className="
         bg-black/20 border border-cyan-100 p-4 border-l-4
-        transition-all duration-100 font-mono
+        transition-all duration-100  
       "
     >
       {/* Header */}

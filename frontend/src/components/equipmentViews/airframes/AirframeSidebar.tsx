@@ -64,7 +64,7 @@ function AirframeSidebar({
             lg:border
             border-cyan-100
             p-5
-            font-mono
+             
           "
         >
           {/* Mobile Header */}

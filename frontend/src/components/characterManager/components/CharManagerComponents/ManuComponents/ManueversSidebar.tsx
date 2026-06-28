@@ -54,7 +54,7 @@ function ManeuverSidebar({
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
-        <div className="h-full flex flex-col p-5 font-mono">
+        <div className="h-full flex flex-col p-5  ">
           {/* Header */}
           <div className="flex justify-between mb-3">
             <h2 className="text-xl font-bold"></h2>

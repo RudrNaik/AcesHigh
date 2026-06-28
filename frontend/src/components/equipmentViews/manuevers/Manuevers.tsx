@@ -49,7 +49,7 @@ function Maneuvers() {
             bg-black/20
             border border-cyan-100
             px-4 py-3
-            text-sm font-mono
+            text-sm  
           "
         >
           FILTER

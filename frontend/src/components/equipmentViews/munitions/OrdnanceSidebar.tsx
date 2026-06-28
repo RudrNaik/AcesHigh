@@ -65,7 +65,7 @@ function OrdnanceSidebar({
             border-cyan-100
             lg:border-l-4
             p-5
-            font-mono
+             
           "
         >
           {/* Mobile Header */}

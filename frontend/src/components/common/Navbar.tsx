@@ -37,11 +37,11 @@ const Navbar = ({}) => {
         ${scrolled ? "bg-black/80 shadow-md border-b border-cyan-100" : "bg-black/20 shadow-md"}
       `}
     >
-      <div className="flex items-center relative w-full font-mono">
+      <div className="flex items-center relative w-full  ">
         <img src={icon} alt="Logo" className="h-20 pl-5 py-2" />
 
         {/* Normal Navigation Links for desktop, hides when less than md in size. */}
-        <ul className="hidden md:flex space-x-6 pl-5 py-8 font-mono">
+        <ul className="hidden md:flex space-x-6 pl-5 py-8  ">
           <li>
             <Link
               to="/"
@@ -108,7 +108,7 @@ const Navbar = ({}) => {
 
       <div
         id="mobile-nav"
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 font-mono ${
+        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300   ${
           hamburgerOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -146,6 +146,9 @@ const Navbar = ({}) => {
             >
               [↳] Equipment
             </Link>
+          </li>
+          <li>
+            <button>[ ]Hyperlegible Font</button>
           </li>
         </ul>
       </div>

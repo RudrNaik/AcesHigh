@@ -38,7 +38,7 @@ function ModuleSlot({
   return (
     <div
       className={`
-    border p-4 font-mono space-y-3 transition-all bg-black/20
+    border p-4   space-y-3 transition-all bg-black/20
     ${
       equipped
         ? "border-cyan-100 border-l-4  border-l-cyan-100"
@@ -215,12 +215,12 @@ function ModuleManager({ character, updateCharacter }: ModuleManagerProps) {
 
   return (
     <div className="space-y-3">
-      <div className="text-xs text-cyan-100/60 font-mono">
+      <div className="text-xs text-cyan-100/60  ">
         MODULES — {equippedModules.length}/{slotCount} SLOTS USED
       </div>
 
       {slotCount === 0 ? (
-        <p className="text-xs text-cyan-100/30 font-mono italic">
+        <p className="text-xs text-cyan-100/30   italic">
           No module slots available for this aircraft.
         </p>
       ) : (

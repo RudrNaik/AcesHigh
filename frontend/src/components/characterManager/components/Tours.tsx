@@ -9,7 +9,7 @@ type Props = {
 
 export default function TourView({ character, updateCharacter }: Props) {
   return (
-    <div className="space-y-4 font-mono text-xs">
+    <div className="space-y-4   text-xs">
       <div className="flex justify-between items-center border border-cyan-100 lg:p-4 p-2 bg-black/20">
         <h1 className="text-2xl font-bold">TOURS</h1>
 

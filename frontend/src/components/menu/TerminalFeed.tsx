@@ -22,7 +22,7 @@ function TerminalFeed({ logs }: TerminalFeedProps) {
        bg-black/40
        text-cyan-100
        text-sm
-       font-mono
+        
        border border-cyan-500/30
        p-3
        overflow-y-auto

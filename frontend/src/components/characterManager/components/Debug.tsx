@@ -115,7 +115,7 @@ function DebugView({
           border-cyan-800
           bg-black/20
           p-3
-          font-mono
+           
           text-xs
         "
       />

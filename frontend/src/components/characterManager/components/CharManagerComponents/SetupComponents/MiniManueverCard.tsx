@@ -50,7 +50,7 @@ function ManeuverCard(props: ManeuverCardProps) {
         border-cyan-100
         border-l-4
         p-4
-        font-mono
+         
       "
     >
       {/* Header */}

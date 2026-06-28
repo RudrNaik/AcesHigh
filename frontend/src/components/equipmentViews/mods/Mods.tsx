@@ -41,7 +41,7 @@ function Modules() {
             px-4
             py-3
             text-sm
-            font-mono
+             
           "
         >
           FILTERS

@@ -50,7 +50,7 @@ function TerminalPanel({
         "
         >
           {/* Content */}
-          <div className="relative z-10 p-5 font-mono">
+          <div className="relative z-10 p-5  ">
             {/* Header */}
             <div className="">
               <div className="flex items-center gap-3">
