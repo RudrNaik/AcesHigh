@@ -16,7 +16,7 @@ import Navbar from "./components/common/Navbar";
 function MenuRouter() {
   return (
     <BrowserRouter>
-      <div className="relative text-cyan-100 hyperlegible">
+      <div className="relative text-cyan-100 font-mono">
         <Background />
         <Navbar />
         <div className="py-10"></div>

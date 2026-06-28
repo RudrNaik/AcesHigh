@@ -22,6 +22,8 @@ function TerminalFeed({ logs }: TerminalFeedProps) {
        bg-black/40
        text-cyan-100
        text-sm
+       font-mono
+       leading-none
         
        border border-cyan-500/30
        p-3
@@ -29,8 +31,8 @@ function TerminalFeed({ logs }: TerminalFeedProps) {
       "
     >
       {logs.map((log, i) => (
-        <div key={i} className="whitespace-pre-wrap">
-          &gt;&gt; {log}
+        <div key={i} className="whitespace-pre-wrap transition-all">
+          {`>> ${log}`}
         </div>
       ))}
     </div>

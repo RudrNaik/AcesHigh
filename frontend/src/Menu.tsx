@@ -3,26 +3,56 @@ import { motion } from "framer-motion";
 
 import TerminalPanel from "./components/menu/TerminalPanel";
 import TerminalFeed from "./components/menu/TerminalFeed";
-import "./flicker.css"
+import "./flicker.css";
 
 const something: string[] = [
   ">This is a test message to ensure the menu is working as intended.",
   ">WARN: Much is under development, please excuse any links that route to 404.",
-  ">Eyes up pilot."
+  ">Eyes up pilot.",
 ];
 
 const randomNum = Math.floor(Math.random() * something.length);
 
 const bootLines: string[] = [
-  "GOLD COAST COMMAND AND CONTROL SYSTEM",
-  "GC Laboratories CCS NETWORK",
+  "GOLD COAST COMMAND AND CONTROL SYSTEM INITIALIZING...",
+  "GC Laboratories GCOS 1.0.14",
+  "1.0.14 Gold Coast Laboratories // Government or Contractor use ONLY",
+  "MSMK.DIV (R) GC.LABS (R) 8.0 (Build 01014)",
+  "Connecting to IUN Databases",
+  ">USERNAME: [*******]",
+  ">PASSWORD: [************]",
   "Credentials verified. Welcome back Pilot.",
+  "                  @@@          @@@                      ",
+  "                  @@            @@                      ",
+  "                  @@@@@@@@@@@@@@@@                      ",
+  "                  @@@@@@@@@@@@@@@@                      ",
+  "                  @@@@@@@@@@@@@@@@                      ",
+  "                  @@@@@@@@@@@@@@@@                      ",
+  "                 @@@@@@@@  @@@@@@@              @@      ",
+  "                 @@@@          @@@@          @@@        ",
+  "                 @@@            @@@    @@@@@@@          ",
+  "                @@@@            @@@       @@            ",
+  "               @@@@@@@@@@@@@@@@@@@@   @@@ @             ",
+  "              @@@@@@@@@@@@@@@@@@@@  @@@                 ",
+  "             @ @@@@@@@@@@@@@@@@@  @@                    ",
+  "            @@ @@ @@@@@@@@@@@@  @@  @                   ",
+  "           @@  @@ @@@@@       @@   @@@                  ",
+  "          @@  @@@ @@       @@@   @ @@@                  ",
+  "         @@   @@  @@    @@@     @@  @@@                 ",
+  "        @@   @@   @@  @@@       @@  @@@                 ",
+  "       @@   @@@     @@          @@   @@@                ",
+  "       @@       @@@@            @@    @@@               ",
+  "       @@  @@@@@@ @@@          @@@     @@@              ",
+  "       @@@@@@     @@@          @@@     @@@@             ",
+  "                                                        ",
+  "    |---------[GOLD COAST LABORATORIES]---------|",
+  "    |-------------------------------------------|",
+  "                 [TOMORROW, TODAY.]",
   "",
   something[randomNum],
   "",
   ">[GCOS ::/] System Baked. Ready.",
 ];
-
 
 function TerminalPage() {
   const [logs, setLogs] = useState<string[]>([]);
@@ -32,10 +62,7 @@ function TerminalPage() {
     let index = 0;
 
     const interval = setInterval(() => {
-      setLogs((prev) => [
-        ...prev.slice(-30),
-        bootLines[index],
-      ]);
+      setLogs((prev) => [...prev.slice(-100), bootLines[index]]);
 
       index++;
 
@@ -48,25 +75,22 @@ function TerminalPage() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleHover = (
-    path: string,
-    description: string
-  ) => {
+  const handleHover = (path: string, description: string) => {
     if (isBooting) return;
 
     setLogs((prev) => [
-      ...prev.slice(-28),
+      ...prev.slice(-40),
       `$ ${path}`,
       `>[GCOS::/] ${description}`,
     ]);
   };
 
   return (
-    <div
-      className="w-full h-fill min-h-screen text-cyan-100"
-    >
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-          <div className="flex flex-col space-y-3">
+    <div className="w-full h-screen flex flex-col text-cyan-100">
+      <div className="flex-1 overflow-hidden">
+        <div className="relative z-10 h-[85vh] grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+          {" "}
+          <div className="flex flex-col h-full gap-3">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -139,11 +163,11 @@ function TerminalPage() {
               />
             </motion.div>
           </div>
-
           <div className="h-full hidden md:block">
             <TerminalFeed logs={logs} />
           </div>
         </div>
+      </div>
     </div>
   );
 }
