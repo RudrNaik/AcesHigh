@@ -7,51 +7,54 @@ import "./flicker.css";
 
 const something: string[] = [
   ">This is a test message to ensure the menu is working as intended.",
-  ">WARN: Much is under development, please excuse any links that route to 404.",
+  ">WARN: Much is under development, please excuse any links that route to 501 as we continue development!.",
   ">Eyes up pilot.",
+  ">11! 11! 11! 11!",
+  ">Remember, for some positioning manuevers there isnt a fixed amount of energy gain!",
 ];
 
 const randomNum = Math.floor(Math.random() * something.length);
 
 const bootLines: string[] = [
-  "GOLD COAST COMMAND AND CONTROL SYSTEM INITIALIZING...",
+  "IUN COMMAND AND CONTROL SYSTEM INITIALIZING...",
   "GC Laboratories GCOS 1.0.14",
   "1.0.14 Gold Coast Laboratories // Government or Contractor use ONLY",
-  "MSMK.DIV (R) GC.LABS (R) 8.0 (Build 01014)",
+  "MSMK.DIV (R) GC.LABS (R) 8.0 (Build 08492)",
   "Connecting to IUN Databases",
   ">USERNAME: [*******]",
   ">PASSWORD: [************]",
   "Credentials verified. Welcome back Pilot.",
-  "                  @@@          @@@                      ",
-  "                  @@            @@                      ",
-  "                  @@@@@@@@@@@@@@@@                      ",
-  "                  @@@@@@@@@@@@@@@@                      ",
-  "                  @@@@@@@@@@@@@@@@                      ",
-  "                  @@@@@@@@@@@@@@@@                      ",
-  "                 @@@@@@      @@@@@              @@      ",
-  "                 @@@@          @@@@          @@@        ",
-  "                 @@@            @@@    @@@@@@@          ",
-  "                @@@@            @@@       @@            ",
-  "               @@@@@@@@@@@@@@@@@@@@   @@@ @             ",
-  "              @@@@@@@@@@@@@@@@@@@@  @@@                 ",
-  "             @ @@@@@@@@@@@@@@@@@  @@                    ",
-  "            @@ @@ @@@@@@@@@@@@  @@  @                   ",
-  "           @@  @@ @@@@@       @@   @@@                  ",
-  "          @@  @@@ @@       @@@   @ @@@                  ",
-  "         @@   @@  @@    @@@     @@  @@@                 ",
-  "        @@   @@   @@  @@@       @@  @@@                 ",
-  "       @@   @@@     @@          @@   @@@                ",
-  "       @@       @@@@            @@    @@@               ",
-  "       @@  @@@@@@ @@@          @@@     @@@              ",
-  "       @@@@@@     @@@          @@@     @@@@             ",
-  "                                                        ",
-  "    |---------[GOLD COAST LABORATORIES]---------|",
-  "    |-------------------------------------------|",
-  "                 [TOMORROW, TODAY.]",
+  "",
+  "                     ##########                 ",
+  "              ########    ########           ###",
+  "          #####    ##########    #####     ## ##",
+  "        ####  ####################  ######    # ",
+  "      #### ############################       # ",
+  "     ### ######################               # ",
+  "    ##  ##################                   ## ",
+  "   ##  ###############                       #  ",
+  "  ##                                        ##  ",
+  " ###  #####  #####    #####  #####    #### #### ",
+  " ##   #####  #####    #####  ######   #### # ## ",
+  " ##   #####  #####    #####  #######  ####   ## ",
+  "### # #####  #####    #####  ######## #### # ###",
+  "### # #####  #####    #####  #### ######## # ###",
+  " ##   #####  #####    #####  ####  #######   ## ",
+  " ##   #####  #############   ####   ######   ## ",
+  " ###  #####   ###########    ####    #####  ### ",
+  "  ##                                        ##  ",
+  "   ##  ###          ###             #####  ##   ",
+  "    ##  #        ###.              #####  ##    ",
+  "     ###       ###               ###### ###     ",
+  "     ##     ###               -###### -###      ",
+  "   ##    ###               #######  ####        ",
+  " ##  ####            #########   #####          ",
+  " #####################     #######+             ",
+  "                   ##########                ",
   "",
   something[randomNum],
   "",
-  ">[GCOS ::/] System Baked. Ready.",
+  ">[IUNOS ::/] System Baked. Ready.",
 ];
 
 function TerminalPage() {
@@ -81,7 +84,7 @@ function TerminalPage() {
     setLogs((prev) => [
       ...prev.slice(-40),
       `$ ${path}`,
-      `>[GCOS::/] ${description}`,
+      `>[IUNOS::/] ${description}`,
     ]);
   };
 
@@ -114,7 +117,7 @@ function TerminalPage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.3,
-                delay: 0.3,
+                delay: 0.2,
               }}
               className="flicker"
             >
@@ -123,7 +126,7 @@ function TerminalPage() {
                 subtitle="AWACS Command and Control Systems"
                 icon="✈"
                 onHover={handleHover}
-                link="/InDev"
+                link="/AWACS"
               />
             </motion.div>
 
@@ -132,7 +135,7 @@ function TerminalPage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.3,
-                delay: 0.4,
+                delay: 0.3,
               }}
               className="flicker"
             >
@@ -150,7 +153,7 @@ function TerminalPage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.3,
-                delay: 0.2,
+                delay: 0.4,
               }}
               className="flicker"
             >
@@ -168,7 +171,7 @@ function TerminalPage() {
               animate={{ opacity: 1 }}
               transition={{
                 duration: 0.3,
-                delay: 0.3,
+                delay: 0.4,
               }}
               className="flicker"
             >
