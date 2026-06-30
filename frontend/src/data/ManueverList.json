@@ -531,7 +531,7 @@
     "isCommon": false,
     "isAdvanced": true,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "-2",
     "tags": [],
     "desc": "Gain 2 Energy. Add your Maneuverability to your Maneuver limit and ignore MAP this turn.\n\nExhaust."
   },
@@ -541,8 +541,8 @@
     "isCommon": false,
     "isAdvanced": true,
     "type": "Positioning",
-    "engCost": "",
-    "tags": [],
+    "engCost": "X",
+    "tags": ["manuX"],
     "desc": "Choose one for each point of Speed. \n- Gain Snapshot. Lose 1 Energy.\n- Add your Speed to your next [ATTACK].\n- Gain 2 Energy. Lose 1 Manu or Speed.\n- Gain {Mitigate}.\n- Gain {Locked} twice. Mark any Deployment Advancement\nExhaust."
   },
   {
@@ -972,8 +972,8 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
-    "tags": [],
+    "engCost": "X",
+    "tags": ["manuX"],
     "desc": "[POS] Gain [MANU] Energy, then add your Speed to your Manuverability for the rest of this turn. At the beginning of your next turn, set one of them to -1 until the start of your next turn."
   },
   {
@@ -1142,7 +1142,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "[POS] Gain a Minor Narrative Boon. You may Spend a Coin; if you do, upgrade it to a Major Narrative Boon. Exhaust."
   },
@@ -1162,7 +1162,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "[POS] Whenever you give an ally an Exhaust Maneuver this turn, you gain it too."
   },
@@ -1648,7 +1648,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "Whenever you make an Attack as part of Overwatch, you may choose to double your damage for that Attack against that target. Lose Overwatch."
   },
@@ -1720,7 +1720,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "Summon a large bomber. Gain Snapshot, it can only be used to allow this asset to make an Attack this turn, as an additional cost, pay 100 RP."
   },
@@ -1730,7 +1730,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "Choose an already summoned Asset. They retreat from the mission, however, they return at the start of your next turn with 2 additional Combat Effectiveness. This cannot go over their maximum CE. Exhaust."
   },
@@ -1790,7 +1790,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "You and your allies gain Snapshot. It gains “Escalate, Exhaust at the end of this turn if not used.” Exhaust."
   },
@@ -2040,7 +2040,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "Whenever you would fail a pilot stat roll after Facing Consequences, reroll it. Exhaust."
   },
@@ -2604,7 +2604,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "Once per turn, you may make a Speed check as part of making an [Attack]. If you succeed, gain a +1 Forward. You still Face any Consequences from the Speed check."
   },
@@ -2626,7 +2626,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "-1",
     "tags": [],
     "desc": "Gain 1 Energy. Whenever you make a Speed check this turn, gain a stacking +1 Forward."
   },
@@ -2716,7 +2716,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "-2",
     "tags": [],
     "desc": "Gain 2 Energy. Choose an Ally and change their Zone."
   },
@@ -3056,7 +3056,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "",
+    "engCost": "1",
     "tags": [],
     "desc": "[REACT - 1] Replace one of your plane stats with the current value of your G-Resist until the end of your turn. Fatigue. "
   },
@@ -3066,7 +3066,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "As a rather down to earth man, Husker knows how to keep the classics alive -- and himself. As a Positioning Maneuver, he may choose Sweet or Sour and deliver a remark in line with the flavor he chose. If he chose Sweet, each ally may recover either a Temper or a Nerve. If he chose Sour, spend a Temper or Nerve and gain Snapshot. Exhaust."
   },
