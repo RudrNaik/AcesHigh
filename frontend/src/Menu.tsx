@@ -17,7 +17,7 @@ const randomNum = Math.floor(Math.random() * something.length);
 
 const bootLines: string[] = [
   "IUN COMMAND AND CONTROL SYSTEM INITIALIZING...",
-  "GC Laboratories GCOS 1.0.14",
+  "GC Laboratories GCOS 8.4.92",
   "1.0.14 Gold Coast Laboratories // Government or Contractor use ONLY",
   "MSMK.DIV (R) GC.LABS (R) 8.0 (Build 08492)",
   "Connecting to IUN Databases",
