@@ -916,7 +916,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [
       "manuCap",
       "manuCap",
@@ -962,7 +962,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "",
+    "engCost": "0",
     "tags": [],
     "desc": "[POS] Requires having used both of your Downtime Activities prior to this mission. Gain Snapshot if you lament wanting to return to base to go home; spend a Temper to Gain Lock On, spend a Nerve to gain Closure."
   },
