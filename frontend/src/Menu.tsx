@@ -126,7 +126,7 @@ function TerminalPage() {
                 subtitle="AWACS Command and Control Systems"
                 icon="✈"
                 onHover={handleHover}
-                link="/InDev"
+                link="/AWACS"
               />
             </motion.div>
 

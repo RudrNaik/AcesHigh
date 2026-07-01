@@ -163,7 +163,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             return (
               <div
                 key={stat}
-                className="text-xs border border-cyan-100/90 px-3 py-2"
+                className="text-sm border border-cyan-100/90 px-3 py-2"
               >
                 <span className="text-cyan-100">{stat}</span>
 
@@ -362,7 +362,7 @@ function AircraftStatControl({
         {label}
       </span>
 
-      <div className="w-12 text-center text-xs text-cyan-400">
+      <div className="w-12 text-center text-sm text-cyan-400">
         {value}/<span className="text-cyan-100">{maxValue}</span>
       </div>
 
@@ -381,6 +381,17 @@ function AircraftStatControl({
       >
         +
       </button>
+
+      <div className="flex gap-1">
+        {Array.from({ length: maxValue }).map((_, i) => (
+          <div
+            key={i}
+            className={`w-2 h-4 border border-cyan-400 ${
+              i < value ? "bg-cyan-400" : "bg-transparent"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -410,7 +421,7 @@ function AircraftStatControlEnergy({
       </span>
 
       <div
-        className={`w-12 text-center text-xs text-cyan-400 ${getWarn(value)}`}
+        className={`w-12 text-center text-sm text-cyan-400 ${getWarn(value)}`}
       >
         {value}{" "}
       </div>
@@ -430,6 +441,17 @@ function AircraftStatControlEnergy({
       >
         +
       </button>
+
+      <div className="flex gap-1">
+        {Array.from({ length: 20 }).map((_, i) => (
+          <div
+            key={i}
+            className={`w-2 h-4 border border-cyan-400 ${
+              i < value ? "bg-cyan-400" : "bg-transparent"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

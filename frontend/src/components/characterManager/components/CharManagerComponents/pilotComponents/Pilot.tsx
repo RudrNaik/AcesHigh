@@ -105,7 +105,7 @@ function PilotView({
     <div className="border border-cyan-800 lg:p-4 p-2 space-y-2 bg-black/20">
       {/* Pilot Stats */}
       <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
-      <div className="flex md:space-x-20 lg:flex-row flex-col">
+      <div className="flex flex-col md:space-x-20">
         <div>
           <button
             onClick={() => setShowOverrides(!showOverrides)}
@@ -150,7 +150,8 @@ function PilotView({
             </div>
           )}
         </div>
-        <div className="p-4">
+        <div className="grid-cols-2 py-4 block">
+          <h2 className="text-cyan-300 font-bold">Coins</h2>
           <CoinStats
             coins={character.coins}
             canPhoenix={tourEngine.canUsePhoenix(character)}
