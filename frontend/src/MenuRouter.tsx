@@ -16,6 +16,7 @@ import Navbar from "./components/common/Navbar";
 function MenuRouter() {
   return (
     <BrowserRouter>
+    {/* Make font be able to toggle between hyperlegible or font-mono */}
       <div className="relative text-cyan-100 font-mono">
         <Background />
         <Navbar />

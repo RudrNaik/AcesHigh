@@ -122,11 +122,11 @@ function TerminalPage() {
               className="flicker"
             >
               <TerminalPanel
-                title="AWACS"
-                subtitle="AWACS Command and Control Systems"
+                title="AWACS [WIP]"
+                subtitle={`AWACS Command and Control Systems,\n\n Currently being developed, excuse placeholder items.`}
                 icon="✈"
                 onHover={handleHover}
-                link="/InDev"
+                link="/AWACS"
               />
             </motion.div>
 

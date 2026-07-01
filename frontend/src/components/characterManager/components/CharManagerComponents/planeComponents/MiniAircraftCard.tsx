@@ -163,7 +163,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             return (
               <div
                 key={stat}
-                className="text-xs border border-cyan-100/90 px-3 py-2"
+                className="text-sm border border-cyan-100/90 px-3 py-2"
               >
                 <span className="text-cyan-100">{stat}</span>
 
@@ -193,7 +193,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
             return (
               <div
                 key={stat}
-                className="text-xs border border-cyan-100/90 px-3 py-2"
+                className="text-sm border border-cyan-100/90 px-3 py-2"
               >
                 <div className="flex items-center gap-1">
                   <span className="text-cyan-100">{stat}</span>
@@ -362,7 +362,7 @@ function AircraftStatControl({
         {label}
       </span>
 
-      <div className="w-12 text-center text-xs text-cyan-400">
+      <div className="w-12 text-center text-sm text-cyan-400">
         {value}/<span className="text-cyan-100">{maxValue}</span>
       </div>
 
@@ -381,6 +381,32 @@ function AircraftStatControl({
       >
         +
       </button>
+
+      <div className="flex gap-1 ml-2">
+        {Array.from({ length: maxValue }).map((_, i) => {
+          const filled = i < value;
+          const warnAt = 3;
+          const isCritical =
+            typeof warnAt === "number" && value <= warnAt && i < value;
+
+          return (
+            <div
+              key={i}
+              className={`
+          w-2 h-4 border border-cyan-400
+          transition-all duration-200 ease-out
+          ${
+            filled
+              ? isCritical
+                ? "bg-red-400 border-red-400 animate-pulse"
+                : "bg-cyan-400"
+              : "bg-transparent"
+          }
+        `}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -400,6 +426,7 @@ function AircraftStatControlEnergy({
 }) {
   const overstress = 13 + Number(stats.MANU) + Number(stats.SPEED);
   const stall = 5 - Number(stats.MANU);
+  const warnAt = stall + 3;
   const getWarn = (val: number): string => {
     return val <= stall + 1 || val >= overstress - 2 ? "text-red-300" : "";
   };
@@ -410,7 +437,7 @@ function AircraftStatControlEnergy({
       </span>
 
       <div
-        className={`w-12 text-center text-xs text-cyan-400 ${getWarn(value)}`}
+        className={`w-12 text-center text-sm text-cyan-400 ${getWarn(value)}`}
       >
         {value}{" "}
       </div>
@@ -430,6 +457,32 @@ function AircraftStatControlEnergy({
       >
         +
       </button>
+
+      <div className="flex gap-1 ml-2">
+        {Array.from({ length: overstress }).map((_, i) => {
+          const filled = i < value;
+
+          const isCritical =
+            typeof warnAt === "number" && value <= warnAt && i < value;
+
+          return (
+            <div
+              key={i}
+              className={`
+          w-2 h-4 border border-cyan-400
+          transition-all duration-200 ease-out
+          ${
+            filled
+              ? isCritical
+                ? "bg-red-400 border-red-400 animate-pulse"
+                : "bg-cyan-400"
+              : "bg-transparent"
+          }
+        `}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
