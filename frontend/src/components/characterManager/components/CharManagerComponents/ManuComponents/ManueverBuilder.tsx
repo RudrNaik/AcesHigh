@@ -334,35 +334,35 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
         >
           ADD MANU
         </button>
+
+        {/* apply */}
+        <button
+          onClick={() => {
+            onUpdate({
+              ...character,
+              aircraft: {
+                ...character.aircraft,
+                currentEnergy: result.finalEnergy,
+                currentCapacity: result.finalCapacity,
+              },
+              stats: {
+                ...character.stats,
+                temper: temp,
+                nerve: nrv,
+                reflex: rflx,
+                gResist: gRes,
+              },
+            });
+            resetDraft();
+          }}
+          className="border w-full border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+        >
+          APPLY TURN
+        </button>
       </div>
 
       {/* output */}
       <pre className="bg-black/30 p-2 whitespace-pre-wrap">{output}</pre>
-
-      {/* apply */}
-      <button
-        onClick={() => {
-          onUpdate({
-            ...character,
-            aircraft: {
-              ...character.aircraft,
-              currentEnergy: result.finalEnergy,
-              currentCapacity: result.finalCapacity,
-            },
-            stats: {
-              ...character.stats,
-              temper: temp,
-              nerve: nrv,
-              reflex: rflx,
-              gResist: gRes,
-            },
-          });
-          resetDraft();
-        }}
-        className="border w-full border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
-      >
-        APPLY TURN
-      </button>
     </div>
   );
 }
