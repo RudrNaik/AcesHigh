@@ -57,7 +57,7 @@ function UpgradePackageSlot({ character, onSelect }: UpgradePackageSlotProps) {
         <select
           value={currentPackageId === "n/a" ? "" : currentPackageId}
           onChange={(e) => handleSelect(e.target.value || null)}
-          className="theme-select text-xs"
+          className="select-themed text-xs"
         >
           <option value="">— none —</option>
           {availableUpgrades.map((u) => (

@@ -14,7 +14,7 @@ export default function TourView({ character, updateCharacter }: Props) {
         <h1 className="text-2xl font-bold">TOURS</h1>
 
         <button
-          className="theme-btn"
+          className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
           onClick={() => {
             updateCharacter(tourEngine.addTour(character, ""));
           }}

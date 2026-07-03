@@ -61,19 +61,21 @@ function ResetView({
           <div className="flex flex-wrap gap-2">
             <button
               onClick={expandAll}
-            className="theme-btn"
-          >
-            Expand All
-          </button>
+              className="border border-cyan-800 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            >
+              Expand All
+            </button>
 
-          <button
-            onClick={collapseAll}
-            className="theme-btn"
+            <button
+              onClick={collapseAll}
+              className="border border-cyan-800 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            >
+              Collapse All
             </button>
 
             <button
               onClick={addReset}
-              className="theme-btn"
+              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
             >
               Add Reset
             </button>
@@ -148,7 +150,7 @@ function ResetView({
                         </label>
 
                         <select
-                          className="theme-select w-full"
+                          className="select-themed w-full"
                           value={dt.id}
                           onChange={(e) =>
                             updateCharacter(

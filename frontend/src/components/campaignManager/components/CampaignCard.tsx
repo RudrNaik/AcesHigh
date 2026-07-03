@@ -8,7 +8,17 @@ interface Props {
 
 function CampaignCard({ campaign, onSelect, onDelete }: Props) {
   return (
-    <div className="theme-card theme-card-hover theme-card-left-accent hover:animate-pulse">
+    <div
+      className=" bg-black/20
+    border
+    border-cyan-800
+    hover:border-cyan-100
+    transition-all
+    p-4
+    hover:border-l-4
+    hover:animate-pulse
+    cursor:pointer"
+    >
       <div>
         <h2 className="text-xl font-bold">{campaign.name}</h2>
 
@@ -24,14 +34,14 @@ function CampaignCard({ campaign, onSelect, onDelete }: Props) {
       <div className="flex gap-2 pt-2">
         <button
           onClick={onSelect}
-          className="theme-btn flex-1"
+          className="flex-1 border border-cyan-800 py-2 text-sm transition hover:bg-cyan-400 hover:text-black"
         >
           Open
         </button>
 
         <button
           onClick={onDelete}
-          className="theme-btn theme-btn-danger"
+          className="border border-red-700 px-4 py-2 text-sm transition hover:bg-red-600"
         >
           Delete
         </button>
