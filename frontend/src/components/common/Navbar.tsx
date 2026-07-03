@@ -45,7 +45,7 @@ const Navbar = ({}) => {
           <li>
             <Link
               to="/"
-              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+              className="theme-btn"
             >
               [↳] Home
             </Link>
@@ -53,7 +53,7 @@ const Navbar = ({}) => {
           <li>
             <Link
               to="/about"
-              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+              className="theme-btn"
             >
               [↳] About
             </Link>
@@ -61,7 +61,7 @@ const Navbar = ({}) => {
           <li>
             <Link
               to="/charactermanager"
-              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+              className="theme-btn"
             >
               [↳] Characters
             </Link>
@@ -69,7 +69,7 @@ const Navbar = ({}) => {
           <li>
             <Link
               to="/equipment"
-              className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+              className="theme-btn"
             >
               [↳] Equipment
             </Link>

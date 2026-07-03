@@ -23,7 +23,7 @@ function CampaignSelect({
 
         <button
           onClick={onCreate}
-          className="border border-cyan-800 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+          className="theme-btn"
         >
           Create Campaign
         </button>

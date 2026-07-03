@@ -274,7 +274,7 @@ function Setup({
           <label className="text-cyan-100 text-sm">Generation</label>
           <input
             type="number"
-            className="num-themed px-2 py-1 max-w-2xs bg-black/20"
+            className="theme-number-input"
             value={local.metadata.generation}
             onChange={(e) => updateMeta("generation", Number(e.target.value))}
             placeholder="Input"
@@ -283,7 +283,7 @@ function Setup({
           <label className="text-cyan-100 text-sm">Starting RP</label>
           <input
             type="number"
-            className="num-themed px-2 py-1 max-w-2xs bg-black/20"
+            className="theme-number-input"
             value={local.metadata.startingRP}
             onChange={(e) => updateMeta("startingRP", Number(e.target.value))}
             placeholder="Input"
@@ -346,7 +346,7 @@ function Setup({
 
             <input
               type="number"
-              className="num-themed px-2 py-1 max-w-40"
+              className="theme-number-input"
               value={stats[key]}
               onChange={(e) => updateStat(key, Number(e.target.value))}
             />
@@ -354,7 +354,7 @@ function Setup({
             <button
               onClick={() => updateStat(key, stats[key] - 1)}
               disabled={stats[key] <= 1}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               -
             </button>
@@ -362,7 +362,7 @@ function Setup({
             <button
               onClick={() => updateStat(key, stats[key] + 1)}
               disabled={stats[key] >= 5}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               +
             </button>
@@ -384,7 +384,7 @@ function Setup({
         <select
           value={local.specialization.specId}
           onChange={(e) => setSpec(e.target.value)}
-          className="select-themed"
+          className="theme-select"
         >
           <option value="">Select Spec</option>
           {specs

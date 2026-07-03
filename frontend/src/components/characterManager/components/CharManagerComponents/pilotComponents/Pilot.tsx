@@ -197,7 +197,7 @@ function PilotView({
             <button
               onClick={() => updateStress("mental", -1)}
               disabled={stress.mental <= 0}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               -
             </button>
@@ -205,7 +205,7 @@ function PilotView({
             <button
               onClick={() => updateStress("mental", 1)}
               disabled={stress.mental >= charEngine.getMentalStress(character)}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               +
             </button>
@@ -221,7 +221,7 @@ function PilotView({
               }}
               disabled={stress.mental < charEngine.getMentalStress(character)}
               hidden={stress.mental < charEngine.getMentalStress(character) - 1}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               BREAK
             </button>
@@ -244,7 +244,7 @@ function PilotView({
             <button
               onClick={() => updateStress("physical", -1)}
               disabled={stress.physical <= 0}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               -
             </button>
@@ -252,7 +252,7 @@ function PilotView({
             <button
               onClick={() => updateStress("physical", 1)}
               disabled={stress.physical >= charEngine.getPhysStress(character)}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               +
             </button>
@@ -267,7 +267,7 @@ function PilotView({
               }}
               disabled={stress.physical < charEngine.getPhysStress(character)}
               hidden={stress.physical < charEngine.getPhysStress(character) - 1}
-              className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+              className="theme-btn-control"
             >
               BREAK
             </button>
@@ -609,7 +609,7 @@ function PilotStat({
       <button
         onClick={() => onChange(-1)}
         disabled={value <= (!maxValue ? -100 : 0)}
-        className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+        className="theme-btn-control"
       >
         -
       </button>
@@ -617,7 +617,7 @@ function PilotStat({
       <button
         onClick={() => onChange(1)}
         disabled={value >= (!maxValue ? 100 : maxValue)}
-        className="px-2 py-1 border border-cyan-400 disabled:opacity-30"
+        className="theme-btn-control"
       >
         +
       </button>

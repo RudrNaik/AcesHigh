@@ -160,7 +160,7 @@ function PerksView({
                       onChange={(e) =>
                         updateTourAcePerk(tourIndex, e.target.value, "")
                       }
-                      className="select-themed text-xs mr-2"
+                      className="theme-select text-xs mr-2"
                     >
                       <option value="">Empty Slot</option>
                       {options.map((perk) => (
@@ -180,7 +180,7 @@ function PerksView({
                             e.target.value,
                           )
                         }
-                        className="select-themed text-xs"
+                        className="theme-select text-xs"
                       >
                         <option value="">Choose a Pilot Stat...</option>
                         {tourEngine.PILOT_STAT_OPTIONS.map((stat) => (
@@ -317,7 +317,7 @@ function PerksView({
                 <select
                   value={selectedID}
                   onChange={(e) => updateGenesisSlot(slot, e.target.value)}
-                  className="select-themed text-xs"
+                  className="theme-select text-xs"
                 >
                   <option value="">Empty Slot</option>
                   {getGenesisOptions(slot).map((perk) => (

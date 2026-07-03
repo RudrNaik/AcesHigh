@@ -9,18 +9,7 @@ interface Props {
 function CharacterCard({ character, onSelect, onDelete }: Props) {
   return (
     <div
-      className="
-    bg-black/20
-    border
-    border-cyan-800
-    hover:border-cyan-100
-    transition-all
-    p-4
-    hover:border-l-4
-    hover:animate-pulse
-    flex justify-between
-    cursor:pointer
-  "
+      className="theme-card theme-card-hover theme-card-left-accent hover:animate-pulse flex justify-between"
     >
       <div onClick={onSelect} className="cursor-pointer">
         <h3 className="text-xl font-bold">{character?.dossier.callsign}</h3>
@@ -43,7 +32,7 @@ function CharacterCard({ character, onSelect, onDelete }: Props) {
 
           onDelete();
         }}
-        className="hover:animate-pulse text-red-300 hover:text-red-500 transition-all border-red-300 border px-2 py-1 hover:border-red-500"
+        className="theme-btn theme-btn-danger hover:animate-pulse"
       >
         X
       </button>

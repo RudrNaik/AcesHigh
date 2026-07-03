@@ -95,7 +95,7 @@ function LicenseView({
               setPendingCategory(e.target.value as licenseEngine.LootCategory);
               setPendingId("");
             }}
-            className="flex-1 select-themed"
+            className="flex-1 theme-select"
           >
             {LOOT_CATEGORY_OPTIONS.map((c) => (
               <option key={c.value} value={c.value}>
@@ -107,7 +107,7 @@ function LicenseView({
           <select
             value={pendingId}
             onChange={(e) => setPendingId(e.target.value)}
-            className="flex-2 select-themed"
+            className="flex-2 theme-select"
           >
             <option value="">
               Select{" "}

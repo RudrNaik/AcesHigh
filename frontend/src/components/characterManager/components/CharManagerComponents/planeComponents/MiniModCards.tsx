@@ -52,7 +52,7 @@ function ModuleSlot({
           value={equippedId ?? ""}
           onChange={(e) => onSelect(e.target.value || null)}
           className="
-            select-themed text-xs
+            theme-select text-xs
           "
         >
           <option value="">— empty —</option>

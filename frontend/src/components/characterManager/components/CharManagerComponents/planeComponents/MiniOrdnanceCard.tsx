@@ -45,7 +45,7 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
         <select
           value={ordnance.id}
           onChange={(e) => ordnance.onSelectOrdnance?.(e.target.value)}
-          className="select-themed w-full mr-10"
+          className="theme-select w-full mr-10"
         >
           <option value="">Select Ordnance</option>
 

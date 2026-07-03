@@ -47,21 +47,21 @@ function DebugView({
         <div className="flex flex-wrap gap-2">
           <button
             onClick={handleCopy}
-            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            className="theme-btn"
           >
             Copy JSON
           </button>
 
           <button
             onClick={() => storage.exportCampaign(campaign)}
-            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            className="theme-btn"
           >
             Export Campaign
           </button>
 
           <button
             onClick={() => setEditMode((v) => !v)}
-            className="border border-yellow-500 px-3 py-2 text-xs text-yellow-500 transition hover:bg-yellow-500 hover:text-black"
+            className="theme-btn theme-btn-danger"
           >
             {editMode ? "Disable Edit Mode" : "Enable Edit Mode"}
           </button>

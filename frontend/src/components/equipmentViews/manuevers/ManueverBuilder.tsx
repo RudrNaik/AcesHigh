@@ -196,7 +196,7 @@ function Select({ label, value, setValue, options }: any) {
       <select
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full select-themed"
+        className="w-full theme-select"
       >
         <option value="">---</option>
         {options.map((m: any) => (
