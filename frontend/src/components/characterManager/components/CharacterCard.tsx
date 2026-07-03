@@ -8,10 +8,8 @@ interface Props {
 
 function CharacterCard({ character, onSelect, onDelete }: Props) {
   return (
-    <div
-      className="theme-card theme-card-hover theme-card-left-accent hover:animate-pulse flex justify-between"
-    >
-      <div onClick={onSelect} className="cursor-pointer">
+    <div onClick={onSelect} className="theme-card-clickable">
+      <div>
         <h3 className="text-xl font-bold">{character?.dossier.callsign}</h3>
         <p>
           {character?.dossier.firstName} {character?.dossier.lastName}

@@ -53,12 +53,10 @@ function AircraftCard(aircraft: AircraftCardProps) {
       className="
         bg-black/20
         border
-        border-cyan-100
+        border-cyan-800
         p-6
-        border-l-4
         transition-all
         duration-100
-         
       "
     >
       {/* Header */}

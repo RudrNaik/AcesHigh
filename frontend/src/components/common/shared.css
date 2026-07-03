@@ -1,7 +1,7 @@
 :root {
   --surface-bg: rgba(0, 0, 0, 0.2);
   --surface-bg-strong: rgba(0, 0, 0, 0.35);
-  --surface-border: #0f766e;
+  --surface-border: #075985;
   --surface-border-soft: #cffafe;
   --accent: #06b6d4;
   --accent-soft: #cffafe;
@@ -32,7 +32,7 @@
 .theme-card {
   background: var(--surface-bg);
   border: 1px solid var(--surface-border);
-  border-radius: 0.75rem;
+  border-radius: 0;
   padding: 1rem;
   transition: all 0.2s ease;
 }
@@ -51,10 +51,34 @@
   border-left-color: var(--accent-soft);
 }
 
+.theme-card-clickable {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--surface-border);
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.theme-card-clickable:hover {
+  border-color: var(--surface-border-soft);
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: var(--surface-border-soft);
+  animation: theme-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes theme-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
 .theme-panel {
   background: var(--surface-bg);
   border: 1px solid var(--surface-border-soft);
-  border-radius: 0.75rem;
+  border-radius: 0;
   padding: 1rem;
 }
 
@@ -80,7 +104,7 @@
   font-size: 0.8rem;
   line-height: 1rem;
   transition: all 0.2s ease;
-  border-radius: 0.375rem;
+  border-radius: 0;
   text-decoration: none;
   cursor: pointer;
 }
@@ -120,7 +144,7 @@
   border: 1px solid #38bdf8;
   color: var(--text-main);
   background: transparent;
-  border-radius: 0.375rem;
+  border-radius: 0;
   transition: all 0.2s ease;
   cursor: pointer;
 }
@@ -141,7 +165,7 @@
 .select-themed {
   color: var(--text-main);
   background: rgba(0, 0, 0, 0.2);
-  border-radius: 0.375rem;
+  border-radius: 0;
   outline: none;
   transition: border 0.2s ease, box-shadow 0.2s ease;
 }
