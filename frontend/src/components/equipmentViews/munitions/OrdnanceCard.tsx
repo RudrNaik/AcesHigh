@@ -27,8 +27,7 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
         bg-black/20
         border
         border-cyan-800
-        p-6
-         
+        p-6  
       "
     >
       {/* Header */}
