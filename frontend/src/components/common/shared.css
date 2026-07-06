@@ -1,0 +1,229 @@
+:root {
+  --surface-bg: rgba(0, 0, 0, 0.2);
+  --surface-bg-strong: rgba(0, 0, 0, 0.35);
+  --surface-border: #075985;
+  --surface-border-soft: #cffafe;
+  --accent: #06b6d4;
+  --accent-soft: #cffafe;
+  --text-main: #cffafe;
+  --text-muted: #94a3b8;
+  --text-dark: #000000;
+  --danger: #f87171;
+  --danger-soft: #fecaca;
+  --warning: #f59e0b;
+  --warning-soft: #fef3c7;
+}
+
+.theme-sheet {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0.25rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .theme-sheet {
+    padding: 0.75rem 1rem 1rem;
+    border-left: 4px solid var(--surface-border-soft);
+  }
+}
+
+.theme-card {
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 0;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.theme-card:hover {
+  border-color: var(--accent);
+}
+
+.theme-card-hover {
+  cursor: pointer;
+}
+
+.theme-card-left-accent {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: var(--accent-soft);
+}
+
+.theme-card-clickable {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--surface-border);
+  padding: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.theme-card-clickable:hover {
+  border-color: var(--surface-border-soft);
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: var(--surface-border-soft);
+  animation: theme-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes theme-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.theme-panel {
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border-soft);
+  border-radius: 0;
+  padding: 1rem;
+}
+
+.theme-panel-strong {
+  border-color: var(--surface-border);
+}
+
+.theme-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--accent-soft);
+  color: var(--text-main);
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  transition: all 0.2s ease;
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  background: var(--accent-soft);
+  color: var(--text-dark);
+}
+
+.theme-btn-danger {
+  border-color: var(--danger);
+  color: var(--danger-soft);
+}
+
+.theme-btn-danger:hover {
+  background: var(--danger);
+  color: var(--text-dark);
+}
+
+.theme-btn-warning {
+  border-color: var(--warning);
+  color: var(--warning-soft);
+}
+
+.theme-btn-warning:hover {
+  background: var(--warning);
+  color: var(--text-dark);
+}
+
+.theme-btn-subtle {
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.theme-btn-control {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #38bdf8;
+  color: var(--text-main);
+  background: transparent;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.theme-btn-control:hover {
+  background: rgba(6, 182, 212, 0.12);
+}
+
+.theme-btn-control:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.theme-input,
+.theme-input-underline,
+.theme-number-input,
+.theme-select,
+.select-themed {
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-input,
+.theme-number-input,
+.theme-select,
+.select-themed {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.75rem;
+}
+
+.theme-input-underline {
+  border: none;
+  border-bottom: 1px solid var(--surface-border-soft);
+  padding: 0.25rem 0;
+}
+
+.theme-input:focus,
+.theme-input-underline:focus,
+.theme-number-input:focus,
+.theme-select:focus,
+.select-themed:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.2);
+}
+
+.theme-number-input {
+  width: auto;
+}
+
+.theme-select,
+.select-themed {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.theme-select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 14px) calc(50% - 3px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+}
+
+.theme-text-muted {
+  color: var(--text-muted);
+}
+
+.theme-text-accent {
+  color: var(--accent);
+}
+
+.theme-text-strong {
+  color: var(--text-main);
+}

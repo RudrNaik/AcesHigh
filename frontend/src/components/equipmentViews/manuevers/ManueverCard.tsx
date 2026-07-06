@@ -1,6 +1,11 @@
 import { useState } from "react";
-import {resolveTag,formatTagTooltip,getTagCountMap,getTagValue,} from "../../common/tagResolver";
-import manus from "../../../data/ManueverList.json"
+import {
+  resolveTag,
+  formatTagTooltip,
+  getTagCountMap,
+  getTagValue,
+} from "../../common/tagResolver";
+import manus from "../../../data/ManueverList.json";
 
 interface ManeuverCardProps {
   id: string;
@@ -17,10 +22,9 @@ interface ManeuverCardProps {
 function ManeuverCard(props: ManeuverCardProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
-  const autoFilled =
-    props.autofill
-      ? manus.find((m) => m.id === props.id)
-      : null;
+  const autoFilled = props.autofill
+    ? manus.find((m) => m.id === props.id)
+    : null;
 
   const maneuver = {
     ...props,
@@ -34,9 +38,7 @@ function ManeuverCard(props: ManeuverCardProps) {
   };
 
   const rawTags =
-    maneuver.tags && maneuver.tags !== "n/a"
-      ? (maneuver.tags as string[])
-      : [];
+    maneuver.tags && maneuver.tags !== "n/a" ? (maneuver.tags as string[]) : [];
 
   const tagCounts = getTagCountMap(rawTags);
   const tagEntries = Object.entries(tagCounts);
@@ -47,8 +49,7 @@ function ManeuverCard(props: ManeuverCardProps) {
       className="
         bg-black/20
         border
-        border-cyan-100
-        border-l-4
+        border-cyan-800
         p-6
          
       "
@@ -60,10 +61,12 @@ function ManeuverCard(props: ManeuverCardProps) {
         </h2>
 
         <div className="text-sm text-cyan-100 flex ">
-            {maneuver.engCost && maneuver.engCost!=="n/a" && <span>EN:{maneuver.engCost}|</span>}
-            {maneuver.type && <span>{maneuver.type}</span>}
-            {maneuver.isAdvanced && (<span className="font-bold">|ADV</span>)}
-            {maneuver.isCommon && (<span className="font-bold">|CMN</span>)}
+          {maneuver.engCost && maneuver.engCost !== "n/a" && (
+            <span>EN:{maneuver.engCost}|</span>
+          )}
+          {maneuver.type && <span>{maneuver.type}</span>}
+          {maneuver.isAdvanced && <span className="font-bold">|ADV</span>}
+          {maneuver.isCommon && <span className="font-bold">|CMN</span>}
         </div>
       </div>
 
@@ -87,19 +90,14 @@ function ManeuverCard(props: ManeuverCardProps) {
             const label =
               scaledValue > 1 ? `${tag.name} x${scaledValue}` : tag.name;
 
-            const tooltipDesc = formatTagTooltip(
-              tag.desc,
-              scaledValue
-            );
+            const tooltipDesc = formatTagTooltip(tag.desc, scaledValue);
 
             return (
               <div
                 key={`${maneuver.id}-${tag.id}`}
                 onMouseEnter={() => setActiveTag(tag.id)}
                 onMouseLeave={() => setActiveTag(null)}
-                onClick={() =>
-                  setActiveTag(isActive ? null : tag.id)
-                }
+                onClick={() => setActiveTag(isActive ? null : tag.id)}
                 className="
                   relative
                   text-xs

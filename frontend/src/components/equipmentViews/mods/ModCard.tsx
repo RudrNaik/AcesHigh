@@ -30,8 +30,7 @@ function ModuleCard(module: Module) {
       className="
         bg-black/20
         border
-        border-cyan-100
-        border-l-4
+        border-cyan-800
         p-6
          
       "
@@ -73,10 +72,10 @@ function ModuleCard(module: Module) {
 
       {/* Chars, Type, Tags, and AddManu */}
       <div className="mt-4 space-y-2 text-xs text-cyan-100">
-
         {module.checkForChars && module.charChecked && (
-            <div>
-            <span className="font-bold">Checks aircraft name for: </span>{module.charChecked}  @ {module.checkForChars}
+          <div>
+            <span className="font-bold">Checks aircraft name for: </span>
+            {module.charChecked} @ {module.checkForChars}
           </div>
         )}
 

@@ -198,7 +198,7 @@ function ModuleManager({ character, updateCharacter }: ModuleManagerProps) {
     let updated = character;
 
     if (previousId) {
-      updated = removeModule(updated, previousId);
+      updated = removeModule(updated, slotIndex);
     }
     if (modId) {
       updated = setModule(updated, modId);
@@ -208,9 +208,20 @@ function ModuleManager({ character, updateCharacter }: ModuleManagerProps) {
   };
 
   // Modules already equipped in OTHER slots are unavailable for this slot
+  // UNLESS they have the modStack tag, which allows them to be selected multiple times
   const getAvailableForSlot = (slotIndex: number) => {
     const otherEquipped = equippedModules.filter((_, i) => i !== slotIndex);
-    return unlockedModules.filter((m) => !otherEquipped.includes(m.id));
+
+    return unlockedModules.filter((m) => {
+      // Check if module has modStack tag - these can be selected multiple times
+      const isStackable =
+        Array.isArray(m.moduleTags) && m.moduleTags.includes("modStackable");
+
+      // If already used in another slot and not stackable, don't allow it
+      if (otherEquipped.includes(m.id) && !isStackable) return false;
+
+      return true;
+    });
   };
 
   return (

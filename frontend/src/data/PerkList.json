@@ -12,7 +12,7 @@
         "id": "perkExtraRations",
         "name": "Extra Rations",
         "type": "basePerk",
-        "tags": "",
+        "tags": "perkStackable",
         "addManuID": "",
         "advancement": "",
         "description": "This perk is unavailable from deployments. Gain a Pilot Stat or 10 RP. You can take this perk any number of times."
