@@ -8,5 +8,10 @@
         "id": "modTarget",
         "name": "Targeting Equipment",
         "desc": "Can be used to help allies with Designated weaponry"
+    },
+    {
+        "id": "modStackable",
+        "name": "Stackable",
+        "desc": "Can be mounted multiple times."
     }
 ]

@@ -235,7 +235,7 @@ export function getUnlockedModules(character: CharacterData) {
       IntrinsicMod: m.IntrinsicMod,
       TypeMod: m.TypeMod,
       AddManuID: m.AddManuID,
-      moduleTags: m.moduleTags,
+      moduleTags: (m.moduleTags ?? []) as string[],
       mods: m.mods as Record<string, number> | null,
       AddTags: m.AddTags,
       checkForChars: m.checkForChars,
@@ -579,8 +579,17 @@ export function setModule(
   const current = character.aircraft.modules ?? [];
   const slotCount = getModuleSlotCount(character);
 
-  if (current.includes(modId)) return character;
-  if (current.length >= slotCount) return character;
+  const module = modules.find((m) => m.id === modId) as unknown as
+    | ModuleDeets
+    | undefined;
+  const isStackable = (module?.moduleTags ?? []).includes("modStackable");
+
+  if (!isStackable && current.includes(modId)) {
+    return character;
+  }
+  if (current.length >= slotCount) {
+    return character;
+  }
 
   return {
     ...character,
@@ -622,13 +631,16 @@ export function setAircraftStatOverride(
 
 export function removeModule(
   character: CharacterData,
-  modId: string,
+  index: number,
 ): CharacterData {
+  const current = character.aircraft.modules ?? [];
+  if (index < 0 || index >= current.length) return character;
+
   return {
     ...character,
     aircraft: {
       ...character.aircraft,
-      modules: (character.aircraft.modules ?? []).filter((id) => id !== modId),
+      modules: current.filter((_, i) => i !== index),
     },
   };
 }

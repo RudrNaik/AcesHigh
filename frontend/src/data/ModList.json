@@ -62,7 +62,7 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [],
     "mods": {
       "A2A": 1,
       "CAP": -1
