@@ -62,6 +62,8 @@ export function getRP(character: CharacterData): number {
   let deps = Number(tourEngine.getCharacterRequisitionPoints(character)) || 0;
   let resets = Number(resetEngine.getTotalBonusRP(character)) || 0;
 
+  //console.log(`Bonus ${bonus}, Starting ${starting}, Deps ${deps}, Resets ${resets}`,);
+
   return bonus + starting + deps + resets;
 }
 

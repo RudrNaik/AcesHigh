@@ -35,6 +35,8 @@ export function getStaticModifiersFromSpec(character: CharacterData) {
     (mod) => mod.id === staticModifier,
   )?.mods;
 
+  //console.log(`Modifiers: \n Temp: ${modifiers.temper} \n Nerve: ${modifiers.nerve}`)
+
   return {
     temper: modifiers?.temp || 0,
     nerve: modifiers?.nerve || 0,
@@ -57,6 +59,7 @@ export function getPilotStatsModified(
   let gresOvr = character.stats.gResistOverride || 0;
 
   const modifiers = getStaticModifiersFromSpec(character);
+  //console.log(modifiers)
   const depModifiers = tourEngine.getModifierPilotBonuses(character);
 
   const { statDeltas } = planeEngine.applyModules(character);

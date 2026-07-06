@@ -497,7 +497,7 @@
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
-    "tags": ["manuStressM", "manuStressP"],
+    "tags": ["manuStressM", "manuStressP", "manuTrick"],
     "desc": "Mark a point of Stress in either Stress Track, then make an appropriate Pilot Stat Check (Nerve or Temper for Mental, Reflex or G-Resist for Physical). On a Failure, do nothing. On a Mixed, Defeat, but take -1 Forward. On a Full, Defeat 1, and on a Perfect, Defeat and Mitigate."
   },
   {

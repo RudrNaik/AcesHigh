@@ -44,7 +44,13 @@ function PerksView({
 
     return allBasePerks.filter((perk) => {
       if (perk.id === current) return true;
-      if (character.baseperks.includes(perk.id)) return false;
+      
+      // Check if perk has perkStack tag - these can be selected multiple times
+      const isStackable = perk.tags && perk.tags.includes("perkStackable");
+      
+      // If already used and not stackable, don't allow it
+      if (character.baseperks.includes(perk.id) && !isStackable) return false;
+      
       if (unlockedGenesisPerks.includes(perk.id)) return true;
       return canPickNonGenesis;
     });

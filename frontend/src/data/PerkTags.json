@@ -7,6 +7,13 @@
         "typeDesc": "A perk for Aces -- only accessible at the end of a Tour"
     },
     {
+        "id": "perkStackable",
+        "name": "Stackable Perk",
+        "desc": "This perk can be gained multiple times",
+        "type": "basePerk",
+        "typeDesc": "A normal perk"
+    },
+    {
         "id": "backgroundPerk",
         "name": "Background Perk",
         "desc": "n/a",

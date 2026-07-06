@@ -501,14 +501,32 @@ export function sanitizeGenesis(character: CharacterData): CharacterData {
       .map((p) => p.id),
   );
 
+  const stackablePerks = new Set(
+    getAllPerks()
+      .filter((p) => p.type === "basePerk" && p.tags && p.tags.includes("perkStack"))
+      .map((p) => p.id),
+  );
+
   const cleaned = (character.baseperks ?? []).filter((id) => {
     if (!id) return false;
     return validBasePerkIDs.has(id);
   });
 
+  // Remove duplicates only for non-stackable perks
+  const deduplicated: string[] = [];
+  const seen = new Set<string>();
+
+  for (const id of cleaned) {
+    const isStackable = stackablePerks.has(id);
+    if (isStackable || !seen.has(id)) {
+      deduplicated.push(id);
+      seen.add(id);
+    }
+  }
+
   return {
     ...character,
-    baseperks: [...new Set(cleaned)],
+    baseperks: deduplicated,
   };
 }
 
@@ -711,6 +729,7 @@ export function getModifierCounts(character: CharacterData): ModifierCounts {
 
 export function getModifierPilotBonuses(character: CharacterData) {
   const counts = getModifierCounts(character);
+  //console.log(counts.fury);
   return {
     temp: counts.fury,
     nerve: counts.patience,
