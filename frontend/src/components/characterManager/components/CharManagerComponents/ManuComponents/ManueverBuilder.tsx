@@ -200,6 +200,7 @@ function ManuBuilder({
         slots: [positionSlot, ...engineSlots],
         energyStart,
         capacityStart,
+
       }),
     [engineSlots, positionSlot, energyStart, capacityStart],
   );
@@ -344,6 +345,7 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
                 ...character.aircraft,
                 currentEnergy: result.finalEnergy,
                 currentCapacity: result.finalCapacity,
+                currentSurvivability: survival,
               },
               stats: {
                 ...character.stats,
