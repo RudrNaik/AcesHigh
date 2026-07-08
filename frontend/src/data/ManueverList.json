@@ -241,6 +241,19 @@
     "desc": "Whenever, gain {Advantage}."
   },
   {
+    "id": "manuTroika",
+    "name": "Troika",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "0",
+    "tags": [
+      "manuTrick",
+      "manuStressA"
+    ],
+    "desc": "Mark a point of Stress in either Stress Track, then make an appropriate Pilot Stat Check (Nerve or Temper for Mental, Reflex or G-Resist for Physical). On a Failure, do nothing. On a Mixed, Defeat, but take -1 Forward. On a Full, Defeat 1, and on a Perfect, Defeat and Mitigate."
+  },
+  {
     "id": "manuPtD",
     "name": "Pay the Devil",
     "isCommon": true,
@@ -317,6 +330,20 @@
       "manuDistract"
     ],
     "desc": "Choose a target. Gain {Locked}, grant an Ally Catch."
+  },
+  {
+    "id": "manuDistractingShot",
+    "name": "Distracting Shot",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Normal",
+    "engCost": "2",
+    "tags": [
+      "manuDistract",
+      "manuInternal",
+      "manuAttack"
+    ],
+    "desc": "Choose a target giving an Ally {Locked}. Make an Attack. On a Failure, do nothing, but on a Mixed or higher, give the ally Defeat. On a Full Success, deal 1 Damage, and on a Perfect, give the ally Lock On."
   },
   {
     "id": "manuMIP",
@@ -473,6 +500,20 @@
     "tags": [
       "manuAttack",
       "manuCap"
+    ],
+    "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
+  },
+  {
+    "id": "manuJoustCap",
+    "name": "Joust w/Ord",
+    "isCommon": true,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "3",
+    "tags": [
+      "manuAttack",
+      "manuCap",
+      "manuORD"
     ],
     "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
   },
@@ -644,7 +685,7 @@
     "tags": [
       "manuAOA"
     ],
-    "desc": "Whenever, you may make a Maneuverability Check. If it’s a Perfect Success, Negate a Consequence. On any other result, lose 3 Energy."
+    "desc": "Whenever, you may make a Maneuverability check. \nOn a Fail, gain Locked; a Mixed, Defeat then Fatigue; a Full, Defeat Defeat then Fatigue; a Perfect, Defeat Defeat. Then resolve all remaining stacks of Locked."
   },
   {
     "id": "manuAKulbit",
@@ -962,7 +1003,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "[POS] Requires having used both of your Downtime Activities prior to this mission. Gain Snapshot if you lament wanting to return to base to go home; spend a Temper to Gain Lock On, spend a Nerve to gain Closure."
   },
@@ -1162,7 +1203,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "[POS] Whenever you give an ally an Exhaust Maneuver this turn, you gain it too."
   },
@@ -1338,11 +1379,12 @@
     "type": "Reaction",
     "engCost": "3",
     "tags": [
+      "manuDefend",
       "manuCap",
       "manuCap",
-      "manuDefend"
+      "manuCap"
     ],
-    "desc": "[CAP (2) REACT - 3] Defeat, Defeat."
+    "desc": "[CAP 3  REACT - 2] Defeat all."
   },
   {
     "id": "manuCrossUp",
@@ -1602,8 +1644,7 @@
     "type": "Normal",
     "engCost": "X",
     "tags": [
-      "manuORD",
-      "manuX"
+      "manuORD"
     ],
     "desc": "Spend X Capacity and choose X ground targets close to each other. Make an Attack, use that roll result for all of them. Any of your targets that aren’t destroyed must take an action to get out of cover when they next act. Exhaust."
   },
@@ -1648,13 +1689,13 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "Whenever you make an Attack as part of Overwatch, you may choose to double your damage for that Attack against that target. Lose Overwatch."
   },
   {
     "id": "manuAcroTac3",
-    "name": "Adagio [REACT - 2]",
+    "name": "Adagio  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1664,7 +1705,7 @@
   },
   {
     "id": "manuAcroTac6",
-    "name": "Lion Tamer [ATTACK - 4]",
+    "name": "Lion Tamer  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1676,7 +1717,7 @@
   },
   {
     "id": "manuAirConTac1",
-    "name": "How about a show of force? [POS]",
+    "name": "How about a show of force? ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -1686,7 +1727,7 @@
   },
   {
     "id": "manuAirConTac2",
-    "name": "Keepin' 'em in line down there. [POS]",
+    "name": "Keepin' 'em in line down there. ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -1696,7 +1737,7 @@
   },
   {
     "id": "manuAirConTac3",
-    "name": "Let's give 'em an air show. [POS]",
+    "name": "Let's give 'em an air show. ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -1706,7 +1747,7 @@
   },
   {
     "id": "manuAirConTac4",
-    "name": "I got my missile launcher right here. [POS]",
+    "name": "I got my missile launcher right here. ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -1716,27 +1757,27 @@
   },
   {
     "id": "manuAirConTac5",
-    "name": "Stormbringer [POS]",
+    "name": "Stormbringer ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "Summon a large bomber. Gain Snapshot, it can only be used to allow this asset to make an Attack this turn, as an additional cost, pay 100 RP."
   },
   {
     "id": "manuAirConTac6",
-    "name": "Gonna be like new. [POS]",
+    "name": "Gonna be like new. ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "Choose an already summoned Asset. They retreat from the mission, however, they return at the start of your next turn with 2 additional Combat Effectiveness. This cannot go over their maximum CE. Exhaust."
   },
   {
     "id": "manuAirConTac7",
-    "name": "Prepared for signal distortion. [POS]",
+    "name": "Prepared for signal distortion. ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -1746,7 +1787,7 @@
   },
   {
     "id": "manuAmbushTac1",
-    "name": "Rattlesnake Eyes [REACT - 1]",
+    "name": "Rattlesnake Eyes  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1756,7 +1797,7 @@
   },
   {
     "id": "manuAmbushTac3",
-    "name": "Lyudmila’s Legacy [REACT - 1]",
+    "name": "Lyudmila’s Legacy  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1766,7 +1807,7 @@
   },
   {
     "id": "manuAmbushTac4",
-    "name": "Katya and Lydia [REACT - 0]",
+    "name": "Katya and Lydia  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1776,7 +1817,7 @@
   },
   {
     "id": "manuAmbushTac5",
-    "name": "Cutting Through Ivy [3]",
+    "name": "Cutting Through Ivy ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1786,17 +1827,17 @@
   },
   {
     "id": "manuAmbushTac6",
-    "name": "Signal to Attack [POS]",
+    "name": "Signal to Attack ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "You and your allies gain Snapshot. It gains “Escalate, Exhaust at the end of this turn if not used.” Exhaust."
   },
   {
     "id": "manuAmbushTac7",
-    "name": "Ghillied Up [X]",
+    "name": "Ghillied Up X",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1808,7 +1849,7 @@
   },
   {
     "id": "manuArchonTac2",
-    "name": "Nullification [REACT - 1]",
+    "name": "Nullification  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1818,7 +1859,7 @@
   },
   {
     "id": "manuArchonTac4",
-    "name": "Shield Battery [REACT - 1]",
+    "name": "Shield Battery  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1828,7 +1869,7 @@
   },
   {
     "id": "manuArchonTac6",
-    "name": "Phase Disruption [REACT - 2]",
+    "name": "Phase Disruption  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1838,7 +1879,7 @@
   },
   {
     "id": "manuBragTac1",
-    "name": "Influencer [REACT - 0]",
+    "name": "Influencer  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1848,7 +1889,7 @@
   },
   {
     "id": "manuBragTac2",
-    "name": "Bark Over Bite [3]",
+    "name": "Bark Over Bite ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1858,7 +1899,7 @@
   },
   {
     "id": "manuBragTac3",
-    "name": "Mental Tempest [2]",
+    "name": "Mental Tempest ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1868,7 +1909,7 @@
   },
   {
     "id": "manuBragTac5",
-    "name": "Home on the Stage [POS, CAP(1)]",
+    "name": "Home on the Stage , ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -1880,7 +1921,7 @@
   },
   {
     "id": "manuBragTac6",
-    "name": "Center of Attention [REACT, CAP(1) - 0]",
+    "name": "Center of Attention  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1892,7 +1933,7 @@
   },
   {
     "id": "manuBragTac7",
-    "name": "Showing Your Guns [REACT - 1]",
+    "name": "Showing Your Guns  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1902,7 +1943,7 @@
   },
   {
     "id": "manuCloudTac1",
-    "name": "Aloof Parent [1]",
+    "name": "Aloof Parent ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1912,7 +1953,7 @@
   },
   {
     "id": "manuCloudTac2",
-    "name": "Good Vibes [1]",
+    "name": "Good Vibes ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1922,7 +1963,7 @@
   },
   {
     "id": "manuCloudTac3",
-    "name": "Bright Smile [REACT - 0]",
+    "name": "Bright Smile  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1932,7 +1973,7 @@
   },
   {
     "id": "manuCloudTac6",
-    "name": "Often in a Lifetime [REACT - 0]",
+    "name": "Often in a Lifetime  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1942,7 +1983,7 @@
   },
   {
     "id": "manuCowTac2",
-    "name": "Warning Shot [REACT - 1]",
+    "name": "Warning Shot  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1964,7 +2005,7 @@
   },
   {
     "id": "manuCowTac4",
-    "name": "Fan the Hammer [X]",
+    "name": "Fan the Hammer",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -1976,7 +2017,7 @@
   },
   {
     "id": "manuCowTac6",
-    "name": "Tip your Hat [REACT - 2]",
+    "name": "Tip your Hat  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1986,7 +2027,7 @@
   },
   {
     "id": "manuCowTac7",
-    "name": "Fast Draw [REACT - 1]",
+    "name": "Fast Draw  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -1996,7 +2037,7 @@
   },
   {
     "id": "manuDJTac1",
-    "name": "Diss Track [1]",
+    "name": "Diss Track ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2006,7 +2047,7 @@
   },
   {
     "id": "manuDJTac6",
-    "name": "Sound Suppression [REACT - 1]",
+    "name": "Sound Suppression  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2016,7 +2057,7 @@
   },
   {
     "id": "manuDJTac7",
-    "name": "Priority Channel [REACT - 0]",
+    "name": "Priority Channel  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2026,7 +2067,7 @@
   },
   {
     "id": "manuDuelTac4",
-    "name": "Riposte [REACT - 2]",
+    "name": "Rite  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2036,17 +2077,17 @@
   },
   {
     "id": "manuDuelTac6",
-    "name": "Hearts of Steel [REACT - 2]",
+    "name": "Hearts of Steel  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
-    "desc": "Whenever you would fail a pilot stat roll after Facing Consequences, reroll it. Exhaust."
+    "desc": "Whenever you use Troika, you may reroll it."
   },
   {
     "id": "manuDuelTac7",
-    "name": "Combat Patrol [POS]",
+    "name": "Combat Patrol ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
@@ -2056,7 +2097,7 @@
   },
   {
     "id": "manuFairyTac3",
-    "name": "Recovery Step [REACT - 1]",
+    "name": "Recovery Step  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2066,7 +2107,7 @@
   },
   {
     "id": "manuFairyTac4",
-    "name": "Whirlwind of Movement [2]",
+    "name": "Whirlwind of Movement ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2076,19 +2117,17 @@
   },
   {
     "id": "manuFairyTac6",
-    "name": "Beat of a Different Drum [X]",
+    "name": "Beat of a Different Drum",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "x",
-    "tags": [
-      "manuX"
-    ],
+    "tags": [],
     "desc": "Choose another Maneuver that costs up to X Energy. Gain it as a 0-cost Exhaust at the start of your next turn. If it’s an X cost maneuver, resolve it based on how much energy this Maneuver cost."
   },
   {
     "id": "manuGamblerTac2",
-    "name": "Stand [REACT - 2]",
+    "name": "Stand  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2098,7 +2137,7 @@
   },
   {
     "id": "manuGamblerTac3",
-    "name": "Hit [REACT - 1]",
+    "name": "Hit  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2108,7 +2147,7 @@
   },
   {
     "id": "manuGamblerTac5",
-    "name": "Bust [REACT - 1]",
+    "name": "Bust  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2118,7 +2157,7 @@
   },
   {
     "id": "manuGamblerTac6",
-    "name": "Split [2]",
+    "name": "Split ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2128,7 +2167,7 @@
   },
   {
     "id": "manuHDTac1",
-    "name": "Just a Flesh Wound [REACT - 0]",
+    "name": "Just a Flesh Wound  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2138,7 +2177,7 @@
   },
   {
     "id": "manuHDTac2",
-    "name": "Gun Runner [ATTACK, A2G - 1]",
+    "name": "Gun Runner",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2150,7 +2189,7 @@
   },
   {
     "id": "manuHDTac3",
-    "name": "Reinforced Plates [REACT - 0]",
+    "name": "Reinforced Plates  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2160,7 +2199,7 @@
   },
   {
     "id": "manuHDTac4",
-    "name": "Armor Penetration [REACT, A2G, CAP(1) - 0]",
+    "name": "Armor Penetration ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2172,7 +2211,7 @@
   },
   {
     "id": "manuHDTac5",
-    "name": "Fire Fangs [REACT - 2]",
+    "name": "Fire Fangs  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2182,7 +2221,7 @@
   },
   {
     "id": "manuHDTac6",
-    "name": "Shark’s Smile [REACT, CAP(1) - 0]",
+    "name": "Shark’s Smile  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2194,7 +2233,7 @@
   },
   {
     "id": "manuHDTac7",
-    "name": "Clutch CAS [ATTACK - 2]",
+    "name": "Clutch CAS  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2206,7 +2245,7 @@
   },
   {
     "id": "manuJaegerTac1",
-    "name": "Postmodern Poet [REACT - 1]",
+    "name": "tmodern Poet  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2216,7 +2255,7 @@
   },
   {
     "id": "manuJaegerTac2",
-    "name": "Relatable Moments [2]",
+    "name": "Relatable Moments ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2226,7 +2265,7 @@
   },
   {
     "id": "manuJaegerTac3",
-    "name": "Wealth of Experience [1]",
+    "name": "Wealth of Experience ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2236,7 +2275,7 @@
   },
   {
     "id": "manuJaegerTac4",
-    "name": "Three Act Structure [REACT - 1]",
+    "name": "Three Act Structure  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2246,7 +2285,7 @@
   },
   {
     "id": "manuJaegerTac5",
-    "name": "Creation Myths [REACT - 1]",
+    "name": "Creation Myths  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2256,7 +2295,7 @@
   },
   {
     "id": "manuKFTac1",
-    "name": "Bloodletting [REACT, CAP(1) - 1]",
+    "name": "Bloodletting  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2268,7 +2307,7 @@
   },
   {
     "id": "manuKFTac2",
-    "name": "Blades Edge [REACT, CAP(1) - 1]",
+    "name": "Blades Edge  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2280,7 +2319,7 @@
   },
   {
     "id": "manuKFTac3",
-    "name": "Tip of the Spear [REACT - 6]",
+    "name": "Tip of the Spear  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2290,17 +2329,17 @@
   },
   {
     "id": "manuKFTac4",
-    "name": "Razor Wire [REACT - 0]",
+    "name": "Razor Wire  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "0",
     "tags": [],
-    "desc": "Whenever you Face Severe or higher Consequences, you may gain {Advantage} on your next [ATTACK]."
+    "desc": "Whenever you have two or more stacks of {LOCKED}, you may gain {Advantage} on your next [ATTACK]."
   },
   {
     "id": "manuKFTac5",
-    "name": "Icepick Precision [REACT - 2]",
+    "name": "Icepick Precision  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2310,7 +2349,7 @@
   },
   {
     "id": "manuKFTac6",
-    "name": "35 Foot Rule [REACT - 1]",
+    "name": " Foot Rule  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2320,7 +2359,7 @@
   },
   {
     "id": "manuKFTac7",
-    "name": "Puuko [ATTACK, A2A - 1]",
+    "name": "Puuko",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2332,7 +2371,7 @@
   },
   {
     "id": "manuNoviceTac1",
-    "name": "Pure of Heart [1]",
+    "name": "Pure of Heart ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2342,7 +2381,7 @@
   },
   {
     "id": "manuNoviceTac2",
-    "name": "Waiting With Flowers [REACT - 3]",
+    "name": "Waiting With Flowers  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2352,7 +2391,7 @@
   },
   {
     "id": "manuNoviceTac4",
-    "name": "Beginner’s Luck [REACT - 0]",
+    "name": "Beginner’s Luck  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2362,7 +2401,7 @@
   },
   {
     "id": "manuNoviceTac5",
-    "name": "I Can Save Them All [REACT - 1]",
+    "name": "I Can Save Them All  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2372,20 +2411,19 @@
   },
   {
     "id": "manuNoviceTac6",
-    "name": "How Did You Do That? [REACT, CAP(1) - X]",
+    "name": "How Did You Do That?",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "x",
     "tags": [
-      "manuCap",
-      "manuX"
+      "manuCap"
     ],
     "desc": "Whenever an Ally uses a Maneuver you can’t, you may gain the ability to use that until the end of your next turn. X is equal to the energy cost of the target Maneuver before reductions. Exhaust."
   },
   {
     "id": "manuNoviceTac7",
-    "name": "Rookie Mistakes [REACT - 2]",
+    "name": "Rookie Mistakes  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2395,7 +2433,7 @@
   },
   {
     "id": "manuOODATac2",
-    "name": "Observer [REACT - 0]",
+    "name": "Observer  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2405,7 +2443,7 @@
   },
   {
     "id": "manuOODATac3",
-    "name": "Orientator [REACT - 0]",
+    "name": "Orientator  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2415,7 +2453,7 @@
   },
   {
     "id": "manuOODATac4",
-    "name": "Decider [REACT - 0]",
+    "name": "Decider  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2425,7 +2463,7 @@
   },
   {
     "id": "manuOODATac5",
-    "name": "Acter [REACT - 0]",
+    "name": "Acter  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2435,7 +2473,7 @@
   },
   {
     "id": "manuOODATac6",
-    "name": "Boydian Analysis [REACT - 1]",
+    "name": "Boydian Analysis  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2445,7 +2483,7 @@
   },
   {
     "id": "manuOODATac7",
-    "name": "Five-Sided Wars [REACT - 0]",
+    "name": "Five-Sided Wars  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2455,17 +2493,19 @@
   },
   {
     "id": "manuOracleTac1",
-    "name": "Emperor [CARD - 1]",
+    "name": "Emperor",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "1",
-    "tags": [],
+    "tags": [
+      "manuCard"
+    ],
     "desc": "Gain Lock-On. If you spend a card, choose an Ally to also gain Lock-On."
   },
   {
     "id": "manuOracleTac2",
-    "name": "Wheel of Fortune [CAP(4), - 1]",
+    "name": "Wheel of Fortune",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2476,21 +2516,23 @@
       "manuCap",
       "manuCap"
     ],
-    "desc": "Draw five more cards. Exhaust."
+    "desc": "Draw three more cards. Exhaust. "
   },
   {
     "id": "manuOracleTac3",
-    "name": "Hierophant [CARD - 2]",
+    "name": "Hierophant",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "2",
-    "tags": [],
+    "tags": [
+      "manuCard"
+    ],
     "desc": "Recover a pilot stat. If you spend a card, you and an Ally may do so instead. Exhaust."
   },
   {
     "id": "manuOracleTac5",
-    "name": "Magician [REACT - 3]",
+    "name": "Magician  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2500,27 +2542,31 @@
   },
   {
     "id": "manuOracleTac6",
-    "name": "Devil [CARD - 3]",
+    "name": "Devil",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
     "engCost": "3",
-    "tags": [],
+    "tags": [
+      "manuCard"
+    ],
     "desc": "Put 1 card from your hand into the deck, then shuffle. Draw 1 card. If you spend a card, gain Meld."
   },
   {
     "id": "manuOracleTac7",
-    "name": "World [CARD, REACT - 1]",
+    "name": "World",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
     "engCost": "1",
-    "tags": [],
+    "tags": [
+      "manuCard"
+    ],
     "desc": "Add the spent card value to your next roll as a modifier instead. Fatigue."
   },
   {
     "id": "manuReconTac1",
-    "name": "Pushpin Idealism [2]",
+    "name": "Pushpin Idealism ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2530,7 +2576,7 @@
   },
   {
     "id": "manuReconTac2",
-    "name": "Dig For Details [1]",
+    "name": "Dig For Details ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2540,7 +2586,7 @@
   },
   {
     "id": "manuReconTac3",
-    "name": "Picking Pieces [2]",
+    "name": "Picking Pieces ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2550,7 +2596,7 @@
   },
   {
     "id": "manuReconTac4",
-    "name": "Multistream Misinformation [REACT - 2]",
+    "name": "Multistream Misinformation  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2560,7 +2606,7 @@
   },
   {
     "id": "manuReconTac6",
-    "name": "Infamous Rank [REACT - 2]",
+    "name": "Infamous Rank  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2570,7 +2616,7 @@
   },
   {
     "id": "manuReconTac7",
-    "name": "For Your Ears Only [1]",
+    "name": "For Your Ears Only ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2580,7 +2626,7 @@
   },
   {
     "id": "manuRedlineTac1",
-    "name": "Watch Me Accelerate [REACT - 0]",
+    "name": "Watch Me Accelerate  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2590,7 +2636,7 @@
   },
   {
     "id": "manuRedlineTac2",
-    "name": "Tear Apart the Interstate [REACT - 1]",
+    "name": "Tear Apart the Interstate  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2604,13 +2650,13 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "Once per turn, you may make a Speed check as part of making an [Attack]. If you succeed, gain a +1 Forward. You still Face any Consequences from the Speed check."
   },
   {
     "id": "manuRedlineTac4",
-    "name": "Supersonic Princess [CAP(1), REACT]",
+    "name": "Supersonic Princess",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2622,17 +2668,17 @@
   },
   {
     "id": "manuRedlineTac5",
-    "name": "Hyperdrive [POS]",
+    "name": "Hyperdrive ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "-1",
+    "engCost": "",
     "tags": [],
     "desc": "Gain 1 Energy. Whenever you make a Speed check this turn, gain a stacking +1 Forward."
   },
   {
     "id": "manuRedlineTac6",
-    "name": "Breakneck Trainwreck [REACT - 1]",
+    "name": "Breakneck Trainwreck  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2642,7 +2688,7 @@
   },
   {
     "id": "manuSibylTac1",
-    "name": "To Return the Jesters [REACT - 2]",
+    "name": "To Return the Jesters  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2652,7 +2698,7 @@
   },
   {
     "id": "manuSibylTac2",
-    "name": "To Recognize the Dark [3]",
+    "name": "To Recognize the Dark ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2662,7 +2708,7 @@
   },
   {
     "id": "manuSibylTac3",
-    "name": "To Release the Known [1]",
+    "name": "To Release the Known ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2672,7 +2718,7 @@
   },
   {
     "id": "manuSibylTac4",
-    "name": "To Repair the Forgiven [REACT - 1]",
+    "name": "To Repair the Forgiven  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2682,7 +2728,7 @@
   },
   {
     "id": "manuSibylTac5",
-    "name": "To Renounce the Dead [REACT - 1]",
+    "name": "To Renounce the Dead  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2692,7 +2738,7 @@
   },
   {
     "id": "manuSibylTac6",
-    "name": "To Ratify the Unsure [0]",
+    "name": "To Ratify the Unsure ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2702,7 +2748,7 @@
   },
   {
     "id": "manuSibylTac7",
-    "name": "To Rebuke the Heavens [REACT - 3]",
+    "name": "To Rebuke the Heavens  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2712,17 +2758,17 @@
   },
   {
     "id": "manuTacticianTac1",
-    "name": "No, Over There! [POS]",
+    "name": "No, Over There! ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "-2",
+    "engCost": "",
     "tags": [],
     "desc": "Gain 2 Energy. Choose an Ally and change their Zone."
   },
   {
     "id": "manuTacticianTac2",
-    "name": "How Did You Miss? [REACT - 2]",
+    "name": "How Did You Miss?  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2732,7 +2778,7 @@
   },
   {
     "id": "manuTacticianTac4",
-    "name": "DUCK! [REACT, CAP(1) - 3]",
+    "name": "DUCK!  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2744,7 +2790,7 @@
   },
   {
     "id": "manuTacticianTac5",
-    "name": "Get Back Here! [2]",
+    "name": "Get Back Here! ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2754,7 +2800,7 @@
   },
   {
     "id": "manuTacticianTac6",
-    "name": "Just Shoot Already! [3]",
+    "name": "Just Shoot Already! ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2764,7 +2810,7 @@
   },
   {
     "id": "manuTacticianTac7",
-    "name": "What The Hell Was That? [REACT - 4]",
+    "name": "What The Hell Was That?  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2774,7 +2820,7 @@
   },
   {
     "id": "manuTalonTac1",
-    "name": "Seven Heavens [4]",
+    "name": "Seven Heavens ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2784,7 +2830,7 @@
   },
   {
     "id": "manuTalonTac3",
-    "name": "Qaswarah [REACT, TRICK - 1]",
+    "name": "Qaswarah",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2792,11 +2838,11 @@
     "tags": [
       "manuTrick"
     ],
-    "desc": "Whenever you deal damage to a target with {Brand}, you may choose another target. If you do, they also gain {Brand}."
+    "desc": "Whenever you deal damage to a target with {Brand}, you may consume {Brand} to choose another target. If you do, they also gain {Brand}."
   },
   {
     "id": "manuTalonTac5",
-    "name": "Sadiq fi Al’zil [ATTACK, MAP - 5]",
+    "name": "Sadiq fi Al’zil ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2809,7 +2855,7 @@
   },
   {
     "id": "manuTalonTac6",
-    "name": "Ukhuwwah [REACT - 1]",
+    "name": "Ukhuwwah  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2819,7 +2865,7 @@
   },
   {
     "id": "manuTruckTac3",
-    "name": "Right After a Beer [REACT - 0]",
+    "name": "Right After a Beer  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2829,7 +2875,7 @@
   },
   {
     "id": "manuTruckTac4",
-    "name": "Hey that Bogey [REACT - 1]",
+    "name": "Hey that Bogey  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2839,7 +2885,7 @@
   },
   {
     "id": "manuTruckTac5",
-    "name": "Is Shaped like a Deer [REACT - 1]",
+    "name": "Is Shaped like a Deer  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
@@ -2849,7 +2895,7 @@
   },
   {
     "id": "manuTruckTac7",
-    "name": "Manually Piloted ICBM [ATTACK - 3]",
+    "name": "Manually Piloted ICBM  ",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -2881,7 +2927,7 @@
   },
   {
     "id": "manuSSEBaseOrder",
-    "name": "Base Orders - 2",
+    "name": "Base Orders",
     "isCommon": false,
     "isAdvanced": false,
     "type": "Normal",
@@ -3056,7 +3102,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Reaction",
-    "engCost": "1",
+    "engCost": "",
     "tags": [],
     "desc": "[REACT - 1] Replace one of your plane stats with the current value of your G-Resist until the end of your turn. Fatigue. "
   },
@@ -3066,7 +3112,7 @@
     "isCommon": false,
     "isAdvanced": false,
     "type": "Positioning",
-    "engCost": "0",
+    "engCost": "",
     "tags": [],
     "desc": "As a rather down to earth man, Husker knows how to keep the classics alive -- and himself. As a Positioning Maneuver, he may choose Sweet or Sour and deliver a remark in line with the flavor he chose. If he chose Sweet, each ally may recover either a Temper or a Nerve. If he chose Sour, spend a Temper or Nerve and gain Snapshot. Exhaust."
   },
@@ -3180,7 +3226,7 @@
     "type": "Reaction",
     "engCost": "0",
     "tags": [],
-    "desc": "Choose Boredom or Bravery. If you choose Boredom, add your Reaction minus your Nerve to a roll. If you choose Bravery, add your G-Resist and Temper to a roll, but take a Mental and Physical Stress. Exhaust."
+    "desc": "Choose Boredom or Bravery. If you choose Boredom, add your Reflex minus your Nerve to a roll. If you choose Bravery, add your G-Resist and Temper to a roll, but take a Mental and Physical Stress. Exhaust."
   },
   {
     "id": "manuHoboShotgun",
@@ -3219,5 +3265,17 @@
       "manuStressP"
     ],
     "desc": "Spend a Point of Stress on both tracks. Complete any deployment advancement; you can only do this once per mission. Exhaust"
+  },
+  {
+    "id": "manuModVentral",
+    "name": "Ventral Strafe",
+    "isCommon": false,
+    "isAdvanced": false,
+    "type": "Reaction",
+    "engCost": "",
+    "tags": [
+      "manuAttack"
+    ],
+    "desc": "Whenever you make a Maneuver check, you may make an attack."
   }
 ]

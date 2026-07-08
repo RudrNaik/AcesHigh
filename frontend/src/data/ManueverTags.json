@@ -35,6 +35,11 @@
         "desc": "Adds a Physical Stress when used"
     },
     {
+        "id": "manuStressA",
+        "name": "Stress (AGN)",
+        "desc": "Adds a either Stress when used"
+    },
+    {
         "id": "manuPOSTag",
         "name": "Positioning",
         "desc": "A Positioning Maneuver, can only be used for your positioning action."
@@ -143,5 +148,15 @@
         "id": "manuAddDive",
         "name":"Dive",
         "desc": "Gains Dive"
+    },
+    {
+        "id": "manuDistract",
+        "name":"Distract",
+        "desc": "Used to distract enemies."
+    },
+    {
+        "id": "manuInternal",
+        "name":"Distract",
+        "desc": "Used to distract enemies."
     }
 ]
