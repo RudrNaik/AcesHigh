@@ -156,7 +156,12 @@
     },
     {
         "id": "manuInternal",
-        "name":"Distract",
-        "desc": "Used to distract enemies."
+        "name":"Internal",
+        "desc": "On a Failure or Mixed Success, do not Escalate."
+    },
+    {
+        "id": "manuCard",
+        "name":"Card",
+        "desc": "Used by Oracles."
     }
 ]
