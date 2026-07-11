@@ -1402,10 +1402,10 @@
     "gen": 4,
     "tier": 5,
     "stats": {
-      "A2A": 3,
-      "A2G": 3,
+      "A2A": 2,
+      "A2G": 2,
       "MANU": 5,
-      "SPEED": 3,
+      "SPEED": 2,
       "SURV": 2,
       "CAP": 7
     },
@@ -1562,221 +1562,348 @@
     "endingChars": "n/a"
   },
   {
-    "id": "acPSR16N",
-    "name": "R-16N Falconer",
+    "id": "acPSR16NRG",
+    "name": "R-16N --RED GLINT--",
     "family": "acFamViper",
     "intrinsic": "intrSilver",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 8,
     "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
+      "A2A": 4,
+      "A2G": 4,
+      "MANU": 4,
+      "SPEED": 4,
+      "SURV": 4,
+      "CAP": 8
     },
-    "moduleSlots": 8,
+    "moduleSlots": 0,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordMLAA4",
     "desc": "n/a",
-    "tags": [],
+    "tags": [
+      "acAOA",
+      "acPSM",
+      "acSTOL"
+    ],
     "startingChars": "n/a",
     "endingChars": "n/a"
   },
   {
-    "id": "acPSR10",
-    "name": "R-20 Hogger",
-    "family": "acFamRooks",
-    "intrinsic": "intrDefense",
-    "type": "Strike",
-    "gen": 0,
-    "tier": 0,
-    "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
-    },
-    "moduleSlots": 8,
-    "mSMod": "n/a",
-    "baseOrdID": "ID",
-    "desc": "n/a",
-    "tags": [],
-    "startingChars": "n/a",
-    "endingChars": "n/a"
-  },
-  {
-    "id": "acPSP26",
-    "name": "P-26 Chimera",
-    "family": "acFamSvea",
+    "id": "acPSR16N",
+    "name": "R-16N Sky Adder",
+    "family": "acFamViper",
     "intrinsic": "intrDorito",
     "type": "Multirole",
     "gen": 0,
     "tier": 0,
     "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
+      "A2A": 1,
+      "A2G": 1,
+      "MANU": 5,
+      "SPEED": 1,
+      "SURV": 1,
+      "CAP": 7
     },
     "moduleSlots": 8,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordMLAA2",
     "desc": "n/a",
-    "tags": [],
+    "tags": [
+      "acAOA",
+      "acPSM",
+      "acHSTRUNG"
+    ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
+    "id": "acPSR20",
+    "name": "R-20B Hogger",
+    "family": "acFamRooks",
+    "intrinsic": "intrDefense",
+    "type": "Strike",
+    "gen": 0,
+    "tier": 1,
+    "stats": {
+      "A2A": 0,
+      "A2G": 4,
+      "MANU": 2,
+      "SPEED": 2,
+      "SURV": 1,
+      "CAP": 10
+    },
+    "moduleSlots": 7,
+    "mSMod": "n/a",
+    "baseOrdID": "ordATGM",
+    "desc": "n/a",
+    "tags": [
+      "acMENG",
+      "acSTOL"
+    ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
+    "id": "acPSP26",
+    "name": "P-26C Super Chimera",
+    "family": "acFamSvea",
+    "intrinsic": "intrDorito",
+    "type": "Multirole",
+    "gen": 0,
+    "tier": 2,
+    "stats": {
+      "A2A": 2,
+      "A2G": 2,
+      "MANU": 4,
+      "SPEED": 2,
+      "SURV": 3,
+      "CAP": 7
+    },
+    "moduleSlots": 6,
+    "mSMod": "n/a",
+    "baseOrdID": "ordPAARM",
+    "desc": "n/a",
+    "tags": [
+      "acSTOL",
+      "acAOA"
+    ],
     "startingChars": "n/a",
     "endingChars": "n/a"
   },
   {
     "id": "acpsR30",
-    "name": "R-30",
+    "name": "R-30 Cobra",
     "family": "acFamCrane",
     "intrinsic": "intrHoldingHands",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
+      "A2A": 2,
+      "A2G": 4,
+      "MANU": 3,
+      "SPEED": 3,
+      "SURV": 2,
+      "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordStandoff",
     "desc": "n/a",
-    "tags": [],
+    "tags": [
+      "acAOA",
+      "acSTOL",
+      "acMCREW"
+    ],
     "startingChars": "n/a",
     "endingChars": "n/a"
   },
   {
     "id": "acpsP28",
-    "name": "P-28",
+    "name": "P-28 Vector",
     "family": "acFamTomcats",
     "intrinsic": "intrEvilEye",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 4,
     "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
+      "A2A": 3,
+      "A2G": -1,
+      "MANU": 3,
+      "SPEED": 5,
+      "SURV": 3,
+      "CAP": 9
     },
-    "moduleSlots": 8,
+    "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordMCAA2",
     "desc": "n/a",
-    "tags": [],
+    "tags": [
+      "acMENG3",
+      "acMCREW",
+      "acSWEEP",
+      "acHSTRUNG",
+      "acNAVAL"
+    ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
+    "id": "acpsPEP28",
+    "name": "EP-28G Electrothrust",
+    "family": "acFamTomcats",
+    "intrinsic": "intrEvilEye",
+    "type": "EWO",
+    "gen": 0,
+    "tier": 4,
+    "stats": {
+      "A2A": 1,
+      "A2G": 1,
+      "MANU": 1,
+      "SPEED": 5,
+      "SURV": 2,
+      "CAP": 13
+    },
+    "moduleSlots": 4,
+    "mSMod": "n/a",
+    "baseOrdID": "ordASAT",
+    "desc": "n/a",
+    "tags": [
+      "acMENG3",
+      "acMCREW",
+      "acSWEEP",
+      "acHSTRUNG",
+      "acNAVAL"
+    ],
     "startingChars": "n/a",
     "endingChars": "n/a"
   },
   {
     "id": "acPSR40",
-    "name": "R-40",
+    "name": "R-40 Longcaster",
     "family": "acFamPearls",
     "intrinsic": "intrAvengers",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 5,
     "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
+      "A2A": 3,
+      "A2G": -1,
+      "MANU": 1,
+      "SPEED": 4,
+      "SURV": 2,
+      "CAP": 8
     },
-    "moduleSlots": 8,
+    "moduleSlots": 3,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
-    "desc": "n/a",
-    "tags": [],
-    "startingChars": "n/a",
-    "endingChars": "n/a"
-  },
-  {
-    "id": "acPSP46",
-    "name": "P-46",
-    "family": "acFamCrane",
-    "intrinsic": "intrCola",
-    "type": "Multirole",
-    "gen": 0,
-    "tier": 7,
-    "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
-    },
-    "moduleSlots": 1,
-    "mSMod": "n/a",
-    "baseOrdID": "ID",
-    "desc": "n/a",
-    "tags": [],
-    "startingChars": "n/a",
-    "endingChars": "n/a"
-  },
-  {
-    "id": "acPSV50",
-    "name": "V-50",
-    "family": "acFamMirages",
-    "intrinsic": "intrWonderWall",
-    "type": "Interceptor",
-    "gen": 0,
-    "tier": 8,
-    "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
-    },
-    "moduleSlots": 0,
-    "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordMLAA4",
     "desc": "n/a",
     "tags": [
+      "acAOA",
+      "acMENG",
       "acSTEALTH"
     ],
     "startingChars": "n/a",
     "endingChars": "n/a"
   },
   {
+    "id": "acPSP46",
+    "name": "P-46 Cobra II",
+    "family": "acFamCrane",
+    "intrinsic": "intrCola",
+    "type": "Multirole",
+    "gen": 0,
+    "tier": 6,
+    "stats": {
+      "A2A": 3,
+      "A2G": 3,
+      "MANU": 5,
+      "SPEED": 3,
+      "SURV": 4,
+      "CAP": 8
+    },
+    "moduleSlots": 2,
+    "mSMod": "n/a",
+    "baseOrdID": "ordSPBAA",
+    "desc": "n/a",
+    "tags": [
+      "acAOA",
+      "acPSM",
+      "acHSTRUNG",
+      "acSTOL"
+    ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
+    "id": "acPSV50",
+    "name": "V-50 Rosethorn",
+    "family": "acFamFox",
+    "intrinsic": "intrWonderWall",
+    "type": "Interceptor",
+    "gen": 0,
+    "tier": 7,
+    "stats": {
+      "A2A": 4,
+      "A2G": 0,
+      "MANU": 4,
+      "SPEED": 3,
+      "SURV": 3,
+      "CAP": 8
+    },
+    "moduleSlots": 1,
+    "mSMod": "n/a",
+    "baseOrdID": "ordMLAA4",
+    "desc": "n/a",
+    "tags": [
+      "acSTEALTH",
+      "acAOA",
+      "acPSM",
+      "acSTOL"
+    ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
     "id": "acPSV55",
-    "name": "V-55",
+    "name": "V-55B Lillybloom",
     "family": "acFamPirates",
     "intrinsic": "intrWonderWall",
     "type": "Multirole",
     "gen": 0,
-    "tier": 8,
+    "tier": 7,
     "stats": {
-      "A2A": 0,
-      "A2G": 0,
-      "MANU": 0,
-      "SPEED": 0,
-      "SURV": 0,
-      "CAP": 0
+      "A2A": 3,
+      "A2G": 4,
+      "MANU": 3,
+      "SPEED": 4,
+      "SURV": 3,
+      "CAP": 8
     },
-    "moduleSlots": 0,
+    "moduleSlots": 1,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordMLAG4",
     "desc": "n/a",
     "tags": [
-      "acSTEALTH"
+      "acSTEALTH",
+      "acAOA",
+      "acPSM",
+      "acMCREW",
+      "acSTOL"
+    ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
+    "id": "acPSFTXIV",
+    "name": "FT-XIV Skadi",
+    "family": "acFamTomcats",
+    "intrinsic": "intrHighNoon",
+    "type": "Interceptor",
+    "gen": 0,
+    "tier": 7,
+    "stats": {
+      "A2A": 4,
+      "A2G": 1,
+      "MANU": 5,
+      "SPEED": 2,
+      "SURV": 3,
+      "CAP": 10
+    },
+    "moduleSlots": 1,
+    "mSMod": "n/a",
+    "baseOrdID": "ordEGL",
+    "desc": "n/a",
+    "tags": [
+      "acAOA",
+      "acPSM",
+      "acMCREW",
+      "acHSTRUNG",
+      "acMENG",
+      "acSTOL",
+      "acNAVAL",
+      "acSWEEP"
     ],
     "startingChars": "n/a",
     "endingChars": "n/a"
@@ -2157,7 +2284,7 @@
     "endingChars": "n/a"
   },
   {
-    "id": "acF62",
+    "id": "acF62A",
     "name": "F-62 Vista",
     "family": "acFamViper",
     "intrinsic": "intrFalcon",
@@ -2197,7 +2324,7 @@
       "A2G": 0,
       "MANU": 2,
       "SPEED": 2,
-      "SURV": 3,
+      "SURV": 4,
       "CAP": 7
     },
     "moduleSlots": 8,
@@ -2244,7 +2371,7 @@
     "intrinsic": "intrTheF15EIs",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 4,
     "stats": {
       "A2A": 2,
       "A2G": 1,
@@ -2253,9 +2380,9 @@
       "SURV": 4,
       "CAP": 8
     },
-    "moduleSlots": 8,
+    "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordLASM",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -2271,18 +2398,18 @@
     "intrinsic": "intrSilver",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 4,
     "stats": {
-      "A2A": 3,
+      "A2A": 2,
       "A2G": 2,
       "MANU": 3,
-      "SPEED": 3,
-      "SURV": 1,
+      "SPEED": 2,
+      "SURV": 2,
       "CAP": 9
     },
-    "moduleSlots": 8,
+    "moduleSlots": 4,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordHARMPlus",
     "desc": "n/a",
     "tags": [
       "acMENG",
@@ -2299,16 +2426,16 @@
     "intrinsic": "intrSilver",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
       "A2A": 2,
-      "A2G": 1,
-      "MANU": 2,
+      "A2G": 2,
+      "MANU": 3,
       "SPEED": 2,
-      "SURV": 1,
-      "CAP": 6
+      "SURV": 3,
+      "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2327,16 +2454,16 @@
     "intrinsic": "intrSilver",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
       "A2A": 2,
-      "A2G": 1,
-      "MANU": 2,
+      "A2G": 2,
+      "MANU": 3,
       "SPEED": 2,
-      "SURV": 1,
-      "CAP": 5
+      "SURV": 4,
+      "CAP": 6
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2354,16 +2481,16 @@
     "intrinsic": "intrSilver",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 4,
     "stats": {
       "A2A": 3,
       "A2G": 1,
       "MANU": 3,
       "SPEED": 2,
-      "SURV": 1,
+      "SURV": 3,
       "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 4,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2382,18 +2509,18 @@
     "intrinsic": "intrFlanker",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 2,
     "stats": {
       "A2A": 3,
       "A2G": 1,
       "MANU": 3,
       "SPEED": 2,
-      "SURV": 1,
-      "CAP": 9
+      "SURV": 3,
+      "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordSASMPlus",
     "desc": "n/a",
     "tags": [
       "acMENG",
@@ -2410,7 +2537,7 @@
     "intrinsic": "intrNJAF",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 6,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2419,9 +2546,9 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 2,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordSHISM",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -2438,18 +2565,18 @@
     "intrinsic": "intrNJAF",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
-      "A2A": 3,
+      "A2A": 1,
       "A2G": 3,
       "MANU": 2,
       "SPEED": 4,
-      "SURV": 2,
-      "CAP": 10
+      "SURV": 3,
+      "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordHARMPlus",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -2466,16 +2593,16 @@
     "intrinsic": "intrNJAF",
     "type": "EWO",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
       "A2A": 1,
       "A2G": 1,
       "MANU": 2,
       "SPEED": 3,
-      "SURV": 2,
+      "SURV": 3,
       "CAP": 8
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2494,16 +2621,16 @@
     "intrinsic": "intrNJAF",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 5,
     "stats": {
-      "A2A": 3,
-      "A2G": 4,
-      "MANU": 4,
+      "A2A": 2,
+      "A2G": 2,
+      "MANU": 3,
       "SPEED": 3,
       "SURV": 3,
-      "CAP": 12
+      "CAP": 9
     },
-    "moduleSlots": 8,
+    "moduleSlots": 3,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2521,16 +2648,16 @@
     "intrinsic": "intrNJAF",
     "type": "EWO",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
       "A2A": 2,
       "A2G": 2,
       "MANU": 2,
       "SPEED": 2,
-      "SURV": 1,
-      "CAP": 8
+      "SURV": 3,
+      "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2548,18 +2675,18 @@
     "intrinsic": "intrNJAF",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 2,
     "stats": {
       "A2A": 3,
       "A2G": 1,
       "MANU": 2,
       "SPEED": 3,
       "SURV": 2,
-      "CAP": 10
+      "CAP": 7
     },
-    "moduleSlots": 8,
+    "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordVPSMPlus",
     "desc": "n/a",
     "tags": [
       "acMENG"
@@ -2574,7 +2701,7 @@
     "intrinsic": "intrCola",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 2,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2583,7 +2710,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 6,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2627,7 +2754,7 @@
     "intrinsic": "intrLeaf",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2636,7 +2763,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2680,11 +2807,11 @@
     "tier": 4,
     "stats": {
       "A2A": 2,
-      "A2G": 1,
+      "A2G": 2,
       "MANU": 3,
       "SPEED": 2,
       "SURV": 3,
-      "CAP": 7
+      "CAP": 9
     },
     "moduleSlots": 4,
     "mSMod": "n/a",
@@ -2706,16 +2833,16 @@
     "intrinsic": "intrTomcat",
     "type": "Multirole",
     "gen": 0,
-    "tier": 6,
+    "tier": 5,
     "stats": {
       "A2A": 3,
       "A2G": 2,
       "MANU": 3,
       "SPEED": 3,
       "SURV": 4,
-      "CAP": 7
+      "CAP": 8
     },
-    "moduleSlots": 2,
+    "moduleSlots": 3,
     "mSMod": "n/a",
     "baseOrdID": "ordSuperPhoenix",
     "desc": "n/a",
@@ -2735,7 +2862,7 @@
     "intrinsic": "intrLGG",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 4,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2744,7 +2871,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 4,
     "mSMod": "n/a",
     "baseOrdID": "ordMLAA4",
     "desc": "n/a",
@@ -2762,7 +2889,7 @@
     "intrinsic": "intrFalcon",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 4,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2771,7 +2898,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 4,
     "mSMod": "n/a",
     "baseOrdID": "ordMLAA2",
     "desc": "n/a",
@@ -2795,7 +2922,7 @@
       "MANU": 3,
       "SPEED": 3,
       "SURV": 5,
-      "CAP": 10
+      "CAP": 9
     },
     "moduleSlots": 2,
     "mSMod": "n/a",
@@ -2824,7 +2951,7 @@
       "MANU": 3,
       "SPEED": 3,
       "SURV": 5,
-      "CAP": 10
+      "CAP": 9
     },
     "moduleSlots": 2,
     "mSMod": "n/a",
@@ -2876,7 +3003,7 @@
     "intrinsic": "intrWonderWall",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 3,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2885,7 +3012,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 5,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2902,7 +3029,7 @@
     "intrinsic": "intrSeabird",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 6,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2911,7 +3038,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 2,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -2928,7 +3055,7 @@
     "intrinsic": "intrBullhead",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 6,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -2937,7 +3064,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 2,
     "mSMod": "n/a",
     "baseOrdID": "ID",
     "desc": "n/a",
@@ -3128,7 +3255,7 @@
     "intrinsic": "intrTheF15EIs",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 7,
     "stats": {
       "A2A": 2,
       "A2G": 4,
@@ -3137,9 +3264,9 @@
       "SURV": 3,
       "CAP": 6
     },
-    "moduleSlots": 8,
+    "moduleSlots": 1,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordSASMPlus",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -3157,7 +3284,7 @@
     "intrinsic": "intrTheF15EIs",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 7,
     "stats": {
       "A2A": 4,
       "A2G": 2,
@@ -3166,9 +3293,9 @@
       "SURV": 2,
       "CAP": 8
     },
-    "moduleSlots": 8,
+    "moduleSlots": 1,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordPSML",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -3186,7 +3313,7 @@
     "intrinsic": "intrTheF15EIs",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 7,
     "stats": {
       "A2A": 3,
       "A2G": 3,
@@ -3195,9 +3322,9 @@
       "SURV": 4,
       "CAP": 8
     },
-    "moduleSlots": 8,
+    "moduleSlots": 1,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordPSMS",
     "desc": "n/a",
     "tags": [
       "acAOA",
@@ -3215,18 +3342,18 @@
     "intrinsic": "intrTheF15EIs",
     "type": "Strike",
     "gen": 0,
-    "tier": 0,
+    "tier": 6,
     "stats": {
-      "A2A": 3,
-      "A2G": 4,
+      "A2A": 2,
+      "A2G": 3,
       "MANU": 3,
       "SPEED": 3,
       "SURV": 4,
       "CAP": 10
     },
-    "moduleSlots": 8,
+    "moduleSlots": 2,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordVMLAG2",
     "desc": "n/a",
     "tags": [
       "acMCREW",
@@ -3242,18 +3369,18 @@
     "intrinsic": "intrTheF15EIs",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 6,
     "stats": {
       "A2A": 4,
-      "A2G": 1,
+      "A2G": 0,
       "MANU": 4,
-      "SPEED": 4,
-      "SURV": 3,
+      "SPEED": 3,
+      "SURV": 4,
       "CAP": 10
     },
-    "moduleSlots": 8,
+    "moduleSlots": 2,
     "mSMod": "n/a",
-    "baseOrdID": "ID",
+    "baseOrdID": "ordMCAA2",
     "desc": "n/a",
     "tags": [
       "acMENG"
@@ -3268,18 +3395,18 @@
     "intrinsic": "intrLGG",
     "type": "Interceptor",
     "gen": 0,
-    "tier": 0,
+    "tier": 2,
     "stats": {
       "A2A": 3,
       "A2G": 0,
       "MANU": 3,
       "SPEED": 3,
-      "SURV": 2,
+      "SURV": 3,
       "CAP": 6
     },
-    "moduleSlots": 8,
+    "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "ordHCAA",
+    "baseOrdID": "ordSuperPhoenix",
     "desc": "n/a",
     "tags": [
       "acMENG",
@@ -3328,8 +3455,8 @@
     "stats": {
       "A2A": 5,
       "A2G": 0,
-      "MANU": 3,
-      "SPEED": 3,
+      "MANU": 5,
+      "SPEED": 5,
       "SURV": 1,
       "CAP": 8
     },
@@ -3351,7 +3478,7 @@
     "intrinsic": "intrLeaf",
     "type": "Multirole",
     "gen": 0,
-    "tier": 0,
+    "tier": 8,
     "stats": {
       "A2A": 0,
       "A2G": 0,
@@ -3360,7 +3487,7 @@
       "SURV": 0,
       "CAP": 0
     },
-    "moduleSlots": 8,
+    "moduleSlots": 0,
     "mSMod": "n/a",
     "baseOrdID": "ordASAT",
     "desc": "n/a",
@@ -3377,17 +3504,17 @@
     "intrinsic": "intrFlanker",
     "type": "Multirole",
     "gen": 4,
-    "tier": 3,
+    "tier": 8,
     "stats": {
-      "A2A": 2,
-      "A2G": 2,
+      "A2A": 3,
+      "A2G": 3,
       "MANU": 3,
       "SPEED": 3,
       "SURV": 2,
       "CAP": 8
     },
-    "moduleSlots": 3,
-    "mSMod": -2,
+    "moduleSlots": 0,
+    "mSMod": "n/a",
     "baseOrdID": "ordQSM",
     "desc": "n/a",
     "tags": [
@@ -3433,16 +3560,16 @@
     "intrinsic": "intrGripen",
     "type": "Multirole",
     "gen": 4,
-    "tier": 0,
+    "tier": 1,
     "stats": {
       "A2A": 2,
-      "A2G": 1,
+      "A2G": 2,
       "MANU": 3,
       "SPEED": 1,
       "SURV": 3,
       "CAP": 6
     },
-    "moduleSlots": 8,
+    "moduleSlots": 7,
     "mSMod": "n/a",
     "baseOrdID": "ordUGB3",
     "desc": "n/a",
@@ -3461,7 +3588,7 @@
     "intrinsic": "intrGripen",
     "type": "Multirole",
     "gen": 4,
-    "tier": 0,
+    "tier": 2,
     "stats": {
       "A2A": 2,
       "A2G": 1,
@@ -3470,7 +3597,7 @@
       "SURV": 5,
       "CAP": 6
     },
-    "moduleSlots": 8,
+    "moduleSlots": 6,
     "mSMod": "n/a",
     "baseOrdID": "ordMCAA2",
     "desc": "n/a",
@@ -3489,16 +3616,16 @@
     "intrinsic": "intrGripen",
     "type": "Multirole",
     "gen": 4,
-    "tier": 3,
+    "tier": 2,
     "stats": {
-      "A2A": 3,
+      "A2A": 2,
       "A2G": 2,
-      "MANU": 4,
+      "MANU": 3,
       "SPEED": 1,
       "SURV": 4,
       "CAP": 8
     },
-    "moduleSlots": 5,
+    "moduleSlots": 6,
     "mSMod": "n/a",
     "baseOrdID": "ordFMLAA2",
     "desc": "n/a",
@@ -3515,17 +3642,17 @@
     "intrinsic": "intrDorito",
     "type": "Multirole",
     "gen": 4,
-    "tier": 2,
+    "tier": 8,
     "stats": {
       "A2A": 3,
-      "A2G": 1,
+      "A2G": 2,
       "MANU": 4,
-      "SPEED": 2,
+      "SPEED": 3,
       "SURV": 4,
-      "CAP": 8
+      "CAP": 9
     },
-    "moduleSlots": 3,
-    "mSMod": -3,
+    "moduleSlots": 0,
+    "mSMod": "n/a",
     "baseOrdID": "ordMLAA4",
     "desc": "n/a",
     "tags": [
@@ -3536,7 +3663,7 @@
   },
   {
     "id": "acSu27BT",
-    "name": "Su-27SM --BLOWTORCH--",
+    "name": "Su-27BT --BLOWTORCH--",
     "family": "acFamCrane",
     "intrinsic": "intrFlanker",
     "type": "Interceptor",
@@ -3547,11 +3674,11 @@
       "A2G": -1,
       "MANU": 3,
       "SPEED": 2,
-      "SURV": 1,
-      "CAP": 10
+      "SURV": 2,
+      "CAP": 13
     },
-    "moduleSlots": 4,
-    "mSMod": -4,
+    "moduleSlots": 0,
+    "mSMod": -8,
     "baseOrdID": "ordFMLAA2",
     "desc": "An Su-27 dressed up to remember the fallen. Burn Valka down for him.",
     "tags": [
@@ -3623,17 +3750,17 @@
     "intrinsic": "intrTreetop",
     "type": "Strike",
     "gen": 4,
-    "tier": 5,
+    "tier": 8,
     "stats": {
       "A2A": 3,
       "A2G": 3,
       "MANU": 5,
       "SPEED": 2,
-      "SURV": 2,
-      "CAP": 8
+      "SURV": 4,
+      "CAP": 9
     },
-    "moduleSlots": 1,
-    "mSMod": -2,
+    "moduleSlots": 0,
+    "mSMod": "n/a",
     "baseOrdID": "ordATGM",
     "desc": "n/a",
     "tags": [
@@ -3654,7 +3781,7 @@
     "gen": 4,
     "tier": 2,
     "stats": {
-      "A2A": 2,
+      "A2A": 3,
       "A2G": 0,
       "MANU": 2,
       "SPEED": 3,
@@ -3725,19 +3852,19 @@
     "id": "acCF18",
     "name": "CF-188A Northern Hornet",
     "family": "acFamVespers",
-    "intrinsic": "intrBHunter",
+    "intrinsic": "intrSeabird",
     "type": "Multirole",
     "gen": 4,
-    "tier": 4,
+    "tier": 2,
     "stats": {
-      "A2A": 2,
+      "A2A": 1,
       "A2G": 1,
       "MANU": 2,
       "SPEED": 2,
-      "SURV": 3,
-      "CAP": 7
+      "SURV": 4,
+      "CAP": 8
     },
-    "moduleSlots": 4,
+    "moduleSlots": 6,
     "mSMod": "n/a",
     "baseOrdID": "ordSASMPlus",
     "desc": "n/a",
@@ -3754,16 +3881,16 @@
     "intrinsic": "intrLeadSled",
     "type": "Interceptor",
     "gen": 4,
-    "tier": 1,
+    "tier": 0,
     "stats": {
-      "A2A": 1,
+      "A2A": 2,
       "A2G": -1,
       "MANU": 2,
       "SPEED": 2,
       "SURV": 2,
       "CAP": 8
     },
-    "moduleSlots": 7,
+    "moduleSlots": 8,
     "mSMod": "n/a",
     "baseOrdID": "ordSuperPhoenix",
     "desc": "n/a",
@@ -3783,7 +3910,7 @@
     "intrinsic": "intrLeadSled",
     "type": "Multirole",
     "gen": 4,
-    "tier": 1,
+    "tier": 0,
     "stats": {
       "A2A": 1,
       "A2G": 0,
@@ -3792,7 +3919,7 @@
       "SURV": 4,
       "CAP": 7
     },
-    "moduleSlots": 7,
+    "moduleSlots": 8,
     "mSMod": "n/a",
     "baseOrdID": "ordECM",
     "desc": "n/a",
@@ -3810,16 +3937,16 @@
     "intrinsic": "intrThrush",
     "type": "EWO",
     "gen": 4,
-    "tier": 5,
+    "tier": 4,
     "stats": {
       "A2A": 3,
-      "A2G": 1,
-      "MANU": -1,
+      "A2G": 0,
+      "MANU": 0,
       "SPEED": 4,
       "SURV": 5,
-      "CAP": 7
+      "CAP": 8
     },
-    "moduleSlots": 3,
+    "moduleSlots": 4,
     "mSMod": "n/a",
     "baseOrdID": "ordIEW",
     "desc": "n/a",
@@ -3879,7 +4006,7 @@
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "ordPAARM",
+    "baseOrdID": "ordHARMPlus",
     "desc": "n/a",
     "tags": [
       "acSWEEP",
@@ -3894,7 +4021,7 @@
     "name": "F-13D Elster",
     "family": "acFamVanguard",
     "intrinsic": "intrDefense",
-    "type": "Strike",
+    "type": "Interceptor",
     "gen": 4,
     "tier": 2,
     "stats": {
@@ -3902,12 +4029,12 @@
       "A2G": 0,
       "MANU": 0,
       "SPEED": 3,
-      "SURV": 6,
+      "SURV": 3,
       "CAP": 10
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
-    "baseOrdID": "ordHARMPlus",
+    "baseOrdID": "ordPAARM",
     "desc": "n/a",
     "tags": [
       "acSWEEP",
@@ -3941,6 +4068,30 @@
       "acAOA",
       "acPSM"
     ],
+    "startingChars": "n/a",
+    "endingChars": "n/a"
+  },
+  {
+    "id": "acSu74",
+    "name": "Su-74 Tukreb",
+    "family": "",
+    "intrinsic": "",
+    "type": "",
+    "gen": 0,
+    "tier": 0,
+    "stats": {
+      "A2A": 0,
+      "A2G": 0,
+      "MANU": 0,
+      "SPEED": 0,
+      "SURV": 0,
+      "CAP": 0
+    },
+    "moduleSlots": 0,
+    "mSMod": "n/a",
+    "baseOrdID": "ID",
+    "desc": "n/a",
+    "tags": [],
     "startingChars": "n/a",
     "endingChars": "n/a"
   }
