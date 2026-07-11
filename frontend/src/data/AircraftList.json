@@ -3898,12 +3898,12 @@
     "gen": 4,
     "tier": 2,
     "stats": {
-      "A2A": 2,
-      "A2G": -1,
-      "MANU": -1,
+      "A2A": 3,
+      "A2G": 0,
+      "MANU": 0,
       "SPEED": 3,
-      "SURV": 1,
-      "CAP": 7
+      "SURV": 6,
+      "CAP": 10
     },
     "moduleSlots": 6,
     "mSMod": "n/a",
