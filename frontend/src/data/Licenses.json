@@ -89,7 +89,7 @@
             "ordnance": ["ordSuperPhoenix"],
             "airframes": [],
             "modules": ["modIPC"],
-            "upgrades": ["upMPacke", "upMPackA", "upMPackB", "upMPackC", "upMPackE"]
+            "upgrades": ["upMPack", "upMPackA", "upMPackB", "upMPackC", "upMPackE"]
         },
         "rank5": {
             "ordnance": ["ordVPSM"],
@@ -442,6 +442,62 @@
         "rank7": {
             "ordnance": ["ordIEW"],
             "airframes": [],
+            "modules": [],
+            "upgrades": []
+        }
+    }
+    },
+    {
+    "id": "E1",
+    "name": "Polar Star FTC",
+    "style": "Specialty",
+    "description": "",
+    "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": ["acPSR20"],
+                "modules": [],
+                "upgrades": []
+        },
+        "rank1": {
+            "ordnance": [],
+            "airframes": ["acPSR20"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank2": {
+            "ordnance": [],
+            "airframes": ["acPSR20"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank3": {
+            "ordnance": [],
+            "airframes": ["acpsR30"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank4": {
+            "ordnance": [],
+            "airframes": ["acpsP28","acpsPEP28"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank5": {
+            "ordnance": [],
+            "airframes": ["acPSR40"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank6": {
+            "ordnance": [],
+            "airframes": ["acPSP46"],
+            "modules": [],
+            "upgrades": []
+        },
+        "rank7": {
+            "ordnance": [],
+            "airframes": ["acPSV50","acPSV55","acPSFTXIV"],
             "modules": [],
             "upgrades": []
         }

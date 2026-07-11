@@ -62,7 +62,7 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": [],
+    "moduleTags": null,
     "mods": {
       "A2A": 1,
       "CAP": -1
@@ -357,7 +357,7 @@
     "desc": "Free use of ITC",
     "IntrinsicMod": null,
     "TypeMod": null,
-    "AddManuID": null,
+    "AddManuID": "manuITC",
     "moduleTags": null,
     "mods": null,
     "AddTags": null,
@@ -586,6 +586,25 @@
     "charChecked": null
   },
   {
+    "id": "modReversedReverseSweep",
+    "name": "Reversed Reverse Sweep Wings",
+    "desc": "Undo the reverse sweep of the wings your plane came with. Ignore the High Strung tag, lose -1 Manu, and gain +1 Speed and Capacity.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": -99,
+      "A2G": -99,
+      "Manu": -1,
+      "Speed": 1,
+      "CAP": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
     "id": "modShapedCharge",
     "name": "Shaped Charge",
     "desc": "Your Ordnance gains Penetrating. If it already had Penetrating, it gains Dangerous.",
@@ -762,7 +781,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modStackable"
+    ],
     "mods": {
       "A2A": 1
     },
@@ -777,7 +798,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modStackable"
+    ],
     "mods": {
       "A2G": 1
     },
@@ -792,7 +815,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modStackable"
+    ],
     "mods": {
       "Manu": 1
     },
@@ -807,7 +832,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modStackable"
+    ],
     "mods": {
       "Speed": 1
     },
@@ -822,7 +849,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modStackable"
+    ],
     "mods": {
       "Surv": 1
     },
@@ -837,7 +866,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modStackable"
+    ],
     "mods": {
       "CAP": 1
     },
@@ -852,7 +883,9 @@
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
-    "moduleTags": null,
+    "moduleTags": [
+      "modTarget"
+    ],
     "mods": null,
     "AddTags": null,
     "checkForChars": null,
@@ -979,6 +1012,131 @@
     "id": "modLootDesignate",
     "name": "Cooperation Pod",
     "desc": "Add Designate to your Ordnance.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands1",
+    "name": "Pylon Mounted Laser Designator",
+    "desc": "A laser designator mounted on a weapons pylon. Lose -1 Capacity. This module has the Targetting tag.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": [
+      "modTarget"
+    ],
+    "mods": {
+      "CAP": -1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands2",
+    "name": "Improved Uplink Transmiter",
+    "desc": "Your Ally Jams ignore Zones.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands3",
+    "name": "Improved Datalink Receiver",
+    "desc": "Whenever you are Ally Jammed, gain +1 Forward.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands4",
+    "name": "Royal Nordlandic Shell Jet Fuel",
+    "desc": "Gain +1 Speed.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Speed": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands5",
+    "name": "Titanium Wing Roots",
+    "desc": "Gain +1 Manu.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "Manu": 1
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands6",
+    "name": "High Power Uplink Transmitter",
+    "desc": "Whenever you Ally Jam, select an additional ally to be Ally Jammed.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands7",
+    "name": "Wide Spectrum Counterjammer",
+    "desc": "Whenever you use Ally or Enemy Jam, decrease an Enemies Jamming by one Step.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands8",
+    "name": "Datalink Algorithm Synchronizer",
+    "desc": "Whenever you would lose Overwatch, if another ally also has Overwatch, you no longer lose Overwatch after making an attack.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "modNordlands9",
+    "name": "Improved Microphone Quality",
+    "desc": "All Teamwork Maneuvers you make give the ally they benefit +1 Forward if they spend a Pilot Stat.",
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,

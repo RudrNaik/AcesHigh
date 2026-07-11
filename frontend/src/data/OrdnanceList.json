@@ -37,11 +37,12 @@
     "id": "ordAAGRKT",
     "name": "Laser-Guided Anti-Air Rocket Pod",
     "domain": "A2A",
-    "desc": "Laser-guided air-to-air rocket pods with proximity warheads. For when you really want something slow dead.",
+    "desc": "Laser-guided air-to-air rocket pods with proximity warheads. For when you really want something slow dead, as the laser guidance comes at a cost to the warhead's size.",
     "tags": [
       "ordDES",
       "ordPREC",
-      "ordRIPPLE"
+      "ordRIPPLE",
+      "ordWEAK"
     ]
   },
   {
@@ -225,11 +226,12 @@
     "id": "ordGRKT",
     "name": "Laser-Guided Rocket Pod",
     "domain": "A2G",
-    "desc": "Laser-guided rocket pod. All the benefits of a rocket pod with more precision than a JDAM.",
+    "desc": "Laser-guided rocket pod. All the benefits of a rocket pod with more precision than a JDAM, but at a cost to the payload of the rocket.",
     "tags": [
       "ordDES",
       "ordPREC",
-      "ordRIPPLE"
+      "ordRIPPLE",
+      "ordWEAK"
     ]
   },
   {
@@ -762,6 +764,162 @@
       "ordMLTI",
       "ordLGHT",
       "ordRIPPLE"
+    ]
+  },
+  {
+    "id": "ordPSML",
+    "name": "Penetrating Standard Missile, Light",
+    "domain": "Agnostic",
+    "desc": "A standard missile capable of penetrating light armor.",
+    "tags": [
+      "ordPENLight"
+    ]
+  },
+  {
+    "id": "ordPSMS",
+    "name": "Penetrating STandard Missile, Strong",
+    "domain": "Agnostic",
+    "desc": "A standard missile capable of penetrating any armor at the cost of damage.",
+    "tags": [
+      "ordPENStrong",
+      "ordWEAK"
+    ]
+  },
+  {
+    "id": "ordNordlands1",
+    "name": "Overloaded Drop Tanks",
+    "domain": "Agnostic",
+    "desc": "Gain +2 Capacity. Forgo any Ordnance.",
+    "tags": []
+  },
+  {
+    "id": "ordNordlands2",
+    "name": "Short Range Air to Air Vectored Missile",
+    "domain": "A2A",
+    "desc": "A highly maneuverable missile that, if it goes off target, tends to fly unpredictably. The pods these missiles are carried in allows them to be easily ripple-fired.",
+    "tags": [
+      "ordKNIFE",
+      "ordDNG",
+      "ordIMP",
+      "ordRIPPLE"
+    ]
+  },
+  {
+    "id": "ordNordlands3",
+    "name": "Nordlandic Space Protection Tool",
+    "domain": "Satellites",
+    "desc": "A large missile strapped overtop its carrier aircraft designed to decimate anything at high altitudes.",
+    "tags": [
+      "ordDUB",
+      "ordBLK",
+      "ordEXPS",
+      "ordDNG",
+      "ordBRSTCol",
+      "ordCLNKY",
+      "ordSENS",
+      "ordRNGD"
+    ]
+  },
+  {
+    "id": "ordNordlands4",
+    "name": "Short Range Semiactive Maneuverable Missile",
+    "domain": "A2A",
+    "desc": "An early quick-maneuver air-to-air missile, modified by fitting a semi-active seekerhead. They allow for off-boresight shots with the benefits of radar guidance.",
+    "tags": [
+      "ordMANU",
+      "ordKNIFE",
+      "ordGUIDE"
+    ]
+  },
+  {
+    "id": "ordNordlands5",
+    "name": "Multirole Guided Rocket",
+    "domain": "Agnostic",
+    "desc": "A laser-guided rocket pod, loaded with a dual-purpose warhead that allows these missiles -- sorry, rockets -- to be employed against both aerial and ground targets. The dual-purpose warhead, however, decreases their range.",
+    "tags": [
+      "ordDES",
+      "ordPREC",
+      "ordWEAK",
+      "ordKNIFE"
+    ]
+  },
+  {
+    "id": "ordNordlands6",
+    "name": "Kinetic-Fin Missile",
+    "domain": "Agnostic",
+    "desc": "Commonly used to assassinate high value targets in areas with high risk of conventional munitions causing casualties, these missiles flay enemies alive with kinetic force instead of explosives. This isn't illegal, but does allow for less moral groups to commit to attacks that would conventionally not be allowed.",
+    "tags": [
+      "ordKIN",
+      "ordDUB",
+      "ordPREC",
+      "ordLGHT"
+    ]
+  },
+  {
+    "id": "ordNordlands7",
+    "name": "Quick-Maneuver Short-Range Precision-Guided Missile",
+    "domain": "Agnostic",
+    "desc": "A highly-maneuverable, multipurpose missile. Advanced seeker technology allows for high precision, but shortens range.",
+    "tags": [
+      "ordPREC",
+      "ordMANU",
+      "ordKNIFE"
+    ]
+  },
+  {
+    "id": "ordNordlands8",
+    "name": "Ripple-Fire High Explosive Air-to-Air Missile",
+    "domain": "A2A",
+    "desc": "The firing pattern of these missiles leads to an imprecise chance of hitting targets; however, they pack a large punch against aerial targets as a result.",
+    "tags": [
+      "ordIMP",
+      "ordDNG",
+      "ordRIPPLE"
+    ]
+  },
+  {
+    "id": "ordNordlands9",
+    "name": "Ripple-Fire High Explosive Air-to-Ground Missile",
+    "domain": "A2G",
+    "desc": "The firing pattern of these missiles leads to an imprecise chance of hitting targets; however, they pack a large punch against ground targets as a result.",
+    "tags": [
+      "ordIMP",
+      "ordDNG",
+      "ordRIPPLE"
+    ]
+  },
+  {
+    "id": "ordNordlands10",
+    "name": "Tactical Hidden Laser Blade",
+    "domain": "Agnostic",
+    "desc": "If you would suffer Disadvantage from Knife, you cannot employ this Ordnance; additionally, you may use your Speed in place of your A2A or A2G stats if you spend an additional Capacity.\n\nA short-range plasma-based laser \"knife\" designed originally as a point-defense weapon that has found a new use as an unconventional aerial weapon instead.",
+    "tags": [
+      "ordRCSD",
+      "ordKNIFE",
+      "ordPREC",
+      "ordDNG",
+      "ordEXPI",
+      "ordSENS"
+    ]
+  },
+  {
+    "id": "ordNuke",
+    "name": "Hydrogen Bomb",
+    "domain": "A2G",
+    "desc": "A hydrogen bomb, acquired from Valkan forces, who acquired them from the USK. You're not... planning on actually using these, are you? If you are... well, you've got one of them.",
+    "tags": [
+      "ordBRSTCola",
+      "ordCLNKY",
+      "ordDNG",
+      "ordDUB",
+      "ordBLK",
+      "ordIMP",
+      "ordFLME",
+      "ordEXPS",
+      "ordSENS",
+      "ordSIMP",
+      "ordPENStrong",
+      "ordSLOW"
     ]
   }
 ]
