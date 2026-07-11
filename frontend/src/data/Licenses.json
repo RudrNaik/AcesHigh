@@ -89,7 +89,7 @@
             "ordnance": ["ordSuperPhoenix"],
             "airframes": [],
             "modules": ["modIPC"],
-            "upgrades": ["upMPackage", "upMPackageA", "upMPackageB", "upMPackageC", "upMPackageE"]
+            "upgrades": ["upMPacke", "upMPackA", "upMPackB", "upMPackC", "upMPackE"]
         },
         "rank5": {
             "ordnance": ["ordVPSM"],
