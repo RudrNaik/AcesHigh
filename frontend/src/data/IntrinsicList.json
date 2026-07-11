@@ -1,218 +1,218 @@
 [
-    {
-        "id": "exampleintrinsic",
-        "name": "Example Intrinsic",
-        "manuId": "n/a",
-        "desc": "n/a"
-    },
-    {
-        "id": "intrNJAF",
-        "name": "Not Just a Flanker",
-        "manuId": "n/a",
-        "desc": "You're more than your more common cousins. Whenever you Bait an Interceptor or EWO, gain Closure -- Meld if they're a Flanker"
-    },
-    {
-        "id": "intrFlanker",
-        "name": "Made to Flank",
-        "manuId": "n/a",
-        "desc": "Exploiting vulnerabilities is your jam. Whenever an Ally uses a Maneuver tagged with Distraction, you may gain Fragile. If you do, gain +1 Forward."
-    },
-    {
-        "id": "intrLGG",
-        "name": "LGG Rivalry",
-        "manuId": "n/a",
-        "desc": "You've got a chip on your shoulder about not having a pound for air to ground. Whenever you Bait a Multirole, gain Lock On -- gain Lock On and Closure if it's a Multirole or Strike aircraft in the Eagle Family instead."
-    },
-    {
-        "id": "intrTheF15EIs",
-        "name": "Based Platform",
-        "manuId": "n/a",
-        "desc": "Whenever you face a malus, you may spend a Nerve and a Capacity to gain Snapshot. If you got the malus from an Eagle, ignore the Nerve spend. Exhaust."
-    },
-    {
-        "id": "intrFalcon",
-        "name": "Falconer",
-        "manuId": "n/a",
-        "desc": "Handling birds is much like being a snake charmer. As a 1E - REACT, whenever someone else in a Viper Faces Consequences, you may give them +1 Forward."
-    },
-    {
-        "id": "intrJungle",
-        "name": "Jungle Warrior",
-        "manuId": "n/a",
-        "desc": "You're born to fight things down low and in the heat of it. Whenever you attack a helicopter or plane with STOL or VTOL, gain Closure."
-    },
-    {
-        "id": "intrHunter",
-        "name": "Hunter",
-        "manuId": "n/a",
-        "desc": "Whenever you roll A2A to attack a small craft, gain +1 Forward."
-    },
-    {
-        "id": "intrBHunter",
-        "name": "Big Game Hunter",
-        "manuId": "n/a",
-        "desc": "Whenever you deal damage to a massive target (sorry, future AWACS, define massive yourself), deal +1 Survivability damage to them. "
-    },
-    {
-        "id": "intrThrush",
-        "name": "Thrush Thrasher",
-        "manuId": "n/a",
-        "desc": "You may spend a Capacity to reach a very high altitude. While up there, you gain Lock on or Closure every turn during your POS, but you lose -2 Manvuerability."
-    },
-    {
-        "id": "intrDorito",
-        "name": "Dorito Drifter",
-        "manuId": "manuDoritoDrift",
-        "desc": "[REACT - 1] Set your Speed to -1 until the end of your next turn. If you do, add your base Speed to your Manuverability."
-    },
-    {
-        "id": "intrPivotPoint",
-        "name": "Pivot Point",
-        "manuId": "n/a",
-        "desc": "Whenever you make a Manuverability Check, you may reroll one of the dice. Exhaust."
-    },
-    {
-        "id": "intrAvengers",
-        "name": "Avengers Assembled",
-        "manuId": "n/a",
-        "desc": "Whenever an ally ground unit is endangered, you may burn a Temper. If you do, gain a Guaranteed Mixed Success.Snapshot. "
-    },
-    {
-        "id": "intrTreetop",
-        "name": "Treetop Tightrope",
-        "manuId": "n/a",
-        "desc": "Whenever flying low would cause you to make a Check, you may burn a Nerve and pass it instead."
-    },
-    {
-        "id": "intrSilver",
-        "name": "Silver Bullet",
-        "manuId": "n/a",
-        "desc": "At the start of a mission, your AWACS chooses one enemy. You deal double damage to them."
-    },
-    {
-        "id": "intrTomcat",
-        "name": "Don't Say It",
-        "manuId": "n/a",
-        "desc": "Whenever someone quotes or references a pop culture icon, you or them may spend 1 Energy. You gain Lock On if either does."
-    },
-    {
-        "id": "intrGripen",
-        "name": "I Am Become",
-        "manuId": "n/a",
-        "desc": "You're one with your plane. Ignore your first Survivability Damage by burning one of each Pilot Stat."
-    },
-    {
-        "id": "intrDefense",
-        "name": "Impassioned Defense",
-        "manuId": "n/a",
-        "desc": "The first time in a Mission an Ally loses Survivability, you Gain a Guaranteed Mixed Success Snapshot. "
-    },
-    {
-        "id": "intrMidway",
-        "name": "Midway Design",
-        "manuId": "manuTightFit",
-        "desc": "Gain Tight Fit from the Family Techniques of the Pantheras as a Maneuver."
-    },
-    {
-        "id": "intrMidwayRaf",
-        "name": "Midway Design",
-        "manuId": "manuBurning",
-        "desc": "Gain Burning Daylight from the Family Techniques of the Mirages as a Maneuver."
-    },
-    {
-        "id": "intrEjection",
-        "name": "Ejection Pit",
-        "manuId": "n/a",
-        "desc": "When you Enter a Critical State, you immediately eject. Do not Fix or Risk the Odds and do not roll on the Injury Table. This is not optional."
-    },
-    {
-        "id": "intrSuperStick",
-        "name": "Supersonic Stick",
-        "manuId": "n/a",
-        "desc": "At the start of your turn, you may make a Speed Test. If you Pass, gain an additional Maneuver this turn."
-    },
-    {
-        "id": "intrBullhead",
-        "name": "Bullheaded",
-        "manuId": "n/a",
-        "desc": "Burn a Nerve or a Temper. If you burn a Nerve, give an ally Lock On. If you burn a Temper, gain Closure."
-    },
-    {
-        "id": "intrHighNoon",
-        "name": "High Noon",
-        "manuId": "n/a",
-        "desc": "You know the best time to draw. You may burn a Reflex, Nerve, and Capacity -- the sun is now at your back. Negate the first Consequences you face this turn. Exhaust."
-    },
-    {
-        "id": "intrCrusader",
-        "name": "You Are Not Prepared",
-        "manuId": "n/a",
-        "desc": "Whenever you have a midflight update, choose Titans or Demons. If you choose Titans, recover a Survivability; if you choose Demons, recover a Temper and a G-Resist. Exhaust. "
-    },
-    {
-        "id": "intrLeaf",
-        "name": "Leaf Dancing",
-        "manuId": "n/a",
-        "desc": "Light like a leaf on the wind. You may let yourself be jostled by the forces around yourself and Face Appropriate Consequences -- but gain +1 Manuverability and Speed for two turns. Exhaust. "
-    },
-    {
-        "id": "intrEvilEye",
-        "name": "Evil Eye",
-        "manuId": "n/a",
-        "desc": "The first time you go on Overwatch each mission, you choose Pain or Gain. If you choose Pain, take a Survivability Damage and gain Meld. If you choose Gain, Mark a Deployment Advancement and either Escalate thrice or let the AWACS hold Disadvantage on you."
-    },
-    {
-        "id": "intrChanneling",
-        "name": "Channelling",
-        "manuId": "n/a",
-        "desc": "You're not immune to digging trenches, but you know how to make sure that only your kin can follow you past them. You gain a +1 Forward against consequences when you Bait aircraft that aren't Windstorms, Sveabirds, or Mirages."
-    },
-    {
-        "id": "intrPitting",
-        "name": "Pitting",
-        "manuId": "n/a",
-        "desc": "Your aptitude at creating pits means you're equally skilled at avoiding their faults. [REACT - 1] Mitigate Consequences caused by your own Ordnance. Exhaust."
-    },
-    {
-        "id": "intrSeabird",
-        "name": "Seabird of Prey",
-        "manuId": "n/a",
-        "desc": "Whenever you see an island, you may make an ass of yourself by asking what fucking island. Gain an Ambiguous Boon."
-    },
-    {
-        "id": "intrCola",
-        "name": "Cola Lover",
-        "manuId": "n/a",
-        "desc": "Though you're a rebellious spirit, you know to listen to your superior officers at times. Whenever your AWACS patches your base commander into your communications, gain Meld."
-    },
-    {
-        "id": "intrMonsoon",
-        "name": "Monsoon Warning",
-        "manuId": "n/a",
-        "desc": "Whenever the winds are about to turn for worse, you know how to prepare. A turn after a mid-mission update, choose Stained Time or Soul's DNA. If you choose Stained Time, Suffer E3 Consequences but gain an extra turn; if you choose Soul's DNA, unexhaust a Maneuver. "
-    },
-    {
-        "id": "intrLeadSled",
-        "name": "Lead Sled",
-        "manuId": "n/a",
-        "desc": "You may give yourself a minor injury during flight. If you do, take -1 Forward, but gain 1 Energy. You can only gain the mechanical benefits twice per mission. "
-    },
-    {
-        "id": "intrHoldingHands",
-        "name": "Holding Hands",
-        "manuId": "n/a",
-        "desc": "At the start of the mission, choose Classical or Historical. If you choose classical, your rich family gives you a 2 Energy boost at the start of a mission; if you choose historical, your nerdery gives you Meld (Pilot Stat Check). Exhaust."
-    },
-    {
-        "id": "intrWonderWall",
-        "name": "Wonder Wall",
-        "manuId": "n/a",
-        "desc": "Choose Noel or Niel. If you choose Noel, your christmas spirit gifts 1 Capacity to any ally. If you choose Niel, Gain an Ambiguous Boon. Exhaust."
-    },
-    {
-        "id": "intrTailgunner",
-        "name": "Tailgunner",
-        "manuId": "n/a",
-        "desc": "Whenever you take Survivability damage, you may deal 1 damage back to whatever dealt it."
-    }
+  {
+    "id": "exampleintrinsic",
+    "name": "Example Intrinsic",
+    "manuId": "n/a",
+    "desc": "n/a"
+  },
+  {
+    "id": "intrNJAF",
+    "name": "Not Just a Flanker",
+    "manuId": "n/a",
+    "desc": "You're more than your more common cousins. Whenever you use a Distracting Maneuver on an Interceptor or EWO, gain Closure -- Meld if they're in a Crane variant."
+  },
+  {
+    "id": "intrFlanker",
+    "name": "Made to Flank",
+    "manuId": "n/a",
+    "desc": "Exploiting vulnerabilities is your jam. Whenever an Ally uses a Maneuver tagged with Distraction, you may gain Fragile. If you do, gain +1 Forward."
+  },
+  {
+    "id": "intrLGG",
+    "name": "LGG Rivalry",
+    "manuId": "n/a",
+    "desc": "You've got a chip on your shoulder about not having a pound for air to ground. Whenever you Bait a Multirole, gain Lock On -- gain Lock On and Closure if it's a Multirole or Strike aircraft in the Eagle Family instead."
+  },
+  {
+    "id": "intrTheF15EIs",
+    "name": "Based Platform",
+    "manuId": "n/a",
+    "desc": "Whenever you face a malus, you may spend a Nerve and a Capacity to gain Snapshot. If you got the malus from an Eagle, ignore the Nerve spend. Exhaust."
+  },
+  {
+    "id": "intrFalcon",
+    "name": "Falconer",
+    "manuId": "n/a",
+    "desc": "Handling birds is much like being a snake charmer. As a 1E - REACT, whenever someone else in a Viper Faces Consequences, you may give them +1 Forward."
+  },
+  {
+    "id": "intrJungle",
+    "name": "Jungle Warrior",
+    "manuId": "n/a",
+    "desc": "You're born to fight things down low and in the heat of it. Whenever you attack a helicopter or plane with STOL or VTOL, gain Closure."
+  },
+  {
+    "id": "intrHunter",
+    "name": "Hunter",
+    "manuId": "n/a",
+    "desc": "Whenever you roll A2A to attack a small craft, gain +1 Forward."
+  },
+  {
+    "id": "intrBHunter",
+    "name": "Big Game Hunter",
+    "manuId": "n/a",
+    "desc": "Whenever you deal damage to a massive target (sorry, future AWACS, define massive yourself), deal +1 Survivability damage to them. "
+  },
+  {
+    "id": "intrThrush",
+    "name": "Thrush Thrasher",
+    "manuId": "n/a",
+    "desc": "You may spend a Capacity to reach a very high altitude. While up there, you gain Lock on or Closure every turn during your POS, but you lose -2 Manvuerability."
+  },
+  {
+    "id": "intrDorito",
+    "name": "Dorito Drifter",
+    "manuId": "manuDoritoDrift",
+    "desc": "[REACT - 1] Set your Speed to -1 until the end of your next turn. If you do, add your base Speed to your Manuverability."
+  },
+  {
+    "id": "intrPivotPoint",
+    "name": "Pivot Point",
+    "manuId": "n/a",
+    "desc": "Whenever you make a Manuverability Check, you may reroll one of the dice. Exhaust."
+  },
+  {
+    "id": "intrAvengers",
+    "name": "Avengers Assembled",
+    "manuId": "n/a",
+    "desc": "Whenever an ally ground unit is endangered, you may burn a Temper. If you do, gain a Guaranteed Mixed Success.Snapshot. "
+  },
+  {
+    "id": "intrTreetop",
+    "name": "Treetop Tightrope",
+    "manuId": "n/a",
+    "desc": "Whenever flying low would cause you to make a Check, you may burn a Nerve and pass it instead."
+  },
+  {
+    "id": "intrSilver",
+    "name": "Silver Bullet",
+    "manuId": "n/a",
+    "desc": "At the start of a mission, your AWACS chooses one enemy. You deal double damage to them."
+  },
+  {
+    "id": "intrTomcat",
+    "name": "Don't Say It",
+    "manuId": "n/a",
+    "desc": "Whenever someone quotes or references a pop culture icon, you or them may spend 1 Energy. You gain Lock On if either does."
+  },
+  {
+    "id": "intrGripen",
+    "name": "I Am Become",
+    "manuId": "n/a",
+    "desc": "You're one with your plane. Ignore your first Survivability Damage by burning one of each Pilot Stat."
+  },
+  {
+    "id": "intrDefense",
+    "name": "Impassioned Defense",
+    "manuId": "n/a",
+    "desc": "The first time in a Mission an Ally loses Survivability, you Gain a Guaranteed Mixed Success Snapshot. "
+  },
+  {
+    "id": "intrMidway",
+    "name": "Midway Design",
+    "manuId": "manuTightFit",
+    "desc": "Gain Tight Fit from the Family Techniques of the Pantheras as a Maneuver."
+  },
+  {
+    "id": "intrMidwayRaf",
+    "name": "Midway Design",
+    "manuId": "manuBurning",
+    "desc": "Gain Burning Daylight from the Family Techniques of the Mirages as a Maneuver."
+  },
+  {
+    "id": "intrEjection",
+    "name": "Ejection Pit",
+    "manuId": "n/a",
+    "desc": "When you Enter a Critical State, you immediately eject. Do not Fix or Risk the Odds and do not roll on the Injury Table. This is not optional."
+  },
+  {
+    "id": "intrSuperStick",
+    "name": "Supersonic Stick",
+    "manuId": "n/a",
+    "desc": "At the start of your turn, you may make a Speed Test. If you Pass, gain an additional Maneuver this turn."
+  },
+  {
+    "id": "intrBullhead",
+    "name": "Bullheaded",
+    "manuId": "n/a",
+    "desc": "Burn a Nerve or a Temper. If you burn a Nerve, give an ally Lock On. If you burn a Temper, gain Closure."
+  },
+  {
+    "id": "intrHighNoon",
+    "name": "High Noon",
+    "manuId": "n/a",
+    "desc": "You know the best time to draw. You may burn a Reflex, Nerve, and Capacity -- the sun is now at your back. Negate the first Consequences you face this turn. Exhaust."
+  },
+  {
+    "id": "intrCrusader",
+    "name": "You Are Not Prepared",
+    "manuId": "n/a",
+    "desc": "Whenever you have a midflight update, choose Titans or Demons. If you choose Titans, recover a Survivability; if you choose Demons, recover a Temper and a G-Resist. Exhaust. "
+  },
+  {
+    "id": "intrLeaf",
+    "name": "Leaf Dancing",
+    "manuId": "n/a",
+    "desc": "Light like a leaf on the wind. You may let yourself be jostled by the forces around yourself and Face Appropriate Consequences -- but gain +1 Manuverability and Speed for two turns. Exhaust. "
+  },
+  {
+    "id": "intrEvilEye",
+    "name": "Evil Eye",
+    "manuId": "n/a",
+    "desc": "The first time you go on Overwatch each mission, you choose Pain or Gain. If you choose Pain, take a Survivability Damage and gain Meld. If you choose Gain, Mark a Deployment Advancement and either Escalate thrice or let the AWACS hold Disadvantage on you."
+  },
+  {
+    "id": "intrChanneling",
+    "name": "Channelling",
+    "manuId": "n/a",
+    "desc": "You're not immune to digging trenches, but you know how to make sure that only your kin can follow you past them. You gain a +1 Forward against consequences when you Bait aircraft that aren't Windstorms, Sveabirds, or Mirages."
+  },
+  {
+    "id": "intrPitting",
+    "name": "Pitting",
+    "manuId": "n/a",
+    "desc": "Your aptitude at creating pits means you're equally skilled at avoiding their faults. [REACT - 1] Mitigate Consequences caused by your own Ordnance. Exhaust."
+  },
+  {
+    "id": "intrSeabird",
+    "name": "Seabird of Prey",
+    "manuId": "n/a",
+    "desc": "Whenever you see an island, you may make an ass of yourself by asking what fucking island. Gain an Ambiguous Boon."
+  },
+  {
+    "id": "intrCola",
+    "name": "Cola Lover",
+    "manuId": "n/a",
+    "desc": "Though you're a rebellious spirit, you know to listen to your superior officers at times. Whenever your AWACS patches your base commander into your communications, gain Meld."
+  },
+  {
+    "id": "intrMonsoon",
+    "name": "Monsoon Warning",
+    "manuId": "n/a",
+    "desc": "Whenever the winds are about to turn for worse, you know how to prepare. A turn after a mid-mission update, choose Stained Time or Soul's DNA. If you choose Stained Time, Suffer E3 Consequences but gain an extra turn; if you choose Soul's DNA, unexhaust a Maneuver. "
+  },
+  {
+    "id": "intrLeadSled",
+    "name": "Lead Sled",
+    "manuId": "n/a",
+    "desc": "You may give yourself a minor injury during flight. If you do, take -1 Forward, but gain 1 Energy. You can only gain the mechanical benefits twice per mission. "
+  },
+  {
+    "id": "intrHoldingHands",
+    "name": "Holding Hands",
+    "manuId": "n/a",
+    "desc": "At the start of the mission, choose Classical or Historical. If you choose classical, your rich family gives you a 2 Energy boost at the start of a mission; if you choose historical, your nerdery gives you Meld (Pilot Stat Check). Exhaust."
+  },
+  {
+    "id": "intrWonderWall",
+    "name": "Wonder Wall",
+    "manuId": "n/a",
+    "desc": "Choose Noel or Niel. If you choose Noel, your christmas spirit gifts 1 Capacity to any ally. If you choose Niel, Gain an Ambiguous Boon. Exhaust."
+  },
+  {
+    "id": "intrTailgunner",
+    "name": "Tailgunner",
+    "manuId": "n/a",
+    "desc": "Whenever you take Survivability damage, you may deal 1 damage back to whatever dealt it."
+  }
 ]
