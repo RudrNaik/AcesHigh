@@ -7,8 +7,8 @@ import Setup from "./Setup";
 import Logistics from "./Logistics";
 import Tours from "./Tours";
 import Logs from "./Logs";
-import Debug from "./Debug"
-import Manus from "./Manus"
+import Debug from "./Debug";
+import Manus from "./Manus";
 
 import specializations from "../../../data/Specs.json";
 import perks from "../../../data/PerkList.json";
@@ -36,7 +36,7 @@ function CharacterSheet({
 
   return (
     <div className="w-full min-h-screen px-1 space-y-6 lg:px-4 lg:py-2 border-cyan-800 lg:border bg-black/20">
-      <button onClick={onBack} className="theme-btn">
+      <button onClick={onBack} className="border px-2 py-1 border-cyan-100">
         ← Back
       </button>
 

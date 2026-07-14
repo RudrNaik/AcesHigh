@@ -21,6 +21,8 @@ export type LicenseFormat = {
   C2: number;
   D1: number;
   D2: number;
+  E1: number;
+  E2: number;
 };
 
 export type LicenseKey = keyof LicenseFormat;
@@ -53,6 +55,8 @@ export function getLicenses(character: CharacterData): LicenseFormat {
     C2: character.licenses.C2 || 0,
     D1: character.licenses.D1 || 0,
     D2: character.licenses.D2 || 0,
+    E1: character.licenses.E1 || 0,
+    E2: character.licenses.E2 || 0
   };
 }
 

@@ -19,7 +19,7 @@ function CampaignSheet({ campaign, onUpdate, onBack }: Props) {
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
-    <div className="w-full min-h-screen px-1 space-y-6 lg:px-4 lg:py-2 lg:border-l-4 border-cyan-100 lg:border bg-black/20">
+    <div className="w-full min-h-screen px-1 space-y-6 lg:px-4 lg:py-2 border-cyan-800 lg:border bg-black/20">
       <button onClick={onBack} className="border px-2 py-1 border-cyan-100">
         ← Back
       </button>
