@@ -221,7 +221,7 @@ const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
               }}
               className="block w-full text-left px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
             >
-              [{isHyperlegible ? "x" : " "}] Hyperlegible Font
+              [{isHyperlegible ? "ON" : "OFF"}] Hyperlegible Font
             </button>
           </li>
         </ul>
