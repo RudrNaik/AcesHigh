@@ -31,7 +31,7 @@ function MenuRouter() {
     setHydrated(true);
   }, []);
 
-  // Persist the choice whenever it changes (but only after we've read the saved value).
+  // Persist the choice whenever it changes.
   useEffect(() => {
     if (!hydrated) return;
     localStorage.setItem(
