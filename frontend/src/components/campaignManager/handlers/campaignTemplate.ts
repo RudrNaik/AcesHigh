@@ -9,6 +9,8 @@ export function createDefaultCampaign(): CampaignData {
 
     roster: [],
 
+    enemyTemplates: [],
+
     activeSortieId: undefined,
 
     sorties: [],
