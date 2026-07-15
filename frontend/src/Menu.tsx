@@ -123,10 +123,10 @@ function TerminalPage() {
             >
               <TerminalPanel
                 title="AWACS [WIP]"
-                subtitle={`AWACS Command and Control Systems,\n\n Currently being developed, excuse placeholder items.`}
+                subtitle={`AWACS Command and Control Systems, WIP`}
                 icon="✈"
                 onHover={handleHover}
-                link="/AWACS"
+                link="/InDev" //AWACS
               />
             </motion.div>
 
