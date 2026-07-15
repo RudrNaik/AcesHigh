@@ -122,6 +122,8 @@ export const createDefaultCharacter = (): CharacterData => ({
     C2: 0,
     D1: 0,
     D2: 0,
+    E1: 0,
+    E2: 0
   },
   loot: [],
 

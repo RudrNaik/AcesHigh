@@ -41,7 +41,8 @@ function LicenseView({
     { key: "C2", name: "Gründer Nord" },
     { key: "D1", name: "Hammer" },
     { key: "D2", name: "Arm" },
-    { key: "E1", name: "Polar Star FTC" }
+    { key: "E1", name: "Polar Star FTC"},
+    { key: "E2", name: "United Rapid Factory Group"}
   ];
 
   return (

@@ -276,7 +276,6 @@
       "CAP": -1
     },
     "AddTags": [
-      "acMCREW",
       "acMCREW"
     ],
     "checkForChars": null,
@@ -441,6 +440,128 @@
       "A2G": -1,
       "Surv": -1
     },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands1",
+    "name": "NURF Interceptor Upgrade",
+    "desc": "Converts a plane to be an Interceptor. Lose -2 A2G and gain +1 A2A.",
+    "IntrinsicMod": null,
+    "TypeMod": "Interceptor",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "A2G": -2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands2",
+    "name": "North Osean Nordlandic Multirole Package",
+    "desc": "Convert a plane to be Multirole. Lose -1 A2A and -1 A2G and gain +1 Surv and +3 Capacity.",
+    "IntrinsicMod": null,
+    "TypeMod": "Multirole",
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": -1,
+      "A2G": -1,
+      "Surv": 1,
+      "CAP": 3
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands3",
+    "name": "Ratio-Nordlands Joint Upgrade Package",
+    "desc": "Gain +1 A2G, +1 Manu, +1 Speed, and STOL, but lose -4 Capacity.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2G": 1,
+      "Manu": 1,
+      "Speed": 1,
+      "CAP": -4
+    },
+    "AddTags": [
+      "acSTOL"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands4",
+    "name": "Ventral Gun Pack",
+    "desc": "Requires Multicrew.\nAdds a swivel-mounted turret under your aircraft. Adds a unique Maneuver to make attacks whenever you make a Maneuver check called Ventral Strafe at the cost of -1 Manu, Speed, and -2 Capacity.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": "manuModVentral",
+    "moduleTags": null,
+    "mods": {
+      "Manu": -1,
+      "Speed": -1,
+      "CAP": -2
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands5",
+    "name": "Delta Upgrade",
+    "desc": "Gain Delta Wings, turn your Intrinsic into Dorito Drifter, and gain High Strung. Oh, and +1 A2A and +1 Manu. For the fun of it, the plane then becomes a D variant.",
+    "IntrinsicMod": "intrDorito",
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": 1,
+      "Manu": 1
+    },
+    "AddTags": [
+      "acHSTRUNG"
+    ],
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands6",
+    "name": "Nordlandic Block 67 Pack",
+    "desc": "Lose -1 A2A and -1 A2G. Gain +1 Manu, +1 Speed, +1 Survivability, and +4 Capacity. Your planes name now ends in Block 67.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": {
+      "A2A": -1,
+      "A2G": -1,
+      "Manu": 1,
+      "Speed": 1,
+      "Surv": 1,
+      "CAP": 4
+    },
+    "AddTags": null,
+    "checkForChars": null,
+    "charChecked": null
+  },
+  {
+    "id": "upNordlands7",
+    "name": "Nordlandic-ASASIN Joint Invitational Package",
+    "desc": "Once, you may Withdraw. Return the next turn in any plane and reset your License Level in this license to 0.",
+    "IntrinsicMod": null,
+    "TypeMod": null,
+    "AddManuID": null,
+    "moduleTags": null,
+    "mods": null,
     "AddTags": null,
     "checkForChars": null,
     "charChecked": null

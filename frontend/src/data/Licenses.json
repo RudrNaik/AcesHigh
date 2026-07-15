@@ -455,7 +455,7 @@
     "unlocks": {
         "rank0": {
                 "ordnance": [],
-                "airframes": ["acPSR20"],
+                "airframes": [],
                 "modules": [],
                 "upgrades": []
         },
@@ -467,7 +467,7 @@
         },
         "rank2": {
             "ordnance": [],
-            "airframes": ["acPSR20"],
+            "airframes": ["acPSP26"],
             "modules": [],
             "upgrades": []
         },
@@ -500,6 +500,62 @@
             "airframes": ["acPSV50","acPSV55","acPSFTXIV"],
             "modules": [],
             "upgrades": []
+        }
+    }
+    },
+    {
+    "id": "E2",
+    "name": "United Rapid Factory Group",
+    "style": "Accessories",
+    "description": "",
+    "unlocks": {
+        "rank0": {
+                "ordnance": [],
+                "airframes": [],
+                "modules": [],
+                "upgrades": []
+        },
+        "rank1": {
+            "ordnance": ["ordNordlands1", "ordNordlands2"],
+            "airframes": [],
+            "modules": ["modNordlands1"],
+            "upgrades": ["upNordlands1"]
+        },
+        "rank2": {
+            "ordnance": ["ordNordlands3"],
+            "airframes": [],
+            "modules": ["modNordlands2","modNordlands3"],
+            "upgrades": ["upNordlands2"]
+        },
+        "rank3": {
+            "ordnance": ["ordNordlands4","ordNordlands5"],
+            "airframes": [],
+            "modules": ["modNordlands4","modNordlands5"],
+            "upgrades": ["upNordlands3"]
+        },
+        "rank4": {
+            "ordnance": [],
+            "airframes": ["ordNordlands6"],
+            "modules": ["modNordlands6"],
+            "upgrades": ["upNordlands4"]
+        },
+        "rank5": {
+            "ordnance": ["ordNordlands7","ordNordlands8","ordNordlands9"],
+            "airframes": [],
+            "modules": ["modNordlands7","modNordlands8"],
+            "upgrades": ["upNordlands5"]
+        },
+        "rank6": {
+            "ordnance": ["ordNordlands10"],
+            "airframes": [],
+            "modules": ["modNordlands9"],
+            "upgrades": ["upNordlands6"]
+        },
+        "rank7": {
+            "ordnance": [],
+            "airframes": [],
+            "modules": [],
+            "upgrades": ["upNordlands7"]
         }
     }
     }
