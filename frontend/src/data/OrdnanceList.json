@@ -810,14 +810,15 @@
     "domain": "Satellites",
     "desc": "A large missile strapped overtop its carrier aircraft designed to decimate anything at high altitudes.",
     "tags": [
-      "ordDUB",
+      "ordDUB", 
       "ordBLK",
-      "ordEXPS",
+      "ordEXPS", 
       "ordDNG",
-      "ordBRSTCol",
-      "ordCLNKY",
-      "ordSENS",
-      "ordRNGD"
+      "ordBRSTCol", 
+      "ordCLNKY", 
+      "ordSENS", 
+      "ordRNGD", 
+      "ordSPECSAT"
     ]
   },
   {
