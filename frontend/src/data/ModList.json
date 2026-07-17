@@ -52,8 +52,8 @@
       "A2A": 1
     },
     "AddTags": null,
-    "checkForChars": "End",
-    "charChecked": "A"
+    "checkForChars": "",
+    "charChecked": ""
   },
   {
     "id": "modTweakAvi",
@@ -367,7 +367,7 @@
   {
     "id": "modExpExp",
     "name": "Experimental Explosives Composition",
-    "desc": "Increases the Burst tag on any of your Ordnance with one step up. (None to Small, Small to Medium, Medium to Large, Large to Huge, Huge to Collosal, Collosal to World Ending)",
+    "desc": "Increases the Burst tag on any of your Ordnance with one step up. (None to Small, Small to Medium, Medium to Large, Large to Huge, Huge to Colossal, Colossal to Calamitous, and Calamitous to World Ending)",
     "IntrinsicMod": null,
     "TypeMod": null,
     "AddManuID": null,
