@@ -159,7 +159,7 @@ export interface EnemyInstance {
  */
 
 export interface CombatantRuntime {
-  hp: number;
+  surv: number;
 
   armor: number;
 
