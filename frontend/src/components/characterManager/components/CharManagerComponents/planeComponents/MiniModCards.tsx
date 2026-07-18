@@ -41,7 +41,7 @@ function ModuleSlot({
     border p-4   space-y-3 transition-all bg-black/20
     ${
       equipped
-        ? "border-cyan-100 border-l-4  border-l-cyan-100"
+        ? "border-cyan-400 border-l-4"
         : "border-cyan-800 border-l-cyan-800 opacity-60 hover:opacity-100"
     }
   `}

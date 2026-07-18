@@ -14,7 +14,7 @@ function Masteries({ character }: { character: CharacterData }) {
     <div>
       {hasMastery ? (
         <div className="space-y-2">
-          <div className="border border-cyan-100 border-l-4 border-l-cyan-100 p-4   space-y-2">
+          <div className="border border-cyan-400 border-l-4 p-4   space-y-2">
             <div className="flex justify-between items-center">
               <div>
                 {tech1?.name} // {tech1?.maneuverId && "MANEUVER"}
@@ -26,7 +26,7 @@ function Masteries({ character }: { character: CharacterData }) {
               {tech1?.description}
             </p>
           </div>
-          <div className="border border-cyan-100 border-l-4 border-l-cyan-100 p-4   space-y-2">
+          <div className="border border-cyan-400 border-l-4 p-4 space-y-2">
             <div className="flex justify-between items-center">
               <div>
                 {tech2?.name} // {tech2?.maneuverId && "MANEUVER"}
@@ -38,7 +38,7 @@ function Masteries({ character }: { character: CharacterData }) {
               {tech2?.description}
             </p>
           </div>
-          <div className="border border-cyan-100 border-l-4 border-l-cyan-100 p-4   space-y-2">
+          <div className="border border-cyan-400 border-l-4 p-4 space-y-2">
             <div className="flex justify-between items-center">
               <div>
                 {tech3?.name} // {tech3?.maneuverId && "MANEUVER"}

@@ -111,7 +111,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
     <section
       id={aircraft.id}
       className="
-        bg-black/20 border border-cyan-100 p-4 border-l-4
+        bg-black/20 border border-cyan-800 p-4
         transition-all duration-100  
       "
     >

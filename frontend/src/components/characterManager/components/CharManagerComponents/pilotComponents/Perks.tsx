@@ -112,7 +112,7 @@ function PerksView({
                     : isConverted
                       ? "opacity-100 border-l-4 border-cyan-400"
                       : selection.perkID
-                        ? "opacity-100 border-l-4 border-cyan-100"
+                        ? "opacity-100 border-l-4 border-cyan-400"
                         : "opacity-60 border-cyan-800"
                 }`}
               >
@@ -305,7 +305,7 @@ function PerksView({
                 key={slot}
                 className={`border transition-all p-2 hover:opacity-100 ${
                   selectedID !== ""
-                    ? "opacity-100 border-l-4 border-cyan-100"
+                    ? "opacity-100 border-l-4 border-cyan-400"
                     : options.length > 0
                       ? "opacity-100 border-cyan-800"
                       : "opacity-20 border-cyan-800"

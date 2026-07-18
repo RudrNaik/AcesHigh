@@ -281,7 +281,7 @@ function PilotView({
           Background Perk
         </h2>
         <div>
-          <div className="border p-3 bg-black/20 text-sm opacity-80 space-y-2">
+          <div className="border border-cyan-800 p-3 bg-black/20 text-sm opacity-80 space-y-2">
             <span className="border-b border-cyan-100">
               {charEngine.getBackGroundPerk(character).name}
             </span>
@@ -305,7 +305,7 @@ function PilotView({
         {/* Preflights */}
         <div className="">
           <h3 className="font-bold py-2">Preflights</h3>
-          <div className="flex flex-col bg-black/20 border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
+          <div className="flex flex-col bg-black/20 border border-cyan-800 px-2 py-1 space-y-2 mb-2">
             <div className="font-semibold">
               PFC-1 | {charEngine.getDowntimes(character)?.dt1.name}
             </div>
@@ -313,7 +313,7 @@ function PilotView({
               {charEngine.getDowntimes(character)?.dt1.description}
             </div>
           </div>
-          <div className="flex flex-col bg-black/20 border border-l-4 border-cyan-100 px-2 py-1 space-y-2 mb-2">
+          <div className="flex flex-col bg-black/20 border border-cyan-800 px-2 py-1 space-y-2 mb-2">
             <div className="font-semibold">
               PFC-2 | {charEngine.getDowntimes(character)?.dt2.name}
             </div>
@@ -321,7 +321,7 @@ function PilotView({
               {charEngine.getDowntimes(character)?.dt2.description}
             </div>
           </div>
-          <div className="flex flex-col bg-black/20 border border-l-4 border-cyan-100 px-2 py-1 space-y-2">
+          <div className="flex flex-col bg-black/20 border border-cyan-800 px-2 py-1 space-y-2">
             <div className="font-semibold">
               PFC-3 | {charEngine.getDowntimes(character)?.dt3.name}
             </div>
@@ -367,7 +367,7 @@ function PilotView({
                     key={tactic.id}
                     className={`border p-2 bg-black/20 ${
                       unlocked
-                        ? "border-cyan-100 border-l-4"
+                        ? "border-cyan-400 border-l-4"
                         : "border-cyan-900"
                     }
                         ${!unlocked && !canPick ? "opacity-50" : ""}
@@ -450,9 +450,9 @@ function PilotView({
                   key={item.index}
                   className={`border p-2 bg-black/20 ${
                     item.converted
-                      ? "border-yellow-400 border-l-4"
+                      ? "border-yellow-600 border-l-4"
                       : item.completed
-                        ? "border-cyan-100 border-l-4"
+                        ? "border-cyan-400 border-l-4"
                         : "border-cyan-800 opacity-60 hover:opacity-100"
                   }`}
                 >
@@ -499,7 +499,7 @@ function PilotView({
 
                       applyCharacterUpdate(updated);
                     }}
-                    className="text-xs px-2 py-1 border border-yellow-400"
+                    className="text-xs px-2 py-1 border border-yellow-600"
                   >
                     Convert
                   </button>
@@ -523,11 +523,11 @@ function PilotView({
               if (!mastery) return null;
 
               return (
-                <div className="border border-yellow-400 border-l-4 p-2">
+                <div className="border border-cyan-400 border-l-4 p-2">
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">{mastery.name}</span>
 
-                    <span className="bg-yellow-400 text-black text-xs px-2 py-1">
+                    <span className="bg-cyan-100 text-black text-xs px-2 py-1">
                       MASTERY
                     </span>
                   </div>
