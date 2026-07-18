@@ -14,6 +14,12 @@ interface Props {
   onImport: (character: CharacterData) => void;
 
   onDelete: (id: string) => void;
+
+  activeSortieId?: string;
+
+  assignedPilotIds: string[];
+
+  onToggleAssignment: (character: CharacterData) => void;
 }
 
 function RosterSidebar({
@@ -22,6 +28,8 @@ function RosterSidebar({
   onSelect,
   onImport,
   onDelete,
+  assignedPilotIds,
+  onToggleAssignment,
 }: Props) {
   const [search, setSearch] = useState("");
 
@@ -96,10 +104,11 @@ function RosterSidebar({
       <div className="flex-1 overflow-y-auto">
         {filteredRoster.map((character) => (
           <RosterRow
-            key={character.id}
             character={character}
             selected={character.id === selectedId}
+            assigned={assignedPilotIds.includes(character.id)}
             onSelect={() => onSelect(character.id)}
+            onToggleAssignment={() => onToggleAssignment(character)}
             onDelete={() => onDelete(character.id)}
           />
         ))}
