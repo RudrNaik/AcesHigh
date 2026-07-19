@@ -22,7 +22,7 @@ function RosterTab({ campaign, onUpdate }: Props) {
     null;
 
   const assignedPilotIds =
-    activeSortie?.pilots.map((pilot) => pilot.characterId) ?? [];
+    activeSortie?.pilots.map((pilot) => pilot.id) ?? [];
 
   function updateRosterCharacter(updated: CharacterData) {
     onUpdate({
@@ -100,12 +100,12 @@ function RosterTab({ campaign, onUpdate }: Props) {
     }
 
     const assigned = activeSortie.pilots.some(
-      (pilot) => pilot.characterId === character.id,
+      (pilot) => pilot.id === character.id,
     );
 
     const updatedPilots = assigned
       ? activeSortie.pilots.filter(
-          (pilot) => pilot.characterId !== character.id,
+          (pilot) => pilot.id !== character.id,
         )
       : [...activeSortie.pilots, createSortiePilot(character)];
 
