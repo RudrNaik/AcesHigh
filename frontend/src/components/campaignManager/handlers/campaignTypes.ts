@@ -1,11 +1,5 @@
 import type { CharacterData } from "../../characterManager/handlers/characterTypes";
 
-/**
- * ============================
- * Campaign
- * ============================
- */
-
 export interface CampaignData {
   id: string;
 
@@ -14,7 +8,6 @@ export interface CampaignData {
 
   roster: CharacterData[];
 
-  // Enemy database for this campaign
   enemyTemplates: EnemyTemplate[];
 
   activeSortieId?: string;
@@ -23,13 +16,6 @@ export interface CampaignData {
 
   createdAt: string;
 }
-
-
-/**
- * ============================
- * Sorties
- * ============================
- */
 
 export interface SortieData {
   id: string;
@@ -65,40 +51,15 @@ export type SortiePhase =
   | "extraction"
   | "debrief";
 
-
-/**
- * ============================
- * Player Deployment
- * ============================
- */
-
 export interface SortiePilot {
   id: string;
 
-  /**
-   * Reference back to CharacterData
-   */
-  characterId: string;
-
-  /**
-   * Optional aircraft assignment
-   */
   aircraftId?: string;
 
   callsign: string;
 
   runtime: CombatantRuntime;
 }
-
-
-/**
- * ============================
- * Enemy Database Template
- * ============================
- *
- * Represents your spreadsheet entries.
- * These should never change during a sortie.
- */
 
 export interface EnemyTemplate {
   id: string;
@@ -123,15 +84,6 @@ export interface EnemyTemplate {
 }
 
 
-/**
- * ============================
- * Enemy Instance
- * ============================
- *
- * Represents an enemy spawned into
- * a specific sortie.
- */
-
 export interface EnemyInstance {
   id: string;
 
@@ -149,15 +101,6 @@ export interface EnemyInstance {
   runtime: CombatantRuntime;
 }
 
-
-/**
- * ============================
- * Shared Combat State
- * ============================
- *
- * Used by both players and enemies.
- */
-
 export interface CombatantRuntime {
   surv: number;
 
@@ -165,10 +108,6 @@ export interface CombatantRuntime {
 
   capacity: number;
 
-  /**
-   * Aircraft / vehicles may use energy.
-   * Ground targets may not.
-   */
   energy?: number;
 
   stress: number;
@@ -177,13 +116,6 @@ export interface CombatantRuntime {
 
   destroyed?: boolean;
 }
-
-
-/**
- * ============================
- * Objectives
- * ============================
- */
 
 export interface SortieObjective {
   id: string;
@@ -194,13 +126,6 @@ export interface SortieObjective {
 
   optional: boolean;
 }
-
-
-/**
- * ============================
- * Enemy Properties
- * ============================
- */
 
 export type EnemyType =
   | "Airborne"

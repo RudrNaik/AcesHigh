@@ -78,6 +78,14 @@ const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
             </li>
             <li>
               <Link
+                to="/AWACS"
+                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+              >
+                [↳] AWACS
+              </Link>
+            </li>
+            <li>
+              <Link
                 to="/equipment"
                 className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
               >
@@ -201,6 +209,15 @@ const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
               onClick={() => setHamburgerOpen(false)}
             >
               [↳] Characters
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/AWACS"
+              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+              onClick={() => setHamburgerOpen(false)}
+            >
+              [↳] AWACS
             </Link>
           </li>
           <li>
