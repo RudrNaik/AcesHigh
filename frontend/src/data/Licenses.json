@@ -145,7 +145,7 @@
             "ordnance": ["ordMLAA4"],
             "airframes": [],
             "modules": [],
-            "upgrades": ["upCharlie"]
+            "upgrades": ["upCharlie", "upCharlieA"]
         },
         "rank5": {
             "ordnance": ["ordMPSAAM"],
