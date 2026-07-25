@@ -605,7 +605,7 @@
     "isCommon": false,
     "isAdvanced": true,
     "type": "Normal",
-    "engCost": "1",
+    "engCost": "-1",
     "tags": [
       "manuCap",
       "manuTrick"
