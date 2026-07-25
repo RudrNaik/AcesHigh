@@ -174,7 +174,8 @@
     "tags": [
       "manuORD",
       "manuAttack",
-      "manuTrick"
+      "manuTrick",
+      "manuCapX"
     ],
     "desc": "Make an Attack."
   },
