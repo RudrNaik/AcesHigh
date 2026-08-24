@@ -46,6 +46,8 @@ export interface ManeuverSlot {
   label: string;
   maneuver?: Maneuver;
   variableCost?: number; // player input
+  energyVariableCost?: number;
+  capacityVariableCost?: number;
 }
 
 export interface OrganizedManeuvers {
@@ -55,7 +57,9 @@ export interface OrganizedManeuvers {
 
 export interface DraftSlot {
   maneuverId: string;
-  variableCost: number;
+  variableCost?: number;
+  energyVariableCost?: number;
+  capacityVariableCost?: number;
 }
 
 export function getMasteryManus(character: CharacterData): string[] {
@@ -298,6 +302,15 @@ export const getVariableCostType = (m?: Maneuver): "cap" | "energy" | null => {
   return null;
 };
 
+export const getVariableCostTypes = (m?: Maneuver): ("cap" | "energy")[] => {
+  if (!m?.tags?.length) return [];
+
+  return [
+    ...(m.tags.includes("manuX") ? (["energy"] as const) : []),
+    ...(m.tags.includes("manuCapX") ? (["cap"] as const) : []),
+  ];
+};
+
 export const calculateTurn = ({
   slots,
   energyStart,
@@ -325,7 +338,12 @@ export const calculateTurn = ({
     let c = m?.capacityMod ?? 0;
 
     const variableType = getVariableCostType(m);
-    const variableCost = slot.variableCost ?? 0;
+    const energyVariableCost =
+      slot.energyVariableCost ??
+      (variableType === "energy" ? (slot.variableCost ?? 0) : 0);
+    const capacityVariableCost =
+      slot.capacityVariableCost ??
+      (variableType === "cap" ? (slot.variableCost ?? 0) : 0);
 
     // Apply active effects from previous maneuver
     e = -e;
@@ -336,12 +354,12 @@ export const calculateTurn = ({
 
     e += activeEffects.discountCost;
 
-    if (variableType === "energy") {
-      e += variableCost; // signed delta: positive = gain, negative = lose
+    if (m?.tags.includes("manuX")) {
+      e += energyVariableCost; // signed delta: positive = gain, negative = lose
     }
 
-    if (variableType === "cap") {
-      c += variableCost;
+    if (m?.tags.includes("manuCapX")) {
+      c += capacityVariableCost;
     }
 
     const capCost = getManeuverCapacityCost(m);
@@ -358,7 +376,9 @@ export const calculateTurn = ({
       c: c - capCost,
       after: energy,
       capAfter: capacity,
-      variableCost,
+      variableCost: energyVariableCost,
+      energyVariableCost,
+      capacityVariableCost,
       appliedEffects: activeEffects,
     };
   });
@@ -379,7 +399,7 @@ export const formatManeuver = (slot: string, row: TurnRow) => {
 
   return `[${slot}] - ${m.name}${desc} // ${
     row.e >= 0 ? "E+" : "E"
-  }${row.e}=${row.after}, CAP${row.c > 0 ? "+" : ""}${row.c}=${row.capAfter}`;
+  }${row.e}=${row.after}, CAP${row.c >= 0 ? "+" : ""}${row.c}=${row.capAfter}`;
 };
 
 export const calculateSlotsNeeded = (slots: ManeuverSlot[]): number => {

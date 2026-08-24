@@ -474,8 +474,9 @@
     "tags": [
       "manuAttack",
       "manuMAP",
-      "manuCapX",
-      "manuORD"
+      "manuORD",
+      "manuX",
+      "manuCapX"
     ],
     "desc": "Make an Attack."
   },
@@ -487,34 +488,10 @@
     "type": "Reaction",
     "engCost": "3",
     "tags": [
-      "manuAttack"
-    ],
-    "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
-  },
-  {
-    "id": "manuJoustCap",
-    "name": "Joust w/Cap",
-    "isCommon": true,
-    "isAdvanced": false,
-    "type": "Reaction",
-    "engCost": "3",
-    "tags": [
       "manuAttack",
-      "manuCap"
-    ],
-    "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
-  },
-  {
-    "id": "manuJoustOrd",
-    "name": "Joust w/Ord",
-    "isCommon": true,
-    "isAdvanced": false,
-    "type": "Reaction",
-    "engCost": "4",
-    "tags": [
-      "manuAttack",
-      "manuCap",
-      "manuORD"
+      "manuOrd",
+      "manuCapX",
+      "manuX"
     ],
     "desc": "Whenever you would gain Locked, you may make an Attack roll. Instead of dealing damage, on a failure, take that damage and Escalate. On a Mixed, Defeat. On a Full or better, Defeat and deal 1 Damage."
   },

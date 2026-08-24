@@ -10,7 +10,7 @@ import {
   getPositioningManeuvers,
   getSelectableManeuvers,
   organizeManeuversForDisplay,
-  getVariableCostType,
+  getVariableCostTypes,
   type Maneuver,
   type ManeuverSlot,
   type DraftSlot,
@@ -28,9 +28,12 @@ const loadDraft = (characterId: string) => {
       return {
         pos: "",
         posVariableCost: 0,
+        posEnergyVariableCost: 0,
+        posCapacityVariableCost: 0,
         slots: Array.from({ length: MIN_SLOTS }, () => ({
           maneuverId: "",
-          variableCost: 0,
+          energyVariableCost: 0,
+          capacityVariableCost: 0,
         })),
       };
     }
@@ -40,20 +43,27 @@ const loadDraft = (characterId: string) => {
     return {
       pos: parsed.pos ?? "",
       posVariableCost: parsed.posVariableCost ?? 0,
+      posEnergyVariableCost:
+        parsed.posEnergyVariableCost ?? parsed.posVariableCost ?? 0,
+      posCapacityVariableCost: parsed.posCapacityVariableCost ?? 0,
       slots: Array.isArray(parsed.slots)
         ? parsed.slots
         : Array.from({ length: MIN_SLOTS }, () => ({
             maneuverId: "",
-            variableCost: 0,
+            energyVariableCost: 0,
+            capacityVariableCost: 0,
           })),
     };
   } catch {
     return {
       pos: "",
       posVariableCost: 0,
+      posEnergyVariableCost: 0,
+      posCapacityVariableCost: 0,
       slots: Array.from({ length: MIN_SLOTS }, () => ({
         maneuverId: "",
-        variableCost: 0,
+        energyVariableCost: 0,
+        capacityVariableCost: 0,
       })),
     };
   }
@@ -63,11 +73,19 @@ const saveDraft = (
   characterId: string,
   pos: string,
   posVariableCost: number,
+  posEnergyVariableCost: number,
+  posCapacityVariableCost: number,
   slots: DraftSlot[],
 ) => {
   localStorage.setItem(
     getDraftKey(characterId),
-    JSON.stringify({ pos, posVariableCost, slots }),
+    JSON.stringify({
+      pos,
+      posVariableCost,
+      posEnergyVariableCost,
+      posCapacityVariableCost,
+      slots,
+    }),
   );
 };
 
@@ -114,18 +132,40 @@ function ManuBuilder({
   const [posVariableCost, setPosVariableCost] = useState(
     initialDraft.posVariableCost,
   );
+  const [posEnergyVariableCost, setPosEnergyVariableCost] = useState(
+    initialDraft.posEnergyVariableCost,
+  );
+  const [posCapacityVariableCost, setPosCapacityVariableCost] = useState(
+    initialDraft.posCapacityVariableCost,
+  );
   const [slots, setSlots] = useState<DraftSlot[]>(initialDraft.slots);
 
   // persist draft
   useEffect(() => {
-    saveDraft(character.id, pos, posVariableCost, slots);
-  }, [character.id, pos, posVariableCost, slots]);
+    saveDraft(
+      character.id,
+      pos,
+      posVariableCost,
+      posEnergyVariableCost,
+      posCapacityVariableCost,
+      slots,
+    );
+  }, [
+    character.id,
+    pos,
+    posVariableCost,
+    posEnergyVariableCost,
+    posCapacityVariableCost,
+    slots,
+  ]);
 
   // reload when character changes
   useEffect(() => {
     const draft = loadDraft(character.id);
     setPos(draft.pos);
     setPosVariableCost(draft.posVariableCost);
+    setPosEnergyVariableCost(draft.posEnergyVariableCost);
+    setPosCapacityVariableCost(draft.posCapacityVariableCost);
     setSlots(draft.slots);
   }, [character.id]);
 
@@ -143,15 +183,24 @@ function ManuBuilder({
   const setSlotManeuver = (idx: number, maneuverId: string) => {
     setSlots((prev) => {
       const next = [...prev];
-      next[idx] = { ...next[idx], maneuverId };
+      next[idx] = {
+        ...next[idx],
+        maneuverId,
+        energyVariableCost: 0,
+        capacityVariableCost: 0,
+      };
       return next;
     });
   };
 
-  const setSlotVariableCost = (idx: number, value: number) => {
+  const setSlotVariableCosts = (
+    idx: number,
+    field: "energyVariableCost" | "capacityVariableCost",
+    value: number,
+  ) => {
     setSlots((prev) => {
       const next = [...prev];
-      next[idx] = { ...next[idx], variableCost: value };
+      next[idx] = { ...next[idx], [field]: value };
       return next;
     });
   };
@@ -164,7 +213,10 @@ function ManuBuilder({
   };
 
   const addSlot = () => {
-    setSlots((prev) => [...prev, { maneuverId: "", variableCost: 0 }]);
+    setSlots((prev) => [
+      ...prev,
+      { maneuverId: "", energyVariableCost: 0, capacityVariableCost: 0 },
+    ]);
   };
 
   const engineSlots: ManeuverSlot[] = useMemo(() => {
@@ -172,12 +224,14 @@ function ManuBuilder({
       label: "",
       maneuver: getManeuverById(all, s.maneuverId),
       variableCost: s.variableCost,
+      energyVariableCost: s.energyVariableCost,
+      capacityVariableCost: s.capacityVariableCost,
     }));
   }, [slots, all]);
 
   const posManeuver = useMemo(() => getManeuverById(all, pos), [all, pos]);
-  const posVariableType = useMemo(
-    () => getVariableCostType(posManeuver),
+  const posVariableTypes = useMemo(
+    () => getVariableCostTypes(posManeuver),
     [posManeuver],
   );
 
@@ -186,8 +240,15 @@ function ManuBuilder({
       label: "POS",
       maneuver: posManeuver,
       variableCost: posVariableCost,
+      energyVariableCost: posEnergyVariableCost,
+      capacityVariableCost: posCapacityVariableCost,
     };
-  }, [posManeuver, posVariableCost]);
+  }, [
+    posManeuver,
+    posVariableCost,
+    posEnergyVariableCost,
+    posCapacityVariableCost,
+  ]);
 
   const organized = useMemo(
     () => organizeManeuversForDisplay(engineSlots),
@@ -237,10 +298,13 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
   const resetDraft = () => {
     setPos("");
     setPosVariableCost(0);
+    setPosEnergyVariableCost(0);
+    setPosCapacityVariableCost(0);
     setSlots(
       Array.from({ length: MIN_SLOTS }, () => ({
         maneuverId: "",
-        variableCost: 0,
+        energyVariableCost: 0,
+        capacityVariableCost: 0,
       })),
     );
     clearDraft(character.id);
@@ -270,15 +334,32 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
           setValue={(v: string) => {
             setPos(v);
             setPosVariableCost(0); // reset variable cost on maneuver change
+            setPosEnergyVariableCost(0);
+            setPosCapacityVariableCost(0);
           }}
           options={positionOptions}
         />
-        {posVariableType && (
+        {posVariableTypes.includes("energy") && (
           <input
             type="number"
             min={-10}
-            value={posVariableCost}
-            onChange={(e) => setPosVariableCost(Number(e.target.value) || 0)}
+            aria-label="POS energy cost"
+            value={posEnergyVariableCost}
+            onChange={(e) =>
+              setPosEnergyVariableCost(Number(e.target.value) || 0)
+            }
+            className="w-10 num-themed text-center"
+          />
+        )}
+        {posVariableTypes.includes("cap") && (
+          <input
+            type="number"
+            min={-10}
+            aria-label="POS capacity cost"
+            value={posCapacityVariableCost}
+            onChange={(e) =>
+              setPosCapacityVariableCost(Number(e.target.value) || 0)
+            }
             className="w-10 num-themed text-center"
           />
         )}
@@ -287,7 +368,7 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
       {/* slots */}
       {organized.slots.map((slot, idx) => {
         const draft = slots[idx];
-        const variableType = getVariableCostType(engineSlots[idx]?.maneuver);
+        const variableTypes = getVariableCostTypes(engineSlots[idx]?.maneuver);
 
         return (
           <div key={idx} className="flex items-center gap-2">
@@ -297,12 +378,32 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
               setValue={(v: string) => setSlotManeuver(idx, v)}
               options={maneuverOptions}
             />
-            {variableType && (
+            {variableTypes.includes("energy") && (
               <input
                 type="number"
-                value={draft?.variableCost ?? 0}
+                aria-label={`${slot.label} energy cost`}
+                value={draft?.energyVariableCost ?? draft?.variableCost ?? 0}
                 onChange={(e) =>
-                  setSlotVariableCost(idx, Number(e.target.value) || 0)
+                  setSlotVariableCosts(
+                    idx,
+                    "energyVariableCost",
+                    Number(e.target.value) || 0,
+                  )
+                }
+                className="w-10 num-themed text-center"
+              />
+            )}
+            {variableTypes.includes("cap") && (
+              <input
+                type="number"
+                aria-label={`${slot.label} capacity cost`}
+                value={draft?.capacityVariableCost ?? 0}
+                onChange={(e) =>
+                  setSlotVariableCosts(
+                    idx,
+                    "capacityVariableCost",
+                    Number(e.target.value) || 0,
+                  )
                 }
                 className="w-10 num-themed text-center"
               />
