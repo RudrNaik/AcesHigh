@@ -302,14 +302,22 @@ export const calculateTurn = ({
   slots,
   energyStart,
   capacityStart,
+  character,
 }: {
   slots: ManeuverSlot[];
   energyStart: number;
   capacityStart: number;
+  character?: CharacterData;
 }): TurnResult => {
   let energy = energyStart;
   let capacity = capacityStart;
   let activeEffects: ManeuverEffect = { discountCost: 0, forwardBonus: 0 };
+  const aircraftTags = character
+    ? planeEngine.getAirplaneStatsForCard(character).tags
+    : [];
+  const hasPSM = Array.isArray(aircraftTags)
+    ? aircraftTags.includes("acPSM")
+    : aircraftTags === "acPSM";
 
   const rows = slots.map((slot) => {
     const m = slot.maneuver;
@@ -321,6 +329,11 @@ export const calculateTurn = ({
 
     // Apply active effects from previous maneuver
     e = -e;
+
+    if (hasPSM && m?.tags.includes("manuAOA")) {
+      e += 1;
+    }
+
     e += activeEffects.discountCost;
 
     if (variableType === "energy") {
@@ -359,31 +372,14 @@ export const calculateTurn = ({
 
 export const formatManeuver = (slot: string, row: TurnRow) => {
   const m = row.m;
-  const variableType = getVariableCostType(m);
-  const variableCost = row.variableCost ?? 0;
 
   if (!m) return `[${slot}] - RSV`;
-
-  let e = m.energyMod;
-  let c = m.capacityMod;
-
-  e = -e;
-
-  c -= getManeuverCapacityCost(m);
-
-  if (variableType === "energy") {
-    e += variableCost;
-  }
-
-  if (variableType === "cap") {
-    c += variableCost;
-  }
 
   const desc = m.desc ? `: ${m.desc}` : "";
 
   return `[${slot}] - ${m.name}${desc} // ${
-    e >= 0 ? "E+" : "E"
-  }${e}=${row.after}, CAP${c > 0 ? "+" : ""}${c}=${row.capAfter}`;
+    row.e >= 0 ? "E+" : "E"
+  }${row.e}=${row.after}, CAP${row.c > 0 ? "+" : ""}${row.c}=${row.capAfter}`;
 };
 
 export const calculateSlotsNeeded = (slots: ManeuverSlot[]): number => {

@@ -200,9 +200,9 @@ function ManuBuilder({
         slots: [positionSlot, ...engineSlots],
         energyStart,
         capacityStart,
-
+        character,
       }),
-    [engineSlots, positionSlot, energyStart, capacityStart],
+    [character, engineSlots, positionSlot, energyStart, capacityStart],
   );
 
   const output = useMemo(() => {
