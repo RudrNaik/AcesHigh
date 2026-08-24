@@ -35,8 +35,8 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
       className="
         bg-black/20
         border
-        border-cyan-100
-        p-4 border-l-4
+        border-cyan-400
+        p-4
          
       "
     >
