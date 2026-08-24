@@ -516,7 +516,8 @@
     "type": "Reaction",
     "engCost": "X",
     "tags": [
-      "manuX"
+      "manuX",
+      "manuCapX"
     ],
     "desc": "You try to do something outside of a traditional maneuver, or there are special circumstances such as you lining up a shot down a tunnel – your AWACS will tell you the Energy Cost and any additional costs, such as a Pilot Stat Check."
   },
