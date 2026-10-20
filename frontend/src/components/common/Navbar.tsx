@@ -6,16 +6,25 @@ import icon from "../../assets/aces_high_logo.svg";
 interface NavbarProps {
   isHyperlegible: boolean;
   onToggleFont: () => void;
+  theme: string;
+  themes: { id: string; label: string }[];
+  onThemeChange: (id: string) => void;
 }
 
-const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
+const Navbar = ({
+  isHyperlegible,
+  onToggleFont,
+  theme,
+  themes,
+  onThemeChange,
+}: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const settingsRef = useRef<HTMLDivElement | null>(null);
 
   /**
-   * UseEffect to close the desktop settings panel on outside clicks.
+   * UseEffect to close the settings panel on outside clicks.
    */
   useEffect(() => {
     if (!settingsOpen) return;
@@ -87,8 +96,8 @@ const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
           </ul>
         </div>
 
-        {/* Desktop settings hamburger — appears at md and up. Holds user preferences
-            (font now; themes later). Hidden on mobile where the navigation hamburger is used. */}
+        {/* Desktop settings hamburger, appears at md and up. Saves user preferences
+            (font, theme). Hidden on mobile where the navigation hamburger is used. */}
         <div ref={settingsRef} className="hidden md:flex items-center pr-4">
           <div className="relative">
             <button
@@ -133,6 +142,20 @@ const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
                   >
                     [{isHyperlegible ? "ON" : "OFF"}] Hyperlegible Font
                   </button>
+                </li>
+                <li>
+                  <select
+                    value={theme}
+                    onChange={(e) => onThemeChange(e.target.value)}
+                    aria-label="Color theme"
+                    className="select-themed w-full py-2 text-xs"
+                  >
+                    {themes.map((t) => (
+                      <option key={t.id} value={t.id}>
+                        Theme: {t.label}
+                      </option>
+                    ))}
+                  </select>
                 </li>
               </ul>
             </div>
@@ -223,6 +246,20 @@ const Navbar = ({ isHyperlegible, onToggleFont }: NavbarProps) => {
             >
               [{isHyperlegible ? "ON" : "OFF"}] Hyperlegible Font
             </button>
+          </li>
+          <li>
+            <select
+              value={theme}
+              onChange={(e) => onThemeChange(e.target.value)}
+              aria-label="Color theme"
+              className="select-themed w-full py-2 text-xs"
+            >
+              {themes.map((t) => (
+                <option key={t.id} value={t.id}>
+                  Theme: {t.label}
+                </option>
+              ))}
+            </select>
           </li>
         </ul>
       </div>

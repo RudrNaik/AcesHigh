@@ -1,11 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
+/* we can make themes by remapping the tailwind cyan-* to new colors and recolor the whole UI instead of having to go through and redo colors en masse. 
+Use literal hex values (not var(--color-yellow-*)) because Tailwind only emits theme variables that are referenced by used classes.
+
+Thems are selected from the HTML on index.html, as and are all declared here for what they change.*/
+
+/* Gateway */
+:root {
+  --ah-accent: #06b6d4;
+  --ah-accent-hover: #0891b2;
+  --ah-text: #cffafe;
+  --ah-input-text: #e5e7eb;
+  --ah-input-bg: #0a0a0a;
+  --ah-track: #171717;
+  --ah-bg: #020611;
+  --ah-bg-mid: #06141f;
+  --ah-panel: #071018;
+  --ah-dots: rgba(180, 220, 255, 0.35);
+  --ah-surface-border: #075985;
+}
+
+
+[data-theme="high-vis"] {
+  --color-cyan-50: #ffffff;
+  --color-cyan-100: #ffffff;
+  --color-cyan-200: #fef08a;
+  --color-cyan-300: #fde047;
+  --color-cyan-400: #facc15;
+  --color-cyan-500: #eab308;
+  --color-cyan-600: #ca8a04;
+  --color-cyan-700: #a16207;
+  --color-cyan-800: #eab308;
+  --color-cyan-900: #737373;
+  --color-cyan-950: #262626;
+
+  --ah-accent: #facc15;
+  --ah-accent-hover: #eab308;
+  --ah-text: #ffffff;
+  --ah-input-text: #ffffff;
+  --ah-input-bg: #000000;
+  --ah-track: #000000;
+  --ah-bg: #242424;
+  --ah-bg-mid: #000000;
+  --ah-panel: #000000;
+  --ah-dots: rgba(255, 244, 180, 0.211);
+  --ah-surface-border: #facc15;
+}
+
 
 /* global scrollbar themes */
 html {
-  /* Firefox scrollbar defaults */
-  scrollbar-color: #06b6d4 #171717;  /* thumb cyan-400, track neutral-900 */
+  /* Firefox scrollbar */
+  scrollbar-color: var(--ah-accent) var(--ah-track); 
   scrollbar-width: thin;
 }
 
@@ -16,33 +63,33 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #171717; /* neutral-900 */
+  background: var(--ah-track);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #06b6d4; /* cyan-400 */
+  background-color: var(--ah-accent);
   border-radius: 9999px;
-  border: 2px solid #171717; /* space between thumb and edge */
+  border: 2px solid var(--ah-track); /* space between thumb and edge */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0891b2; /* cyan-500 */
+  background-color: var(--ah-accent-hover); /* cyan-500 */
 }
 
 /* Base look for numeric inputs */
 input[type="number"].num-themed {
-  color: #e5e7eb;                 /* neutral-200 */
-  background-color: #0a0a0a;      /* near black */
-  border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
+  color: var(--ah-input-text);                 
+  background-color: var(--ah-input-bg);      
+  border: 1px solid color-mix(in srgb, var(--ah-accent) 40%, transparent);    
   line-height: 1.5rem;
 }
 
 /* Base look for text inputs */
 input[type="text"].text-themed {
-  color: #e5e7eb;                 /* neutral-200 */
-  background-color: #0a0a0a;      /* near black */
-  border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
+  color: var(--ah-input-text);               
+  background-color: var(--ah-input-bg);      
+  border: 1px solid color-mix(in srgb, var(--ah-accent) 40%, transparent);    
   line-height: 1.5rem;
 }
 
@@ -65,13 +112,13 @@ button{
 
 /* Base dark theme for all dropdowns */
 select.select-themed {
-  color: #CFFAFE;                 
-  background-color: #0a0a0a;      /* black background */
-  border: 1px solid #06b6d499;    /* cyan-400/60 border */
+  color: var(--ah-text);                 
+  background-color: var(--ah-input-bg);      
+  border: 1px solid color-mix(in srgb, var(--ah-accent) 60%, transparent);   
   padding: 0.25rem 1.75rem 0.25rem 0.5rem;
   background-image:
-    linear-gradient(45deg, transparent 50%, #06b6d4 50%),
-    linear-gradient(135deg, #06b6d4 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, var(--ah-accent) 50%),
+    linear-gradient(135deg, var(--ah-accent) 50%, transparent 50%);
   background-position:
     calc(100% - 14px) calc(50% - 3px),
     calc(100% - 10px) calc(50% - 3px);
@@ -84,14 +131,14 @@ select.select-themed {
 
 /* Hover / focus states */
 select.select-themed:hover {
-  border-color: #06b6d4;
+  border-color: var(--ah-accent);
 }
 select.select-themed:focus {
   outline: none;
-  box-shadow: 0.5px #06b6d4;
+  box-shadow: 0 0 0 1px var(--ah-accent);
 }
 
-/* Optional for Firefox extra padding issue */
+/* Specific for Firefox extra padding issue */
 select.select-themed::-ms-expand {
   display: none;
 }
@@ -101,7 +148,7 @@ select.select-themed::-ms-expand {
   animation: distort-subtle 5s ease infinite;
 }
 
-/* The glitch: brief bursts at two windows in the timeline */
+/* Glitch effect */
 @keyframes distort-subtle {
   0%, 24%, 30%, 74%, 80%, 100% {
     text-shadow: none;
