@@ -4,9 +4,9 @@
 /* we can make themes by remapping the tailwind cyan-* to new colors and recolor the whole UI instead of having to go through and redo colors en masse. 
 Use literal hex values (not var(--color-yellow-*)) because Tailwind only emits theme variables that are referenced by used classes.
 
-Thems are selected from the HTML on index.html, as and are all declared here for what they change.*/
+Themes are selected from the HTML on index.html, as and are all declared here for what they change.*/
 
-/* Gateway */
+/* classic gateway (AC04) */
 :root {
   --ah-accent: #06b6d4;
   --ah-accent-hover: #0891b2;
@@ -19,9 +19,10 @@ Thems are selected from the HTML on index.html, as and are all declared here for
   --ah-panel: #071018;
   --ah-dots: rgba(180, 220, 255, 0.35);
   --ah-surface-border: #075985;
+  --ah-vignette: rgba(0, 0, 0, 0.75);
 }
 
-
+/* Testing high vis theme that makes things yellow. */
 [data-theme="high-vis"] {
   --color-cyan-50: #ffffff;
   --color-cyan-100: #ffffff;
@@ -46,6 +47,127 @@ Thems are selected from the HTML on index.html, as and are all declared here for
   --ah-panel: #000000;
   --ah-dots: rgba(255, 244, 180, 0.211);
   --ah-surface-border: #facc15;
+}
+
+/* AC5 murky green */
+[data-theme="Razgriz"] {
+  --color-cyan-50: #ecf3dc;
+  --color-cyan-100: #d6e4b8;
+  --color-cyan-200: #bdd48f;
+  --color-cyan-300: #a3c46b;
+  --color-cyan-400: #8aae52;
+  --color-cyan-500: #6f9440;
+  --color-cyan-600: #587a33;
+  --color-cyan-700: #46612b;
+  --color-cyan-800: #365023;
+  --color-cyan-900: #2a3d1d;
+  --color-cyan-950: #1a2812;
+
+  --color-red-100: #f3d9cf;
+  --color-red-200: #e8bba9;
+  --color-red-300: #e09a82;
+  --color-red-400: #d4795e;
+  --color-red-500: #c25a42;
+  --color-red-600: #a64734;
+  --color-red-700: #8a3a2b;
+  --color-red-800: #6e2f23;
+  --color-red-900: #4d2219;
+  --color-red-950: #2e140e;
+  --color-yellow-400: #d9bf4f;
+  --color-yellow-500: #bfa23a;
+
+  --ah-accent: #8aae52;
+  --ah-accent-hover: #a3c46b;
+  --ah-text: #d6e4b8;
+  --ah-input-text: #d6e4b8;
+  --ah-input-bg: #0d150a;
+  --ah-track: #0d150a;
+  --ah-bg: #070c06;
+  --ah-bg-mid: #091612;
+  --ah-panel: #121c0e;
+  --ah-dots: rgba(163, 196, 107, 0.25);
+  --ah-surface-border: #46612b;
+}
+
+/* Axe and Hammercore */
+[data-theme="Garm"] {
+  --color-cyan-50: #fffbe0;
+  --color-cyan-100: #fff3a3;
+  --color-cyan-200: #ffe96b;
+  --color-cyan-300: #ffdd33;
+  --color-cyan-400: #f5cc12;
+  --color-cyan-500: #e0b400;
+  --color-cyan-600: #b88f00;
+  --color-cyan-700: #8f1d1d;
+  --color-cyan-800: #7a1515;
+  --color-cyan-900: #5c0f0f;
+  --color-cyan-950: #3d0909;
+
+  --color-red-100: #ffe4dc;
+  --color-red-200: #ffc9b8;
+  --color-red-300: #ffa88f;
+  --color-red-400: #ff8a6b;
+  --color-red-500: #ff6a45;
+  --color-red-600: #e04a28;
+  --color-red-700: #b8381c;
+  --color-red-800: #5c0c0c;
+  --color-red-900: #3d0909;
+  --color-red-950: #240505;
+  --color-yellow-400: #ffe45c;
+  --color-yellow-500: #ffd21f;
+
+  --ah-accent: #f5cc12;
+  --ah-accent-hover: #ffe96b;
+  --ah-text: #fff3a3;
+  --ah-input-text: #fff3a3;
+  --ah-input-bg: #2a0606;
+  --ah-track: #2a0606;
+  --ah-bg: #8a1212;
+  --ah-bg-mid: #5c0c0c;
+  --ah-panel: #3d0909;
+  --ah-dots: rgba(255, 221, 51, 0.22);
+  --ah-surface-border: #f5cc12;
+}
+
+/* Light/Kinda paper theme? WIP. */
+[data-theme="murky-green-light"] {
+  --color-cyan-50: #1a2812;
+  --color-cyan-100: #1f2f15;
+  --color-cyan-200: #1f2f15;
+  --color-cyan-300: #1f2f15;
+  --color-cyan-400: #1f2f15;
+  --color-cyan-500: #1f2f15;
+  --color-cyan-600: #1f2f15;
+  --color-cyan-700: #1f2f15;
+  --color-cyan-800: #1f2f15;
+  --color-cyan-900: #1f2f15;
+  --color-cyan-950: #1f2f15;
+
+  --color-red-100: #5c1a10;
+  --color-red-200: #6e2016;
+  --color-red-300: #7f261a;
+  --color-red-400: #9a2f20;
+  --color-red-500: #a8321f;
+  --color-red-600: #b83a26;
+  --color-red-700: #c9654f;
+  --color-red-800: #d99a8a;
+  --color-red-900: #ecc4b8;
+  --color-red-950: #f6e0d8;
+  --color-yellow-400: #8a6a00;
+  --color-yellow-500: #7a5c00;
+
+  --ah-accent: #2a3d1d;
+  --ah-accent-hover: #365023;
+  --ah-text: #1f2f15;
+  --ah-input-text: #1a2812;
+  --ah-input-bg: #f1f6e4;
+  --ah-track: #d6e4b8;
+  --ah-bg: #dfe9c8;
+  --ah-bg-mid: #e8f0d6;
+  --ah-panel: #f1f6e4;
+  --ah-dots: rgba(70, 97, 43, 0.25);
+  --ah-surface-border: #587a33;
+  --ah-vignette: rgba(70, 97, 43, 0.12);
 }
 
 
@@ -74,7 +196,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--ah-accent-hover); /* cyan-500 */
+  background-color: var(--ah-accent-hover); 
 }
 
 /* Base look for numeric inputs */
@@ -143,7 +265,7 @@ select.select-themed::-ms-expand {
   display: none;
 }
 
-/* Base class to apply the effect */
+/* Base class to apply the glitch effect */
 .glitch-distort {
   animation: distort-subtle 5s ease infinite;
 }

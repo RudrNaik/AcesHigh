@@ -41,7 +41,7 @@ function Background() {
       <div
         className="
           absolute inset-0
-          bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.75)_100%)]
+          bg-[radial-gradient(circle,transparent_40%,var(--ah-vignette)_100%)]
         "
       />
     </div>
