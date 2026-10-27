@@ -15,14 +15,21 @@ import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
 
 const FONT_STORAGE_KEY = "acesHighFont";
+const THEME_STORAGE_KEY = "acesHighTheme";
+
+const THEMES = [
+  { id: "cyan", label: "Gateway" },
+  { id: "high-vis", label: "HighVis Yellow" },
+  { id: "Razgriz", label: "Razgriz" },
+  { id: "Garm", label: "Garm" },
+  { id: "murky-green-light", label: "Light" },
+];
 
 function MenuRouter() {
-  // Toggle between font-mono and the .hyperlegible utility (Atkinson Hyperlegible, see index.css).
-  // Persisted to localStorage so the choice survives reloads.
   const [isHyperlegible, setIsHyperlegible] = useState(false);
   const [hydrated, setHydrated] = useState(false);
 
-  // Read the saved preference once on mount.
+  // fetch if the user wants the text to be hyperlegible or not.
   useEffect(() => {
     const saved = localStorage.getItem(FONT_STORAGE_KEY);
     if (saved === "hyperlegible") {
@@ -31,7 +38,7 @@ function MenuRouter() {
     setHydrated(true);
   }, []);
 
-  // Persist the choice whenever it changes.
+  // store and fetch the font and hyperlegible font selections.
   useEffect(() => {
     if (!hydrated) return;
     localStorage.setItem(
@@ -39,6 +46,16 @@ function MenuRouter() {
       isHyperlegible ? "hyperlegible" : "mono"
     );
   }, [isHyperlegible, hydrated]);
+
+  // Theme gets applied as data-theme on <html> to remap all the cyan-* values across the site.
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem(THEME_STORAGE_KEY);
+    return THEMES.some((t) => t.id === saved) ? saved! : "cyan";
+  });
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
 
   const handleToggleFont = () => setIsHyperlegible((v) => !v);
 
@@ -53,6 +70,9 @@ function MenuRouter() {
         <Navbar
           isHyperlegible={isHyperlegible}
           onToggleFont={handleToggleFont}
+          theme={theme}
+          themes={THEMES}
+          onThemeChange={setTheme}
         />
         <div className="py-10"></div>
         <Routes>

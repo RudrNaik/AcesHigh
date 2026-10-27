@@ -1,11 +1,180 @@
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
+/* we can make themes by remapping the tailwind cyan-* to new colors and recolor the whole UI instead of having to go through and redo colors en masse. 
+Use literal hex values (not var(--color-yellow-*)) because Tailwind only emits theme variables that are referenced by used classes.
+
+Themes are selected from the HTML on index.html, as and are all declared here for what they change.*/
+
+/* classic gateway (AC04) */
+:root {
+  --ah-accent: #06b6d4;
+  --ah-accent-hover: #0891b2;
+  --ah-text: #cffafe;
+  --ah-input-text: #e5e7eb;
+  --ah-input-bg: #0a0a0a;
+  --ah-track: #171717;
+  --ah-bg: #020611;
+  --ah-bg-mid: #06141f;
+  --ah-panel: #071018;
+  --ah-dots: rgba(180, 220, 255, 0.35);
+  --ah-surface-border: #075985;
+  --ah-vignette: rgba(0, 0, 0, 0.75);
+}
+
+/* Testing high vis theme that makes things yellow. */
+[data-theme="high-vis"] {
+  --color-cyan-50: #ffffff;
+  --color-cyan-100: #ffffff;
+  --color-cyan-200: #fef08a;
+  --color-cyan-300: #fde047;
+  --color-cyan-400: #facc15;
+  --color-cyan-500: #eab308;
+  --color-cyan-600: #ca8a04;
+  --color-cyan-700: #a16207;
+  --color-cyan-800: #eab308;
+  --color-cyan-900: #737373;
+  --color-cyan-950: #262626;
+
+  --ah-accent: #facc15;
+  --ah-accent-hover: #eab308;
+  --ah-text: #ffffff;
+  --ah-input-text: #ffffff;
+  --ah-input-bg: #000000;
+  --ah-track: #000000;
+  --ah-bg: #242424;
+  --ah-bg-mid: #000000;
+  --ah-panel: #000000;
+  --ah-dots: rgba(255, 244, 180, 0.211);
+  --ah-surface-border: #facc15;
+}
+
+/* AC5 murky green */
+[data-theme="Razgriz"] {
+  --color-cyan-50: #ecf3dc;
+  --color-cyan-100: #d6e4b8;
+  --color-cyan-200: #bdd48f;
+  --color-cyan-300: #a3c46b;
+  --color-cyan-400: #8aae52;
+  --color-cyan-500: #6f9440;
+  --color-cyan-600: #587a33;
+  --color-cyan-700: #46612b;
+  --color-cyan-800: #365023;
+  --color-cyan-900: #2a3d1d;
+  --color-cyan-950: #1a2812;
+
+  --color-red-100: #f3d9cf;
+  --color-red-200: #e8bba9;
+  --color-red-300: #e09a82;
+  --color-red-400: #d4795e;
+  --color-red-500: #c25a42;
+  --color-red-600: #a64734;
+  --color-red-700: #8a3a2b;
+  --color-red-800: #6e2f23;
+  --color-red-900: #4d2219;
+  --color-red-950: #2e140e;
+  --color-yellow-400: #d9bf4f;
+  --color-yellow-500: #bfa23a;
+
+  --ah-accent: #8aae52;
+  --ah-accent-hover: #a3c46b;
+  --ah-text: #d6e4b8;
+  --ah-input-text: #d6e4b8;
+  --ah-input-bg: #0d150a;
+  --ah-track: #0d150a;
+  --ah-bg: #070c06;
+  --ah-bg-mid: #091612;
+  --ah-panel: #121c0e;
+  --ah-dots: rgba(163, 196, 107, 0.25);
+  --ah-surface-border: #46612b;
+}
+
+/* Axe and Hammercore */
+[data-theme="Garm"] {
+  --color-cyan-50: #fffbe0;
+  --color-cyan-100: #fff3a3;
+  --color-cyan-200: #ffe96b;
+  --color-cyan-300: #ffdd33;
+  --color-cyan-400: #f5cc12;
+  --color-cyan-500: #e0b400;
+  --color-cyan-600: #b88f00;
+  --color-cyan-700: #8f1d1d;
+  --color-cyan-800: #7a1515;
+  --color-cyan-900: #5c0f0f;
+  --color-cyan-950: #3d0909;
+
+  --color-red-100: #ffe4dc;
+  --color-red-200: #ffc9b8;
+  --color-red-300: #ffa88f;
+  --color-red-400: #ff8a6b;
+  --color-red-500: #ff6a45;
+  --color-red-600: #e04a28;
+  --color-red-700: #b8381c;
+  --color-red-800: #5c0c0c;
+  --color-red-900: #3d0909;
+  --color-red-950: #240505;
+  --color-yellow-400: #ffe45c;
+  --color-yellow-500: #ffd21f;
+
+  --ah-accent: #f5cc12;
+  --ah-accent-hover: #ffe96b;
+  --ah-text: #fff3a3;
+  --ah-input-text: #fff3a3;
+  --ah-input-bg: #2a0606;
+  --ah-track: #2a0606;
+  --ah-bg: #8a1212;
+  --ah-bg-mid: #5c0c0c;
+  --ah-panel: #3d0909;
+  --ah-dots: rgba(255, 221, 51, 0.22);
+  --ah-surface-border: #f5cc12;
+}
+
+/* Light/Kinda paper theme? WIP. */
+[data-theme="murky-green-light"] {
+  --color-cyan-50: #1a2812;
+  --color-cyan-100: #1f2f15;
+  --color-cyan-200: #1f2f15;
+  --color-cyan-300: #1f2f15;
+  --color-cyan-400: #1f2f15;
+  --color-cyan-500: #1f2f15;
+  --color-cyan-600: #1f2f15;
+  --color-cyan-700: #1f2f15;
+  --color-cyan-800: #1f2f15;
+  --color-cyan-900: #1f2f15;
+  --color-cyan-950: #1f2f15;
+
+  --color-red-100: #5c1a10;
+  --color-red-200: #6e2016;
+  --color-red-300: #7f261a;
+  --color-red-400: #9a2f20;
+  --color-red-500: #a8321f;
+  --color-red-600: #b83a26;
+  --color-red-700: #c9654f;
+  --color-red-800: #d99a8a;
+  --color-red-900: #ecc4b8;
+  --color-red-950: #f6e0d8;
+  --color-yellow-400: #8a6a00;
+  --color-yellow-500: #7a5c00;
+
+  --ah-accent: #2a3d1d;
+  --ah-accent-hover: #365023;
+  --ah-text: #1f2f15;
+  --ah-input-text: #1a2812;
+  --ah-input-bg: #f1f6e4;
+  --ah-track: #d6e4b8;
+  --ah-bg: #dfe9c8;
+  --ah-bg-mid: #e8f0d6;
+  --ah-panel: #f1f6e4;
+  --ah-dots: rgba(70, 97, 43, 0.25);
+  --ah-surface-border: #587a33;
+  --ah-vignette: rgba(70, 97, 43, 0.12);
+}
+
 
 /* global scrollbar themes */
 html {
-  /* Firefox scrollbar defaults */
-  scrollbar-color: #06b6d4 #171717;  /* thumb cyan-400, track neutral-900 */
+  /* Firefox scrollbar */
+  scrollbar-color: var(--ah-accent) var(--ah-track); 
   scrollbar-width: thin;
 }
 
@@ -16,33 +185,33 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #171717; /* neutral-900 */
+  background: var(--ah-track);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #06b6d4; /* cyan-400 */
+  background-color: var(--ah-accent);
   border-radius: 9999px;
-  border: 2px solid #171717; /* space between thumb and edge */
+  border: 2px solid var(--ah-track); /* space between thumb and edge */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0891b2; /* cyan-500 */
+  background-color: var(--ah-accent-hover); 
 }
 
 /* Base look for numeric inputs */
 input[type="number"].num-themed {
-  color: #e5e7eb;                 /* neutral-200 */
-  background-color: #0a0a0a;      /* near black */
-  border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
+  color: var(--ah-input-text);                 
+  background-color: var(--ah-input-bg);      
+  border: 1px solid color-mix(in srgb, var(--ah-accent) 40%, transparent);    
   line-height: 1.5rem;
 }
 
 /* Base look for text inputs */
 input[type="text"].text-themed {
-  color: #e5e7eb;                 /* neutral-200 */
-  background-color: #0a0a0a;      /* near black */
-  border: 1px solid #06b6d466;    /* cyan-400 w/ alpha */
+  color: var(--ah-input-text);               
+  background-color: var(--ah-input-bg);      
+  border: 1px solid color-mix(in srgb, var(--ah-accent) 40%, transparent);    
   line-height: 1.5rem;
 }
 
@@ -65,13 +234,13 @@ button{
 
 /* Base dark theme for all dropdowns */
 select.select-themed {
-  color: #CFFAFE;                 
-  background-color: #0a0a0a;      /* black background */
-  border: 1px solid #06b6d499;    /* cyan-400/60 border */
+  color: var(--ah-text);                 
+  background-color: var(--ah-input-bg);      
+  border: 1px solid color-mix(in srgb, var(--ah-accent) 60%, transparent);   
   padding: 0.25rem 1.75rem 0.25rem 0.5rem;
   background-image:
-    linear-gradient(45deg, transparent 50%, #06b6d4 50%),
-    linear-gradient(135deg, #06b6d4 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, var(--ah-accent) 50%),
+    linear-gradient(135deg, var(--ah-accent) 50%, transparent 50%);
   background-position:
     calc(100% - 14px) calc(50% - 3px),
     calc(100% - 10px) calc(50% - 3px);
@@ -84,24 +253,24 @@ select.select-themed {
 
 /* Hover / focus states */
 select.select-themed:hover {
-  border-color: #06b6d4;
+  border-color: var(--ah-accent);
 }
 select.select-themed:focus {
   outline: none;
-  box-shadow: 0.5px #06b6d4;
+  box-shadow: 0 0 0 1px var(--ah-accent);
 }
 
-/* Optional for Firefox extra padding issue */
+/* Specific for Firefox extra padding issue */
 select.select-themed::-ms-expand {
   display: none;
 }
 
-/* Base class to apply the effect */
+/* Base class to apply the glitch effect */
 .glitch-distort {
   animation: distort-subtle 5s ease infinite;
 }
 
-/* The glitch: brief bursts at two windows in the timeline */
+/* Glitch effect */
 @keyframes distort-subtle {
   0%, 24%, 30%, 74%, 80%, 100% {
     text-shadow: none;

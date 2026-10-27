@@ -38,7 +38,7 @@ function ModSidebar({
           transform
           transition-transform
           duration-300
-          bg-[#071018]/95
+          bg-(--ah-panel)/95
           lg:sticky
           lg:top-25
           lg:h-fit

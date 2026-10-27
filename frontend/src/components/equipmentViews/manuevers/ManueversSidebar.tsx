@@ -37,7 +37,7 @@ function ManeuverSidebar({
         className={`
           fixed top-0 left-0 bottom-0 w-75 z-50
           transform transition-transform duration-300
-         bg-[#071018]/95
+         bg-(--ah-panel)/95
           border border-l-4 border-cyan-100
           overflow-y-auto
           lg:sticky lg:top-25 lg:h-170

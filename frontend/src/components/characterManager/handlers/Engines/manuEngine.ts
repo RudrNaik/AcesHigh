@@ -355,7 +355,7 @@ export const calculateTurn = ({
     e += activeEffects.discountCost;
 
     if (m?.tags.includes("manuX")) {
-      e += energyVariableCost; // signed delta: positive = gain, negative = lose
+      e += energyVariableCost; // positive = gain, negative = lose
     }
 
     if (m?.tags.includes("manuCapX")) {
