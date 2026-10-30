@@ -107,7 +107,7 @@ function ManeuverCard(props: ManeuverCardProps) {
                   text-cyan-100
                   cursor-pointer
                   transition
-                  hover:bg-cyan-100/10
+                  hover:bg-(--ah-bgop20)
                 "
               >
                 <span>{label}</span>

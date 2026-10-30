@@ -190,6 +190,14 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-yellow-500: #917f61;
   --color-green-400: #46612b;
 
+  --color-red-200: #7e1903;
+  --color-red-300: #6c1704;
+  --color-red-400: #521103;
+  --color-red-500: rgb(75, 16, 3);
+  --color-red-700: rgb(52, 11, 2);
+  --color-red-800: #7e1903;
+  
+
   --ah-bgop10: #00000008;
   --ah-bgop20: #00000010;
   --ah-bgop30: #00000014;
@@ -198,18 +206,18 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-bgop60: #00000099;
   --ah-bgop80: #645741; /* uses the UPEO brown color for the header.*/
   --ah-bgop90: #000000E6;
-  --ah-bgop95: #000000F2;
+  --ah-bgop95: #efefdf;
   --ah-bgop100: #000000;
 
-  --ah-accent: #917f61;
-  --ah-accent-hover: #ab9877;
-  --ah-text: rgb(59, 52, 40);
+  --ah-accent: #000100;
+  --ah-accent-hover: #000100;
+  --ah-text: #000100;
   --ah-input-text: #000100;
-  --ah-input-bg: #efefdf;
+  --ah-input-bg: #00000010;
   --ah-track: #efefdf;
   --ah-bg: #efefdf;
   --ah-bg-mid: #efefdf;
-  --ah-panel: #efefdf;
+  --ah-panel: #00000010;
   --ah-dots: #64574189;
   --ah-surface-border: #64574189;
   --ah-vignette: rgba(70, 97, 43, 0.12);

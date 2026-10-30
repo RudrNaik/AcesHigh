@@ -48,14 +48,14 @@ function DebugView({
         <div className="flex flex-wrap gap-2">
           <button
             onClick={handleCopy}
-            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
           >
             Copy JSON
           </button>
 
           <button
             onClick={() => storage.exportCharacter(character)}
-            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+            className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
           >
             Export Character
           </button>

@@ -39,7 +39,7 @@ export default function TourCard({
                   setExpanded(true);
                 }
               }}
-              className="bg-(--ah-bgop50) border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
+              className="bg-(--ah-bgop20) border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
             >
               <option value="" className="bg-(--ah-bgop100)">
                 -- Select Tour --
@@ -52,7 +52,7 @@ export default function TourCard({
               ))}
             </select>
 
-            <div className="text-gray-500 mt-2">No Tour Selected</div>
+            <div className="text-cyan-500 mt-2">No Tour Selected</div>
           </div>
 
           <button
@@ -94,16 +94,16 @@ export default function TourCard({
                 tourEngine.setTourID(character, tourIndex, e.target.value),
               )
             }
-            className="bg-(--ah-bgop50) border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
+            className="bg-(--ah-bgop20) border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
           >
             {tourEngine.getAllTours().map((t) => (
-              <option key={t.tourID} value={t.tourID} className="bg-(--ah-bgop100)">
+              <option key={t.tourID} value={t.tourID} className="bg-(--ah-bgop95)">
                 {t.tourName}
               </option>
             ))}
           </select>
 
-          <div className="text-gray-400 mt-2">
+          <div className="text-cyan-400 mt-2">
             {completed}/5 Deployments Complete
           </div>
         </div>
@@ -130,15 +130,15 @@ export default function TourCard({
 
       {expanded && (
         <div className="border-t border-cyan-900 p-3">
-          <div className="text-gray-400">{tourData.tourDesc[0]}</div>
+          <div className="text-cyan-400">{tourData.tourDesc[0]}</div>
 
-          <div className="text-gray-400">{tourData.tourDesc[1]}</div>
+          <div className="text-cyan-400">{tourData.tourDesc[1]}</div>
 
-          <div className="text-gray-400 mb-2">{tourData.tourDesc[2]}</div>
+          <div className="text-cyan-400 mb-2">{tourData.tourDesc[2]}</div>
 
           <div className="text-cyan-300 text-xs">Unique Ace Perk:</div>
 
-          <div className="text-gray-400 mb-4 border-cyan-800 border p-2 mt-2">
+          <div className="text-cyan-400 mb-4 border-cyan-800 border p-2 mt-2">
             <div className="text-sm text-cyan-400">{perk?.name}</div>
 
             <div className="italic">{perk?.description || "N/A"}</div>

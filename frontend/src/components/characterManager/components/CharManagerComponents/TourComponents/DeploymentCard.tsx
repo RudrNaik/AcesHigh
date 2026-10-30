@@ -52,7 +52,7 @@ export default function DeploymentCard({
             <div>
               <div className="text-cyan-300 font-bold">Empty Deployment</div>
 
-              <div className="text-gray-500 text-sm">
+              <div className="text-cyan-500 text-sm">
                 Select a deployment to begin
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function DeploymentCard({
                   setExpanded(false);
                 }
               }}
-              className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
+              className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
             >
               <option value="">Select Deployment</option>
 
@@ -125,7 +125,7 @@ export default function DeploymentCard({
             {completed ? (
               <span className="font-bold">Completed</span>
             ) : (
-              <div className="text-gray-400">{progress}/5 Complete</div>
+              <div className="text-cyan-400">{progress}/5 Complete</div>
             )}
           </div>
 
@@ -140,7 +140,7 @@ export default function DeploymentCard({
           <select
             value={deployment.type}
             onChange={(e) => updateField("type", e.target.value)}
-            className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
+            className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
           >
             {tourEngine.getAllDeps().map((dep) => (
               <option key={dep.id} value={dep.id}>
@@ -153,7 +153,7 @@ export default function DeploymentCard({
             <select
               value={deployment.genesis ?? ""}
               onChange={(e) => updateField("genesis", e.target.value)}
-              className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
+              className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
             >
               <option value="">Select Genesis Perk</option>
 
@@ -169,7 +169,7 @@ export default function DeploymentCard({
             <select
               value={deployment.mastery ?? ""}
               onChange={(e) => updateField("mastery", e.target.value)}
-              className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
+              className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
             >
               <option value="">Select Mastery Family</option>
 
@@ -189,22 +189,22 @@ export default function DeploymentCard({
                 updateField("advancementComplete", e.target.checked)
               }
               className="appearance-none w-4 h-4
-                        bg-(--ah-bgop100) border
-                        border-cyan-400
-                        cursor-pointer
-                        relative
-                        checked:bg-cyan-400
-                        checked:border-cyan-400
-                        checked:after:content-['']
-                        checked:after:absolute
-                        checked:after:left-1
-                        checked:after:top-px
-                        checked:after:w-1
-                        checked:after:h-2
-                        checked:after:border-r
-                        checked:after:border-b
-                        checked:after:border-black
-                        checked:after:rotate-45"
+                  bg-(--ah-bgop60) border
+                  border-cyan-100
+                  cursor-pointer
+                  relative
+                  checked:bg-cyan-400
+                  checked:border-cyan-100
+                  checked:after:content-['']
+                  checked:after:absolute
+                  checked:after:left-1
+                  checked:after:top-px
+                  checked:after:w-1
+                  checked:after:h-2
+                  checked:after:border-r
+                  checked:after:border-b
+                  checked:after:border-cyan-950
+                  checked:after:rotate-45"
             />
 
             {deployment.genesis && perk ? (
@@ -241,12 +241,12 @@ export default function DeploymentCard({
                     updateField(field as keyof Deployment, e.target.checked)
                   }
                   className="appearance-none w-4 h-4
-                  bg-(--ah-bgop100) border
-                  border-cyan-400
+                  bg-(--ah-bgop60) border
+                  border-cyan-100
                   cursor-pointer
                   relative
                   checked:bg-cyan-400
-                  checked:border-cyan-400
+                  checked:border-cyan-100
                   checked:after:content-['']
                   checked:after:absolute
                   checked:after:left-1
@@ -255,7 +255,7 @@ export default function DeploymentCard({
                   checked:after:h-2
                   checked:after:border-r
                   checked:after:border-b
-                  checked:after:border-black
+                  checked:after:border-cyan-950
                   checked:after:rotate-45"
                 />
 
@@ -268,11 +268,11 @@ export default function DeploymentCard({
             <div className="text-cyan-300 font-bold mb-1">Rewards</div>
 
             {(depData.reqMod ?? 0) > 0 && (
-              <div className="text-gray-400">Req: {depData.reqMod ?? 0}</div>
+              <div className="text-cyan-400">Req: {depData.reqMod ?? 0}</div>
             )}
 
             {deployment.genesis && (
-              <div className="text-gray-400">
+              <div className="text-cyan-400">
                 Perk:{" "}
                 {tourEngine
                   .getAllPerks()
@@ -286,25 +286,25 @@ export default function DeploymentCard({
             )}
 
             {depData.pilotMods.temp > 0 && (
-              <div className="text-gray-400">
+              <div className="text-cyan-400">
                 Temp: +{depData.pilotMods.temp}
               </div>
             )}
 
             {depData.pilotMods.nerve > 0 && (
-              <div className="text-gray-400">
+              <div className="text-cyan-400">
                 Nerve: +{depData.pilotMods.nerve}
               </div>
             )}
 
             {depData.pilotMods.reflex > 0 && (
-              <div className="text-gray-400">
+              <div className="text-cyan-400">
                 Reflex: +{depData.pilotMods.reflex}
               </div>
             )}
 
             {depData.pilotMods.gResist > 0 && (
-              <div className="text-gray-400">
+              <div className="text-cyan-400">
                 G-Resist: +{depData.pilotMods.gResist}
               </div>
             )}

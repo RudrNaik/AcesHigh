@@ -321,13 +321,13 @@ function AircraftCard(aircraft: AircraftCardProps) {
                   className="
                     relative text-xs px-2 py-1
                     border border-cyan-100/90 text-cyan-100
-                    cursor-pointer transition hover:bg-cyan-100/10
+                    cursor-pointer transition hover:hover:bg-(--ah-bgop20)
                   "
                 >
                   <span>{label}</span>
 
                   {isActive && (
-                    <div className="absolute z-50 left-0 top-full mt-2 w-64 bg-(--ah-bgop90) border border-cyan-100 p-3 text-xs text-cyan-100 shadow-lg whitespace-pre-line">
+                    <div className="absolute z-50 left-0 top-full mt-2 w-64 bg-(--ah-bgop95) border border-cyan-100 p-3 text-xs text-cyan-100 shadow-lg whitespace-pre-line">
                       {tooltip}
                     </div>
                   )}
