@@ -19,10 +19,9 @@ const THEME_STORAGE_KEY = "acesHighTheme";
 
 const THEMES = [
   { id: "cyan", label: "Gateway" },
-  { id: "high-vis", label: "HighVis Yellow" },
   { id: "Razgriz", label: "Razgriz" },
   { id: "Garm", label: "Garm" },
-  { id: "murky-green-light", label: "Light" },
+  { id: "DataSwallow", label: "DataSwallow" },
 ];
 
 function MenuRouter() {

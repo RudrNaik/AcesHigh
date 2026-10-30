@@ -131,7 +131,7 @@ function PerksView({
                         onClick={() => updateAceConversion(tourIndex, false)}
                         className={`px-2 py-0.5 border text-xs transition-all ${
                           !isConverted
-                            ? "border-cyan-300 text-cyan-100 bg-cyan-900"
+                            ? "border-cyan-300 text-cyan-50 bg-cyan-900"
                             : "border-cyan-800 text-cyan-600"
                         }`}
                       >
@@ -141,7 +141,7 @@ function PerksView({
                         onClick={() => updateAceConversion(tourIndex, true)}
                         className={`px-2 py-0.5 border text-xs transition-all ${
                           isConverted
-                            ? "border-cyan-300 text-cyan-100 bg-cyan-900"
+                            ? "border-cyan-300 text-cyan-50 bg-cyan-900"
                             : "border-cyan-800 text-cyan-600"
                         }`}
                       >

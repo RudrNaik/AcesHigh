@@ -33,44 +33,6 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-bgop100: #000000;
 }
 
-/* Testing high vis theme that makes things yellow. */
-[data-theme="high-vis"] {
-  --color-cyan-50: #ffffff;
-  --color-cyan-100: #ffffff;
-  --color-cyan-200: #fef08a;
-  --color-cyan-300: #fde047;
-  --color-cyan-400: #facc15;
-  --color-cyan-500: #eab308;
-  --color-cyan-600: #ca8a04;
-  --color-cyan-700: #a16207;
-  --color-cyan-800: #eab308;
-  --color-cyan-900: #737373;
-  --color-cyan-950: #262626;
-
-  --ah-bgop10: #0000001A;
-  --ah-bgop20: #00000033;
-  --ah-bgop30: #0000004D;
-  --ah-bgop40: #00000066;
-  --ah-bgop50: #00000080;
-  --ah-bgop60: #00000099;
-  --ah-bgop80: #000000CC;
-  --ah-bgop90: #000000E6;
-  --ah-bgop95: #000000F2;
-  --ah-bgop100: #000000;
-
-  --ah-accent: #facc15;
-  --ah-accent-hover: #eab308;
-  --ah-text: #ffffff;
-  --ah-input-text: #ffffff;
-  --ah-input-bg: #000000;
-  --ah-track: #000000;
-  --ah-bg: #242424;
-  --ah-bg-mid: #000000;
-  --ah-panel: #000000;
-  --ah-dots: rgba(255, 244, 180, 0.211);
-  --ah-surface-border: #facc15;
-}
-
 /* AC5 murky green (Honestly the best one on the eyes) */
 [data-theme="Razgriz"] {
   --color-cyan-50: #ecf3dc;
@@ -174,7 +136,7 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
 }
 
 /* Dataswallow cream-core */
-[data-theme="murky-green-light"] {
+[data-theme="DataSwallow"] {
   --color-cyan-50: #efefdf;
   --color-cyan-100: #000100;
   --color-cyan-200: #000100;

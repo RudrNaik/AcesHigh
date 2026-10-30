@@ -133,12 +133,12 @@ const Navbar = ({
                 settingsOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <ul className="px-2 pb-2 space-y-1 bg-(--ah-bgop80) border border-cyan-100 shadow-md text-xs">
+              <ul className="px-2 pb-2 space-y-1 bg-(--ah-bgop95) border border-cyan-100 shadow-md text-xs">
                 <li>
                   <button
                     type="button"
                     onClick={onToggleFont}
-                    className="border border-cyan-50 px-3 py-2 text-xs min-w-50 mt-2 text-cyan-50 transition hover:bg-cyan-100 hover:text-cyan-950"
+                    className="border border-cyan-100 px-3 py-2 text-xs min-w-50 mt-2 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
                   >
                     [{isHyperlegible ? "ON" : "OFF"}] Hyperlegible Font
                   </button>
