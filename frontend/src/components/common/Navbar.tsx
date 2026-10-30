@@ -52,7 +52,7 @@ const Navbar = ({
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-200 text-white
-        ${scrolled ? "bg-black/80 shadow-md border-b border-cyan-100" : "bg-black/20 shadow-md"}
+        ${scrolled ? "bg-(--ah-bgop80) shadow-md border-b border-cyan-100" : "bg-(--ah-bgop20) shadow-md"}
       `}
     >
       <div className="flex items-center justify-between relative w-full">
@@ -64,7 +64,7 @@ const Navbar = ({
             <li>
               <Link
                 to="/"
-                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               >
                 [↳] Home
               </Link>
@@ -72,7 +72,7 @@ const Navbar = ({
             <li>
               <Link
                 to="/about"
-                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               >
                 [↳] About
               </Link>
@@ -80,7 +80,7 @@ const Navbar = ({
             <li>
               <Link
                 to="/charactermanager"
-                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               >
                 [↳] Characters
               </Link>
@@ -88,7 +88,7 @@ const Navbar = ({
             <li>
               <Link
                 to="/equipment"
-                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                className="border border-cyan-100 px-3 py-2 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               >
                 [↳] Equipment
               </Link>
@@ -102,7 +102,7 @@ const Navbar = ({
           <div className="relative">
             <button
               onClick={() => setSettingsOpen((v) => !v)}
-              className="border border-cyan-100 p-2 text-cyan-100 transition hover:bg-cyan-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-cyan-400/60"
+              className="border border-cyan-100 p-2 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950 focus:outline-none focus:ring-1 focus:ring-cyan-400/60"
               aria-controls="settings-nav"
               aria-expanded={settingsOpen}
               aria-label="Toggle settings"
@@ -133,12 +133,12 @@ const Navbar = ({
                 settingsOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
               }`}
             >
-              <ul className="px-2 pb-2 space-y-1 bg-black/80 border border-cyan-100 shadow-md text-xs">
+              <ul className="px-2 pb-2 space-y-1 bg-(--ah-bgop80) border border-cyan-100 shadow-md text-xs">
                 <li>
                   <button
                     type="button"
                     onClick={onToggleFont}
-                    className="border border-cyan-100 px-3 py-2 text-xs min-w-50 mt-2 text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                    className="border border-cyan-50 px-3 py-2 text-xs min-w-50 mt-2 text-cyan-50 transition hover:bg-cyan-100 hover:text-cyan-950"
                   >
                     [{isHyperlegible ? "ON" : "OFF"}] Hyperlegible Font
                   </button>

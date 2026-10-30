@@ -33,7 +33,7 @@ function TerminalPanel({
             if (onHover) {
               onHover(`/access/${title.toLowerCase()}`, subtitle);
             }
-          }}
+          }} 
           className="
           group
           relative

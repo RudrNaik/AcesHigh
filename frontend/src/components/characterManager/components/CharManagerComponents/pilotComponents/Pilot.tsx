@@ -102,7 +102,7 @@ function PilotView({
   };
 
   return (
-    <div className="border border-cyan-800 lg:p-4 p-2 space-y-2 bg-black/20">
+    <div className="border border-cyan-800 lg:p-4 p-2 space-y-2 bg-(--ah-bgop20)">
       {/* Pilot Stats */}
       <h2 className="text-cyan-300 font-bold">Pilot Stats</h2>
       <div className="flex flex-col md:space-x-20">
@@ -183,7 +183,7 @@ function PilotView({
         {/* Mental */}
         <div className="py-2">
           <div className="flex gap-2 items-center">
-            <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">
+            <span className="w-24 border border-cyan-100 px-2 py-1 bg-(--ah-bgop20)">
               Mental
             </span>
 
@@ -230,7 +230,7 @@ function PilotView({
         {/* Physical */}
         <div>
           <div className="flex gap-2 items-center">
-            <span className="w-24 border border-cyan-100 px-2 py-1 bg-black/20">
+            <span className="w-24 border border-cyan-100 px-2 py-1 bg-(--ah-bgop20)">
               Physical
             </span>
 
@@ -281,7 +281,7 @@ function PilotView({
           Background Perk
         </h2>
         <div>
-          <div className="border border-cyan-800 p-3 bg-black/20 text-sm opacity-80 space-y-2">
+          <div className="border border-cyan-800 p-3 bg-(--ah-bgop20) text-sm opacity-80 space-y-2">
             <span className="border-b border-cyan-100">
               {charEngine.getBackGroundPerk(character).name}
             </span>
@@ -305,7 +305,7 @@ function PilotView({
         {/* Preflights */}
         <div className="">
           <h3 className="font-bold py-2">Preflights</h3>
-          <div className="flex flex-col bg-black/20 border border-cyan-800 px-2 py-1 space-y-2 mb-2">
+          <div className="flex flex-col bg-(--ah-bgop20) border border-cyan-800 px-2 py-1 space-y-2 mb-2">
             <div className="font-semibold">
               PFC-1 | {charEngine.getDowntimes(character)?.dt1.name}
             </div>
@@ -313,7 +313,7 @@ function PilotView({
               {charEngine.getDowntimes(character)?.dt1.description}
             </div>
           </div>
-          <div className="flex flex-col bg-black/20 border border-cyan-800 px-2 py-1 space-y-2 mb-2">
+          <div className="flex flex-col bg-(--ah-bgop20) border border-cyan-800 px-2 py-1 space-y-2 mb-2">
             <div className="font-semibold">
               PFC-2 | {charEngine.getDowntimes(character)?.dt2.name}
             </div>
@@ -321,7 +321,7 @@ function PilotView({
               {charEngine.getDowntimes(character)?.dt2.description}
             </div>
           </div>
-          <div className="flex flex-col bg-black/20 border border-cyan-800 px-2 py-1 space-y-2">
+          <div className="flex flex-col bg-(--ah-bgop20) border border-cyan-800 px-2 py-1 space-y-2">
             <div className="font-semibold">
               PFC-3 | {charEngine.getDowntimes(character)?.dt3.name}
             </div>
@@ -365,7 +365,7 @@ function PilotView({
                 return (
                   <div
                     key={tactic.id}
-                    className={`border p-2 bg-black/20 ${
+                    className={`border p-2 bg-(--ah-bgop20) ${
                       unlocked
                         ? "border-cyan-400 border-l-4"
                         : "border-cyan-900"
@@ -379,7 +379,7 @@ function PilotView({
                       <span
                         className={`text-xs px-2 py-1 ${
                           unlocked
-                            ? "bg-cyan-100 text-black"
+                            ? "bg-cyan-100 text-cyan-950"
                             : "border border-cyan-900 text-cyan-100"
                         }`}
                       >
@@ -387,7 +387,7 @@ function PilotView({
                       </span>
                     </div>
 
-                    <p className="text-sm text-gray-300">
+                    <p className="text-sm text-cyan-300">
                       {tactic.description}
                     </p>
 
@@ -448,7 +448,7 @@ function PilotView({
               .map((item) => (
                 <div
                   key={item.index}
-                  className={`border p-2 bg-black/20 ${
+                  className={`border p-2 bg-(--ah-bgop20) ${
                     item.converted
                       ? "border-yellow-400"
                       : item.completed
@@ -462,9 +462,9 @@ function PilotView({
                     <span
                       className={`text-xs px-2 py-1 whitespace-nowrap ${
                         item.converted
-                          ? "bg-yellow-400 text-black"
+                          ? "bg-yellow-400 text-cyan-950"
                           : item.completed
-                            ? "bg-cyan-100 text-black"
+                            ? "bg-cyan-100 text-cyan-950"
                             : "border border-cyan-900 text-cyan-100"
                       }`}
                     >
@@ -527,12 +527,12 @@ function PilotView({
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">{mastery.name}</span>
 
-                    <span className="bg-yellow-400 text-black text-xs px-2 py-1">
+                    <span className="bg-yellow-400 text-cyan-950 text-xs px-2 py-1">
                       MASTERY
                     </span>
                   </div>
 
-                  <p className="text-sm text-gray-300">{mastery.description}</p>
+                  <p className="text-sm text-cyan-300">{mastery.description}</p>
                 </div>
               );
             })()
@@ -543,7 +543,7 @@ function PilotView({
                 .masteries.map((mastery) => (
                   <div
                     key={mastery.id}
-                    className="border border-cyan-100 p-2 bg-black/20"
+                    className="border border-cyan-100 p-2 bg-(--ah-bgop20)"
                   >
                     <div className="font-semibold">{mastery.name}</div>
 
@@ -568,7 +568,7 @@ function PilotView({
                 ))}
             </div>
           ) : (
-            <div className="border border-cyan-900 p-2 opacity-60 bg-black/20">
+            <div className="border border-cyan-900 p-2 opacity-60 bg-(--ah-bgop20)">
               Unlock all tactics in your specialization to gain access to
               mastery.
               <div className="text-xs mt-1">
@@ -600,7 +600,7 @@ function PilotStat({
 }) {
   return (
     <div className="flex gap-2 items-center mt-2">
-      <span className="w-25 border border-cyan-100 px-2 py-1 bg-black/20">
+      <span className="w-25 border border-cyan-100 px-2 py-1 bg-(--ah-bgop20)">
         {label}
       </span>
 
@@ -674,12 +674,12 @@ function CoinStats({
           ? "bg-red-900 border-red-500"
           : coin.used
             ? "border-cyan-800"
-            : "bg-black/20 border-cyan-100";
+            : "bg-(--ah-bgop20) border-cyan-100";
 
         return (
           <div
             key={index}
-            className="border max-w-sm border-cyan-800 bg-black/20 p-3 flex flex-col items-center"
+            className="border max-w-sm border-cyan-800 bg-(--ah-bgop20) p-3 flex flex-col items-center"
           >
             <div
               className={`w-14 h-14 transition-all rounded-full border-2 flex items-center justify-center font-bold mb-2 ${classes}`}
@@ -692,14 +692,14 @@ function CoinStats({
                 {coin.used ? (
                   <button
                     onClick={() => onReset(index)}
-                    className="border border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                    className="border border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
                   >
                     Reset
                   </button>
                 ) : (
                   <button
                     onClick={() => onUse(index)}
-                    className="border border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-black"
+                    className="border border-cyan-100 px-2 py-1 text-xs text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
                   >
                     Spend
                   </button>

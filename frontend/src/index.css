@@ -20,6 +20,11 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-dots: rgba(180, 220, 255, 0.35);
   --ah-surface-border: #075985;
   --ah-vignette: rgba(0, 0, 0, 0.75);
+
+  --ah-bgop20: #00000019;
+  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
+  --ah-bgop60: #00000099;
+  --ah-bgop40: #00000066;
 }
 
 /* Testing high vis theme that makes things yellow. */
@@ -35,6 +40,11 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-cyan-800: #eab308;
   --color-cyan-900: #737373;
   --color-cyan-950: #262626;
+
+  --ah-bgop20: #00000019;
+  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
+  --ah-bgop60: #00000099;
+  --ah-bgop40: #00000066;
 
   --ah-accent: #facc15;
   --ah-accent-hover: #eab308;
@@ -76,6 +86,11 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-yellow-400: #d9bf4f;
   --color-yellow-500: #bfa23a;
 
+  --ah-bgop20: #00000019;
+  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
+  --ah-bgop60: #00000099;
+  --ah-bgop40: #00000066;
+
   --ah-accent: #8aae52;
   --ah-accent-hover: #a3c46b;
   --ah-text: #d6e4b8;
@@ -103,6 +118,11 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-cyan-900: #5c0f0f;
   --color-cyan-950: #3d0909;
 
+  --ah-bgop20: #00000019;
+  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
+  --ah-bgop60: #00000099;
+  --ah-bgop40: #00000066;
+
   --color-red-100: #ffe4dc;
   --color-red-200: #ffc9b8;
   --color-red-300: #ffa88f;
@@ -122,50 +142,44 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-input-text: #fff3a3;
   --ah-input-bg: #2a0606;
   --ah-track: #2a0606;
-  --ah-bg: #8a1212;
+  --ah-bg: #350909;
   --ah-bg-mid: #5c0c0c;
   --ah-panel: #3d0909;
-  --ah-dots: rgba(255, 221, 51, 0.22);
+  --ah-dots: rgba(255, 215, 13, 0.22);
   --ah-surface-border: #f5cc12;
 }
 
 /* Light/Kinda paper theme? WIP. */
 [data-theme="murky-green-light"] {
-  --color-cyan-50: #1a2812;
-  --color-cyan-100: #1f2f15;
-  --color-cyan-200: #1f2f15;
-  --color-cyan-300: #1f2f15;
-  --color-cyan-400: #1f2f15;
-  --color-cyan-500: #1f2f15;
-  --color-cyan-600: #1f2f15;
-  --color-cyan-700: #1f2f15;
-  --color-cyan-800: #1f2f15;
-  --color-cyan-900: #1f2f15;
-  --color-cyan-950: #1f2f15;
+  --color-cyan-50: #efefdf;
+  --color-cyan-100: #000100;
+  --color-cyan-200: #000100;
+  --color-cyan-300: #000100;
+  --color-cyan-400: #000100;
+  --color-cyan-500: #000100;
+  --color-cyan-600: #000100;
+  --color-cyan-700: #000100;
+  --color-cyan-800: #000100;
+  --color-cyan-900: #000100;
+  --color-cyan-950: #efefdf;
+  --color-yellow-400: #645741;
+  --color-yellow-500: #917f61;
 
-  --color-red-100: #5c1a10;
-  --color-red-200: #6e2016;
-  --color-red-300: #7f261a;
-  --color-red-400: #9a2f20;
-  --color-red-500: #a8321f;
-  --color-red-600: #b83a26;
-  --color-red-700: #c9654f;
-  --color-red-800: #d99a8a;
-  --color-red-900: #ecc4b8;
-  --color-red-950: #f6e0d8;
-  --color-yellow-400: #8a6a00;
-  --color-yellow-500: #7a5c00;
+  --ah-bgop20: #00000010;
+  --ah-bgop80: #645741; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
+  --ah-bgop60: #00000099;
+  --ah-bgop40: #00000019;
 
-  --ah-accent: #2a3d1d;
-  --ah-accent-hover: #365023;
-  --ah-text: #1f2f15;
-  --ah-input-text: #1a2812;
-  --ah-input-bg: #f1f6e4;
-  --ah-track: #d6e4b8;
-  --ah-bg: #dfe9c8;
-  --ah-bg-mid: #e8f0d6;
-  --ah-panel: #f1f6e4;
-  --ah-dots: rgba(70, 97, 43, 0.25);
+  --ah-accent: #917f61;
+  --ah-accent-hover: #ab9877;
+  --ah-text: rgb(59, 52, 40);
+  --ah-input-text: #000100;
+  --ah-input-bg: #efefdf;
+  --ah-track: #efefdf;
+  --ah-bg: #efefdf;
+  --ah-bg-mid: #efefdf;
+  --ah-panel: #efefdf;
+  --ah-dots: #64574189;
   --ah-surface-border: #587a33;
   --ah-vignette: rgba(70, 97, 43, 0.12);
 }

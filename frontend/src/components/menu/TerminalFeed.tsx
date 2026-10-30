@@ -19,7 +19,7 @@ function TerminalFeed({ logs }: TerminalFeedProps) {
       className="
         h-full
         w-full
-       bg-black/40
+       bg-(--ah-bgop40)
        text-cyan-100
        text-sm
        font-mono
