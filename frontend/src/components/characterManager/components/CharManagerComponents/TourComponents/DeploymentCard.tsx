@@ -70,12 +70,12 @@ export default function DeploymentCard({
                   setExpanded(false);
                 }
               }}
-              className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
+              className="w-full border bg-(--ah-bgop20) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
             >
-              <option value="">Select Deployment</option>
+              <option value="" className="bg-(--ah-bgop95)">Select Deployment</option>
 
               {tourEngine.getAllDeps().map((dep) => (
-                <option key={dep.id} value={dep.id}>
+                <option key={dep.id} value={dep.id} className="bg-(--ah-bgop95)">
                   {dep.name}
                 </option>
               ))}
@@ -140,10 +140,10 @@ export default function DeploymentCard({
           <select
             value={deployment.type}
             onChange={(e) => updateField("type", e.target.value)}
-            className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
+            className="w-full border bg-(--ah-bgop20) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
           >
             {tourEngine.getAllDeps().map((dep) => (
-              <option key={dep.id} value={dep.id}>
+              <option key={dep.id} value={dep.id} className="bg-(--ah-bgop95)">
                 {dep.name}
               </option>
             ))}
@@ -153,12 +153,12 @@ export default function DeploymentCard({
             <select
               value={deployment.genesis ?? ""}
               onChange={(e) => updateField("genesis", e.target.value)}
-              className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
+              className="w-full border bg-(--ah-bgop20) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
             >
               <option value="">Select Genesis Perk</option>
 
               {availableGenesis.map((perk) => (
-                <option key={perk.id} value={perk.id}>
+                <option key={perk.id} value={perk.id} className="bg-(--ah-bgop95)">
                   {perk.name}
                 </option>
               ))}
@@ -169,12 +169,12 @@ export default function DeploymentCard({
             <select
               value={deployment.mastery ?? ""}
               onChange={(e) => updateField("mastery", e.target.value)}
-              className="w-full border bg-(--ah-bgop50) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
+              className="w-full border bg-(--ah-bgop20) border-cyan-800 hover:border-cyan-100 text-cyan-300 p-2"
             >
               <option value="">Select Mastery Family</option>
 
               {availableMastery.map((fam) => (
-                <option key={fam.id} value={fam.id}>
+                <option key={fam.id} value={fam.id} className="bg-(--ah-bgop95)">
                   {fam.name}
                 </option>
               ))}
