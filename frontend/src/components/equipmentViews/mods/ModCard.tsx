@@ -28,7 +28,7 @@ function ModuleCard(module: Module) {
     <section
       id={module.id}
       className="
-        bg-black/20
+        bg-(--ah-bgop20)
         border
         border-cyan-800
         p-6
@@ -121,7 +121,7 @@ function ModuleCard(module: Module) {
                         mt-2
                         z-50
                         w-64
-                        bg-black/95
+                        bg-(--ah-bgop95)
                         border border-cyan-100
                         p-3
                         text-xs text-cyan-100
@@ -177,7 +177,7 @@ function ModuleCard(module: Module) {
                         mt-2
                         z-50
                         w-64
-                        bg-black/95
+                        bg-(--ah-bgop95)
                         border border-cyan-100
                         p-3
                         text-xs text-cyan-100

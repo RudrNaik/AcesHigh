@@ -43,7 +43,7 @@ export default function DeploymentCard({
 
   if (!deployment.type) {
     return (
-      <div className="border border-cyan-800 bg-black/10">
+      <div className="border border-cyan-800 bg-(--ah-bgop10)">
         <button
           className="w-full p-2 text-left"
           onClick={() => setExpanded(!expanded)}
@@ -70,7 +70,7 @@ export default function DeploymentCard({
                   setExpanded(false);
                 }
               }}
-              className="w-full bg-black border border-cyan-800 text-cyan-300 p-2"
+              className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
             >
               <option value="">Select Deployment</option>
 
@@ -113,7 +113,7 @@ export default function DeploymentCard({
   );
 
   return (
-    <div className={`border border-cyan-800 bg-black/10 `}>
+    <div className={`border border-cyan-800 bg-(--ah-bgop10) `}>
       <button
         className="w-full p-2 text-left"
         onClick={() => setExpanded(!expanded)}
@@ -140,7 +140,7 @@ export default function DeploymentCard({
           <select
             value={deployment.type}
             onChange={(e) => updateField("type", e.target.value)}
-            className="w-full bg-black border border-cyan-800 text-cyan-300 p-2"
+            className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
           >
             {tourEngine.getAllDeps().map((dep) => (
               <option key={dep.id} value={dep.id}>
@@ -153,7 +153,7 @@ export default function DeploymentCard({
             <select
               value={deployment.genesis ?? ""}
               onChange={(e) => updateField("genesis", e.target.value)}
-              className="w-full bg-black border border-cyan-800 text-cyan-300 p-2"
+              className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
             >
               <option value="">Select Genesis Perk</option>
 
@@ -169,7 +169,7 @@ export default function DeploymentCard({
             <select
               value={deployment.mastery ?? ""}
               onChange={(e) => updateField("mastery", e.target.value)}
-              className="w-full bg-black border border-cyan-800 text-cyan-300 p-2"
+              className="w-full bg-(--ah-bgop100) border border-cyan-800 text-cyan-300 p-2"
             >
               <option value="">Select Mastery Family</option>
 
@@ -189,7 +189,7 @@ export default function DeploymentCard({
                 updateField("advancementComplete", e.target.checked)
               }
               className="appearance-none w-4 h-4
-                        bg-black border
+                        bg-(--ah-bgop100) border
                         border-cyan-400
                         cursor-pointer
                         relative
@@ -241,7 +241,7 @@ export default function DeploymentCard({
                     updateField(field as keyof Deployment, e.target.checked)
                   }
                   className="appearance-none w-4 h-4
-                  bg-black border
+                  bg-(--ah-bgop100) border
                   border-cyan-400
                   cursor-pointer
                   relative

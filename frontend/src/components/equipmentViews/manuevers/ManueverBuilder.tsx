@@ -145,7 +145,7 @@ T${temper}/N${nerve}/R${reflex}/G${gRes}`;
         </div>
       ))}
 
-      <pre className="text-xs bg-black/30 p-2 border border-cyan-100/20 whitespace-pre-wrap">
+      <pre className="text-xs bg-(--ah-bgop30) p-2 border border-cyan-100/20 whitespace-pre-wrap">
         {output}
       </pre>
 
@@ -183,7 +183,7 @@ function Input({ label, value, set }: any) {
       <input
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="w-full bg-black/30 border border-cyan-100/40 px-2 py-1"
+        className="w-full bg-(--ah-bgop30) border border-cyan-100/40 px-2 py-1"
       />
     </div>
   );

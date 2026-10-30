@@ -45,7 +45,7 @@ export default function ManuView({ character, updateCharacter }: Props) {
 
   return (
     <div className="w-full min-h-screen text-cyan-100 space-y-4">
-      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-(--ah-bgop20)">
         <h1 className="text-2xl font-bold">MANEUVERS</h1>
       </div>
 
@@ -59,7 +59,7 @@ export default function ManuView({ character, updateCharacter }: Props) {
             top-4.5
             right-30
             z-50
-            bg-black/20
+            bg-(--ah-bgop20)
             border border-cyan-100
             px-4 py-3
             text-sm  

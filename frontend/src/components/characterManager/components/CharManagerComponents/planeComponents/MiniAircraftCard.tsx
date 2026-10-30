@@ -111,7 +111,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
     <section
       id={aircraft.id}
       className="
-        bg-black/20 border border-cyan-400 p-4
+        bg-(--ah-bgop20) border border-cyan-400 p-4
         transition-all duration-100  
       "
     >
@@ -327,7 +327,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
                   <span>{label}</span>
 
                   {isActive && (
-                    <div className="absolute z-50 left-0 top-full mt-2 w-64 bg-black/90 border border-cyan-100 p-3 text-xs text-cyan-100 shadow-lg whitespace-pre-line">
+                    <div className="absolute z-50 left-0 top-full mt-2 w-64 bg-(--ah-bgop90) border border-cyan-100 p-3 text-xs text-cyan-100 shadow-lg whitespace-pre-line">
                       {tooltip}
                     </div>
                   )}

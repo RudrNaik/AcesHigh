@@ -45,7 +45,7 @@ function ManeuverCard(props: ManeuverCardProps) {
     <section
       id={maneuver.id}
       className="
-        bg-black/20
+        bg-(--ah-bgop20)
         border
         border-cyan-100
         border-l-4
@@ -121,7 +121,7 @@ function ManeuverCard(props: ManeuverCardProps) {
                       mt-2
                       z-50
                       w-64
-                      bg-black/95
+                      bg-(--ah-bgop95)
                       border border-cyan-100
                       p-3
                       text-xs text-cyan-100

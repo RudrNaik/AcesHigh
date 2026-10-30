@@ -21,7 +21,7 @@ function AircraftView({
   const maxCap = Number(planeStats.CAP);
 
   return (
-    <div className="border border-cyan-800 lg:p-4 p-2 space-y-2 bg-black/20">
+    <div className="border border-cyan-800 lg:p-4 p-2 space-y-2 bg-(--ah-bgop20)">
       <h2 className="text-cyan-300 font-bold">Aircraft</h2>
 
       <AircraftCard

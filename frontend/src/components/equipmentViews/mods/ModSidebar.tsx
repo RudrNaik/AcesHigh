@@ -20,7 +20,7 @@ function ModSidebar({
           className="
             fixed
             inset-0
-            bg-black/60
+            bg-(--ah-bgop60)
             z-40
             lg:hidden
           "
@@ -51,7 +51,7 @@ function ModSidebar({
         <div
           className="
             h-full
-            bg-black/20
+            bg-(--ah-bgop20)
             border-r
             lg:border
             border-cyan-100
@@ -87,7 +87,7 @@ function ModSidebar({
               placeholder="Search modules..."
               className="
                 w-full
-                bg-black/30
+                bg-(--ah-bgop30)
                 border
                 border-cyan-100/40
                 px-3

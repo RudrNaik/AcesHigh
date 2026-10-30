@@ -20,7 +20,7 @@ function OverviewTab({ campaign, onUpdate }: Props) {
 
   return (
     <div className="space-y-4">
-      <div className="border border-cyan-100 p-4 bg-black/20">
+      <div className="border border-cyan-100 p-4 bg-(--ah-bgop20)">
         <h1 className="text-2xl font-bold">CAMPAIGN OVERVIEW</h1>
       </div>
 
@@ -74,7 +74,7 @@ function TextField({
         readOnly={readOnly}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border-b border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all"
+        className="w-full border-b border-cyan-100 bg-(--ah-bgop20) px-2 py-1 focus:border-l-4 transition-all"
       />
     </div>
   );
@@ -89,7 +89,7 @@ function TextArea({ label, value, onChange, placeholder }: FieldProps) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border-b min-h-25 border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
+        className="w-full border-b min-h-25 border-cyan-100 bg-(--ah-bgop20) px-2 py-1 focus:border-l-4 transition-all "
       />
     </div>
   );

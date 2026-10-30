@@ -59,11 +59,11 @@ function DossierTab({ character, updateCharacter }: Props) {
 
   return (
     <div className="space-y-4">
-      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-(--ah-bgop20)">
         <h1 className="text-2xl font-bold">DOSSIER</h1>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Identity">
           <div className="grid grid-cols-3 gap-4">
             <TextField
@@ -107,7 +107,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Quirks">
           <div className="grid lg:grid-cols-3 gap-4">
             <div className="space-y-4">
@@ -135,7 +135,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Details">
           <div className="grid grid-cols-2 gap-4">
             <TextField
@@ -179,7 +179,7 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Physical Profile">
           <div className="grid grid-cols-2 gap-4">
             <TextField
@@ -209,14 +209,14 @@ function DossierTab({ character, updateCharacter }: Props) {
         </Section>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Background">
           <label className="text-cyan-400 text-sm">Biography</label>
           <textarea
             value={character.dossier.biography}
             placeholder="Biography"
             onChange={(e) => updateField("biography", e.target.value)}
-            className="w-full min-h-50 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
+            className="w-full min-h-50 border-l-2 border-cyan-100 bg-(--ah-bgop20) p-2 focus:border-l-4 transition-all"
           />
 
           <label className="text-cyan-400 text-sm">Psychological Report</label>
@@ -224,7 +224,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.psychologicalReport}
             placeholder="Psychological Report"
             onChange={(e) => updateField("psychologicalReport", e.target.value)}
-            className="w-full min-h-50 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
+            className="w-full min-h-50 border-l-2 border-cyan-100 bg-(--ah-bgop20) p-2 focus:border-l-4 transition-all"
           />
 
           <label className="text-cyan-400 text-sm">Physical Description</label>
@@ -232,7 +232,7 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.description}
             placeholder="Physical Description"
             onChange={(e) => updateField("description", e.target.value)}
-            className="w-full min-h-30 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
+            className="w-full min-h-30 border-l-2 border-cyan-100 bg-(--ah-bgop20) p-2 focus:border-l-4 transition-all"
           />
 
           <label className="text-cyan-400 text-sm">Service Record</label>
@@ -240,33 +240,33 @@ function DossierTab({ character, updateCharacter }: Props) {
             value={character.dossier.serviceRecord}
             placeholder="Service Record"
             onChange={(e) => updateField("serviceRecord", e.target.value)}
-            className="w-full min-h-20 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
+            className="w-full min-h-20 border-l-2 border-cyan-100 bg-(--ah-bgop20) p-2 focus:border-l-4 transition-all"
           />
         </Section>
       </div>
 
-      <div className="border-cyan-800 space-y-2 bg-black/20">
+      <div className="border-cyan-800 space-y-2 bg-(--ah-bgop20)">
         <Section title="Connections and Relations">
           <textarea
             value={character.dossier.relationships}
             onChange={(e) => updateField("relationships", e.target.value)}
-            className="w-full min-h-35 border-l-2 border-cyan-100 bg-black/20 p-2 focus:border-l-4 transition-all"
+            className="w-full min-h-35 border-l-2 border-cyan-100 bg-(--ah-bgop20) p-2 focus:border-l-4 transition-all"
           />
         </Section>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Misc">
           <textarea
             value={character.dossier.notes}
             placeholder="Notes"
             onChange={(e) => updateField("notes", e.target.value)}
-            className="w-full min-h-30 focus:border-l-4 transition-all border-l-2 border-cyan-100 bg-black/20 p-2"
+            className="w-full min-h-30 focus:border-l-4 transition-all border-l-2 border-cyan-100 bg-(--ah-bgop20) p-2"
           />
         </Section>
       </div>
 
-      <div className=" border-cyan-800 space-y-4 bg-black/20">
+      <div className=" border-cyan-800 space-y-4 bg-(--ah-bgop20)">
         <Section title="Meta-Data">
           <div className="gap-4 max-w-md">
             <TextField
@@ -308,7 +308,7 @@ function TextField({ label, value, onChange, placeholder }: FieldProps) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border-b border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
+        className="w-full border-b border-cyan-100 bg-(--ah-bgop20) px-2 py-1 focus:border-l-4 transition-all "
       />
     </div>
   );
@@ -323,7 +323,7 @@ function TextArea({ label, value, onChange, placeholder }: FieldProps) {
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border-b min-h-25 border-cyan-100 bg-black/20 px-2 py-1 focus:border-l-4 transition-all "
+        className="w-full border-b min-h-25 border-cyan-100 bg-(--ah-bgop20) px-2 py-1 focus:border-l-4 transition-all "
       />
     </div>
   );

@@ -38,7 +38,7 @@ function ModuleSlot({
   return (
     <div
       className={`
-    border p-4   space-y-3 transition-all bg-black/20
+    border p-4   space-y-3 transition-all bg-(--ah-bgop20)
     ${
       equipped
         ? "border-cyan-400 border-l-4"
@@ -128,7 +128,7 @@ function ModuleSlot({
                         <div
                           className="
                           absolute top-full left-0 mt-2 z-50 w-64
-                          bg-black/95 border border-cyan-100 p-3
+                          bg-(--ah-bgop95) border border-cyan-100 p-3
                           text-xs text-cyan-100 whitespace-pre-line
                         "
                         >
@@ -166,7 +166,7 @@ function ModuleSlot({
                         <div
                           className="
                           absolute top-full left-0 mt-2 z-50 w-64
-                          bg-black/95 border border-cyan-100 p-3
+                          bg-(--ah-bgop95) border border-cyan-100 p-3
                           text-xs text-cyan-100 whitespace-pre-line
                         "
                         >

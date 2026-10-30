@@ -44,7 +44,7 @@ function ResetView({
   return (
     <div className="space-y-4 tewt-xs">
       {/* Header */}
-      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-(--ah-bgop20)">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-cyan-100">RESETS</h2>
@@ -85,7 +85,7 @@ function ResetView({
 
       {/* Empty State */}
       {character.resets.length === 0 && (
-        <div className="border border-cyan-800 bg-black/20 p-2 text-center">
+        <div className="border border-cyan-800 bg-(--ah-bgop20) p-2 text-center">
           <div className="text-md text-cyan-100">No Resets Recorded</div>
         </div>
       )}
@@ -93,7 +93,7 @@ function ResetView({
       {/* Reset History */}
       <div className="space-y-4">
         {character.resets.map((reset, resetIndex) => (
-          <div key={resetIndex} className="border border-cyan-800 bg-black/20">
+          <div key={resetIndex} className="border border-cyan-800 bg-(--ah-bgop20)">
             {/* Header */}
             <div className="flex items-center justify-between border-b border-cyan-800 px-4 py-3">
               <button
@@ -139,7 +139,7 @@ function ResetView({
                     return (
                       <div
                         key={slot}
-                        className="border border-cyan-800 bg-black/20 p-4 hover:border-cyan-100 transition-all"
+                        className="border border-cyan-800 bg-(--ah-bgop20) p-4 hover:border-cyan-100 transition-all"
                       >
                         <div className="mb-2 font-semibold text-cyan-100">
                           Downtime {slot + 1}
@@ -173,7 +173,7 @@ function ResetView({
                         </select>
 
                         {selectedDowntime?.description && (
-                          <div className="mt-2 border border-cyan-100 bg-black/20 p-2">
+                          <div className="mt-2 border border-cyan-100 bg-(--ah-bgop20) p-2">
                             <div className="text-xs text-cyan-100">
                               {selectedDowntime.description}
                             </div>
@@ -198,7 +198,7 @@ function ResetView({
                                 ),
                               )
                             }
-                            className="w-full min-h-10 border border-cyan-800 bg-black/20 p-2 text-xs text-cyan-100 outline-none"
+                            className="w-full min-h-10 border border-cyan-800 bg-(--ah-bgop20) p-2 text-xs text-cyan-100 outline-none"
                             placeholder="Notes"
                           />
                         </div>
@@ -207,7 +207,7 @@ function ResetView({
                   })}
                 </div>
 
-                <div className="border border-cyan-800 bg-black/20 p-4 hover:border-cyan-100 transition-all">
+                <div className="border border-cyan-800 bg-(--ah-bgop20) p-4 hover:border-cyan-100 transition-all">
                   <label className="mb-2 block font-semibold text-cyan-100">
                     Bonus RP Adjustment
                   </label>
@@ -224,7 +224,7 @@ function ResetView({
                         ),
                       )
                     }
-                    className="w-full border border-cyan-800 bg-black/20 p-2 text-xs text-cyan-100 outline-none"
+                    className="w-full border border-cyan-800 bg-(--ah-bgop20) p-2 text-xs text-cyan-100 outline-none"
                   />
 
                   <div className="mt-2 text-xs text-cyan-400">

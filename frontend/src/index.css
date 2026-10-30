@@ -21,10 +21,16 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-surface-border: #075985;
   --ah-vignette: rgba(0, 0, 0, 0.75);
 
-  --ah-bgop20: #00000019;
-  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
-  --ah-bgop60: #00000099;
+  --ah-bgop10: #0000001A;
+  --ah-bgop20: #00000033;
+  --ah-bgop30: #0000004D;
   --ah-bgop40: #00000066;
+  --ah-bgop50: #00000080;
+  --ah-bgop60: #00000099;
+  --ah-bgop80: #000000CC;
+  --ah-bgop90: #000000E6;
+  --ah-bgop95: #000000F2;
+  --ah-bgop100: #000000;
 }
 
 /* Testing high vis theme that makes things yellow. */
@@ -41,10 +47,16 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-cyan-900: #737373;
   --color-cyan-950: #262626;
 
-  --ah-bgop20: #00000019;
-  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
-  --ah-bgop60: #00000099;
+  --ah-bgop10: #0000001A;
+  --ah-bgop20: #00000033;
+  --ah-bgop30: #0000004D;
   --ah-bgop40: #00000066;
+  --ah-bgop50: #00000080;
+  --ah-bgop60: #00000099;
+  --ah-bgop80: #000000CC;
+  --ah-bgop90: #000000E6;
+  --ah-bgop95: #000000F2;
+  --ah-bgop100: #000000;
 
   --ah-accent: #facc15;
   --ah-accent-hover: #eab308;
@@ -59,7 +71,7 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-surface-border: #facc15;
 }
 
-/* AC5 murky green */
+/* AC5 murky green (Honestly the best one on the eyes) */
 [data-theme="Razgriz"] {
   --color-cyan-50: #ecf3dc;
   --color-cyan-100: #d6e4b8;
@@ -86,10 +98,16 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-yellow-400: #d9bf4f;
   --color-yellow-500: #bfa23a;
 
-  --ah-bgop20: #00000019;
-  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
-  --ah-bgop60: #00000099;
+  --ah-bgop10: #0000001A;
+  --ah-bgop20: #00000033;
+  --ah-bgop30: #0000004D;
   --ah-bgop40: #00000066;
+  --ah-bgop50: #00000080;
+  --ah-bgop60: #00000099;
+  --ah-bgop80: #000000CC;
+  --ah-bgop90: #000000E6;
+  --ah-bgop95: #000000F2;
+  --ah-bgop100: #000000;
 
   --ah-accent: #8aae52;
   --ah-accent-hover: #a3c46b;
@@ -118,10 +136,16 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-cyan-900: #5c0f0f;
   --color-cyan-950: #3d0909;
 
-  --ah-bgop20: #00000019;
-  --ah-bgop80: #000000CC; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
-  --ah-bgop60: #00000099;
+  --ah-bgop10: #0000001A;
+  --ah-bgop20: #00000033;
+  --ah-bgop30: #0000004D;
   --ah-bgop40: #00000066;
+  --ah-bgop50: #00000080;
+  --ah-bgop60: #00000099;
+  --ah-bgop80: #000000CC;
+  --ah-bgop90: #000000E6;
+  --ah-bgop95: #000000F2;
+  --ah-bgop100: #000000;
 
   --color-red-100: #ffe4dc;
   --color-red-200: #ffc9b8;
@@ -149,7 +173,7 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-surface-border: #f5cc12;
 }
 
-/* Light/Kinda paper theme? WIP. */
+/* Dataswallow cream-core */
 [data-theme="murky-green-light"] {
   --color-cyan-50: #efefdf;
   --color-cyan-100: #000100;
@@ -164,11 +188,18 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --color-cyan-950: #efefdf;
   --color-yellow-400: #645741;
   --color-yellow-500: #917f61;
+  --color-green-400: #46612b;
 
+  --ah-bgop10: #00000008;
   --ah-bgop20: #00000010;
-  --ah-bgop80: #645741; /* should be cc at the end for 255*.08 = CC in hexadecimal for 80% opacity. Kept otherwise because its the light scheme.*/
-  --ah-bgop60: #00000099;
+  --ah-bgop30: #00000014;
   --ah-bgop40: #00000019;
+  --ah-bgop50: #00000040;
+  --ah-bgop60: #00000099;
+  --ah-bgop80: #645741; /* uses the UPEO brown color for the header.*/
+  --ah-bgop90: #000000E6;
+  --ah-bgop95: #000000F2;
+  --ah-bgop100: #000000;
 
   --ah-accent: #917f61;
   --ah-accent-hover: #ab9877;
@@ -180,7 +211,7 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-bg-mid: #efefdf;
   --ah-panel: #efefdf;
   --ah-dots: #64574189;
-  --ah-surface-border: #587a33;
+  --ah-surface-border: #64574189;
   --ah-vignette: rgba(70, 97, 43, 0.12);
 }
 

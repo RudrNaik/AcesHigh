@@ -72,7 +72,7 @@ function SortiesTab({
 
 
   return (
-    <div className="flex min-h-[70vh] border border-cyan-800 bg-black/20">
+    <div className="flex min-h-[70vh] border border-cyan-800 bg-(--ah-bgop20)">
 
       {/* Sortie List */}
 

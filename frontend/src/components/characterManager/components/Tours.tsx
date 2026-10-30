@@ -10,7 +10,7 @@ type Props = {
 export default function TourView({ character, updateCharacter }: Props) {
   return (
     <div className="space-y-4   text-xs">
-      <div className="flex justify-between items-center border border-cyan-100 lg:p-4 p-2 bg-black/20">
+      <div className="flex justify-between items-center border border-cyan-100 lg:p-4 p-2 bg-(--ah-bgop20)">
         <h1 className="text-2xl font-bold">TOURS</h1>
 
         <button
@@ -24,7 +24,7 @@ export default function TourView({ character, updateCharacter }: Props) {
       </div>
 
       {character.tours.length === 0 && (
-        <div className="border border-cyan-800 bg-black/20 p-4 text-gray-400">
+        <div className="border border-cyan-800 bg-(--ah-bgop20) p-4 text-gray-400">
           No tours assigned.
         </div>
       )}

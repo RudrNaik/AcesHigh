@@ -48,16 +48,16 @@ function LicenseView({
   return (
     <div className="space-y-6   text-xs">
       {/* RP */}
-      <div className="border-l-4 border border-cyan-100 bg-black/20 p-4 flex flex-row gap-5">
+      <div className="border-l-4 border border-cyan-100 bg-(--ah-bgop20) p-4 flex flex-row gap-5">
         <div>
-          <div className="text-[10px] text-gray-400">Total RP</div>
+          <div className="text-[10px] text-cyan-400">Total RP</div>
           <div className="text-lg text-cyan-300 font-bold">
             {licenseEngine.getRP(character)}
           </div>
         </div>
 
         <div>
-          <div className="text-[10px] text-gray-400">Remaining RP</div>
+          <div className="text-[10px] text-cyan-400">Remaining RP</div>
           <div className="text-lg text-green-400 font-bold">
             {licenseEngine.getRemainingRP(character)}
           </div>
@@ -81,15 +81,15 @@ function LicenseView({
           return (
             <div
               key={license.key}
-              className="group hover:border-l-4 border-cyan-800 border hover:border-cyan-100 transition-all bg-black/20 p-2"
+              className="group hover:border-l-4 border-cyan-800 border hover:border-cyan-100 transition-all bg-(--ah-bgop20) p-2"
             >
               <div className="text-cyan-300 font-bold text-xs">
                 {license.key}
               </div>
 
-              <div className="text-xs text-gray-400">{license.name}</div>
+              <div className="text-xs text-cyan-400">{license.name}</div>
 
-              <div className="text-xs text-gray-400 italic mb-2">
+              <div className="text-xs text-cyan-400 italic mb-2">
                 {Licenses.find((l) => l.id == license.key)?.style}
               </div>
 
@@ -127,7 +127,7 @@ function LicenseView({
         Unlocks
       </h1>
       <div className="flex flex-col lg:flex-row gap-4">
-        <div className="border-cyan-800 border hover:border-cyan-100 transition-all bg-black/20 flex-1">
+        <div className="border-cyan-800 border hover:border-cyan-100 transition-all bg-(--ah-bgop20) flex-1">
           <h2 className="text-lg px-3 py-2 border-b border-cyan-900 text-cyan-300 font-bold">
             Aircraft
           </h2>
@@ -140,7 +140,7 @@ function LicenseView({
           </div>
         </div>
 
-        <div className=" border-cyan-800 border hover:border-cyan-100 transition-all bg-black/20 flex-1">
+        <div className=" border-cyan-800 border hover:border-cyan-100 transition-all bg-(--ah-bgop20) flex-1">
           <div className=" text-lg px-3 py-2 border-b border-cyan-900 text-cyan-300 font-bold">
             Ordnance
           </div>
@@ -153,7 +153,7 @@ function LicenseView({
           </div>
         </div>
 
-        <div className=" border-cyan-800 border hover:border-cyan-100 transition-all bg-black/20 flex-1">
+        <div className=" border-cyan-800 border hover:border-cyan-100 transition-all bg-(--ah-bgop20) flex-1">
           <div className="text-lg px-3 py-2 border-b border-cyan-900 text-cyan-300 font-bold">
             Modules
           </div>
@@ -166,7 +166,7 @@ function LicenseView({
           </div>
         </div>
 
-        <div className=" border-cyan-800 border hover:border-cyan-100 transition-all bg-black/20 flex-1">
+        <div className=" border-cyan-800 border hover:border-cyan-100 transition-all bg-(--ah-bgop20) flex-1">
           <div className=" text-lg px-3 py-2 border-b border-cyan-900 text-cyan-300 font-bold">
             Upgrade Packages
           </div>

@@ -9,7 +9,7 @@ interface Props {
 function CampaignCard({ campaign, onSelect, onDelete }: Props) {
   return (
     <div
-      className=" bg-black/20
+      className=" bg-(--ah-bgop20)
     border
     border-cyan-800
     hover:border-cyan-100

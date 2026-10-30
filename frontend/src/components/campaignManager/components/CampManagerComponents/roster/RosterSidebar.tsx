@@ -62,7 +62,7 @@ function RosterSidebar({
   }
 
   return (
-    <aside className="flex min-h-full flex-col border border-cyan-800 bg-black/20">
+    <aside className="flex min-h-full flex-col border border-cyan-800 bg-(--ah-bgop20)">
       <div className="border-b border-cyan-800 p-4 space-y-2">
         <div>
           <h2 className="text-xl font-bold">Campaign Roster</h2>

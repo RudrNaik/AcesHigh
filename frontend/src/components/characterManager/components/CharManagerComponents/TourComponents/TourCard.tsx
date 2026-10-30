@@ -25,7 +25,7 @@ export default function TourCard({
 
   if (!hasTour) {
     return (
-      <div className="border border-cyan-800 hover:border-cyan-100 transition-all bg-black/20 w-full text-left p-3">
+      <div className="border border-cyan-800 hover:border-cyan-100 transition-all bg-(--ah-bgop20) w-full text-left p-3">
         <div className="flex justify-between items-center">
           <div className="flex-1">
             <select
@@ -39,14 +39,14 @@ export default function TourCard({
                   setExpanded(true);
                 }
               }}
-              className="bg-black/50 border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
+              className="bg-(--ah-bgop50) border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
             >
-              <option value="" className="bg-black">
+              <option value="" className="bg-(--ah-bgop100)">
                 -- Select Tour --
               </option>
 
               {tourEngine.getAllTours().map((t) => (
-                <option key={t.tourID} value={t.tourID} className="bg-black">
+                <option key={t.tourID} value={t.tourID} className="bg-(--ah-bgop100)">
                   {t.tourName}
                 </option>
               ))}
@@ -84,7 +84,7 @@ export default function TourCard({
   const perk = perks.find((p) => p.id === tourData.tourPerkIDs?.[0]);
 
   return (
-    <div className="border border-cyan-800 hover:border-cyan-100 transition-all bg-black/20 w-full text-left p-3">
+    <div className="border border-cyan-800 hover:border-cyan-100 transition-all bg-(--ah-bgop20) w-full text-left p-3">
       <div className="flex justify-between items-center">
         <div>
           <select
@@ -94,10 +94,10 @@ export default function TourCard({
                 tourEngine.setTourID(character, tourIndex, e.target.value),
               )
             }
-            className="bg-black/50 border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
+            className="bg-(--ah-bgop50) border border-cyan-800 hover:border-cyan-100 text-cyan-300 px-2 py-1 font-bold text-lg w-full max-w-md"
           >
             {tourEngine.getAllTours().map((t) => (
-              <option key={t.tourID} value={t.tourID} className="bg-black">
+              <option key={t.tourID} value={t.tourID} className="bg-(--ah-bgop100)">
                 {t.tourName}
               </option>
             ))}

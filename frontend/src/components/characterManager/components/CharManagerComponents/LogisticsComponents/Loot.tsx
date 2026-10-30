@@ -42,7 +42,7 @@ function SectionCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="border border-cyan-800 bg-black/20">
+    <div className="border border-cyan-800 bg-(--ah-bgop20)">
       <h2 className="px-3 py-2 border-b border-cyan-900 text-cyan-300 font-bold">
         {title}
       </h2>
@@ -130,7 +130,7 @@ function LicenseView({
             className="
               px-4 py-2
               border border-cyan-400
-              bg-black/20
+              bg-(--ah-bgop20)
               hover:border-cyan-100
               hover:bg-cyan-800/20
               disabled:opacity-50

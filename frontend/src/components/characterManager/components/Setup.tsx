@@ -194,12 +194,12 @@ function Setup({
 
   return (
     <div className="space-y-4 text-cyan-100 py-1">
-      <div className="border border-cyan-100 lg:p-4 p-2 bg-black/20">
+      <div className="border border-cyan-100 lg:p-4 p-2 bg-(--ah-bgop20)">
         <h1 className="text-2xl font-bold">SETUP</h1>
       </div>
 
       {/*Identity*/}
-      <section className="border lg:p-4 p-2 space-y-2 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-2 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold">Identity</h2>
 
         <div className="space-y-2">
@@ -209,7 +209,7 @@ function Setup({
             </label>
             <input
               value={local.metadata.userName}
-              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-(--ah-bgop20)"
               onChange={(e) => updateMeta("userName", e.target.value)}
               placeholder="Input"
             />
@@ -219,7 +219,7 @@ function Setup({
             <label className="text-cyan-100 text-sm w-32">First Name</label>
             <input
               value={local.dossier.firstName}
-              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-(--ah-bgop20)"
               onChange={(e) => updateDossier("firstName", e.target.value)}
               placeholder="Input"
             />
@@ -229,7 +229,7 @@ function Setup({
             <label className="text-cyan-100 text-sm w-32">Last Name</label>
             <input
               value={local.dossier.lastName}
-              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-(--ah-bgop20)"
               onChange={(e) => updateDossier("lastName", e.target.value)}
               placeholder="Input"
             />
@@ -239,7 +239,7 @@ function Setup({
             <label className="text-cyan-100 text-sm w-32">Callsign</label>
             <input
               value={local.dossier.callsign}
-              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-(--ah-bgop20)"
               onChange={(e) => updateDossier("callsign", e.target.value)}
               placeholder="Input"
             />
@@ -249,7 +249,7 @@ function Setup({
             <label className="text-cyan-100 text-sm w-32">Gender</label>
             <input
               value={local.dossier.gender}
-              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-(--ah-bgop20)"
               onChange={(e) => updateDossier("gender", e.target.value)}
               placeholder="Input"
             />
@@ -259,7 +259,7 @@ function Setup({
             <label className="text-cyan-100 text-sm w-32">Rank</label>
             <input
               value={local.dossier.rank}
-              className="border-b border-cyan-100 max-w-sm flex-1 bg-black/20"
+              className="border-b border-cyan-100 max-w-sm flex-1 bg-(--ah-bgop20)"
               onChange={(e) => updateDossier("rank", e.target.value)}
               placeholder="Input"
             />
@@ -268,13 +268,13 @@ function Setup({
       </section>
 
       {/* metadata */}
-      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-3 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold">Generation</h2>
         <div className="flex flex-col gap-2">
           <label className="text-cyan-100 text-sm">Generation</label>
           <input
             type="number"
-            className="num-themed px-2 py-1 max-w-2xs bg-black/20"
+            className="num-themed px-2 py-1 max-w-2xs bg-(--ah-bgop20)"
             value={local.metadata.generation}
             onChange={(e) => updateMeta("generation", Number(e.target.value))}
             placeholder="Input"
@@ -283,7 +283,7 @@ function Setup({
           <label className="text-cyan-100 text-sm">Starting RP</label>
           <input
             type="number"
-            className="num-themed px-2 py-1 max-w-2xs bg-black/20"
+            className="num-themed px-2 py-1 max-w-2xs bg-(--ah-bgop20)"
             value={local.metadata.startingRP}
             onChange={(e) => updateMeta("startingRP", Number(e.target.value))}
             placeholder="Input"
@@ -292,17 +292,17 @@ function Setup({
       </section>
 
       {/* Quirks */}
-      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-3 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold">Quirks</h2>
 
         <div className="flex flex-col gap-4">
-          <div className="border p-2 space-y-2 flex flex-col bg-black/20">
+          <div className="border p-2 space-y-2 flex flex-col bg-(--ah-bgop20)">
             <h3 className="">Quirk 1</h3>
 
             <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk1Desc}
-              className="border-b border-cyan-100 max-w-sm bg-black/20"
+              className="border-b border-cyan-100 max-w-sm bg-(--ah-bgop20)"
               onChange={(e) => updateQuirk("quirk1Desc", e.target.value)}
               placeholder="Input"
             />
@@ -314,7 +314,7 @@ function Setup({
             <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk2Desc}
-              className="border-b border-cyan-100 max-w-sm bg-black/20"
+              className="border-b border-cyan-100 max-w-sm bg-(--ah-bgop20)"
               onChange={(e) => updateQuirk("quirk2Desc", e.target.value)}
               placeholder="Input"
             />
@@ -326,7 +326,7 @@ function Setup({
             <label className="text-cyan-100 text-sm">Description</label>
             <input
               value={local.quirks.quirk3Desc}
-              className="border-b border-cyan-100 max-w-sm bg-black/20"
+              className="border-b border-cyan-100 max-w-sm bg-(--ah-bgop20)"
               onChange={(e) => updateQuirk("quirk3Desc", e.target.value)}
               placeholder="Input"
             />
@@ -335,7 +335,7 @@ function Setup({
       </section>
 
       {/*stats*/}
-      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-3 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold">
           Pilot Stats (Total {totalStats}/8)
         </h2>
@@ -371,7 +371,7 @@ function Setup({
       </section>
 
       {/*Specs*/}
-      <section className="border lg:p-4 p-2 space-y-4 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-4 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold flex items-center gap-2">
           Specialization
           {local.specialization.specId && (
@@ -453,7 +453,7 @@ function Setup({
       </section>
 
       {/* Background Perk */}
-      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-3 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold">Background Perk</h2>
 
         <input
@@ -464,7 +464,7 @@ function Setup({
           className="text-themed w-full px-2 py-1"
         />
 
-        <div className="border p-3 text-sm opacity-80 min-h-20 bg-black/20">
+        <div className="border p-3 text-sm opacity-80 min-h-20 bg-(--ah-bgop20)">
           {(() => {
             const perk = backgroundPerks.find(
               (p) => p.id === local.backgroundPerk,
@@ -489,7 +489,7 @@ function Setup({
       </section>
 
       {/* submit*/}
-      <section className="border lg:p-4 p-2 space-y-3 bg-black/20">
+      <section className="border lg:p-4 p-2 space-y-3 bg-(--ah-bgop20)">
         <h2 className="text-cyan-100 font-bold">Final Check</h2>
 
         <div className={canComplete ? "text-green-400" : "text-red-400"}>

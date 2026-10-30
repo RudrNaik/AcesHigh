@@ -29,7 +29,7 @@ function ManeuverSidebar({
       {sidebarOpen && (
         <div
           onClick={() => setSidebarOpen(false)}
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden"
+          className="fixed inset-0 bg-(--ah-bgop60) z-40 lg:hidden"
         />
       )}
 
@@ -76,7 +76,7 @@ function ManeuverSidebar({
                 <input
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-black/30 border border-cyan-100/40 px-2 py-1 mb-4"
+                  className="w-full bg-(--ah-bgop30) border border-cyan-100/40 px-2 py-1 mb-4"
                   placeholder="Search..."
                 />
 

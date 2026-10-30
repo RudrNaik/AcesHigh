@@ -10,7 +10,7 @@ function CharacterCard({ character, onSelect, onDelete }: Props) {
   return (
     <div
       className="
-    bg-black/20
+    bg-(--ah-bgop20)
     border
     border-cyan-800
     hover:border-cyan-100

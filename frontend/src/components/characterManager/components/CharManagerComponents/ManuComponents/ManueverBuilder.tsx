@@ -465,7 +465,7 @@ T${temp}/N${nrv}/R${rflx}/G${gRes}`;
       </div>
 
       {/* output */}
-      <pre className="bg-black/30 p-2 whitespace-pre-wrap">{output}</pre>
+      <pre className="bg-(--ah-bgop30) p-2 whitespace-pre-wrap">{output}</pre>
     </div>
   );
 }
@@ -479,7 +479,7 @@ function Input({ label, value, set }: any) {
       <input
         value={value}
         onChange={(e) => set(Number(e.target.value))}
-        className="w-full bg-black/30 border border-cyan-800 px-2 py-1"
+        className="w-full bg-(--ah-bgop30) border border-cyan-800 px-2 py-1"
       />
     </div>
   );

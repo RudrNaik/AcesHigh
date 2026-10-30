@@ -198,7 +198,7 @@ const Navbar = ({
           hamburgerOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="px-3 pb-3 space-y-1 bg-black/60 border-t border-white/10">
+        <ul className="px-3 pb-3 space-y-1 bg-(--ah-bgop60) border-t border-white/10">
           <li>
             <Link
               to="/"

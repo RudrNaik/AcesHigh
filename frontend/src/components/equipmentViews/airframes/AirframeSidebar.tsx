@@ -28,7 +28,7 @@ function AirframeSidebar({
           className="
             fixed
             inset-0
-            bg-black/40
+            bg-(--ah-bgop40)
             z-40
             lg:hidden
           "
@@ -59,7 +59,7 @@ function AirframeSidebar({
         <div
           className="
             h-full
-            bg-black/20
+            bg-(--ah-bgop20)
             border-r
             lg:border
             border-cyan-100
@@ -100,7 +100,7 @@ function AirframeSidebar({
               placeholder="Search aircraft..."
               className="
                 w-full
-                bg-black/30
+                bg-(--ah-bgop30)
                 border
                 border-cyan-100/40
                 px-3

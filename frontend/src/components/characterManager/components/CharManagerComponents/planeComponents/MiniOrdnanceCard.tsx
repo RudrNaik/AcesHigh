@@ -33,7 +33,7 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
     <section
       id={ordnance.id}
       className="
-        bg-black/20
+        bg-(--ah-bgop20)
         border
         border-cyan-400
         p-4
@@ -107,7 +107,7 @@ function OrdnanceCard(ordnance: OrdnanceCardProps) {
                       mt-2
                       z-50
                       w-64
-                      bg-black/95
+                      bg-(--ah-bgop95)
                       border border-cyan-100
                       p-3
                       text-xs text-cyan-100

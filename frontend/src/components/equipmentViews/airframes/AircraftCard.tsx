@@ -51,7 +51,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
     <section
       id={aircraft.id}
       className="
-        bg-black/20
+        bg-(--ah-bgop20)
         border
         border-cyan-800
         p-6
@@ -162,7 +162,7 @@ function AircraftCard(aircraft: AircraftCardProps) {
                     <div
                       className="
                         absolute z-50 left-0 top-full mt-2 w-64
-                        bg-black/90 border border-cyan-100
+                        bg-(--ah-bgop90) border border-cyan-100
                         p-3 text-xs text-cyan-100
                         shadow-lg whitespace-pre-line
                       "

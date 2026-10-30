@@ -44,7 +44,7 @@ function DebugView({
 
   return (
     <div className="space-y-4">
-      <section className="border border-cyan-800 bg-black/20 p-4">
+      <section className="border border-cyan-800 bg-(--ah-bgop20) p-4">
         <div className="flex flex-wrap gap-2">
           <button
             onClick={handleCopy}
@@ -113,7 +113,7 @@ function DebugView({
           resize-y
           border
           border-cyan-800
-          bg-black/20
+          bg-(--ah-bgop20)
           p-3
            
           text-xs
