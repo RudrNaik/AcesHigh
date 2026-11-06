@@ -213,7 +213,7 @@ function ModuleManager({ character, updateCharacter }: ModuleManagerProps) {
     const otherEquipped = equippedModules.filter((_, i) => i !== slotIndex);
 
     return unlockedModules.filter((m) => {
-      // Check if module has modStack tag - these can be selected multiple times
+      // Check if module has modStack tag as these can be selected multiple times
       const isStackable =
         Array.isArray(m.moduleTags) && m.moduleTags.includes("modStackable");
 

@@ -198,11 +198,11 @@ const Navbar = ({
           hamburgerOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <ul className="px-3 pb-3 space-y-1 bg-(--ah-bgop60) border-t border-white/10">
+        <ul className="px-3 pb-3 space-y-1 bg-(--ah-bgop95) border border-cyan-100 text-xs">
           <li>
             <Link
               to="/"
-              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+              className="block border border-cyan-100 px-3 py-2 text-xs min-w-50 text-cyan-100 transition mt-2 hover:bg-cyan-100 hover:text-cyan-950"
               onClick={() => setHamburgerOpen(false)}
             >
               [↳] Home
@@ -211,7 +211,7 @@ const Navbar = ({
           <li>
             <Link
               to="/about"
-              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+              className="block border border-cyan-100 px-3 py-2 text-xs min-w-50 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               onClick={() => setHamburgerOpen(false)}
             >
               [↳] About
@@ -220,7 +220,7 @@ const Navbar = ({
           <li>
             <Link
               to="/charactermanager"
-              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+              className="block border border-cyan-100 px-3 py-2 text-xs min-w-50 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               onClick={() => setHamburgerOpen(false)}
             >
               [↳] Characters
@@ -229,23 +229,23 @@ const Navbar = ({
           <li>
             <Link
               to="/equipment"
-              className="block px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
+              className="block border border-cyan-100 px-3 py-2 text-xs min-w-50 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               onClick={() => setHamburgerOpen(false)}
             >
               [↳] Equipment
             </Link>
           </li>
           <li>
-            <button
-              type="button"
+            <Link
+              to=""
+              className="block border border-cyan-100 px-3 py-2 text-xs min-w-50 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               onClick={() => {
                 onToggleFont();
-                setHamburgerOpen(false);
               }}
-              className="block w-full text-left px-2 py-2 hover:border-cyan-400/90 border-l-4 border-cyan-100/0"
             >
+              {" "}
               [{isHyperlegible ? "ON" : "OFF"}] Hyperlegible Font
-            </button>
+            </Link>
           </li>
           <li>
             <select

@@ -45,7 +45,7 @@ function PerksView({
     return allBasePerks.filter((perk) => {
       if (perk.id === current) return true;
       
-      // Check if perk has perkStack tag - these can be selected multiple times
+      // Check if perk has perkStack tag, since these can be selected multiple times
       const isStackable = perk.tags && perk.tags.includes("perkStackable");
       
       // If already used and not stackable, don't allow it
