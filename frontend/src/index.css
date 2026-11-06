@@ -175,11 +175,11 @@ Themes are selected from the HTML on index.html, as and are all declared here fo
   --ah-text: #000100;
   --ah-input-text: #000100;
   --ah-input-bg: #00000010;
-  --ah-track: #efefdf;
+  --ah-track: #eaeac3;
   --ah-bg: #efefdf;
   --ah-bg-mid: #efefdf;
   --ah-panel: #00000010;
-  --ah-dots: #64574189;
+  --ah-dots: #64574176;
   --ah-surface-border: #64574189;
   --ah-vignette: rgba(70, 97, 43, 0.12);
 }

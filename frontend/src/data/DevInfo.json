@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "Spinypine",
+        "role": "(Spiny) Website Developer",
+        "desc": "COMS @ IAstate 2027. Modder, Webdev, and Artist constrained by time.",
+        "links": [["Twitter", "https://x.com/Spinypine2"], ["Cara", "https://cara.app/spinypine"], ["Github", "https://github.com/RudrNaik"], ["CALAMARI","https://callicom.vercel.app/"]]
+    },
+    {
+        "id": 1,
+        "name": "Frckld",
+        "role": "(Elizabeth) Lead Designer // AH",
+        "desc": "Idiot In Chief",
+        "links":[]
+    },
+    {
+        "id": 2,
+        "name": "Strikerslash",
+        "role": "(Victoria) Producer // AH",
+        "desc": "Cat Wrangler",
+        "links":[]
+    },
+    {
+        "id": 3,
+        "name": "Floof",
+        "role": "(Amiti) Designer // AH",
+        "desc": "Dog with a gun",
+        "links":[]
+    },
+    {
+        "id": 4,
+        "name": "Contrastellar",
+        "role": "(Gabriella Agathon) Wiki manager + More // AH",
+        "desc": "Networked Nerd",
+        "links":[]
+    }
+]

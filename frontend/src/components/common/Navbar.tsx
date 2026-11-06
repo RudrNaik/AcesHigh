@@ -210,7 +210,7 @@ const Navbar = ({
           </li>
           <li>
             <Link
-              to="/about"
+              to="/About"
               className="block border border-cyan-100 px-3 py-2 text-xs min-w-50 text-cyan-100 transition hover:bg-cyan-100 hover:text-cyan-950"
               onClick={() => setHamburgerOpen(false)}
             >

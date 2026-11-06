@@ -13,6 +13,7 @@ import AWACS from "./AWACS";
 import Background from "./components/common/Background";
 import Footer from "./components/common/Footer";
 import Navbar from "./components/common/Navbar";
+import About from "./About";
 
 const FONT_STORAGE_KEY = "acesHighFont";
 const THEME_STORAGE_KEY = "acesHighTheme";
@@ -78,7 +79,7 @@ function MenuRouter() {
           <Route path="/" element={<Menu />} />
           <Route path="*" element={<MissingPage />} />
           <Route path="/InDev" element={<InDev />} />
-          <Route path="/about" element={<InDev />} />
+          <Route path="/about" element={<About />} />
           <Route path="/equipment" element={<Equipment />} />
           <Route path="/equipment/airframes" element={<Airframes />} />
           <Route path="/equipment/ordnance" element={<Ordnance />} />

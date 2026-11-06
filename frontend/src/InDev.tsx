@@ -11,8 +11,8 @@ function InDevPage() {
           <span className="text-sm">
             {" "}
             <span
-              className="glitch-distort"
-              style={{ animation: "distort-subtle 8s ease infinite" }}
+              className="glitch-distort"style={{ animation: "distort-subtle 8s ease infinite" }}
+              
             >
               IN DEVELOPMENT
             </span>
